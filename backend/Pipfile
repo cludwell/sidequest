@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "==7.1.2"
+gunicorn = "==20.1.0"
+itsdangerous = "==2.0.1"
+python-dotenv = "==0.14.0"
+six = "==1.15.0"
+Flask = "==2.2.2"
+Flask-Cors = "==3.0.10"
+Flask-SQLAlchemy = "==3.0.2"
+SQLAlchemy = "==1.4.46"
+alembic = "==1.9.2"
+psycopg2 = "==2.9.1"
+
+[dev-packages]
+
+
+[requires]
+python_version = "3.9"
