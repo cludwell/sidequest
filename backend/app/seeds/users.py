@@ -4,16 +4,36 @@ from sqlalchemy.sql import text
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
-
-    db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    users = [
+    User(
+        username='Demo', email='demo@aa.io', password='password'),
+    User(
+        username='marnie', email='marnie@aa.io', password='password'),
+    User(
+        username='bobbie', email='bobbie@aa.io', password='password'),
+    User(
+        username='Jerry', email='jerry@seinmail.com', password='password'),
+    User(
+        username='Elaine', email='elaine@seinmail.com', password='password'),
+    User(
+        username='George', email='george@seinmail.com', password='password'),
+    User(
+        username='Kramer', email='kramer@seinmail.com', password='password'),
+    User(
+        username='Newman', email='newman@seinmail.com', password='password'),
+    User(
+        username='Estelle', email='estelle@seinmail.com', password='password'),
+    User(
+        username='Frank', email='frank@seinmail.com', password='password'),
+    User(
+        username='Susan', email='susan@seinmail.com', password='password'),
+    User(
+        username='Morty', email='morty@seinmail.com', password='password'),
+    User(
+        username='Helen', email='helen@seinmail.com', password='password'),
+    ]
+    for user in users:
+        db.session.add(user)
     db.session.commit()
 
 
@@ -28,5 +48,5 @@ def undo_users():
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM users"))
-        
+
     db.session.commit()

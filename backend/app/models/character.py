@@ -35,6 +35,7 @@ class Character(db.Model):
 
     initiative = db.Column(db.Integer, nullable=False)
     armor_class = db.Column(db.Integer, nullable=False)
+    vision = db.Column(db.String(255), nullable=True)
 
     acrobatics = db.Column(db.Integer, nullable=True)
     animal_handling = db.Column(db.Integer, nullable=True)
@@ -87,6 +88,7 @@ class Character(db.Model):
             'weapons': self.weapons,
             'initiative': self.initiative,
             'armorClass': self.armor_class,
+            'vision': self.vision,
             'acrobatics': self.acrobatics,
             'animalHandling': self.animal_handling,
             'arcana': self.arcana,
