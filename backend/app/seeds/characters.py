@@ -3,10 +3,10 @@ from sqlalchemy.sql import text
 
 
 # Adds a demo user, you can add other users here if you want
-def seed_users():
+def seed_characters():
     characters = [
         Character(
-            user_id=None,
+            user_id=1,
             level=7,
             name='Lyra Dawnflower',
             role='Rogue',
@@ -54,7 +54,7 @@ def seed_users():
             faith='Bahamut'
         ),
             Character(
-            user_id=None,
+            user_id=6,
             level=5,
             name='Eldric Shadowcaster',
             role='Wizard',
@@ -101,7 +101,7 @@ def seed_users():
             faith='Mystra'
         ),
         Character(
-            user_id=None,
+            user_id=5,
             level=5,
             name='Eldric Shadowcaster',
             role='Wizard',
@@ -149,7 +149,7 @@ def seed_users():
             faith='Mystra'
         ),
         Character(
-            user_id=None,
+            user_id=1,
             level=6,
             name='Astrid Stormblade',
             role='Barbarian',
@@ -197,7 +197,7 @@ def seed_users():
             faith='Gruumsh'
         ),
             Character(
-            user_id=None,
+            user_id=1,
             level=5,
             name='Elara Nightshade',
             role='Wizard',
@@ -245,7 +245,7 @@ def seed_users():
             faith='Corellon Larethian'
         ),
         Character(
-            user_id=None,
+            user_id=4,
             level=5,
             name='Isabella Nightshade',
             role='Paladin',
@@ -292,7 +292,7 @@ def seed_users():
             faith='Torm, the Loyal Fury'
         ),
         Character(
-            user_id=None,
+            user_id=4,
             level=6,
             name="Aurelius Flameheart",
             role="Fighter",
@@ -361,7 +361,7 @@ def seed_users():
             faith="Bahamut, the Platinum Dragon"
         ),
             Character(
-            user_id=None,
+            user_id=4,
             level=5,
             name="Zara",
             role="Cleric",
@@ -450,7 +450,7 @@ def seed_users():
 # incrementing primary key, CASCADE deletes any dependent entities.  With
 # sqlite3 in development you need to instead use DELETE to remove all data and
 # it will reset the primary keys for you as well.
-def undo_users():
+def undo_characters():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.characters RESTART IDENTITY CASCADE;")
     else:

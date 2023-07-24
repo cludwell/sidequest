@@ -2,13 +2,13 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 from sqlalchemy.sql import func
 
 
-user_scenario = db.Table('user_scenarios', db.Model.metadata,
-    db.Column('user_id', db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), primary_key=True),
-    db.Column('scenario_id', db.Integer, db.ForeignKey(add_prefix_for_prod('scenarios.id')), primary_key=True),
-    db.Column('completed'))
+# user_scenario = db.Table('user_scenarios', db.Model.metadata,
+#     db.Column('user_id', db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), primary_key=True),
+#     db.Column('scenario_id', db.Integer, db.ForeignKey(add_prefix_for_prod('scenarios.id')), primary_key=True),
+#     db.Column('completed'))
 
-if environment == "production":
-    user_scenario.schema = SCHEMA
+# if environment == "production":
+#     user_scenario.schema = SCHEMA
 
 
 class UserScenario(db.Model):
@@ -18,12 +18,12 @@ class UserScenario(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, nullable=False)
-    scenario_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    scenario_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('scenarios.id')), nullable=False)
     completed = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
-    
+
     def to_dict(self):
         return {
             'id': self.id,
