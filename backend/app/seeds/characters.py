@@ -403,7 +403,7 @@ def seed_users():
             stealth=4,
             survival=1,
             alignment="Neutral Evil",
-            appearance="""Zara Blackthorn is a striking Drow with
+            appearance="""Zara is a striking Drow with
                            obsidian skin and silver hair cascading
                            down her back. Her lavender eyes gleam
                            with a malevolent glint, betraying her
@@ -414,7 +414,7 @@ def seed_users():
                            with eerie charm, capable of captivating
                            and manipulating those around her.""",
             background="""Born into the heart of a sinister Drow
-                           society, Zara Blackthorn grew up under
+                           society, Zara grew up under
                            the rule of the evil goddess Lolth. As
                            a devoted priestess of Lolth, she was
                            taught the ways of deception, cruelty,
