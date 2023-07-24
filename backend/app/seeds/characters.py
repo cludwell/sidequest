@@ -360,6 +360,83 @@ def seed_users():
             img_url="https://i.imgur.com/3id7deT.jpg",
             faith="Bahamut, the Platinum Dragon"
         ),
+            Character(
+            user_id=None,
+            level=5,
+            name="Zara",
+            role="Cleric",
+            race="Drow",
+            max_hp=42,
+            current_hp=42,
+            strength=10,
+            dexterity=18,
+            constitution=14,
+            intelligence=12,
+            wisdom=16,
+            charisma=14,
+            armor=["Chain Mail"],
+            equipped=["Mace", "Shield"],
+            inventory=["Healing Potion", "Holy Symbol", "Spider Silk"],
+            languages=["Common", "Elvish", "Undercommon"],
+            spells=["Cure Wounds", "Bane", "Inflict Wounds"],
+            tools=[],
+            weapons=["Mace"],
+            initiative=4,
+            armor_class=16,
+            vision='superior darkvision',
+            acrobatics=4,
+            animal_handling=3,
+            arcana=1,
+            athletics=1,
+            deception=3,
+            history=1,
+            insight=3,
+            intimidation=2,
+            investigation=1,
+            medicine=3,
+            nature=1,
+            perception=3,
+            performance=2,
+            persuasion=2,
+            religion=3,
+            sleight_of_hand=4,
+            stealth=4,
+            survival=1,
+            alignment="Neutral Evil",
+            appearance="""Zara Blackthorn is a striking Drow with
+                           obsidian skin and silver hair cascading
+                           down her back. Her lavender eyes gleam
+                           with a malevolent glint, betraying her
+                           malicious nature. Clad in dark robes
+                           adorned with spider motifs, she moves
+                           gracefully, like a shadow lurking in
+                           darkness. Her voice is soft, yet filled
+                           with eerie charm, capable of captivating
+                           and manipulating those around her.""",
+            background="""Born into the heart of a sinister Drow
+                           society, Zara Blackthorn grew up under
+                           the rule of the evil goddess Lolth. As
+                           a devoted priestess of Lolth, she was
+                           taught the ways of deception, cruelty,
+                           and dark magic. Embracing the teachings
+                           of her goddess, Zara became skilled in
+                           manipulation, using her charm and
+                           enchantments to bend others to her will.
+                           She mastered the art of dark magic,
+                           channeling divine power from Lolth to
+                           inflict pain and suffering upon her
+                           enemies. Zara's loyalty to Lolth is
+                           unwavering, and she seeks to advance
+                           her position within the Drow society,
+                           aiming to become a high priestess and
+                           earn the favor of her goddess. With her
+                           mace in hand and her spells at her
+                           disposal, Zara seeks to further the
+                           goals of Lolth, spreading chaos and
+                           treachery wherever she goes.""",
+            img_url="https://i.imgur.com/Pk86mKN.jpg",
+            faith="Lolth, the Evil Goddess of Spiders and Deceit"
+        ),
     ]
     for character in characters:
         db.session.add(character)
