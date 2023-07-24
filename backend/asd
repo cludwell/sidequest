@@ -1,7 +1,0 @@
- id | username |    email     |                                            hashed_password                                             
-----+----------+--------------+--------------------------------------------------------------------------------------------------------
-  1 | Demo     | demo@aa.io   | pbkdf2:sha256:260000$Vlyq0ObYbh85cZXx$7e75c253756be17f624c536993bac7746281f10bf31d0312a941f1a1b621efe3
-  2 | marnie   | marnie@aa.io | pbkdf2:sha256:260000$RuYceLOEBENXHoNm$8a9f538f2aa03716246f9f3f6d5ca2aa830c5b23946cb2bfdd60990be27ee2f7
-  3 | bobbie   | bobbie@aa.io | pbkdf2:sha256:260000$VsGaxO2geyCDn9GZ$a52c372266f73afbaa4087aafc39e20c128db28270820bf3b244a987990d24ea
-(3 rows)
-

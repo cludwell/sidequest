@@ -1,7 +1,8 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-
+from .user_scenario import user_scenario
+from sqlalchemy.sql import func
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -14,6 +15,12 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     profile_pic = db.Column(db.String(255), nullable=True)
+
+    # MANY TO MANY RELATIONSHIP
+    scenarios = db.relationship('Scenario', secondary=user_scenario, back_populates='users')
+
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     @property
     def password(self):
@@ -31,5 +38,7 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'profilePic': self.profile_pic
+            'profilePic': self.profile_pic,
+            'createdAt': self.created_at,
+            'updatedAt': self.updated_at
         }
