@@ -1,7 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
-class User(db.Model):
+class UserScenario(db.Model):
     __tablename__ = 'user_scenario'
 
     if environment == "production":
