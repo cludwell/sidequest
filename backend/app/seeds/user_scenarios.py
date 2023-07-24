@@ -5,9 +5,59 @@ from sqlalchemy.sql import text
 # Adds a demo user, you can add other users here if you want
 def seed_user_scenarios():
     campaigns = [
+        # what will be the demo user
         UserScenario(
-        
-        )
+        user_id= 4,
+        scenario_id= 1,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 4,
+        scenario_id= 2,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 4,
+        scenario_id= 3,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 4,
+        scenario_id= 4,
+        completed=True
+        ),
+        # timeline data
+        UserScenario(
+        user_id= 5,
+        scenario_id= 5,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 5,
+        scenario_id= 4,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 5,
+        scenario_id= 3,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 6,
+        scenario_id= 3,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 6,
+        scenario_id= 2,
+        completed=True
+        ),
+        UserScenario(
+        user_id= 6,
+        scenario_id= 1,
+        completed=True
+        ),
+
     ]
     for c in campaigns:
         db.session.add(c)
