@@ -1,5 +1,4 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
-from .user_scenario import user_scenario
 from sqlalchemy.sql import func
 
 class Scenario(db.Model):
@@ -15,7 +14,7 @@ class Scenario(db.Model):
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     # MANY TO MANY RELATIONSHIP
-    users = db.relationship('User', secondary=user_scenario, back_populates='scenarios')
+    users = db.relationship('UserScenario', back_populates='scenarios')
 
     def to_dict(self):
         return {

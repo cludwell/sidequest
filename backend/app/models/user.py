@@ -1,7 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from .user_scenario import user_scenario
 from sqlalchemy.sql import func
 
 class User(db.Model, UserMixin):
@@ -17,7 +16,7 @@ class User(db.Model, UserMixin):
     profile_pic = db.Column(db.String(255), nullable=True)
 
     # MANY TO MANY RELATIONSHIP
-    scenarios = db.relationship('Scenario', secondary=user_scenario, back_populates='users')
+    scenarios = db.relationship('UserScenario', back_populates='users')
 
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), onupdate=func.now())

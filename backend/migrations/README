@@ -1,3 +1,11 @@
 Generic single-database configuration.
 
 psql -h localhost -U postgres -d postgres
+
+    Make sure PostgreSQL is running: Check if the PostgreSQL server is running on your machine. You can do this by running the following command in your terminal:
+
+sudo service postgresql status
+
+If the service is not running, start it using:
+
+sudo service postgresql start
