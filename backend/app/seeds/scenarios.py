@@ -114,7 +114,52 @@ Challenges and Encounters:
 
     The Heart of the Cave: As you delve deeper into the Forgotten Cave, you reach its heart—a vast chamber filled with lost treasures and ancient relics. However, this chamber may also be guarded by the most formidable protector of the cave's secrets.""",
     img_url='https://i.imgur.com/k4wzG7U.jpg'
-    )
+    ),
+    Scenario(
+        description="""Title: Shadows Over the Silent Bridge
+
+Adventure Prompt: In the quaint village of Moonhaven, nestled amidst the beauty of Elaria, a once-thriving inn stands as a solemn reminder of the bandit-infested Shadowgate Bridge nearby. The innkeeper, burdened by fear and desperation, pleads for your help to liberate the bridge from the clutches of the menacing bandits. With innocent lives at stake, you embark on a quest to answer the innkeeper's plea and bring peace to Moonhaven.
+
+Starting Point: Moonhaven's innkeeper nervously awaits your response, anxiety etched on their face as they recount the horrors the villagers have faced at the hands of the bandits. The brooding silhouette of the Shadowgate Bridge looms in the distance, casting an ominous shadow over the village.
+
+Objective: Your mission is to heed the innkeeper's plea, clear the Shadowgate Bridge of the bandit menace, and secure safe passage for the villagers.
+
+Challenges and Encounters:
+
+    Gathering Information: Before heading to the bridge, you must gather intelligence on the bandit gang—learning their numbers, tactics, and the possible motives behind their malevolent actions.
+
+    Shadow in the Night: The bandits prefer to strike under the cover of darkness, making a stealthy approach crucial to catch them off guard and minimize the risk to the innocent.
+
+    Negotiation or Confrontation: As you reach the bridge, you have the option to try negotiating with the bandits, appealing to their reason, or delivering a firm ultimatum to leave the area. Alternatively, if diplomacy fails, you must prepare for a tense confrontation.
+
+    Showdown with the Bandit Leader: Among the bandits, a ruthless and cunning leader awaits—their control over the gang may prove to be the key to breaking their hold on the bridge. Confronting and defeating the leader is essential to dismantling the bandit operation.
+
+    Rallying the Villagers: You have the opportunity to rally the villagers of Moonhaven to aid in the struggle against the bandits. Their support could significantly tip the scales in your favor.""",
+    img_url='https://i.imgur.com/ShFnXxI.jpg'
+    ),
+    Scenario(
+        description="""Title: Whispers of the Feywild
+
+Adventure Prompt: In the realm of Elaria, a once-peaceful forest is now beset by a series of peculiar and magical occurrences. The townsfolk speak of strange lights dancing in the woods, ethereal music haunting the air, and unexplained disappearances of wayward travelers. Driven by curiosity and concern, you set out to investigate these eerie happenings, only to find yourself entangled in the mysterious and enchanting world of the Feywild.
+
+Starting Point: The adventure commences in a tranquil village bordering the mysterious forest. The townsfolk are anxious, and tales of unexplainable phenomena circulate, fueling both fear and fascination.
+
+Objective: Your mission is to unravel the mysteries of the forest, discover the source of the strange happenings, and interact with the enigmatic creatures and characters from the Feywild.
+
+Challenges and Encounters:
+
+    Entering the Feywild: As you venture deeper into the forest, you find a hidden portal to the Feywild—an interdimensional realm of beauty and whimsy. Stepping through the portal opens the gateway to unexpected encounters with fey creatures.
+
+    The Mischievous Sprites: Playful sprites, known for their tricks, surround you with their impish laughter and attempt to lead you astray. Your wit and diplomacy will be tested to navigate their games and win their trust.
+
+    Enchanted Groves: The forest is dotted with magical groves where dryads, treefolk, and other fey creatures dwell. Each grove holds unique challenges and riddles that must be solved to gain the trust and aid of its inhabitants.
+
+    The Court of the Fey: As you delve deeper into the Feywild, you stumble upon the Court of the Fey—the heart of this enchanting realm. Here, you must navigate through intricate social etiquette and mystical customs to converse with the powerful and enigmatic Fey Lords and Ladies.
+
+    The Unseen Threat: Behind the allure and enchantment of the Feywild lies an unseen threat, an ancient malevolence that seeks to exploit the mystical energy of the forest for nefarious purposes. Unraveling this threat becomes essential to restoring the balance between the mortal realm and the Feywild.""",
+    img_url='https://i.imgur.com/GepHoaF.jpg'
+    ),
+    
     ]
     for scene in scenarios:
         db.session.add(scene)
