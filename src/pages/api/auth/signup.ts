@@ -9,14 +9,20 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { email, password, username, profilePic } = req.body
     if (!email || !email.includes('@') || !password || password.trim().length < 6) {
         return res.status(422).json({
-            message: 'Invalid input - make sure password is more than 5 characters'
+            message: 'Invalid input - make sure password is at least 6 characters and/or be sure to include a valid email address'
         })
     }
-    const existingUser = await prisma.users.findUnique({
-        where: { email: email}
+    const existingEmail = await prisma.users.findUnique({
+        where: { email: email }
     })
-    if (existingUser) return res.status(422).json({
+    const existingUsername = await prisma.users.findUnique({
+        where: { username: username }
+    })
+    if (existingEmail) return res.status(422).json({
         message: 'User already exists with that email'
+    })
+    if (existingUsername) return res.status(422).json({
+        message: 'User already exists with that username'
     })
     const hashedPassword: string = await hashPassword(password)
     const result = await prisma.users.create({
