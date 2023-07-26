@@ -17,6 +17,7 @@ export default NextAuth({
         email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
+      // trying to assign a specific type to the authorize promise results in an error
       authorize: async (credentials, req): Promise<any> => {
         if (!credentials || !credentials.email || !credentials.password) throw new Error('Invalid Credentials')
         const user = await prisma.users.findUnique({
