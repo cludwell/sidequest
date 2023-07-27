@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import LogInModal from "./logInModal";
+import LogInModal from "./LogInModal";
 import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 

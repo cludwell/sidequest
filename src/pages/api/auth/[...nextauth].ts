@@ -26,7 +26,10 @@ export default NextAuth({
         if (!user) throw new Error('No user found!')
         const isValid = await verifyPassword(credentials.password, user.hashed_password)
         if (!isValid) throw new Error('Password doesnt match!')
-        else return user
+        else {
+          console.log('==================SUCCESS')
+          return user
+        }
       },
     }),
     // Add other providers (e.g., Google, GitHub) as needed

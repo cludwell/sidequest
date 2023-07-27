@@ -1,5 +1,4 @@
 import { PrismaClient, users as PrismaUser } from '@prisma/client'
-const prisma = new PrismaClient()
 
 // constants
 const SET_USER: string = "session/SET_USER";
@@ -52,14 +51,14 @@ export const authenticate = () => async (dispatch: Function) => {
 	}
 };
 
-export const login = (email: string, password: string) => async (dispatch: Function) => {
+export const login = (credential: string, password: string) => async (dispatch: Function) => {
 	const response = await fetch("/api/auth/signin", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
-			email,
+			credential,
 			password,
 		}),
 	});

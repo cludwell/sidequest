@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.eczar {
+  font-family: "Eczar", serif;
+}
+.fondamento {
+  font-family: "Fondamento", cursive;
+}
+.eagle {
+  font-family: "Eagle Lake", cursive;
+}
+.federant {
+  font-family: "Federant", cursive;
+}
+.almendra {
+  font-family: "Almendra", serif;
+}
+.astloch {
+  font-family: "Astloch", cursive;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
