@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/bcryptjs": "^2.4.2",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
