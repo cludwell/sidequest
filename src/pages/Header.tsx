@@ -3,7 +3,6 @@ import LogInModal from "./LogInModal";
 import d20 from "../../public/images/d20.png";
 import Image from "next/image";
 import SignUp from "./SignUpModal";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Header() {
@@ -15,6 +14,7 @@ export default function Header() {
     // Use 'redirect: false' to prevent automatic redirection
     router.push("/"); // Manually redirect to the home page
   };
+  const user = useSelector()
   console.log('SESSION',session)
   return (
     <div className="flex flex-row justify-between" id="header-container">
