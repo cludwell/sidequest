@@ -1,5 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
-from werkzeug.security import generate_password_hash, check_password_hash
+# from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
@@ -21,16 +21,16 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    @property
-    def password(self):
-        return self.hashed_password
+    # @property
+    # def password(self):
+    #     return self.hashed_password
 
-    @password.setter
-    def password(self, password):
-        self.hashed_password = generate_password_hash(password)
+    # @password.setter
+    # def password(self, password):
+    #     self.hashed_password = generate_password_hash(password)
 
-    def check_password(self, password):
-        return check_password_hash(self.password, password)
+    # def check_password(self, password):
+    #     return check_password_hash(self.password, password)
 
     def to_dict(self):
         return {

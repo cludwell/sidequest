@@ -6,31 +6,31 @@ from sqlalchemy.sql import text
 def seed_users():
     users = [
     User(
-        username='Demo', email='demo@aa.io', password='password'),
+        username='Demo', email='demo@aa.io', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='marnie', email='marnie@aa.io', password='password'),
+        username='marnie', email='marnie@aa.io', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='bobbie', email='bobbie@aa.io', password='password'),
+        username='bobbie', email='bobbie@aa.io', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Jerry', email='jerry@seinmail.com', password='password'),
+        username='Jerry', email='jerry@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Elaine', email='elaine@seinmail.com', password='password'),
+        username='Elaine', email='elaine@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='George', email='george@seinmail.com', password='password'),
+        username='George', email='george@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Kramer', email='kramer@seinmail.com', password='password'),
+        username='Kramer', email='kramer@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Newman', email='newman@seinmail.com', password='password'),
+        username='Newman', email='newman@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Estelle', email='estelle@seinmail.com', password='password'),
+        username='Estelle', email='estelle@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Frank', email='frank@seinmail.com', password='password'),
+        username='Frank', email='frank@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Susan', email='susan@seinmail.com', password='password'),
+        username='Susan', email='susan@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Morty', email='morty@seinmail.com', password='password'),
+        username='Morty', email='morty@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     User(
-        username='Helen', email='helen@seinmail.com', password='password'),
+        username='Helen', email='helen@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
     ]
     for user in users:
         db.session.add(user)
