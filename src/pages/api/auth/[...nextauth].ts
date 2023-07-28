@@ -31,10 +31,7 @@ export default NextAuth({
           credentials.password,
           user.hashed_password
         );
-        // console.log('HASHING THE USERS PASSWORD', await compare('password', '$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'))
-        console.log('IS VALID----------------------', isValid)
         if (!isValid) throw new Error("Password doesnt match!");
-        console.log("==================SUCCESS");
         return user;
       },
     }),

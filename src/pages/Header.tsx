@@ -17,7 +17,7 @@ export default function Header() {
   };
   console.log('SESSION',session)
   return (
-    <div className="flex flex-row justify-around" id="header-container">
+    <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row align-con m-3">
         <Image src={d20} alt="d20 logo" className="w-20 object-cover" />
         <h1 className="astloch text-7xl ">sideQuest</h1>
@@ -28,7 +28,7 @@ export default function Header() {
           <SignUp />
         </div>
       ) : (
-        <button className="btn" onClick={handleSignOut}>
+        <button className="btn m-4 btn-neutral" onClick={handleSignOut}>
           Logout
         </button>
       )}

@@ -12,7 +12,6 @@ export default function Home() {
         <title>Side🎲Quest</title>
       </Head>
       <h1>Hello SideQuest</h1>
-      <LogInModal />
     </main>
   );
 }

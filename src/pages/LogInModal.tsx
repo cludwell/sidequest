@@ -36,12 +36,15 @@ export default function LogInModal() {
     }
   };
 
-  const demoSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
+  const demoSignIn: React.MouseEventHandler<HTMLButtonElement>  = async (e) => {
+    e.preventDefault();
     setEmail('jerry@seinmail.com');
     setPassword('password');
-    handleSubmit(e)
+    if (email && password) {
+      await signIn('credentials', { email, password });
+    }
   }
-  
+
   useEffect(() => {
     const myModal2 = document.getElementById("my_modal_2");
     if (myModal2) window.my_modal_2 = myModal2;
@@ -94,9 +97,10 @@ export default function LogInModal() {
               <span>{error}</span>
             </div>
           ))}
-          <button className="btn btn-secondary" type="submit">
+          <button className="btn btn-accent mb-4" type="submit">
             submit
           </button>
+          <button className="btn btn-secondary" onClick={(e) =>demoSignIn(e)}>Demo User</button>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
