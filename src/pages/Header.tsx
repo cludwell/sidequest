@@ -6,6 +6,7 @@ import SignUp from "./SignUpModal";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
+  console.log('SESSION',session)
   return (
     <div className="flex flex-row justify-around" id="header-container">
       <div className="flex flex-row align-con m-3">
@@ -17,11 +18,11 @@ export default function Header() {
           <LogInModal />
           <SignUp />
         </div>
-      ) : session ? (
+      ) : (
         <button className="btn" onClick={() => signOut()}>
           Logout
         </button>
-      ) : null}
+      )}
     </div>
   );
 }

@@ -1,8 +1,6 @@
 import { login } from "@/store/session";
-import { error } from "console";
-import { NextApiResponse } from "next";
 import { useEffect, useRef, useState } from "react";
-
+import { signIn } from 'next-auth/react';
 declare global {
   interface Window {
     my_modal_2: any; // Replace `any` with the type of your modal if possible
@@ -15,12 +13,9 @@ type LoginResult = {
 };
 
 export default function LogInModal() {
-  const credentialRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
-
-  const email = credentialRef.current?.value; // Extract email value from the ref
-  const password = passwordRef.current?.value; // Extract password value from the ref
 
   const validate = () => {
     const err: string[] = [];
@@ -36,8 +31,7 @@ export default function LogInModal() {
     validate();
     if (errors.length) return;
     if (email && password) {
-      const result = await login(email, password);
-      console.log('======================HANDLESUBMiT')
+      await signIn('credentials', { email, password });
     }
   };
 
@@ -60,19 +54,42 @@ export default function LogInModal() {
           className="modal-box flex flex-col"
           onSubmit={handleSubmit}
         >
-          <h3 className="font-bold text-xl almendra">Log In</h3>
+          <h3 className="font-bold text-3xl almendra">Log In</h3>
           <input
             type="text"
-            ref={credentialRef}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Credential"
-            className="m-2 border-2 rounded border-slate-300"
+            className="my-4 border-2 rounded border-slate-300"
           />
           <input
             type="text"
-            ref={passwordRef}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="m-2 border-2 rounded border-slate-300"
+            className="mb-4 border-2 rounded border-slate-300"
           />
+          {errors?.map((error, idx) => (
+            <div className="alert alert-error mb-4" key={`error${idx}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-current shrink-0 h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span>{error}</span>
+            </div>
+          ))}
+          <button className="btn btn-secondary" type="submit">
+            submit
+          </button>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

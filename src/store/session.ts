@@ -52,6 +52,7 @@ export const authenticate = () => async (dispatch: Function) => {
 };
 
 export const login = (credential: string, password: string) => async (dispatch: Function) => {
+	console.log('ENTERS THUNK')
 	const response = await fetch("/api/auth/signin", {
 		method: "POST",
 		headers: {
@@ -66,6 +67,7 @@ export const login = (credential: string, password: string) => async (dispatch: 
 	if (response.ok) {
 		const data = await response.json();
 		dispatch(setUser(data));
+		console.log('THUNK')
 		return null;
 	} else if (response.status < 500) {
 		const data = await response.json();

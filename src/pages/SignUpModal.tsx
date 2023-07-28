@@ -20,7 +20,7 @@ export default function SignUp() {
         className="btn btn-primary"
         onClick={() => window.my_modal_signup.showModal()}
       >
-        Sign In
+        Sign up
       </button>
       <dialog id="my_modal_signup" className="modal">
         <form method="dialog" className="modal-box">
