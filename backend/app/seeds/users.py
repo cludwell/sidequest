@@ -6,31 +6,31 @@ from sqlalchemy.sql import text
 def seed_users():
     users = [
     User(
-        username='Demo', email='demo@aa.io', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Demo', email='demo@aa.io', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='marnie', email='marnie@aa.io', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='marnie', email='marnie@aa.io', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='bobbie', email='bobbie@aa.io', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='bobbie', email='bobbie@aa.io', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Jerry', email='jerry@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Jerry', email='jerry@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Elaine', email='elaine@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Elaine', email='elaine@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='George', email='george@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='George', email='george@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Kramer', email='kramer@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Kramer', email='kramer@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Newman', email='newman@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Newman', email='newman@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Estelle', email='estelle@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Estelle', email='estelle@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Frank', email='frank@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Frank', email='frank@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Susan', email='susan@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Susan', email='susan@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Morty', email='morty@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Morty', email='morty@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     User(
-        username='Helen', email='helen@seinmail.com', hashed_password='$2a$12$J31WE3y4.1B0r8c4htzrGOLHe0Is1tIStWlck7Uk0JZdHQZLJFwwK'),
+        username='Helen', email='helen@seinmail.com', hashed_password='$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'),
     ]
     for user in users:
         db.session.add(user)

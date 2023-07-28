@@ -52,7 +52,6 @@ export const authenticate = () => async (dispatch: Function) => {
 };
 
 export const login = (credential: string, password: string) => async (dispatch: Function) => {
-	console.log('ENTERS THUNK')
 	const response = await fetch("/api/auth/signin", {
 		method: "POST",
 		headers: {

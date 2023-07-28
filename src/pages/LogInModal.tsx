@@ -1,6 +1,7 @@
 import { login } from "@/store/session";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { signIn } from 'next-auth/react';
+
 declare global {
   interface Window {
     my_modal_2: any; // Replace `any` with the type of your modal if possible
@@ -35,6 +36,12 @@ export default function LogInModal() {
     }
   };
 
+  const demoSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
+    setEmail('jerry@seinmail.com');
+    setPassword('password');
+    handleSubmit(e)
+  }
+  
   useEffect(() => {
     const myModal2 = document.getElementById("my_modal_2");
     if (myModal2) window.my_modal_2 = myModal2;

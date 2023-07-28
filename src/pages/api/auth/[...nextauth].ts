@@ -2,7 +2,8 @@ import { PrismaClient, users as PrismaUser } from "@prisma/client";
 const prisma = new PrismaClient();
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { verifyPassword } from "../../../../lib/auth";
+import { hashPassword, verifyPassword } from "../../../../lib/auth";
+import { compare } from "bcryptjs";
 
 export default NextAuth({
   session: {
@@ -25,11 +26,13 @@ export default NextAuth({
           where: { email: credentials.email },
         });
         if (!user) throw new Error("No user found!");
-        console.log("PASSWORDS", credentials.password, user.hashed_password);
+        console.log('CREDENTIALS DOT PASSWORD', credentials.password, user.hashed_password)
         const isValid = await verifyPassword(
           credentials.password,
           user.hashed_password
         );
+        // console.log('HASHING THE USERS PASSWORD', await compare('password', '$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C'))
+        console.log('IS VALID----------------------', isValid)
         if (!isValid) throw new Error("Password doesnt match!");
         console.log("==================SUCCESS");
         return user;
