@@ -4,6 +4,12 @@ import d20 from "../../public/images/d20.png";
 import Image from "next/image";
 import SignUp from "./SignUpModal";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { Session } from "next-auth";
+// type definitions for useSelector and state
+import { store } from "@/store";
+export type RootState = ReturnType<typeof store.getState>;
+
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -14,8 +20,9 @@ export default function Header() {
     // Use 'redirect: false' to prevent automatic redirection
     router.push("/"); // Manually redirect to the home page
   };
-  const user = useSelector()
-  console.log('SESSION',session)
+
+  const user = useSelector((state: RootState) => state);
+  console.log("SESSION", user);
   return (
     <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row align-con m-3">

@@ -1,9 +1,10 @@
 import { PrismaClient, users as PrismaUser } from "@prisma/client";
 const prisma = new PrismaClient();
-import NextAuth from "next-auth";
+import NextAuth, { Account } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { hashPassword, verifyPassword } from "../../../../lib/auth";
-import { compare } from "bcryptjs";
+import { verifyPassword } from "../../../../lib/auth";
+import { store } from "@/store";
+import { login, logout } from "../../../store/session";
 
 export default NextAuth({
   session: {
@@ -26,12 +27,12 @@ export default NextAuth({
           where: { email: credentials.email },
         });
         if (!user) throw new Error("No user found!");
-        console.log('CREDENTIALS DOT PASSWORD', credentials.password, user.hashed_password)
         const isValid = await verifyPassword(
           credentials.password,
           user.hashed_password
         );
         if (!isValid) throw new Error("Password doesnt match!");
+        store.dispatch(login(user));
         return user;
       },
     }),
@@ -41,5 +42,33 @@ export default NextAuth({
     //   clientSecret: process.env.GOOGLE_CLIENT_SECRET
     // }),
   ],
+  callbacks: {
+    // async jwt({ token, account, profile }) {
+    //   if (account && 'email' in account) {
+    //     const userEmail: string | undefined = (account as any).email;
+    //     if (userEmail) {
+    //       const user: PrismaUser | null = await prisma.users.findUnique({
+    //         where: {
+    //           email: userEmail,
+    //         },
+    //       });
+    //       if (user !== null) {
+    //         store.dispatch(login(user))
+    //       }
+    //     }
+    //   } else {
+    //     store.dispatch(logout());
+    //   }
+    //   return token
+    // },
+    jwt: async ({ token, user }) => {
+      token.user && (token.user = user);
+      return Promise.resolve(token);
+    },
+    // session: async({ session, user }) => {
+    //   session.user = user.user;
+    //   return Promise.resolve(session)
+    // }
+  },
   // Add other configurations as needed
 });
