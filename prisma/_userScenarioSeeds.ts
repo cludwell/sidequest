@@ -1,4 +1,4 @@
-export const userScenarioData = [
+export const userScenariosData = [
     {
       user_id: 4,
       scenario_id: 1,

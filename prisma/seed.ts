@@ -1,10 +1,12 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
-import { usersData } from "./userSeeds"; // Update the path accordingly
-import { userScenarioData } from "./userScenarioSeeds";
+import { usersData } from "./_userSeeds"; // Update the path accordingly
+import { userScenariosData } from "./_userScenarioSeeds";
+import { scenariosData } from "./_scenarioSeeds";
+import { charactersData } from "./_characterSeeds";
 async function seedUsers() {
   try {
-    await prisma.user.createMany({
+    await prisma.users.createMany({
       data: usersData, // Use the imported user data array
     });
     console.log("Users seeded successfully");
@@ -17,8 +19,8 @@ async function seedUsers() {
 
 async function seedUserScenarios() {
   try {
-    await prisma.userScenario.createMany({
-      data: userScenarioData,
+    await prisma.userScenarios.createMany({
+      data: userScenariosData,
     });
     console.log("User scenarios seeded successfully");
   } catch (error) {
@@ -27,6 +29,34 @@ async function seedUserScenarios() {
     await prisma.$disconnect();
   }
 }
+
+async function seedScenarios() {
+  try {
+    await prisma.scenarios.createMany({
+      data: scenariosData,
+    });
+    console.log("Scenarios seeded successfully");
+  } catch (error) {
+    console.error("Error seeding scenarios:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+async function seedCharacters() {
+  try {
+    await prisma.characters.createMany({
+      data: charactersData,
+    });
+    console.log("Characters seeded successfully");
+  } catch (error) {
+    console.error("Error seeding characters:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
 // Call the seedUsers function to start seeding
 seedUsers();
 seedUserScenarios();
+seedScenarios();
+seedCharacters();
