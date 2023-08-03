@@ -10,7 +10,8 @@
     "seed": "ts-node prisma/seed.ts",
     "generate": "npx prisma generate",
     "push": "npx prisma db push",
-    "setup": "npm run generate && npm run push && npm run seed"
+    "setup": "npm run generate && npm run push && npm run seed",
+    "deploy": "npm run setup && npm run start"
   },
   "dependencies": {
     "@prisma/client": "^5.1.0",
