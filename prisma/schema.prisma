@@ -7,91 +7,98 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model alembic_version {
-  version_num String @id(map: "alembic_version_pkc") @db.VarChar(32)
+model Users {
+  id             Int             @id @default(autoincrement())
+  username       String          @unique @db.VarChar(40)
+  email          String          @unique @db.VarChar(255)
+  hashedPassword String          @db.VarChar(255)
+  profilePic     String?         @db.VarChar(255)
+  createdAt      DateTime        @default(now()) @db.Timestamptz(6)
+  updatedAt      DateTime        @default(now()) @db.Timestamptz(6)
+  characters     Characters[]
+  userScenarios  UserScenarios[]
+
+  @@map("users")
 }
 
-model characters {
-  id              Int       @id @default(autoincrement())
-  user_id         Int
-  level           Int?
-  name            String    @db.VarChar(255)
-  role            String    @db.VarChar(255)
-  race            String    @db.VarChar(255)
-  max_hp          Int?
-  current_hp      Int?
-  strength        Int?
-  dexterity       Int?
-  constitution    Int?
-  intelligence    Int?
-  wisdom          Int?
-  charisma        Int?
-  armor           String[]  @db.VarChar
-  equipped        String[]  @db.VarChar
-  inventory       String[]  @db.VarChar
-  languages       String[]  @db.VarChar
-  spells          String[]  @db.VarChar
-  tools           String[]  @db.VarChar
-  weapons         String[]  @db.VarChar
-  initiative      Int
-  armor_class     Int
-  vision          String?   @db.VarChar(255)
-  acrobatics      Int?
-  animal_handling Int?
-  arcana          Int?
-  athletics       Int?
-  deception       Int?
-  history         Int?
-  insight         Int?
-  intimidation    Int?
-  investigation   Int?
-  medicine        Int?
-  nature          Int?
-  perception      Int?
-  performance     Int?
-  persuasion      Int?
-  religion        Int?
-  sleight_of_hand Int?
-  stealth         Int?
-  survival        Int?
-  alignment       String    @db.VarChar(255)
-  appearance      String?
-  background      String?
-  img_url         String?   @db.VarChar(255)
-  faith           String?   @db.VarChar(255)
-  created_at      DateTime? @default(now()) @db.Timestamptz(6)
-  updated_at      DateTime? @default(now()) @db.Timestamptz(6)
-  users           users     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+model Characters {
+  id             Int             @id @default(autoincrement())
+  userId         Int
+  level          Int?
+  name           String          @db.VarChar(255)
+  role           String          @db.VarChar(255)
+  race           String          @db.VarChar(255)
+  maxHp          Int?
+  currentHp      Int?
+  strength       Int?
+  dexterity      Int?
+  constitution   Int?
+  intelligence   Int?
+  wisdom         Int?
+  charisma       Int?
+  armor          String[]
+  equipped       String[]
+  inventory      String[]
+  languages      String[]
+  spells         String[]
+  tools          String[]
+  weapons        String[]
+  initiative     Int
+  armorClass     Int
+  vision         String?         @db.VarChar(255)
+  acrobatics     Int?
+  animalHandling Int?
+  arcana         Int?
+  athletics      Int?
+  deception      Int?
+  history        Int?
+  insight        Int?
+  intimidation   Int?
+  investigation  Int?
+  medicine       Int?
+  nature         Int?
+  perception     Int?
+  performance    Int?
+  persuasion     Int?
+  religion       Int?
+  sleightOfHand  Int?
+  stealth        Int?
+  survival       Int?
+  alignment      String          @db.VarChar(255)
+  appearance     String?
+  background     String?
+  imgUrl         String?         @db.VarChar(255)
+  faith          String?         @db.VarChar(255)
+  createdAt      DateTime?       @default(now()) @db.Timestamptz(6)
+  updatedAt      DateTime?       @default(now()) @db.Timestamptz(6)
+  users          Users           @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  userScenarios  UserScenarios[]
+
+  @@map("characters")
 }
 
-model scenarios {
-  id             Int              @id @default(autoincrement())
-  description    String
-  img_url        String?          @db.VarChar(255)
-  created_at     DateTime?        @default(now()) @db.Timestamptz(6)
-  updated_at     DateTime?        @default(now()) @db.Timestamptz(6)
-  user_scenarios user_scenarios[]
+model Scenarios {
+  id            Int             @id @default(autoincrement())
+  description   String
+  imgUrl        String?         @db.VarChar(255)
+  createdAt     DateTime?       @default(now()) @db.Timestamptz(6)
+  updatedAt     DateTime?       @default(now()) @db.Timestamptz(6)
+  userScenarios UserScenarios[]
+
+  @@map("scenarios")
 }
 
-model user_scenarios {
-  id          Int       @id @default(autoincrement())
-  user_id     Int
-  scenario_id Int
+model UserScenarios {
+  id          Int        @id @default(autoincrement())
+  userId      Int        @map("userId")
+  scenarioId  Int        @map("scenarioId")
+  characterId Int        @map("characterId")
   completed   Boolean?
-  created_at  DateTime? @default(now()) @db.Timestamptz(6)
-  updated_at  DateTime? @default(now()) @db.Timestamptz(6)
-  scenarios   scenarios @relation(fields: [scenario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  users       users     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-}
+  createdAt   DateTime?  @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime?  @default(now()) @db.Timestamptz(6)
+  users       Users      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scenarios   Scenarios  @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  characters  Characters @relation(fields: [characterId], references: [id], onDelete: Cascade)
 
-model users {
-  id              Int              @id @default(autoincrement())
-  username        String           @unique @db.VarChar(40)
-  email           String           @unique @db.VarChar(255)
-  hashed_password String           @db.VarChar(255)
-  profile_pic     String?          @db.VarChar(255)
-  created_at      DateTime?        @default(now()) @db.Timestamptz(6)
-  updated_at      DateTime?        @default(now()) @db.Timestamptz(6)
-  characters      characters[]
-  user_scenarios  user_scenarios[]
+  @@map("userScenarios")
 }

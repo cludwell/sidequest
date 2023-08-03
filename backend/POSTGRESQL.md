@@ -13,6 +13,8 @@ sudo service postgresql status
 
 sudo service postgresql start
 
+sudo service postgresql stop
+
 prisma
 next.js
 typscript

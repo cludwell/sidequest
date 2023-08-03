@@ -1,4 +1,4 @@
-import { PrismaClient, users as PrismaUser } from "@prisma/client";
+import { PrismaClient, Users as PrismaUser } from "@prisma/client";
 const prisma = new PrismaClient();
 import NextAuth, { Account } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -29,7 +29,7 @@ export default NextAuth({
         if (!user) throw new Error("No user found!");
         const isValid = await verifyPassword(
           credentials.password,
-          user.hashed_password
+          user.hashedPassword
         );
         if (!isValid) throw new Error("Password doesnt match!");
         store.dispatch(login(user));

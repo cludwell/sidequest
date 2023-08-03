@@ -1,4 +1,4 @@
-import { users as PrismaUser } from "@prisma/client";
+import { Users as PrismaUser } from "@prisma/client";
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // constants
 const SET_USER: string = "session/SET_USER";
@@ -14,9 +14,18 @@ export interface RemoveUserAction {
   type: typeof REMOVE_USER;
 }
 
+export interface User {
+  id: number;
+  username: string;
+  email: string;
+  hashedPassword: string;
+  profilePic: string | null;
+  createdAt: string | null;
+  updatedAt: string | null;
+}
 // Define the shape of the session state managed by the session reducer
 export interface SessionState {
-  user: PrismaUser | null;
+  user: User | null;
   // Add other properties if needed
 }
 interface SignInCredentials {
@@ -24,6 +33,7 @@ interface SignInCredentials {
   email: string;
   password: string;
 }
+
 
 const initialState: SessionState = { user: null };
 
@@ -63,8 +73,8 @@ export const sessionSlice = createSlice({
       const user = action.payload
       state.user = {
         ...user,
-        created_at: user.created_at.toISOString(), // Convert to ISO string
-        updated_at: user.updated_at.toISOString()  // Convert to ISO string
+        createdAt: user.createdAt?.toISOString() || null, // Convert to ISO string
+        updatedAt: user.updatedAt?.toISOString() || null  // Convert to ISO string
       };
     },
     logout(state) {
