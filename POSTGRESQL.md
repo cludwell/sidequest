@@ -15,7 +15,8 @@ sudo service postgresql start
 
 sudo service postgresql stop
 
-prisma
-next.js
-typscript
-tailwind css
+Prisma commands
+    npx prisma migrate reset
+    npx prisma generate
+    npx prisma db push
+    npm run seed
