@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import { Session } from "next-auth";
 // type definitions for useSelector and state
 import { store } from "@/store";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -27,6 +26,7 @@ export default function Header() {
 
   const user = useSelector((state: RootState) => state.session.user);
   console.log("SESSION", user);
+  
   return (
     <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row align-con m-3">

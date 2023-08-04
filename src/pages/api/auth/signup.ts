@@ -28,9 +28,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const result = await prisma.users.create({
         data: {
             username: username,
-            hashed_password: hashedPassword,
+            hashedPassword: hashedPassword,
             email: email,
-            profile_pic: profilePic
+            profilePic: profilePic
         }
     })
     return res.status(201).json({

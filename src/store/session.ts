@@ -15,7 +15,6 @@ export interface RemoveUserAction {
   type: typeof REMOVE_USER;
 }
 
-
 // Define the shape of the session state managed by the session reducer
 export interface SessionState {
   user: User | null;
@@ -25,9 +24,6 @@ interface SignInCredentials {
   email: string;
   password: string;
 }
-
-
-const initialState: SessionState = { user: null };
 
 export const signIn = createAsyncThunk(
   "session/signIn",
@@ -56,21 +52,22 @@ export const signIn = createAsyncThunk(
 );
 
 export const logInRequest = createAsyncThunk(
-  'session/login',
+  "session/login",
   async ({ email, password }: SignInCredentials) => {
-    const res = await fetch('api/auth/login', {
-      method: 'POST',
+    const res = await fetch("api/auth/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-         email, password
-      })
-    })
+        email,
+        password,
+      }),
+    });
 
     if (res.ok) {
       const data = await res.json();
-      return data
+      return data;
     } else if (res.status < 500) {
       const data = await res.json();
       return { errors: data.errors };
@@ -78,22 +75,26 @@ export const logInRequest = createAsyncThunk(
       throw new Error("Server error");
     }
   }
-)
+);
+
+const initialState: SessionState = { user: null };
 
 export const sessionSlice = createSlice({
   name: "session",
   initialState,
   reducers: {
-    login(state = initialState, action: PayloadAction<User>) {
-      console.log('INITIAL STATE', initialState)
-      const user = action.payload
-      state.user = user
-      console.log('HERE IS THE STATE', state.user)
-      console.log('INITIAL STATE', initialState)
-      // return { ...state, user: user }
+    login: (state, action: PayloadAction<User>) => {
+      // console.log("INITIAL STATE", initialState);
+      // const user = action.payload;
+      // console.log("HERE IS THE STATE", state);
+      return {
+          user: action.payload
+       }
     },
-    logout(state) {
-      state.user = null;
+    logout: (state) => {
+      return {
+        user: null
+      }
     },
   },
   extraReducers: (builder) => {
@@ -106,7 +107,7 @@ export const sessionSlice = createSlice({
   },
 });
 
-export const { login, logout } = sessionSlice.actions
+export const { login, logout } = sessionSlice.actions;
 // Union type for all possible actions
 export type SessionActionTypes = SetUserAction | RemoveUserAction;
 

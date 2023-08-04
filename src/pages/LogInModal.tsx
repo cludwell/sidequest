@@ -1,9 +1,6 @@
-import { logInRequest, login } from "@/store/session";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { signIn } from "next-auth/react";
-import { useDispatch } from "react-redux";
-import { AsyncThunkAction, isAsyncThunkAction } from "@reduxjs/toolkit";
-import { AppDispatch } from "@/store";
+
 
 declare global {
   interface Window {

@@ -11,6 +11,7 @@ export default NextAuth({
   session: {
     strategy: "jwt",
   },
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     // Add your authentication providers here
     CredentialsProvider({
@@ -36,9 +37,13 @@ export default NextAuth({
         const userStringDates: User = {
           ...user,
           createdAt: user.createdAt.toISOString(),
-          updatedAt: user.updatedAt.toISOString()
+          updatedAt: user.updatedAt.toISOString(),
+        };
+        try {
+          await store.dispatch(login(userStringDates));
+        } catch (error) {
+          console.error("Error dispatching login action:", error);
         }
-        store.dispatch(login(userStringDates));
         return user;
       },
     }),
@@ -68,7 +73,6 @@ export default NextAuth({
     //   return token
     // },
     jwt: async ({ token, user }) => {
-      token.user && (token.user = user);
       return Promise.resolve(token);
     },
     // session: async({ session, user }) => {
