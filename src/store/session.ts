@@ -1,5 +1,6 @@
 import { Users as PrismaUser } from "@prisma/client";
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { User } from "../../lib/user";
 // constants
 const SET_USER: string = "session/SET_USER";
 const REMOVE_USER: string = "session/REMOVE_USER";
@@ -14,22 +15,13 @@ export interface RemoveUserAction {
   type: typeof REMOVE_USER;
 }
 
-export interface User {
-  id: number;
-  username: string;
-  email: string;
-  hashedPassword: string;
-  profilePic: string | null;
-  createdAt: string | null;
-  updatedAt: string | null;
-}
+
 // Define the shape of the session state managed by the session reducer
 export interface SessionState {
   user: User | null;
   // Add other properties if needed
 }
 interface SignInCredentials {
-  username: string;
   email: string;
   password: string;
 }
@@ -39,24 +31,23 @@ const initialState: SessionState = { user: null };
 
 export const signIn = createAsyncThunk(
   "session/signIn",
-  async ({ username, email, password }: SignInCredentials) => {
-    const response = await fetch("/api/auth/signup", {
+  async ({ email, password }: SignInCredentials) => {
+    const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
         email,
         password,
       }),
     });
 
-    if (response.ok) {
-      const data = await response.json();
+    if (res.ok) {
+      const data = await res.json();
       return data;
-    } else if (response.status < 500) {
-      const data = await response.json();
+    } else if (res.status < 500) {
+      const data = await res.json();
       return { errors: data.errors };
     } else {
       throw new Error("Server error");
@@ -64,18 +55,42 @@ export const signIn = createAsyncThunk(
   }
 );
 
+export const logInRequest = createAsyncThunk(
+  'session/login',
+  async ({ email, password }: SignInCredentials) => {
+    const res = await fetch('api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+         email, password
+      })
+    })
+
+    if (res.ok) {
+      const data = await res.json();
+      return data
+    } else if (res.status < 500) {
+      const data = await res.json();
+      return { errors: data.errors };
+    } else {
+      throw new Error("Server error");
+    }
+  }
+)
+
 export const sessionSlice = createSlice({
   name: "session",
   initialState,
   reducers: {
-    login(state, action: PayloadAction<PrismaUser>) {
-      console.log('ARE WE ENTERING THE REDUCER?', action.payload)
+    login(state = initialState, action: PayloadAction<User>) {
+      console.log('INITIAL STATE', initialState)
       const user = action.payload
-      state.user = {
-        ...user,
-        createdAt: user.createdAt?.toISOString() || null, // Convert to ISO string
-        updatedAt: user.updatedAt?.toISOString() || null  // Convert to ISO string
-      };
+      state.user = user
+      console.log('HERE IS THE STATE', state.user)
+      console.log('INITIAL STATE', initialState)
+      // return { ...state, user: user }
     },
     logout(state) {
       state.user = null;

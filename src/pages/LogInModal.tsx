@@ -1,6 +1,9 @@
-import { login } from "@/store/session";
+import { logInRequest, login } from "@/store/session";
 import React, { useEffect, useRef, useState } from "react";
-import { signIn } from 'next-auth/react';
+import { signIn } from "next-auth/react";
+import { useDispatch } from "react-redux";
+import { AsyncThunkAction, isAsyncThunkAction } from "@reduxjs/toolkit";
+import { AppDispatch } from "@/store";
 
 declare global {
   interface Window {
@@ -17,6 +20,7 @@ export default function LogInModal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
+  // const dispatch = useDispatch<AppDispatch>();
 
   const validate = () => {
     const err: string[] = [];
@@ -32,18 +36,18 @@ export default function LogInModal() {
     validate();
     if (errors.length) return;
     if (email && password) {
-      await signIn('credentials', { email, password });
+      await signIn("credentials", { email, password });
     }
   };
 
-  const demoSignIn: React.MouseEventHandler<HTMLButtonElement>  = async (e) => {
+  const demoSignIn: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
-    setEmail('jerry@seinmail.com');
-    setPassword('password');
+    setEmail("jerry@seinmail.com");
+    setPassword("password");
     if (email && password) {
-      await signIn('credentials', { email, password });
+      await signIn("credentials", { email, password });
     }
-  }
+  };
 
   useEffect(() => {
     const myModal2 = document.getElementById("my_modal_2");
@@ -100,7 +104,9 @@ export default function LogInModal() {
           <button className="btn btn-accent mb-4" type="submit">
             submit
           </button>
-          <button className="btn btn-secondary" onClick={(e) =>demoSignIn(e)}>Demo User</button>
+          <button className="btn btn-secondary" onClick={(e) => demoSignIn(e)}>
+            Demo User
+          </button>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

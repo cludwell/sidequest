@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { verifyPassword } from "../../../../lib/auth";
 import { store } from "@/store";
 import { login, logout } from "../../../store/session";
+import { User } from "../../../../lib/user";
 
 export default NextAuth({
   session: {
@@ -32,7 +33,12 @@ export default NextAuth({
           user.hashedPassword
         );
         if (!isValid) throw new Error("Password doesnt match!");
-        store.dispatch(login(user));
+        const userStringDates: User = {
+          ...user,
+          createdAt: user.createdAt.toISOString(),
+          updatedAt: user.updatedAt.toISOString()
+        }
+        store.dispatch(login(userStringDates));
         return user;
       },
     }),
