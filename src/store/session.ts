@@ -1,6 +1,8 @@
 import { Users as PrismaUser } from "@prisma/client";
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "../../lib/user";
+// import { HYDRATE } from "next-redux-wrapper";
+
 // constants
 const SET_USER: string = "session/SET_USER";
 const REMOVE_USER: string = "session/REMOVE_USER";
@@ -53,8 +55,8 @@ export const signIn = createAsyncThunk(
 
 export const logInRequest = createAsyncThunk(
   "session/login",
-  async ({ email, password }: SignInCredentials) => {
-    const res = await fetch("api/auth/login", {
+  async ({ email, password }: SignInCredentials, {dispatch}) => {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,50 +66,70 @@ export const logInRequest = createAsyncThunk(
         password,
       }),
     });
-
+    console.log("REQUEST HAS BEEN SENT ");
+    setTimeout(()=> console.log('timeout'), 5000)
     if (res.ok) {
+      console.log("IF THE RES COMES BACK OK");
       const data = await res.json();
+      dispatch(sessionSlice.actions.login(data));
       return data;
     } else if (res.status < 500) {
+      console.log("IF THE CODE WAS LESS THAN 500");
       const data = await res.json();
       return { errors: data.errors };
     } else {
+      console.log("THERE WAS AN ERROR WITH THE RESPONSE");
       throw new Error("Server error");
     }
   }
 );
 
-const initialState: SessionState = { user: null };
+// const initialState: SessionState = { user: null };
 
 export const sessionSlice = createSlice({
   name: "session",
-  initialState,
+  initialState: { user: null},
   reducers: {
     login: (state, action: PayloadAction<User>) => {
       // console.log("INITIAL STATE", initialState);
       // const user = action.payload;
-      // console.log("HERE IS THE STATE", state);
+      console.log(
+        "HERE IS THE REDUCER=========================================================="
+      );
       return {
-          user: action.payload
-       }
+        user: action.payload,
+      };
     },
     logout: (state) => {
       return {
-        user: null
-      }
+        user: null,
+      };
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(signIn.fulfilled, (state, action) => {
-      state.user = action.payload;
-    });
-    builder.addCase(signIn.rejected, (state, action) => {
-      console.error("Sign-in failed:", action.error.message);
-    });
-  },
+  // extraReducers: (builder) => {
+  //   builder.addCase(signIn.fulfilled, (state, action) => {
+  //     state.user = action.payload;
+  //   });
+  //   builder.addCase(signIn.rejected, (state, action) => {
+  //     console.error("Sign-in failed:", action.error.message);
+  //   });
+
+  // },
 });
 
-export const { login, logout } = sessionSlice.actions;
+// Handle [HYDRATE] separately outside the createSlice
+// export const hydrateReducer = (state, action) => {
+//   if (action.type === HYDRATE) {
+//     return {
+//       ...state,
+//       ...action.payload.session, // Make sure you're using the correct path to your session state
+//     };
+//   } else {
+//     return state;
+//   }
+// };
+
+// export const { login, logout } = sessionSlice.actions;
 // Union type for all possible actions
 export type SessionActionTypes = SetUserAction | RemoveUserAction;
 

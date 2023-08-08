@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { signIn } from "next-auth/react";
-
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/store";
+import { logInRequest } from "@/store/session";
 
 declare global {
   interface Window {
@@ -17,7 +19,7 @@ export default function LogInModal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
-  // const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>();
 
   const validate = () => {
     const err: string[] = [];
@@ -34,16 +36,20 @@ export default function LogInModal() {
     if (errors.length) return;
     if (email && password) {
       await signIn("credentials", { email, password });
+      await dispatch(logInRequest({ email, password }));
     }
   };
 
   const demoSignIn: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
-    setEmail("jerry@seinmail.com");
-    setPassword("password");
-    if (email && password) {
-      await signIn("credentials", { email, password });
-    }
+
+    await signIn("credentials", {
+      email: "jerry@seinmail.com",
+      password: "password",
+    });
+    await dispatch(
+      logInRequest({ email: "jerry@seinmail.com", password: "password" })
+    );
   };
 
   useEffect(() => {
@@ -74,7 +80,7 @@ export default function LogInModal() {
             className="my-4 border-2 rounded border-slate-300"
           />
           <input
-            type="text"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"

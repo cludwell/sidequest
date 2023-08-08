@@ -3,9 +3,7 @@ const prisma = new PrismaClient();
 import NextAuth, { Account } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { verifyPassword } from "../../../../lib/auth";
-import { store } from "@/store";
-import { login, logout } from "../../../store/session";
-import { User } from "../../../../lib/user";
+import { redirect } from "next/dist/server/api-utils";
 
 export default NextAuth({
   session: {
@@ -20,7 +18,9 @@ export default NextAuth({
       credentials: {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
+
       },
+
       // trying to assign a specific type to the authorize promise results in an error
       authorize: async (credentials, req): Promise<any> => {
         if (!credentials || !credentials.email || !credentials.password)
@@ -34,16 +34,7 @@ export default NextAuth({
           user.hashedPassword
         );
         if (!isValid) throw new Error("Password doesnt match!");
-        const userStringDates: User = {
-          ...user,
-          createdAt: user.createdAt.toISOString(),
-          updatedAt: user.updatedAt.toISOString(),
-        };
-        try {
-          await store.dispatch(login(userStringDates));
-        } catch (error) {
-          console.error("Error dispatching login action:", error);
-        }
+
         return user;
       },
     }),

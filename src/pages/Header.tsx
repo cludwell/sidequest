@@ -7,15 +7,15 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { Session } from "next-auth";
 // type definitions for useSelector and state
-import { store } from "@/store";
 import { useDispatch } from "react-redux";
-export type RootState = ReturnType<typeof store.getState>;
+import { RootState } from "../../lib/rootState";
 
 
 export default function Header() {
-  const dispatch = useDispatch()
   const { data: session, status: loading } = useSession();
   const router = useRouter();
+  const dispatch = useDispatch();
+
 
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
@@ -23,10 +23,8 @@ export default function Header() {
     router.push("/"); // Manually redirect to the home page
   };
 
-
-  const user = useSelector((state: RootState) => state.session.user);
-  console.log("SESSION", user);
-  
+  const user = useSelector(state => state.session)
+  console.log('SESSION',user)
   return (
     <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row align-con m-3">
