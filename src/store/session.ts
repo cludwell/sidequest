@@ -72,8 +72,8 @@ export const logInRequest = createAsyncThunk(
       console.log("IF THE RES COMES BACK OK");
       const data = await res.json();
       sessionSlice.actions.login(data)
-      makeStore().dispatch(sessionSlice.actions.login(data))
-      // dispatch(sessionSlice.actions.login(data));
+      // makeStore().dispatch(sessionSlice.actions.login(data))
+      dispatch(sessionSlice.actions.login(data));
       return data;
     } else if (res.status < 500) {
       console.log("IF THE CODE WAS LESS THAN 500");
