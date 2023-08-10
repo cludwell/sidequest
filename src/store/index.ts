@@ -4,31 +4,31 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { SessionActionTypes, sessionSlice } from "./session"; // Import types for session
 import { createWrapper } from "next-redux-wrapper";
 // Extend the Window interface to declare the Redux DevTools property
-// declare global {
-//   interface Window {
-//     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-//   }
-// }
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
-// let enhancer: StoreEnhancer | undefined;
+let enhancer: StoreEnhancer | undefined;
 
-// if (process.env.NODE_ENV === "production") {
-//   enhancer = applyMiddleware(
-//     thunk as ThunkMiddleware<RootState, SessionActionTypes>
-//   );
-// } else {
-//   const logger = require("redux-logger").default;
-//   const composeEnhancers =
-//     (typeof window !== "undefined" &&
-//       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-//     compose;
-//   enhancer = composeEnhancers(
-//     applyMiddleware(
-//       thunk as ThunkMiddleware<RootState, SessionActionTypes>,
-//       logger as Middleware
-//     )
-//   );
-// }
+if (process.env.NODE_ENV === "production") {
+  enhancer = applyMiddleware(
+    thunk as ThunkMiddleware<RootState, SessionActionTypes>
+  );
+} else {
+  const logger = require("redux-logger").default;
+  const composeEnhancers =
+    (typeof window !== "undefined" &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    compose;
+  enhancer = composeEnhancers(
+    applyMiddleware(
+      thunk as ThunkMiddleware<RootState, SessionActionTypes>,
+      logger as Middleware
+    )
+  );
+}
 
 export const makeStore = () => configureStore({
   reducer: {

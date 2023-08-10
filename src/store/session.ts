@@ -56,7 +56,7 @@ export const signIn = createAsyncThunk(
 
 export const logInRequest = createAsyncThunk(
   "session/login",
-  async ({ email, password }: SignInCredentials) => {
+  async ({ email, password }: SignInCredentials, { dispatch }) => {
     const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
@@ -69,6 +69,7 @@ export const logInRequest = createAsyncThunk(
     });
     console.log("REQUEST HAS BEEN SENT ");
     if (res.ok) {
+      console.log("IF THE RES COMES BACK OK");
       const data = await res.json();
       // sessionSlice.actions.login(data)
       // makeStore().dispatch(sessionSlice.actions.login(data))
@@ -94,9 +95,9 @@ export const sessionSlice = createSlice({
       const user = action.payload;
       state.user = user
       console.log('=============================USER', user)
-      return {
-        user: user
-      }
+      // return {
+      //   user: user
+      // }
     },
     logout: (state) => {
       return {
@@ -104,15 +105,15 @@ export const sessionSlice = createSlice({
       };
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(logInRequest.fulfilled, (state, action) => {
-      // You can update additional state here if needed.
-      state.user = action.payload
-    });
-    builder.addCase(logInRequest.rejected, (state, action) => {
-      console.error("Login failed:", action.error.message);
-    });
-  },
+  // extraReducers: (builder) => {
+  //   builder.addCase(logInRequest.fulfilled, (state, action) => {
+  //     // You can update additional state here if needed.
+  //     state.user = action.payload
+  //   });
+  //   builder.addCase(logInRequest.rejected, (state, action) => {
+  //     console.error("Login failed:", action.error.message);
+  //   });
+  // },
 });
 
 // Handle [HYDRATE] separately outside the createSlice

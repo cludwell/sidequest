@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux";
 import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
 
-
 export default function Header() {
   const { data: session, status: loading } = useSession();
   const router = useRouter();
