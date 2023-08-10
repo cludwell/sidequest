@@ -1,6 +1,7 @@
 import { Users as PrismaUser } from "@prisma/client";
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "../../lib/user";
+import { makeStore } from ".";
 // import { HYDRATE } from "next-redux-wrapper";
 
 // constants
@@ -55,7 +56,7 @@ export const signIn = createAsyncThunk(
 
 export const logInRequest = createAsyncThunk(
   "session/login",
-  async ({ email, password }: SignInCredentials, {dispatch}) => {
+  async ({ email, password }: SignInCredentials, { dispatch }) => {
     const res = await fetch("/api/auth/login", {
       method: "POST",
       headers: {
@@ -67,11 +68,12 @@ export const logInRequest = createAsyncThunk(
       }),
     });
     console.log("REQUEST HAS BEEN SENT ");
-    setTimeout(()=> console.log('timeout'), 5000)
     if (res.ok) {
       console.log("IF THE RES COMES BACK OK");
       const data = await res.json();
-      dispatch(sessionSlice.actions.login(data));
+      sessionSlice.actions.login(data)
+      makeStore().dispatch(sessionSlice.actions.login(data))
+      // dispatch(sessionSlice.actions.login(data));
       return data;
     } else if (res.status < 500) {
       console.log("IF THE CODE WAS LESS THAN 500");
@@ -88,17 +90,15 @@ export const logInRequest = createAsyncThunk(
 
 export const sessionSlice = createSlice({
   name: "session",
-  initialState: { user: null},
+  initialState: { user: null },
   reducers: {
-    login: (state, action: PayloadAction<User>) => {
-      // console.log("INITIAL STATE", initialState);
-      // const user = action.payload;
-      console.log(
-        "HERE IS THE REDUCER=========================================================="
-      );
+    login: (state, action) => {
+      const user = action.payload;
+      state.user = user
+      console.log('=============================USER', user)
       return {
-        user: action.payload,
-      };
+        user: user
+      }
     },
     logout: (state) => {
       return {
@@ -106,15 +106,15 @@ export const sessionSlice = createSlice({
       };
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(signIn.fulfilled, (state, action) => {
-  //     state.user = action.payload;
-  //   });
-  //   builder.addCase(signIn.rejected, (state, action) => {
-  //     console.error("Sign-in failed:", action.error.message);
-  //   });
-
-  // },
+  extraReducers: (builder) => {
+    builder.addCase(logInRequest.fulfilled, (state, action) => {
+      // You can update additional state here if needed.
+      state.user = action.payload
+    });
+    builder.addCase(logInRequest.rejected, (state, action) => {
+      console.error("Login failed:", action.error.message);
+    });
+  },
 });
 
 // Handle [HYDRATE] separately outside the createSlice

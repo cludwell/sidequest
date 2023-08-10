@@ -9,6 +9,7 @@ import { Session } from "next-auth";
 // type definitions for useSelector and state
 import { useDispatch } from "react-redux";
 import { RootState } from "../../lib/rootState";
+import { useEffect } from "react";
 
 
 export default function Header() {
@@ -17,6 +18,10 @@ export default function Header() {
   const dispatch = useDispatch();
 
 
+  useEffect(() => {
+    const loadUser = async () => {
+    }
+  })
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
     // Use 'redirect: false' to prevent automatic redirection
