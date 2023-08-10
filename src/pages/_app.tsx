@@ -9,6 +9,7 @@ import { wrapper } from "@/store";
 
 export default function App({ Component, pageProps, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest)
+  
   return (
     <SessionProvider session={pageProps.session}>
       <Provider store={store}>

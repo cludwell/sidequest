@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         "Invalid input - make sure password is at least 6 characters and/or be sure to include a valid email address",
     });
   }
-  const user = await prisma.users.findUniqueOrThrow({
+  const user = await prisma.users.findUnique({
     where: {
       email: email,
     },
