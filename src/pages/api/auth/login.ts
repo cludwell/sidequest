@@ -4,7 +4,10 @@ import { compare } from "bcryptjs";
 import { Console } from "console";
 const prisma = new PrismaClient();
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function loginHandler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== "POST") return;
   const { email, password } = req.body;
   if (
@@ -28,17 +31,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       message: "No user found with that email.",
     });
   const passwordsMatch: boolean = await compare(password, user.hashedPassword);
-  if (passwordsMatch){
-  return res.status(201).json({
-    id: user.id,
-    username: user.username,
-    email: user.email,
-    profilePic: user.profilePic,
-    createdAt: user.createdAt,
-    updatedAt: user.updatedAt
-   });
-}
-  else
+  if (passwordsMatch) {
+    return res.status(201).json({
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      profilePic: user.profilePic,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    });
+  } else
     return res.status(404).json({
       message: "Password did not match records.",
     });

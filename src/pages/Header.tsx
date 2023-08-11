@@ -10,7 +10,7 @@ import { Session } from "next-auth";
 import { useDispatch } from "react-redux";
 import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
-import { userProfile } from "@/store/session";
+import { authenticate, userProfile } from "@/store/session";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -19,9 +19,12 @@ export default function Header() {
 
   useEffect(() => {
     const loadUser = async () => {
-      dispatch()
+      dispatch(authenticate())
+
     }
-  })
+    if (session) loadUser()
+  }, [session, dispatch])
+
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
     // Use 'redirect: false' to prevent automatic redirection
@@ -29,11 +32,11 @@ export default function Header() {
   };
 
   const user = useSelector(userProfile)
-  console.log('SESSION',user)
+  console.log("User Data:",user)
   return (
     <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row align-con m-3">
-        <Image src={d20} alt="d20 logo" className="w-20 object-cover" />
+        <Image src={d20} alt="d20logo" className="w-20 object-cover" />
         <h1 className="astloch text-7xl ">sideQuest</h1>
       </div>
       {!session ? (
