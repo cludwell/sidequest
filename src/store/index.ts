@@ -14,7 +14,7 @@ let enhancer: StoreEnhancer | undefined;
 
 if (process.env.NODE_ENV === "production") {
   enhancer = applyMiddleware(
-    thunk as ThunkMiddleware<RootState, SessionActionTypes>
+    thunk as ThunkMiddleware<AppState, SessionActionTypes>
   );
 } else {
   const logger = require("redux-logger").default;
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
     compose;
   enhancer = composeEnhancers(
     applyMiddleware(
-      thunk as ThunkMiddleware<RootState, SessionActionTypes>,
+      thunk as ThunkMiddleware<AppState, SessionActionTypes>,
       logger as Middleware
     )
   );
@@ -36,6 +36,7 @@ export const makeStore = () => configureStore({
   },
   devTools: true,
 });
+
 // export const store = makeStore();
 
 export type AppStore = ReturnType<typeof makeStore>;

@@ -10,15 +10,16 @@ import { Session } from "next-auth";
 import { useDispatch } from "react-redux";
 import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
+import { userProfile } from "@/store/session";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
   const router = useRouter();
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     const loadUser = async () => {
+      dispatch()
     }
   })
   const handleSignOut = async () => {
@@ -27,7 +28,7 @@ export default function Header() {
     router.push("/"); // Manually redirect to the home page
   };
 
-  const user = useSelector(state => state.session)
+  const user = useSelector(userProfile)
   console.log('SESSION',user)
   return (
     <div className="flex flex-row justify-between" id="header-container">

@@ -1,8 +1,8 @@
 import { Users as PrismaUser } from "@prisma/client";
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "../../lib/user";
-import { makeStore } from ".";
-// import { HYDRATE } from "next-redux-wrapper";
+import { HYDRATE } from "next-redux-wrapper";
+import { AppState } from ".";
 
 // constants
 const SET_USER: string = "session/SET_USER";
@@ -57,33 +57,34 @@ export const signIn = createAsyncThunk(
 export const logInRequest = createAsyncThunk(
   "session/login",
   async ({ email, password }: SignInCredentials, { dispatch }) => {
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-    console.log("REQUEST HAS BEEN SENT ");
-    if (res.ok) {
-      console.log("IF THE RES COMES BACK OK");
-      const data = await res.json();
-      // sessionSlice.actions.login(data)
-      // makeStore().dispatch(sessionSlice.actions.login(data))
-      return data;
-    } else if (res.status < 500) {
-      console.log("IF THE CODE WAS LESS THAN 500");
-      const data = await res.json();
-      return { errors: data.errors };
-    } else {
-      console.log("THERE WAS AN ERROR WITH THE RESPONSE");
-      throw new Error("Server error");
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        return data; // This data will be automatically dispatched as fulfilled action
+      } else if (res.status < 500) {
+        const data = await res.json();
+        throw new Error(data.errors); // This will trigger the rejected action
+      } else {
+        throw new Error("Server error");
+      }
+    } catch (error) {
+      // Handle errors here if needed
+      throw error;
     }
   }
 );
+
 
 // const initialState: SessionState = { user: null };
 
@@ -95,9 +96,9 @@ export const sessionSlice = createSlice({
       const user = action.payload;
       state.user = user
       console.log('=============================USER', user)
-      // return {
-      //   user: user
-      // }
+      return {
+        user: user
+      }
     },
     logout: (state) => {
       return {
@@ -105,30 +106,18 @@ export const sessionSlice = createSlice({
       };
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(logInRequest.fulfilled, (state, action) => {
-  //     // You can update additional state here if needed.
-  //     state.user = action.payload
-  //   });
-  //   builder.addCase(logInRequest.rejected, (state, action) => {
-  //     console.error("Login failed:", action.error.message);
-  //   });
-  // },
+  extraReducers: (builder) => {
+    builder.addCase(HYDRATE, (state, action) => {
+      // Merge the server-rendered state with the client-side state
+      return { ...state, ...action.payload.session };
+    });
+  },
 });
 
-// Handle [HYDRATE] separately outside the createSlice
-// export const hydrateReducer = (state, action) => {
-//   if (action.type === HYDRATE) {
-//     return {
-//       ...state,
-//       ...action.payload.session, // Make sure you're using the correct path to your session state
-//     };
-//   } else {
-//     return state;
-//   }
-// };
+export const { login, logout } = sessionSlice.actions;
 
-// export const { login, logout } = sessionSlice.actions;
+export const userProfile = (state: AppState) => state.session.user
+
 // Union type for all possible actions
 export type SessionActionTypes = SetUserAction | RemoveUserAction;
 
