@@ -11,11 +11,12 @@ import { useDispatch } from "react-redux";
 import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
 import { authenticate, userProfile } from "@/store/session";
+import { AppDispatch } from "@/store";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
   const router = useRouter();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const loadUser = async () => {

@@ -26,11 +26,13 @@ export interface SessionState {
 interface SignInCredentials {
   email: string;
   password: string;
+  username: string;
+  profilePic: string;
 }
 
 export const signIn = createAsyncThunk(
   "session/signIn",
-  async ({ email, password }: SignInCredentials) => {
+  async ({ email, username, profilePic, password }: SignInCredentials) => {
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
@@ -39,6 +41,8 @@ export const signIn = createAsyncThunk(
       body: JSON.stringify({
         email,
         password,
+        username,
+        profilePic,
       }),
     });
 
@@ -55,25 +59,25 @@ export const signIn = createAsyncThunk(
 );
 
 export const authenticate = createAsyncThunk(
-  'session/authenticate',
+  "session/authenticate",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch('/api/auth/authenticated');
+      const res = await fetch("/api/auth/authenticated");
       if (res.ok) {
         const data = await res.json();
         return data;
       } else {
-        return rejectWithValue('User not authenticated');
+        return rejectWithValue("User not authenticated");
       }
     } catch (error) {
-      return rejectWithValue('Failed to authenticate');
+      return rejectWithValue("Failed to authenticate");
     }
   }
 );
 
 export const logInRequest = createAsyncThunk(
   "session/login",
-  async ({ email, password }: SignInCredentials, { dispatch }) => {
+  async ({ email, password }: LogInCredentials) => {
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",
@@ -102,8 +106,6 @@ export const logInRequest = createAsyncThunk(
   }
 );
 
-
-
 // const initialState: SessionState = { user: null };
 
 export const sessionSlice = createSlice({
@@ -123,12 +125,15 @@ export const sessionSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
       // Merge the server-rendered state with the client-side state
-      return { ...state, ...action.payload.session };
+      return { ...state, user: action.payload.session };
     });
     builder.addCase(authenticate.fulfilled, (state, action) => {
       state.user = action.payload;
     });
-    builder.addCase(authenticate.rejected, (state, action) => {
+    builder.addCase(signIn.fulfilled, (state, action) => {
+      state.user = action.payload;
+    });
+    builder.addCase(signIn.rejected, (state, action) => {
       state.user = null;
     });
   },
@@ -136,7 +141,7 @@ export const sessionSlice = createSlice({
 
 export const { login, logout } = sessionSlice.actions;
 
-export const userProfile = (state: AppState) => state.session.user
+export const userProfile = (state: AppState) => state.session.user;
 
 // Union type for all possible actions
 export type SessionActionTypes = SetUserAction | RemoveUserAction;

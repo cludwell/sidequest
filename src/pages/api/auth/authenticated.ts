@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getToken } from "next-auth/jwt";
 import { PrismaClient, Users as PrismaUser } from "@prisma/client";
+import { token } from "../../../../lib/token";
 const prisma = new PrismaClient();
 
 export default async function authenticatedHandler(
@@ -11,8 +12,8 @@ export default async function authenticatedHandler(
   const token = (await getToken({
     req,
     secret: process.env.NEXTAUTH_SECRET,
-  })) as { id: number };
-  // console.log('===========================', token)
+  })) as token;
+  console.log('===========================', token)
   if (!token) return null;
   const userId = parseInt(token.sub);
   const user = await prisma.users.findUnique({

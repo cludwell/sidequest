@@ -76,7 +76,7 @@ export default function LogInModal() {
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Credential"
+            placeholder="Email"
             className="my-4 border-2 rounded border-slate-300"
           />
           <input
