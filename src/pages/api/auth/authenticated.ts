@@ -13,7 +13,7 @@ export default async function authenticatedHandler(
     req,
     secret: process.env.NEXTAUTH_SECRET,
   })) as token;
-  console.log('===========================', token)
+  // console.log('===========================', token)
   if (!token) return null;
   const userId = parseInt(token.sub);
   const user = await prisma.users.findUnique({

@@ -106,8 +106,6 @@ export const logInRequest = createAsyncThunk(
   }
 );
 
-// const initialState: SessionState = { user: null };
-
 export const sessionSlice = createSlice({
   name: "session",
   initialState: { user: null },

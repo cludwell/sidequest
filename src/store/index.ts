@@ -3,6 +3,7 @@ import thunk, { ThunkMiddleware } from "redux-thunk";
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { SessionActionTypes, sessionSlice } from "./session"; // Import types for session
 import { createWrapper } from "next-redux-wrapper";
+import { charactersSlice } from "./characters";
 // Extend the Window interface to declare the Redux DevTools property
 declare global {
   interface Window {
@@ -33,6 +34,7 @@ if (process.env.NODE_ENV === "production") {
 export const makeStore = () => configureStore({
   reducer: {
     session: sessionSlice.reducer,
+    characters: charactersSlice.reducer
   },
   devTools: true,
 });
