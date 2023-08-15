@@ -41,6 +41,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       profilePic: profilePic,
     },
   });
+  console.log('================================', res)
   return res.status(201).json({
     result,
   });

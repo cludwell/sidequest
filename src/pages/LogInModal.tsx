@@ -10,11 +10,6 @@ declare global {
   }
 }
 
-type LoginResult = {
-  message?: string;
-  errors?: string[];
-};
-
 export default function LogInModal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +37,6 @@ export default function LogInModal() {
 
   const demoSignIn: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
-
     await signIn("credentials", {
       email: "jerry@seinmail.com",
       password: "password",
