@@ -12,7 +12,7 @@ import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
 import { authenticate, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
-import { allCharactersState } from "@/store/characters";
+import { allCharactersRequest, allCharactersState } from "@/store/characters";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -22,7 +22,7 @@ export default function Header() {
   useEffect(() => {
     const loadUser = async () => {
       dispatch(authenticate())
-
+      dispatch(allCharactersRequest())
     }
     if (session) loadUser()
   }, [session, dispatch])
