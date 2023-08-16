@@ -123,7 +123,7 @@ export const sessionSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
       // Merge the server-rendered state with the client-side state
-      return { ...state, user: action.payload.session };
+      return { ...state, user: action.payload.session.user };
     });
     builder.addCase(authenticate.fulfilled, (state, action) => {
       state.user = action.payload;

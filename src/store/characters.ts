@@ -1,5 +1,12 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
+import { AppState } from ".";
+import { HydrateAction } from "../../lib/hydrateAction";
+
+// interface HydrateAction extends PayloadAction {
+//     payload: AppState; // Change this to match your AppState type
+//     type: typeof HYDRATE;
+//   }
 
 export const allCharactersRequest = createAsyncThunk(
   "characters/loadAllCharacters",
@@ -21,11 +28,14 @@ export const charactersSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(HYDRATE, (state, action) => {
-      return { ...state, allCharacters: action.payload };
+    builder.addCase(HYDRATE, (state, action: HydrateAction) => {
+      return { ...state, allCharacters: action.payload.characters.allCharacters };
     });
-    builder.addCase(loadAllCharacters.fulfilled, (state, action) => {
+    builder.addCase(allCharactersRequest.fulfilled, (state, action) => {
         state.allCharacters = action.payload
     });
   },
 });
+
+export const allCharactersState = (state: AppState) => state.characters.allCharacters
+export const userCharactersState = (state: AppState) => state.characters.userCharacters

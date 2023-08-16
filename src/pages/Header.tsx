@@ -12,6 +12,7 @@ import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
 import { authenticate, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
+import { allCharactersState } from "@/store/characters";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -33,7 +34,9 @@ export default function Header() {
   };
 
   const user = useSelector(userProfile)
+  const characters = useSelector(allCharactersState)
   console.log("User Data:",user)
+  console.log("Character Data:", characters)
   return (
     <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row align-con m-3">

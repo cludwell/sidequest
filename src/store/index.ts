@@ -4,6 +4,7 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { SessionActionTypes, sessionSlice } from "./session"; // Import types for session
 import { createWrapper } from "next-redux-wrapper";
 import { charactersSlice } from "./characters";
+
 // Extend the Window interface to declare the Redux DevTools property
 declare global {
   interface Window {
