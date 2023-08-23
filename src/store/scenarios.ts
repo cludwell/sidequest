@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
+import { AppState } from ".";
 
 export const loadScenarios = createAsyncThunk(
   "scenarios/loadScenarios",
@@ -11,6 +12,7 @@ export const loadScenarios = createAsyncThunk(
     }
   }
 );
+
 export const scenarioSlice = createSlice({
   name: "scenarios",
   initialState: { scenarios: null },
@@ -34,3 +36,5 @@ export const scenarioSlice = createSlice({
     });
   },
 });
+
+export const scenarioState = (state: AppState) => state.scenarios

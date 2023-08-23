@@ -11,6 +11,9 @@ export interface HydrateAction extends PayloadAction {
         userCharacters: null;
         allCharacters: null;
       };
+      scenarios: {
+        scenarios: null
+      }
     };
     type: typeof HYDRATE;
   }

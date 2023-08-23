@@ -49,13 +49,13 @@ export const charactersSlice = createSlice({
     builder.addCase(allCharactersRequest.fulfilled, (state, action) => {
       state.allCharacters = action.payload;
     });
-    builder.addCase(allCharactersRequest.rejected, (state, action) => {
+    builder.addCase(allCharactersRequest.rejected, (state) => {
       state.allCharacters = null;
     });
     builder.addCase(userCharactersRequest.fulfilled, (state, action) => {
       state.userCharacters = action.payload;
     });
-    builder.addCase(userCharactersRequest.rejected, (state, action) => {
+    builder.addCase(userCharactersRequest.rejected, (state) => {
       state.userCharacters = null;
     });
   },

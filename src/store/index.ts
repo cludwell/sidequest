@@ -4,6 +4,7 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { SessionActionTypes, sessionSlice } from "./session"; // Import types for session
 import { createWrapper } from "next-redux-wrapper";
 import { charactersSlice } from "./characters";
+import { scenarioSlice } from "./scenarios";
 
 // Extend the Window interface to declare the Redux DevTools property
 declare global {
@@ -32,19 +33,21 @@ if (process.env.NODE_ENV === "production") {
   );
 }
 
-export const makeStore = () => configureStore({
-  reducer: {
-    session: sessionSlice.reducer,
-    characters: charactersSlice.reducer
-  },
-  devTools: true,
-});
+export const makeStore = () =>
+  configureStore({
+    reducer: {
+      session: sessionSlice.reducer,
+      characters: charactersSlice.reducer,
+      scenarios: scenarioSlice.reducer,
+    },
+    devTools: true,
+  });
 
 // export const store = makeStore();
 
 export type AppStore = ReturnType<typeof makeStore>;
 export type AppState = ReturnType<AppStore["getState"]>;
-export type AppDispatch = AppStore['dispatch']; // Define the AppDispatch type
+export type AppDispatch = AppStore["dispatch"]; // Define the AppDispatch type
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   AppState,

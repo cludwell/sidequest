@@ -9,7 +9,7 @@ export default async function handler(
   if (req.method === "GET") {
     try {
       const scenarios = await prisma.scenarios.findMany({});
-      return res.status(200).json({ scenarios });
+      return res.status(200).json({ ...scenarios });
     } catch (error) {
       console.error("Error fetching characters:", error);
       return res
