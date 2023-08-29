@@ -1,7 +1,7 @@
 import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -9,6 +9,7 @@ export default function CreateCharacter() {
   const { data: session, status: loading } = useSession();
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
 
   useEffect(() => {
     const loadCharacters = async () => {
@@ -19,6 +20,8 @@ export default function CreateCharacter() {
   }, [dispatch]);
 
   const characters = useSelector(allCharactersState);
+
+  const handlePremade = () => router.push("/characters/premade");
 
   if (!hasLoaded || !characters) return "Loading";
 
@@ -79,7 +82,7 @@ export default function CreateCharacter() {
             </p>
             <div className="card-actions justify-end"></div>
           </div>
-          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
+          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end" onClick={handlePremade}>
             START BROWSING
             <svg
               xmlns="http://www.w3.org/2000/svg"

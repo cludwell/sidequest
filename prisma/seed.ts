@@ -28,6 +28,7 @@ async function seedUsers() {
           email: "jerry@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
+          profilePic: "https://i.imgur.com/cR6kAVj.jpg",
         },
         {
           username: "Elaine",
@@ -213,7 +214,7 @@ async function seedScenarios() {
           imgUrl: "https://i.imgur.com/k4wzG7U.jpg",
         },
         {
-                    // scenario 6
+          // scenario 6
           description: `Title: Shadows Over the Silent Bridge
 
     Adventure Prompt: In the quaint village of Moonhaven, nestled amidst the beauty of Elaria, a once-thriving inn stands as a solemn reminder of the bandit-infested Shadowgate Bridge nearby. The innkeeper, burdened by fear and desperation, pleads for your help to liberate the bridge from the clutches of the menacing bandits. With innocent lives at stake, you embark on a quest to answer the innkeeper's plea and bring peace to Moonhaven.

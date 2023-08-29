@@ -54,12 +54,12 @@ export default function Header() {
           <Drawer />
         </div>
       ) : (
-        <>
+        <div className="m-4 content-center flex flex-row">
           <button className="btn m-4 btn-neutral" onClick={handleSignOut}>
             Logout
           </button>
           <Drawer />
-        </>
+        </div>
       )}
     </div>
   );

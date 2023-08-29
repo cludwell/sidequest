@@ -1,6 +1,10 @@
+import { userProfile } from "@/store/session";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 export default function Drawer() {
+
+  const user = useSelector(userProfile)
   return (
     <div className="drawer m-2">
       <input id="my-drawer" type="checkbox" className="drawer-toggle peer" />
@@ -35,7 +39,14 @@ export default function Drawer() {
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
-          <h1 className="astloch text-6xl">sideQuest</h1>
+          <div>
+            <h1 className="astloch text-6xl">sideQuest</h1>
+            <div className="avatar">
+              <div className="w-24 mask mask-hexagon">
+                {/* <img src={} /> */}
+              </div>
+            </div>
+          </div>
           <li>
             <Link href={`/characters`}>Create Character</Link>
           </li>

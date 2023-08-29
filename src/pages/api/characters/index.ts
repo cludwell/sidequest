@@ -8,14 +8,18 @@ export default async function handler(
 ) {
   if (req.method === "GET") {
     try {
-      const characters = await prisma.userScenarios.findMany({
+      const characters = await prisma.characters.findMany({
         include: {
-          characters: true,
+          userScenarios: true,
           users: true,
-          scenarios: true,
+          // scenarios: true,
         },
       });
-      return res.status(200).json({ ...characters });
+      const payload = {};
+      for (const character of characters) {
+        payload[character.id] = character;
+      }
+      return res.status(200).json({ ...payload });
     } catch (error) {
       console.error("Error fetching characters:", error);
       return res
