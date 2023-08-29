@@ -54,7 +54,7 @@ export default function LogInModal() {
   return (
     <>
       <button
-        className="btn btn-accent mx-4"
+        className="btn btn-accent m-2"
         onClick={() => window.my_modal_2.showModal()}
       >
         log in

@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import { Session } from "next-auth";
 // type definitions for useSelector and state
 import { useDispatch } from "react-redux";
-import { RootState } from "../../lib/rootState";
 import { useEffect } from "react";
 import { authenticate, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
@@ -44,9 +43,9 @@ export default function Header() {
   console.log("Scenario Data:", scenarios);
   return (
     <div className="flex flex-row justify-between" id="header-container">
-      <div className="flex flex-row align-con m-3">
-        <Image src={d20} alt="d20logo" className="w-20 object-cover" />
-        <h1 className="astloch text-7xl ">sideQuest</h1>
+      <div className="flex flex-row m-3 justify-center items-center">
+        <Image src={d20} alt="d20logo" className="w-16 object-cover" />
+        <h1 className="astloch text-6xl hidden md:block">sideQuest</h1>
       </div>
       {!session ? (
         <div className="m-4 content-center flex flex-row">
@@ -56,11 +55,10 @@ export default function Header() {
         </div>
       ) : (
         <>
-        <button className="btn m-4 btn-neutral" onClick={handleSignOut}>
-          Logout
-        </button>
-        <Drawer />
-
+          <button className="btn m-4 btn-neutral" onClick={handleSignOut}>
+            Logout
+          </button>
+          <Drawer />
         </>
       )}
     </div>
