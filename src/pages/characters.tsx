@@ -9,7 +9,7 @@ export default function CreateCharacter() {
   const { data: session, status: loading } = useSession();
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-  
+
   useEffect(() => {
     const loadCharacters = async () => {
       dispatch(allCharactersRequest());
@@ -48,12 +48,19 @@ export default function CreateCharacter() {
           </div>
           <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
             START BUILDING
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
               <path
-                d="M8 3L16 12L8 21"
-                stroke="currentColor"
-                strokeWidth="2"
-              ></path>
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+              />
             </svg>
           </button>
         </div>
@@ -74,12 +81,19 @@ export default function CreateCharacter() {
           </div>
           <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
             START BROWSING
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
               <path
-                d="M8 3L16 12L8 21"
-                stroke="currentColor"
-                strokeWidth="2"
-              ></path>
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+              />
             </svg>
           </button>
         </div>
