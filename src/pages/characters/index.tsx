@@ -26,9 +26,9 @@ export default function CreateCharacter() {
 
   if (!hasLoaded || !characters) return "Loading";
 
-  console.log('broken', characters[2].imgUrl)
+  console.log("broken", characters[2].imgUrl);
   return (
-    <main className={`flex min-h-screen flex-col items-center p-24`}>
+    <main className={`flex min-h-screen flex-col items-center p-16`}>
       {/* title */}
       <h1 className="text-3xl federant font-bold">Character Creation Method</h1>
       <h2>Choose how you would like to create your character</h2>
@@ -41,12 +41,8 @@ export default function CreateCharacter() {
         {/* card to display character selections */}
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
           <figure>
-          {characters[7].imgUrl && (
-              <img
-                src={characters[7].imgUrl}
-                alt="character preview"
-
-              />
+            {characters[6].imgUrl && (
+              <img src={characters[6].imgUrl} alt="character preview" />
             )}
           </figure>
           <div className="card-body">
@@ -74,12 +70,8 @@ export default function CreateCharacter() {
         </div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
           <figure>
-            {characters[4].imgUrl && (
-              <img
-                src={characters[4].imgUrl}
-                alt="character preview"
-
-              />
+            {characters[7].imgUrl && (
+              <img src={characters[7].imgUrl} alt="character preview" />
             )}
           </figure>
           <div className="card-body">
