@@ -2,12 +2,13 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 import { AppState } from ".";
 import { HydrateAction } from "../../lib/hydrateAction";
-import build from "next/dist/build";
+import { CharactersState } from "../../lib/charactersState";
 
-// interface HydrateAction extends PayloadAction {
-//     payload: AppState; // Change this to match your AppState type
-//     type: typeof HYDRATE;
-//   }
+
+type CharactersSliceState = {
+  userCharacters: CharactersState | null;
+  allCharacters: CharactersState | null;
+};
 
 export const allCharactersRequest = createAsyncThunk(
   "characters/loadAllCharacters",
@@ -31,9 +32,14 @@ export const userCharactersRequest = createAsyncThunk(
   }
 );
 
+const initialState: CharactersSliceState = {
+  userCharacters: null,
+  allCharacters: null,
+};
+
 export const charactersSlice = createSlice({
   name: "characters",
-  initialState: { userCharacters: null, allCharacters: null },
+  initialState: initialState,
   reducers: {
     loadAllCharacters: (state, action) => {
       state.allCharacters = action.payload;

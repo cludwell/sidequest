@@ -1,6 +1,7 @@
 import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,6 +26,7 @@ export default function CreateCharacter() {
 
   if (!hasLoaded || !characters) return "Loading";
 
+  console.log('broken', characters[2].imgUrl)
   return (
     <main className={`flex min-h-screen flex-col items-center p-24`}>
       {/* title */}
@@ -39,10 +41,13 @@ export default function CreateCharacter() {
         {/* card to display character selections */}
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
           <figure>
-            <img
-              src={characters && characters[0]?.characters.imgUrl}
-              alt="character preview"
-            />
+          {characters[7].imgUrl && (
+              <img
+                src={characters[7].imgUrl}
+                alt="character preview"
+
+              />
+            )}
           </figure>
           <div className="card-body">
             <h2 className="card-title">STANDARD</h2>
@@ -69,10 +74,13 @@ export default function CreateCharacter() {
         </div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
           <figure>
-            <img
-              src={characters && characters[2]?.characters.imgUrl}
-              alt="character preview"
-            />
+            {characters[4].imgUrl && (
+              <img
+                src={characters[4].imgUrl}
+                alt="character preview"
+
+              />
+            )}
           </figure>
           <div className="card-body">
             <h2 className="card-title">PREMADE</h2>
@@ -82,7 +90,10 @@ export default function CreateCharacter() {
             </p>
             <div className="card-actions justify-end"></div>
           </div>
-          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end" onClick={handlePremade}>
+          <button
+            className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end"
+            onClick={handlePremade}
+          >
             START BROWSING
             <svg
               xmlns="http://www.w3.org/2000/svg"

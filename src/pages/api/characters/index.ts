@@ -15,7 +15,7 @@ export default async function handler(
           // scenarios: true,
         },
       });
-      const payload = {};
+      const payload: any = {};
       for (const character of characters) {
         payload[character.id] = character;
       }

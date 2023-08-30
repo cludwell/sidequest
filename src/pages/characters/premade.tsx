@@ -3,6 +3,7 @@ import { allCharactersRequest, allCharactersState } from "@/store/characters";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 
 export default function PremadeCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -18,20 +19,25 @@ export default function PremadeCharacters() {
 
   const characters = useSelector(allCharactersState);
 
-  if (!characters) return "Loading";
+  if (!characters || !hasLoaded) return "Loading";
+
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <h1 className="text-3xl federant font-bold">PreMade Characters</h1>
       <div className="divider" />
 
-      <div className="carousel carousel-end rounded-box">
+      <div className="carousel carousel-end rounded-box w-96">
         <div className="card w-96 glass carousel-item">
           <figure>
-            <img
-              src={characters[1].imgUrl}
-              alt="character portrait"
-              className="h-100"
-            />
+            {characters[1].imgUrl && (
+                <Image
+                  src={characters[1].imgUrl}
+                  alt="character portrait"
+                  className="h-100"
+                  width={400}
+                  height={600}
+                />
+            )}
           </figure>
           <div className="card-body h-60 p-4">
             <h2 className="card-title">{characters[1].name}</h2>
@@ -43,6 +49,7 @@ export default function PremadeCharacters() {
             </div>
           </div>
         </div>
+
         {/* carousel closing */}
       </div>
     </main>
