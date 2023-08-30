@@ -32,71 +32,43 @@ export default function PremadeCharacters() {
     <main className="flex min-h-screen flex-col items-center p-">
       <h1 className="text-3xl federant font-bold">Pre-made Characters</h1>
       <div className="divider" />
-
-      <div className="carousel carousel-end rounded-box w-3/6">
-        {/* carousel items follow */}
-        <div className="card w-96 glass carousel-item">
-          <figure>
-            {characters[1].imgUrl && (
-              <Image
-                src={characters[1].imgUrl}
-                alt="character portrait"
-                className="h-100 aspect-square object-cover"
-                width={1000}
-                height={1000}
-              />
+      <div className="flex flex-wrap w-4/6 justify-center">
+        {Object.values(characters).map((char, i) => (
+          <div className="card bg-base-100 shadow-xl w-96 m-4" key={`char${i}`}>
+            {char.imgUrl && (
+              <figure>
+                <Image
+                  src={char.imgUrl}
+                  alt="portrait"
+                  height={400}
+                  width={400}
+                  className="object-cover max-h-fit aspect-square"
+                />
+              </figure>
             )}
-          </figure>
-          <div className="card-body h-60 p-4">
+                      <div className="card-body p-4">
             <h2 className="card-title">{characters[1].name}</h2>
             <p className="text-ellipsis text-xs">{characters[1].background}</p>
           </div>
-          <div className="card-actions justify-end sticky">
-            <button className="btn btn-primary">START GAME</button>
-          </div>
-        </div>
-        <div className="card w-96 glass carousel-item">
-          <figure>
-            {characters[1].imgUrl && (
-              <Image
-                src={characters[1].imgUrl}
-                alt="character portrait"
-                className="h-100 aspect-square object-cover"
-                width={1000}
-                height={1000}
+          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
+            START BUILDING
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
               />
-            )}
-          </figure>
-          <div className="card-body h-60 p-4">
-            <h2 className="card-title">{characters[1].name}</h2>
-            <p className="text-ellipsis text-xs">{characters[1].background}</p>
+            </svg>
+          </button>
           </div>
-          <div className="card-actions justify-end sticky">
-            <button className="btn btn-primary">START GAME</button>
-          </div>
-        </div>
-        <div className="card w-96 glass carousel-item">
-          <figure>
-            {characters[1].imgUrl && (
-              <Image
-                src={characters[1].imgUrl}
-                alt="character portrait"
-                className="h-100 aspect-square object-cover"
-                width={1000}
-                height={1000}
-              />
-            )}
-          </figure>
-          <div className="card-body h-60 p-4">
-            <h2 className="card-title">{characters[1].name}</h2>
-            <p className="text-ellipsis text-xs">{characters[1].background}</p>
-          </div>
-          <div className="card-actions justify-end sticky">
-            <button className="btn btn-primary">START GAME</button>
-          </div>
-        </div>
-
-        {/* carousel closing */}
+        ))}
       </div>
     </main>
   );

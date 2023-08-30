@@ -23,7 +23,7 @@ export const allCharactersRequest = createAsyncThunk(
 
 export const userCharactersRequest = createAsyncThunk(
   `characters/userCharacters`,
-  async (userId) => {
+  async (userId: number) => {
     const res = await fetch(`/api/characters/${userId}`);
     if (res.ok) {
       const data = await res.json();
