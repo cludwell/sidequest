@@ -51,7 +51,7 @@ export default function PremadeCharacters() {
             <p className="text-ellipsis text-xs">{characters[1].background}</p>
           </div>
           <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
-            START BUILDING
+            START ADVENTURE
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
