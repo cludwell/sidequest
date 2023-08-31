@@ -11,19 +11,19 @@ export default async function handler(
     if (Array.isArray(userId)) {
       userId = userId[0];
     }
-    if (!userId) return;
-    const charactersAndCampaigns = await prisma.userScenarios.findMany({
+    if (!userId) return res.status(403).json({
+      error: 'Unauthorized'
+    });
+    const characters = await prisma.characters.findMany({
       where: {
         userId: parseInt(userId),
       },
       include: {
-        characters: true,
-        users: true,
-        scenarios: true,
+        userScenarios: true,
       },
     });
     return res.status(200).json({
-      ...charactersAndCampaigns,
+      ...characters,
     });
   }
 }

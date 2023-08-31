@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
 import { makeStore } from "@/store";
 import { wrapper } from "@/store";
+import Footer from "./Footer";
 
 export default function App({ Component, pageProps, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest)
@@ -15,8 +16,8 @@ export default function App({ Component, pageProps, ...rest }: AppProps) {
       <Provider store={store}>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </Provider>
     </SessionProvider>
   );
 }
-

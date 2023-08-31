@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Loading from "../Loading";
 
 export default function CreateCharacter() {
   const { data: session, status: loading } = useSession();
@@ -23,10 +24,10 @@ export default function CreateCharacter() {
   const characters = useSelector(allCharactersState);
 
   const handlePremade = () => router.push("/characters/premade");
+  const handleCreate = () => router.push("/characters/new");
 
-  if (!hasLoaded || !characters) return "Loading";
+  if (!hasLoaded || !characters) return <Loading />;
 
-  console.log("broken", characters[2].imgUrl);
   return (
     <main className={`flex min-h-screen flex-col items-center p-16`}>
       {/* title */}
@@ -42,7 +43,12 @@ export default function CreateCharacter() {
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
           <figure>
             {characters[6].imgUrl && (
-              <img src={characters[6].imgUrl} alt="character preview" />
+              <Image
+                height={800}
+                width={800}
+                src={characters[6].imgUrl}
+                alt="character preview"
+              />
             )}
           </figure>
           <div className="card-body">
@@ -50,7 +56,9 @@ export default function CreateCharacter() {
             <p>Create a character using a step-by-step approach</p>
             <div className="card-actions justify-end"></div>
           </div>
-          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
+          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end"
+                      onClick={handleCreate}
+                      >
             START BUILDING
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,10 +76,16 @@ export default function CreateCharacter() {
             </svg>
           </button>
         </div>
+        <div className="divider lg:divider-horizontal">OR</div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
           <figure>
             {characters[7].imgUrl && (
-              <img src={characters[7].imgUrl} alt="character preview" />
+              <Image
+                height={800}
+                width={800}
+                src={characters[7].imgUrl}
+                alt="character preview"
+              />
             )}
           </figure>
           <div className="card-body">

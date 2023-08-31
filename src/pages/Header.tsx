@@ -14,7 +14,7 @@ import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
 import { loadScenarios, scenarioState } from "@/store/scenarios";
 import Drawer from "./Drawer";
-
+import Link from "next/link";
 export default function Header() {
   const { data: session, status: loading } = useSession();
   const router = useRouter();
@@ -38,14 +38,14 @@ export default function Header() {
   const user = useSelector(userProfile);
   const characters = useSelector(allCharactersState);
   const scenarios = useSelector(scenarioState);
-  console.log("User Data:", user);
-  console.log("Character Data:", characters);
-  console.log("Scenario Data:", scenarios);
+  // console.log("User Data:", user);
+  // console.log("Character Data:", characters);
   return (
     <div className="flex flex-row justify-between" id="header-container">
       <div className="flex flex-row m-3 justify-center items-center">
         <Image src={d20} alt="d20logo" className="w-16 object-cover" />
-        <h1 className="astloch text-6xl hidden md:block">sideQuest</h1>
+        <Link href={'/'} className="astloch text-6xl hidden md:block">sideQuest</Link>
+
       </div>
       {!session ? (
         <div className="m-4 content-center flex flex-row">
@@ -55,7 +55,7 @@ export default function Header() {
         </div>
       ) : (
         <div className="m-4 content-center flex flex-row">
-          <button className="btn m-4 btn-neutral" onClick={handleSignOut}>
+          <button className="btn m-auto btn-neutral" onClick={handleSignOut}>
             Logout
           </button>
           <Drawer />
