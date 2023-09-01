@@ -41,7 +41,7 @@ export default function Header() {
   // console.log("User Data:", user);
   // console.log("Character Data:", characters);
   return (
-    <div className="flex flex-row justify-between" id="header-container">
+    <div className="flex flex-row justify-between drop-shadow-xl" id="header-container">
       <div className="flex flex-row m-3 justify-center items-center">
         <Image src={d20} alt="d20logo" className="w-16 object-cover" />
         <Link href={'/'} className="astloch text-6xl hidden md:block">sideQuest</Link>

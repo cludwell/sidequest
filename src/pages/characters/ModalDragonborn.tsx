@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import dragonborn from '../../../public/images/dragonborn.jpeg'
 
 declare global {
@@ -9,6 +9,7 @@ declare global {
 }
 
 export default function ModalDragonBorn() {
+  const [detail, setDetail] = useState<String | null>(null)
   useEffect(() => {
     const myModal3 = document.getElementById("my_modal_3");
     if (myModal3) window.my_modal_3 = myModal3;
