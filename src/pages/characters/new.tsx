@@ -19,6 +19,7 @@ import ModalHalfElf from "./ModalHalfElf";
 import ModalHalfOrc from "./ModalHalfOrc";
 import ModalLightfootHalfing from "./ModalLightfootHalfling";
 import ModalStoutHalfing from "./ModalStoutHalfling";
+import ModalHuman from "./ModalHuman";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
@@ -108,6 +109,7 @@ export default function NewCharacter() {
         <ModalStoutHalfing />
         </div>
       </div>
+      <ModalHuman />
       {/* <div className="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
