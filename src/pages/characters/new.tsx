@@ -20,13 +20,16 @@ import ModalHalfOrc from "./ModalHalfOrc";
 import ModalLightfootHalfing from "./ModalLightfootHalfling";
 import ModalStoutHalfing from "./ModalStoutHalfling";
 import ModalHuman from "./ModalHuman";
+import ModalTiefling from "./ModalTiefling";
+import ModalAasimar from "./ModalAasimar";
+import ModalDrow from "./ModalDrow";
+import ModalDuergar from "./ModalDuergar";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const [progress, setProgress] = useState(5);
   const [race, setRace] = useState(null);
-  const [selected, setSelected] = useState(true);
-  const accordionClick = async () => setSelected(prev=> !prev)
+  const [selected, setSelected] = useState<String | null>(null);
   return (
     <main className="flex min-h-screen flex-col items-center p-16">
       <progress
@@ -35,12 +38,17 @@ export default function NewCharacter() {
         max="100"
       />
       <ModalAarakocra />
+      <ModalAasimar />
       <ModalDragonBorn />
-
       <div className="collapse collapse-plus bg-base-200 m-1">
-        <input type="radio" name="my-accordion-3" checked={selected} onClick={accordionClick} />
+        <input
+          type="radio"
+          name="my-accordion-3"
+          checked={selected === "DWARF"}
+          onClick={() => setSelected("DWARF")}
+        />
         <div className="collapse-title text-xl font-bold flex items-center">
-        <Image
+          <Image
             src={dwarf}
             className="object-cover aspect-square rounded-md m-2"
             alt="portrait preview"
@@ -50,14 +58,20 @@ export default function NewCharacter() {
           DWARF
         </div>
         <div className="collapse-content">
+          <ModalDuergar />
           <ModalHillDwarf />
           <ModalMountainDwarf />
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1">
-        <input type="radio" name="my-accordion-3" />
+        <input
+          type="radio"
+          name="my-accordion-3"
+          checked={selected === "ELF"}
+          onClick={() => setSelected("ELF")}
+        />
         <div className="collapse-title text-xl font-bold flex items-center">
-        <Image
+          <Image
             src={elf}
             className="object-cover aspect-square rounded-md m-2"
             alt="portrait preview"
@@ -67,15 +81,21 @@ export default function NewCharacter() {
           ELF
         </div>
         <div className="collapse-content">
+          <ModalEladrinElf />
+          <ModalDrow />
           <ModalHighElf />
           <ModalWoodElf />
-          <ModalEladrinElf />
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1">
-        <input type="radio" name="my-accordion-3" />
+        <input
+          type="radio"
+          name="my-accordion-3"
+          checked={selected === "GNOME"}
+          onClick={() => setSelected("GNOME")}
+        />
         <div className="collapse-title text-xl font-bold flex items-center">
-        <Image
+          <Image
             src={gnome}
             className="object-cover aspect-square rounded-md m-2"
             alt="portrait preview"
@@ -92,10 +112,15 @@ export default function NewCharacter() {
       <ModalGoliath />
       <ModalHalfElf />
       <ModalHalfOrc />
-      <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
+      <div className="collapse collapse-plus bg-base-200 m-1">
+        <input
+          type="radio"
+          name="my-accordion-3"
+          checked={selected === "HALFLING"}
+          onClick={() => setSelected("HALFLING")}
+        />
         <div className="collapse-title text-xl font-bold flex items-center">
-        <Image
+          <Image
             src={halfling}
             className="object-cover aspect-square rounded-md m-2"
             alt="portrait preview"
@@ -105,11 +130,12 @@ export default function NewCharacter() {
           HALFLING
         </div>
         <div className="collapse-content">
-        <ModalLightfootHalfing />
-        <ModalStoutHalfing />
+          <ModalLightfootHalfing />
+          <ModalStoutHalfing />
         </div>
       </div>
       <ModalHuman />
+      <ModalTiefling />
       {/* <div className="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">

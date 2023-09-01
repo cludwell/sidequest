@@ -1,24 +1,24 @@
 import Image from "next/image";
 import { useEffect } from "react";
-import human from "../../../public/images/stout5.png";
+import human from "../../../public/images/human7.jpeg";
 
 declare global {
   interface Window {
-    my_modal_16: any; // Replace `any` with the type of your modal if possible
+    my_modal_17: any; // Replace `any` with the type of your modal if possible
   }
 }
 
 export default function ModalHuman() {
   useEffect(() => {
-    const myModal16 = document.getElementById("my_modal_16");
-    if (myModal16) window.my_modal_16 = myModal16;
+    const myModal17 = document.getElementById("my_modal_17");
+    if (myModal17) window.my_modal_17 = myModal17;
   }, []);
 
   return (
     <>
       <button
         className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
-        onClick={() => window.my_modal_16.showModal()}
+        onClick={() => window.my_modal_17.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
@@ -43,7 +43,7 @@ export default function ModalHuman() {
           />
         </svg>
       </button>
-      <dialog id="my_modal_16" className="modal">
+      <dialog id="my_modal_17" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Human</h3>
           <p className="py-4">Press ESC key or click outside to close</p>

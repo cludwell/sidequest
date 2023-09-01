@@ -28,7 +28,7 @@ export default function ModalStoutHalfing() {
             width={50}
             height={50}
           />
-          Lightfoot Halfling
+          Stout Halfling
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function ModalStoutHalfing() {
       </button>
       <dialog id="my_modal_16" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Lightfoot Halfling</h3>
+          <h3 className="font-bold text-lg">Stout Halfling</h3>
           <p className="py-4">Press ESC key or click outside to close</p>
         </form>
         <form method="dialog" className="modal-backdrop">
