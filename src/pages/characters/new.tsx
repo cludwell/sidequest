@@ -5,6 +5,7 @@ import ModalDragonBorn from "./ModalDragonborn";
 import dwarf from "../../../public/images/dwarf.jpeg";
 import elf from "../../../public/images/elf3.jpeg";
 import gnome from "../../../public/images/gnome4.png";
+import halfling from "../../../public/images/halfing.jpeg";
 import Image from "next/image";
 import ModalHillDwarf from "./ModalHillDwarf";
 import ModalMountainDwarf from "./ModalMountainDwarf";
@@ -13,6 +14,9 @@ import ModalWoodElf from "./ModalWoodElf";
 import ModalEladrinElf from "./ModalEladrinElf";
 import ModalRockGnome from "./ModalRockGnome";
 import ModalDeepGnome from "./ModalDeepGnome";
+import ModalGoliath from "./ModalGoliath";
+import ModalHalfElf from "./ModalHalfElf";
+import ModalHalfOrc from "./ModalHalfOrc";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
@@ -80,6 +84,25 @@ export default function NewCharacter() {
         <div className="collapse-content">
           <ModalRockGnome />
           <ModalDeepGnome />
+        </div>
+      </div>
+      <ModalGoliath />
+      <ModalHalfElf />
+      <ModalHalfOrc />
+      <div className="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div className="collapse-title text-xl font-bold flex items-center">
+        <Image
+            src={halfling}
+            className="object-cover aspect-square rounded-md m-2"
+            alt="portrait preview"
+            width={50}
+            height={50}
+          />
+          HALFLING
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200">
