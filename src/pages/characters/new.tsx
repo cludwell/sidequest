@@ -11,6 +11,8 @@ import ModalMountainDwarf from "./ModalMountainDwarf";
 import ModalHighElf from "./ModalHighElf";
 import ModalWoodElf from "./ModalWoodElf";
 import ModalEladrinElf from "./ModalEladrinElf";
+import ModalRockGnome from "./ModalRockGnome";
+import ModalDeepGnome from "./ModalDeepGnome";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
@@ -63,7 +65,7 @@ export default function NewCharacter() {
           <ModalEladrinElf />
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200">
+      <div className="collapse collapse-plus bg-base-200 m-1">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-bold flex items-center">
         <Image
@@ -76,7 +78,8 @@ export default function NewCharacter() {
           Gnome
         </div>
         <div className="collapse-content">
-          <p>hello</p>
+          <ModalRockGnome />
+          <ModalDeepGnome />
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200">
