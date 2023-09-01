@@ -17,6 +17,8 @@ import ModalDeepGnome from "./ModalDeepGnome";
 import ModalGoliath from "./ModalGoliath";
 import ModalHalfElf from "./ModalHalfElf";
 import ModalHalfOrc from "./ModalHalfOrc";
+import ModalLightfootHalfing from "./ModalLightfootHalfling";
+import ModalStoutHalfing from "./ModalStoutHalfling";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
@@ -79,7 +81,7 @@ export default function NewCharacter() {
             width={50}
             height={50}
           />
-          Gnome
+          GNOME
         </div>
         <div className="collapse-content">
           <ModalRockGnome />
@@ -102,18 +104,19 @@ export default function NewCharacter() {
           HALFLING
         </div>
         <div className="collapse-content">
-          <p>hello</p>
+        <ModalLightfootHalfing />
+        <ModalStoutHalfing />
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200">
+      {/* <div className="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
-          asdfasdf
+          <ModalLightfootHalfing />
         </div>
         <div className="collapse-content">
-          <p>hello</p>
+        <ModalLightfootHalfing />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
