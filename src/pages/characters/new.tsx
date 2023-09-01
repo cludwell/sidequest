@@ -4,10 +4,13 @@ import ModalAarakocra from "./ModalAarakocra";
 import ModalDragonBorn from "./ModalDragonborn";
 import dwarf from "../../../public/images/dwarf.jpeg";
 import elf from "../../../public/images/elf3.jpeg";
+import gnome from "../../../public/images/gnome4.png";
 import Image from "next/image";
 import ModalHillDwarf from "./ModalHillDwarf";
 import ModalMountainDwarf from "./ModalMountainDwarf";
 import ModalHighElf from "./ModalHighElf";
+import ModalWoodElf from "./ModalWoodElf";
+import ModalEladrinElf from "./ModalEladrinElf";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
@@ -56,12 +59,30 @@ export default function NewCharacter() {
         </div>
         <div className="collapse-content">
           <ModalHighElf />
+          <ModalWoodElf />
+          <ModalEladrinElf />
+        </div>
+      </div>
+      <div className="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div className="collapse-title text-xl font-bold flex items-center">
+        <Image
+            src={gnome}
+            className="object-cover aspect-square rounded-md m-2"
+            alt="portrait preview"
+            width={50}
+            height={50}
+          />
+          Gnome
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+          asdfasdf
         </div>
         <div className="collapse-content">
           <p>hello</p>
