@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import dragonborn from '../../../public/images/dragonborn.jpeg'
-
+import dragonborn from "../../../public/images/dragonborn.jpeg";
+import dragonbornDetail from "../../../public/images/dragonborn5.jpeg";
 declare global {
   interface Window {
     my_modal_3: any; // Replace `any` with the type of your modal if possible
@@ -9,7 +9,7 @@ declare global {
 }
 
 export default function ModalDragonBorn() {
-  const [detail, setDetail] = useState<String | null>(null)
+  const [detail, setDetail] = useState<String | null>(null);
   useEffect(() => {
     const myModal3 = document.getElementById("my_modal_3");
     if (myModal3) window.my_modal_3 = myModal3;
@@ -17,16 +17,19 @@ export default function ModalDragonBorn() {
 
   return (
     <>
-      <button className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1" onClick={() => window.my_modal_3.showModal()}>
+      <button
+        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        onClick={() => window.my_modal_3.showModal()}
+      >
         <span className="flex flex-row items-center">
-
-        <Image src={dragonborn}
-        className="object-cover aspect-square rounded-md m-2"
-        alt="portrait preview"
-        width={50}
-        height={50}
-        />
-        Dragonborn
+          <Image
+            src={dragonborn}
+            className="object-cover aspect-square rounded-md m-2"
+            alt="portrait preview"
+            width={50}
+            height={50}
+          />
+          Dragonborn
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +46,265 @@ export default function ModalDragonBorn() {
       </button>
       <dialog id="my_modal_3" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg almendra bg-slate-600">Dragonborn</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <h3 className="font-bold text-lg mb-4">Dragonborn</h3>
+          <Image
+            src={dragonbornDetail}
+            alt="detail image"
+            width={800}
+            height={800}
+            className="rounded-xl aspect-square object-cover"
+          />
+          <p className="py-4"></p>
+
+          {/* accordion start */}
+          <div className="collapse collapse-arrow bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "DETAILS"}
+              onClick={() => setDetail("DETAILS")}
+            />
+            <div className="collapse-title text-xl font-medium">Details</div>
+            <div className="collapse-content">
+              <p>
+                Born of dragons, as their name proclaims, the dragonborn walk
+                proudly through a world that greets them with fearful
+                incomprehension. Shaped by draconic gods or the dragons
+                themselves, dragonborn originally hatched from dragon eggs as a
+                unique race, combining the best attributes of dragons and
+                humanoids. Some dragonborn are faithful servants to true
+                dragons, others form the ranks of soldiers in great wars, and
+                still others find themselves adrift, with no clear calling in
+                life.
+              </p>
+            </div>
+          </div>
+          <div className="collapse collapse-arrow bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "PROUD"}
+              onClick={() => setDetail("PROUD")}
+            />
+            <div className="collapse-title text-xl font-medium">
+              Proud Dragon Kin
+            </div>
+            <div className="collapse-content">
+              <p>
+                Dragonborn look very much like dragons standing erect in
+                humanoid form, though they lack wings or a tail. The first
+                dragonborn had scales of vibrant hues matching the colors of
+                their dragon kin, but generations of interbreeding have created
+                a more uniform appearance. Their small, fine scales are usually
+                brass or bronze in color, sometimes ranging to scarlet, rust,
+                gold, or copper-green. They are tall and strongly built, often
+                standing close to 6½ feet tall and weighing 300 pounds or more.
+                Their hands and feet are strong, talonlike claws with three
+                fingers and a thumb on each hand.
+              </p>
+              <br />
+              <p>
+                The blood of a particular type of dragon runs very strong
+                through some dragonborn clans. These dragonborn often boast
+                scales that more closely match those of their dragon
+                ancestor—bright red, green, blue, or white, lustrous black, or
+                gleaming metallic gold, silver, brass, copper, or bronze.
+              </p>
+            </div>
+          </div>
+          <div className="collapse collapse-arrow bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "CLANS"}
+              onClick={() => setDetail("CLANS")}
+            />
+            <div className="collapse-title text-xl font-medium">
+              Self-Sufficient Clans
+            </div>
+            <div className="collapse-content">
+              <p>
+                To any dragonborn, the clan is more important than life itself.
+                Dragonborn owe their devotion and respect to their clan above
+                all else, even the gods. Each dragonborn's conduct reflects on
+                the honor of his or her clan, and bringing dishonor to the clan
+                can result in expulsion and exile. Each dragonborn knows his or
+                her station and duties within the clan, and honor demands
+                maintaining the bounds of that position.
+              </p>
+              <br />
+              <p>
+                A continual drive for self-improvement reflects the
+                self-sufficiency of the race as a whole. Dragonborn value skill
+                and excellence in all endeavors. They hate to fail, and they
+                push themselves to extreme efforts before they give up on
+                something. A dragonborn holds mastery of a particular skill as a
+                lifetime goal. Members of other races who share the same
+                commitment find it easy to earn the respect of a dragonborn.
+              </p>
+              <br />
+              <p>
+                Though all dragonborn strive to be self-sufficient, they
+                recognize that help is sometimes needed in difficult situations.
+                But the best source for such help is the clan, and when a clan
+                needs help, it turns to another dragonborn clan before seeking
+                aid from other races—or even from the gods.
+              </p>
+            </div>
+          </div>
+          <div className="collapse collapse-arrow bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "NAMES"}
+              onClick={() => setDetail("NAMES")}
+            />
+            <div className="collapse-title text-xl font-medium">
+              Dragonborn Names{" "}
+            </div>
+            <div className="collapse-content">
+              <p>
+                Dragonborn have personal names given at birth, but they put
+                their clan names first as a mark of honor. A childhood name or
+                nickname is often used among clutchmates as a descriptive term
+                or a term of endearment. The name might recall an event or
+                center on a habit.
+              </p>
+              <br />
+              <p>
+                Male Names: Arjhan, Balasar, Bharash, Donaar, Ghesh, Heskan,
+                Kriv, Medrash, Mehen, Nadarr, Pandjed, Patrin, Rhogar, Shamash,
+                Shedinn, Tarhun, Torinn
+              </p>
+              <br />
+              <p>
+                Female Names: Akra, Biri, Daar, Farideh, Harann, Havilar, Jheri,
+                Kava, Korinn, Mishann, Nala, Perra, Raiann, Sora, Surina, Thava,
+                Uadjit
+              </p>
+              <br />
+              <p>
+                Childhood Names: Climber, Earbender, Leaper, Pious, Shieldbiter,
+                Zealous
+              </p>
+              <br />
+              <p>
+                Clan Names: Clethtinthiallor, Daardendrian, Delmirev,
+                Drachedandion, Fenkenkabradon, Kepeshkmolik, Kerrhylon,
+                Kimbatuul, Linxakasendalor, Myastan, Nemmonis, Norixius,
+                Ophinshtalajiir, Prexijandilin, Shestendeliath, Turnuroth,
+                Verthisathurgiesh, Yarjerit
+              </p>
+              <br />
+            </div>
+          </div>
+
+          {/* accordion end */}
+          {/* table start */}
+          <div className="overflow-x-auto">
+            <table className="table table-zebra my-4">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th>Trait</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                <tr>
+                  <td>Ability Score Increase</td>
+                  <td>
+                    Your Strength score increases by 2, and your Charisma score
+                    increases by 1.
+                  </td>
+                </tr>
+                {/* row 2 */}
+                <tr>
+                  <td>Age</td>
+                  <td>
+                    Young dragonborn grow quickly. They walk hours after
+                    hatching, attain the size and development of a 10-year-old
+                    human child by the age of 3, and reach adulthood by 15. They
+                    live to be around 80.
+                  </td>
+                </tr>
+                {/* row 3 */}
+                <tr>
+                  <td>Alignment</td>
+                  <td>
+                    Understandably good leaning, though if you play a fallen
+                    Aasimar you should shift to evil or neutral.
+                  </td>
+                </tr>
+                {/* row 4 */}
+                <tr>
+                  <td>Size</td>
+                  <td>
+                    Dragonborn are taller and heavier than humans, standing well
+                    over 6 feet tall and averaging almost 250 pounds. Your size
+                    is Medium.{" "}
+                  </td>
+                </tr>
+                {/* row 5 */}
+                <tr>
+                  <td>Speed</td>
+                  <td>Your base walking speed is 30 feet.</td>
+                </tr>
+                {/* row 6 */}
+                <tr>
+                  <td>Draconic Ancestry</td>
+                  <td>
+                    You have draconic ancestry. Choose one type of dragon from
+                    the Draconic Ancestry table. Your breath weapon and damage
+                    resistance are determined by the dragon type, as shown in
+                    the table.{" "}
+                  </td>
+                </tr>
+
+
+                {/* row 8 */}
+                <tr>
+                  <td>Breath Weapon</td>
+                  <td>
+                    You can use your action to exhale destructive energy. Your
+                    draconic ancestry determines the size, shape, and damage
+                    type of the exhalation. When you use your breath weapon,
+                    each creature in the area of the exhalation must make a
+                    saving throw, the type of which is determined by your
+                    draconic ancestry. The DC for this saving throw equals 8 +
+                    your Constitution modifier + your proficiency bonus. A
+                    creature takes 2d6 damage on a failed save, and half as much
+                    damage on a successful one. The damage increases to 3d6 at
+                    6th level, 4d6 at 11th level, and 5d6 at 16th level. After
+                    you use your breath weapon, you can't use it again until you
+                    complete a short or long rest.
+                  </td>
+                </tr>
+                {/* row 9 */}
+                <tr>
+                  <td>Damage Resistance</td>
+                  <td>
+                    You have resistance to the damage type associated with your
+                    draconic ancestry.
+                  </td>
+                </tr>
+                {/* row 10 */}
+                <tr>
+                  <td>Languages</td>
+                  <td>
+                    You can speak, read, and write Common and Draconic. Draconic
+                    is thought to be one of the oldest languages and is often
+                    used in the study of magic. The language sounds harsh to
+                    most other creatures and includes numerous hard consonants
+                    and sibilants.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {/* table end */}
+          <button className="btn btn-success self-end">Select race</button>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
