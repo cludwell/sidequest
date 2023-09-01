@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect } from "react";
-import aarakocra from '../../../public/images/Aarakocra-Druid-768x431.png.png'
+import dragonborn from '../../../public/images/dragonborn.jpeg'
 
 declare global {
   interface Window {
@@ -16,10 +16,10 @@ export default function ModalDragonBorn() {
 
   return (
     <>
-      <button className="btn w-full h-fit justify-between font-bold text-lg" onClick={() => window.my_modal_3.showModal()}>
+      <button className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1" onClick={() => window.my_modal_3.showModal()}>
         <span className="flex flex-row items-center">
 
-        <Image src={aarakocra}
+        <Image src={dragonborn}
         className="object-cover aspect-square rounded-md m-2"
         alt="portrait preview"
         width={50}
@@ -42,7 +42,7 @@ export default function ModalDragonBorn() {
       </button>
       <dialog id="my_modal_3" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
+          <h3 className="font-bold text-lg almendra bg-slate-600">Dragonborn</h3>
           <p className="py-4">Press ESC key or click outside to close</p>
         </form>
         <form method="dialog" className="modal-backdrop">
