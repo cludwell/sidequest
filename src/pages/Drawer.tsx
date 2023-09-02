@@ -2,13 +2,13 @@ import { userProfile } from "@/store/session";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import Image from "next/image";
-import { User } from "../../lib/user";
+
 export default function Drawer() {
   const user = useSelector(userProfile);
   return (
     <div className="drawer m-2">
       <input id="my-drawer" type="checkbox" className="drawer-toggle peer" />
-      <div className="drawer-content flex items-center justify-center">
+      <div className="drawer-content items-center justify-center">
         {/* Page content here */}
         <label htmlFor="my-drawer" className="cursor-pointer drawer-button">
           {user && user.id && user.profilePic ? (
@@ -40,9 +40,9 @@ export default function Drawer() {
           )}
         </label>
       </div>
-      <div className="drawer-side z-20">
+      <div className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content isolate">
           {/* Sidebar content here */}
           <div>
             <h1 className="astloch text-6xl">sideQuest</h1>

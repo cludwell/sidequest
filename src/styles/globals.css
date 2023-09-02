@@ -20,6 +20,17 @@
 .astloch {
   font-family: "Astloch", cursive;
 }
+
+.lg\:drawer-open > .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
+  position: relative;
+  left: 0;
+  transform: none;
+}
+[dir="rtl"] .lg\:drawer-open > .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
+  position: relative;
+  right: 0;
+  transform: none;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -3,8 +3,6 @@ import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import Header from "./Header";
 import { Provider } from "react-redux";
-import { createWrapper } from "next-redux-wrapper";
-import { makeStore } from "@/store";
 import { wrapper } from "@/store";
 import Footer from "./Footer";
 

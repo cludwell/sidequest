@@ -32,15 +32,11 @@ export default function NewCharacter() {
   const [selected, setSelected] = useState<String | null>(null);
   return (
     <main className="flex min-h-screen flex-col items-center p-16">
-      <progress
-        className="progress progress-accent max-w-screen-xl w-full mb-8"
-        value={progress}
-        max="100"
-      />
+
       <ModalAarakocra />
       <ModalAasimar />
       <ModalDragonBorn />
-      <div className="collapse collapse-plus bg-base-200 m-1">
+      <div className="collapse collapse-plus bg-base-200 m-1 z-0">
         <input
           type="radio"
           name="my-accordion-3"

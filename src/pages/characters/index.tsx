@@ -40,7 +40,7 @@ export default function CreateCharacter() {
       {/* card container */}
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
-        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
+        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4 z-0">
           <figure>
             {characters[6].imgUrl && (
               <Image
@@ -77,7 +77,7 @@ export default function CreateCharacter() {
           </button>
         </div>
         <div className="divider lg:divider-horizontal">OR</div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4">
+        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4 ">
           <figure>
             {characters[7].imgUrl && (
               <Image

@@ -195,7 +195,104 @@ export default function ModalDragonBorn() {
                 Ophinshtalajiir, Prexijandilin, Shestendeliath, Turnuroth,
                 Verthisathurgiesh, Yarjerit
               </p>
-              <br />
+            </div>
+          </div>
+          <div className="collapse collapse-arrow bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "BREATH"}
+              onClick={() => setDetail("BREATH")}
+            />
+            <div className="collapse-title text-xl font-medium">
+              Dragon Breath
+            </div>
+            <div className="collapse-content">
+              <div className="overflow-x-auto">
+                <table className="table bg-base-100 table-zebra ">
+                  {/* head */}
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Dragon</th>
+                      <th>Damage Type</th>
+                      <th>Breath Weapon</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* row 1 */}
+                    <tr>
+                      <th>1</th>
+                      <td>Black</td>
+                      <td>Acid</td>
+                      <td>5 by 30 ft. line (Dex. save)</td>
+                    </tr>
+                    {/* row 2 */}
+                    <tr>
+                      <th>2</th>
+                      <td>Blue</td>
+                      <td>Lightning</td>
+                      <td>5 by 30 ft. line (Dex. save)</td>
+                    </tr>
+                    {/* row 3 */}
+                    <tr>
+                      <th>3</th>
+                      <td>Brass</td>
+                      <td>Fire</td>
+                      <td>5 by 30 ft. line (Dex. save)</td>
+                    </tr>
+                    {/* row 4 */}
+                    <tr>
+                      <th>4</th>
+                      <td>Bronze</td>
+                      <td>Lightning</td>
+                      <td>5 by 30 ft. line (Dex. save)</td>
+                    </tr>
+                    {/* row 5 */}
+                    <tr>
+                      <th>5</th>
+                      <td>Copper</td>
+                      <td>Acid</td>
+                      <td>5 by 30 ft. line (Dex. save)</td>
+                    </tr>
+                    {/* row 6 */}
+                    <tr>
+                      <th>6</th>
+                      <td>Gold</td>
+                      <td>Fire</td>
+                      <td>15 ft. cone (Dex. save)</td>
+                    </tr>
+                    {/* row 7 */}
+                    <tr>
+                      <th>7</th>
+                      <td>Green</td>
+                      <td>Poison</td>
+                      <td>15 ft. cone (Con. save)</td>
+                    </tr>
+                    {/* row 8 */}
+                    <tr>
+                      <th>8</th>
+                      <td>Red</td>
+                      <td>Fire</td>
+                      <td>15 ft. cone (Dex. save)</td>
+                    </tr>
+                    {/* row 9 */}
+                    <tr>
+                      <th>9</th>
+                      <td>Silver</td>
+                      <td>Cold</td>
+                      <td>15 ft. cone (Con. save)</td>
+                    </tr>
+                    {/* row 10 */}
+                    <tr>
+                      <th>10</th>
+                      <td>White</td>
+                      <td>Cold</td>
+                      <td>15 ft. cone (Con. save)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
@@ -261,7 +358,6 @@ export default function ModalDragonBorn() {
                     the table.{" "}
                   </td>
                 </tr>
-
 
                 {/* row 8 */}
                 <tr>

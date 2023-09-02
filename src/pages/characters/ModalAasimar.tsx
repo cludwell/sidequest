@@ -152,7 +152,6 @@ export default function ModalAasimar() {
                 resistant to the effects of acidic elements, extreme cold, or
                 electrical charges.
               </p>
-              <br />
             </div>
           </div>
           <div className="collapse collapse-arrow bg-base-200 my-1">
@@ -291,7 +290,7 @@ export default function ModalAasimar() {
             />
             <div className="collapse-title text-xl font-medium">Subraces </div>
             <div className="collapse-content">
-              <h1 className="text-lg my-2 underline">Fallen Aasimar</h1>
+              <h1 className="text-lg my-4 underline">Fallen Aasimar</h1>
               <p>
                 Some Aasimar were marked by some form of darkness in their
                 lives, that tarnished their inner light. In most instances these
@@ -306,7 +305,7 @@ export default function ModalAasimar() {
                 necrosis around them for a single minute. This effect was so
                 horrific that it often caused others to run away in terror.
               </p>
-              <h1 className="text-lg my-2 underline">Protector Aasimar</h1>
+              <h1 className="text-lg my-4 underline">Protector Aasimar</h1>
               <p>
                 Yet other Aasimar were tasked by the greater powers of good to
                 protect the weak and innocent of the Realms. From their youth
@@ -321,7 +320,7 @@ export default function ModalAasimar() {
                 for one minute. They could fly at the speed of about 300 ft (91
                 m) per minute and unleash radiant energy when they attack.
               </p>
-              <h1 className="text-lg my-2 underline">Scourge Aasimar</h1>
+              <h1 className="text-lg my-4 underline">Scourge Aasimar</h1>
               <p>
                 These individuals of divine heritage that possessed an intense
                 drive to purge evil from the Realms. They imbued with powerful
