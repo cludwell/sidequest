@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import halfElf from "../../../public/images/halfelf3.jpeg";
+import halfElfDetail from "../../../public/images/halfelf5.png";
 
 declare global {
   interface Window {
@@ -47,8 +48,15 @@ export default function ModalHalfElf() {
       <dialog id="my_modal_14" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Half Elf</h3>
+          <Image
+            src={halfElfDetail}
+            alt="detail image"
+            width={800}
+            height={800}
+            className="rounded-xl aspect-square object-cover object-top"
+            objectPosition="top"
+          />
           <p className="py-4">Press ESC key or click outside to close</p>
-
           {/* Description Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input type="radio" name="my-accordion" id="description" />
@@ -59,6 +67,21 @@ export default function ModalHalfElf() {
               Description
             </label>
             <div className="collapse-content">
+              <p>
+                Half-elves (also called Cha'Tel'Quessir in Elven) were humanoids
+                born through the union of an elf and a human. Whether a half-elf
+                was raised by their human parent or their elven parent, they
+                often felt isolated and alone. Because they took around twenty
+                years to reach adulthood, they matured quickly when raised by
+                elves (who think they look like humans), making them feel like
+                an outsider in either place.
+              </p>
+              <br />
+              <p>
+                Most half-elves were descended from moon elves. Pairings of
+                elves and other races also existed, though they were rare.
+              </p>{" "}
+              <br />
               <p>
                 Half-elves stood roughly around 5 feet and 5 inches to 6 feet
                 and 2 inches (1.7 to 1.9 meters), making them only slightly
