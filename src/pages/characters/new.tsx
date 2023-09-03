@@ -132,6 +132,8 @@ export default function NewCharacter() {
       </div>
       <ModalHuman />
       <ModalTiefling />
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary my-8">Choose at Random</button>
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Responsive</button>
       {/* <div className="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
