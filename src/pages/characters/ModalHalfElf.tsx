@@ -54,7 +54,6 @@ export default function ModalHalfElf() {
             width={800}
             height={800}
             className="rounded-xl aspect-square object-cover object-top"
-            objectPosition="top"
           />
           <p className="py-4">Press ESC key or click outside to close</p>
           {/* Description Collapsible */}
@@ -332,6 +331,7 @@ export default function ModalHalfElf() {
               </tbody>
             </table>
           </div>
+          
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
