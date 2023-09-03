@@ -47,8 +47,7 @@ export default function ModalHalfOrc() {
       </button>
       <dialog id="my_modal_19" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Half Orc</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Half Orc</h3>
           <Image
             src={halfOrcDetail}
             alt="detail image"
@@ -56,6 +55,7 @@ export default function ModalHalfOrc() {
             height={800}
             className="rounded-xl aspect-square object-cover"
           />
+          <p className="py-4"></p>
           {/* Description Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input

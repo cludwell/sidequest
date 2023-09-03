@@ -47,7 +47,7 @@ export default function ModalHalfElf() {
       </button>
       <dialog id="my_modal_14" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Half Elf</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Half Elf</h3>
           <Image
             src={halfElfDetail}
             alt="detail image"

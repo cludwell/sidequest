@@ -47,7 +47,7 @@ export default function ModalMountainDwarf() {
       </button>
       <dialog id="my_modal_7" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Mountain Dwarf</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Mountain Dwarf</h3>
           <Image
             src={mountainDwarfDetail}
             alt="detail image"

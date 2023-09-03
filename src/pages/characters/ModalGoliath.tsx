@@ -46,7 +46,7 @@ export default function ModalGoliath() {
       </button>
       <dialog id="my_modal_13" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Goliath</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Goliath</h3>
           <Image
             src={goliathDetail}
             alt="detail image"

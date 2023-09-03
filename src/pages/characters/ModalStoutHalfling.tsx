@@ -47,7 +47,7 @@ export default function ModalStoutHalfing() {
       </button>
       <dialog id="my_modal_16" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Stout Halfling</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Stout Halfling</h3>
           <HalflingInfo
             expand={expand}
             setExpanded={setExpanded}

@@ -47,7 +47,7 @@ export default function ModalTiefling() {
       </button>
       <dialog id="my_modal_18" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Tiefling</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Tiefling</h3>
           <Image
             src={tieflingDetail}
             alt="detail image"

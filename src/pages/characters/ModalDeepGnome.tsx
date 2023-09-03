@@ -47,7 +47,7 @@ export default function ModalDeepGnome() {
       </button>
       <dialog id="my_modal_12" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Deep Gnome</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Deep Gnome</h3>
           <GnomeInfo expand={expand} setExpanded={setExpanded} type={"deep"} />
         </form>
         <form method="dialog" className="modal-backdrop">

@@ -46,7 +46,7 @@ export default function ModalHighElf() {
       </button>
       <dialog id="my_modal_8" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">High Elf</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">High Elf</h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={"high"} />
         </form>
         <form method="dialog" className="modal-backdrop">

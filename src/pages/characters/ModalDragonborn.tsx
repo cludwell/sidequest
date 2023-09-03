@@ -46,7 +46,7 @@ export default function ModalDragonBorn() {
       </button>
       <dialog id="my_modal_3" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg mb-4">Dragonborn</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Dragonborn</h3>
           <Image
             src={dragonbornDetail}
             alt="detail image"

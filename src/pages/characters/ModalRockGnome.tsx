@@ -47,7 +47,7 @@ export default function ModalRockGnome() {
       </button>
       <dialog id="my_modal_11" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Rock Gnome</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Rock Gnome</h3>
           <GnomeInfo expand={expand} setExpanded={setExpanded} type={"rock"} />
         </form>
         <form method="dialog" className="modal-backdrop">

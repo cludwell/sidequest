@@ -47,7 +47,7 @@ export default function ModalHuman() {
       </button>
       <dialog id="my_modal_17" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Human</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Human</h3>
           <Image
             src={humanDetail}
             alt="detail image"

@@ -46,7 +46,7 @@ export default function ModalDrow() {
       </button>
       <dialog id="my_modal_21" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Drow</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Drow</h3>
           <Image
             src={drowDetail}
             alt="detail image"

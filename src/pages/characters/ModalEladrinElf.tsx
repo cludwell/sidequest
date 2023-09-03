@@ -47,7 +47,7 @@ export default function ModalEladrinElf() {
       </button>
       <dialog id="my_modal_10" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Eladrin Elf</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Eladrin Elf</h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={'eladrin'}/>
         </form>
         <form method="dialog" className="modal-backdrop">

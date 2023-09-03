@@ -46,7 +46,7 @@ export default function ModalDuergar() {
       </button>
       <dialog id="my_modal_22" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Duergar</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Duergar</h3>
           <Image
             src={duergarDetail}
             alt="detail image"

@@ -47,7 +47,7 @@ export default function ModalWoodElf() {
       </button>
       <dialog id="my_modal_9" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Wood Elf</h3>
+        <h3 className="font-bold text-5xl mb-4 almendra text-center">Wood Elf</h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={'wood'} />
         </form>
         <form method="dialog" className="modal-backdrop">
