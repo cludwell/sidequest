@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import { RacialInfoProps } from '../../../lib/racialInfoProps';
+import React, { useState } from "react";
+import { RacialInfoProps } from "../../../lib/racialInfoProps";
 
-export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps) {
+export default function DwarfInfo({
+  expand,
+  setExpanded,
+  type,
+}: RacialInfoProps) {
   return (
     <>
       <div className="collapse collapse-plus bg-base-200 my-1">
@@ -9,7 +13,11 @@ export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps
           type="radio"
           name="my-accordion-2"
           checked={expand === "SHORT_AND_STOUT"}
-          onChange={() => setExpanded("SHORT_AND_STOUT")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "SHORT_AND_STOUT" ? "SHORT_AND_STOUT" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Short and Stout
@@ -40,7 +48,13 @@ export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps
           type="radio"
           name="my-accordion-2"
           checked={expand === "LONG_MEMORY_LONG_GRUDGES"}
-          onChange={() => setExpanded("LONG_MEMORY_LONG_GRUDGES")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "LONG_MEMORY_LONG_GRUDGES"
+                ? "LONG_MEMORY_LONG_GRUDGES"
+                : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Long Memory, Long Grudges
@@ -85,7 +99,11 @@ export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps
           type="radio"
           name="my-accordion-2"
           checked={expand === "CLANS_AND_KINGDOMS"}
-          onChange={() => setExpanded("CLANS_AND_KINGDOMS")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "CLANS_AND_KINGDOMS" ? "CLANS_AND_KINGDOMS" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Clans and Kingdoms
@@ -125,7 +143,11 @@ export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps
           type="radio"
           name="my-accordion-2"
           checked={expand === "GODS_GOLD_AND_CLAN"}
-          onChange={() => setExpanded("GODS_GOLD_AND_CLAN")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "GODS_GOLD_AND_CLAN" ? "GODS_GOLD_AND_CLAN" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Gods, Gold, and Clan
@@ -151,7 +173,11 @@ export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps
           type="radio"
           name="my-accordion-2"
           checked={expand === "SLOW_TO_TRUST"}
-          onChange={() => setExpanded("SLOW_TO_TRUST")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "SLOW_TO_TRUST" ? "SLOW_TO_TRUST" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">Slow To Trust</div>
         <div className="collapse-content">
@@ -199,7 +225,11 @@ export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps
           type="radio"
           name="my-accordion-3"
           checked={expand === "DWARF_NAMES"}
-          onChange={() => setExpanded("DWARF_NAMES")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "DWARF_NAMES" ? "DWARF_NAMES" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">Dwarf Names</div>
         <div className="collapse-content">

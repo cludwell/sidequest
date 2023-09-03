@@ -22,7 +22,11 @@ export default function GnomeInfo({
           type="radio"
           name="gnome-details-accordion"
           checked={expand === "VIBRANT_EXPRESSION"}
-          onClick={() => setExpanded("VIBRANT_EXPRESSION")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "VIBRANT_EXPRESSION" ? "VIBRANT_EXPRESSION" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Vibrant Expression
@@ -54,7 +58,11 @@ export default function GnomeInfo({
           type="radio"
           name="gnome-details-accordion"
           checked={expand === "DELIGHTED_DEDICATION"}
-          onClick={() => setExpanded("DELIGHTED_DEDICATION")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "DELIGHTED_DEDICATION" ? "DELIGHTED_DEDICATION" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Delighted Dedication
@@ -95,7 +103,11 @@ export default function GnomeInfo({
           type="radio"
           name="gnome-details-accordion"
           checked={expand === "BRIGHT_BURROWS"}
-          onClick={() => setExpanded("BRIGHT_BURROWS")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "BRIGHT_BURROWS" ? "BRIGHT_BURROWS" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">Bright Burrows</div>
         <div className="collapse-content">
@@ -128,7 +140,9 @@ export default function GnomeInfo({
               type="radio"
               name="gnome-details-accordion"
               checked={expand === "TINKER"}
-              onClick={() => setExpanded("TINKER")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "TINKER" ? "TINKER" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Tinker</div>
             <div className="collapse-content">
@@ -174,7 +188,11 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-3"
               checked={expand === "PERSONALITY"}
-              onChange={() => setExpanded("PERSONALITY")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Personality
@@ -207,7 +225,9 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-3"
               checked={expand === "SOCIETY"}
-              onChange={() => setExpanded("SOCIETY")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Society</div>
             <div className="collapse-content">
@@ -246,7 +266,9 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-3"
               checked={expand === "RELIGION"}
-              onChange={() => setExpanded("RELIGION")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content">
@@ -274,7 +296,11 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-3"
               checked={expand === "RELATIONS"}
-              onChange={() => setExpanded("RELATIONS")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "RELATIONS" ? "RELATIONS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Relations with other races
@@ -298,7 +324,11 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-3"
               checked={expand === "HOMELANDS"}
-              onChange={() => setExpanded("HOMELANDS")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "HOMELANDS" ? "HOMELANDS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Homelands</div>
             <div className="collapse-content">
@@ -329,7 +359,11 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-2"
               checked={expand === "PSYCHOLOGY"}
-              onChange={() => setExpanded("PSYCHOLOGY")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PSYCHOLOGY" ? "PSYCHOLOGY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Psychology</div>
             <div className="collapse-content">
@@ -381,7 +415,11 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-2"
               checked={expand === "ABILITIES"}
-              onChange={() => setExpanded("ABILITIES")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "ABILITIES" ? "ABILITIES" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Abilities</div>
             <div className="collapse-content">
@@ -405,7 +443,9 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-2"
               checked={expand === "SOCIETY"}
-              onChange={() => setExpanded("SOCIETY")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Society</div>
             <div className="collapse-content">
@@ -463,7 +503,9 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-2"
               checked={expand === "CULTURE"}
-              onChange={() => setExpanded("CULTURE")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "CULTURE" ? "CULTURE" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Culture</div>
             <div className="collapse-content">
@@ -533,7 +575,11 @@ export default function GnomeInfo({
               type="radio"
               name="my-accordion-2"
               checked={expand === "ART_LEISURE"}
-              onChange={() => setExpanded("ART_LEISURE")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "ART_LEISURE" ? "ART_LEISURE" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Art & Leisure

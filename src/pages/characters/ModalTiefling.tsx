@@ -55,7 +55,7 @@ export default function ModalTiefling() {
             height={800}
             className="rounded-xl aspect-square object-cover object-top"
           />
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <p className="py-4"></p>
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
@@ -63,7 +63,11 @@ export default function ModalTiefling() {
               name="my-accordion"
               id="description-tieflings"
               checked={expand === "DESCRIPTION"}
-              onChange={() => setExpanded("DESCRIPTION")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "DESCRIPTION" ? "DESCRIPTION" : null
+                )
+              }
             />
             <label
               className="collapse-title text-xl font-medium"
@@ -137,7 +141,11 @@ export default function ModalTiefling() {
               name="my-accordion"
               id="tiefling-bloodlines"
               checked={expand === "BLOODLINES"}
-              onChange={() => setExpanded("BLOODLINES")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "BLOODLINES" ? "BLOODLINES" : null
+                )
+              }
             />
             <label
               className="collapse-title text-xl font-medium"
@@ -208,8 +216,12 @@ export default function ModalTiefling() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "TIEFLING_PERSONALITY"}
-              onChange={() => setExpanded("TIEFLING_PERSONALITY")}
+              checked={expand === "PERSONALITY"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Personality
@@ -237,8 +249,12 @@ export default function ModalTiefling() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "TIEFLING_COMBAT"}
-              onChange={() => setExpanded("TIEFLING_COMBAT")}
+              checked={expand === "TIEFLING-COMBAT"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "TIEFLING-COMBAT" ? "TIEFLING-COMBAT" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Combat</div>
             <div className="collapse-content">
@@ -260,8 +276,12 @@ export default function ModalTiefling() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "TIEFLING_ABILITIES"}
-              onChange={() => setExpanded("TIEFLING_ABILITIES")}
+              checked={expand === "TIEFLING-HISTORY"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "TIEFLING-HISTORY" ? "TIEFLING-HISTORY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Abilities</div>
             <div className="collapse-content">
@@ -284,8 +304,12 @@ export default function ModalTiefling() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "TIEFLING_SOCIETY"}
-              onChange={() => setExpanded("TIEFLING_SOCIETY")}
+              checked={expand === "TEIFLING-SOCIETY"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "TEIFLING-SOCIETY" ? "TEIFLING-SOCIETY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Society</div>
             <div className="collapse-content">
@@ -335,8 +359,12 @@ export default function ModalTiefling() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "TIEFLING_RELATIONS"}
-              onChange={() => setExpanded("TIEFLING_RELATIONS")}
+              checked={expand === "TIEFLING-RELATIONS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "TIEFLING-RELATIONS" ? "TIEFLING-RELATIONS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Relations with other races
@@ -360,8 +388,12 @@ export default function ModalTiefling() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "TIEFLING_RELIGION"}
-              onChange={() => setExpanded("TIEFLING_RELIGION")}
+              checked={expand === "TIEFLING-RELIGION"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "TIEFLING-RELIGION" ? "TIEFLING-RELIGION" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content">

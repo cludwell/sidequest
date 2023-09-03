@@ -59,17 +59,21 @@ export default function ModalGoliath() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "GOLIATH_DESCRIPTION"}
-              onChange={() => setExpanded("GOLIATH_DESCRIPTION")}
+              checked={expand === "DESCRIPTION"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "DESCRIPTION" ? "DESCRIPTION" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Description
             </div>
             <div className="collapse-content">
               <p>
-                Goliaths were massive. They averaged between 7​ to ​8 feet (2.1​
-                to ​2.4 meters) tall, making them even taller than dragonborn
-                and half-orcs. Goliaths had noticeably bony or prominent
+                Goliaths were massive. They averaged between 7 to 8 feet (2.1 to
+                2.4 meters) tall, making them even taller than dragonborn and
+                half-orcs. Goliaths had noticeably bony or prominent
                 supraorbital ridges above their eyes. Goliath eyes were often a
                 bright blue or green and sometimes glowed a little.
               </p>
@@ -80,8 +84,12 @@ export default function ModalGoliath() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "GOLIATH_SKIN"}
-              onChange={() => setExpanded("GOLIATH_SKIN")}
+              checked={expand === "GOLIATHSKIN"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "GOLIATHSKIN" ? "GOLIATHSKIN" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Skin</div>
             <div className="collapse-content">
@@ -107,8 +115,12 @@ export default function ModalGoliath() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "GOLIATH_PERSONALITY"}
-              onChange={() => setExpanded("GOLIATH_PERSONALITY")}
+              checked={expand === "PERSONALITY"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Personality
@@ -141,8 +153,10 @@ export default function ModalGoliath() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "GOLIATH_COMBAT"}
-              onChange={() => setExpanded("GOLIATH_COMBAT")}
+              checked={expand === "COMBAT"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Combat</div>
             <div className="collapse-content">
@@ -197,8 +211,10 @@ export default function ModalGoliath() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "GOLIATH_TRIBES"}
-              onChange={() => setExpanded("GOLIATH_TRIBES")}
+              checked={expand === "TRIBES"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "TRIBES" ? "TRIBES" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Tribes</div>
             <div className="collapse-content">
@@ -252,7 +268,9 @@ export default function ModalGoliath() {
               type="radio"
               name="my-accordion-7"
               checked={expand === "RELIGION"}
-              onChange={() => setExpanded("RELIGION")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content overflow-x-auto">

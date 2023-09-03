@@ -58,7 +58,17 @@ export default function ModalHalfOrc() {
           />
           {/* Description Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="halfOrcDescription" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="halfOrcDescription"
+              checked={expand === "DESCRIPTION"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "DESCRIPTION" ? "DESCRIPTION" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="halfOrcDescription"
@@ -93,7 +103,17 @@ export default function ModalHalfOrc() {
 
           {/* Personality Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="halfOrcPersonality" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="halfOrcPersonality"
+              checked={expand === "PERSONALITY"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="halfOrcPersonality"
@@ -127,7 +147,17 @@ export default function ModalHalfOrc() {
 
           {/* Abilities Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="halfOrcAbilities" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="halfOrcAbilities"
+              checked={expand === "ABILITIES"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "ABILITIES" ? "ABILITIES" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="halfOrcAbilities"
@@ -159,8 +189,10 @@ export default function ModalHalfOrc() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HALFORC_CULTURE"}
-              onChange={() => setExpanded("HALFORC_CULTURE")}
+              checked={expand === "CULTURE"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "CULTURE" ? "CULTURE" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Culture</div>
             <div className="collapse-content">
@@ -188,8 +220,10 @@ export default function ModalHalfOrc() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HALFORC_RELIGION"}
-              onChange={() => setExpanded("HALFORC_RELIGION")}
+              checked={expand === "RELIGION"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content">
@@ -206,8 +240,12 @@ export default function ModalHalfOrc() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HALFORC_HOMELANDS"}
-              onChange={() => setExpanded("HALFORC_HOMELANDS")}
+              checked={expand === "HOMELANDS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "HOMELANDS" ? "HOMELANDS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Homelands</div>
             <div className="collapse-content">
@@ -224,8 +262,12 @@ export default function ModalHalfOrc() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HALFORC_RELATIONS"}
-              onChange={() => setExpanded("HALFORC_RELATIONS")}
+              checked={expand === "RELATIONS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "RELATIONS" ? "RELATIONS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Relations with other races

@@ -60,8 +60,12 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_DETAILS"}
-              onChange={() => setExpanded("HUMAN_DETAILS")}
+              checked={expand === "HUMAN-DETAILS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "HUMAN-DETAILS" ? "HUMAN-DETAILS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
@@ -83,8 +87,10 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_SPECTRUM"}
-              onChange={() => setExpanded("HUMAN_SPECTRUM")}
+              checked={expand === "SPECTRUM"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "SPECTRUM" ? "SPECTRUM" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">
               A Broad Spectrum
@@ -109,8 +115,10 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_VARIETY"}
-              onChange={() => setExpanded("HUMAN_VARIETY")}
+              checked={expand === "VARIETY"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "VARIETY" ? "VARIETY" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Variety in All Things
@@ -138,8 +146,12 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_FRIENDSHIPS"}
-              onChange={() => setExpanded("HUMAN_FRIENDSHIPS")}
+              checked={expand === "FRIENDSHIPS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "FRIENDSHIPS" ? "FRIENDSHIPS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Everyone's Second Best Friend
@@ -181,8 +193,12 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_INSTITUTIONS"}
-              onChange={() => setExpanded("HUMAN_INSTITUTIONS")}
+              checked={expand === "INSTITUTIONS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "INSTITUTIONS" ? "INSTITUTIONS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Lasting Institutions
@@ -213,8 +229,10 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_AMBITION"}
-              onChange={() => setExpanded("HUMAN_AMBITION")}
+              checked={expand === "AMBITION"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "AMBITION" ? "AMBITION" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Exemplars of Ambition
@@ -234,8 +252,14 @@ export default function ModalHuman() {
             <input
               type="radio"
               name="my-accordion-7"
-              checked={expand === "HUMAN_NAMES_ETHNICITIES"}
-              onChange={() => setExpanded("HUMAN_NAMES_ETHNICITIES")}
+              checked={expand === "NAMES-AND-ETHNICITIES"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "NAMES-AND-ETHNICITIES"
+                    ? "NAMES-AND-ETHNICITIES"
+                    : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Human Names and Ethnicities
@@ -271,68 +295,134 @@ export default function ModalHuman() {
                 world your human is in.
               </p>
               <div className="overflow-x-auto">
-    <table className="table my-2 table-zebra bg-base-100 ">
-        <thead>
-            <tr>
-                <th>Ethnicity</th>
-                <th>Male Names</th>
-                <th>Female Names</th>
-                <th>Surnames</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td className="font-bold font-sm">Calishite</td>
-                <td>Aseir, Bardeid, Haseid, Khemed, Mehmen, Sudeiman, Zasheir</td>
-                <td>Atala, Ceidil, Hama, Jasmal, Meilil, Seipora, Yasheira, Zasheida</td>
-                <td>Basha, Dumein, Jassan, Khalid, Mostana, Pashar, Rein</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Chondathan</td>
-                <td>Darvin, Dorn, Evendur, Gorstag, Grim, Helm, Malark, Morn, Randal, Stedd</td>
-                <td>Arveene, Esvele, Jhessail, Kerri, Lureene, Miri, Rowan, Shandri, Tessele</td>
-                <td>Amblecrown, Buckman, Dundragon, Evenwood, Greycastle, Tallstag</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Damaran</td>
-                <td>Bor, Fodel, Glar, Grigor, Igan, Ivor, Kosef, Mival, Orel, Pavel, Sergor</td>
-                <td>Alethra, Kara, Katernin, Mara, Natali, Olma, Tana, Zora</td>
-                <td>Bersk, Chernin, Dotsk, Kulenov, Marsk, Nemetsk, Shemov, Starag</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Illuskan</td>
-                <td>Ander, Blath, Bran, Frath, Geth, Lander, Luth, Malcer, Stor, Taman, Urth</td>
-                <td>Amafrey, Betha, Cefrey, Kethra, Mara, Olga, Silifrey, Westra</td>
-                <td>Brightwood, Helder, Hornraven, Lackman, Stormwind, Windrivver</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Mulan</td>
-                <td>Aoth, Bareris, Ehput-Ki, Kethoth, Mumed, Ramas, So-Kehur, Thazar-De, Urhur</td>
-                <td>Arizima, Chathi, Nephis, Nulara, Murithi, Sefris, Thola, Umara, Zolis</td>
-                <td>Ankhalab, Anskuld, Fezim, Hahpet, Nathandem, Sepret, Uuthrakt</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Rashemi</td>
-                <td>Borivik, Faurgar, Jandar, Kanithar, Madislak, Ralmevik, Shaumar, Vladislak</td>
-                <td>Fyevarra, Hulmarra, Immith, Imzel, Navarra, Shevarra, Tammith, Yuldra</td>
-                <td>Chergoba, Dyernina, Iltazyara, Murnyethara, Stayanoga, Ulmokina</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Shou</td>
-                <td>An, Chen, Chi, Fai, Jiang, Jun, Lian, Long, Meng, On, Shan, Shui, Wen</td>
-                <td>Bai, Chao, Jia, Lei, Mei, Qiao, Shui, Tai</td>
-                <td>Chien, Huang, Kao, Kung, Lao, Ling, Mei, Pin, Shin, Sum, Tan, Wan</td>
-            </tr>
-            <tr>
-                <td className="font-bold font-sm">Turami</td>
-                <td>Anton, Diero, Marcon, Pieron, Rimardo, Romero, Salazar, Umbero</td>
-                <td>Balama, Dona, Faila, Jalana, Luisa, Marta, Quara, Selise, Vonda</td>
-                <td>Agosto, Astorio, Calabra, Domine, Falone, Marivaldi, Pisacar, Ramondo</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
+                <table className="table my-2 table-zebra bg-base-100 ">
+                  <thead>
+                    <tr>
+                      <th>Ethnicity</th>
+                      <th>Male Names</th>
+                      <th>Female Names</th>
+                      <th>Surnames</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="font-bold font-sm">Calishite</td>
+                      <td>
+                        Aseir, Bardeid, Haseid, Khemed, Mehmen, Sudeiman,
+                        Zasheir
+                      </td>
+                      <td>
+                        Atala, Ceidil, Hama, Jasmal, Meilil, Seipora, Yasheira,
+                        Zasheida
+                      </td>
+                      <td>
+                        Basha, Dumein, Jassan, Khalid, Mostana, Pashar, Rein
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Chondathan</td>
+                      <td>
+                        Darvin, Dorn, Evendur, Gorstag, Grim, Helm, Malark,
+                        Morn, Randal, Stedd
+                      </td>
+                      <td>
+                        Arveene, Esvele, Jhessail, Kerri, Lureene, Miri, Rowan,
+                        Shandri, Tessele
+                      </td>
+                      <td>
+                        Amblecrown, Buckman, Dundragon, Evenwood, Greycastle,
+                        Tallstag
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Damaran</td>
+                      <td>
+                        Bor, Fodel, Glar, Grigor, Igan, Ivor, Kosef, Mival,
+                        Orel, Pavel, Sergor
+                      </td>
+                      <td>
+                        Alethra, Kara, Katernin, Mara, Natali, Olma, Tana, Zora
+                      </td>
+                      <td>
+                        Bersk, Chernin, Dotsk, Kulenov, Marsk, Nemetsk, Shemov,
+                        Starag
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Illuskan</td>
+                      <td>
+                        Ander, Blath, Bran, Frath, Geth, Lander, Luth, Malcer,
+                        Stor, Taman, Urth
+                      </td>
+                      <td>
+                        Amafrey, Betha, Cefrey, Kethra, Mara, Olga, Silifrey,
+                        Westra
+                      </td>
+                      <td>
+                        Brightwood, Helder, Hornraven, Lackman, Stormwind,
+                        Windrivver
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Mulan</td>
+                      <td>
+                        Aoth, Bareris, Ehput-Ki, Kethoth, Mumed, Ramas,
+                        So-Kehur, Thazar-De, Urhur
+                      </td>
+                      <td>
+                        Arizima, Chathi, Nephis, Nulara, Murithi, Sefris, Thola,
+                        Umara, Zolis
+                      </td>
+                      <td>
+                        Ankhalab, Anskuld, Fezim, Hahpet, Nathandem, Sepret,
+                        Uuthrakt
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Rashemi</td>
+                      <td>
+                        Borivik, Faurgar, Jandar, Kanithar, Madislak, Ralmevik,
+                        Shaumar, Vladislak
+                      </td>
+                      <td>
+                        Fyevarra, Hulmarra, Immith, Imzel, Navarra, Shevarra,
+                        Tammith, Yuldra
+                      </td>
+                      <td>
+                        Chergoba, Dyernina, Iltazyara, Murnyethara, Stayanoga,
+                        Ulmokina
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Shou</td>
+                      <td>
+                        An, Chen, Chi, Fai, Jiang, Jun, Lian, Long, Meng, On,
+                        Shan, Shui, Wen
+                      </td>
+                      <td>Bai, Chao, Jia, Lei, Mei, Qiao, Shui, Tai</td>
+                      <td>
+                        Chien, Huang, Kao, Kung, Lao, Ling, Mei, Pin, Shin, Sum,
+                        Tan, Wan
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold font-sm">Turami</td>
+                      <td>
+                        Anton, Diero, Marcon, Pieron, Rimardo, Romero, Salazar,
+                        Umbero
+                      </td>
+                      <td>
+                        Balama, Dona, Faila, Jalana, Luisa, Marta, Quara,
+                        Selise, Vonda
+                      </td>
+                      <td>
+                        Agosto, Astorio, Calabra, Domine, Falone, Marivaldi,
+                        Pisacar, Ramondo
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 

@@ -58,12 +58,14 @@ export default function ModalAasimar() {
           <p className="py-4"></p>
 
           {/* accordion start */}
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "DETAILS"}
-              onClick={() => setDetail("DETAILS")}
+              onClick={() =>
+                setDetail((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
@@ -95,12 +97,16 @@ export default function ModalAasimar() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "PERSONALITY"}
-              onClick={() => setDetail("PERSONALITY")}
+              onClick={() =>
+                setDetail((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Personality{" "}
@@ -132,12 +138,14 @@ export default function ModalAasimar() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "ABILITIES"}
-              onClick={() => setDetail("ABILITIES")}
+              onClick={() =>
+                setDetail((prev) => (prev !== "ABILITIES" ? "ABILITIES" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Abilities </div>
             <div className="collapse-content">
@@ -154,12 +162,16 @@ export default function ModalAasimar() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "MANNERISMS"}
-              onClick={() => setDetail("MANNERISMS")}
+              onClick={() =>
+                setDetail((prev) =>
+                  prev !== "MANNERISMS" ? "MANNERISMS" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Society </div>
             <div className="collapse-content">
@@ -233,12 +245,14 @@ export default function ModalAasimar() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "HISTORY"}
-              onClick={() => setDetail("HISTORY")}
+              onClick={() =>
+                setDetail((prev) => (prev !== "HISTORY" ? "HISTORY" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">History </div>
             <div className="collapse-content">
@@ -257,12 +271,14 @@ export default function ModalAasimar() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "HOMELANDS"}
-              onClick={() => setDetail("HOMELANDS")}
+              onClick={() =>
+                setDetail((prev) => (prev !== "HOMELANDS" ? "HOMELANDS" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Homelands </div>
             <div className="collapse-content">
@@ -281,12 +297,14 @@ export default function ModalAasimar() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "SUBRACES"}
-              onClick={() => setDetail("SUBRACES")}
+              onClick={() =>
+                setDetail((prev) => (prev !== "SUBRACES" ? "SUBRACES" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Subraces </div>
             <div className="collapse-content">

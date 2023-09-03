@@ -57,12 +57,14 @@ export default function ModalAarakocra() {
           <p className="py-4"></p>
 
           {/* accordion start */}
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
               checked={detail === "DETAILS"}
-              onClick={() => setDetail("DETAILS")}
+              onClick={() =>
+                setDetail((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
@@ -81,10 +83,15 @@ export default function ModalAarakocra() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
-            <input type="radio" name="my-accordion-2"
-                          checked={detail === "BEAK"}
-                          onClick={() => setDetail("BEAK")}/>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "BEAK"}
+              onClick={() =>
+                setDetail((prev) => (prev !== "BEAK" ? "BEAK" : null))
+              }
+            />
             <div className="collapse-title text-xl font-medium">
               Beak and Feather
             </div>
@@ -107,10 +114,15 @@ export default function ModalAarakocra() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
-            <input type="radio" name="my-accordion-2"
-                          checked={detail === "WARDENS"}
-                          onClick={() => setDetail("WARDENS")}/>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "WARDENS"}
+              onClick={() =>
+                setDetail((prev) => (prev !== "WARDENS" ? "WARDENS" : null))
+              }
+            />
             <div className="collapse-title text-xl font-medium">
               Sky Wardens
             </div>
@@ -136,10 +148,17 @@ export default function ModalAarakocra() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
-            <input type="radio" name="my-accordion-2"
-                          checked={detail === "MANNERISMS"}
-                          onClick={() => setDetail("MANNERISMS")}/>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "MANNERISMS"}
+              onClick={() =>
+                setDetail((prev) =>
+                  prev !== "MANNERISMS" ? "MANNERISMS" : null
+                )
+              }
+            />
             <div className="collapse-title text-xl font-medium">
               Avian Mannerisms{" "}
             </div>
@@ -188,10 +207,15 @@ export default function ModalAarakocra() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
-            <input type="radio" name="my-accordion-2"
-                          checked={detail === "HOMELANDS"}
-                          onClick={() => setDetail("HOMELANDS")}/>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "HOMELANDS"}
+              onClick={() =>
+                setDetail((prev) => (prev !== "HOMELANDS" ? "HOMELANDS" : null))
+              }
+            />
             <div className="collapse-title text-xl font-medium">Homelands </div>
             <div className="collapse-content">
               <p>
@@ -204,11 +228,10 @@ export default function ModalAarakocra() {
                 of old forests.
               </p>
               <br />
-                Once tribes of aarakocra settle in an area, they share a hunting
-                territory that extends across an area up to 100 miles on a side,
-                with each tribe hunting in the lands nearest to their colony,
-                ranging farther should game become scarce.
-
+              Once tribes of aarakocra settle in an area, they share a hunting
+              territory that extends across an area up to 100 miles on a side,
+              with each tribe hunting in the lands nearest to their colony,
+              ranging farther should game become scarce.
               <p>
                 A typical colony consists of one large, open-roofed nest made of
                 woven vines. The eldest acts as leader with the support of a
@@ -216,9 +239,15 @@ export default function ModalAarakocra() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
-            <input type="radio" name="my-accordion-2"               checked={detail === "PURPOSE"}
-              onClick={() => setDetail("PURPOSE")}/>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "PURPOSE"}
+              onClick={() =>
+                setDetail((prev) => (prev !== "PURPOSE" ? "PURPOSE" : null))
+              }
+            />
             <div className="collapse-title text-xl font-medium">
               Great Purpose{" "}
             </div>
@@ -234,13 +263,12 @@ export default function ModalAarakocra() {
                 lies at the heart of the aarakocra adventurer's chosen path.
               </p>
               <br />
-                Two other circumstances might call an aarakocra to adventure.
-                First, aarakocra have historical ties to the Wind Dukes of Aaqa.
-                Exceptional individuals honor that connection and might seek out
-                the missing pieces of the Rod of Seven Parts, the remains of an
-                artifact fashioned by the Wind Dukes long ago to defeat the
-                Queen of Chaos's monstrous champion, Miska the Wolf-Spider.
-
+              Two other circumstances might call an aarakocra to adventure.
+              First, aarakocra have historical ties to the Wind Dukes of Aaqa.
+              Exceptional individuals honor that connection and might seek out
+              the missing pieces of the Rod of Seven Parts, the remains of an
+              artifact fashioned by the Wind Dukes long ago to defeat the Queen
+              of Chaos's monstrous champion, Miska the Wolf-Spider.
               <p>
                 When plunged into Miska's body, the chaos in his blood sundered
                 the rod and scattered its pieces across the multiverse.
@@ -249,21 +277,26 @@ export default function ModalAarakocra() {
                 weapon for defense against the agents of elemental evil.
               </p>
               <br />
-                Second, aarakocra are sworn foes of elemental earth, in
-                particular the gargoyles that serve Ogrémoch, the Prince of
-                Earth. The Aarakocra word for gargoyle is loosely translated as
-                “flying rock,” and battles between aarakocra and gargoyles have
-                raged across the Elemental Planes of Earth and Air, occasionally
-                spilling into a world on the Material Plane. Aarakocra on that
-                plane might leave their colonies to lend aid to other humanoids
-                committed to fighting earth cults and thwarting their efforts.
-
+              Second, aarakocra are sworn foes of elemental earth, in particular
+              the gargoyles that serve Ogrémoch, the Prince of Earth. The
+              Aarakocra word for gargoyle is loosely translated as “flying
+              rock,” and battles between aarakocra and gargoyles have raged
+              across the Elemental Planes of Earth and Air, occasionally
+              spilling into a world on the Material Plane. Aarakocra on that
+              plane might leave their colonies to lend aid to other humanoids
+              committed to fighting earth cults and thwarting their efforts.
               <p></p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
-            <input type="radio" name="my-accordion-2"               checked={detail === "NAMES"}
-              onClick={() => setDetail("NAMES")}/>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              checked={detail === "NAMES"}
+              onClick={() =>
+                setDetail((prev) => (prev !== "NAMES" ? "NAMES" : null))
+              }
+            />
             <div className="collapse-title text-xl font-medium">
               Aarakocra Names
             </div>

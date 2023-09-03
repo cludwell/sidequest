@@ -55,10 +55,20 @@ export default function ModalHalfElf() {
             height={800}
             className="rounded-xl aspect-square object-cover object-top"
           />
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <p className="py-4"></p>
           {/* Description Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="description" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="description"
+              checked={expand === "description"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "description" ? "description" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="description"
@@ -108,7 +118,17 @@ export default function ModalHalfElf() {
 
           {/* EyesAndEars Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="eyesAndEars" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="eyesAndEars"
+              checked={expand === "EYES-AND-EARS"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "EYES-AND-EARS" ? "EYES-AND-EARS" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="eyesAndEars"
@@ -131,7 +151,17 @@ export default function ModalHalfElf() {
 
           {/* Abilities Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="abilities" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="abilities"
+              checked={expand === "ABILITIES"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "ABILITIES" ? "ABILITIES" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="abilities"
@@ -164,7 +194,17 @@ export default function ModalHalfElf() {
 
           {/* Personality Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
-            <input type="radio" name="my-accordion" id="personality" />
+            <input
+              type="radio"
+              name="my-accordion"
+              id="personality"
+              checked={expand === "PERSONALITY"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
+            />
             <label
               className="collapse-title text-xl font-medium"
               htmlFor="personality"
@@ -331,7 +371,6 @@ export default function ModalHalfElf() {
               </tbody>
             </table>
           </div>
-          
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

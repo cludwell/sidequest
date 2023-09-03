@@ -26,7 +26,11 @@ export default function ElfInfo({
             type="radio"
             name="my-accordion-3"
             checked={expand === "ELADRIN_VARIANT"}
-            onChange={() => setExpanded("ELADRIN_VARIANT")}
+            onClick={() =>
+              setExpanded((prev) =>
+                prev !== "ELADRIN_VARIANT" ? "ELADRIN_VARIANT" : null
+              )
+            }
           />
           <div className="collapse-title text-xl font-medium">
             Eladrin (Variant)
@@ -56,7 +60,9 @@ export default function ElfInfo({
             type="radio"
             name="my-accordion-4"
             checked={expand === "HIGH_ELF"}
-            onChange={() => setExpanded("HIGH_ELF")}
+            onClick={() =>
+              setExpanded((prev) => (prev !== "HIGH_ELF" ? "HIGH_ELF" : null))
+            }
           />
           <div className="collapse-title text-xl font-medium">High Elf</div>
           <div className="collapse-content">
@@ -95,7 +101,9 @@ export default function ElfInfo({
             type="radio"
             name="my-accordion-5"
             checked={expand === "WOOD_ELF"}
-            onChange={() => setExpanded("WOOD_ELF")}
+            onClick={() =>
+              setExpanded((prev) => (prev !== "WOOD_ELF" ? "WOOD_ELF" : null))
+            }
           />
           <div className="collapse-title text-xl font-medium">Wood Elf</div>
           <div className="collapse-content">
@@ -129,7 +137,11 @@ export default function ElfInfo({
           type="radio"
           name="my-accordion-2"
           checked={expand === "SLENDER_AND_GRACEFUL"}
-          onChange={() => setExpanded("SLENDER_AND_GRACEFUL")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "SLENDER_AND_GRACEFUL" ? "SLENDER_AND_GRACEFUL" : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Slender and Graceful
@@ -159,7 +171,13 @@ export default function ElfInfo({
           type="radio"
           name="my-accordion-2"
           checked={expand === "A_TIMELESS_PERSPECTIVE"}
-          onChange={() => setExpanded("A_TIMELESS_PERSPECTIVE")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "A_TIMELESS_PERSPECTIVE"
+                ? "A_TIMELESS_PERSPECTIVE"
+                : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           A Timeless Perspective
@@ -194,7 +212,13 @@ export default function ElfInfo({
           type="radio"
           name="my-accordion-2"
           checked={expand === "HIDDEN_WOODLAND_REALMS"}
-          onChange={() => setExpanded("HIDDEN_WOODLAND_REALMS")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "HIDDEN_WOODLAND_REALMS"
+                ? "HIDDEN_WOODLAND_REALMS"
+                : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Hidden Woodland Realms
@@ -223,7 +247,13 @@ export default function ElfInfo({
           type="radio"
           name="my-accordion-2"
           checked={expand === "EXPLORATION_AND_ADVENTURE"}
-          onChange={() => setExpanded("EXPLORATION_AND_ADVENTURE")}
+          onClick={() =>
+            setExpanded((prev) =>
+              prev !== "EXPLORATION_AND_ADVENTURE"
+                ? "EXPLORATION_AND_ADVENTURE"
+                : null
+            )
+          }
         />
         <div className="collapse-title text-xl font-medium">
           Exploration and Adventure

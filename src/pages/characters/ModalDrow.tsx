@@ -60,7 +60,11 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-6"
               checked={expand === "DROW_DESCRIPTION"}
-              onChange={() => setExpanded("DROW_DESCRIPTION")}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "DROW_DESCRIPTION" ? "DROW_DESCRIPTION" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Description
@@ -131,7 +135,11 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-7"
               checked={expand === "DROW_PERSONALITY"}
-              onChange={() => setExpanded("DROW_PERSONALITY")}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "DROW_PERSONALITY" ? "DROW_PERSONALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Personality
@@ -168,7 +176,11 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-8"
               checked={expand === "DROW_MORALITY"}
-              onChange={() => setExpanded("DROW_MORALITY")}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "DROW_MORALITY" ? "DROW_MORALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Morality</div>
             <div className="collapse-content">
@@ -233,7 +245,11 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-9"
               checked={expand === "DROW_MISTRUST"}
-              onChange={() => setExpanded("DROW_MISTRUST")}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "DROW_MISTRUST" ? "DROW_MISTRUST" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Mistrust</div>
             <div className="collapse-content">
@@ -287,7 +303,11 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-10"
               checked={expand === "DROW_ALIGNMENT"}
-              onChange={() => setExpanded("DROW_ALIGNMENT")}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "DROW_ALIGNMENT" ? "DROW_ALIGNMENT" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Alignment</div>
             <div className="collapse-content">
@@ -324,7 +344,11 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-11"
               checked={expand === "GOOD_DROW"}
-              onChange={() => setExpanded("GOOD_DROW")}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "GOOD_DROW" ? "GOOD_DROW" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Good Drow</div>
             <div className="collapse-content">
@@ -360,20 +384,22 @@ export default function ModalDrow() {
               type="radio"
               name="my-accordion-13"
               checked={expand === "COMBAT"}
-              onChange={() => setExpanded("COMBAT")}
+              onChange={() =>
+                setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Combat</div>
             <div className="collapse-content">
               <section>
                 <h2 className="text-xl underline my-4">Drow Combat Tactics</h2>
                 <p>
-                  Drow were as frail as any other elves, and had a
-                  fascination with stealth and subtlety. They had a tendency
-                  to ambush their enemies with ranged weaponry, choosing hand
-                  crossbows when possible, to deliver their poisons from afar.
-                  They also favored light and quick weapons like rapiers in
-                  melee but normally retreated if close combat was the only
-                  remaining option.
+                  Drow were as frail as any other elves, and had a fascination
+                  with stealth and subtlety. They had a tendency to ambush their
+                  enemies with ranged weaponry, choosing hand crossbows when
+                  possible, to deliver their poisons from afar. They also
+                  favored light and quick weapons like rapiers in melee but
+                  normally retreated if close combat was the only remaining
+                  option.
                 </p>
               </section>
               <section>
@@ -384,10 +410,10 @@ export default function ModalDrow() {
                   Specific training was available for their rogues, which
                   included lessons on how to blend in with the heat hues and
                   patterns of their surroundings, similarly to how other races
-                  could hide in the shadows of light sources. Their famous
-                  (or infamous) assassin schools doubled as assassins'
-                  guilds. Male drow were normally competent fighters,
-                  and rangers were also valued as scouts.
+                  could hide in the shadows of light sources. Their famous (or
+                  infamous) assassin schools doubled as assassins' guilds. Male
+                  drow were normally competent fighters, and rangers were also
+                  valued as scouts.
                 </p>
               </section>
               <section>
@@ -403,12 +429,12 @@ export default function ModalDrow() {
                   Besides the obvious utility of cancelling light sources, the
                   drow ability to create darkness was an integral part of their
                   combat strategy, as it could be used to limit sight or
-                  otherwise hamper their enemies. Since magical darkness
-                  looked like black stone when looked at with darkvision, there
-                  were many creative uses of the spell form a tactical
-                  standpoint. For example, a drow could hide behind the "black
-                  stone" and ambush their enemies from behind the cover, or use
-                  it to cover up a pitfall.
+                  otherwise hamper their enemies. Since magical darkness looked
+                  like black stone when looked at with darkvision, there were
+                  many creative uses of the spell form a tactical standpoint.
+                  For example, a drow could hide behind the "black stone" and
+                  ambush their enemies from behind the cover, or use it to cover
+                  up a pitfall.
                   <br />
                   Like dancing lights, faerie fire could be used as a diversion,
                   but the ability to change the colors of the lights allowed for

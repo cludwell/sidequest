@@ -61,7 +61,11 @@ export default function ModalHillDwarf() {
               type="radio"
               name="my-accordion-4"
               checked={expand === "HILL_DWARF"}
-              onChange={() => setExpanded("HILL_DWARF")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "HILL_DWARF" ? "HILL_DWARF" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Hill Dwarf</div>
             <div className="collapse-content">

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import lightfoot from "../../../public/images/lightfoot9.jpeg";
+import HalflingInfo from "./HalflingIngo";
 
 declare global {
   interface Window {
@@ -9,6 +10,7 @@ declare global {
 }
 
 export default function ModalLightfootHalfing() {
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal15 = document.getElementById("my_modal_15");
     if (myModal15) window.my_modal_15 = myModal15;
@@ -46,7 +48,11 @@ export default function ModalLightfootHalfing() {
       <dialog id="my_modal_15" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Lightfoot Halfling</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <HalflingInfo
+            expand={expand}
+            setExpanded={setExpanded}
+            type={"lightfoot"}
+          />
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

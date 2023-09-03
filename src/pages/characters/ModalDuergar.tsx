@@ -63,7 +63,9 @@ export default function ModalDuergar() {
               type="radio"
               name="my-accordion-2"
               checked={expand === "DETAILS"}
-              onChange={() => setExpanded("DETAILS")}
+              onChange={() =>
+                setExpanded((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
@@ -91,7 +93,11 @@ export default function ModalDuergar() {
               type="radio"
               name="my-accordion-2"
               checked={expand === "PERSONALITY"}
-              onClick={() => setExpanded("PERSONALITY")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "PERSONALITY" ? "PERSONALITY" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Personality{" "}
@@ -237,7 +243,11 @@ export default function ModalDuergar() {
               type="radio"
               name="my-accordion-2"
               checked={expand === "ABILITIES"}
-              onClick={() => setExpanded("ABILITIES")}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "ABILITIES" ? "ABILITIES" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">Abilities </div>
             <div className="collapse-content">
@@ -267,7 +277,9 @@ export default function ModalDuergar() {
               type="radio"
               name="my-accordion-2"
               checked={expand === "COMBAT"}
-              onClick={() => setExpanded("COMBAT")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Combat </div>
             <div className="collapse-content">
@@ -285,7 +297,9 @@ export default function ModalDuergar() {
               type="radio"
               name="my-accordion-2"
               checked={expand === "SOCIETY"}
-              onClick={() => setExpanded("SOCIETY")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Society </div>
             <div className="collapse-content">
@@ -423,7 +437,9 @@ export default function ModalDuergar() {
               type="radio"
               name="my-accordion-2"
               checked={expand === "HISTORY"}
-              onClick={() => setExpanded("HISTORY")}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "HISTORY" ? "HISTORY" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">History </div>
             <div className="collapse-content">

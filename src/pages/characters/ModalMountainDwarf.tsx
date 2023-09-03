@@ -57,23 +57,31 @@ export default function ModalMountainDwarf() {
           />
           <p className="py-4"></p>
           <div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="radio"
-    name="my-accordion-5"
-    checked={expand === "MOUNTAIN_DWARF"}
-    onChange={() => setExpanded("MOUNTAIN_DWARF")}
-  />
-  <div className="collapse-title text-xl font-medium">Mountain Dwarf</div>
-  <div className="collapse-content">
-    <p>
-      Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.
-    </p>
-    <br />
-    <p>
-      As a mountain dwarf, you're strong and hardy, accustomed to a difficult life in rugged terrain. You're probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.
-    </p>
-  </div>
-</div>
+            <input
+              type="radio"
+              name="my-accordion-5"
+              checked={expand === "MOUNTAIN_DWARF"}
+              onClick={() => setExpanded(prev=>prev!=="MOUNTAIN_DWARF"?'MOUNTAIN_DWARF':null)}
+            />
+            <div className="collapse-title text-xl font-medium">
+              Mountain Dwarf
+            </div>
+            <div className="collapse-content">
+              <p>
+                Bold and hardy, dwarves are known as skilled warriors, miners,
+                and workers of stone and metal.
+              </p>
+              <br />
+              <p>
+                As a mountain dwarf, you're strong and hardy, accustomed to a
+                difficult life in rugged terrain. You're probably on the tall
+                side (for a dwarf), and tend toward lighter coloration. The
+                shield dwarves of northern Faerûn, as well as the ruling Hylar
+                clan and the noble Daewar clan of Dragonlance, are mountain
+                dwarves.
+              </p>
+            </div>
+          </div>
 
           <DwarfInfo
             expand={expand}

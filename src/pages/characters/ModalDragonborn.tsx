@@ -9,7 +9,7 @@ declare global {
 }
 
 export default function ModalDragonBorn() {
-  const [detail, setDetail] = useState<String | null>(null);
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal3 = document.getElementById("my_modal_3");
     if (myModal3) window.my_modal_3 = myModal3;
@@ -57,12 +57,14 @@ export default function ModalDragonBorn() {
           <p className="py-4"></p>
 
           {/* accordion start */}
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
-              checked={detail === "DETAILS"}
-              onClick={() => setDetail("DETAILS")}
+              checked={expand === "DETAILS"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
@@ -79,12 +81,14 @@ export default function ModalDragonBorn() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
-              checked={detail === "PROUD"}
-              onClick={() => setDetail("PROUD")}
+              checked={expand === "PROUD"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "PROUD" ? "PROUD" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Proud Dragon Kin
@@ -112,12 +116,14 @@ export default function ModalDragonBorn() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
-              checked={detail === "CLANS"}
-              onClick={() => setDetail("CLANS")}
+              checked={expand === "CLANS"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "CLANS" ? "CLANS" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Self-Sufficient Clans
@@ -152,12 +158,14 @@ export default function ModalDragonBorn() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
-              checked={detail === "NAMES"}
-              onClick={() => setDetail("NAMES")}
+              checked={expand === "NAMES"}
+              onClick={() =>
+                setExpanded((prev) => (prev !== "NAMES" ? "NAMES" : null))
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Dragonborn Names{" "}
@@ -197,12 +205,16 @@ export default function ModalDragonBorn() {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200 my-1">
+          <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
               name="my-accordion-2"
-              checked={detail === "BREATH"}
-              onClick={() => setDetail("BREATH")}
+              checked={expand === "DRAGON-BREATH"}
+              onClick={() =>
+                setExpanded((prev) =>
+                  prev !== "DRAGON-BREATH" ? "DRAGON-BREATH" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Dragon Breath

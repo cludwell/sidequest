@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import stout from "../../../public/images/stout5.png";
+import HalflingInfo from "./HalflingIngo";
 
 declare global {
   interface Window {
@@ -9,6 +10,7 @@ declare global {
 }
 
 export default function ModalStoutHalfing() {
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal16 = document.getElementById("my_modal_16");
     if (myModal16) window.my_modal_16 = myModal16;
@@ -46,7 +48,11 @@ export default function ModalStoutHalfing() {
       <dialog id="my_modal_16" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Stout Halfling</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <HalflingInfo
+            expand={expand}
+            setExpanded={setExpanded}
+            type={"stout"}
+          />
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
