@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import eladrin from "../../../public/images/eladrin.jpg";
+import ElfInfo from "./ElfInfo";
 
 declare global {
   interface Window {
@@ -9,6 +10,7 @@ declare global {
 }
 
 export default function ModalEladrinElf() {
+  const [expand, setExpanded] =useState<string|null>(null)
   useEffect(() => {
     const myModal10 = document.getElementById("my_modal_10");
     if (myModal10) window.my_modal_10 = myModal10;
@@ -46,7 +48,7 @@ export default function ModalEladrinElf() {
       <dialog id="my_modal_10" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Eladrin Elf</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <ElfInfo expand={expand} setExpanded={setExpanded} type={'eladrin'}/>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

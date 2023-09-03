@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import highElf from "../../../public/images/elf4.jpeg";
+import ElfInfo from "./ElfInfo";
 declare global {
   interface Window {
     my_modal_8: any; // Replace `any` with the type of your modal if possible
@@ -8,6 +9,7 @@ declare global {
 }
 
 export default function ModalHighElf() {
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal8 = document.getElementById("my_modal_8");
     if (myModal8) window.my_modal_8 = myModal8;
@@ -45,7 +47,7 @@ export default function ModalHighElf() {
       <dialog id="my_modal_8" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">High Elf</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <ElfInfo expand={expand} setExpanded={setExpanded} type={"high"} />
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

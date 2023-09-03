@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
+import { RacialInfoProps } from '../../../lib/racialInfoProps';
 
-type DwarfInfoProps = {
-  expand: string | null;
-  setExpanded: React.Dispatch<React.SetStateAction<string | null>>;
-  type: string; 
-};
-
-export default function DwarfInfo({ expand, setExpanded, type }: DwarfInfoProps) {
+export default function DwarfInfo({ expand, setExpanded, type }: RacialInfoProps) {
   return (
     <>
       <div className="collapse collapse-plus bg-base-200 my-1">

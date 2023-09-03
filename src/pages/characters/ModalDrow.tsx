@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import drow from "../../../public/images/drow.jpg";
-
+import drowDetail from '../../../public/images/drow2.jpeg'
 declare global {
   interface Window {
     my_modal_21: any; // Replace `any` with the type of your modal if possible
@@ -9,6 +9,7 @@ declare global {
 }
 
 export default function ModalDrow() {
+  const [expand, setExpanded] = useState<string|null>(null)
   useEffect(() => {
     const myModal21 = document.getElementById("my_modal_21");
     if (myModal21) window.my_modal_21 = myModal21;
@@ -47,6 +48,13 @@ export default function ModalDrow() {
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Drow</h3>
           <p className="py-4">Press ESC key or click outside to close</p>
+          <Image
+          src={drowDetail}
+          alt="detail image"
+          width={800}
+          height={800}
+          className="rounded-xl aspect-square object-cover"
+        />
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

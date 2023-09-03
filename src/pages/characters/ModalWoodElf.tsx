@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import woodElf from "../../../public/images/woodelf3.jpeg";
+import ElfInfo from "./ElfInfo";
 
 declare global {
   interface Window {
@@ -9,6 +10,7 @@ declare global {
 }
 
 export default function ModalWoodElf() {
+  const [expand, setExpanded] =useState<string|null>(null)
   useEffect(() => {
     const myModal9 = document.getElementById("my_modal_9");
     if (myModal9) window.my_modal_9 = myModal9;
@@ -46,7 +48,7 @@ export default function ModalWoodElf() {
       <dialog id="my_modal_9" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Wood Elf</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <ElfInfo expand={expand} setExpanded={setExpanded} type={'wood'} />
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
