@@ -54,7 +54,7 @@ export default function ModalDrow() {
             height={800}
             className="rounded-xl aspect-square object-cover"
           />
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <p className="py-4"></p>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="radio"
@@ -89,7 +89,7 @@ export default function ModalDrow() {
                 while females were a bit lighter, averaging 104.5 pounds.
               </p>
 
-              <h2>Coloration</h2>
+              <h2 className="text-xl underline my-4">Coloration</h2>
               <p>
                 Drow skin tones ranged from dark grey, jet-black, and obsidian,
                 the albino drow known as the Szarkai being an exception. Drow
@@ -102,7 +102,7 @@ export default function ModalDrow() {
                 state.
               </p>
 
-              <h2>Hair</h2>
+              <h2 className="text-xl underline my-4">Hair</h2>
               <p>
                 Drow hair could be stark white, pale yellow and, more rarely,
                 silver or copper in color. It thinned and changed color with
@@ -112,7 +112,7 @@ export default function ModalDrow() {
                 sideburns or tufts of wispy hair on the cheek or chin.
               </p>
 
-              <h2>Clothing</h2>
+              <h2 className="text-xl underline my-4">Clothing</h2>
               <p>
                 The majority of drow wore a piwafwi, a fire-resistant,
                 protective cloak, footwear that functioned as boots of

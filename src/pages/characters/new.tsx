@@ -36,7 +36,7 @@ export default function NewCharacter() {
       <ModalAarakocra />
       <ModalAasimar />
       <ModalDragonBorn />
-      <div className="collapse collapse-plus bg-base-200 m-1 z-0">
+      <div className="collapse collapse-plus bg-base-200 m-1 z-0 max-w-screen-xl w-full">
         <input
           type="radio"
           name="my-accordion-3"
@@ -59,7 +59,7 @@ export default function NewCharacter() {
           <ModalMountainDwarf />
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200 m-1">
+      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
           type="radio"
           name="my-accordion-3"
@@ -83,7 +83,7 @@ export default function NewCharacter() {
           <ModalWoodElf />
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200 m-1">
+      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
           type="radio"
           name="my-accordion-3"
@@ -108,7 +108,7 @@ export default function NewCharacter() {
       <ModalGoliath />
       <ModalHalfElf />
       <ModalHalfOrc />
-      <div className="collapse collapse-plus bg-base-200 m-1">
+      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
           type="radio"
           name="my-accordion-3"

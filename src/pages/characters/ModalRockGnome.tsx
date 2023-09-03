@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import deepGnome from "../../../public/images/gnome.jpg";
+import GnomeInfo from "./GnomeInfo";
 
 declare global {
   interface Window {
@@ -9,6 +10,7 @@ declare global {
 }
 
 export default function ModalRockGnome() {
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal11 = document.getElementById("my_modal_11");
     if (myModal11) window.my_modal_11 = myModal11;
@@ -46,7 +48,7 @@ export default function ModalRockGnome() {
       <dialog id="my_modal_11" className="modal">
         <form method="dialog" className="modal-box">
           <h3 className="font-bold text-lg">Rock Gnome</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <GnomeInfo expand={expand} setExpanded={setExpanded} type={"rock"} />
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

@@ -55,7 +55,7 @@ export default function ModalMountainDwarf() {
             height={800}
             className="rounded-xl aspect-square object-cover"
           />
-          <p className="py-4">Press ESC key or click outside to close</p>
+          <p className="py-4"></p>
           <div className="collapse collapse-plus bg-base-200 my-1">
   <input
     type="radio"
