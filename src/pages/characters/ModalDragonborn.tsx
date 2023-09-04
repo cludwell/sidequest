@@ -2,18 +2,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import dragonborn from "../../../public/images/dragonborn.jpeg";
 import dragonbornDetail from "../../../public/images/dragonborn5.jpeg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_3: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalDragonBorn() {
+export default function ModalDragonBorn({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal3 = document.getElementById("my_modal_3");
     if (myModal3) window.my_modal_3 = myModal3;
   }, []);
+  const raceDragonBorn = async () => setRace("Dragonborn");
 
   return (
     <>
@@ -412,8 +414,14 @@ export default function ModalDragonBorn() {
             </table>
           </div>
           {/* table end */}
-          <button className="btn btn-success self-end">Select race</button>
-        </form>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceDragonBorn}
+            >
+              Select Dragonborn
+            </button>
+          </div>        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

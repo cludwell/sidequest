@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import halfOrc from "../../../public/images/halforc7.jpeg";
 import halfOrcDetail from "../../../public/images/Half-orc-Paladin.png";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalHalfOrc() {
+export default function ModalHalfOrc({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal19 = document.getElementById("my_modal_19");
     if (myModal19) window.my_modal_19 = myModal19;
   }, []);
+  const raceHalfOrc = async () => setRace("Half-orc");
 
   return (
     <>
@@ -377,6 +379,14 @@ export default function ModalHalfOrc() {
               </tr>
             </tbody>
           </table>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceHalfOrc}
+            >
+              Select Half-Orc
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

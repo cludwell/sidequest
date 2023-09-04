@@ -2,18 +2,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import goliath from "../../../public/images/goliath3.jpg";
 import goliathDetail from "../../../public/images/goliath-feat.jpg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_13: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalGoliath() {
+export default function ModalGoliath({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal13 = document.getElementById("my_modal_13");
     if (myModal13) window.my_modal_13 = myModal13;
   }, []);
+  const raceGoliath = async () => setRace("Goliath");
 
   return (
     <>
@@ -443,6 +445,14 @@ export default function ModalGoliath() {
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceGoliath}
+            >
+              Select Goliath
+            </button>
           </div>
         </form>
         <form method="dialog" className="modal-backdrop">

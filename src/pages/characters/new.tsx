@@ -28,7 +28,7 @@ import ModalDuergar from "./ModalDuergar";
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const [progress, setProgress] = useState(5);
-  const [race, setRace] = useState(null);
+  const [race, setRace] = useState<string|null>(null);
   const [selected, setSelected] = useState<String | null>(null);
   const races = [
     "Aarakocra",
@@ -51,15 +51,23 @@ export default function NewCharacter() {
     "Human",
     "Tiefling",
   ];
-  const randomRace = () => console.log(races[Math.floor(Math.random() * races.length -1)])
+  const randomRace = () =>
+    setRace(races[Math.floor(Math.random() * races.length)]);
   return (
     <main className="flex min-h-screen flex-col items-center p-16">
-      <ModalAarakocra />
-      <ModalAasimar />
-      <ModalDragonBorn />
+      <ul className="steps steps-horizontal lg:steps-horizontal mb-12">
+        <li className={race ? 'step step-primary' : 'step'}>Race</li>
+        <li className="step step-primary">Class</li>
+        <li className="step">Abilities</li>
+        <li className="step">Description</li>
+        <li className="step">Equipment</li>
+      </ul>
+      <ModalAarakocra race={race} setRace={setRace}/>
+      <ModalAasimar race={race} setRace={setRace}/>
+      <ModalDragonBorn race={race} setRace={setRace} />
       <div className="collapse collapse-plus bg-base-200 m-1 z-0 max-w-screen-xl w-full">
         <input
-         type="checkbox"
+          type="checkbox"
           name="my-accordion-3"
           checked={selected === "DWARF"}
           onChange={() =>
@@ -77,17 +85,19 @@ export default function NewCharacter() {
           DWARF
         </div>
         <div className="collapse-content">
-          <ModalDuergar />
-          <ModalHillDwarf />
-          <ModalMountainDwarf />
+          <ModalDuergar race={race} setRace={setRace}/>
+          <ModalHillDwarf race={race} setRace={setRace}/>
+          <ModalMountainDwarf race={race} setRace={setRace}/>
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
-         type="checkbox"
+          type="checkbox"
           name="my-accordion-3"
           checked={selected === "ELF"}
-          onChange={() => setSelected((prev) => (prev !== "ELF" ? "ELF" : null))}
+          onChange={() =>
+            setSelected((prev) => (prev !== "ELF" ? "ELF" : null))
+          }
         />
         <div className="collapse-title text-xl font-bold flex items-center">
           <Image
@@ -100,15 +110,15 @@ export default function NewCharacter() {
           ELF
         </div>
         <div className="collapse-content">
-          <ModalEladrinElf />
-          <ModalDrow />
-          <ModalHighElf />
-          <ModalWoodElf />
+          <ModalEladrinElf race={race} setRace={setRace}/>
+          <ModalDrow race={race} setRace={setRace}/>
+          <ModalHighElf race={race} setRace={setRace}/>
+          <ModalWoodElf race={race} setRace={setRace}/>
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
-         type="checkbox"
+          type="checkbox"
           name="my-accordion-3"
           checked={selected === "GNOME"}
           onChange={() =>
@@ -126,16 +136,16 @@ export default function NewCharacter() {
           GNOME
         </div>
         <div className="collapse-content">
-          <ModalRockGnome />
-          <ModalDeepGnome />
+          <ModalRockGnome race={race} setRace={setRace}/>
+          <ModalDeepGnome race={race} setRace={setRace}/>
         </div>
       </div>
-      <ModalGoliath />
-      <ModalHalfElf />
-      <ModalHalfOrc />
+      <ModalGoliath race={race} setRace={setRace}/>
+      <ModalHalfElf race={race} setRace={setRace}/>
+      <ModalHalfOrc race={race} setRace={setRace}/>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
-         type="checkbox"
+          type="checkbox"
           name="my-accordion-3"
           checked={selected === "HALFLING"}
           onChange={() =>
@@ -153,18 +163,23 @@ export default function NewCharacter() {
           HALFLING
         </div>
         <div className="collapse-content">
-          <ModalLightfootHalfing />
-          <ModalStoutHalfing />
+          <ModalLightfootHalfing race={race} setRace={setRace}/>
+          <ModalStoutHalfing race={race} setRace={setRace} />
         </div>
       </div>
-      <ModalHuman />
-      <ModalTiefling />
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary my-8" onClick={randomRace}>
-        Choose at Random
-      </button>
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-        Responsive
-      </button>
+      <ModalHuman race={race} setRace={setRace}/>
+      <ModalTiefling race={race} setRace={setRace}/>
+      <div className="flex flex-row">
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          onClick={randomRace}
+        >
+          Choose at Random
+        </button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+          Next Step
+        </button>
+      </div>
     </main>
   );
 }

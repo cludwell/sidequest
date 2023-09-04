@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import woodElf from "../../../public/images/woodelf3.jpeg";
 import ElfInfo from "./ElfInfo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalWoodElf() {
+export default function ModalWoodElf({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] =useState<string|null>(null)
   useEffect(() => {
     const myModal9 = document.getElementById("my_modal_9");
     if (myModal9) window.my_modal_9 = myModal9;
   }, []);
+  const raceWoodElf = async () => setRace("Wood Elf");
 
   return (
     <>
@@ -49,6 +51,14 @@ export default function ModalWoodElf() {
         <form method="dialog" className="modal-box">
         <h3 className="font-bold text-5xl mb-4 almendra text-center">Wood Elf</h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={'wood'} />
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceWoodElf}
+            >
+              Select Wood
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import aasimar from "../../../public/images/aasimar.jpeg";
 import aasimarDetail from "../../../public/images/aasimar5.jpg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,14 @@ declare global {
   }
 }
 
-export default function ModalAasimar() {
+export default function ModalAasimar({race, setRace}: SetRaceProps) {
   const [detail, setDetail] = useState<String | null>(null);
   useEffect(() => {
     const myModal20 = document.getElementById("my_modal_20");
     if (myModal20) window.my_modal_20 = myModal20;
   }, []);
+
+  const raceAasimar = async () => setRace("Aasimar");
 
   return (
     <>
@@ -446,8 +449,14 @@ export default function ModalAasimar() {
             </table>
           </div>
           {/* table end */}
-          <button className="btn btn-success self-end">Select race</button>
-        </form>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceAasimar}
+            >
+              Select Aasimar
+            </button>
+          </div>        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

@@ -2,18 +2,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import highElf from "../../../public/images/elf4.jpeg";
 import ElfInfo from "./ElfInfo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_8: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalHighElf() {
+export default function ModalHighElf({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal8 = document.getElementById("my_modal_8");
     if (myModal8) window.my_modal_8 = myModal8;
   }, []);
+  const raceHighElf = async () => setRace("High Elf");
 
   return (
     <>
@@ -48,6 +50,14 @@ export default function ModalHighElf() {
         <form method="dialog" className="modal-box">
         <h3 className="font-bold text-5xl mb-4 almendra text-center">High Elf</h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={"high"} />
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceHighElf}
+            >
+              Select High-Elf
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

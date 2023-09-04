@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import tiefling from "../../../public/images/tiefling9.jpeg";
 import tieflingDetail from "../../../public/images/tiefling6.jpg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalTiefling() {
+export default function ModalTiefling({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal18 = document.getElementById("my_modal_18");
     if (myModal18) window.my_modal_18 = myModal18;
   }, []);
+  const raceTiefling = async () => setRace("Tiefling");
 
   return (
     <>
@@ -47,7 +49,9 @@ export default function ModalTiefling() {
       </button>
       <dialog id="my_modal_18" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Tiefling</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Tiefling
+          </h3>
           <Image
             src={tieflingDetail}
             alt="detail image"
@@ -480,6 +484,11 @@ export default function ModalTiefling() {
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div className="flex flex-row justify-center">
+            <button className="btn btn-success btn-wide" onClick={raceTiefling}>
+              Select Tiefling
+            </button>
           </div>
         </form>
         <form method="dialog" className="modal-backdrop">

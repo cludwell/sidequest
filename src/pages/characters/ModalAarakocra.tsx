@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import aarakocra from "../../../public/images/aarakocra.jpeg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -8,13 +9,14 @@ declare global {
   }
 }
 
-export default function ModalAarakocra() {
+export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
   const [detail, setDetail] = useState<String | null>(null);
   useEffect(() => {
     const myModal4 = document.getElementById("my_modal_4");
     if (myModal4) window.my_modal_4 = myModal4;
   }, []);
 
+  const raceAarakocra = async () => setRace("Aarakocra");
   return (
     <>
       <button
@@ -45,8 +47,10 @@ export default function ModalAarakocra() {
         </svg>
       </button>
       <dialog id="my_modal_4" className="modal">
-        <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">Aarakocra</h3>
+        <form method="dialog" className="modal-box ">
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Aarakocra
+          </h3>
           <Image
             src={aarakocra}
             alt="detail image"
@@ -399,7 +403,14 @@ export default function ModalAarakocra() {
             </table>
           </div>
           {/* table end */}
-          <button className="btn btn-success self-end">Select race</button>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceAarakocra}
+            >
+              Select Aarakocra
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

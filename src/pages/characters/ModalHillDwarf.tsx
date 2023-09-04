@@ -3,18 +3,20 @@ import { useEffect, useState } from "react";
 import hillDwarf from "../../../public/images/dwarf2.jpeg";
 import hillDetail from "../../../public/images/dwarf8.jpg";
 import DwarfInfo from "./DwarfInfo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_6: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalHillDwarf() {
+export default function ModalHillDwarf({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal6 = document.getElementById("my_modal_6");
     if (myModal6) window.my_modal_6 = myModal6;
   }, []);
+  const raceHillDwarf = async () => setRace("Hill Dwarf");
 
   return (
     <>
@@ -84,8 +86,14 @@ export default function ModalHillDwarf() {
           </div>
 
           <DwarfInfo expand={expand} setExpanded={setExpanded} type={"hill"} />
-          <button className="btn btn-success self-end">Select race</button>
-        </form>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceHillDwarf}
+            >
+              Select Hill Dwarf
+            </button>
+          </div>        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

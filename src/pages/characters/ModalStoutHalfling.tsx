@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import stout from "../../../public/images/stout5.png";
 import HalflingInfo from "./HalflingIngo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalStoutHalfing() {
+export default function ModalStoutHalfing({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal16 = document.getElementById("my_modal_16");
     if (myModal16) window.my_modal_16 = myModal16;
   }, []);
+  const raceStoutHalfing = async () => setRace("Stout Halfing");
 
   return (
     <>
@@ -53,6 +55,14 @@ export default function ModalStoutHalfing() {
             setExpanded={setExpanded}
             type={"stout"}
           />
+                    <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceStoutHalfing}
+            >
+              Select Stout Halfling
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

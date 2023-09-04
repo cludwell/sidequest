@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import halfElf from "../../../public/images/halfelf3.jpeg";
 import halfElfDetail from "../../../public/images/halfelf5.png";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalHalfElf() {
+export default function ModalHalfElf({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal14 = document.getElementById("my_modal_14");
     if (myModal14) window.my_modal_14 = myModal14;
   }, []);
+  const raceHalfElf = async () => setRace("Half-elf");
 
   return (
     <>
@@ -370,6 +372,14 @@ export default function ModalHalfElf() {
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceHalfElf}
+            >
+              Select Half-Elf
+            </button>
           </div>
         </form>
         <form method="dialog" className="modal-backdrop">

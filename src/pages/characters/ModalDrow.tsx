@@ -2,18 +2,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import drow from "../../../public/images/drow.jpg";
 import drowDetail from "../../../public/images/drow6.png";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_21: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalDrow() {
+export default function ModalDrow({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal21 = document.getElementById("my_modal_21");
     if (myModal21) window.my_modal_21 = myModal21;
   }, []);
+  const raceDrow = async () => setRace("Drow");
 
   return (
     <>
@@ -573,6 +575,14 @@ export default function ModalDrow() {
               </tr>
             </tbody>
           </table>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceDrow}
+            >
+              Select Drow
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

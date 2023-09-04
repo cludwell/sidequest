@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import lightfoot from "../../../public/images/lightfoot9.jpeg";
 import HalflingInfo from "./HalflingIngo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalLightfootHalfing() {
+export default function ModalLightfootHalfing({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal15 = document.getElementById("my_modal_15");
     if (myModal15) window.my_modal_15 = myModal15;
   }, []);
+  const raceLightfoot = async () => setRace("Lightfoot Halfling");
 
   return (
     <>
@@ -53,6 +55,14 @@ export default function ModalLightfootHalfing() {
             setExpanded={setExpanded}
             type={"lightfoot"}
           />
+                    <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceLightfoot}
+            >
+              Select Lightfoot Halfling
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

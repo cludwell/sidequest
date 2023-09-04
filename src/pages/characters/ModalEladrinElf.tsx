@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import eladrin from "../../../public/images/eladrin.jpg";
 import ElfInfo from "./ElfInfo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalEladrinElf() {
+export default function ModalEladrinElf({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] =useState<string|null>(null)
   useEffect(() => {
     const myModal10 = document.getElementById("my_modal_10");
     if (myModal10) window.my_modal_10 = myModal10;
   }, []);
+  const raceEladrin = async () => setRace("Eladrin Elf");
 
   return (
     <>
@@ -49,6 +51,14 @@ export default function ModalEladrinElf() {
         <form method="dialog" className="modal-box">
         <h3 className="font-bold text-5xl mb-4 almendra text-center">Eladrin Elf</h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={'eladrin'}/>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceEladrin}
+            >
+              Select Eladrin Elf
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

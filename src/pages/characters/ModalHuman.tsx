@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import human from "../../../public/images/humanportrait.jpg";
 import humanDetail from "../../../public/images/human6.jpg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,13 @@ declare global {
   }
 }
 
-export default function ModalHuman() {
+export default function ModalHuman({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal17 = document.getElementById("my_modal_17");
     if (myModal17) window.my_modal_17 = myModal17;
   }, []);
+  const raceHuman = async () => setRace("Human");
 
   return (
     <>
@@ -473,6 +475,11 @@ export default function ModalHuman() {
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div className="flex flex-row justify-center">
+            <button className="btn btn-success btn-wide" onClick={raceHuman}>
+              Select Human
+            </button>
           </div>
         </form>
         <form method="dialog" className="modal-backdrop">

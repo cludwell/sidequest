@@ -2,18 +2,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Duergar from "../../../public/images/duergar.png";
 import duergarDetail from "../../../public/images/duergar2.jpg";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_22: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalDuergar() {
+export default function ModalDuergar({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<String | null>(null);
   useEffect(() => {
     const myModal22 = document.getElementById("my_modal_22");
     if (myModal22) window.my_modal_22 = myModal22;
   }, []);
+  const raceDuergar = async () => setRace("Duergar");
 
   return (
     <>
@@ -633,8 +635,14 @@ export default function ModalDuergar() {
             </table>
           </div>
           {/* table end */}
-          <button className="btn btn-success self-end">Select race</button>
-        </form>
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceDuergar}
+            >
+              Select Duergar
+            </button>
+          </div>        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

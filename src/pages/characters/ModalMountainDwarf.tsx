@@ -3,18 +3,20 @@ import { useEffect, useState } from "react";
 import mountainDwarf from "../../../public/images/dwarf3.jpeg";
 import mountainDwarfDetail from "../../../public/images/dwarf7.jpg";
 import DwarfInfo from "./DwarfInfo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 declare global {
   interface Window {
     my_modal_7: any; // Replace `any` with the type of your modal if possible
   }
 }
 
-export default function ModalMountainDwarf() {
+export default function ModalMountainDwarf({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal7 = document.getElementById("my_modal_7");
     if (myModal7) window.my_modal_7 = myModal7;
   }, []);
+  const raceMountainDwarf = async () => setRace("Mountain Dwarf");
 
   return (
     <>
@@ -94,6 +96,14 @@ export default function ModalMountainDwarf() {
             setExpanded={setExpanded}
             type={"mountain"}
           />
+                    <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceMountainDwarf}
+            >
+              Select Mountain Dwarf
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

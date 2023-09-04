@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import deepGnome from "../../../public/images/deepgnome6.jpg";
 import GnomeInfo from "./GnomeInfo";
+import { SetRaceProps } from "../../../lib/setRaceProps";
 
 declare global {
   interface Window {
@@ -9,12 +10,14 @@ declare global {
   }
 }
 
-export default function ModalDeepGnome() {
+export default function ModalDeepGnome({race, setRace}: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal12 = document.getElementById("my_modal_12");
     if (myModal12) window.my_modal_12 = myModal12;
   }, []);
+
+  const raceDeepGnome = async () => setRace("Deep Gnome");
 
   return (
     <>
@@ -49,6 +52,14 @@ export default function ModalDeepGnome() {
         <form method="dialog" className="modal-box">
         <h3 className="font-bold text-5xl mb-4 almendra text-center">Deep Gnome</h3>
           <GnomeInfo expand={expand} setExpanded={setExpanded} type={"deep"} />
+          <div className="flex flex-row justify-center">
+            <button
+              className="btn btn-success btn-wide"
+              onClick={raceDeepGnome}
+            >
+              Select Deep Gnome
+            </button>
+          </div>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
