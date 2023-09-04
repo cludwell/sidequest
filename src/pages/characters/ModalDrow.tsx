@@ -38,9 +38,9 @@ export default function ModalDrow() {
           className="w-6 h-6 "
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
@@ -57,7 +57,7 @@ export default function ModalDrow() {
           <p className="py-4"></p>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-6"
               checked={expand === "DROW_DESCRIPTION"}
               onChange={() =>
@@ -132,7 +132,7 @@ export default function ModalDrow() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "DROW_PERSONALITY"}
               onChange={() =>
@@ -173,7 +173,7 @@ export default function ModalDrow() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-8"
               checked={expand === "DROW_MORALITY"}
               onChange={() =>
@@ -242,7 +242,7 @@ export default function ModalDrow() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-9"
               checked={expand === "DROW_MISTRUST"}
               onChange={() =>
@@ -300,7 +300,7 @@ export default function ModalDrow() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-10"
               checked={expand === "DROW_ALIGNMENT"}
               onChange={() =>
@@ -341,7 +341,7 @@ export default function ModalDrow() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-11"
               checked={expand === "GOOD_DROW"}
               onChange={() =>
@@ -381,7 +381,7 @@ export default function ModalDrow() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-13"
               checked={expand === "COMBAT"}
               onChange={() =>

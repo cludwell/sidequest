@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import halfOrc from "../../../public/images/halforc7.jpeg";
-import halfOrcDetail from "../../../public/images/halforc3.jpg";
+import halfOrcDetail from "../../../public/images/Half-orc-Paladin.png";
 
 declare global {
   interface Window {
@@ -39,15 +39,17 @@ export default function ModalHalfOrc() {
           className="w-6 h-6 "
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
       <dialog id="my_modal_19" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Half Orc</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Half Orc
+          </h3>
           <Image
             src={halfOrcDetail}
             alt="detail image"
@@ -59,11 +61,11 @@ export default function ModalHalfOrc() {
           {/* Description Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion"
               id="halfOrcDescription"
               checked={expand === "DESCRIPTION"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "DESCRIPTION" ? "DESCRIPTION" : null
                 )
@@ -76,6 +78,18 @@ export default function ModalHalfOrc() {
               Description
             </label>
             <div className="collapse-content">
+              <p>
+                Half-orcs, colloquially known as half-tusks in Purskul and
+                Zehoarastria of Amn, were humanoids born of both human and orc
+                ancestry by a multitude of means. Having the combined physical
+                power of their orcish ancestors with the agility of their human
+                ones, half-orcs were formidable individuals. Though they were
+                often shunned in both human and orcish society for different
+                reasons, half-orcs have proven themselves from time to time as
+                worthy heroes and dangerous villains. Their existence implied an
+                interesting back story that most would not like to dwell on.
+              </p>
+              <br />
               <p>
                 Half-orcs were typically between 5 feet 9 inches to 6 feet 4
                 inches in height and weighed around 155 to 225 pounds. This made
@@ -104,11 +118,11 @@ export default function ModalHalfOrc() {
           {/* Personality Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion"
               id="halfOrcPersonality"
               checked={expand === "PERSONALITY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "PERSONALITY" ? "PERSONALITY" : null
                 )
@@ -148,11 +162,11 @@ export default function ModalHalfOrc() {
           {/* Abilities Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion"
               id="halfOrcAbilities"
               checked={expand === "ABILITIES"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "ABILITIES" ? "ABILITIES" : null
                 )
@@ -187,10 +201,10 @@ export default function ModalHalfOrc() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "CULTURE"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "CULTURE" ? "CULTURE" : null))
               }
             />
@@ -218,10 +232,10 @@ export default function ModalHalfOrc() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "RELIGION"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
               }
             />
@@ -238,10 +252,10 @@ export default function ModalHalfOrc() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "HOMELANDS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "HOMELANDS" ? "HOMELANDS" : null
                 )
@@ -260,10 +274,10 @@ export default function ModalHalfOrc() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "RELATIONS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "RELATIONS" ? "RELATIONS" : null
                 )

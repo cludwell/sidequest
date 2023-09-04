@@ -39,15 +39,17 @@ export default function ModalMountainDwarf() {
           className="w-6 h-6 "
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
       <dialog id="my_modal_7" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Mountain Dwarf</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Mountain Dwarf
+          </h3>
           <Image
             src={mountainDwarfDetail}
             alt="detail image"
@@ -58,10 +60,14 @@ export default function ModalMountainDwarf() {
           <p className="py-4"></p>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-5"
               checked={expand === "MOUNTAIN_DWARF"}
-              onClick={() => setExpanded(prev=>prev!=="MOUNTAIN_DWARF"?'MOUNTAIN_DWARF':null)}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "MOUNTAIN_DWARF" ? "MOUNTAIN_DWARF" : null
+                )
+              }
             />
             <div className="collapse-title text-xl font-medium">
               Mountain Dwarf

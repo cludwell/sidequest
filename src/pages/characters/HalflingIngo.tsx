@@ -20,10 +20,10 @@ export default function HalflingInfo({
       <p className="py-4"></p>
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "DETAILS"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
           }
         />
@@ -49,10 +49,10 @@ export default function HalflingInfo({
 
       <div className="collapse collapse=plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "SMALL_PRACTICAL"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "SMALL_PRACTICAL" ? "SMALL_PRACTICAL" : null
             )
@@ -92,10 +92,10 @@ export default function HalflingInfo({
 
       <div className="collapse collapse=plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "KIND_CURIOUS"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "KIND_CURIOUS" ? "KIND_CURIOUS" : null
             )
@@ -125,10 +125,10 @@ export default function HalflingInfo({
 
       <div className="collapse collapse=plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "BLEND_CROWD"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "BLEND_CROWD" ? "BLEND_CROWD" : null
             )
@@ -156,10 +156,10 @@ export default function HalflingInfo({
 
       <div className="collapse collapse=plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "PASTORAL_PLEASANTRIES"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "PASTORAL_PLEASANTRIES" ? "PASTORAL_PLEASANTRIES" : null
             )
@@ -190,10 +190,10 @@ export default function HalflingInfo({
 
       <div className="collapse collapse=plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "AFFABLE_POSITIVE"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "AFFABLE_POSITIVE" ? "AFFABLE_POSITIVE" : null
             )
@@ -232,10 +232,10 @@ export default function HalflingInfo({
       </div>
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-8"
           checked={expand === "EXPLORING_OPPORTUNITIES"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "EXPLORING_OPPORTUNITIES"
                 ? "EXPLORING_OPPORTUNITIES"
@@ -258,10 +258,10 @@ export default function HalflingInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-9"
           checked={expand === "HALFLING_NAMES"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "HALFLING_NAMES" ? "HALFLING_NAMES" : null
             )

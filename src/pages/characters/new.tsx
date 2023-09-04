@@ -30,18 +30,41 @@ export default function NewCharacter() {
   const [progress, setProgress] = useState(5);
   const [race, setRace] = useState(null);
   const [selected, setSelected] = useState<String | null>(null);
+  const races = [
+    "Aarakocra",
+    "Aasimar",
+    "Dragonborn",
+    "Duergar",
+    "Hill Dwarf",
+    "Mountain Dwarf",
+    "Eladrin Elf",
+    "Drow",
+    "High Elf",
+    "Wood Elf",
+    "Rock Gnome",
+    "Deep Gnome",
+    "Goliath",
+    "Half-Elf",
+    "Half-Orc",
+    "Lightfoot Halfling",
+    "Stout Halfling",
+    "Human",
+    "Tiefling",
+  ];
+  const randomRace = () => console.log(races[Math.floor(Math.random() * races.length -1)])
   return (
     <main className="flex min-h-screen flex-col items-center p-16">
-
       <ModalAarakocra />
       <ModalAasimar />
       <ModalDragonBorn />
       <div className="collapse collapse-plus bg-base-200 m-1 z-0 max-w-screen-xl w-full">
         <input
-          type="radio"
+         type="checkbox"
           name="my-accordion-3"
           checked={selected === "DWARF"}
-          onClick={() => setSelected("DWARF")}
+          onChange={() =>
+            setSelected((prev) => (prev !== "DWARF" ? "DWARF" : null))
+          }
         />
         <div className="collapse-title text-xl font-bold flex items-center">
           <Image
@@ -61,10 +84,10 @@ export default function NewCharacter() {
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
-          type="radio"
+         type="checkbox"
           name="my-accordion-3"
           checked={selected === "ELF"}
-          onClick={() => setSelected("ELF")}
+          onChange={() => setSelected((prev) => (prev !== "ELF" ? "ELF" : null))}
         />
         <div className="collapse-title text-xl font-bold flex items-center">
           <Image
@@ -85,10 +108,12 @@ export default function NewCharacter() {
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
-          type="radio"
+         type="checkbox"
           name="my-accordion-3"
           checked={selected === "GNOME"}
-          onClick={() => setSelected("GNOME")}
+          onChange={() =>
+            setSelected((prev) => (prev !== "GNOME" ? "GNOME" : null))
+          }
         />
         <div className="collapse-title text-xl font-bold flex items-center">
           <Image
@@ -110,10 +135,12 @@ export default function NewCharacter() {
       <ModalHalfOrc />
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
-          type="radio"
+         type="checkbox"
           name="my-accordion-3"
           checked={selected === "HALFLING"}
-          onClick={() => setSelected("HALFLING")}
+          onChange={() =>
+            setSelected((prev) => (prev !== "HALFLING" ? "HALFLING" : null))
+          }
         />
         <div className="collapse-title text-xl font-bold flex items-center">
           <Image
@@ -132,17 +159,12 @@ export default function NewCharacter() {
       </div>
       <ModalHuman />
       <ModalTiefling />
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary my-8">Choose at Random</button>
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Responsive</button>
-      {/* <div className="collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          <ModalLightfootHalfing />
-        </div>
-        <div className="collapse-content">
-        <ModalLightfootHalfing />
-        </div>
-      </div> */}
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary my-8" onClick={randomRace}>
+        Choose at Random
+      </button>
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+        Responsive
+      </button>
     </main>
   );
 }

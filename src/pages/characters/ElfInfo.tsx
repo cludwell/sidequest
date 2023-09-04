@@ -23,10 +23,10 @@ export default function ElfInfo({
       {type === "eladrin" ? (
         <div className="collapse collapse-plus bg-base-200 my-1">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-3"
             checked={expand === "ELADRIN_VARIANT"}
-            onClick={() =>
+            onChange={() =>
               setExpanded((prev) =>
                 prev !== "ELADRIN_VARIANT" ? "ELADRIN_VARIANT" : null
               )
@@ -57,10 +57,10 @@ export default function ElfInfo({
       ) : type === "high" ? (
         <div className="collapse collapse-plus bg-base-200 my-1">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-4"
             checked={expand === "HIGH_ELF"}
-            onClick={() =>
+            onChange={() =>
               setExpanded((prev) => (prev !== "HIGH_ELF" ? "HIGH_ELF" : null))
             }
           />
@@ -98,10 +98,10 @@ export default function ElfInfo({
       ) : (
         <div className="collapse collapse-plus bg-base-200 my-1">
           <input
-            type="radio"
+            type="checkbox"
             name="my-accordion-5"
             checked={expand === "WOOD_ELF"}
-            onClick={() =>
+            onChange={() =>
               setExpanded((prev) => (prev !== "WOOD_ELF" ? "WOOD_ELF" : null))
             }
           />
@@ -134,10 +134,10 @@ export default function ElfInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "SLENDER_AND_GRACEFUL"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "SLENDER_AND_GRACEFUL" ? "SLENDER_AND_GRACEFUL" : null
             )
@@ -168,10 +168,10 @@ export default function ElfInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "A_TIMELESS_PERSPECTIVE"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "A_TIMELESS_PERSPECTIVE"
                 ? "A_TIMELESS_PERSPECTIVE"
@@ -209,10 +209,10 @@ export default function ElfInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "HIDDEN_WOODLAND_REALMS"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "HIDDEN_WOODLAND_REALMS"
                 ? "HIDDEN_WOODLAND_REALMS"
@@ -244,10 +244,10 @@ export default function ElfInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "EXPLORATION_AND_ADVENTURE"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "EXPLORATION_AND_ADVENTURE"
                 ? "EXPLORATION_AND_ADVENTURE"

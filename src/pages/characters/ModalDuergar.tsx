@@ -38,9 +38,9 @@ export default function ModalDuergar() {
           className="w-6 h-6 "
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
@@ -60,7 +60,7 @@ export default function ModalDuergar() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "DETAILS"}
               onChange={() =>
@@ -90,10 +90,10 @@ export default function ModalDuergar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "PERSONALITY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "PERSONALITY" ? "PERSONALITY" : null
                 )
@@ -240,10 +240,10 @@ export default function ModalDuergar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "ABILITIES"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "ABILITIES" ? "ABILITIES" : null
                 )
@@ -274,10 +274,10 @@ export default function ModalDuergar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "COMBAT"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
               }
             />
@@ -294,10 +294,10 @@ export default function ModalDuergar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "SOCIETY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
               }
             />
@@ -434,10 +434,10 @@ export default function ModalDuergar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "HISTORY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "HISTORY" ? "HISTORY" : null))
               }
             />

@@ -19,10 +19,10 @@ export default function GnomeInfo({
       <p className="py-4"></p>
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="gnome-details-accordion"
           checked={expand === "VIBRANT_EXPRESSION"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "VIBRANT_EXPRESSION" ? "VIBRANT_EXPRESSION" : null
             )
@@ -55,10 +55,10 @@ export default function GnomeInfo({
       {/* Delighted Dedication */}
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="gnome-details-accordion"
           checked={expand === "DELIGHTED_DEDICATION"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "DELIGHTED_DEDICATION" ? "DELIGHTED_DEDICATION" : null
             )
@@ -100,10 +100,10 @@ export default function GnomeInfo({
       {/* Bright Burrows */}
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="gnome-details-accordion"
           checked={expand === "BRIGHT_BURROWS"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "BRIGHT_BURROWS" ? "BRIGHT_BURROWS" : null
             )
@@ -137,10 +137,10 @@ export default function GnomeInfo({
         <>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="gnome-details-accordion"
               checked={expand === "TINKER"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "TINKER" ? "TINKER" : null))
               }
             />
@@ -185,10 +185,10 @@ export default function GnomeInfo({
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-3"
               checked={expand === "PERSONALITY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "PERSONALITY" ? "PERSONALITY" : null
                 )
@@ -222,10 +222,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-3"
               checked={expand === "SOCIETY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
               }
             />
@@ -263,10 +263,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-3"
               checked={expand === "RELIGION"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
               }
             />
@@ -293,10 +293,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-3"
               checked={expand === "RELATIONS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "RELATIONS" ? "RELATIONS" : null
                 )
@@ -321,10 +321,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-3"
               checked={expand === "HOMELANDS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "HOMELANDS" ? "HOMELANDS" : null
                 )
@@ -356,10 +356,10 @@ export default function GnomeInfo({
         <>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "PSYCHOLOGY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "PSYCHOLOGY" ? "PSYCHOLOGY" : null
                 )
@@ -412,10 +412,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "ABILITIES"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "ABILITIES" ? "ABILITIES" : null
                 )
@@ -440,10 +440,10 @@ export default function GnomeInfo({
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "SOCIETY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
               }
             />
@@ -500,10 +500,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "CULTURE"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "CULTURE" ? "CULTURE" : null))
               }
             />
@@ -572,10 +572,10 @@ export default function GnomeInfo({
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={expand === "ART_LEISURE"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "ART_LEISURE" ? "ART_LEISURE" : null
                 )

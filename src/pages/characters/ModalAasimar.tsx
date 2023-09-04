@@ -39,9 +39,9 @@ export default function ModalAasimar() {
           className="w-6 h-6 "
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
@@ -60,10 +60,10 @@ export default function ModalAasimar() {
           {/* accordion start */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "DETAILS"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
               }
             />
@@ -99,10 +99,10 @@ export default function ModalAasimar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "PERSONALITY"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) =>
                   prev !== "PERSONALITY" ? "PERSONALITY" : null
                 )
@@ -140,10 +140,10 @@ export default function ModalAasimar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "ABILITIES"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) => (prev !== "ABILITIES" ? "ABILITIES" : null))
               }
             />
@@ -164,10 +164,10 @@ export default function ModalAasimar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "MANNERISMS"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) =>
                   prev !== "MANNERISMS" ? "MANNERISMS" : null
                 )
@@ -247,10 +247,10 @@ export default function ModalAasimar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "HISTORY"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) => (prev !== "HISTORY" ? "HISTORY" : null))
               }
             />
@@ -273,10 +273,10 @@ export default function ModalAasimar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "HOMELANDS"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) => (prev !== "HOMELANDS" ? "HOMELANDS" : null))
               }
             />
@@ -299,10 +299,10 @@ export default function ModalAasimar() {
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-2"
               checked={detail === "SUBRACES"}
-              onClick={() =>
+              onChange={() =>
                 setDetail((prev) => (prev !== "SUBRACES" ? "SUBRACES" : null))
               }
             />

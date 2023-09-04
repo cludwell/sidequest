@@ -10,10 +10,10 @@ export default function DwarfInfo({
     <>
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "SHORT_AND_STOUT"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "SHORT_AND_STOUT" ? "SHORT_AND_STOUT" : null
             )
@@ -45,10 +45,10 @@ export default function DwarfInfo({
       {/* Component for "Long Memory, Long Grudges" */}
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "LONG_MEMORY_LONG_GRUDGES"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "LONG_MEMORY_LONG_GRUDGES"
                 ? "LONG_MEMORY_LONG_GRUDGES"
@@ -96,10 +96,10 @@ export default function DwarfInfo({
       {/* Component for "Clans and Kingdoms" */}
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "CLANS_AND_KINGDOMS"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "CLANS_AND_KINGDOMS" ? "CLANS_AND_KINGDOMS" : null
             )
@@ -140,10 +140,10 @@ export default function DwarfInfo({
       {/* Component for "Gods, Gold, and Clan" */}
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "GODS_GOLD_AND_CLAN"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "GODS_GOLD_AND_CLAN" ? "GODS_GOLD_AND_CLAN" : null
             )
@@ -170,10 +170,10 @@ export default function DwarfInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-2"
           checked={expand === "SLOW_TO_TRUST"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "SLOW_TO_TRUST" ? "SLOW_TO_TRUST" : null
             )
@@ -222,10 +222,10 @@ export default function DwarfInfo({
 
       <div className="collapse collapse-plus bg-base-200 my-1">
         <input
-          type="radio"
+          type="checkbox"
           name="my-accordion-3"
           checked={expand === "DWARF_NAMES"}
-          onClick={() =>
+          onChange={() =>
             setExpanded((prev) =>
               prev !== "DWARF_NAMES" ? "DWARF_NAMES" : null
             )

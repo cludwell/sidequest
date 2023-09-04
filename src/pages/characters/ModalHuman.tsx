@@ -39,15 +39,17 @@ export default function ModalHuman() {
           className="w-6 h-6 "
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
       <dialog id="my_modal_17" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Human</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Human
+          </h3>
           <Image
             src={humanDetail}
             alt="detail image"
@@ -58,10 +60,10 @@ export default function ModalHuman() {
           <p className="py-4"></p>
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "HUMAN-DETAILS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "HUMAN-DETAILS" ? "HUMAN-DETAILS" : null
                 )
@@ -85,10 +87,10 @@ export default function ModalHuman() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "SPECTRUM"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "SPECTRUM" ? "SPECTRUM" : null))
               }
             />
@@ -113,10 +115,10 @@ export default function ModalHuman() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "VARIETY"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "VARIETY" ? "VARIETY" : null))
               }
             />
@@ -144,10 +146,10 @@ export default function ModalHuman() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "FRIENDSHIPS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "FRIENDSHIPS" ? "FRIENDSHIPS" : null
                 )
@@ -191,10 +193,10 @@ export default function ModalHuman() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "INSTITUTIONS"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "INSTITUTIONS" ? "INSTITUTIONS" : null
                 )
@@ -227,10 +229,10 @@ export default function ModalHuman() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "AMBITION"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) => (prev !== "AMBITION" ? "AMBITION" : null))
               }
             />
@@ -250,10 +252,10 @@ export default function ModalHuman() {
 
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
-              type="radio"
+              type="checkbox"
               name="my-accordion-7"
               checked={expand === "NAMES-AND-ETHNICITIES"}
-              onClick={() =>
+              onChange={() =>
                 setExpanded((prev) =>
                   prev !== "NAMES-AND-ETHNICITIES"
                     ? "NAMES-AND-ETHNICITIES"
