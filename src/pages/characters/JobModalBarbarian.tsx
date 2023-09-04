@@ -25,7 +25,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-cover rounded-md m-2"
+            className="object-contain rounded-md m-2 max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -57,7 +57,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             height={800}
             className="rounded-xl aspect-square object-cover"
           />
-
+          <p className="text-lg my-4 mx-16 italic">
+            A fierce warrior who can enter a battle rage
+          </p>
           <div className="overflow-x-auto m-1">
             <table className="table table-zebra">
               {/* head */}
@@ -613,7 +615,6 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </div>
             </div>
           </div>
-          
 
           <div className="flex flex-row justify-center">
             <button
