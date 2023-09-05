@@ -8,6 +8,7 @@ import Fighter from "./JobModalFighter";
 import Monk from "./JobModalMonk";
 import Paladin from "./JobModalPaladin";
 import Ranger from "./JobModalRanger";
+import Rogue from "./JobModalRogue";
 export default function NewCharacterClass({
   dndClass,
   setDndClass,
@@ -22,6 +23,7 @@ export default function NewCharacterClass({
       <Monk dndClass={dndClass} setDndClass={setDndClass} />
       <Paladin dndClass={dndClass} setDndClass={setDndClass} />
       <Ranger dndClass={dndClass} setDndClass={setDndClass} />
+      <Rogue dndClass={dndClass} setDndClass={setDndClass} />
       <div className="flex flex-row">
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8">
           Choose Random Class
