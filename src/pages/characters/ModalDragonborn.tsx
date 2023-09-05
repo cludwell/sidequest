@@ -9,14 +9,16 @@ declare global {
   }
 }
 
-export default function ModalDragonBorn({race, setRace}: SetRaceProps) {
+export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [dragonType, setDragonType] = useState<string>("");
   useEffect(() => {
     const myModal3 = document.getElementById("my_modal_3");
     if (myModal3) window.my_modal_3 = myModal3;
   }, []);
-  const raceDragonBorn = async () => setRace("Dragonborn");
-
+  const raceDragonBorn = async () => setRace(`Dragonborn - ${dragonType}`);
+  const dragonSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
+    setDragonType(e.target.value);
   return (
     <>
       <button
@@ -48,7 +50,9 @@ export default function ModalDragonBorn({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_3" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Dragonborn</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Dragonborn
+          </h3>
           <Image
             src={dragonbornDetail}
             alt="detail image"
@@ -57,7 +61,6 @@ export default function ModalDragonBorn({race, setRace}: SetRaceProps) {
             className="rounded-xl aspect-square object-cover"
           />
           <p className="py-4"></p>
-
           {/* accordion start */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
@@ -309,7 +312,6 @@ export default function ModalDragonBorn({race, setRace}: SetRaceProps) {
               </div>
             </div>
           </div>
-
           {/* accordion end */}
           {/* table start */}
           <div className="overflow-x-auto">
@@ -414,14 +416,35 @@ export default function ModalDragonBorn({race, setRace}: SetRaceProps) {
             </table>
           </div>
           {/* table end */}
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center">
+            <select
+              className="select select-primary w-full max-w-xs  my-4"
+              value={dragonType}
+              onChange={dragonSelected}
+            >
+              <option disabled selected>
+                Select a Dragon Type
+              </option>
+              <option>Black, Acid, 5 by 30 ft. line (Dex. save)</option>
+              <option>Blue, Lightning, 5 by 30 ft. line (Dex. save)</option>
+              <option>Brass, Fire, 5 by 30 ft. line (Dex. save)</option>
+              <option>Bronze, Lightning, 5 by 30 ft. line (Dex. save)</option>
+              <option>Copper, Acid, 5 by 30 ft. line (Dex. save)</option>
+              <option>Gold, Fire, 15 ft. cone (Dex. save)</option>
+              <option>Green, Poison, 15 ft. cone (Con. save)</option>
+              <option>Red, Fire, 15 ft. cone (Dex. save)</option>
+              <option>Silver, Cold, 15 ft. cone (Con. save)</option>
+              <option>White, Cold, 15 ft. cone (Con. save)</option>
+            </select>
+
             <button
-              className="btn btn-success btn-wide"
+              className="btn btn-success btn-wide my-4"
               onClick={raceDragonBorn}
             >
               Select Dragonborn
             </button>
-          </div>        </form>
+          </div>{" "}
+        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

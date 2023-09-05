@@ -30,7 +30,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             width={50}
             height={50}
           />
-          Cleric
+          Druid
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -525,7 +525,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
               className="btn btn-success btn-wide my-8"
               onClick={becomeDruid}
             >
-              Cleric
+              Druid
             </button>
           </div>
         </form>
