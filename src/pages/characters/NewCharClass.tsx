@@ -16,6 +16,23 @@ export default function NewCharacterClass({
   dndClass,
   setDndClass,
 }: SetClassProps) {
+  const classes = [
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+  ];
+  const randomClass = () =>
+    setDndClass(classes[Math.floor(Math.random() * classes.length)]);
+
   return (
     <>
       <Barbarian dndClass={dndClass} setDndClass={setDndClass} />
@@ -31,7 +48,10 @@ export default function NewCharacterClass({
       <Warlock dndClass={dndClass} setDndClass={setDndClass} />
       <Wizard dndClass={dndClass} setDndClass={setDndClass} />
       <div className="flex flex-row">
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8">
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          onClick={randomClass}
+        >
           Choose Random Class
         </button>
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">

@@ -53,13 +53,7 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
     setRace(races[Math.floor(Math.random() * races.length)]);
   return (
     <>
-      <ul className="steps steps-horizontal lg:steps-horizontal mb-12">
-        <li className={race ? 'step step-primary' : 'step'}>Race</li>
-        <li className="step step-primary">Class</li>
-        <li className="step">Abilities</li>
-        <li className="step">Description</li>
-        <li className="step">Equipment</li>
-      </ul>
+
       <ModalAarakocra race={race} setRace={setRace}/>
       <ModalAasimar race={race} setRace={setRace}/>
       <ModalDragonBorn race={race} setRace={setRace} />

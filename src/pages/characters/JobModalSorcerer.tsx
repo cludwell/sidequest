@@ -2,7 +2,7 @@ import Image from "next/image";
 import { SetClassProps } from "../../../lib/setClassProps";
 import { useEffect, useState } from "react";
 import icon from "../../../public/icons/sorcerericon.png";
-import cleric from "../../../public/images/dee-holmberg-bg-cleric.jpg";
+import cleric from "../../../public/images/dee-holmberg-bg-sorcerer.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 declare global {
   interface Window {
@@ -58,8 +58,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             className="rounded-xl aspect-square object-cover"
           />
           <p className="text-lg my-4 mx-16 italic">
-            A priestly champion who wields divine magic in service of a higher
-            power
+          A spellcaster who draws on inherent magic from a gift or bloodline
           </p>
           <div className="overflow-x-auto m-1">
             <table className="table table-zebra">
@@ -337,6 +336,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
+          <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
           {/* Sorcerous Restoration Collapsible */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
