@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SetAbilitiesProps } from "../../../lib/setAbilitiesProps";
 
 export default function NewCharAbilities({
@@ -12,14 +12,62 @@ export default function NewCharAbilities({
   const [int, setInt] = useState<string>("--");
   const [wis, setWis] = useState<string>("--");
   const [cha, setCha] = useState<string>("--");
+  const modifiers = {
+    "1": -5,
+    "2": -4,
+    "3": -4,
+    "4": -3,
+    "5": -3,
+    "6": -2,
+    "7": -2,
+    "8": -1,
+    "9": -1,
+    "10": 0,
+    "11": 0,
+    "12": 1,
+    "13": 1,
+    "14": 2,
+    "15": 2,
+    "16": 3,
+    "17": 3,
+    "18": 4,
+    "19": 4,
+    "20": 5,
+  };
+
+  // const [acrobatics, setAcrobatics] = useState<number>(0);
+  // const [animalHandling, setAnimalHandling] = useState<number>(0);
+  // const [arcana, setArcana] = useState<number>(0);
+  // const [athletics, setAthletics] = useState<number>(0);
+  // const [deception, setDeception] = useState<number>(0);
+  // const [history, setHistory] = useState<number>(0);
+  // const [insight, setInsight] = useState<number>(0);
+  // const [intimidation, setIntimidation] = useState<number>(0);
+  // const [investigation, setInvestigation] = useState<number>(0);
+  // const [medicine, setMedicine] = useState<number>(0);
+  // const [nature, setNature] = useState<number>(0);
+  // const [perception, setPerception] = useState<number>(0);
+  // const [performance, setPerformance] = useState<number>(0);
+  // const [persuasion, setPersuasion] = useState<number>(0);
+  // const [religion, setReligion] = useState<number>(0);
+  // const [sleightOfHand, setSleightOfHand] = useState<number>(0);
+  // const [stealth, setStealth] = useState<number>(0);
+  // const [survival, setSurvival] = useState<number>(0);
+  const [errors, setErrors] = useState<string[]>([]);
   const [custom, setCustom] = useState<Record<string, number[]>>({});
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
-  const assignedArray = [str, dex, con, int, wis, cha];
+  const assignedArray = [str, dex, con, int, wis, cha, "--"];
   const customArray = Object.values(custom).map((arr, i) =>
     arr.slice(1).reduce((acc, next) => (acc += next), 0)
   );
   const rollKeys = ["str", "dex", "con", "int", "wis", "cha"];
   const rollDice = () => {
+    setStr("--");
+    setDex("--");
+    setCon("--");
+    setInt("--");
+    setWis("--");
+    setCha("--");
     const customRoll: Record<string, number[]> = {};
     rollKeys.forEach((stat) => {
       customRoll[stat] = [1, 2, 3, 4]
@@ -32,7 +80,23 @@ export default function NewCharAbilities({
   };
 
   const confirmAssignment = async () => {
-    setAbilities({ str, dex, con, int, wis, cha });
+    const err: string[] = [];
+    if (str == "--") err.push("Str must have a value");
+    if (dex == "--") err.push("Dex must have a value");
+    if (con == "--") err.push("Con must have a value");
+    if (int == "--") err.push("Int must have a value");
+    if (wis == "--") err.push("Wis must have a value");
+    if (cha == "--") err.push("Cha must have a value");
+    setAbilities({
+      str: parseInt(str),
+      dex: parseInt(dex),
+      con: parseInt(con),
+      int: parseInt(int),
+      wis: parseInt(wis),
+      cha: parseInt(cha),
+    });
+    setErrors(err);
+    console.log(err);
   };
   return (
     <>
@@ -43,7 +107,7 @@ export default function NewCharAbilities({
         Distribution{" "}
         <div
           className="tooltip"
-          data-tip="Standard Distribution is a commonly accepted array of values for character abilities allowing a fair and challenging game. Or you can roll dice for a custom distribution of points."
+          data-tip="Standard Distribution is a commonly accepted array of values for character abilities allowing a fair and challenging game. Or you can roll dice for a custom distribution of points. For custom each stat is 3d6 with advantage (an extra die is rolled, and lowest number discounted)"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +136,7 @@ export default function NewCharAbilities({
       {array === "Roll Custom" && (
         <div className="flex flex-col justify-center">
           <button
-            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary  m-8"
             onClick={rollDice}
           >
             Choose Random Array
@@ -109,7 +173,6 @@ export default function NewCharAbilities({
               </tbody>
             </table>
           </div>
-          n
         </div>
       )}
       <div className="flex flex-row flex-wrap">
@@ -435,6 +498,14 @@ export default function NewCharAbilities({
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
           Next Step
         </button>
+      </div>
+      <div className="toast toast-end">
+        {!!errors.length &&
+          errors.map((e, i) => (
+            <div className="alert alert-error" key={`error${i}`}>
+              <span>{e}</span>
+            </div>
+          ))}
       </div>
     </>
   );
