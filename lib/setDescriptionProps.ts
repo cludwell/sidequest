@@ -1,6 +1,4 @@
 export type SetDescriptionProps = {
-    description: string | null;
-    setDescription: React.Dispatch<React.SetStateAction<string | null>>;
-  };
-
-  
+  description: string | number | null;
+  setDescription: React.Dispatch<React.SetStateAction<string | number | null>>;
+};

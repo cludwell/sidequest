@@ -16,7 +16,7 @@ export default function FaithTable({ deities }: Deities) {
                 {/* <th></th> */}
                 <th>Deity</th>
                 <th>Alignment</th>
-                <th>Suggested Domains</th>
+                <th>Domains</th>
                 <th>Symbol</th>
                 <th>Cliff Notes</th>
               </tr>

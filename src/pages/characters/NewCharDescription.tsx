@@ -11,7 +11,16 @@ export default function NewCharDescription({
   const [descript, setDescript] = useState<string>("");
   const [alignment, setAlignment] = useState<string>("Neutral Good");
   const [faith, setFaith] = useState<string>("");
-  const [name, setName] = useState<string>('')
+  const [name, setName] = useState<string>("");
+  const confirmDescription = async () => {
+    setDescription({
+      descript,
+      alignment,
+      faith,
+      name,
+      
+    })
+  }
   return (
     <>
       <h1 className="text-4xl almendra my-12">Description</h1>
@@ -39,12 +48,12 @@ export default function NewCharDescription({
           placeholder="Formal, religious, or street name"
           className="input input-bordered input-accent w-full max-w-xs"
           value={name}
-          onChange={(e) => setAppearance(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <label className="label text-xl almendra">Appearance</label>
         <input
           type="text"
-          placeholder=""
+          placeholder="What a passerby notice?"
           className="input input-bordered input-accent w-full max-w-xs"
           value={appearance}
           onChange={(e) => setAppearance(e.target.value)}
@@ -64,6 +73,34 @@ export default function NewCharDescription({
             <span className="label-text-alt"></span>
           </label>
         </div>
+        <div className="my-4" >
+
+      <label className="label text-xl almendra">Faith</label>
+      <select
+        className="select select-accent w-full max-w-xs"
+        value={faith}
+        onChange={(e) => setFaith(e.target.value)}
+      >
+        {deities.length &&
+          deities.map((god, i) => (
+            <option value={`${god[0]}, ${god[1]}`} key={`god${i}`}>
+              {god[0]}, {god[1]}
+            </option>
+          ))}
+      </select>
+        </div>
+
+        <div className="flex flex-row">
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          onClick={confirmDescription}
+        >
+          Confirm Description
+        </button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+          Next Step
+        </button>
+      </div>
       </form>
       <FaithTable deities={deities as Deity[]} />
     </>

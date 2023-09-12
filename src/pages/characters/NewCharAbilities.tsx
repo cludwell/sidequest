@@ -57,10 +57,15 @@ export default function NewCharAbilities({
   const [custom, setCustom] = useState<Record<string, number[]>>({});
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
   const assignedArray = [str, dex, con, int, wis, cha, "--"];
-  const customArray = Object.values(custom).map((arr, i) =>
-    arr.slice(1).reduce((acc, next) => (acc += next), 0)
-  );
-  const rollKeys = ["str", "dex", "con", "int", "wis", "cha"];
+
+  const customArray = Object.entries(custom)//.map((arr, i) =>
+    //arr.slice(1).reduce((acc, next) => (acc += next), 0)
+ //);
+ const rollKeys = ["str", "dex", "con", "int", "wis", "cha"];
+ const customRoll: Record<string, number[]> = {};
+ let customAssigned = Object.values(customRoll).map(ele=>ele.join(''))
+
+
   const rollDice = () => {
     setStr("--");
     setDex("--");
@@ -68,17 +73,21 @@ export default function NewCharAbilities({
     setInt("--");
     setWis("--");
     setCha("--");
-    const customRoll: Record<string, number[]> = {};
     rollKeys.forEach((stat) => {
       customRoll[stat] = [1, 2, 3, 4]
         .map((num) => Math.floor(Math.random() * 6 + 1))
         .sort();
     });
     setCustom(customRoll);
-    console.log(Object.values(customRoll));
+    setErrors([]);
+    console.log(custom);
     return custom;
   };
-
+  const makeSelection = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const filtered = customAssigned.filter(ele=> String(ele) === e.target.value)
+    customAssigned = filtered
+    return e
+  }
   const confirmAssignment = async () => {
     const err: string[] = [];
     if (str == "--") err.push("Str must have a value");
@@ -96,7 +105,7 @@ export default function NewCharAbilities({
       cha: parseInt(cha),
     });
     setErrors(err);
-    console.log(err);
+    console.log('custom assigned', customAssigned);
   };
   return (
     <>
@@ -139,7 +148,7 @@ export default function NewCharAbilities({
             className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary  m-8"
             onClick={rollDice}
           >
-            Choose Random Array
+            Roll Random Array
           </button>
           <div className="overflow-x-auto">
             <table className="table">
@@ -202,16 +211,19 @@ export default function NewCharAbilities({
           <select
             className="select select-primary w-full max-w-xs"
             value={str}
-            onChange={(e) => setStr(e.target.value)}
+            onChange={(e) => customArray.length ? setStr(makeSelection(e.target.value)) :   setStr(e.target.value)}
           >
+            <option disabled selected>
+              --
+            </option>
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
                     key={`optstr${i}`}
-                    value={ele}
-                    hidden={assignedArray.includes(String(ele))}
+                    value={ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
+                    hidden={customAssigned.includes(ele.join())}
                   >
-                    {ele}
+                    {ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
@@ -251,7 +263,7 @@ export default function NewCharAbilities({
           <select
             className="select select-accent w-full max-w-xs"
             value={dex}
-            onChange={(e) => setDex(e.target.value)}
+            onChange={(e) =>  setDex(e.target.value)}
           >
             <option disabled selected>
               --
@@ -260,10 +272,10 @@ export default function NewCharAbilities({
               ? customArray.map((ele, i) => (
                   <option
                     key={`optstr${i}`}
-                    value={ele}
-                    hidden={assignedArray.includes(String(ele))}
+                    value={ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
+                    hidden={customAssigned.includes(ele.join())}
                   >
-                    {ele}
+                    {ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
