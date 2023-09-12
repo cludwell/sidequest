@@ -35,7 +35,7 @@ export default function Home() {
   const scenes = [
     dungeon,
     ancientruins,
-    village,
+    // village,
     redwoods,
     ancientruins2,
     darkDungeon,
@@ -49,7 +49,7 @@ export default function Home() {
     mountainPass,
     village2,
     woodedPath,
-    woodsGodRays,
+    // woodsGodRays,
   ];
   useEffect(() => {
     const loadData = async () => {
@@ -71,16 +71,17 @@ export default function Home() {
       </Head>
       <h1 className="almendra text-4xl my-4">Hello, fellow travelers</h1>
 
-      <div className="carousel carousel-center rounded-box">
+      <div className="carousel carousel-center rounded-box max-w-screen-xl w-full">
         {!!scenes.length &&
           scenes.map((scen, i) => (
             <div className="carousel-item" key={`scene${i}`}>
               <Image
-              width={400}
-              height={400}
-              className="object-cover"
-              src={scen}
-              alt={`scene${i}`} />
+                width={400}
+                height={400}
+                className="object-cover"
+                src={scen}
+                alt={`scene${i}`}
+              />
             </div>
           ))}
       </div>

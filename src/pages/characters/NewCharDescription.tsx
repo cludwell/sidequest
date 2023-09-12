@@ -9,16 +9,16 @@ export default function NewCharDescription({
   const [appearance, setAppearance] = useState<string>("");
   // this useState will be used for error handling purposes before being sent to description
   const [descript, setDescript] = useState<string>("");
-  const [alignment, setAlignment] = useState<string>("Neutral Good");
+  const [alignment, setAlignment] = useState<string>("");
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
   const confirmDescription = async () => {
     setDescription({
-      descript,
+      description: descript,
       alignment,
       faith,
       name,
-      
+
     })
   }
   return (
@@ -81,6 +81,9 @@ export default function NewCharDescription({
         value={faith}
         onChange={(e) => setFaith(e.target.value)}
       >
+        <option selected hidden>
+          Select Deity
+        </option>
         {deities.length &&
           deities.map((god, i) => (
             <option value={`${god[0]}, ${god[1]}`} key={`god${i}`}>

@@ -11,7 +11,7 @@ export default function NewCharacter() {
   const [race, setRace] = useState<string | null>(null);
   const [dndClass, setDndClass] = useState<string | null>(null);
   const [abilities, setAbilities] = useState<Object>({});
-  const [description, setDescription] = useState<Record<string | number, null >>({});
+  const [description, setDescription] = useState<Object>({});
   return (
     <main className="flex min-h-screen flex-col items-center p-16">
       <ul className="steps steps-horizontal lg:steps-horizontal mb-12">
@@ -24,7 +24,9 @@ export default function NewCharacter() {
         >
           Abilities
         </li>
-        <li className="step">Description</li>
+        <li className={
+          !!Object.values(description).length ? 'step step-primary' : 'step'
+        }>Description</li>
         <li className="step">Equipment</li>
       </ul>
       <NewCharacterRace race={race} setRace={setRace} />
