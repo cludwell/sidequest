@@ -407,80 +407,128 @@ export default function NewCharAbilities({
         wis !== "--" &&
         cha !== "--" && (
           <div className="flex flex-col items-center">
-            <div className="overflow-x-auto max-w-md">
-              <h2 className="text-3xl  almendra">Skills</h2>
+            <div className=" max-w-md">
+              <h2 className="text-3xl almendra">
+                Skills
+                <ToolTip
+                  tip="In Dungeons and Dragons you can do almost anything, however your success will depend on you skills"
+                  position="font-sans"
+                />
+              </h2>
               <table className="table table-zebra bg-base-100">
                 {/* head */}
                 <thead>
                   <tr>
                     <th></th>
-                    <th>Skill</th>
+                    <th>Skill </th>
                     <th>Modifier</th>
                   </tr>
                 </thead>
                 <tbody>
                   {/* row 1 */}
                   <tr>
-                    <th>Strength</th>
-                    <td>Athletics</td>
+                    <th>Strength </th>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[str]}</kbd>
+                      Athletics{" "}
+                      <ToolTip
+                        tip="Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities: You attempt to climb a sheer or slippery cliff, avoid hazards while scaling a wall, or cling to a surface while something is trying to knock you off. You try to jump an unusually long distance or pull off a stunt midjump. You struggle to swim or stay afloat in treacherous currents, storm-tossed waves, or areas of thick seaweed. Or another creature tries to push or pull you underwater or otherwise interfere with your swimming."
+                        position=""
+                      />
+                    </td>
+                    <td>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[str] > 0
+                          ? "+" + modifiers[str]
+                          : modifiers[str]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th>Dexterity</th>
-                    <td>Acrobatics</td>
+                    <td>Acrobatics <ToolTip tip="Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips." position="" /></td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[dex]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[dex] > 0
+                          ? "+" + modifiers[dex]
+                          : modifiers[dex]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Sleight of Hand</td>
+                    <td>Sleight of Hand <ToolTip tip="Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket." position="" /></td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[dex]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[dex] > 0
+                          ? "+" + modifiers[dex]
+                          : modifiers[dex]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Stealth</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[dex]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[dex] > 0
+                          ? "+" + modifiers[dex]
+                          : modifiers[dex]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th>Intelligence</th>
                     <td>Arcana</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[int]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[int] > 0
+                          ? "+" + modifiers[int]
+                          : modifiers[int]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>History</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[int]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[int] > 0
+                          ? "+" + modifiers[int]
+                          : modifiers[int]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Investigation</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[int]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[int] > 0
+                          ? "+" + modifiers[int]
+                          : modifiers[int]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Nature</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[int]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[int] > 0
+                          ? "+" + modifiers[int]
+                          : modifiers[int]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Religion</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[int]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[int] > 0
+                          ? "+" + modifiers[int]
+                          : modifiers[int]}
+                      </kbd>
                     </td>
                   </tr>
 
@@ -488,63 +536,99 @@ export default function NewCharAbilities({
                     <th>Wisdom</th>
                     <td>Animal Handling</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[wis]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[wis] > 0
+                          ? "+" + modifiers[wis]
+                          : modifiers[wis]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Insight</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[wis]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[wis] > 0
+                          ? "+" + modifiers[wis]
+                          : modifiers[wis]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Medicine</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[wis]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[wis] > 0
+                          ? "+" + modifiers[wis]
+                          : modifiers[wis]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Perception</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[wis]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[wis] > 0
+                          ? "+" + modifiers[wis]
+                          : modifiers[wis]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Survival</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[wis]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[wis] > 0
+                          ? "+" + modifiers[wis]
+                          : modifiers[wis]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th>Charisma</th>
                     <td>Deception</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[cha]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[cha] > 0
+                          ? "+" + modifiers[cha]
+                          : modifiers[cha]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Intimidation</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[cha]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[cha] > 0
+                          ? "+" + modifiers[cha]
+                          : modifiers[cha]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Performance</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[cha]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[cha] > 0
+                          ? "+" + modifiers[cha]
+                          : modifiers[cha]}
+                      </kbd>
                     </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>Persuasion</td>
                     <td>
-                      <kbd className="kbd mx-1 ">{modifiers[cha]}</kbd>
+                      <kbd className="kbd mx-1 ">
+                        {modifiers[cha] > 0
+                          ? "+" + modifiers[cha]
+                          : modifiers[cha]}
+                      </kbd>
                     </td>
                   </tr>
                 </tbody>

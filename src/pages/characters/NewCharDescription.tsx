@@ -11,6 +11,7 @@ export default function NewCharDescription({
   // this useState will be used for error handling purposes before being sent to description
   const [descript, setDescript] = useState<string>("");
   const [alignment, setAlignment] = useState<string>("");
+  const [level, setLevel] = useState<number>(1)
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([]);
@@ -33,6 +34,7 @@ export default function NewCharDescription({
       alignment,
       faith,
       name,
+      level
     });
     console.log("DESCRIPTION", description);
   };
@@ -41,6 +43,33 @@ export default function NewCharDescription({
       <h1 className="text-4xl almendra mb-8">Description</h1>
 
       <form className="flex flex-col items-center">
+        <div>
+          <label className="label text-xl almendra items-start">Name</label>
+          <input
+            type="text"
+            placeholder="Formal, religious, or street name"
+            className="input input-bordered input-secondary w-80"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="label text-xl almendra">
+            Level
+            <ToolTip
+              tip="All players start at level 1. Option to choose higher level coming soon."
+              position="tooltip-bottom font-sans"
+            />
+          </label>
+          <select
+            className="select select-primary w-80"
+            value={level}
+            onChange={(e) => setLevel(parseInt(e.target.value))}
+          >
+            <option value={1}>1</option>
+
+          </select>
+        </div>
         <div>
           <label className="label text-xl almendra">
             Alignment
@@ -64,16 +93,6 @@ export default function NewCharDescription({
             <option value={"Chaotic Neutral"}>Chaotic Neutral</option>
             <option value={"Chaotic Evil"}>Chaotic Evil</option>
           </select>
-        </div>
-        <div>
-          <label className="label text-xl almendra">Name</label>
-          <input
-            type="text"
-            placeholder="Formal, religious, or street name"
-            className="input input-bordered input-secondary w-80"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
         </div>
         <div>
           <label className="label text-xl almendra">Appearance</label>
