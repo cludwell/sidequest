@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SetAbilitiesProps } from "../../../lib/setAbilitiesProps";
+import ToolTip from "../ToolTip";
 
 export default function NewCharAbilities({
   abilities,
@@ -58,12 +59,12 @@ export default function NewCharAbilities({
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
   const assignedArray = [str, dex, con, int, wis, cha, "--"];
 
-  const customArray = Object.entries(custom)//.map((arr, i) =>
-    //arr.slice(1).reduce((acc, next) => (acc += next), 0)
- //);
+  const customArray = Object.values(custom).map((arr, i) =>
+    arr.slice(1).reduce((acc, next) => (acc += next), 0)
+ );
  const rollKeys = ["str", "dex", "con", "int", "wis", "cha"];
  const customRoll: Record<string, number[]> = {};
- let customAssigned = Object.values(customRoll).map(ele=>ele.join(''))
+//  let customAssigned = Object.values(custom).map(ele=>ele[1].slice(1).reduce((acc, next) => (acc += next), 0))
 
 
   const rollDice = () => {
@@ -83,11 +84,11 @@ export default function NewCharAbilities({
     console.log(custom);
     return custom;
   };
-  const makeSelection = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const filtered = customAssigned.filter(ele=> String(ele) === e.target.value)
-    customAssigned = filtered
-    return e
-  }
+  // const makeSelection = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const filtered = customAssigned.filter(ele=> String(ele) === e.target.value)
+  //   customAssigned = filtered
+  //   return e
+  // }
   const confirmAssignment = async () => {
     const err: string[] = [];
     if (str == "--") err.push("Str must have a value");
@@ -105,35 +106,20 @@ export default function NewCharAbilities({
       cha: parseInt(cha),
     });
     setErrors(err);
-    console.log('custom assigned', customAssigned);
+    console.log('custom assigned', customArray);
+    // console.log('custom', custom);
   };
   return (
-    <>
-      <div className="divider"></div>
-      <h1 className="text-4xl almendra my-12">Ability Scores</h1>
+    <div className="flex flex-col max-w-screen-xl w-full content-center">
+      {/* <div className="divider"></div> */}
+      <h1 className="text-4xl almendra mb-8">Ability Scores</h1>
 
-      <h3 className="font-bold text-xl">
+      <div className="flex flex-col items-center">
+      <label className="text-2xl  almendra w-80">
         Distribution{" "}
-        <div
-          className="tooltip"
-          data-tip="Standard Distribution is a commonly accepted array of values for character abilities allowing a fair and challenging game. Or you can roll dice for a custom distribution of points. For custom each stat is 3d6 with advantage (an extra die is rolled, and lowest number discounted)"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-            />
-          </svg>
-        </div>
-      </h3>
+        <ToolTip tip="Standard Distribution is a commonly accepted array of values for character abilities allowing a fair and challenging game. Or you can roll dice for a custom distribution of points. For custom each stat is 3d6 with advantage (an extra die is rolled, and lowest number discounted)" position="tooltip-bottom font-sans" />
+      </label>
+
       <select
         className="select select-primary w-full max-w-xs"
         value={array}
@@ -142,15 +128,20 @@ export default function NewCharAbilities({
         <option value={`Standard`}>Standard</option>
         <option value={`Roll Custom`}>Roll Custom</option>
       </select>
+      </div>
       {array === "Roll Custom" && (
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center">
+          <div>
+
           <button
-            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary  m-8"
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
             onClick={rollDice}
           >
             Roll Random Array
           </button>
-          <div className="overflow-x-auto">
+          </div>
+          {/* max width make */}
+          <div className="overflow-x-auto max-w-md">
             <table className="table">
               {/* head */}
               <thead>
@@ -184,46 +175,28 @@ export default function NewCharAbilities({
           </div>
         </div>
       )}
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap justify-center">
         <div id="str-select" className="m-4 w-30">
           <h3 className="font-bold text-md flex flex-row">
             Strength{" "}
-            <div
-              className="tooltip"
-              data-tip="Strength measures a characters ability to exert physical force. A character with high Strength can lift heavier objects, carry more gear without being overloaded, break things with brute strength, shove and grapple creatures more effectively, and is more accurate and more effective with melee weapons."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
-            </div>
+            <ToolTip tip="Strength measures a characters ability to exert physical force. A character with high Strength can lift heavier objects, carry more gear without being overloaded, break things with brute strength, shove and grapple creatures more effectively, and is more accurate and more effective with melee weapons." position="tooltip-right" />
           </h3>
           <select
             className="select select-primary w-full max-w-xs"
             value={str}
-            onChange={(e) => customArray.length ? setStr(makeSelection(e.target.value)) :   setStr(e.target.value)}
+            onChange={(e) =>  setStr(e.target.value)}
           >
-            <option disabled selected>
-              --
+            <option disabled selected hidden>
+              Make Selection
             </option>
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
                     key={`optstr${i}`}
-                    value={ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
-                    hidden={customAssigned.includes(ele.join())}
+                    value={ele}
+                    // hidden={assignedArray.includes(String(ele))}
                   >
-                    {ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
+                    {ele}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
@@ -240,25 +213,7 @@ export default function NewCharAbilities({
         <div id="dex-select" className="m-4 w-30">
           <h3 className="font-bold text-md flex flex-row">
             Dexterity{" "}
-            <div
-              className="tooltip"
-              data-tip="Dexterity measures a character's nimbleness, their agility, and their fine motor skills. A character with high Dexterity is able to avoid attacks in combat, evade area effects like dragon's breath and explosions, move stealthily, perform feats of acrobatics, pick locks, and use both light, nimble melee weapons like daggers and rapiers and ranged weapons like bows and crossbows more effectively."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
-            </div>
+            <ToolTip tip="Dexterity measures a character's nimbleness, their agility, and their fine motor skills. A character with high Dexterity is able to avoid attacks in combat, evade area effects like dragon's breath and explosions, move stealthily, perform feats of acrobatics, pick locks, and use both light, nimble melee weapons like daggers and rapiers and ranged weapons like bows and crossbows more effectively." position=""/>
           </h3>
           <select
             className="select select-accent w-full max-w-xs"
@@ -272,10 +227,10 @@ export default function NewCharAbilities({
               ? customArray.map((ele, i) => (
                   <option
                     key={`optstr${i}`}
-                    value={ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
-                    hidden={customAssigned.includes(ele.join())}
+                    value={ele}
+                    // hidden={assignedArray.includes(String(ele))}
                   >
-                    {ele[1].slice(1).reduce((acc, next) => (acc += next), 0)}
+                    {ele}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
@@ -292,25 +247,7 @@ export default function NewCharAbilities({
         <div id="con-select" className="m-4 w-30">
           <h3 className="font-bold text-md flex flex-row">
             Constitution
-            <div
-              className="tooltip"
-              data-tip="Constitution describes a character's physical fortitude; their ability to endure pain, to take damage without falling unconscious, to resist the effects of poison, disease, and other physical maladies, to hold your breath, to travel long distances without rest, and to go without sleep for extended periods."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
-            </div>
+            <ToolTip tip="Constitution describes a character's physical fortitude; their ability to endure pain, to take damage without falling unconscious, to resist the effects of poison, disease, and other physical maladies, to hold your breath, to travel long distances without rest, and to go without sleep for extended periods." position="" />
           </h3>
           <select
             className="select select-info w-full max-w-xs"
@@ -325,7 +262,7 @@ export default function NewCharAbilities({
                   <option
                     key={`optstr${i}`}
                     value={ele}
-                    hidden={assignedArray.includes(String(ele))}
+                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
@@ -344,27 +281,7 @@ export default function NewCharAbilities({
         <div id="int-select" className="m-4 w-30">
           <h3 className="font-bold text-md flex flex-row">
             Intelligence{" "}
-            <div
-              className="tooltip"
-              data-tip="Intelligence measures a character's analytical ability, their memory, and their ability to reason logically. A character with high Intelligence knows many facts and pieces of trivia, can estimate the value of items, can communicate nonverbally, and they are often good at puzzles, games of skill, researching, investigation, forgery, and investigation.
-
-"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
-            </div>
+            <ToolTip tip="Intelligence measures a character's analytical ability, their memory, and their ability to reason logically. A character with high Intelligence knows many facts and pieces of trivia, can estimate the value of items, can communicate nonverbally, and they are often good at puzzles, games of skill, researching, investigation, forgery, and investigation." position="" />
           </h3>
           <select
             className="select select-success w-full max-w-xs"
@@ -379,7 +296,7 @@ export default function NewCharAbilities({
                   <option
                     key={`optstr${i}`}
                     value={ele}
-                    hidden={assignedArray.includes(String(ele))}
+                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
@@ -398,25 +315,7 @@ export default function NewCharAbilities({
         <div id="wis-select" className="m-4 w-30">
           <h3 className="font-bold text-md flex flex-row">
             Wisdom
-            <div
-              className="tooltip"
-              data-tip="Wisdom measures a character's practical intelligence, their cleverness, their perceptiveness, and how in tune they are with the world around them. Characters with high Wisdom are perceptive, observant, and sensible. They are able to handle animals, notice subtle details about creature's motives and about the world around them, and to make decisions when the right choice isn't clear."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
-            </div>
+            <ToolTip tip="Wisdom measures a character's practical intelligence, their cleverness, their perceptiveness, and how in tune they are with the world around them. Characters with high Wisdom are perceptive, observant, and sensible. They are able to handle animals, notice subtle details about creature's motives and about the world around them, and to make decisions when the right choice isn't clear." position="" />
           </h3>
           <select
             className="select select-success w-full max-w-xs"
@@ -431,7 +330,7 @@ export default function NewCharAbilities({
                   <option
                     key={`optstr${i}`}
                     value={ele}
-                    hidden={assignedArray.includes(String(ele))}
+                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
@@ -450,25 +349,7 @@ export default function NewCharAbilities({
         <div id="cha-select" className="m-4 w-30">
           <h3 className="font-bold text-md flex flex-row">
             Charisma
-            <div
-              className="tooltip"
-              data-tip="Charisma measures a character's charm and eloquence, their force of personality, their self-confidence, and their ability to interact with other creatures. Characters with high Charisma are charming, well-liked, and are often natural leaders. These characters are able to make friends, talk their way out of trouble, negotiate, and otherwise get by on talk."
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
-            </div>
+            <ToolTip tip="Charisma measures a character's charm and eloquence, their force of personality, their self-confidence, and their ability to interact with other creatures. Characters with high Charisma are charming, well-liked, and are often natural leaders. These characters are able to make friends, talk their way out of trouble, negotiate, and otherwise get by on talk." position="tooltip-left" />
           </h3>
           <select
             className="select select-warning w-full max-w-xs"
@@ -483,7 +364,7 @@ export default function NewCharAbilities({
                   <option
                     key={`optstr${i}`}
                     value={ele}
-                    hidden={assignedArray.includes(String(ele))}
+                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
@@ -500,7 +381,7 @@ export default function NewCharAbilities({
           </select>
         </div>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row max-w-screen-xl w-full justify-center">
         <button
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
           onClick={confirmAssignment}
@@ -519,6 +400,6 @@ export default function NewCharAbilities({
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 }

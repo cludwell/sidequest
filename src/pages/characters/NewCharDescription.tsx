@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SetDescriptionProps } from "../../../lib/setDescriptionProps";
 import FaithTable from "./FaithCollapse";
 import { deities } from "./DeitiesInfo";
+import ToolTip from "../ToolTip";
 export default function NewCharDescription({
   description,
   setDescription,
@@ -12,100 +13,138 @@ export default function NewCharDescription({
   const [alignment, setAlignment] = useState<string>("");
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
+  const [errors, setErrors] = useState<string[]>([]);
   const confirmDescription = async () => {
+    const err = [];
+    if (descript.length < 100)
+      err.push("Please provide description of 100 characters or more.");
+    if (!alignment || alignment.length < 8)
+      err.push("Please select an alignment.");
+    if (!faith || faith.length < 8)
+      err.push("Please select a faith to follow.");
+    if (!name || name.length < 3)
+      err.push("Please enter a name of 3 or more characters");
+    if (!alignment || alignment.length < 8)
+      err.push("Please choose an alignment");
+    setErrors(err);
+    if (errors.length) return;
     setDescription({
       description: descript,
       alignment,
       faith,
       name,
-
-    })
-  }
+    });
+    console.log("DESCRIPTION", description);
+  };
   return (
-    <>
-      <h1 className="text-4xl almendra my-12">Description</h1>
+    <div className="flex flex-col max-w-screen-xl w-full">
+      <h1 className="text-4xl almendra mb-8">Description</h1>
 
-      <form>
-        <label className="label text-xl almendra">Alignment</label>
-        <select
-          className="select select-accent w-full max-w-xs"
-          value={alignment}
-          onChange={(e) => setAlignment(e.target.value)}
-        >
-          <option value={"Lawful Good"}>Lawful Good</option>
-          <option value={"Lawful Neutral"}>Lawful Neutral</option>
-          <option value={"Lawful Evil"}>Lawful Evil</option>
-          <option value={"Neutral Good"}>Neutral Good</option>
-          <option value={"True Neutral"}>True Neutral</option>
-          <option value={"Neutral Good"}>Neutral Good</option>
-          <option value={"Chaotic Good"}>Chaotic Good</option>
-          <option value={"Chaotic Neutral"}>Chaotic Neutral</option>
-          <option value={"Chaotic Evil"}>Chaotic Evil</option>
-        </select>
-        <label className="label text-xl almendra">Name</label>
-        <input
-          type="text"
-          placeholder="Formal, religious, or street name"
-          className="input input-bordered input-accent w-full max-w-xs"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label className="label text-xl almendra">Appearance</label>
-        <input
-          type="text"
-          placeholder="What a passerby notice?"
-          className="input input-bordered input-accent w-full max-w-xs"
-          value={appearance}
-          onChange={(e) => setAppearance(e.target.value)}
-        />
+      <form className="flex flex-col items-center">
+        <div>
+          <label className="label text-xl almendra">
+            Alignment
+            <ToolTip
+              tip="D&D alignments serve as a general description of a creature's moral beliefs and attitudes. They're a set of basic rules which loosely determine how a character will interact with their environment, and with other people."
+              position="tooltip-bottom font-sans"
+            />
+          </label>
+          <select
+            className="select select-primary w-80"
+            value={alignment}
+            onChange={(e) => setAlignment(e.target.value)}
+          >
+            <option value={"Lawful Good"}>Lawful Good</option>
+            <option value={"Lawful Neutral"}>Lawful Neutral</option>
+            <option value={"Lawful Evil"}>Lawful Evil</option>
+            <option value={"Neutral Good"}>Neutral Good</option>
+            <option value={"True Neutral"}>True Neutral</option>
+            <option value={"Neutral Good"}>Neutral Good</option>
+            <option value={"Chaotic Good"}>Chaotic Good</option>
+            <option value={"Chaotic Neutral"}>Chaotic Neutral</option>
+            <option value={"Chaotic Evil"}>Chaotic Evil</option>
+          </select>
+        </div>
+        <div>
+          <label className="label text-xl almendra">Name</label>
+          <input
+            type="text"
+            placeholder="Formal, religious, or street name"
+            className="input input-bordered input-secondary w-80"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="label text-xl almendra">Appearance</label>
+          <textarea
+            placeholder="What a passerby notice?"
+            className="textarea textarea-bordered textarea-accent w-80 h-40"
+            value={appearance}
+            onChange={(e) => setAppearance(e.target.value)}
+          />
+        </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text text-xl almendra">Your bio</span>
           </label>
           <textarea
-            className="textarea textarea-bordered h-24 textarea-secondary w-96 h-36"
+            className="textarea textarea-bordered textarea-success w-80 h-80"
             placeholder="Your characters motivations? Background? Upbringing?"
             value={descript}
             onChange={(e) => setDescript(e.target.value)}
-          ></textarea>
-          <label className="label">
+          />
+          {/* <label className="label">
             <span className="label-text-alt"></span>
             <span className="label-text-alt"></span>
+          </label> */}
+        </div>
+        <div className="my-4">
+          <label className="label text-xl almendra ">
+            Faith{" "}
+            <ToolTip
+              tip="Choose a faith that matches your alignment in one capacity for best experience. See 'Faiths' drop down for more information about gods, their domains, and holy symbols."
+              position="tooltip font-sans"
+            />
           </label>
-        </div>
-        <div className="my-4" >
-
-      <label className="label text-xl almendra">Faith</label>
-      <select
-        className="select select-accent w-full max-w-xs"
-        value={faith}
-        onChange={(e) => setFaith(e.target.value)}
-      >
-        <option selected hidden>
-          Select Deity
-        </option>
-        {deities.length &&
-          deities.map((god, i) => (
-            <option value={`${god[0]}, ${god[1]}`} key={`god${i}`}>
-              {god[0]}, {god[1]}
+          <select
+            className="select select-warning w-full max-w-xs"
+            value={faith}
+            onChange={(e) => setFaith(e.target.value)}
+          >
+            <option selected hidden>
+              Select Deity
             </option>
-          ))}
-      </select>
+            {deities.length &&
+              deities.map((god, i) => (
+                <option value={`${god[0]}, ${god[1]}`} key={`god${i}`}>
+                  {god[0]}, {god[1]}
+                </option>
+              ))}
+          </select>
         </div>
 
-        <div className="flex flex-row">
-        <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
-          onClick={confirmDescription}
-        >
-          Confirm Description
-        </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          Next Step
-        </button>
-      </div>
+        <div className="flex flex-row max-w-screen-xl w-full justify-center">
+          <button
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+            onClick={confirmDescription}
+          >
+            Confirm Description
+          </button>
+          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+            Next Step
+          </button>
+        </div>
       </form>
       <FaithTable deities={deities as Deity[]} />
-    </>
+      <div className="toast toast-end">
+        {!!errors.length &&
+          errors.map((e, i) => (
+            <div className="alert alert-error" key={`error${i}`}>
+              <span>{e}</span>
+            </div>
+          ))}
+      </div>
+    </div>
   );
 }

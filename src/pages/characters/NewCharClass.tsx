@@ -34,7 +34,9 @@ export default function NewCharacterClass({
     setDndClass(classes[Math.floor(Math.random() * classes.length)]);
 
   return (
-    <>
+    <div className="flex flex-col max-w-screen-xl w-full">
+      <h1 className="text-4xl almendra mb-8">Classes</h1>
+
       <Barbarian dndClass={dndClass} setDndClass={setDndClass} />
       <Bard dndClass={dndClass} setDndClass={setDndClass} />
       <Cleric dndClass={dndClass} setDndClass={setDndClass} />
@@ -47,7 +49,7 @@ export default function NewCharacterClass({
       <Sorcerer dndClass={dndClass} setDndClass={setDndClass} />
       <Warlock dndClass={dndClass} setDndClass={setDndClass} />
       <Wizard dndClass={dndClass} setDndClass={setDndClass} />
-      <div className="flex flex-row">
+      <div className="flex flex-row max-w-screen-xl w-full justify-center">
         <button
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
           onClick={randomClass}
@@ -58,6 +60,6 @@ export default function NewCharacterClass({
           Next Step
         </button>
       </div>
-    </>
+    </div>
   );
 }

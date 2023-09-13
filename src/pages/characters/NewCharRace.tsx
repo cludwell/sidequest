@@ -52,7 +52,8 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
   const randomRace = () =>
     setRace(races[Math.floor(Math.random() * races.length)]);
   return (
-    <>
+    <div className="flex flex-col max-w-screen-xl w-full">
+      <h1 className="text-4xl almendra mb-8">Races</h1>
 
       <ModalAarakocra race={race} setRace={setRace}/>
       <ModalAasimar race={race} setRace={setRace}/>
@@ -161,7 +162,7 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
       </div>
       <ModalHuman race={race} setRace={setRace}/>
       <ModalTiefling race={race} setRace={setRace}/>
-      <div className="flex flex-row">
+      <div className="flex flex-row max-w-screen-xl w-full justify-center">
         <button
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
           onClick={randomRace}
@@ -172,6 +173,6 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
           Next Step
         </button>
       </div>
-    </>
+    </div>
   );
 }
