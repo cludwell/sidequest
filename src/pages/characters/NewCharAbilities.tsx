@@ -111,7 +111,7 @@ export default function NewCharAbilities({
   return (
     <div className="flex flex-col max-w-screen-xl w-full content-center">
       {/* <div className="divider"></div> */}
-      <h1 className="text-4xl almendra mb-8">Ability Scores</h1>
+      <h1 className="text-4xl almendra mb-8 text-center">Ability Scores</h1>
 
       <div className="flex flex-col items-center">
         <label className="text-2xl  almendra w-80">
@@ -445,7 +445,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th>Dexterity</th>
-                    <td>Acrobatics <ToolTip tip="Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips." position="" /></td>
+                    <td>
+                      Acrobatics{" "}
+                      <ToolTip
+                        tip="Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[dex] > 0
@@ -456,7 +462,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Sleight of Hand <ToolTip tip="Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket." position="" /></td>
+                    <td>
+                      Sleight of Hand{" "}
+                      <ToolTip
+                        tip="Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[dex] > 0
@@ -467,7 +479,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Stealth</td>
+                    <td>
+                      Stealth{" "}
+                      <ToolTip
+                        tip="Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[dex] > 0
@@ -478,7 +496,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th>Intelligence</th>
-                    <td>Arcana</td>
+                    <td>
+                      Arcana{" "}
+                      <ToolTip
+                        tip="Your Intelligence (Arcana) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[int] > 0
@@ -489,7 +513,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>History</td>
+                    <td>
+                      History{" "}
+                      <ToolTip
+                        tip="Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[int] > 0
@@ -500,7 +530,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Investigation</td>
+                    <td>
+                      Investigation{" "}
+                      <ToolTip
+                        tip="When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[int] > 0
@@ -511,7 +547,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Nature</td>
+                    <td>
+                      Nature{" "}
+                      <ToolTip
+                        tip="Your Intelligence (Nature) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[int] > 0
@@ -522,7 +564,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Religion</td>
+                    <td>
+                      Religion{" "}
+                      <ToolTip
+                        tip="Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[int] > 0
@@ -534,7 +582,13 @@ export default function NewCharAbilities({
 
                   <tr>
                     <th>Wisdom</th>
-                    <td>Animal Handling</td>
+                    <td>
+                      Animal Handling{" "}
+                      <ToolTip
+                        tip="When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal's intentions, the GM might call for a Wisdom (Animal Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a risky maneuver."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[wis] > 0
@@ -545,7 +599,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Insight</td>
+                    <td>
+                      Insight{" "}
+                      <ToolTip
+                        tip="Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[wis] > 0
@@ -556,7 +616,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Medicine</td>
+                    <td>
+                      Medicine{" "}
+                      <ToolTip
+                        tip="A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[wis] > 0
@@ -567,7 +633,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Perception</td>
+                    <td>
+                      Perception{" "}
+                      <ToolTip
+                        tip="Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear monsters moving stealthily in the forest. "
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[wis] > 0
@@ -578,7 +650,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Survival</td>
+                    <td>
+                      Survival{" "}
+                      <ToolTip
+                        tip="The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[wis] > 0
@@ -589,7 +667,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th>Charisma</th>
-                    <td>Deception</td>
+                    <td>
+                      Deception{" "}
+                      <ToolTip
+                        tip="Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[cha] > 0
@@ -600,7 +684,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Intimidation</td>
+                    <td>
+                      Intimidation{" "}
+                      <ToolTip
+                        tip="When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[cha] > 0
@@ -611,7 +701,10 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Performance</td>
+                    <td>
+                      Performance{" "}
+                      <ToolTip tip="Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment." position=""/>
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[cha] > 0
@@ -622,7 +715,13 @@ export default function NewCharAbilities({
                   </tr>
                   <tr>
                     <th></th>
-                    <td>Persuasion</td>
+                    <td>
+                      Persuasion{" "}
+                      <ToolTip
+                        tip="When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk."
+                        position=""
+                      />
+                    </td>
                     <td>
                       <kbd className="kbd mx-1 ">
                         {modifiers[cha] > 0

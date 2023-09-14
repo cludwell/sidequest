@@ -64,7 +64,7 @@ export default function Home() {
   console.log(scenarios);
   return (
     <main
-      className={`flex min-h-screen flex-col items-center p-16 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center px-16 ${inter.className}`}
     >
       <Head>
         <title>Side🎲Quest</title>

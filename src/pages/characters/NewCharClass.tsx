@@ -35,7 +35,7 @@ export default function NewCharacterClass({
 
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-8">Classes</h1>
+      <h1 className="text-4xl almendra mb-8 text-center">Classes</h1>
 
       <Barbarian dndClass={dndClass} setDndClass={setDndClass} />
       <Bard dndClass={dndClass} setDndClass={setDndClass} />

@@ -40,7 +40,7 @@ export default function NewCharDescription({
   };
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-8">Description</h1>
+      <h1 className="text-4xl almendra mb-4 text-center">Description</h1>
 
       <form className="flex flex-col items-center">
         <div>
