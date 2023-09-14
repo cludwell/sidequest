@@ -1,25 +1,11 @@
-interface WeaponDetail {
-  cost: string;
-  damage: string;
-  weight: string;
-  properties: string[];
-}
+import { WeaponsProps } from "../../../lib/weapons";
 
-interface MartialMeleeWeaponsProps {
-  martialMeleeWeapons: {
-    [key: string]: WeaponDetail;
-  };
-}
-export default function WeaponsMartial({
-  martialMeleeWeapons,
-}: MartialMeleeWeaponsProps) {
+export default function WeaponsTable({ title, weaponsData }: WeaponsProps) {
   return (
     <>
       <div className="collapse collapse-plus border border-base-300 bg-base-200 max-w-screen-xl w-full my-1">
         <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">
-          Martial Melee Weapons
-        </div>
+        <div className="collapse-title text-xl font-medium">{title}</div>
         <div className="collapse-content collapse-arrow">
           <div className="overflow-x-auto">
             <table className="table table-zebra bg-base-100">
@@ -35,7 +21,7 @@ export default function WeaponsMartial({
               </thead>
               {/* Body */}
               <tbody>
-                {Object.entries(martialMeleeWeapons).map(
+                {Object.entries(weaponsData).map(
                   ([weaponName, details]) => (
                     <tr key={weaponName}>
                       <td>{weaponName}</td>

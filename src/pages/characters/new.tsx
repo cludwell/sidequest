@@ -13,6 +13,7 @@ export default function NewCharacter() {
   const [dndClass, setDndClass] = useState<string | null>(null);
   const [abilities, setAbilities] = useState<Object>({});
   const [description, setDescription] = useState<Object>({});
+  const [equipment, setEquipment] = useState<Object>({});
   return (
     <main className="flex min-h-screen flex-col items-center px-16 ">
       <ul className="steps steps-horizontal lg:steps-horizontal mb-12">
@@ -71,7 +72,11 @@ export default function NewCharacter() {
           />{" "}
         </div>
         <div id="item5" className="carousel-item w-full mx-8">
-          <NewCharEquipment race={race} dndClass={dndClass}
+          <NewCharEquipment
+            race={race}
+            dndClass={dndClass}
+            equipment={equipment}
+            setEquipment={setEquipment}
           />{" "}
         </div>
       </div>
