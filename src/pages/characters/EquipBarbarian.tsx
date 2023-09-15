@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EquipBarbarianProps } from "../../../lib/equipBarbarianProps";
+import { EquipmentProps } from "../../../lib/equipmentProps";
 import { martialMeleeWeapons } from "./weaponsMartial";
 import { simpleMeleeWeapons } from "./weaponsSimple";
 import WeaponsTable from "./WeaponsTable";
@@ -13,7 +13,7 @@ export default function EquipBarbarian({
   setWeapon3,
   pack,
   setPack,
-}: EquipBarbarianProps) {
+}: EquipmentProps) {
   const [selection, setSelection] = useState<Boolean>(false);
   setPack("Explorer's Pack");
   setWeapon3("4 Javelins");
