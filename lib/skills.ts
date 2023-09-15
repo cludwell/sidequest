@@ -1,0 +1,20 @@
+export type Skills = {
+    Athletics: number;
+    Acrobatics: number;
+    SleightOfHand: number;
+    Stealth: number;
+    Arcana: number;
+    History: number;
+    Investigation: number;
+    Nature: number;
+    Religion: number;
+    AnimalHandling: number;
+    Insight: number;
+    Medicine: number;
+    Perception: number;
+    Survival: number;
+    Deception: number;
+    Intimidation: number;
+    Performance: number;
+    Persuasion: number;
+  };

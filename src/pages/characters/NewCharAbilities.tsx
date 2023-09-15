@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { SetAbilitiesProps } from "../../../lib/setAbilitiesProps";
 import ToolTip from "../ToolTip";
-
+import { dndClassSkillProficiencies as proficiencies } from "./ClassProficienies";
+import { Skills } from "../../../lib/skills";
 export default function NewCharAbilities({
   abilities,
   setAbilities,
+  dndClass,
 }: SetAbilitiesProps) {
   const [array, setArray] = useState<string>("Standard");
   const [str, setStr] = useState<string>("--");
@@ -13,6 +15,30 @@ export default function NewCharAbilities({
   const [int, setInt] = useState<string>("--");
   const [wis, setWis] = useState<string>("--");
   const [cha, setCha] = useState<string>("--");
+  const [skills, setSkills] = useState<Skills>({
+    Athletics: 0,
+    Acrobatics: 0,
+    SleightOfHand: 0,
+    Stealth: 0,
+    Arcana: 0,
+    History: 0,
+    Investigation: 0,
+    Nature: 0,
+    Religion: 0,
+    AnimalHandling: 0,
+    Insight: 0,
+    Medicine: 0,
+    Perception: 0,
+    Survival: 0,
+    Deception: 0,
+    Intimidation: 0,
+    Performance: 0,
+    Persuasion: 0,
+  });
+  const assignedSkills = Object.values(skills).reduce(
+    (acc, ele) => (acc += ele),
+    0
+  ) - 1;
   const modifiers: Modifiers = {
     "1": -5,
     "2": -4,
@@ -36,24 +62,6 @@ export default function NewCharAbilities({
     "20": 5,
   };
 
-  // const [acrobatics, setAcrobatics] = useState<number>(0);
-  // const [animalHandling, setAnimalHandling] = useState<number>(0);
-  // const [arcana, setArcana] = useState<number>(0);
-  // const [athletics, setAthletics] = useState<number>(0);
-  // const [deception, setDeception] = useState<number>(0);
-  // const [history, setHistory] = useState<number>(0);
-  // const [insight, setInsight] = useState<number>(0);
-  // const [intimidation, setIntimidation] = useState<number>(0);
-  // const [investigation, setInvestigation] = useState<number>(0);
-  // const [medicine, setMedicine] = useState<number>(0);
-  // const [nature, setNature] = useState<number>(0);
-  // const [perception, setPerception] = useState<number>(0);
-  // const [performance, setPerformance] = useState<number>(0);
-  // const [persuasion, setPersuasion] = useState<number>(0);
-  // const [religion, setReligion] = useState<number>(0);
-  // const [sleightOfHand, setSleightOfHand] = useState<number>(0);
-  // const [stealth, setStealth] = useState<number>(0);
-  // const [survival, setSurvival] = useState<number>(0);
   const [errors, setErrors] = useState<string[]>([]);
   const [custom, setCustom] = useState<Record<string, number[]>>({});
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
@@ -66,6 +74,7 @@ export default function NewCharAbilities({
   const customRoll: Record<string, number[]> = {};
   //  let customAssigned = Object.values(custom).map(ele=>ele[1].slice(1).reduce((acc, next) => (acc += next), 0))
 
+  // const skillSelections = [skill1, skill2, skill3, skill4];
   const rollDice = () => {
     setStr("--");
     setDex("--");
@@ -103,28 +112,27 @@ export default function NewCharAbilities({
       int: parseInt(int),
       wis: parseInt(wis),
       cha: parseInt(cha),
-      acrobatics: modifiers[dex],
-      animalHandling: modifiers[wis],
-      arcana: modifiers[int],
-      athletics: modifiers[str],
-      deception: modifiers[cha],
-      history: modifiers[int],
-      insight: modifiers[wis],
-      intimidation: modifiers[cha],
-      investigation: modifiers[int],
-      medicine: modifiers[wis],
-      nature: modifiers[int],
-      perception: modifiers[wis],
-      performance: modifiers[cha],
-      persuasion: modifiers[cha],
-      religion: modifiers[int],
-      sleightOfHand: modifiers[dex],
-      stealth: modifiers[dex],
-      survival: modifiers[wis],
+      acrobatics: modifiers[dex] + skills["Acrobatics"] * 2,
+      animalHandling: modifiers[wis] + skills["AnimalHandling"] * 2,
+      arcana: modifiers[int] + skills["Arcana"] * 2,
+      athletics: modifiers[str] + skills["Athletics"] * 2,
+      deception: modifiers[cha] + skills["Deception"] * 2,
+      history: modifiers[int] + skills["History"] * 2,
+      insight: modifiers[wis] + skills["Insight"] * 2,
+      intimidation: modifiers[cha] + skills["Intimidation"] * 2,
+      investigation: modifiers[int] + skills["Investigation"] * 2,
+      medicine: modifiers[wis] + skills["Medicine"] * 2,
+      nature: modifiers[int] + skills["Nature"] * 2,
+      perception: modifiers[wis] + skills["Perception"] * 2,
+      performance: modifiers[cha] + skills["Performance"] * 2,
+      persuasion: modifiers[cha] + skills["Persuasion"] * 2,
+      religion: modifiers[int] + skills["Religion"] * 2,
+      sleightOfHand: modifiers[dex] + skills["SleightOfHand"] * 2,
+      stealth: modifiers[dex] + skills["Stealth"] * 2,
+      survival: modifiers[wis] + skills["Survival"] * 2,
     });
     setErrors(err);
     console.log("custom assigned", customArray);
-    // console.log('custom', custom);
   };
   return (
     <div className="flex flex-col max-w-screen-xl w-full content-center">
@@ -423,9 +431,10 @@ export default function NewCharAbilities({
         con !== "--" &&
         int !== "--" &&
         wis !== "--" &&
-        cha !== "--" && (
+        cha !== "--" &&
+        dndClass && (
           <div className="flex flex-col items-center">
-            <div className=" max-w-md">
+            <div className="">
               <h2 className="text-3xl almendra">
                 Skills
                 <ToolTip
@@ -440,6 +449,7 @@ export default function NewCharAbilities({
                     <th></th>
                     <th>Skill </th>
                     <th>Modifier</th>
+                    <th>Selection</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -460,6 +470,30 @@ export default function NewCharAbilities({
                           : modifiers[str]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Athletics") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Athletics" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Athletics: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-primary w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th>Dexterity</th>
@@ -476,6 +510,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[dex]
                           : modifiers[dex]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Acrobatics") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Acrobatics" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Acrobatics: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-secondary w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -494,6 +552,27 @@ export default function NewCharAbilities({
                           : modifiers[dex]}
                       </kbd>
                     </td>
+                    {proficiencies[
+                      dndClass as keyof typeof proficiencies
+                    ].skills.includes("Sleight of Hand") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[dndClass as keyof typeof proficiencies]
+                            .choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Sleight of Hand" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            SleightOfHand: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-accent w-full max-w-xs"
+                      />
+                    )}
                   </tr>
                   <tr>
                     <th></th>
@@ -510,6 +589,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[dex]
                           : modifiers[dex]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Stealth") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Stealth" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Stealth: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-success w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -528,6 +631,30 @@ export default function NewCharAbilities({
                           : modifiers[int]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Arcana") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Arcana" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Arcana: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-warning w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>
@@ -544,6 +671,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[int]
                           : modifiers[int]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("History") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["History" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              History: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-info w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -562,6 +713,30 @@ export default function NewCharAbilities({
                           : modifiers[int]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Investigation") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Investigation" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Investigation: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-error w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>
@@ -579,6 +754,30 @@ export default function NewCharAbilities({
                           : modifiers[int]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Nature") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Nature" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Nature: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-primary w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>
@@ -595,6 +794,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[int]
                           : modifiers[int]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Religion") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Religion" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Religion: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-secondary w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
 
@@ -614,6 +837,32 @@ export default function NewCharAbilities({
                           : modifiers[wis]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Animal Handling") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={
+                            skills["Animal Handling" as keyof typeof skills]
+                          }
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              AnimalHandling: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-accent w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>
@@ -630,6 +879,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[wis]
                           : modifiers[wis]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Insight") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Insight" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Insight: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-success w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -648,6 +921,30 @@ export default function NewCharAbilities({
                           : modifiers[wis]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Medicine") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Medicine" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Medicine: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-warning w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>
@@ -664,6 +961,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[wis]
                           : modifiers[wis]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Perception") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Perception" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Perception: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-info w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -682,6 +1003,30 @@ export default function NewCharAbilities({
                           : modifiers[wis]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Survival") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Survival" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Survival: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-error w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th>Charisma</th>
@@ -698,6 +1043,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[cha]
                           : modifiers[cha]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Deception") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Deception" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Deception: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-primary w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -716,12 +1085,39 @@ export default function NewCharAbilities({
                           : modifiers[cha]}
                       </kbd>
                     </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Intimidation") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Intimidation" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Intimidation: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-secondary w-full max-w-xs"
+                        />
+                      )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>
                       Performance{" "}
-                      <ToolTip tip="Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment." position=""/>
+                      <ToolTip
+                        tip="Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment."
+                        position=""
+                      />
                     </td>
                     <td>
                       <kbd className="kbd mx-1 ">
@@ -729,6 +1125,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[cha]
                           : modifiers[cha]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Performance") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Performance" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Performance: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-accent w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                   <tr>
@@ -746,6 +1166,30 @@ export default function NewCharAbilities({
                           ? "+" + modifiers[cha]
                           : modifiers[cha]}
                       </kbd>
+                    </td>
+                    <td>
+                      {proficiencies[
+                        dndClass as keyof typeof proficiencies
+                      ].skills.includes("Persuasion") && (
+                        <input
+                          type="number"
+                          min={0}
+                          max={
+                            proficiencies[
+                              dndClass as keyof typeof proficiencies
+                            ].choices - assignedSkills
+                          }
+                          placeholder="0"
+                          value={skills["Persuasion" as keyof typeof skills]}
+                          onChange={(e) =>
+                            setSkills((prev) => ({
+                              ...prev,
+                              Persuasion: Number(e.target.value),
+                            }))
+                          }
+                          className="input input-bordered input-success w-full max-w-xs"
+                        />
+                      )}
                     </td>
                   </tr>
                 </tbody>

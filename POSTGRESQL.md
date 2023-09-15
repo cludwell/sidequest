@@ -20,3 +20,6 @@ Prisma commands
     npx prisma generate
     npx prisma db push
     npm run seed
+
+
+git ls-files | xargs wc -l

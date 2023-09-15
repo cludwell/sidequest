@@ -5,12 +5,10 @@ import NewCharacterClass from "./NewCharClass";
 import NewCharAbilities from "./NewCharAbilities";
 import NewCharDescription from "./NewCharDescription";
 import NewCharEquipment from "./NewCharEquipment";
-
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
-  // const [progress, setProgress] = useState(5);
   const [race, setRace] = useState<string | null>(null);
-  const [dndClass, setDndClass] = useState<string | null>(null);
+  const [dndClass , setDndClass] = useState<string | null>(null);
   const [abilities, setAbilities] = useState<Object>({});
   const [description, setDescription] = useState<Object>({});
   const [equipment, setEquipment] = useState<Object>({});
@@ -63,7 +61,11 @@ export default function NewCharacter() {
           <NewCharacterClass dndClass={dndClass} setDndClass={setDndClass} />
         </div>
         <div id="item3" className="carousel-item w-full mx-8">
-          <NewCharAbilities abilities={abilities} setAbilities={setAbilities} />
+          <NewCharAbilities
+            abilities={abilities}
+            setAbilities={setAbilities}
+            dndClass={dndClass}
+          />
         </div>
         <div id="item4" className="carousel-item w-full mx-8">
           <NewCharDescription
