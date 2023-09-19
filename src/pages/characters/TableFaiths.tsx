@@ -9,7 +9,7 @@ export default function FaithTable({ deities }: Deities) {
       </div>
       <div className="collapse-content collapse-arrow">
         <div className="overflow-x-auto">
-          <table className="table table-zebra bg-base-100">
+          <table className="table table-zebra table-xs bg-base-100">
             {/* Head */}
             <thead>
               <tr>

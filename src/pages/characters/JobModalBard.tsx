@@ -591,7 +591,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
               className="btn btn-success btn-wide my-8"
               onClick={becomeBard}
             >
-              Barbarian
+              Bard
             </button>
           </div>
         </form>

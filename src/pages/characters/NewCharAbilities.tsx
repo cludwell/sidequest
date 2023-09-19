@@ -106,12 +106,12 @@ export default function NewCharAbilities({
     if (wis == "--") err.push("Wis must have a value");
     if (cha == "--") err.push("Cha must have a value");
     setAbilities({
-      str: parseInt(str),
-      dex: parseInt(dex),
-      con: parseInt(con),
-      int: parseInt(int),
-      wis: parseInt(wis),
-      cha: parseInt(cha),
+      strength: parseInt(str),
+      dexterity: parseInt(dex),
+      constitution: parseInt(con),
+      intelligence: parseInt(int),
+      wisdom: parseInt(wis),
+      charisma: parseInt(cha),
       acrobatics: modifiers[dex] + skills["Acrobatics"] * 2,
       animalHandling: modifiers[wis] + skills["AnimalHandling"] * 2,
       arcana: modifiers[int] + skills["Arcana"] * 2,
@@ -168,7 +168,7 @@ export default function NewCharAbilities({
             </button>
           </div>
           {/* max width changed spread of columns */}
-          <div className="overflow-x-auto max-w-md">
+          <div className="overflow-x-auto max-w-md rounded-b-2xl">
             <table className="table table-zebra bg-base-100">
               {/* head */}
               <thead>
@@ -433,8 +433,8 @@ export default function NewCharAbilities({
         wis !== "--" &&
         cha !== "--" &&
         dndClass && (
-          <div className="flex flex-col items-center">
-            <div className="">
+          <div className="flex flex-col items-center  ">
+            <div className="rounded-b-2xl overflow-x-auto">
               <h2 className="text-3xl almendra">
                 Skills
                 <ToolTip
@@ -442,7 +442,7 @@ export default function NewCharAbilities({
                   position="font-sans"
                 />
               </h2>
-              <table className="table table-zebra bg-base-100">
+              <table className="table table-zebra bg-base-100 ">
                 {/* head */}
                 <thead>
                   <tr>

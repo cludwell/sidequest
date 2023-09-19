@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SetDescriptionProps } from "../../../lib/setDescriptionProps";
-import FaithTable from "./FaithCollapse";
+import FaithTable from "./TableFaiths";
 import { deities } from "./DeitiesInfo";
 import ToolTip from "../ToolTip";
 export default function NewCharDescription({

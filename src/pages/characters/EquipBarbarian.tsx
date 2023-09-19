@@ -2,21 +2,33 @@ import { useState } from "react";
 import { EquipmentProps } from "../../../lib/equipmentProps";
 import { martialMeleeWeapons } from "./weaponsMartial";
 import { simpleMeleeWeapons } from "./weaponsSimple";
-import WeaponsTable from "./WeaponsTable";
+import WeaponsTable from "./TableWeapons";
 import ToolTip from "../ToolTip";
+import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
 export default function EquipBarbarian({
-  weapon1,
-  setWeapon1,
-  weapon2,
-  setWeapon2,
-  weapon3,
-  setWeapon3,
-  pack,
-  setPack,
-}: EquipmentProps) {
+  dndClass,
+  race,
+  equipment,
+  setEquipment,
+}: SetEquipmentProps) {
   const [selection, setSelection] = useState<Boolean>(false);
-  setPack("Explorer's Pack");
-  setWeapon3("4 Javelins");
+  const [weapon1, setWeapon1] = useState<string>("");
+  const [weapon2, setWeapon2] = useState<string>("");
+  const [errors, setErrors] = useState<string[]>([]);
+
+  const equip = async () => {
+    const err = [];
+    if (!weapon1) err.push("Please select a primary weapon");
+    if (!weapon2) err.push("Please select a secondary weapon");
+    if (err.length) {
+      setErrors(err);
+      return;
+    }
+    setEquipment({
+      inventory: ["Explorer's Pack"],
+      weapons: ["4 Javelins", weapon1, weapon2],
+    });
+  };
   return (
     <>
       <form className="flex flex-col items-center">
@@ -113,9 +125,7 @@ export default function EquipBarbarian({
         </div>
         <div className="flex flex-col w-80 my-4">
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
-              4 Javelins
-            </label>
+            <label className="label text-xl almendra">4 Javelins</label>
             <input
               type="radio"
               name="radio-5"
@@ -134,6 +144,25 @@ export default function EquipBarbarian({
         </>
       )}
       <WeaponsTable title="Martial Weapons" weaponsData={martialMeleeWeapons} />
+      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          onClick={equip}
+        >
+          Confirm Equipment
+        </button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+          Finished
+        </button>
+      </div>
+      <div className="toast toast-end">
+        {!!errors.length &&
+          errors.map((e, i) => (
+            <div className="alert alert-error" key={`error${i}`}>
+              <span>{e}</span>
+            </div>
+          ))}
+      </div>
     </>
   );
 }

@@ -8,7 +8,7 @@ export default function WeaponsTable({ title, weaponsData }: WeaponsProps) {
         <div className="collapse-title text-xl font-medium">{title}</div>
         <div className="collapse-content collapse-arrow">
           <div className="overflow-x-auto">
-            <table className="table table-zebra bg-base-100">
+            <table className="table table-zebra  bg-base-100">
               {/* Head */}
               <thead>
                 <tr>
