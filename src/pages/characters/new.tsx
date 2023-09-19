@@ -45,7 +45,7 @@ export default function NewCharacter() {
             Description
           </a>
         </li>
-        <li className="step">
+        <li className={!!Object.values(equipment).length ? 'step step-primary' : 'step'}>
           {" "}
           <a href="#item5" className="btn btn-xs">
             Equipment

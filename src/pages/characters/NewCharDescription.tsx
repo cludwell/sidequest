@@ -11,7 +11,7 @@ export default function NewCharDescription({
   // this useState will be used for error handling purposes before being sent to description
   const [descript, setDescript] = useState<string>("");
   const [alignment, setAlignment] = useState<string>("");
-  const [level, setLevel] = useState<number>(1)
+  const [level, setLevel] = useState<number>(1);
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([]);
@@ -25,16 +25,16 @@ export default function NewCharDescription({
       err.push("Please select a faith to follow.");
     if (!name || name.length < 3)
       err.push("Please enter a name of 3 or more characters");
-    if (!alignment || alignment.length < 8)
-      err.push("Please choose an alignment");
-    setErrors(err);
-    if (errors.length) return;
+    if (err.length) {
+      setErrors(err);
+      return;
+    } else setErrors([])
     setDescription({
       description: descript,
       alignment,
       faith,
       name,
-      level
+      level,
     });
     console.log("DESCRIPTION", description);
   };
@@ -67,7 +67,6 @@ export default function NewCharDescription({
             onChange={(e) => setLevel(parseInt(e.target.value))}
           >
             <option value={1}>1</option>
-
           </select>
         </div>
         <div>

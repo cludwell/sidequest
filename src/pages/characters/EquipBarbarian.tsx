@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { EquipmentProps } from "../../../lib/equipmentProps";
 import { martialMeleeWeapons } from "./weaponsMartial";
 import { simpleMeleeWeapons } from "./weaponsSimple";
 import WeaponsTable from "./TableWeapons";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
+
 export default function EquipBarbarian({
   dndClass,
   race,
