@@ -5,6 +5,7 @@ import { martialMeleeWeapons } from "./weaponsMartial";
 import { simpleMeleeWeapons } from "./weaponsSimple";
 import EquipBarbarian from "./EquipBarbarian";
 import EquipBard from "./EquipBard";
+import EquipCleric from "./EquipCleric";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -37,8 +38,13 @@ export default function NewCharEquipment({
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === 'Cleric' ? (
-          <h1>working</h1>
+        ) : dndClass === "Cleric" ? (
+          <EquipCleric
+            dndClass={dndClass}
+            race={race}
+            equipment={equipment}
+            setEquipment={setEquipment}
+          />
         ) : null}
       </div>
     </div>

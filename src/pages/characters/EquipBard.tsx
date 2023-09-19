@@ -16,36 +16,35 @@ export default function EquipBard({
   const [instrument2, setInstrument2] = useState<string>("");
   const [instrument3, setInstrument3] = useState<string>("");
   const [weapon, setWeapon] = useState<string>("");
-  const [pack, setPack] = useState<string>('')
+  const [pack, setPack] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([]);
 
-
   const instruments = [
-    "Bagpipes",        // Official D&D
+    "Bagpipes", // Official D&D
     "Birdpipes",
-    "Drum",            // Official D&D
-    "Dulcimer",        // Official D&D
-    "Flute",           // Official D&D
+    "Drum", // Official D&D
+    "Dulcimer", // Official D&D
+    "Flute", // Official D&D
     "Longhorn",
-    "Lute",            // Official D&D
-    "Lyre",            // Official D&D
-    "Horn",            // Official D&D
-    "Pan Flute",       // Official D&D
-    "Shawm",           // Official D&D
+    "Lute", // Official D&D
+    "Lyre", // Official D&D
+    "Horn", // Official D&D
+    "Pan Flute", // Official D&D
+    "Shawm", // Official D&D
     "Tantan",
-    "Viol",            // Official D&D
+    "Viol", // Official D&D
     "Wargong",
-    "Guitar",          // Historical
-    "Accordion",       // Historical
-    "Harp",            // Historical
-    "Mandolin",        // Historical
+    "Guitar", // Historical
+    "Accordion", // Historical
+    "Harp", // Historical
+    "Mandolin", // Historical
     // "Recorder",        // Historical
-    "Fiddle",          // Historical
-    "Hurdy-Gurdy",     // Historical
-    "Crumhorn",        // Historical
-    "Zither",          // Historical
-    "Psaltery",        // Historical
-]
+    "Fiddle", // Historical
+    "Hurdy-Gurdy", // Historical
+    "Crumhorn", // Historical
+    "Zither", // Historical
+    "Psaltery", // Historical
+  ];
 
   const equip = async () => {
     const err = [];
@@ -53,17 +52,17 @@ export default function EquipBard({
     if (!instrument2) err.push("Please select a secondary instrument");
     if (!instrument3) err.push("Please select a third instrument");
     if (!weapon) err.push("Please select a secondary weapon");
-    if (!pack) err.push('Please select a pack')
+    if (!pack) err.push("Please select a pack");
     if (err.length) {
       setErrors(err);
       return;
-    } else setErrors([])
+    } else setErrors([]);
     setEquipment({
-      armor: ['Leather Armor'],
+      armor: ["Leather Armor"],
       inventory: [pack, instrument1, instrument2, instrument3],
-      weapons: [weapon, 'Dagger'],
+      weapons: [weapon, "Dagger"],
     });
-    console.log('equipment', equipment)
+    console.log("equipment", equipment);
   };
   return (
     <>
@@ -80,10 +79,7 @@ export default function EquipBard({
               Instrument 1
             </option>
             {instruments.map((instru, i) => (
-              <option
-                key={`instru-option${i}`}
-                value={instru}
-              >
+              <option key={`instru-option${i}`} value={instru}>
                 {instru}
               </option>
             ))}
@@ -96,10 +92,7 @@ export default function EquipBard({
               Instrument 2
             </option>
             {instruments.map((instru, i) => (
-              <option
-                key={`instru-option${i}`}
-                value={instru}
-              >
+              <option key={`instru-option${i}`} value={instru}>
                 {instru}
               </option>
             ))}
@@ -112,10 +105,7 @@ export default function EquipBard({
               Instrument 3
             </option>
             {instruments.map((instru, i) => (
-              <option
-                key={`instru-option${i}`}
-                value={instru}
-              >
+              <option key={`instru-option${i}`} value={instru}>
                 {instru}
               </option>
             ))}
@@ -191,7 +181,6 @@ export default function EquipBard({
           )}
         </div>
         <div className="flex flex-col w-80 my-4">
-
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
               Diplomat's Pack{" "}
@@ -206,7 +195,7 @@ export default function EquipBard({
               className="radio radio-warning"
               value={"Diplomat's pack"}
               checked={pack === "Diplomat's pack"}
-              onChange={e => setPack(e.target.value)}
+              onChange={(e) => setPack(e.target.value)}
             />
           </div>
           <div className="flex flex-row items-center justify-between">
@@ -223,14 +212,15 @@ export default function EquipBard({
               className="radio radio-warning"
               value={"Entertainer's pack"}
               checked={pack === "Entertainer's pack"}
-
-              onChange={e => setPack(e.target.value)}
+              onChange={(e) => setPack(e.target.value)}
             />
           </div>
         </div>
         <div className="flex flex-col w-80 my-4">
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Leather Armor and Dagger</label>
+            <label className="label text-xl almendra">
+              Leather Armor and Dagger
+            </label>
             <input
               type="radio"
               name="radio-5"
