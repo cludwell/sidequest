@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
-import WeaponsTable from "./TableWeapons";
-import { martialMeleeWeapons } from "./weaponsMartial";
-import { simpleMeleeWeapons } from "./weaponsSimple";
+
 import EquipBarbarian from "./EquipBarbarian";
 import EquipBard from "./EquipBard";
 import EquipCleric from "./EquipCleric";
 import EquipDruid from "./EquipDruid";
+import EquipFighter from "./EquipFighter";
+import { martialMeleeWeapons } from "./weaponsMartial";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -53,7 +53,14 @@ export default function NewCharEquipment({
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : null}
+        ) : dndClass?.includes('Fighter') ? (
+          <EquipFighter
+          dndClass={dndClass}
+          race={race}
+          equipment={equipment}
+          setEquipment={setEquipment}
+        />
+        )  : null}
       </div>
     </div>
   );

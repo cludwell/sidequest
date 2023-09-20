@@ -3,18 +3,18 @@ import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
 import WeaponsTable from "./TableWeapons";
 import { simpleMeleeWeapons } from "./weaponsSimple";
-
+import { simpleRangedWeapons } from "./weaponsSimpleRanged";
 export default function EquipDruid({
   dndClass,
   race,
   equipment,
   setEquipment,
 }: SetEquipmentProps) {
-  const [armor, setArmor] = useState<string>("Leather Armor");
-  const [weapon, setWeapon] = useState<string>("");
-  const [pack, setPack] = useState<string>("");
+  const [weaponA, setWeaponA] = useState<string>("Scimitar");
+  const [weaponB, setWeaponB] = useState<string>("Wooden Shield");
+  const [selectionB, setSelectionB] = useState<Boolean>(false);
   const [focus, setFocus] = useState<string>("");
-  const [selection, setSelection] = useState<Boolean>(false);
+  const [selectionA, setSelectionA] = useState<Boolean>(false);
   const [errors, setErrors] = useState<string[]>([]);
 
   const druidicFocusForms = [
@@ -27,14 +27,13 @@ export default function EquipDruid({
     "Crystal",
     "Sacred Seed",
     "Feather",
-    "Scale"
+    "Scale",
   ];
 
   const equip = async () => {
     const err = [];
-    if (!armor) err.push("Please select armor");
-    if (!weapon) err.push("Please select a weapon");
-    if (!pack) err.push("Please select a pack");
+    if (!weaponA) err.push("Please select a primary weapon");
+    if (!weaponB) err.push("Please select a shield or weapon");
     if (!focus) err.push("Please select a druidic focus");
     if (err.length) {
       setErrors(err);
@@ -42,11 +41,14 @@ export default function EquipDruid({
     } else setErrors([]);
 
     setEquipment({
-      armor: [armor],
-      inventory: [pack, focus],
-      weapons: [weapon],
+      armor: [
+        "Leather Armor",
+        weaponB === "Wooden Shield" ? "Wooden Shield" : "",
+      ],
+      inventory: ["Explorer's Pack", focus],
+      weapons: [weaponA, weaponB === "Wooden Shield" ? "" : weaponB],
     });
-    console.log('equipment', equipment)
+    console.log("equipment", equipment);
   };
 
   return (
@@ -63,28 +65,31 @@ export default function EquipDruid({
               className="radio radio-primary"
               value="Leather Armor"
               checked
-              onChange={(e) => setArmor(e.target.value)}
             />
           </div>
         </div>
         {/* Weapon Selection */}
         <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection</label>
+          <label className="label text-xl almendra">Weapon Selection 1</label>
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
               Scimitar (1d6 slashing)
             </label>
             <input
               type="radio"
-              name="second-weapon-choice"
+              name="first-weapon-choice"
               className="radio radio-secondary"
               value="Scimitar"
-              onChange={(e) => setWeapon(e.target.value)}
+              checked={!selectionA}
+              onChange={(e) => {
+                setSelectionA(false);
+                setWeaponA(e.target.value);
+              }}
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-          <label className="label text-xl almendra">
-              Any Simple Weapon
+            <label className="label text-xl almendra">
+              Any Simple Melee Weapon
               <ToolTip
                 tip="Choose any simple weapon from the equipment list."
                 position="font-sans"
@@ -92,19 +97,19 @@ export default function EquipDruid({
             </label>
             <input
               type="radio"
-              name="second-weapon-choice"
+              name="first-weapon-choice"
               className="radio radio-secondary"
               value="Any Simple Weapon"
               onChange={(e) => {
-                setSelection(true);
+                setSelectionA(true);
               }}
             />
           </div>
-          {selection && (
+          {selectionA && (
             <>
               <select
                 className="select select-secondary w-full max-w-xs"
-                onChange={(e) => setWeapon(e.target.value)}
+                onChange={(e) => setWeaponA(e.target.value)}
               >
                 <option disabled selected>
                   Choose Simple Weapon
@@ -121,25 +126,68 @@ export default function EquipDruid({
             </>
           )}
         </div>
-        {/* Pack Selection */}
         <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+          <label className="label text-xl almendra">Weapon Selection 2</label>
+          <div className="flex flex-row items-center justify-between">
+            <label className="label text-xl almendra">A Wooden Shield</label>
+            <input
+              type="radio"
+              name="second-weapon-choice"
+              className="radio radio-success"
+              value="Wooden Shield"
+              checked={!selectionB}
+              onChange={(e) => {
+                setSelectionB(false);
+                setWeaponA(e.target.value);
+              }}
+            />
+          </div>
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
-              Herbalism Kit{" "}
+              Any Simple Weapon
               <ToolTip
-                tip="The herbalism kit can be used with the nature proficiency to store useful plants, to create potions of healing, and diagnose illneses"
+                tip="Choose any simple weapon from the equipment list."
                 position="font-sans"
               />
             </label>
             <input
               type="radio"
-              name="pack-choice"
-              className="radio radio-warning"
-              value="Herbalism Kit"
-              onChange={(e) => setPack(e.target.value)}
+              name="second-weapon-choice"
+              className="radio radio-success"
+              value="Any Simple Weapon"
+              onChange={(e) => {
+                setSelectionB(true);
+              }}
             />
           </div>
+          {selectionB && (
+            <>
+              <select
+                className="select select-success w-full max-w-xs"
+                onChange={(e) => setWeaponB(e.target.value)}
+              >
+                <option disabled selected>
+                  Choose Any Simple Weapon
+                </option>
+                {Object.entries({
+                  ...simpleRangedWeapons,
+                  ...simpleMeleeWeapons,
+                }).map(([weap, deets], i) => (
+                  <option
+                    key={`weap-option${i}`}
+                    value={`${weap} - ${deets.damage}`}
+                  >
+                    {weap} - {deets.damage}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
+        </div>
+        {/* Pack Selection */}
+        <div className="flex flex-col w-80 my-4">
+          <label className="label text-xl almendra">Pack Selection</label>
+
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
               Explorer's Pack
@@ -153,7 +201,8 @@ export default function EquipDruid({
               name="pack-choice"
               className="radio radio-warning"
               value="Explorer's Pack"
-              onChange={(e) => setPack(e.target.value)}
+              checked
+              // onChange={(e) => setPack(e.target.value)}
             />
           </div>
         </div>
@@ -162,7 +211,7 @@ export default function EquipDruid({
           <div className="flex flex-col items-center justify-between">
             <label className="label text-xl almendra w-80">Druidic Focus</label>
             <select
-              className="select select-success w-full max-w-xs"
+              className="select select-error w-full max-w-xs"
               onChange={(e) => setFocus(e.target.value)}
             >
               <option disabled selected>
@@ -190,6 +239,18 @@ export default function EquipDruid({
           Finished
         </button>
       </div>
+      {selectionA && (
+        <WeaponsTable
+          weaponsData={simpleMeleeWeapons}
+          title="Simple Melee Weapons"
+        />
+      )}
+      {selectionB && (
+        <WeaponsTable
+          weaponsData={{ ...simpleRangedWeapons, ...simpleMeleeWeapons }}
+          title="All Simple Melee Weapons (Including Ranged)"
+        />
+      )}
       <div className="toast toast-end">
         {!!errors.length &&
           errors.map((e, i) => (
