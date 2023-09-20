@@ -7,6 +7,7 @@ import EquipCleric from "./EquipCleric";
 import EquipDruid from "./EquipDruid";
 import EquipFighter from "./EquipFighter";
 import { martialMeleeWeapons } from "./weaponsMartial";
+import EquipMonk from "./EquipMonk";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -60,7 +61,13 @@ export default function NewCharEquipment({
           equipment={equipment}
           setEquipment={setEquipment}
         />
-        )  : null}
+        )  : dndClass === 'Monk' ? (
+          <EquipMonk      dndClass={dndClass}
+          race={race}
+          equipment={equipment}
+          setEquipment={setEquipment}
+        />
+        ) : null}
       </div>
     </div>
   );
