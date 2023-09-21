@@ -3,7 +3,6 @@ import { SetAbilitiesProps } from "../../../lib/setAbilitiesProps";
 import ToolTip from "../ToolTip";
 import { dndClassSkillProficiencies as proficiencies } from "./ClassProficienies";
 import { Skills } from "../../../lib/skills";
-import { classesHp } from "./charHp";
 export default function NewCharAbilities({
   abilities,
   setAbilities,
