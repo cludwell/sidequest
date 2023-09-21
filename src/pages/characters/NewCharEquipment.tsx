@@ -97,7 +97,11 @@ export default function NewCharEquipment({
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : null}
+        ) : (
+          <h1 className="almendra text-2xl text-center">
+            Please select a class to start this step
+          </h1>
+        )}
       </div>
     </div>
   );
