@@ -9,21 +9,16 @@ export default function EquipRanger({
   equipment,
   setEquipment,
 }: SetEquipmentProps) {
-  const [armor, setArmor] = useState<string>("Leather Armor");
-  const [weaponA, setWeaponA] = useState<string>("Two Shortswords");
-  const [weaponB, setWeaponB] = useState<string>("");
-  const [selection, setSelection] = useState<Boolean>(false);
+  const [weaponA, setWeaponA] = useState<string>("Shortsword");
+  const [weaponB, setWeaponB] = useState<string>("Shortsword");
   const [pack, setPack] = useState<string>("Dungeoneer's Pack");
-  const [extraEquip, setExtraEquip] = useState<string>(
-    "Longbow and a quiver of 20 arrows"
-  );
+
   const [errors, setErrors] = useState<string[]>([]);
 
   const equip = async () => {
     const err = [];
-    if (!armor) err.push("Please select an armor");
     if (!weaponA) err.push("Please select a primary weapon");
-    if (selection && !weaponB) err.push("Please select a secondary weapon");
+    if (!weaponB) err.push("Please select a secondary weapon");
     if (!pack) err.push("Please select a pack");
     if (err.length) {
       setErrors(err);
@@ -31,8 +26,8 @@ export default function EquipRanger({
     } else setErrors([]);
 
     setEquipment({
-      armor: [armor],
-      inventory: [pack, extraEquip],
+      armor: ["Leather Armor"],
+      inventory: [pack],
       weapons: [weaponA, weaponB],
     });
     console.log("ranger", equipment);
@@ -43,106 +38,57 @@ export default function EquipRanger({
       <form className="flex flex-col items-center">
         {/* Primary Weapon Selection */}
         <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Armor Selection</label>
+          <label className="label text-xl almendra">Weapon Selection 1</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
-              Leather Armor
-              <ToolTip tip="AC: 11, Weight: 10" position="font-sans" />
-            </label>
+            <label className="label text-xl almendra">Shortsword (1d6)</label>
             <input
               type="radio"
               name="weapon-choice1"
               className="radio radio-primary"
-              checked={armor === "Leather Armor"}
-              value="Leather Armor"
-              onChange={(e) => setArmor(e.target.value)}
+              value="Shortsword"
+              checked={weaponA === "Shortsword"}
+              onChange={(e) => setWeaponA(e.target.value)}
             />
           </div>
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
-              Scale Mail{" "}
-              <ToolTip
-                tip="AC: 14, Stealth: Disadvantage, Weight: 45"
-                position="font-sans"
-              />
+              Shortbow & 20 Arrows (1d6)
             </label>
             <input
               type="radio"
               name="weapon-choice1"
               className="radio radio-primary"
-              value="Scale Mail"
-              checked={armor === "Scale Mail"}
-              onChange={(e) => setArmor(e.target.value)}
+              value="Shortbow and quiver of 20 arrows"
+              onChange={(e) => setWeaponA(e.target.value)}
             />
           </div>
         </div>
         {/* Secondary Weapon Selection */}
         <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection</label>
+          <label className="label text-xl almendra">Weapon Selection 2</label>
+          <div className="flex flex-row items-center justify-between">
+            <label className="label text-xl almendra">Shortsword (1d6)</label>
+            <input
+              type="radio"
+              name="weapon-choice2"
+              className="radio radio-secondary"
+              value="Shortsword"
+              checked={weaponB === "Shortsword"}
+              onChange={(e) => setWeaponB(e.target.value)}
+            />
+          </div>
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
-              Two Shortswords (1d6)
+              Rapier (1d8 finesse)
             </label>
             <input
               type="radio"
               name="weapon-choice2"
               className="radio radio-secondary"
-              value="Two Shortswords"
-              checked={!selection}
-              onChange={(e) => {
-                setSelection(false);
-                setWeaponB(e.target.value);
-              }}
+              value="Rapier"
+              onChange={(e) => setWeaponB(e.target.value)}
             />
           </div>
-          <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
-              Two Simple Melee Weapons
-            </label>
-            <input
-              type="radio"
-              name="weapon-choice2"
-              className="radio radio-secondary"
-              value="Two Simple Melee Weapons"
-              onChange={(e) => setSelection(true)}
-            />
-          </div>
-          {selection && (
-            <>
-              <select
-                className="select select-secondary w-full max-w-xs my-2"
-                onChange={(e) => setWeaponA(e.target.value)}
-              >
-                <option disabled selected>
-                  Choose First Weapon
-                </option>
-                {Object.entries(simpleMeleeWeapons).map(([weap, deets], i) => (
-                  <option
-                    key={`weap-option${i}`}
-                    value={`${weap} - ${deets.damage}`}
-                  >
-                    {weap} - {deets.damage}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="select select-secondary w-full max-w-xs my-2"
-                onChange={(e) => setWeaponB(e.target.value)}
-              >
-                <option disabled selected>
-                  Choose Second Weapon
-                </option>
-                {Object.entries(simpleMeleeWeapons).map(([weap, deets], i) => (
-                  <option
-                    key={`weap-option2${i}`}
-                    value={`${weap} - ${deets.damage}`}
-                  >
-                    {weap} - {deets.damage}
-                  </option>
-                ))}
-              </select>
-            </>
-          )}
         </div>
         {/* Pack Selection */}
         <div className="flex flex-col w-80 my-4">
@@ -180,30 +126,37 @@ export default function EquipRanger({
               onChange={(e) => setPack(e.target.value)}
             />
           </div>
-        </div>
-        <div className="flex flex-col w-80 my-4">
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
-              Longbow and 20 Arrows
-
+              Burglar's Pack
+              <ToolTip
+                tip="Includes a backpack, a bag of 1,000 ball bearings, 10 feet of string, a bell, 5 candles, a crowbar, a hammer, 10 pitons, a hooded lantern, 2 flasks of oil, 5 days rations, a tinderbox, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it."
+                position="font-sans"
+              />
             </label>
             <input
               type="radio"
-              name="longbow-choice"
-              className="radio radio-warning"
-              checked
-              value="Dungeoneer's Pack"
+              name="pack-choice"
+              className="radio radio-success"
+              value="Burglar's Pack"
               onChange={(e) => setPack(e.target.value)}
             />
           </div>
         </div>
+        <div className="flex flex-col w-80 my-4">
+          <div className="flex flex-row items-center justify-between">
+            <label className="label text-xl almendra">Leather Armor</label>
+            <input
+              type="radio"
+              name="armor-choice"
+              className="radio radio-warning"
+              checked
+              value="Leather Armor"
+            />
+          </div>
+        </div>
       </form>
-      {selection && (
-        <WeaponsTable
-          weaponsData={simpleMeleeWeapons}
-          title="Simple Melee Weapons"
-        />
-      )}
+
       <div className="flex flex-row max-w-screen-xl w-full justify-center">
         <button
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
