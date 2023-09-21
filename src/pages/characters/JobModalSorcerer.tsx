@@ -15,7 +15,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
     const myModalSorcerer = document.getElementById("my_modal_sorcerer");
     if (myModalSorcerer) window.my_modal_sorcerer = myModalSorcerer;
   }, []);
-  const becomeSorcerer = async () => setDndClass("Socerer");
+  const becomeSorcerer = async () => setDndClass("Sorcerer");
   return (
     <>
       <button
@@ -58,7 +58,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             className="rounded-xl aspect-square object-cover"
           />
           <p className="text-lg my-4 mx-16 italic">
-          A spellcaster who draws on inherent magic from a gift or bloodline
+            A spellcaster who draws on inherent magic from a gift or bloodline
           </p>
           <div className="overflow-x-auto m-1">
             <table className="table table-zebra">
@@ -387,12 +387,12 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </div>
             <div className="collapse-content overflow-x-auto">
               <table className="table table-zebra w-full bg-base-100">
-              <thead>
-      <tr>
-        <th>Proficiency</th>
-        <th>Description</th>
-      </tr>
-    </thead>
+                <thead>
+                  <tr>
+                    <th>Proficiency</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>
@@ -444,12 +444,12 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </div>
             <div className="collapse-content overflow-x-auto">
               <table className="table table-zebra w-full bg-base-100">
-              <thead>
-      <tr>
-        <th>Level</th>
-        <th>Description</th>
-      </tr>
-    </thead>
+                <thead>
+                  <tr>
+                    <th>Level</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
