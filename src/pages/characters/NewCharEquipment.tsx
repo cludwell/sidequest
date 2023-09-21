@@ -8,6 +8,7 @@ import EquipDruid from "./EquipDruid";
 import EquipFighter from "./EquipFighter";
 import { martialMeleeWeapons } from "./weaponsMartial";
 import EquipMonk from "./EquipMonk";
+import EquipPaladin from "./EquipPaladin";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -54,19 +55,27 @@ export default function NewCharEquipment({
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass?.includes('Fighter') ? (
+        ) : dndClass?.includes("Fighter") ? (
           <EquipFighter
-          dndClass={dndClass}
-          race={race}
-          equipment={equipment}
-          setEquipment={setEquipment}
-        />
-        )  : dndClass === 'Monk' ? (
-          <EquipMonk      dndClass={dndClass}
-          race={race}
-          equipment={equipment}
-          setEquipment={setEquipment}
-        />
+            dndClass={dndClass}
+            race={race}
+            equipment={equipment}
+            setEquipment={setEquipment}
+          />
+        ) : dndClass === "Monk" ? (
+          <EquipMonk
+            dndClass={dndClass}
+            race={race}
+            equipment={equipment}
+            setEquipment={setEquipment}
+          />
+        ) : dndClass === "Paladin" ? (
+          <EquipPaladin
+            dndClass={dndClass}
+            race={race}
+            equipment={equipment}
+            setEquipment={setEquipment}
+          />
         ) : null}
       </div>
     </div>
