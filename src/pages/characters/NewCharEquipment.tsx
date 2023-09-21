@@ -10,6 +10,7 @@ import { martialMeleeWeapons } from "./weaponsMartial";
 import EquipMonk from "./EquipMonk";
 import EquipPaladin from "./EquipPaladin";
 import EquipRanger from "./EquipRanger";
+import EquipRogue from "./EquipRogue";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -79,6 +80,13 @@ export default function NewCharEquipment({
           />
         ) : dndClass?.includes('Ranger') ? (
           <EquipRanger
+          dndClass={dndClass}
+          race={race}
+          equipment={equipment}
+          setEquipment={setEquipment}
+        />
+        ) : dndClass === 'Rogue' ? (
+          <EquipRogue
           dndClass={dndClass}
           race={race}
           equipment={equipment}
