@@ -11,11 +11,12 @@ declare global {
 }
 export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [enemy, setEnemy] = useState<string>('')
   useEffect(() => {
     const myModalRanger = document.getElementById("my_modal_ranger");
     if (myModalRanger) window.my_modal_ranger = myModalRanger;
   }, []);
-  const becomeRanger = async () => setDndClass("Ranger");
+  const becomeRanger = async () => setDndClass({role: "Ranger", specialty: []});
   return (
     <>
       <button

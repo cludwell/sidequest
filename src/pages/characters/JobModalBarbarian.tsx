@@ -15,7 +15,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
     const myModalBarbarian = document.getElementById("my_modal_barbarian");
     if (myModalBarbarian) window.my_modal_barbarian = myModalBarbarian;
   }, []);
-  const becomeBarbarian = async () => setDndClass("Barbarian");
+  const becomeBarbarian = async () => setDndClass({role: "Barbarian"});
   return (
     <>
       <button

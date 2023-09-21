@@ -27,6 +27,7 @@ model Characters {
   level          Int?
   name           String          @db.VarChar(255)
   role           String          @db.VarChar(255)
+  specialty      String[]
   race           String          @db.VarChar(255)
   maxHp          Int?
   currentHp      Int?

@@ -15,7 +15,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
     const myModalBard = document.getElementById("my_modal_bard");
     if (myModalBard) window.my_modal_bard = myModalBard;
   }, []);
-  const becomeBard = async () => setDndClass("Bard");
+  const becomeBard = async () => setDndClass({role: "Bard"});
   return (
     <>
       <button

@@ -5,10 +5,11 @@ import NewCharacterClass from "./NewCharClass";
 import NewCharAbilities from "./NewCharAbilities";
 import NewCharDescription from "./NewCharDescription";
 import NewCharEquipment from "./NewCharEquipment";
+import { DndClassObject } from "../../../lib/DndClassObject";
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const [race, setRace] = useState<string | null>(null);
-  const [dndClass , setDndClass] = useState<string | null>(null);
+  const [dndClass , setDndClass] = useState<DndClassObject>({role: null, specialty: []});
   const [abilities, setAbilities] = useState<Object>({});
   const [description, setDescription] = useState<Object>({});
   const [equipment, setEquipment] = useState<Object>({});

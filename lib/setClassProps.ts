@@ -1,4 +1,4 @@
 export type SetClassProps = {
-    dndClass: string | null;
-    setDndClass: React.Dispatch<React.SetStateAction<string | null>>;
+    dndClass: Object
+    setDndClass: React.Dispatch<React.SetStateAction<Object>>;
   };

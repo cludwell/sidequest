@@ -15,7 +15,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
     const myModalPaladin = document.getElementById("my_modal_paladin");
     if (myModalPaladin) window.my_modal_paladin = myModalPaladin;
   }, []);
-  const becomePaladin = async () => setDndClass("Paladin");
+  const becomePaladin = async () => setDndClass({role: "Paladin"});
   return (
     <>
       <button

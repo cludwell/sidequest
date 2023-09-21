@@ -1,5 +1,7 @@
+import { DndClassObject } from "./DndClassObject";
+
 export type SetEquipmentProps = {
-  dndClass: string | null;
+  dndClass: DndClassObject;
   race: string | null;
   equipment: Object;
   setEquipment: React.Dispatch<React.SetStateAction<Object>>;

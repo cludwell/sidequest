@@ -16,7 +16,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
     const myModalFighter = document.getElementById("my_modal_fighter");
     if (myModalFighter) window.my_modal_fighter = myModalFighter;
   }, []);
-  const becomeFighter = async () => setDndClass(`Fighter - ${style} style`);
+  const becomeFighter = async () => setDndClass({role: `Fighter`, specialty: [style]});
   const styleSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
     setStyle(e.target.value);
   return (

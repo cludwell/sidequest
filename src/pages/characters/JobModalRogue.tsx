@@ -15,7 +15,7 @@ export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
     const myModalRogue = document.getElementById("my_modal_rogue");
     if (myModalRogue) window.my_modal_rogue = myModalRogue;
   }, []);
-  const becomeRogue = async () => setDndClass("Rogue");
+  const becomeRogue = async () => setDndClass({role: "Rogue"});
   return (
     <>
       <button

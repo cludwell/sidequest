@@ -25,72 +25,72 @@ export default function NewCharEquipment({
     <div className="flex flex-col max-w-screen-xl w-full">
       <h1 className="text-4xl almendra mb-8 text-center">Equipment</h1>
       <div>
-        {dndClass === "Barbarian" ? (
+        {dndClass.role === "Barbarian" ? (
           <EquipBarbarian
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Bard" ? (
+        ) : dndClass.role === "Bard" ? (
           <EquipBard
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Cleric" ? (
+        ) : dndClass.role === "Cleric" ? (
           <EquipCleric
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Druid" ? (
+        ) : dndClass.role === "Druid" ? (
           <EquipDruid
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass?.includes("Fighter") ? (
+        ) : dndClass.role === "Fighter" ? (
           <EquipFighter
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Monk" ? (
+        ) : dndClass.role === "Monk" ? (
           <EquipMonk
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Paladin" ? (
+        ) : dndClass.role === "Paladin" ? (
           <EquipPaladin
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass?.includes("Ranger") ? (
+        ) : dndClass.role === "Ranger" ? (
           <EquipRanger
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Rogue" ? (
+        ) : dndClass.role === "Rogue" ? (
           <EquipRogue
             dndClass={dndClass}
             race={race}
             equipment={equipment}
             setEquipment={setEquipment}
           />
-        ) : dndClass === "Sorcerer" ||
-          dndClass === "Warlock" ||
-          dndClass === "Wizard" ? (
+        ) : dndClass.role === "Sorcerer" ||
+          dndClass.role === "Warlock" ||
+          dndClass.role === "Wizard" ? (
           <EquipMagicCaster
             dndClass={dndClass}
             race={race}
