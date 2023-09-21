@@ -1,4 +1,6 @@
+import { DndClassObject } from "./DndClassObject";
+
 export type SetClassProps = {
-    dndClass: Object
-    setDndClass: React.Dispatch<React.SetStateAction<Object>>;
+    dndClass: DndClassObject
+    setDndClass: React.Dispatch<React.SetStateAction<DndClassObject>>;
   };

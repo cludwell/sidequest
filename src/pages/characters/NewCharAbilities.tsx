@@ -156,7 +156,7 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
       stealth: modifiers[dex] + skills["Stealth"] * 2,
       survival: modifiers[wis] + skills["Survival"] * 2,
       maxHp: dndClass.role ? calculateHealth(dndClass?.role, modifiers[con], level) : null,
-      currentHp: dndClass.role ? calculateHealth(dndClass?.role, modifiers[con], level) : null
+      currentHp: dndClass.role ? calculateHealth(dndClass?.role, modifiers[con], level) : null,
     });
     console.log("custom assigned", customArray);
   };

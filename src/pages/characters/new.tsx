@@ -22,7 +22,7 @@ export default function NewCharacter() {
             Race
           </a>
         </li>
-        <li className={dndClass ? "step step-primary" : "step"}>
+        <li className={!!Object.values(dndClass).length ? "step step-primary" : "step"}>
           {" "}
           <a href="#item2" className="btn btn-xs">
             Class
