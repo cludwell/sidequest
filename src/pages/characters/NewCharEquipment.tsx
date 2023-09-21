@@ -9,6 +9,7 @@ import EquipFighter from "./EquipFighter";
 import { martialMeleeWeapons } from "./weaponsMartial";
 import EquipMonk from "./EquipMonk";
 import EquipPaladin from "./EquipPaladin";
+import EquipRanger from "./EquipRanger";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -76,6 +77,13 @@ export default function NewCharEquipment({
             equipment={equipment}
             setEquipment={setEquipment}
           />
+        ) : dndClass?.includes('Ranger') ? (
+          <EquipRanger
+          dndClass={dndClass}
+          race={race}
+          equipment={equipment}
+          setEquipment={setEquipment}
+        />
         ) : null}
       </div>
     </div>
