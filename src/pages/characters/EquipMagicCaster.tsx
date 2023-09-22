@@ -11,7 +11,7 @@ export default function EquipMagicCaster({
   setEquipment,
 }: SetEquipmentProps) {
   const [weaponA, setWeaponA] = useState<string>(
-    dndClass === "Wizard" ? "Quarterstaff" : "Light Crossbow & 20 bolts"
+    dndClass.role === "Wizard" ? "Quarterstaff" : "Light Crossbow & 20 bolts"
   );
   const [weaponB, setWeaponB] = useState<string>("");
   const [selectionA, setSelectionA] = useState<Boolean>(false);
@@ -42,7 +42,7 @@ export default function EquipMagicCaster({
   const equip = async () => {
     const err = [];
     if (!weaponA) err.push("Please select a primary weapon");
-    if (!weaponB && dndClass === "Warlock")
+    if (!weaponB && dndClass.role === "Warlock")
       err.push("Please select a secondary weapon");
     if (selectionB && arcaneFocus === "Component Pouch")
       err.push("Please select an arcane focus");
@@ -55,11 +55,11 @@ export default function EquipMagicCaster({
     setEquipment({
       weapons: [
         weaponA,
-        dndClass === "Wizard" ? null : "Dagger",
-        dndClass === "Wizard" ? null : "Dagger",
+        dndClass.role === "Wizard" ? null : "Dagger",
+        dndClass.role === "Wizard" ? null : "Dagger",
       ],
-      armor: [dndClass === "Warlock" ? "Leather Armor" : null],
-      inventory: [pack, arcaneFocus, dndClass === 'Wizard' ? 'Spellbook' : null],
+      armor: [dndClass.role === "Warlock" ? "Leather Armor" : null],
+      inventory: [pack, arcaneFocus, dndClass.role === 'Wizard' ? 'Spellbook' : null],
     });
     console.log("equipment", equipment);
   };
@@ -72,7 +72,7 @@ export default function EquipMagicCaster({
           <label className="label text-xl almendra">
             Primary Weapon Selection
           </label>
-          {dndClass === "Wizard" ? (
+          {dndClass.role === "Wizard" ? (
             <>
               <div className="flex flex-row items-center justify-between">
                 <label className="label text-xl almendra">Quarterstaff</label>
@@ -214,7 +214,7 @@ export default function EquipMagicCaster({
               onChange={(e) => setPack(e.target.value)}
             />
           </div>
-          {dndClass === "Sorcerer" ? (
+          {dndClass.role === "Sorcerer" ? (
             <div className="flex flex-row items-center justify-between">
               <label className="label text-xl almendra">
                 Explorer's Pack
@@ -250,7 +250,7 @@ export default function EquipMagicCaster({
             </div>
           )}
         </div>
-        {dndClass === "Sorcerer" ? (
+        {dndClass.role === "Sorcerer" ? (
           <div className="flex flex-col w-80 my-4">
             {/* <label className="label text-xl almendra">Pack Selection</label> */}
             <div className="flex flex-row items-center justify-between">
@@ -263,7 +263,7 @@ export default function EquipMagicCaster({
               />
             </div>
           </div>
-        ) : dndClass === "Warlock" ? (
+        ) : dndClass.role === "Warlock" ? (
           <div className="flex flex-col w-80 my-4">
             <label className="label text-xl almendra">
               Leather Armor, Simple Weapon, & 2 Daggers
@@ -304,7 +304,7 @@ export default function EquipMagicCaster({
             </div>
           </div>
         )}
-        {selectionA || dndClass === "Warlock" ? (
+        {selectionA || dndClass.role === "Warlock" ? (
           <WeaponsTable
             weaponsData={{ ...simpleMeleeWeapons, ...simpleRangedWeapons }}
             title="Simple Weapons"
@@ -318,9 +318,7 @@ export default function EquipMagicCaster({
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          Finished
-        </button>
+
       </div>
       <div className="toast toast-end">
         {!!errors.length &&

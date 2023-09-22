@@ -11,7 +11,7 @@ import EquipMonk from "./EquipMonk";
 import EquipPaladin from "./EquipPaladin";
 import EquipRanger from "./EquipRanger";
 import EquipRogue from "./EquipRogue";
-import EquipMagicCaster from "./EquipSorcerer";
+import EquipMagicCaster from "./EquipMagicCaster";
 export default function NewCharEquipment({
   race,
   dndClass,
@@ -23,7 +23,7 @@ export default function NewCharEquipment({
 
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-8 text-center">Equipment</h1>
+      <h1 className="text-4xl almendra mb-8 text-center">{dndClass.role} Equipment</h1>
       <div>
         {dndClass.role === "Barbarian" ? (
           <EquipBarbarian

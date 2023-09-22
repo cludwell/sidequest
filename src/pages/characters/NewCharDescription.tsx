@@ -10,7 +10,7 @@ export default function NewCharDescription({
   const [appearance, setAppearance] = useState<string>("");
   // this useState will be used for error handling purposes before being sent to description
   const [descript, setDescript] = useState<string>("");
-  const [alignment, setAlignment] = useState<string>("");
+  const [alignment, setAlignment] = useState<string>("Lawful Good");
   const [level, setLevel] = useState<number>(1);
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");

@@ -11,12 +11,43 @@ declare global {
 }
 export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
-  const [enemy, setEnemy] = useState<string>('')
+  const [favored, setFavored] = useState<string>("Aberrations");
+  const [errors, setErrors] = useState<string[]>([]);
   useEffect(() => {
     const myModalRanger = document.getElementById("my_modal_ranger");
     if (myModalRanger) window.my_modal_ranger = myModalRanger;
   }, []);
-  const becomeRanger = async () => setDndClass({role: "Ranger", specialty: []});
+
+  const favoredEnemies = [
+    "Aberrations",
+    "Beasts",
+    "Celestials",
+    "Constructs",
+    "Dragons",
+    "Elementals",
+    "Fey",
+    "Fiends",
+    "Giants",
+    "Monstrosities",
+    "Oozes",
+    "Plants",
+    "Undead",
+    "Goblins", // Humanoid subtype
+    "Orcs", // Humanoid subtype
+    "Elves", // Humanoid subtype
+    "Dwarves", // Humanoid subtype
+    // ... any other humanoid subtypes or specific creature types relevant to your game
+  ];
+
+  const becomeRanger = async () => {
+    const err = [];
+    if (!favored) {
+      err.push("Please select a favored enemy");
+      setErrors(err);
+      return;
+    } else setErrors([]);
+    setDndClass({ role: "Ranger", specialty: [favored] });
+  };
   return (
     <>
       <button
@@ -788,13 +819,33 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center">
+          <select
+            className="select select-primary w-full max-w-xs my-4"
+            onChange={(e) => setFavored(e.target.value)}
+            defaultValue="default"
+          >
+  
+            {favoredEnemies.map((enem, i) => (
+              <option key={`${enem}`} value={enem}>
+                {enem}
+              </option>
+            ))}
+          </select>
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeRanger}
             >
               Ranger
             </button>
+          </div>
+          <div className="toast toast-end">
+            {!!errors.length &&
+              errors.map((e, i) => (
+                <div className="alert alert-error" key={`error${i}`}>
+                  <span>{e}</span>
+                </div>
+              ))}
           </div>
         </form>
         <form method="dialog" className="modal-backdrop">

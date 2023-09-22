@@ -9,12 +9,29 @@ import { DndClassObject } from "../../../lib/DndClassObject";
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const [race, setRace] = useState<string | null>(null);
-  const [dndClass , setDndClass] = useState<DndClassObject>({role: null, specialty: []});
+  const [dndClass, setDndClass] = useState<DndClassObject>({
+    role: null,
+    specialty: [],
+  });
   const [abilities, setAbilities] = useState<Object>({});
   const [description, setDescription] = useState<Object>({});
   const [equipment, setEquipment] = useState<Object>({});
   return (
     <main className="flex min-h-screen flex-col items-center px-16 ">
+            {race &&
+        !!Object.values(description).length &&
+        !!Object.values(abilities).length &&
+        !!Object.values(equipment).length &&
+        !!Object.values(dndClass).length && (
+          <div className="flex flex-row max-w-screen-xl w-full justify-center">
+            <button
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+              //  onClick={equip}
+            >
+              Submit Character
+            </button>
+          </div>
+        )}
       <ul className="steps steps-horizontal lg:steps-horizontal mb-12">
         <li className={race ? "step step-primary" : "step"}>
           {" "}
@@ -22,7 +39,11 @@ export default function NewCharacter() {
             Race
           </a>
         </li>
-        <li className={!!Object.values(dndClass).length ? "step step-primary" : "step"}>
+        <li
+          className={
+            !!Object.values(dndClass).length ? "step step-primary" : "step"
+          }
+        >
           {" "}
           <a href="#item2" className="btn btn-xs">
             Class
@@ -46,7 +67,11 @@ export default function NewCharacter() {
             Description
           </a>
         </li>
-        <li className={!!Object.values(equipment).length ? 'step step-primary' : 'step'}>
+        <li
+          className={
+            !!Object.values(equipment).length ? "step step-primary" : "step"
+          }
+        >
           {" "}
           <a href="#item5" className="btn btn-xs">
             Equipment
@@ -83,6 +108,20 @@ export default function NewCharacter() {
           />{" "}
         </div>
       </div>
+      {race &&
+        !!Object.values(description).length &&
+        !!Object.values(abilities).length &&
+        !!Object.values(equipment).length &&
+        !!Object.values(dndClass).length && (
+          <div className="flex flex-row max-w-screen-xl w-full justify-center">
+            <button
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+              //  onClick={equip}
+            >
+              Submit Character
+            </button>
+          </div>
+        )}
       <div className="flex justify-center w-full py-2 gap-2">
         <a href="#item1" className="btn btn-xs">
           Race

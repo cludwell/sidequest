@@ -469,7 +469,7 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
                   position="font-sans"
                 />
               </h2>
-              <table className="table table-zebra bg-base-100 ">
+              <table className="table table-zebra bg-base-100 table-xs">
                 {/* head */}
                 <thead>
                   <tr>
