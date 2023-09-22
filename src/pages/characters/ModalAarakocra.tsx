@@ -17,7 +17,12 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
   }, []);
 
   const raceAarakocra = async () =>
-    setRace({ race: "Aarakocra", languages: ["Common", "Aarakocra", "Auran"] });
+    setRace({
+      race: "Aarakocra",
+      languages: ["Common", "Aarakocra", "Auran"],
+      specialty: ["Flight", "Talons"],
+      vision: 'Normal'
+    });
   return (
     <>
       <button

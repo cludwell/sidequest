@@ -10,13 +10,18 @@ declare global {
   }
 }
 
-export default function ModalLightfootHalfing({race, setRace}: SetRaceProps) {
+export default function ModalLightfootHalfing({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal15 = document.getElementById("my_modal_15");
     if (myModal15) window.my_modal_15 = myModal15;
   }, []);
-  const raceLightfoot = async () => setRace({race: "Lightfoot Halfling", languages: ['Common', 'Halfing']});
+  const raceLightfoot = async () =>
+    setRace({
+      race: "Lightfoot Halfling",
+      languages: ["Common", "Halfing"],
+      vision: "Normal",
+    });
 
   return (
     <>
@@ -49,13 +54,15 @@ export default function ModalLightfootHalfing({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_15" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Lightfoot Halfling</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Lightfoot Halfling
+          </h3>
           <HalflingInfo
             expand={expand}
             setExpanded={setExpanded}
             type={"lightfoot"}
           />
-                    <div className="flex flex-row justify-center">
+          <div className="flex flex-row justify-center">
             <button
               className="btn btn-success btn-wide"
               onClick={raceLightfoot}

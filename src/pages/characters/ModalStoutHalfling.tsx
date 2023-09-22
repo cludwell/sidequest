@@ -10,13 +10,18 @@ declare global {
   }
 }
 
-export default function ModalStoutHalfing({race, setRace}: SetRaceProps) {
+export default function ModalStoutHalfing({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal16 = document.getElementById("my_modal_16");
     if (myModal16) window.my_modal_16 = myModal16;
   }, []);
-  const raceStoutHalfing = async () => setRace({race: "Stout Halfing", languages: ['Common', 'Halfling']});
+  const raceStoutHalfing = async () =>
+    setRace({
+      race: "Stout Halfing",
+      languages: ["Common", "Halfling"],
+      vision: "Normal",
+    });
 
   return (
     <>
@@ -49,13 +54,15 @@ export default function ModalStoutHalfing({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_16" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Stout Halfling</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Stout Halfling
+          </h3>
           <HalflingInfo
             expand={expand}
             setExpanded={setExpanded}
             type={"stout"}
           />
-                    <div className="flex flex-row justify-center">
+          <div className="flex flex-row justify-center">
             <button
               className="btn btn-success btn-wide"
               onClick={raceStoutHalfing}

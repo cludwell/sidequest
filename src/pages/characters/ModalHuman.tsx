@@ -16,7 +16,8 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
     const myModal17 = document.getElementById("my_modal_17");
     if (myModal17) window.my_modal_17 = myModal17;
   }, []);
-  const raceHuman = async () => setRace({race: "Human", languags: ['Common']});
+  const raceHuman = async () =>
+    setRace({ race: "Human", languags: ["Common"], vision: "Normal" });
 
   return (
     <>

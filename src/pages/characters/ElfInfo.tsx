@@ -3,7 +3,8 @@ import { RacialInfoProps } from "../../../lib/racialInfoProps";
 import eladrin from "../../../public/images/eladrin4.jpg";
 import high from "../../../public/images/elf4.jpeg";
 import wood from "../../../public/images/elf3.jpeg";
-
+import { wizardCantrips } from "./_wizardCantrips";
+import { cantrips } from "./Cantrips";
 export default function ElfInfo({
   expand,
   setExpanded,
@@ -55,46 +56,102 @@ export default function ElfInfo({
           </div>
         </div>
       ) : type === "high" ? (
-        <div className="collapse collapse-plus bg-base-200 my-1">
-          <input
-            type="checkbox"
-            name="my-accordion-4"
-            checked={expand === "HIGH_ELF"}
-            onChange={() =>
-              setExpanded((prev) => (prev !== "HIGH_ELF" ? "HIGH_ELF" : null))
-            }
-          />
-          <div className="collapse-title text-xl font-medium">High Elf</div>
-          <div className="collapse-content">
-            <p>
-              Elves are a magical people of otherworldly grace, living in the
-              world but not entirely part of it.
-            </p>
-            <br />
-            <p>
-              As a high elf, you have a keen mind and a mastery of at least the
-              basics of magic. In many of the worlds of D&D, there are two kinds
-              of high elves. One type (which includes the gray elves and valley
-              elves of Greyhawk, the Silvanesti of Dragonlance, and the sun
-              elves of the Forgotten Realms) is haughty and reclusive, believing
-              themselves to be superior to non-elves and even other elves. The
-              other type (including the high elves of Greyhawk, the Qualinesti
-              of Dragonlance, and the moon elves of the Forgotten Realms) are
-              more common and more friendly, and often encountered among humans
-              and other races.
-            </p>
-            <br />
-            <p>
-              The sun elves of Faerûn (also called gold elves or sunrise elves)
-              have bronze skin and hair of copper, black, or golden blond. Their
-              eyes are golden, silver, or black. Moon elves (also called silver
-              elves or gray elves) are much paler, with alabaster skin sometimes
-              tinged with blue. They often have hair of silver-white, black, or
-              blue, but various shades of blond, brown, and red are not
-              uncommon. Their eyes are blue or green and flecked with gold.
-            </p>
+        <>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-4"
+              checked={expand === "HIGH_ELF"}
+              onChange={() =>
+                setExpanded((prev) => (prev !== "HIGH_ELF" ? "HIGH_ELF" : null))
+              }
+            />
+            <div className="collapse-title text-xl font-medium">High Elf</div>
+            <div className="collapse-content">
+              <p>
+                Elves are a magical people of otherworldly grace, living in the
+                world but not entirely part of it.
+              </p>
+              <br />
+              <p>
+                As a high elf, you have a keen mind and a mastery of at least
+                the basics of magic. In many of the worlds of D&D, there are two
+                kinds of high elves. One type (which includes the gray elves and
+                valley elves of Greyhawk, the Silvanesti of Dragonlance, and the
+                sun elves of the Forgotten Realms) is haughty and reclusive,
+                believing themselves to be superior to non-elves and even other
+                elves. The other type (including the high elves of Greyhawk, the
+                Qualinesti of Dragonlance, and the moon elves of the Forgotten
+                Realms) are more common and more friendly, and often encountered
+                among humans and other races.
+              </p>
+              <br />
+              <p>
+                The sun elves of Faerûn (also called gold elves or sunrise
+                elves) have bronze skin and hair of copper, black, or golden
+                blond. Their eyes are golden, silver, or black. Moon elves (also
+                called silver elves or gray elves) are much paler, with
+                alabaster skin sometimes tinged with blue. They often have hair
+                of silver-white, black, or blue, but various shades of blond,
+                brown, and red are not uncommon. Their eyes are blue or green
+                and flecked with gold.
+              </p>
+            </div>
           </div>
-        </div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-4"
+              checked={expand === "EXTRA_CANTRIP"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "EXTRA_CANTRIP" ? "EXTRA_CANTRIP" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Extra Cantrip
+            </div>
+            <div className="collapse-content">
+              <p>
+                As a High Elf you may choose a cantrip from the Wizard's cantrip
+                list.
+              </p>
+              <br />
+              <div className="overflow-x-auto">
+                <table className="table table-zebra bg-base-100">
+                  {/* head */}
+                  <thead>
+                    <tr>
+                      <th>Cantrip</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* row 1 */}
+                    {wizardCantrips.map((cant, i) => {
+                      const cantInfo = cantrips[cant as keyof typeof cantrips];
+                      if (!cantInfo) {
+                        return null;
+                      }
+                      return (
+                        <tr key={`cantinfo${i}`}>
+                          <td className="font-bold">{cant}</td>
+                          <td>
+                            <strong>
+                              Range - {cantInfo.range}, {cantInfo.duration}.
+                            </strong>{" "}
+                            {cantInfo.description}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </>
       ) : (
         <div className="collapse collapse-plus bg-base-200 my-1">
           <input

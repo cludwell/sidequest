@@ -83,6 +83,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
     setRace({
       race: `Dragonborn - ${dragonType}`,
       languages: ["Common", "Draconic"],
+      vision: "Normal",
     });
   // const dragonSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
   //   setDragonType(e.target.value);

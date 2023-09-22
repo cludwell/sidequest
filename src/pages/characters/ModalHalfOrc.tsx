@@ -17,7 +17,11 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
     if (myModal19) window.my_modal_19 = myModal19;
   }, []);
   const raceHalfOrc = async () =>
-    setRace({ race: "Half-Orc", languages: ["Common", "Orc"] });
+    setRace({
+      race: "Half-Orc",
+      languages: ["Common", "Orc"],
+      vision: " Darkvision (60 feet).",
+    });
 
   return (
     <>

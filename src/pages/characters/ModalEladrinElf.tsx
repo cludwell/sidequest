@@ -17,7 +17,12 @@ export default function ModalEladrinElf({ race, setRace }: SetRaceProps) {
     if (myModal10) window.my_modal_10 = myModal10;
   }, []);
   const raceEladrin = async () =>
-    setRace({ race: "Eladrin Elf", languages: ["Common", "Elvish"] });
+    setRace({
+      race: "Eladrin Elf",
+      languages: ["Common", "Elvish"],
+      spells: ["Fey Step"],
+      vision: "Darkvision (60 feet).",
+    });
 
   return (
     <>

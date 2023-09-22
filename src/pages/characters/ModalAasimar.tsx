@@ -21,7 +21,9 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
     setRace({
       race: "Aasimar",
       languages: ["Common", "Celestial"],
-      spells: ["Light"],
+      spells: ["Light", "Healing Hands"],
+      specialty: ["Celestial Resistance"],
+      vision: 'Normal'
     });
 
   return (

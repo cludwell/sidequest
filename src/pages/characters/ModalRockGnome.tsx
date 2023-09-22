@@ -10,13 +10,20 @@ declare global {
   }
 }
 
-export default function ModalRockGnome({race, setRace}: SetRaceProps) {
+export default function ModalRockGnome({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal11 = document.getElementById("my_modal_11");
     if (myModal11) window.my_modal_11 = myModal11;
   }, []);
-  const raceRockGnome = async () => setRace({race: "Rock Gnome", languages: ['Common', 'Gnomish']});
+  const raceRockGnome = async () =>
+    setRace({
+      race: "Rock Gnome",
+      languages: ["Common", "Gnomish"],
+      inventory: ["Tinker's Tools"],
+      specialty: ["Tinker's Tools"],
+      vision: "Darkvision (60 feet)."
+    });
 
   return (
     <>
@@ -49,7 +56,9 @@ export default function ModalRockGnome({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_11" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Rock Gnome</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Rock Gnome
+          </h3>
           <GnomeInfo expand={expand} setExpanded={setExpanded} type={"rock"} />
           <div className="flex flex-row justify-center">
             <button

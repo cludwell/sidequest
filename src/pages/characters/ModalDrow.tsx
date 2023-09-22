@@ -16,7 +16,12 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
     if (myModal21) window.my_modal_21 = myModal21;
   }, []);
   const raceDrow = async () =>
-    setRace({ race: "Drow", languages: ["Common", "Elvish", "Undercommon"], spells: ['Dancing Lights'] });
+    setRace({
+      race: "Drow",
+      languages: ["Common", "Elvish", "Undercommon"],
+      spells: ["Dancing Lights"],
+      vision: "Superior Darkvision (120 feet); sunlight sensitivity.",
+    });
 
   return (
     <>

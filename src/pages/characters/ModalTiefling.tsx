@@ -21,6 +21,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
       race: "Tiefling",
       languages: ["Common", "Infernal"],
       spells: ["Thaumaturgy"],
+      vision: "Darkvision (60 feet).",
     });
 
   return (

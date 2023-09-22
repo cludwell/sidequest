@@ -19,6 +19,8 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
     setRace({
       race: "Duergar",
       languages: ["Common", "Dwarvish", "Undercommon"],
+      spells: ["Enlarge"],
+      vision: "Superior Darkvision (120 feet); sunlight sensitivity.",
     });
 
   return (

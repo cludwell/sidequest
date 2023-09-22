@@ -12,12 +12,20 @@ declare global {
 
 export default function ModalHillDwarf({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [tools, setTools] = useState<string>("");
+
   useEffect(() => {
     const myModal6 = document.getElementById("my_modal_6");
     if (myModal6) window.my_modal_6 = myModal6;
   }, []);
   const raceHillDwarf = async () =>
-    setRace({ race: "Hill Dwarf", languages: ["Common", "Dwarvish"] });
+    setRace({
+      race: "Hill Dwarf",
+      languages: ["Common", "Dwarvish"],
+      inventory: [tools],
+      specialty: [tools],
+      vision: "Darkvision (60 feet)."
+    });
 
   return (
     <>
@@ -88,7 +96,23 @@ export default function ModalHillDwarf({ race, setRace }: SetRaceProps) {
             </div>
           </div>
           <DwarfInfo expand={expand} setExpanded={setExpanded} type={"hill"} />
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center">
+            <select
+              className="select select-primary w-full max-w-xs  my-4"
+              value={tools}
+              onChange={(e) => setTools(e.target.value)}
+            >
+              <option disabled value={""}>
+                Select Set of Tools
+              </option>
+              {["Smith's Tools", "Brewer's Tools", "Mason's Tools"].map(
+                (tool, i) => (
+                  <option key={i} value={`${tool}`}>
+                    {tool}
+                  </option>
+                )
+              )}
+            </select>
             <button
               className="btn btn-success btn-wide"
               onClick={raceHillDwarf}

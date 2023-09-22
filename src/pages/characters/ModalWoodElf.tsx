@@ -10,13 +10,19 @@ declare global {
   }
 }
 
-export default function ModalWoodElf({race, setRace}: SetRaceProps) {
-  const [expand, setExpanded] =useState<string|null>(null)
+export default function ModalWoodElf({ race, setRace }: SetRaceProps) {
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal9 = document.getElementById("my_modal_9");
     if (myModal9) window.my_modal_9 = myModal9;
   }, []);
-  const raceWoodElf = async () => setRace("Wood Elf");
+  const raceWoodElf = async () =>
+    setRace({
+      race: "Wood Elf",
+      vision: "Darkvision (60 feet).",
+      specialty: ["Mask of the Wild"],
+      languages: ["Common", "Elvish"],
+    });
 
   return (
     <>
@@ -49,13 +55,12 @@ export default function ModalWoodElf({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_9" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Wood Elf</h3>
-          <ElfInfo expand={expand} setExpanded={setExpanded} type={'wood'} />
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Wood Elf
+          </h3>
+          <ElfInfo expand={expand} setExpanded={setExpanded} type={"wood"} />
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceWoodElf}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceWoodElf}>
               Select Wood
             </button>
           </div>

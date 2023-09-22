@@ -17,7 +17,11 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
     if (myModal14) window.my_modal_14 = myModal14;
   }, []);
   const raceHalfElf = async () =>
-    setRace({ race: "Half-Elf", languages: ["Common", "Elvish"] });
+    setRace({
+      race: "Half-Elf",
+      languages: ["Common", "Elvish"],
+      vision: " Darkvision (60 feet).",
+    });
 
   return (
     <>

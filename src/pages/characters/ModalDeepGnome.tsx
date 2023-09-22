@@ -21,6 +21,7 @@ export default function ModalDeepGnome({ race, setRace }: SetRaceProps) {
     setRace({
       race: "Deep Gnome",
       languages: ["Common", "Gnomish", "Undercommon"],
+      vision: "Darkvision (120 feet)"
     });
 
   return (
