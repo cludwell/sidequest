@@ -16,9 +16,72 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
     const myModal3 = document.getElementById("my_modal_3");
     if (myModal3) window.my_modal_3 = myModal3;
   }, []);
+
+  const dragonbornAncestries = [
+    {
+      ancestry: "Black",
+      damageType: "Acid",
+      area: "5 by 30 ft. line",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Blue",
+      damageType: "Lightning",
+      area: "5 by 30 ft. line",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Brass",
+      damageType: "Fire",
+      area: "5 by 30 ft. line",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Bronze",
+      damageType: "Lightning",
+      area: "5 by 30 ft. line",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Copper",
+      damageType: "Acid",
+      area: "5 by 30 ft. line",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Gold",
+      damageType: "Fire",
+      area: "15 ft. cone",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Green",
+      damageType: "Poison",
+      area: "15 ft. cone",
+      save: "Con. save",
+    },
+    {
+      ancestry: "Red",
+      damageType: "Fire",
+      area: "15 ft. cone",
+      save: "Dex. save",
+    },
+    {
+      ancestry: "Silver",
+      damageType: "Cold",
+      area: "15 ft. cone",
+      save: "Con. save",
+    },
+    {
+      ancestry: "White",
+      damageType: "Cold",
+      area: "15 ft. cone",
+      save: "Con. save",
+    },
+  ];
   const raceDragonBorn = async () => setRace(`Dragonborn - ${dragonType}`);
-  const dragonSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
-    setDragonType(e.target.value);
+  // const dragonSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
+  //   setDragonType(e.target.value);
   return (
     <>
       <button
@@ -420,21 +483,16 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
             <select
               className="select select-primary w-full max-w-xs  my-4"
               value={dragonType}
-              onChange={dragonSelected}
+              onChange={(e) => setDragonType(e.target.value)}
             >
-              <option disabled selected>
+              <option disabled value={''}>
                 Select a Dragon Type
               </option>
-              <option>Black, Acid, 5 by 30 ft. line (Dex. save)</option>
-              <option>Blue, Lightning, 5 by 30 ft. line (Dex. save)</option>
-              <option>Brass, Fire, 5 by 30 ft. line (Dex. save)</option>
-              <option>Bronze, Lightning, 5 by 30 ft. line (Dex. save)</option>
-              <option>Copper, Acid, 5 by 30 ft. line (Dex. save)</option>
-              <option>Gold, Fire, 15 ft. cone (Dex. save)</option>
-              <option>Green, Poison, 15 ft. cone (Con. save)</option>
-              <option>Red, Fire, 15 ft. cone (Dex. save)</option>
-              <option>Silver, Cold, 15 ft. cone (Con. save)</option>
-              <option>White, Cold, 15 ft. cone (Con. save)</option>
+              {dragonbornAncestries.map((race, i) => (
+                <option key={i}>
+                  {race.ancestry}, {race.damageType}, {race.area}, {race.save}
+                </option>
+              ))}
             </select>
 
             <button

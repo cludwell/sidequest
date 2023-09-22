@@ -579,6 +579,8 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
                           : modifiers[dex]}
                       </kbd>
                     </td>
+                    <td>
+
                     {proficiencies[
                       dndClass.role as keyof typeof proficiencies
                     ].skills.includes("Sleight of Hand") && (
@@ -590,16 +592,17 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
                             .choices - assignedSkills
                         }
                         placeholder="0"
-                        value={skills["Sleight of Hand" as keyof typeof skills]}
+                        value={skills["SleightOfHand" as keyof typeof skills]}
                         onChange={(e) =>
                           setSkills((prev) => ({
                             ...prev,
                             SleightOfHand: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-accent w-full max-w-xs"
+                          className="input input-bordered input-success w-full max-w-xs"
                       />
                     )}
+                    </td>
                   </tr>
                   <tr>
                     <th></th>

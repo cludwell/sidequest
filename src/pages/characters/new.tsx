@@ -6,6 +6,8 @@ import NewCharAbilities from "./NewCharAbilities";
 import NewCharDescription from "./NewCharDescription";
 import NewCharEquipment from "./NewCharEquipment";
 import { DndClassObject } from "../../../lib/DndClassObject";
+
+
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const [race, setRace] = useState<string | null>(null);
@@ -22,7 +24,7 @@ export default function NewCharacter() {
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
         !!Object.values(equipment).length &&
-        !!Object.values(dndClass).length && (
+        dndClass.role && (
           <div className="flex flex-row max-w-screen-xl w-full justify-center">
             <button
               className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
@@ -41,7 +43,7 @@ export default function NewCharacter() {
         </li>
         <li
           className={
-            !!Object.values(dndClass).length ? "step step-primary" : "step"
+            dndClass.role ? "step step-primary" : "step"
           }
         >
           {" "}
@@ -112,7 +114,7 @@ export default function NewCharacter() {
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
         !!Object.values(equipment).length &&
-        !!Object.values(dndClass).length && (
+        dndClass.role && (
           <div className="flex flex-row max-w-screen-xl w-full justify-center">
             <button
               className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
