@@ -4,7 +4,7 @@ import eladrin from "../../../public/images/eladrin4.jpg";
 import high from "../../../public/images/elf4.jpeg";
 import wood from "../../../public/images/elf3.jpeg";
 import { wizardCantrips } from "./_wizardCantrips";
-import { cantrips } from "./Cantrips";
+import { cantrips } from "./_Cantrips";
 export default function ElfInfo({
   expand,
   setExpanded,

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
-import { martialMeleeWeapons } from "./weaponsMartial";
+import { martialMeleeWeapons } from "./_weaponsMartial";
 import WeaponsTable from "./TableWeapons";
-import { simpleMeleeWeapons } from "./weaponsSimple";
+import { simpleMeleeWeapons } from "./_weaponsSimple";
 export default function EquipPaladin({
   dndClass,
   race,

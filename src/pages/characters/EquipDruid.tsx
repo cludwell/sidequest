@@ -2,8 +2,8 @@ import { useState } from "react";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
 import WeaponsTable from "./TableWeapons";
-import { simpleMeleeWeapons } from "./weaponsSimple";
-import { simpleRangedWeapons } from "./weaponsSimpleRanged";
+import { simpleMeleeWeapons } from "./_weaponsSimple";
+import { simpleRangedWeapons } from "./_weaponsSimpleRanged";
 export default function EquipDruid({
   dndClass,
   race,

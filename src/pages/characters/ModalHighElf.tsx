@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import highElf from "../../../public/images/elf4.jpeg";
 import ElfInfo from "./ElfInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import { cantrips } from "./Cantrips";
+import { cantrips } from "./_Cantrips";
 import { wizardCantrips } from "./_wizardCantrips";
 declare global {
   interface Window {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
-import { simpleMeleeWeapons } from "./weaponsSimple";
+import { simpleMeleeWeapons } from "./_weaponsSimple";
 import WeaponsTable from "./TableWeapons";
 export default function EquipRanger({
   dndClass,

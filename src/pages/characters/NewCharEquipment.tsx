@@ -6,7 +6,7 @@ import EquipBard from "./EquipBard";
 import EquipCleric from "./EquipCleric";
 import EquipDruid from "./EquipDruid";
 import EquipFighter from "./EquipFighter";
-import { martialMeleeWeapons } from "./weaponsMartial";
+import { martialMeleeWeapons } from "./_weaponsMartial";
 import EquipMonk from "./EquipMonk";
 import EquipPaladin from "./EquipPaladin";
 import EquipRanger from "./EquipRanger";

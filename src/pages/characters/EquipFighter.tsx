@@ -2,7 +2,7 @@ import { useState } from "react";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
 import WeaponsTable from "./TableWeapons";
-import { martialMeleeWeapons } from "./weaponsMartial";
+import { martialMeleeWeapons } from "./_weaponsMartial";
 
 export default function EquipFighter({
   dndClass,
