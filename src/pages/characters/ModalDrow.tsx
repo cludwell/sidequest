@@ -9,13 +9,14 @@ declare global {
   }
 }
 
-export default function ModalDrow({race, setRace}: SetRaceProps) {
+export default function ModalDrow({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal21 = document.getElementById("my_modal_21");
     if (myModal21) window.my_modal_21 = myModal21;
   }, []);
-  const raceDrow = async () => setRace("Drow");
+  const raceDrow = async () =>
+    setRace({ race: "Drow", languages: ["Common", "Elvish", "Undercommon"], spells: ['Dancing Lights'] });
 
   return (
     <>
@@ -48,7 +49,7 @@ export default function ModalDrow({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_21" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Drow</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">Drow</h3>
           <Image
             src={drowDetail}
             alt="detail image"
@@ -576,10 +577,7 @@ export default function ModalDrow({race, setRace}: SetRaceProps) {
             </tbody>
           </table>
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceDrow}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceDrow}>
               Select Drow
             </button>
           </div>

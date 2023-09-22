@@ -10,13 +10,14 @@ declare global {
   }
 }
 
-export default function ModalHalfOrc({race, setRace}: SetRaceProps) {
+export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal19 = document.getElementById("my_modal_19");
     if (myModal19) window.my_modal_19 = myModal19;
   }, []);
-  const raceHalfOrc = async () => setRace("Half-orc");
+  const raceHalfOrc = async () =>
+    setRace({ race: "Half-Orc", languages: ["Common", "Orc"] });
 
   return (
     <>
@@ -380,10 +381,7 @@ export default function ModalHalfOrc({race, setRace}: SetRaceProps) {
             </tbody>
           </table>
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceHalfOrc}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceHalfOrc}>
               Select Half-Orc
             </button>
           </div>

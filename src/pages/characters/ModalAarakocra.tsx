@@ -16,7 +16,8 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
     if (myModal4) window.my_modal_4 = myModal4;
   }, []);
 
-  const raceAarakocra = async () => setRace("Aarakocra");
+  const raceAarakocra = async () =>
+    setRace({ race: "Aarakocra", languages: ["Common", "Aarakocra", "Auran"] });
   return (
     <>
       <button

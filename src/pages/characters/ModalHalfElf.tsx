@@ -10,13 +10,14 @@ declare global {
   }
 }
 
-export default function ModalHalfElf({race, setRace}: SetRaceProps) {
+export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal14 = document.getElementById("my_modal_14");
     if (myModal14) window.my_modal_14 = myModal14;
   }, []);
-  const raceHalfElf = async () => setRace("Half-elf");
+  const raceHalfElf = async () =>
+    setRace({ race: "Half-Elf", languages: ["Common", "Elvish"] });
 
   return (
     <>
@@ -49,7 +50,9 @@ export default function ModalHalfElf({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_14" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Half Elf</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Half Elf
+          </h3>
           <Image
             src={halfElfDetail}
             alt="detail image"
@@ -374,10 +377,7 @@ export default function ModalHalfElf({race, setRace}: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceHalfElf}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceHalfElf}>
               Select Half-Elf
             </button>
           </div>

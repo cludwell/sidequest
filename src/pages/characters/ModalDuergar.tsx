@@ -9,13 +9,17 @@ declare global {
   }
 }
 
-export default function ModalDuergar({race, setRace}: SetRaceProps) {
+export default function ModalDuergar({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<String | null>(null);
   useEffect(() => {
     const myModal22 = document.getElementById("my_modal_22");
     if (myModal22) window.my_modal_22 = myModal22;
   }, []);
-  const raceDuergar = async () => setRace("Duergar");
+  const raceDuergar = async () =>
+    setRace({
+      race: "Duergar",
+      languages: ["Common", "Dwarvish", "Undercommon"],
+    });
 
   return (
     <>
@@ -48,7 +52,9 @@ export default function ModalDuergar({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_22" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Duergar</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Duergar
+          </h3>
           <Image
             src={duergarDetail}
             alt="detail image"
@@ -57,9 +63,7 @@ export default function ModalDuergar({race, setRace}: SetRaceProps) {
             className="rounded-xl aspect-square object-cover"
           />
           <p className="py-4"></p>
-
           {/* accordion start */}
-
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
               type="checkbox"
@@ -492,7 +496,6 @@ export default function ModalDuergar({race, setRace}: SetRaceProps) {
               </p>
             </div>
           </div>
-
           {/* accordion end */}
           {/* table start */}
           <div className="overflow-x-auto">
@@ -636,13 +639,11 @@ export default function ModalDuergar({race, setRace}: SetRaceProps) {
           </div>
           {/* table end */}
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceDuergar}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceDuergar}>
               Select Duergar
             </button>
-          </div>        </form>
+          </div>{" "}
+        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

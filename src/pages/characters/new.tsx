@@ -10,7 +10,7 @@ import { DndClassObject } from "../../../lib/DndClassObject";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
-  const [race, setRace] = useState<string | null>(null);
+  const [race, setRace] = useState<Object>({});
   const [dndClass, setDndClass] = useState<DndClassObject>({
     role: null,
     specialty: [],

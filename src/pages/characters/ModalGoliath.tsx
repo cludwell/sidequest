@@ -9,13 +9,14 @@ declare global {
   }
 }
 
-export default function ModalGoliath({race, setRace}: SetRaceProps) {
+export default function ModalGoliath({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal13 = document.getElementById("my_modal_13");
     if (myModal13) window.my_modal_13 = myModal13;
   }, []);
-  const raceGoliath = async () => setRace("Goliath");
+  const raceGoliath = async () =>
+    setRace({ race: "Goliath", languages: ["Common", "Giant"] });
 
   return (
     <>
@@ -48,7 +49,9 @@ export default function ModalGoliath({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_13" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Goliath</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Goliath
+          </h3>
           <Image
             src={goliathDetail}
             alt="detail image"
@@ -447,10 +450,7 @@ export default function ModalGoliath({race, setRace}: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceGoliath}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceGoliath}>
               Select Goliath
             </button>
           </div>

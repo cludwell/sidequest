@@ -9,13 +9,35 @@ declare global {
   }
 }
 
-export default function ModalHighElf({race, setRace}: SetRaceProps) {
+export default function ModalHighElf({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [language, setLanguage] = useState<string>("");
   useEffect(() => {
     const myModal8 = document.getElementById("my_modal_8");
     if (myModal8) window.my_modal_8 = myModal8;
   }, []);
-  const raceHighElf = async () => setRace("High Elf");
+  const availableLanguages = [
+    "Abyssal",
+    "Aquan",
+    "Auran",
+    "Celestial",
+    "Deep Speech",
+    "Draconic",
+    "Dwarvish",
+    "Giant",
+    "Gnomish",
+    "Goblin",
+    "Halfling",
+    "Infernal",
+    "Orc",
+    "Primordial",
+    "Sylvan",
+    "Terran",
+    "Undercommon",
+  ];
+
+  const raceHighElf = async () =>
+    setRace({ race: "High Elf", languages: ["Common", "Elvish", language] });
 
   return (
     <>
@@ -48,13 +70,24 @@ export default function ModalHighElf({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_8" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">High Elf</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            High Elf
+          </h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={"high"} />
-          <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceHighElf}
+          <div className="flex flex-col items-center">
+            <select
+              className="select select-primary w-full max-w-xs my-4"
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
             >
+              <option disabled value={""}>
+                Select an Additional Language
+              </option>
+              {availableLanguages.map((lang, i) => (
+                <option key={i} value={lang}>{lang}</option>
+              ))}
+            </select>
+            <button className="btn btn-success btn-wide" onClick={raceHighElf}>
               Select High-Elf
             </button>
           </div>

@@ -79,7 +79,11 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
       save: "Con. save",
     },
   ];
-  const raceDragonBorn = async () => setRace(`Dragonborn - ${dragonType}`);
+  const raceDragonBorn = async () =>
+    setRace({
+      race: `Dragonborn - ${dragonType}`,
+      languages: ["Common", "Draconic"],
+    });
   // const dragonSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
   //   setDragonType(e.target.value);
   return (
@@ -485,11 +489,14 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               value={dragonType}
               onChange={(e) => setDragonType(e.target.value)}
             >
-              <option disabled value={''}>
+              <option disabled value={""}>
                 Select a Dragon Type
               </option>
               {dragonbornAncestries.map((race, i) => (
-                <option key={i}>
+                <option
+                  key={i}
+                  value={`${race.ancestry}, ${race.damageType}, ${race.area}, ${race.save}`}
+                >
                   {race.ancestry}, {race.damageType}, {race.area}, {race.save}
                 </option>
               ))}

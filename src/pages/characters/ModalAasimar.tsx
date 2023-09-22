@@ -10,14 +10,19 @@ declare global {
   }
 }
 
-export default function ModalAasimar({race, setRace}: SetRaceProps) {
+export default function ModalAasimar({ race, setRace }: SetRaceProps) {
   const [detail, setDetail] = useState<String | null>(null);
   useEffect(() => {
     const myModal20 = document.getElementById("my_modal_20");
     if (myModal20) window.my_modal_20 = myModal20;
   }, []);
 
-  const raceAasimar = async () => setRace("Aasimar");
+  const raceAasimar = async () =>
+    setRace({
+      race: "Aasimar",
+      languages: ["Common", "Celestial"],
+      spells: ["Light"],
+    });
 
   return (
     <>
@@ -50,7 +55,9 @@ export default function ModalAasimar({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_20" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">Aasimar</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Aasimar
+          </h3>
           <Image
             src={aasimarDetail}
             alt="detail image"
@@ -59,7 +66,6 @@ export default function ModalAasimar({race, setRace}: SetRaceProps) {
             className="rounded-xl aspect-square object-cover"
           />
           <p className="py-4"></p>
-
           {/* accordion start */}
           <div className="collapse collapse-plus bg-base-200 my-1">
             <input
@@ -363,7 +369,6 @@ export default function ModalAasimar({race, setRace}: SetRaceProps) {
               </p>
             </div>
           </div>
-
           {/* accordion end */}
           {/* table start */}
           <div className="overflow-x-auto">
@@ -450,13 +455,11 @@ export default function ModalAasimar({race, setRace}: SetRaceProps) {
           </div>
           {/* table end */}
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceAasimar}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceAasimar}>
               Select Aasimar
             </button>
-          </div>        </form>
+          </div>{" "}
+        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

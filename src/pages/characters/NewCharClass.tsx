@@ -12,11 +12,12 @@ import Rogue from "./JobModalRogue";
 import Sorcerer from "./JobModalSorcerer";
 import Warlock from "./JobModalWarlock";
 import Wizard from "./JobModalWizard";
+import { DnDClass } from "../../../lib/DnDClass";
 export default function NewCharacterClass({
   dndClass,
   setDndClass,
 }: SetClassProps) {
-  const classes = [
+  const classes: DnDClass[] = [
     "Barbarian",
     "Bard",
     "Cleric",
@@ -31,7 +32,16 @@ export default function NewCharacterClass({
     "Wizard",
   ];
   const randomClass = () =>
-    setDndClass(classes[Math.floor(Math.random() * classes.length)]);
+    setDndClass({
+      role: classes[Math.floor(Math.random() * classes.length)],
+      specialty: [
+        dndClass.role === "Ranger"
+          ? "Favored Enemy - Undead"
+          : dndClass.role === "Fighter"
+          ? "Fighting Style - Protection"
+          : "",
+      ],
+    });
 
   return (
     <div className="flex flex-col max-w-screen-xl w-full">

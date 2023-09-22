@@ -16,7 +16,31 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
     const myModalFighter = document.getElementById("my_modal_fighter");
     if (myModalFighter) window.my_modal_fighter = myModalFighter;
   }, []);
-  const becomeFighter = async () => setDndClass({role: `Fighter`, specialty: [style]});
+  const becomeFighter = async () =>
+    setDndClass({ role: `Fighter`, specialty: [`Fighting Style - ${style}`] });
+  const fightingStyles = {
+    Archery:
+      "You gain a +2 bonus to attack rolls you make with ranged weapons.",
+    "Blind Fighting":
+      "You have blindsight with a range of 10 feet. You can effectively see anything that isn't behind total cover, even if you're blinded or in darkness. Moreover, you can see an invisible creature within that range unless the creature successfully hides from you.",
+    Defense: "While you are wearing armor, you gain a +1 bonus to AC.",
+    Dueling:
+      "When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.",
+    "Great Weapon Fighting":
+      "When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit.",
+    Interception:
+      "When a creature you can see hits a target, other than you, within 5 feet of you with an attack, you can use your reaction to reduce the damage the target takes by 1d10 + your proficiency bonus (to a minimum of 0 damage). You must be wielding a shield or a simple or martial weapon to use this reaction.",
+    Protection:
+      "When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.",
+    "Superior Technique":
+      "You learn one maneuver of your choice from among those available to the Battle Master archetype in the fighter class. If a maneuver you use requires your target to make a saving throw to resist the maneuver's effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).",
+    "Thrown Weapon Fighting":
+      "You can draw a weapon that has the thrown property as part of the attack you make with the weapon. In addition, when you hit with a ranged attack using a thrown weapon, you gain a +2 bonus to the damage roll.",
+    "Two-Weapon Fighting":
+      "When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.",
+    "Unarmed Fighting":
+      "Your unarmed strikes can deal bludgeoning damage equal to 1d6 + your Strength modifier. If you aren't wielding any weapons or a shield when you make the attack roll, the d6 becomes a d8. At the start of each of your turns, you can deal 1d4 bludgeoning damage to one creature grappled by you.",
+  };
   const styleSelected = async (e: React.ChangeEvent<HTMLSelectElement>) =>
     setStyle(e.target.value);
   return (
@@ -50,9 +74,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_fighter" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
-            Barbarian
-          </h3> */}
+
           <Image
             src={fighter}
             alt="detail image"
@@ -127,48 +149,13 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="font-bold">Archery</td>
-                      <td>
-                        You gain a +2 bonus to attack rolls you make with ranged
-                        weapons.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-bold">Dueling</td>
-                      <td>
-                        When you are wielding a melee weapon in one hand and no
-                        other weapons, you gain a +2 bonus to damage rolls with
-                        that weapon.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-bold">Great Weapon Fighting</td>
-                      <td>
-                        When you roll a 1 or 2 on a damage die for an attack you
-                        make with a melee weapon that you are wielding with two
-                        hands, you can reroll the die and must use the new roll,
-                        even if the new roll is a 1 or a 2. The weapon must have
-                        the two-handed or versatile property for you to gain
-                        this benefit.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-bold">Protection</td>
-                      <td>
-                        When a creature you can see attacks a target other than
-                        you that is within 5 feet of you, you can use your
-                        reaction to impose disadvantage on the attack roll. You
-                        must be wielding a shield.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-bold">Two-Weapon Fighting</td>
-                      <td>
-                        When you engage in two-weapon fighting, you can add your
-                        ability modifier to the damage of the second attack.
-                      </td>
-                    </tr>
+                    {Object.entries(fightingStyles).map((style,i) => (
+                      <tr key={`${style[0]}${i}`}>
+                        <td className="font-bold">{style[0]}</td>
+                        <td>{style[1]}</td>
+                      </tr>
+                    ))}
+
                   </tbody>
                 </table>
               </div>
@@ -408,14 +395,12 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
               value={style}
               onChange={styleSelected}
             >
-              <option disabled selected>
+              <option disabled value={""}>
                 Select a Fighting Style
               </option>
-              <option>Archery</option>
-              <option>Dueling</option>
-              <option>Great Weapon Fighting</option>
-              <option>Protection</option>
-              <option>Two-Weapon Fighting</option>
+              {Object.keys(fightingStyles).map((style, i) => (
+                <option key={style} value={style}>{style}</option>
+              ))}
             </select>
             <button
               className="btn btn-success btn-wide my-4"

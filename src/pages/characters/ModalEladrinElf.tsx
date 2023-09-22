@@ -10,13 +10,14 @@ declare global {
   }
 }
 
-export default function ModalEladrinElf({race, setRace}: SetRaceProps) {
-  const [expand, setExpanded] =useState<string|null>(null)
+export default function ModalEladrinElf({ race, setRace }: SetRaceProps) {
+  const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal10 = document.getElementById("my_modal_10");
     if (myModal10) window.my_modal_10 = myModal10;
   }, []);
-  const raceEladrin = async () => setRace("Eladrin Elf");
+  const raceEladrin = async () =>
+    setRace({ race: "Eladrin Elf", languages: ["Common", "Elvish"] });
 
   return (
     <>
@@ -49,13 +50,12 @@ export default function ModalEladrinElf({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_10" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Eladrin Elf</h3>
-          <ElfInfo expand={expand} setExpanded={setExpanded} type={'eladrin'}/>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Eladrin Elf
+          </h3>
+          <ElfInfo expand={expand} setExpanded={setExpanded} type={"eladrin"} />
           <div className="flex flex-row justify-center">
-            <button
-              className="btn btn-success btn-wide"
-              onClick={raceEladrin}
-            >
+            <button className="btn btn-success btn-wide" onClick={raceEladrin}>
               Select Eladrin Elf
             </button>
           </div>

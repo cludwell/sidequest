@@ -10,13 +10,14 @@ declare global {
   }
 }
 
-export default function ModalMountainDwarf({race, setRace}: SetRaceProps) {
+export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal7 = document.getElementById("my_modal_7");
     if (myModal7) window.my_modal_7 = myModal7;
   }, []);
-  const raceMountainDwarf = async () => setRace("Mountain Dwarf");
+  const raceMountainDwarf = async () =>
+    setRace({ race: "Mountain Dwarf", languages: ["Common", "Dwarvish"] });
 
   return (
     <>
@@ -96,7 +97,7 @@ export default function ModalMountainDwarf({race, setRace}: SetRaceProps) {
             setExpanded={setExpanded}
             type={"mountain"}
           />
-                    <div className="flex flex-row justify-center">
+          <div className="flex flex-row justify-center">
             <button
               className="btn btn-success btn-wide"
               onClick={raceMountainDwarf}

@@ -16,7 +16,12 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
     const myModal18 = document.getElementById("my_modal_18");
     if (myModal18) window.my_modal_18 = myModal18;
   }, []);
-  const raceTiefling = async () => setRace("Tiefling");
+  const raceTiefling = async () =>
+    setRace({
+      race: "Tiefling",
+      languages: ["Common", "Infernal"],
+      spells: ["Thaumaturgy"],
+    });
 
   return (
     <>

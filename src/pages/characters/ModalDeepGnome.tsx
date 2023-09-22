@@ -10,14 +10,18 @@ declare global {
   }
 }
 
-export default function ModalDeepGnome({race, setRace}: SetRaceProps) {
+export default function ModalDeepGnome({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal12 = document.getElementById("my_modal_12");
     if (myModal12) window.my_modal_12 = myModal12;
   }, []);
 
-  const raceDeepGnome = async () => setRace("Deep Gnome");
+  const raceDeepGnome = async () =>
+    setRace({
+      race: "Deep Gnome",
+      languages: ["Common", "Gnomish", "Undercommon"],
+    });
 
   return (
     <>
@@ -50,7 +54,9 @@ export default function ModalDeepGnome({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_12" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Deep Gnome</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Deep Gnome
+          </h3>
           <GnomeInfo expand={expand} setExpanded={setExpanded} type={"deep"} />
           <div className="flex flex-row justify-center">
             <button

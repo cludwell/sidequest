@@ -16,7 +16,7 @@ export default function ModalRockGnome({race, setRace}: SetRaceProps) {
     const myModal11 = document.getElementById("my_modal_11");
     if (myModal11) window.my_modal_11 = myModal11;
   }, []);
-  const raceRockGnome = async () => setRace("Rock Gnome");
+  const raceRockGnome = async () => setRace({race: "Rock Gnome", languages: ['Common', 'Gnomish']});
 
   return (
     <>

@@ -10,13 +10,14 @@ declare global {
   }
 }
 
-export default function ModalHillDwarf({race, setRace}: SetRaceProps) {
+export default function ModalHillDwarf({ race, setRace }: SetRaceProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModal6 = document.getElementById("my_modal_6");
     if (myModal6) window.my_modal_6 = myModal6;
   }, []);
-  const raceHillDwarf = async () => setRace("Hill Dwarf");
+  const raceHillDwarf = async () =>
+    setRace({ race: "Hill Dwarf", languages: ["Common", "Dwarvish"] });
 
   return (
     <>
@@ -49,7 +50,9 @@ export default function ModalHillDwarf({race, setRace}: SetRaceProps) {
       </button>
       <dialog id="my_modal_6" className="modal">
         <form method="dialog" className="modal-box">
-        <h3 className="font-bold text-5xl mb-4 almendra text-center">Hill Dwarf</h3>
+          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+            Hill Dwarf
+          </h3>
           <Image
             src={hillDetail}
             alt="detail image"
@@ -84,7 +87,6 @@ export default function ModalHillDwarf({race, setRace}: SetRaceProps) {
               </p>
             </div>
           </div>
-
           <DwarfInfo expand={expand} setExpanded={setExpanded} type={"hill"} />
           <div className="flex flex-row justify-center">
             <button
@@ -93,7 +95,8 @@ export default function ModalHillDwarf({race, setRace}: SetRaceProps) {
             >
               Select Hill Dwarf
             </button>
-          </div>        </form>
+          </div>{" "}
+        </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
         </form>

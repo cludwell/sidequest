@@ -45,7 +45,7 @@ export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
       setErrors(err)
       return;
     } else setErrors([])
-    setDndClass({ role: "Rogue", specialty: [favored] })
+    setDndClass({ role: "Rogue", specialty: [`Favored Enemy - ${favored}`] })
 };
   return (
     <>
@@ -582,7 +582,7 @@ export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
                 Select a Favored Enemy
               </option>
               {favoredEnemies.map((enem, i) => (
-                <option key={`${enem}`}>{enem}</option>
+                <option key={`${enem}`} value={enem}>{enem}</option>
               ))}
             </select>
             <button
