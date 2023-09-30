@@ -16,13 +16,19 @@ export default function ModalWoodElf({ race, setRace }: SetRaceProps) {
     const myModal9 = document.getElementById("my_modal_9");
     if (myModal9) window.my_modal_9 = myModal9;
   }, []);
-  const raceWoodElf = async () =>
+  const raceWoodElf = async () => {
     setRace({
       race: "Wood Elf",
       vision: "Darkvision (60 feet).",
       specialty: ["Mask of the Wild"],
       languages: ["Common", "Elvish"],
+      inventory: [],
+      spells: [],
+      tools: [],
     });
+    window.my_modal_9.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>
@@ -61,7 +67,7 @@ export default function ModalWoodElf({ race, setRace }: SetRaceProps) {
           <ElfInfo expand={expand} setExpanded={setExpanded} type={"wood"} />
           <div className="flex flex-row justify-center">
             <button className="btn btn-success btn-wide" onClick={raceWoodElf}>
-              Select Wood
+              Select Wood Elf
             </button>
           </div>
         </form>

@@ -35,10 +35,8 @@ export default function NewCharAbilities({
     Performance: 0,
     Persuasion: 0,
   });
-  const assignedSkills = Object.values(skills).reduce(
-    (acc, ele) => (acc += ele),
-    0
-  ) - 1;
+  const assignedSkills =
+    Object.values(skills).reduce((acc, ele) => (acc += ele), 0) - 1;
   const modifiers: Modifiers = {
     "1": -5,
     "2": -4,
@@ -66,7 +64,7 @@ export default function NewCharAbilities({
   const [custom, setCustom] = useState<Record<string, number[]>>({});
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
   const assignedArray = [str, dex, con, int, wis, cha, "--"];
-  let role = dndClass.role
+  let role = dndClass.role;
   const customArray = Object.values(custom).map((arr, i) =>
     arr.slice(1).reduce((acc, next) => (acc += next), 0)
   );
@@ -87,14 +85,18 @@ export default function NewCharAbilities({
     Rogue: 8,
     Sorcerer: 6,
     Warlock: 8,
-    Wizard: 6
-};
-let level = 1;
-const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: number) => {
-  if (role) {
-    return hitDies[role] * level + modifier
-  }
-}
+    Wizard: 6,
+  };
+  let level = 1;
+  const calculateHealth = (
+    role: keyof typeof hitDies,
+    modifier: number,
+    level: number
+  ) => {
+    if (role) {
+      return hitDies[role] * level + modifier;
+    }
+  };
   const rollDice = () => {
     setStr("--");
     setDex("--");
@@ -117,7 +119,8 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
   //   customAssigned = filtered
   //   return e
   // }
-  const confirmAssignment = async () => {
+  const confirmAssignment = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const err: string[] = [];
     if (str == "--") err.push("Str must have a value");
     if (dex == "--") err.push("Dex must have a value");
@@ -125,11 +128,11 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
     if (int == "--") err.push("Int must have a value");
     if (wis == "--") err.push("Wis must have a value");
     if (cha == "--") err.push("Cha must have a value");
-    if (!Object.values(dndClass)) err.push('Please select a class to continue')
+    if (!Object.values(dndClass)) err.push("Please select a class to continue");
     if (err.length) {
-      setErrors(err)
+      setErrors(err);
       return;
-    } else setErrors([])
+    } else setErrors([]);
     setAbilities({
       strength: parseInt(str),
       dexterity: parseInt(dex),
@@ -155,10 +158,16 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
       sleightOfHand: modifiers[dex] + skills["SleightOfHand"] * 2,
       stealth: modifiers[dex] + skills["Stealth"] * 2,
       survival: modifiers[wis] + skills["Survival"] * 2,
-      maxHp: dndClass.role ? calculateHealth(dndClass?.role, modifiers[con], level) : null,
-      currentHp: dndClass.role ? calculateHealth(dndClass?.role, modifiers[con], level) : null,
+      maxHp: dndClass.role
+        ? calculateHealth(dndClass?.role, modifiers[con], level)
+        : null,
+      currentHp: dndClass.role
+        ? calculateHealth(dndClass?.role, modifiers[con], level)
+        : null,
+      initiative: modifiers[dex],
     });
-    console.log("custom assigned", customArray);
+    window.location.href = "#item4"
+    // console.log("custom assigned", customArray);
   };
   return (
     <div className="flex flex-col max-w-screen-xl w-full content-center">
@@ -453,134 +462,133 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
         </div>
       </div>
       {str !== "--" &&
-        dex !== "--" &&
-        con !== "--" &&
-        int !== "--" &&
-        wis !== "--" &&
-        cha !== "--" &&
-        dndClass &&
-        dndClass.role ? (
-          <div className="flex flex-col items-center  ">
-            <div className="rounded-b-2xl overflow-x-auto">
-              <h2 className="text-3xl almendra">
-                Skills
-                <ToolTip
-                  tip="In Dungeons and Dragons you can do almost anything, however your success will depend on you skills"
-                  position="font-sans"
-                />
-              </h2>
-              <table className="table table-zebra bg-base-100 table-xs">
-                {/* head */}
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Skill </th>
-                    <th>Modifier</th>
-                    <th>Selection</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* row 1 */}
-                  <tr>
-                    <th>Strength </th>
-                    <td>
-                      Athletics{" "}
-                      <ToolTip
-                        tip="Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities: You attempt to climb a sheer or slippery cliff, avoid hazards while scaling a wall, or cling to a surface while something is trying to knock you off. You try to jump an unusually long distance or pull off a stunt midjump. You struggle to swim or stay afloat in treacherous currents, storm-tossed waves, or areas of thick seaweed. Or another creature tries to push or pull you underwater or otherwise interfere with your swimming."
-                        position=""
+      dex !== "--" &&
+      con !== "--" &&
+      int !== "--" &&
+      wis !== "--" &&
+      cha !== "--" &&
+      dndClass &&
+      dndClass.role ? (
+        <div className="flex flex-col items-center  ">
+          <div className="rounded-b-2xl ">
+            <h2 className="text-3xl almendra">
+              Skills
+              <ToolTip
+                tip="In Dungeons and Dragons you can do almost anything, however your success will depend on you skills"
+                position="font-sans"
+              />
+            </h2>
+            <table className="table table-zebra bg-base-100 table-xs">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Skill </th>
+                  <th>Modifier</th>
+                  <th>Selection</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                <tr>
+                  <th>Strength </th>
+                  <td>
+                    Athletics{" "}
+                    <ToolTip
+                      tip="Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities: You attempt to climb a sheer or slippery cliff, avoid hazards while scaling a wall, or cling to a surface while something is trying to knock you off. You try to jump an unusually long distance or pull off a stunt midjump. You struggle to swim or stay afloat in treacherous currents, storm-tossed waves, or areas of thick seaweed. Or another creature tries to push or pull you underwater or otherwise interfere with your swimming."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[str] > 0
+                        ? "+" + modifiers[str]
+                        : modifiers[str]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Athletics") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Athletics" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Athletics: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-primary w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[str] > 0
-                          ? "+" + modifiers[str]
-                          : modifiers[str]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Athletics") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Athletics" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Athletics: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-primary w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Dexterity</th>
-                    <td>
-                      Acrobatics{" "}
-                      <ToolTip
-                        tip="Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th>Dexterity</th>
+                  <td>
+                    Acrobatics{" "}
+                    <ToolTip
+                      tip="Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[dex] > 0
+                        ? "+" + modifiers[dex]
+                        : modifiers[dex]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Acrobatics") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Acrobatics" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Acrobatics: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-secondary w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[dex] > 0
-                          ? "+" + modifiers[dex]
-                          : modifiers[dex]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Acrobatics") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Acrobatics" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Acrobatics: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-secondary w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Sleight of Hand{" "}
-                      <ToolTip
-                        tip="Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket."
-                        position=""
-                      />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[dex] > 0
-                          ? "+" + modifiers[dex]
-                          : modifiers[dex]}
-                      </kbd>
-                    </td>
-                    <td>
-
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Sleight of Hand{" "}
+                    <ToolTip
+                      tip="Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[dex] > 0
+                        ? "+" + modifiers[dex]
+                        : modifiers[dex]}
+                    </kbd>
+                  </td>
+                  <td>
                     {proficiencies[
                       dndClass.role as keyof typeof proficiencies
                     ].skills.includes("Sleight of Hand") && (
@@ -588,8 +596,9 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
                         type="number"
                         min={0}
                         max={
-                          proficiencies[dndClass.role as keyof typeof proficiencies]
-                            .choices - assignedSkills
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
                         }
                         placeholder="0"
                         value={skills["SleightOfHand" as keyof typeof skills]}
@@ -599,638 +608,641 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
                             SleightOfHand: Number(e.target.value),
                           }))
                         }
-                          className="input input-bordered input-success w-full max-w-xs"
+                        className="input input-bordered input-success w-full max-w-xs"
                       />
                     )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Stealth{" "}
-                      <ToolTip
-                        tip="Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard."
-                        position=""
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Stealth{" "}
+                    <ToolTip
+                      tip="Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[dex] > 0
+                        ? "+" + modifiers[dex]
+                        : modifiers[dex]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Stealth") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Stealth" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Stealth: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-success w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[dex] > 0
-                          ? "+" + modifiers[dex]
-                          : modifiers[dex]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Stealth") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Stealth" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Stealth: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-success w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Intelligence</th>
-                    <td>
-                      Arcana{" "}
-                      <ToolTip
-                        tip="Your Intelligence (Arcana) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th>Intelligence</th>
+                  <td>
+                    Arcana{" "}
+                    <ToolTip
+                      tip="Your Intelligence (Arcana) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[int] > 0
+                        ? "+" + modifiers[int]
+                        : modifiers[int]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Arcana") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Arcana" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Arcana: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-warning w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[int] > 0
-                          ? "+" + modifiers[int]
-                          : modifiers[int]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Arcana") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Arcana" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Arcana: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-warning w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      History{" "}
-                      <ToolTip
-                        tip="Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    History{" "}
+                    <ToolTip
+                      tip="Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[int] > 0
+                        ? "+" + modifiers[int]
+                        : modifiers[int]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("History") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["History" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            History: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-info w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[int] > 0
-                          ? "+" + modifiers[int]
-                          : modifiers[int]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("History") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["History" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              History: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-info w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Investigation{" "}
-                      <ToolTip
-                        tip="When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Investigation{" "}
+                    <ToolTip
+                      tip="When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[int] > 0
+                        ? "+" + modifiers[int]
+                        : modifiers[int]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Investigation") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Investigation" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Investigation: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-error w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[int] > 0
-                          ? "+" + modifiers[int]
-                          : modifiers[int]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Investigation") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Investigation" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Investigation: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-error w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Nature{" "}
-                      <ToolTip
-                        tip="Your Intelligence (Nature) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Nature{" "}
+                    <ToolTip
+                      tip="Your Intelligence (Nature) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[int] > 0
+                        ? "+" + modifiers[int]
+                        : modifiers[int]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Nature") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Nature" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Nature: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-primary w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[int] > 0
-                          ? "+" + modifiers[int]
-                          : modifiers[int]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Nature") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Nature" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Nature: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-primary w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Religion{" "}
-                      <ToolTip
-                        tip="Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Religion{" "}
+                    <ToolTip
+                      tip="Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[int] > 0
+                        ? "+" + modifiers[int]
+                        : modifiers[int]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Religion") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Religion" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Religion: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-secondary w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[int] > 0
-                          ? "+" + modifiers[int]
-                          : modifiers[int]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Religion") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Religion" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Religion: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-secondary w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
+                    )}
+                  </td>
+                </tr>
 
-                  <tr>
-                    <th>Wisdom</th>
-                    <td>
-                      Animal Handling{" "}
-                      <ToolTip
-                        tip="When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal's intentions, the GM might call for a Wisdom (Animal Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a risky maneuver."
-                        position=""
+                <tr>
+                  <th>Wisdom</th>
+                  <td>
+                    Animal Handling{" "}
+                    <ToolTip
+                      tip="When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal's intentions, the GM might call for a Wisdom (Animal Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a risky maneuver."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[wis] > 0
+                        ? "+" + modifiers[wis]
+                        : modifiers[wis]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Animal Handling") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Animal Handling" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            AnimalHandling: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-accent w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[wis] > 0
-                          ? "+" + modifiers[wis]
-                          : modifiers[wis]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Animal Handling") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={
-                            skills["Animal Handling" as keyof typeof skills]
-                          }
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              AnimalHandling: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-accent w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Insight{" "}
-                      <ToolTip
-                        tip="Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Insight{" "}
+                    <ToolTip
+                      tip="Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[wis] > 0
+                        ? "+" + modifiers[wis]
+                        : modifiers[wis]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Insight") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Insight" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Insight: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-success w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[wis] > 0
-                          ? "+" + modifiers[wis]
-                          : modifiers[wis]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Insight") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Insight" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Insight: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-success w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Medicine{" "}
-                      <ToolTip
-                        tip="A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Medicine{" "}
+                    <ToolTip
+                      tip="A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[wis] > 0
+                        ? "+" + modifiers[wis]
+                        : modifiers[wis]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Medicine") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Medicine" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Medicine: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-warning w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[wis] > 0
-                          ? "+" + modifiers[wis]
-                          : modifiers[wis]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Medicine") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Medicine" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Medicine: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-warning w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Perception{" "}
-                      <ToolTip
-                        tip="Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear monsters moving stealthily in the forest. "
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Perception{" "}
+                    <ToolTip
+                      tip="Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear monsters moving stealthily in the forest. "
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[wis] > 0
+                        ? "+" + modifiers[wis]
+                        : modifiers[wis]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Perception") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Perception" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Perception: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-info w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[wis] > 0
-                          ? "+" + modifiers[wis]
-                          : modifiers[wis]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Perception") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Perception" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Perception: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-info w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Survival{" "}
-                      <ToolTip
-                        tip="The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Survival{" "}
+                    <ToolTip
+                      tip="The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[wis] > 0
+                        ? "+" + modifiers[wis]
+                        : modifiers[wis]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Survival") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Survival" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Survival: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-error w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[wis] > 0
-                          ? "+" + modifiers[wis]
-                          : modifiers[wis]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Survival") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Survival" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Survival: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-error w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>Charisma</th>
-                    <td>
-                      Deception{" "}
-                      <ToolTip
-                        tip="Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th>Charisma</th>
+                  <td>
+                    Deception{" "}
+                    <ToolTip
+                      tip="Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[cha] > 0
+                        ? "+" + modifiers[cha]
+                        : modifiers[cha]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Deception") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Deception" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Deception: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-primary w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[cha] > 0
-                          ? "+" + modifiers[cha]
-                          : modifiers[cha]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Deception") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Deception" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Deception: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-primary w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Intimidation{" "}
-                      <ToolTip
-                        tip="When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Intimidation{" "}
+                    <ToolTip
+                      tip="When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[cha] > 0
+                        ? "+" + modifiers[cha]
+                        : modifiers[cha]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Intimidation") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Intimidation" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Intimidation: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-secondary w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[cha] > 0
-                          ? "+" + modifiers[cha]
-                          : modifiers[cha]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Intimidation") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Intimidation" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Intimidation: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-secondary w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Performance{" "}
-                      <ToolTip
-                        tip="Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Performance{" "}
+                    <ToolTip
+                      tip="Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[cha] > 0
+                        ? "+" + modifiers[cha]
+                        : modifiers[cha]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Performance") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Performance" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Performance: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-accent w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[cha] > 0
-                          ? "+" + modifiers[cha]
-                          : modifiers[cha]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Performance") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Performance" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Performance: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-accent w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                    <td>
-                      Persuasion{" "}
-                      <ToolTip
-                        tip="When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk."
-                        position=""
+                    )}
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td>
+                    Persuasion{" "}
+                    <ToolTip
+                      tip="When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk."
+                      position=""
+                    />
+                  </td>
+                  <td>
+                    <kbd className="kbd mx-1 ">
+                      {modifiers[cha] > 0
+                        ? "+" + modifiers[cha]
+                        : modifiers[cha]}
+                    </kbd>
+                  </td>
+                  <td>
+                    {proficiencies[
+                      dndClass.role as keyof typeof proficiencies
+                    ].skills.includes("Persuasion") && (
+                      <input
+                        type="number"
+                        min={0}
+                        max={
+                          proficiencies[
+                            dndClass.role as keyof typeof proficiencies
+                          ].choices - assignedSkills
+                        }
+                        placeholder="0"
+                        value={skills["Persuasion" as keyof typeof skills]}
+                        onChange={(e) =>
+                          setSkills((prev) => ({
+                            ...prev,
+                            Persuasion: Number(e.target.value),
+                          }))
+                        }
+                        className="input input-bordered input-success w-full max-w-xs"
                       />
-                    </td>
-                    <td>
-                      <kbd className="kbd mx-1 ">
-                        {modifiers[cha] > 0
-                          ? "+" + modifiers[cha]
-                          : modifiers[cha]}
-                      </kbd>
-                    </td>
-                    <td>
-                      {proficiencies[
-                        dndClass.role as keyof typeof proficiencies
-                      ].skills.includes("Persuasion") && (
-                        <input
-                          type="number"
-                          min={0}
-                          max={
-                            proficiencies[
-                              dndClass.role as keyof typeof proficiencies
-                            ].choices - assignedSkills
-                          }
-                          placeholder="0"
-                          value={skills["Persuasion" as keyof typeof skills]}
-                          onChange={(e) =>
-                            setSkills((prev) => ({
-                              ...prev,
-                              Persuasion: Number(e.target.value),
-                            }))
-                          }
-                          className="input input-bordered input-success w-full max-w-xs"
-                        />
-                      )}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    )}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        ) : !Object.values(dndClass).length  ? (
-          <h1 className="almendra text-lg text-center">Please select a class to assign skill proficiencies.</h1>
-        ) : (
-          <h1 className="almendra text-lg text-center">Please assign ability scores and select a class to assign skill proficiencies.</h1>
-        )}
+        </div>
+      ) : !Object.values(dndClass).length ? (
+        <h1 className="almendra text-lg text-center">
+          Please select a class to assign skill proficiencies.
+        </h1>
+      ) : (
+        <h1 className="almendra text-lg text-center">
+          Please assign ability scores and select a class to assign skill
+          proficiencies.
+        </h1>
+      )}
       <div className="flex flex-row max-w-screen-xl w-full justify-center">
         <button
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
@@ -1239,7 +1251,7 @@ const calculateHealth = (role: keyof typeof hitDies, modifier: number, level: nu
           Confirm
         </button>
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          Next Step
+          <a href="#item4">Next Step</a>
         </button>
       </div>
       <div className="toast toast-end">

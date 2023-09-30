@@ -45,7 +45,7 @@ model Characters {
   tools          String[]
   weapons        String[]
   initiative     Int
-  armorClass     Int
+  armorClass     Int?
   vision         String?         @db.VarChar(255)
   acrobatics     Int?
   animalHandling Int?

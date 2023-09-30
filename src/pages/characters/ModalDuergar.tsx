@@ -15,13 +15,19 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
     const myModal22 = document.getElementById("my_modal_22");
     if (myModal22) window.my_modal_22 = myModal22;
   }, []);
-  const raceDuergar = async () =>
+  const raceDuergar = async () => {
     setRace({
       race: "Duergar",
       languages: ["Common", "Dwarvish", "Undercommon"],
       spells: ["Enlarge"],
       vision: "Superior Darkvision (120 feet); sunlight sensitivity.",
+      inventory: [],
+      specialty: [],
+      tools: [],
     });
+    window.my_modal_22.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

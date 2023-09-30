@@ -41,6 +41,8 @@ export default function NewCharacterClass({
           ? "Fighting Style - Protection"
           : "",
       ],
+      languages: [],
+      spells: [],
     });
 
   return (
@@ -60,14 +62,11 @@ export default function NewCharacterClass({
       <Warlock dndClass={dndClass} setDndClass={setDndClass} />
       <Wizard dndClass={dndClass} setDndClass={setDndClass} />
       <div className="flex flex-row max-w-screen-xl w-full justify-center">
-        <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
-          onClick={randomClass}
-        >
-          Choose Random Class
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8">
+          <a href="#item1">Previous Step</a>
         </button>
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          Next Step
+          <a href="#item3">Next Step</a>
         </button>
       </div>
     </div>

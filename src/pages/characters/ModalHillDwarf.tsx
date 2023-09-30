@@ -18,14 +18,19 @@ export default function ModalHillDwarf({ race, setRace }: SetRaceProps) {
     const myModal6 = document.getElementById("my_modal_6");
     if (myModal6) window.my_modal_6 = myModal6;
   }, []);
-  const raceHillDwarf = async () =>
+  const raceHillDwarf = async () => {
     setRace({
       race: "Hill Dwarf",
       languages: ["Common", "Dwarvish"],
       inventory: [tools],
       specialty: [tools],
-      vision: "Darkvision (60 feet)."
+      tools: [tools],
+      vision: "Darkvision (60 feet).",
+      spells: [],
     });
+    window.my_modal_6.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

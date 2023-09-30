@@ -15,7 +15,8 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
     const myModalDruid = document.getElementById("my_modal_druid");
     if (myModalDruid) window.my_modal_druid = myModalDruid;
   }, []);
-  const becomeDruid = async () => setDndClass({role: "Druid"});
+  const becomeDruid = async () =>
+    setDndClass({ role: "Druid", specialty: [], spells: [], languages: [] });
   return (
     <>
       <button

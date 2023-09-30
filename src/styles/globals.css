@@ -21,15 +21,8 @@
   font-family: "Astloch", cursive;
 }
 
-.lg\:drawer-open > .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
-  position: relative;
-  left: 0;
-  transform: none;
-}
-[dir="rtl"] .lg\:drawer-open > .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
-  position: relative;
-  right: 0;
-  transform: none;
+.drawer-toggle:checked ~ .drawer-side {
+  z-index: 100;
 }
 :root {
   --foreground-rgb: 0, 0, 0;

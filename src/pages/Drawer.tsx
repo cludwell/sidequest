@@ -2,57 +2,62 @@ import { userProfile } from "@/store/session";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import { User } from "../../lib/user";
+import IconCharacters from "./IconCharacters";
+import IconMap from "./IconMap";
+import IconTrophy from "./IconTrophy";
 
 export default function Drawer() {
-  const user = useSelector(userProfile);
+  const user = useSelector<User | null>(userProfile);
   return (
-    <div className="drawer m-2">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle peer" />
-      <div className="drawer-content items-center justify-center">
+    <div className="drawer m-2 opacity-100">
+      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content">
         {/* Page content here */}
-        <label htmlFor="my-drawer" className="cursor-pointer drawer-button">
-          {user && user.id && user.profilePic ? (
-            <div className="avatar">
-              <div className="w-24 mask mask-hexagon">
-                <Image src={user.profilePic} width={200} height={200} alt="profilepic"/>
-              </div>
-            </div>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="w-8 h-8"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          )}
+        <label htmlFor="my-drawer" className="btn btn-circle swap swap-rotate">
+          {/* this hidden checkbox controls the state */}
+          <input type="checkbox" className="drawer-toggle" />
+
+          {/* hamburger icon */}
+          <svg
+            className="swap-off fill-current opacity-100"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 512 512"
+          >
+            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+          </svg>
+
+          {/* close icon */}
+          <svg
+            className="swap-on fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 512 512"
+          >
+            <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+          </svg>
         </label>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side opacity-1 z-50" >
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content isolate">
+        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content isolate" >
           {/* Sidebar content here */}
           <div>
             <h1 className="astloch text-6xl">sideQuest</h1>
-
           </div>
           <li>
-            <Link href={`/characters`} className="text-xl">Create Character</Link>
+            <Link href={`/characters`} className="text-xl">
+              <IconCharacters /> Create Character
+            </Link>
           </li>
           <li>
-            <a className="text-xl">Campaigns</a>
+            <a className="text-xl"><IconMap />Campaigns</a>
+          </li>
+          <li>
+            <a className="text-xl"><IconTrophy/> Accomplishments</a>
           </li>
         </ul>
       </div>

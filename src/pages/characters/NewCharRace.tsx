@@ -25,8 +25,8 @@ import ModalTiefling from "./ModalTiefling";
 import ModalAasimar from "./ModalAasimar";
 import ModalDrow from "./ModalDrow";
 import ModalDuergar from "./ModalDuergar";
-export default function NewCharacterRace({race, setRace}: SetRaceProps) {
 
+export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
   const [selected, setSelected] = useState<String | null>(null);
   const races = [
     "Aarakocra",
@@ -49,16 +49,15 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
     "Human",
     "Tiefling",
   ];
-  const randomRace = () =>
-    setRace(races[Math.floor(Math.random() * races.length)]);
+
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
       <h1 className="text-4xl almendra mb-8 text-center">Races</h1>
 
-      <ModalAarakocra race={race} setRace={setRace}/>
-      <ModalAasimar race={race} setRace={setRace}/>
+      <ModalAarakocra race={race} setRace={setRace} />
+      <ModalAasimar race={race} setRace={setRace} />
       <ModalDragonBorn race={race} setRace={setRace} />
-      <div className="collapse collapse-plus bg-base-200 m-1 z-0 max-w-screen-xl w-full">
+      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full ">
         <input
           type="checkbox"
           name="my-accordion-3"
@@ -78,9 +77,9 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
           DWARF
         </div>
         <div className="collapse-content">
-          <ModalDuergar race={race} setRace={setRace}/>
-          <ModalHillDwarf race={race} setRace={setRace}/>
-          <ModalMountainDwarf race={race} setRace={setRace}/>
+          <ModalDuergar race={race} setRace={setRace} />
+          <ModalHillDwarf race={race} setRace={setRace} />
+          <ModalMountainDwarf race={race} setRace={setRace} />
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
@@ -103,10 +102,10 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
           ELF
         </div>
         <div className="collapse-content">
-          <ModalEladrinElf race={race} setRace={setRace}/>
-          <ModalDrow race={race} setRace={setRace}/>
-          <ModalHighElf race={race} setRace={setRace}/>
-          <ModalWoodElf race={race} setRace={setRace}/>
+          <ModalEladrinElf race={race} setRace={setRace} />
+          <ModalDrow race={race} setRace={setRace} />
+          <ModalHighElf race={race} setRace={setRace} />
+          <ModalWoodElf race={race} setRace={setRace} />
         </div>
       </div>
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
@@ -129,13 +128,13 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
           GNOME
         </div>
         <div className="collapse-content">
-          <ModalRockGnome race={race} setRace={setRace}/>
-          <ModalDeepGnome race={race} setRace={setRace}/>
+          <ModalRockGnome race={race} setRace={setRace} />
+          <ModalDeepGnome race={race} setRace={setRace} />
         </div>
       </div>
-      <ModalGoliath race={race} setRace={setRace}/>
-      <ModalHalfElf race={race} setRace={setRace}/>
-      <ModalHalfOrc race={race} setRace={setRace}/>
+      <ModalGoliath race={race} setRace={setRace} />
+      <ModalHalfElf race={race} setRace={setRace} />
+      <ModalHalfOrc race={race} setRace={setRace} />
       <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
         <input
           type="checkbox"
@@ -156,21 +155,15 @@ export default function NewCharacterRace({race, setRace}: SetRaceProps) {
           HALFLING
         </div>
         <div className="collapse-content">
-          <ModalLightfootHalfing race={race} setRace={setRace}/>
+          <ModalLightfootHalfing race={race} setRace={setRace} />
           <ModalStoutHalfing race={race} setRace={setRace} />
         </div>
       </div>
-      <ModalHuman race={race} setRace={setRace}/>
-      <ModalTiefling race={race} setRace={setRace}/>
+      <ModalHuman race={race} setRace={setRace} />
+      <ModalTiefling race={race} setRace={setRace} />
       <div className="flex flex-row max-w-screen-xl w-full justify-center">
-        <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
-          onClick={randomRace}
-        >
-          Choose Random Race
-        </button>
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          Next Step
+          <a href="#item2">Next Step</a>
         </button>
       </div>
     </div>

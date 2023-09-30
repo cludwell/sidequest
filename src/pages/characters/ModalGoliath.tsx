@@ -15,12 +15,19 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
     const myModal13 = document.getElementById("my_modal_13");
     if (myModal13) window.my_modal_13 = myModal13;
   }, []);
-  const raceGoliath = async () =>
+  const raceGoliath = async () => {
     setRace({
       race: "Goliath",
       languages: ["Common", "Giant"],
       vision: "Normal",
+      inventory: [],
+      specialty: [],
+      tools: [],
+      spells: [],
     });
+    window.my_modal_13.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

@@ -5,6 +5,7 @@ import Header from "./Header";
 import { Provider } from "react-redux";
 import { wrapper } from "@/store";
 import Footer from "./Footer";
+import UserSidebar from "./PersonalizedSidebar";
 
 export default function App({ Component, pageProps, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest)
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps, ...rest }: AppProps) {
     <SessionProvider session={pageProps.session}>
       <Provider store={store}>
         <Header />
+        {/* <UserSidebar /> */}
         <Component {...pageProps} />
         <Footer />
       </Provider>

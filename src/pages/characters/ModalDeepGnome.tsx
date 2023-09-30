@@ -17,12 +17,19 @@ export default function ModalDeepGnome({ race, setRace }: SetRaceProps) {
     if (myModal12) window.my_modal_12 = myModal12;
   }, []);
 
-  const raceDeepGnome = async () =>
+  const raceDeepGnome = async () => {
     setRace({
       race: "Deep Gnome",
       languages: ["Common", "Gnomish", "Undercommon"],
-      vision: "Darkvision (120 feet)"
+      vision: "Darkvision (120 feet)",
+      specialty: [],
+      inventory: [],
+      spells: [],
+      tools: [],
     });
+    window.my_modal_12.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

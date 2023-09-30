@@ -15,7 +15,8 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
     const myModalWarlock = document.getElementById("my_modal_warlock");
     if (myModalWarlock) window.my_modal_warlock = myModalWarlock;
   }, []);
-  const becomeWarlock = async () => setDndClass({role: "Warlock"});
+  const becomeWarlock = async () =>
+    setDndClass({ role: "Warlock", specialty: [],spells: [], languages: []  });
   return (
     <>
       <button

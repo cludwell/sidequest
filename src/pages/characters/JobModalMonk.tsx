@@ -15,7 +15,8 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
     const myModalMonk = document.getElementById("my_modal_monk");
     if (myModalMonk) window.my_modal_monk = myModalMonk;
   }, []);
-  const becomeMonk = async () => setDndClass({role: "Monk"});
+  const becomeMonk = async () =>
+    setDndClass({ role: "Monk", specialty: [], spells: [], languages: [] });
   return (
     <>
       <button
@@ -353,448 +354,505 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
 
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
-{/* Slow Fall Collapsible */}
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-slow-fall"
-    checked={expand === "SLOW_FALL"}
-    onChange={() => setExpanded(prev => prev !== "SLOW_FALL" ? "SLOW_FALL" : null)}
-  />
-  <div className="collapse-title text-xl font-medium">
-    Slow Fall
-    <span className="block text-gray-500 text-sm mt-1">4th Level</span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level.
-    </p>
-  </div>
-</div>
+          {/* Slow Fall Collapsible */}
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-slow-fall"
+              checked={expand === "SLOW_FALL"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "SLOW_FALL" ? "SLOW_FALL" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Slow Fall
+              <span className="block text-gray-500 text-sm mt-1">
+                4th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Beginning at 4th level, you can use your reaction when you fall
+                to reduce any falling damage you take by an amount equal to five
+                times your monk level.
+              </p>
+            </div>
+          </div>
 
-{/* Extra Attack Collapsible */}
+          {/* Extra Attack Collapsible */}
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-extra-attack"
-    checked={expand === "EXTRA_ATTACK"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "EXTRA_ATTACK" ? "EXTRA_ATTACK" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Extra Attack
-    <span className="block text-gray-500 text-sm mt-1">
-      5th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-extra-attack"
+              checked={expand === "EXTRA_ATTACK"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "EXTRA_ATTACK" ? "EXTRA_ATTACK" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Extra Attack
+              <span className="block text-gray-500 text-sm mt-1">
+                5th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Beginning at 5th level, you can attack twice, instead of once,
+                whenever you take the Attack action on your turn.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-stunning-strike"
-    checked={expand === "STUNNING_STRIKE"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "STUNNING_STRIKE" ? "STUNNING_STRIKE" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Stunning Strike
-    <span className="block text-gray-500 text-sm mt-1">
-      5th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Starting at 5th level, you can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-stunning-strike"
+              checked={expand === "STUNNING_STRIKE"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "STUNNING_STRIKE" ? "STUNNING_STRIKE" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Stunning Strike
+              <span className="block text-gray-500 text-sm mt-1">
+                5th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Starting at 5th level, you can interfere with the flow of ki in
+                an opponent's body. When you hit another creature with a melee
+                weapon attack, you can spend 1 ki point to attempt a stunning
+                strike. The target must succeed on a Constitution saving throw
+                or be stunned until the end of your next turn.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-ki-empowered-strikes"
-    checked={expand === "KI_EMPOWERED_STRIKES"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "KI_EMPOWERED_STRIKES" ? "KI_EMPOWERED_STRIKES" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Ki-Empowered Strikes
-    <span className="block text-gray-500 text-sm mt-1">
-      6th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
-    </p>
-  </div>
-</div>
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-evasion"
-    checked={expand === "EVASION"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "EVASION" ? "EVASION" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Evasion
-    <span className="block text-gray-500 text-sm mt-1">
-      7th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-ki-empowered-strikes"
+              checked={expand === "KI_EMPOWERED_STRIKES"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "KI_EMPOWERED_STRIKES"
+                    ? "KI_EMPOWERED_STRIKES"
+                    : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Ki-Empowered Strikes
+              <span className="block text-gray-500 text-sm mt-1">
+                6th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Starting at 6th level, your unarmed strikes count as magical for
+                the purpose of overcoming resistance and immunity to nonmagical
+                attacks and damage.
+              </p>
+            </div>
+          </div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-evasion"
+              checked={expand === "EVASION"}
+              onChange={() =>
+                setExpanded((prev) => (prev !== "EVASION" ? "EVASION" : null))
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Evasion
+              <span className="block text-gray-500 text-sm mt-1">
+                7th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                At 7th level, your instinctive agility lets you dodge out of the
+                way of certain area effects, such as a blue dragon's lightning
+                breath or a fireball spell. When you are subjected to an effect
+                that allows you to make a Dexterity saving throw to take only
+                half damage, you instead take no damage if you succeed on the
+                saving throw, and only half damage if you fail.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-stillness-of-mind"
-    checked={expand === "STILLNESS_OF_MIND"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "STILLNESS_OF_MIND" ? "STILLNESS_OF_MIND" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Stillness of Mind
-    <span className="block text-gray-500 text-sm mt-1">
-      7th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-stillness-of-mind"
+              checked={expand === "STILLNESS_OF_MIND"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "STILLNESS_OF_MIND" ? "STILLNESS_OF_MIND" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Stillness of Mind
+              <span className="block text-gray-500 text-sm mt-1">
+                7th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Starting at 7th level, you can use your action to end one effect
+                on yourself that is causing you to be charmed or frightened.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-purity-of-body"
-    checked={expand === "PURITY_OF_BODY"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "PURITY_OF_BODY" ? "PURITY_OF_BODY" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Purity of Body
-    <span className="block text-gray-500 text-sm mt-1">
-      10th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-purity-of-body"
+              checked={expand === "PURITY_OF_BODY"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "PURITY_OF_BODY" ? "PURITY_OF_BODY" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Purity of Body
+              <span className="block text-gray-500 text-sm mt-1">
+                10th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                At 10th level, your mastery of the ki flowing through you makes
+                you immune to disease and poison.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-tongue-of-the-sun-and-moon"
-    checked={expand === "TONGUE_OF_THE_SUN_AND_MOON"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "TONGUE_OF_THE_SUN_AND_MOON" ? "TONGUE_OF_THE_SUN_AND_MOON" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Tongue of the Sun and Moon
-    <span className="block text-gray-500 text-sm mt-1">
-      13th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.
-    </p>
-  </div>
-</div>
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-diamond-soul"
-    checked={expand === "DIAMOND_SOUL"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "DIAMOND_SOUL" ? "DIAMOND_SOUL" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Diamond Soul
-    <span className="block text-gray-500 text-sm mt-1">
-      14th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.
-    </p>
-    <br />
-    <p>
-      Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-tongue-of-the-sun-and-moon"
+              checked={expand === "TONGUE_OF_THE_SUN_AND_MOON"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "TONGUE_OF_THE_SUN_AND_MOON"
+                    ? "TONGUE_OF_THE_SUN_AND_MOON"
+                    : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Tongue of the Sun and Moon
+              <span className="block text-gray-500 text-sm mt-1">
+                13th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Starting at 13th level, you learn to touch the ki of other minds
+                so that you understand all spoken languages. Moreover, any
+                creature that can understand a language can understand what you
+                say.
+              </p>
+            </div>
+          </div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-diamond-soul"
+              checked={expand === "DIAMOND_SOUL"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "DIAMOND_SOUL" ? "DIAMOND_SOUL" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Diamond Soul
+              <span className="block text-gray-500 text-sm mt-1">
+                14th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Beginning at 14th level, your mastery of ki grants you
+                proficiency in all saving throws.
+              </p>
+              <br />
+              <p>
+                Additionally, whenever you make a saving throw and fail, you can
+                spend 1 ki point to reroll it and take the second result.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-timeless-body"
-    checked={expand === "TIMELESS_BODY"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "TIMELESS_BODY" ? "TIMELESS_BODY" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Timeless Body
-    <span className="block text-gray-500 text-sm mt-1">
-      15th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-timeless-body"
+              checked={expand === "TIMELESS_BODY"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "TIMELESS_BODY" ? "TIMELESS_BODY" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Timeless Body
+              <span className="block text-gray-500 text-sm mt-1">
+                15th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                At 15th level, your ki sustains you so that you suffer none of
+                the frailty of old age, and you can't be aged magically. You can
+                still die of old age, however. In addition, you no longer need
+                food or water.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-empty-body"
-    checked={expand === "EMPTY_BODY"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "EMPTY_BODY" ? "EMPTY_BODY" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Empty Body
-    <span className="block text-gray-500 text-sm mt-1">
-      18th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.
-    </p>
-    <br />
-    <p>
-      Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can't take any other creatures with you.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-empty-body"
+              checked={expand === "EMPTY_BODY"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "EMPTY_BODY" ? "EMPTY_BODY" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Empty Body
+              <span className="block text-gray-500 text-sm mt-1">
+                18th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                Beginning at 18th level, you can use your action to spend 4 ki
+                points to become invisible for 1 minute. During that time, you
+                also have resistance to all damage but force damage.
+              </p>
+              <br />
+              <p>
+                Additionally, you can spend 8 ki points to cast the astral
+                projection spell, without needing material components. When you
+                do so, you can't take any other creatures with you.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-perfect-self"
-    checked={expand === "PERFECT_SELF"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "PERFECT_SELF" ? "PERFECT_SELF" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Perfect Self
-    <span className="block text-gray-500 text-sm mt-1">
-      20th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <p>
-      At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points.
-    </p>
-  </div>
-</div>
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-unarmored-movement"
-    checked={expand === "UNARMORED_MOVEMENT"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "UNARMORED_MOVEMENT" ? "UNARMORED_MOVEMENT" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Unarmored Movement
-    <span className="block text-gray-500 text-sm mt-1">
-      6th, 9th, 10th, 14th, 18th Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <div className="overflow-x-auto">
-      <table className="table table-zebra bg-base-100">
-        <thead>
-          <tr>
-            <th>Level</th>
-            <th>Improvement Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>6th</th>
-            <td>
-              At 6th level, your Unarmored Speed speed bonus increases to 15 feet while you are not wearing armor or wielding a shield.
-            </td>
-          </tr>
-          <tr>
-            <th>9th</th>
-            <td>
-              At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during your move.
-            </td>
-          </tr>
-          <tr>
-            <th>10th</th>
-            <td>
-              At 10th level, your Unarmored Speed speed bonus increases to 20 feet while you are not wearing armor or wielding a shield.
-            </td>
-          </tr>
-          <tr>
-            <th>14th</th>
-            <td>
-              At 14th level, your Unarmored Speed speed bonus increases to 25 feet while you are not wearing armor or wielding a shield.
-            </td>
-          </tr>
-          <tr>
-            <th>18th</th>
-            <td>
-              At 18th level, your Unarmored Speed speed bonus increases to 30 feet while you are not wearing armor or wielding a shield.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <br />
-    <p>
-      These improvements represent your ability to move swiftly and with agility while not burdened by armor or shields.
-    </p>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-perfect-self"
+              checked={expand === "PERFECT_SELF"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "PERFECT_SELF" ? "PERFECT_SELF" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Perfect Self
+              <span className="block text-gray-500 text-sm mt-1">
+                20th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <p>
+                At 20th level, when you roll for initiative and have no ki
+                points remaining, you regain 4 ki points.
+              </p>
+            </div>
+          </div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-unarmored-movement"
+              checked={expand === "UNARMORED_MOVEMENT"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "UNARMORED_MOVEMENT" ? "UNARMORED_MOVEMENT" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Unarmored Movement
+              <span className="block text-gray-500 text-sm mt-1">
+                6th, 9th, 10th, 14th, 18th Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <div className="overflow-x-auto">
+                <table className="table table-zebra bg-base-100">
+                  <thead>
+                    <tr>
+                      <th>Level</th>
+                      <th>Improvement Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>6th</th>
+                      <td>
+                        At 6th level, your Unarmored Speed speed bonus increases
+                        to 15 feet while you are not wearing armor or wielding a
+                        shield.
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>9th</th>
+                      <td>
+                        At 9th level, you gain the ability to move along
+                        vertical surfaces and across liquids on your turn
+                        without falling during your move.
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>10th</th>
+                      <td>
+                        At 10th level, your Unarmored Speed speed bonus
+                        increases to 20 feet while you are not wearing armor or
+                        wielding a shield.
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>14th</th>
+                      <td>
+                        At 14th level, your Unarmored Speed speed bonus
+                        increases to 25 feet while you are not wearing armor or
+                        wielding a shield.
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>18th</th>
+                      <td>
+                        At 18th level, your Unarmored Speed speed bonus
+                        increases to 30 feet while you are not wearing armor or
+                        wielding a shield.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br />
+              <p>
+                These improvements represent your ability to move swiftly and
+                with agility while not burdened by armor or shields.
+              </p>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-proficiencies"
-    checked={expand === "PROFICIENCIES"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "PROFICIENCIES" ? "PROFICIENCIES" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Proficiencies
-    <span className="block text-gray-500 text-sm mt-1">
-      1st Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <div className="overflow-x-auto">
-      <table className="table table-zebra bg-base-100">
-        <tbody>
-          <tr>
-            <th>Armor</th>
-            <td>None</td>
-          </tr>
-          <tr>
-            <th>Weapons</th>
-            <td>Simple weapons, shortswords</td>
-          </tr>
-          <tr>
-            <th>Tools</th>
-            <td>Choose one type of artisan's tools or one musical instrument</td>
-          </tr>
-          <tr>
-            <th>Saving Throws</th>
-            <td>Strength, Dexterity</td>
-          </tr>
-          <tr>
-            <th>Skills</th>
-            <td>Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-proficiencies"
+              checked={expand === "PROFICIENCIES"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "PROFICIENCIES" ? "PROFICIENCIES" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Proficiencies
+              <span className="block text-gray-500 text-sm mt-1">
+                1st Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <div className="overflow-x-auto">
+                <table className="table table-zebra bg-base-100">
+                  <tbody>
+                    <tr>
+                      <th>Armor</th>
+                      <td>None</td>
+                    </tr>
+                    <tr>
+                      <th>Weapons</th>
+                      <td>Simple weapons, shortswords</td>
+                    </tr>
+                    <tr>
+                      <th>Tools</th>
+                      <td>
+                        Choose one type of artisan's tools or one musical
+                        instrument
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Saving Throws</th>
+                      <td>Strength, Dexterity</td>
+                    </tr>
+                    <tr>
+                      <th>Skills</th>
+                      <td>
+                        Choose two from Acrobatics, Athletics, History, Insight,
+                        Religion, and Stealth
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
-<div className="collapse collapse-plus bg-base-200 my-1">
-  <input
-    type="checkbox"
-    name="my-accordion-hit-points"
-    checked={expand === "HIT_POINTS"}
-    onChange={() =>
-      setExpanded((prev) =>
-        prev !== "HIT_POINTS" ? "HIT_POINTS" : null
-      )
-    }
-  />
-  <div className="collapse-title text-xl font-medium">
-    Hit Points
-    <span className="block text-gray-500 text-sm mt-1">
-      1st Level
-    </span>
-  </div>
-  <div className="collapse-content">
-    <div className="overflow-x-auto">
-      <table className="table table-zebra bg-base-100">
-        <tbody>
-          <tr>
-            <th>Hit Dice</th>
-            <td>1d8 per monk level</td>
-          </tr>
-          <tr>
-            <th>Hit Points at 1st Level</th>
-            <td>8 + your Constitution modifier</td>
-          </tr>
-          <tr>
-            <th>Hit Points at Higher Levels</th>
-            <td>1d8 (or 5) + your Constitution modifier per monk level after 1st</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+          <div className="collapse collapse-plus bg-base-200 my-1">
+            <input
+              type="checkbox"
+              name="my-accordion-hit-points"
+              checked={expand === "HIT_POINTS"}
+              onChange={() =>
+                setExpanded((prev) =>
+                  prev !== "HIT_POINTS" ? "HIT_POINTS" : null
+                )
+              }
+            />
+            <div className="collapse-title text-xl font-medium">
+              Hit Points
+              <span className="block text-gray-500 text-sm mt-1">
+                1st Level
+              </span>
+            </div>
+            <div className="collapse-content">
+              <div className="overflow-x-auto">
+                <table className="table table-zebra bg-base-100">
+                  <tbody>
+                    <tr>
+                      <th>Hit Dice</th>
+                      <td>1d8 per monk level</td>
+                    </tr>
+                    <tr>
+                      <th>Hit Points at 1st Level</th>
+                      <td>8 + your Constitution modifier</td>
+                    </tr>
+                    <tr>
+                      <th>Hit Points at Higher Levels</th>
+                      <td>
+                        1d8 (or 5) + your Constitution modifier per monk level
+                        after 1st
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-row justify-center">
             <button

@@ -15,7 +15,9 @@ export default function NewCharDescription({
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([]);
-  const confirmDescription = async () => {
+  const [imgUrl, setImgUrl] = useState<string>("https://imgur.com/2W9RzPc");
+  const confirmDescription = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     const err = [];
     if (descript.length < 100)
       err.push("Please provide description of 100 characters or more.");
@@ -28,15 +30,16 @@ export default function NewCharDescription({
     if (err.length) {
       setErrors(err);
       return;
-    } else setErrors([])
+    } else setErrors([]);
     setDescription({
       description: descript,
       alignment,
       faith,
       name,
       level,
+      imgUrl: imgUrl,
     });
-    console.log("DESCRIPTION", description);
+    // console.log("DESCRIPTION", description);
   };
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
@@ -48,7 +51,7 @@ export default function NewCharDescription({
           <input
             type="text"
             placeholder="Formal, religious, or street name"
-            className="input input-bordered input-secondary w-80"
+            className="input input-bordered input-primary w-80"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -62,7 +65,7 @@ export default function NewCharDescription({
             />
           </label>
           <select
-            className="select select-primary w-80"
+            className="select select-secondary w-80"
             value={level}
             onChange={(e) => setLevel(parseInt(e.target.value))}
           >
@@ -78,7 +81,7 @@ export default function NewCharDescription({
             />
           </label>
           <select
-            className="select select-primary w-80"
+            className="select select-success w-80"
             value={alignment}
             onChange={(e) => setAlignment(e.target.value)}
           >
@@ -94,7 +97,7 @@ export default function NewCharDescription({
           </select>
         </div>
         <div>
-          <label className="label text-xl almendra">Appearance</label>
+          <label className="label text-xl almendra">Appearance (text)</label>
           <textarea
             placeholder="What a passerby notice?"
             className="textarea textarea-bordered textarea-accent w-80 h-40"
@@ -102,12 +105,28 @@ export default function NewCharDescription({
             onChange={(e) => setAppearance(e.target.value)}
           />
         </div>
+        <div>
+          <label className="label text-xl almendra">
+            Portrait
+            <ToolTip
+              tip="AWS image uploads coming soon, please use a hosting site like imgur in the meantime"
+              position=""
+            />
+          </label>
+          <input
+            type="text"
+            defaultValue={"https://imgur.com/2W9RzPc"}
+            className="input input-bordered input-info w-80"
+            value={imgUrl}
+            onChange={(e) => setImgUrl(e.target.value)}
+          />
+        </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text text-xl almendra">Your bio</span>
           </label>
           <textarea
-            className="textarea textarea-bordered textarea-success w-80 h-80"
+            className="textarea textarea-bordered textarea-warning w-80 h-80"
             placeholder="Your characters motivations? Background? Upbringing?"
             value={descript}
             onChange={(e) => setDescript(e.target.value)}
@@ -126,7 +145,7 @@ export default function NewCharDescription({
             />
           </label>
           <select
-            className="select select-warning w-full max-w-xs"
+            className="select select-error w-full max-w-xs"
             value={faith}
             onChange={(e) => setFaith(e.target.value)}
           >
@@ -142,6 +161,7 @@ export default function NewCharDescription({
           </select>
         </div>
 
+        <FaithTable deities={deities as Deity[]} />
         <div className="flex flex-row max-w-screen-xl w-full justify-center">
           <button
             className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
@@ -150,11 +170,10 @@ export default function NewCharDescription({
             Confirm Description
           </button>
           <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-            Next Step
+            <a href="#item5">Next Step</a>
           </button>
         </div>
       </form>
-      <FaithTable deities={deities as Deity[]} />
       <div className="toast toast-end">
         {!!errors.length &&
           errors.map((e, i) => (

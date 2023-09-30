@@ -15,7 +15,8 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
     const myModalSorcerer = document.getElementById("my_modal_sorcerer");
     if (myModalSorcerer) window.my_modal_sorcerer = myModalSorcerer;
   }, []);
-  const becomeSorcerer = async () => setDndClass({role: "Sorcerer"});
+  const becomeSorcerer = async () =>
+    setDndClass({ role: "Sorcerer", specialty: [], spells: [], languages: []  });
   return (
     <>
       <button

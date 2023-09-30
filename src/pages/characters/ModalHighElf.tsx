@@ -40,13 +40,19 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
     "Undercommon",
   ];
 
-  const raceHighElf = async () =>
+  const raceHighElf = async () => {
     setRace({
       race: "High Elf",
       languages: ["Common", "Elvish", language],
       spells: [cantrip],
       vision: "Darkvision (60 feet).",
+      inventory: [],
+      specialty: [],
+      tools: [],
     });
+    window.my_modal_18.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

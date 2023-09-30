@@ -46,7 +46,12 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
       setErrors(err);
       return;
     } else setErrors([]);
-    setDndClass({ role: "Ranger", specialty: [favored] });
+    setDndClass({
+      role: "Ranger",
+      specialty: [`Favored Enemy - ${favored}`],
+      spells: [],
+      languages: [],
+    });
   };
   return (
     <>
@@ -820,18 +825,17 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           <div className="flex flex-col items-center">
-          <select
-            className="select select-primary w-full max-w-xs my-4"
-            onChange={(e) => setFavored(e.target.value)}
-            defaultValue="default"
-          >
-  
-            {favoredEnemies.map((enem, i) => (
-              <option key={`${enem}`} value={enem}>
-                {enem}
-              </option>
-            ))}
-          </select>
+            <select
+              className="select select-primary w-full max-w-xs my-4"
+              onChange={(e) => setFavored(e.target.value)}
+              defaultValue="default"
+            >
+              {favoredEnemies.map((enem, i) => (
+                <option key={`${enem}`} value={enem}>
+                  {enem}
+                </option>
+              ))}
+            </select>
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeRanger}

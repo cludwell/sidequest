@@ -36,15 +36,15 @@ export default function Header() {
   };
 
   const user = useSelector(userProfile);
-  const characters = useSelector(allCharactersState);
-  const scenarios = useSelector(scenarioState);
+  // const characters = useSelector(allCharactersState);
+  // const scenarios = useSelector(scenarioState);
   // console.log("User Data:", user);
   // console.log("Character Data:", characters);
   return (
     <div className="flex flex-row justify-between drop-shadow-xl" id="header-container">
       <div className="flex flex-row m-3 justify-center items-center">
-        <Image src={d20} alt="d20logo" className="w-16 object-cover" />
-        <Link href={'/'} className="astloch text-6xl hidden md:block">sideQuest</Link>
+        <Image src={d20} alt="d20logo" className="w-12 object-cover" width={32} height={32}/>
+        <Link href={'/'} className="federant text-3xl hidden md:block font-bold">SideQuest</Link>
 
       </div>
       {!session ? (

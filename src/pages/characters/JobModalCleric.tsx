@@ -15,7 +15,8 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
     const myModalCleric = document.getElementById("my_modal_cleric");
     if (myModalCleric) window.my_modal_cleric = myModalCleric;
   }, []);
-  const becomeCleric = async () => setDndClass({role: "Cleric"});
+  const becomeCleric = async () =>
+    setDndClass({ role: "Cleric", specialty: [], spells: [], languages: [] });
   return (
     <>
       <button

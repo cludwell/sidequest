@@ -16,12 +16,19 @@ export default function ModalLightfootHalfing({ race, setRace }: SetRaceProps) {
     const myModal15 = document.getElementById("my_modal_15");
     if (myModal15) window.my_modal_15 = myModal15;
   }, []);
-  const raceLightfoot = async () =>
+  const raceLightfoot = async () => {
     setRace({
       race: "Lightfoot Halfling",
       languages: ["Common", "Halfing"],
       vision: "Normal",
+      inventory: [],
+      spells: [],
+      tools: [],
+      specialty: [],
     });
+    window.my_modal_15.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

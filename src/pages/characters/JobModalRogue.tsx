@@ -11,41 +11,16 @@ declare global {
 }
 export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
-  const [favored, setFavored] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([])
   useEffect(() => {
     const myModalRogue = document.getElementById("my_modal_rogue");
     if (myModalRogue) window.my_modal_rogue = myModalRogue;
   }, []);
-  const favoredEnemies = [
-    "Aberrations",
-    "Beasts",
-    "Celestials",
-    "Constructs",
-    "Dragons",
-    "Elementals",
-    "Fey",
-    "Fiends",
-    "Giants",
-    "Monstrosities",
-    "Oozes",
-    "Plants",
-    "Undead",
-    "Goblins", // Humanoid subtype
-    "Orcs", // Humanoid subtype
-    "Elves", // Humanoid subtype
-    "Dwarves", // Humanoid subtype
-    // ... any other humanoid subtypes or specific creature types relevant to your game
-  ];
+
 
   const becomeRogue = async () => {
-    const err = []
-    if (!favored) {
-      err.push('Please select a favored enemy')
-      setErrors(err)
-      return;
-    } else setErrors([])
-    setDndClass({ role: "Rogue", specialty: [`Favored Enemy - ${favored}`] })
+
+    setDndClass({ role: "Rogue", specialty: [], spells: [], languages: []  })
 };
   return (
     <>
@@ -573,7 +548,7 @@ export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           <div className="flex flex-col items-center">
-            <select
+            {/* <select
               className="select select-primary w-full max-w-xs my-4"
               value={favored}
               onChange={(e) => setFavored(e.target.value)}
@@ -584,7 +559,7 @@ export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
               {favoredEnemies.map((enem, i) => (
                 <option key={`${enem}`} value={enem}>{enem}</option>
               ))}
-            </select>
+            </select> */}
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeRogue}

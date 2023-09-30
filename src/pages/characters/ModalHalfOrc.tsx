@@ -16,12 +16,19 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
     const myModal19 = document.getElementById("my_modal_19");
     if (myModal19) window.my_modal_19 = myModal19;
   }, []);
-  const raceHalfOrc = async () =>
+  const raceHalfOrc = async () => {
     setRace({
       race: "Half-Orc",
       languages: ["Common", "Orc"],
       vision: " Darkvision (60 feet).",
+      inventory: [],
+      spells: [],
+      tools: [],
+      specialty: [],
     });
+    window.my_modal_19.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

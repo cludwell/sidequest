@@ -16,14 +16,19 @@ export default function ModalRockGnome({ race, setRace }: SetRaceProps) {
     const myModal11 = document.getElementById("my_modal_11");
     if (myModal11) window.my_modal_11 = myModal11;
   }, []);
-  const raceRockGnome = async () =>
+  const raceRockGnome = async () => {
     setRace({
       race: "Rock Gnome",
       languages: ["Common", "Gnomish"],
       inventory: ["Tinker's Tools"],
       specialty: ["Tinker's Tools"],
-      vision: "Darkvision (60 feet)."
+      vision: "Darkvision (60 feet).",
+      spells: [],
+      tools: [],
     });
+    window.my_modal_11.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

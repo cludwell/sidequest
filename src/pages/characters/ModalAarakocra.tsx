@@ -16,13 +16,19 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
     if (myModal4) window.my_modal_4 = myModal4;
   }, []);
 
-  const raceAarakocra = async () =>
+  const raceAarakocra = async () => {
     setRace({
       race: "Aarakocra",
       languages: ["Common", "Aarakocra", "Auran"],
       specialty: ["Flight", "Talons"],
-      vision: 'Normal'
+      vision: "Normal",
+      inventory: [],
+      spells: [],
+      tools: [],
     });
+    window.my_modal_4.close();
+    window.location.href = "#item2";
+  };
   return (
     <>
       <button

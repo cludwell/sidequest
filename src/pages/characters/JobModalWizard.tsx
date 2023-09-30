@@ -15,7 +15,8 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
     const myModalWizard = document.getElementById("my_modal_wizard");
     if (myModalWizard) window.my_modal_wizard = myModalWizard;
   }, []);
-  const becomeWizard = async () => setDndClass({role: "Wizard"});
+  const becomeWizard = async () =>
+    setDndClass({ role: "Wizard", specialty: [], spells: [], languages: [] });
   return (
     <>
       <button
@@ -257,7 +258,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 the slots should be half your wizard level (rounded up) or less,
                 and none can be 6th level or higher.
               </p>
-              <br/>
+              <br />
               <p>
                 For instance, a 4th-level wizard might regain a 2nd-level slot
                 or two 1st-level slots.
@@ -349,7 +350,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 spells, are always at the ready. Moreover, they don't consume
                 any of your prepared spell slots.
               </p>
-              <br/>
+              <br />
               <p>
                 You can cast each of these spells once at their 3rd-level
                 without depleting a spell slot. After doing so, you need to rest

@@ -17,14 +17,19 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
     if (myModal20) window.my_modal_20 = myModal20;
   }, []);
 
-  const raceAasimar = async () =>
+  const raceAasimar = async () => {
     setRace({
       race: "Aasimar",
       languages: ["Common", "Celestial"],
       spells: ["Light", "Healing Hands"],
       specialty: ["Celestial Resistance"],
-      vision: 'Normal'
+      vision: "Normal",
+      inventory: [],
+      tools: [],
     });
+    window.my_modal_20.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

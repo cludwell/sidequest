@@ -16,12 +16,19 @@ export default function ModalStoutHalfing({ race, setRace }: SetRaceProps) {
     const myModal16 = document.getElementById("my_modal_16");
     if (myModal16) window.my_modal_16 = myModal16;
   }, []);
-  const raceStoutHalfing = async () =>
+  const raceStoutHalfing = async () => {
     setRace({
       race: "Stout Halfing",
       languages: ["Common", "Halfling"],
       vision: "Normal",
+      inventory: [],
+      spells: [],
+      tools: [],
+      specialty: [],
     });
+    window.my_modal_16.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>

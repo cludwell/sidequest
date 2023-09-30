@@ -17,7 +17,12 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
     if (myModalFighter) window.my_modal_fighter = myModalFighter;
   }, []);
   const becomeFighter = async () =>
-    setDndClass({ role: `Fighter`, specialty: [`Fighting Style - ${style}`] });
+    setDndClass({
+      role: `Fighter`,
+      specialty: [`Fighting Style - ${style}`],
+      spells: [],
+      languages: [],
+    });
   const fightingStyles = {
     Archery:
       "You gain a +2 bonus to attack rolls you make with ranged weapons.",
@@ -74,7 +79,6 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_fighter" className="modal">
         <form method="dialog" className="modal-box">
-
           <Image
             src={fighter}
             alt="detail image"
@@ -149,13 +153,12 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.entries(fightingStyles).map((style,i) => (
+                    {Object.entries(fightingStyles).map((style, i) => (
                       <tr key={`${style[0]}${i}`}>
                         <td className="font-bold">{style[0]}</td>
                         <td>{style[1]}</td>
                       </tr>
                     ))}
-
                   </tbody>
                 </table>
               </div>
@@ -399,7 +402,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 Select a Fighting Style
               </option>
               {Object.keys(fightingStyles).map((style, i) => (
-                <option key={style} value={style}>{style}</option>
+                <option key={style} value={style}>
+                  {style}
+                </option>
               ))}
             </select>
             <button

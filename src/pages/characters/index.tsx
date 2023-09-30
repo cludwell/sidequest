@@ -40,7 +40,8 @@ export default function CreateCharacter() {
       {/* card container */}
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
-        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4 z-0">
+        {/* removing card from class name allows drawer to behave correctly */}
+        <div className=" card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl">
           <figure>
             {characters[6].imgUrl && (
               <Image
@@ -48,6 +49,7 @@ export default function CreateCharacter() {
                 width={800}
                 src={characters[6].imgUrl}
                 alt="character preview"
+                className="rounded-t-2xl"
               />
             )}
           </figure>
@@ -56,7 +58,7 @@ export default function CreateCharacter() {
             <p>Create a character using a step-by-step approach</p>
             <div className="card-actions justify-end"></div>
           </div>
-          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end"
+          <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end w-full"
                       onClick={handleCreate}
                       >
             START BUILDING
@@ -76,8 +78,8 @@ export default function CreateCharacter() {
             </svg>
           </button>
         </div>
-        <div className="divider lg:divider-horizontal">OR</div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4 ">
+        <div className="divider divider-horizontal md:invisible md:absolute">OR</div>
+        <div className="flex flex-col card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl ">
           <figure>
             {characters[7].imgUrl && (
               <Image
@@ -85,6 +87,7 @@ export default function CreateCharacter() {
                 width={800}
                 src={characters[7].imgUrl}
                 alt="character preview"
+                className="rounded-t-2xl"
               />
             )}
           </figure>
@@ -97,7 +100,7 @@ export default function CreateCharacter() {
             <div className="card-actions justify-end"></div>
           </div>
           <button
-            className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end"
+            className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end w-full"
             onClick={handlePremade}
           >
             START BROWSING

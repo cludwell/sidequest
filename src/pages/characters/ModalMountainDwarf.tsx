@@ -17,14 +17,19 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
     const myModal7 = document.getElementById("my_modal_7");
     if (myModal7) window.my_modal_7 = myModal7;
   }, []);
-  const raceMountainDwarf = async () =>
+  const raceMountainDwarf = async () => {
     setRace({
       race: "Mountain Dwarf",
       languages: ["Common", "Dwarvish"],
       inventory: [tools],
       specialty: [tools],
-      vision: "Darkvision (60 feet)."
+      tools: [tools],
+      vision: "Darkvision (60 feet).",
+      spells: [],
     });
+    window.my_modal_7.close();
+    window.location.href = "#item2";
+  };
 
   return (
     <>
