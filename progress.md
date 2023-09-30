@@ -3,6 +3,8 @@
 -next step buttons on newchar form navigate to next item
 -fixed bug that had incorrect char creation steps displayed
 -added imgUrl to description form
+-each part of form directs to next and previous
+-confirming equipment redirects to submit button
 
 TO DO
 -eliminate random race and class buttons before launch as they mess up spell selections
