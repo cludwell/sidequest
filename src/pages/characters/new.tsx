@@ -56,9 +56,9 @@ export default function NewCharacter() {
       {race.race &&
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
-        equipment.inventory.length &&
+        !!equipment.inventory.length &&
         dndClass.role && (
-          <div className="flex flex-row max-w-screen-xl w-full justify-center">
+          <div className="flex flex-row max-w-screen-xl w-full justify-center" id="submit">
             <button
               className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
               onClick={submitCharacter}

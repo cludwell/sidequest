@@ -47,8 +47,8 @@ export default function EquipCleric({
       inventory: [pack, symbol],
       weapons: [weapon1, weapon2, "Shield"],
     });
-
-  };
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);  };
 
   return (
     <>

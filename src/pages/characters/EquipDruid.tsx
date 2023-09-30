@@ -48,6 +48,7 @@ export default function EquipDruid({
       inventory: ["Explorer's Pack", focus],
       weapons: [weaponA, weaponB === "Wooden Shield" ? "" : weaponB],
     });
+    window.location.href = "#submit";
     console.log("equipment", equipment);
   };
 

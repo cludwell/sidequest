@@ -25,10 +25,12 @@ export default function EquipBarbarian({
       return;
     }
     setEquipment({
+      armor: [],
       inventory: ["Explorer's Pack"],
       weapons: ["4 Javelins", weapon1, weapon2],
     });
-  };
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);  };
   return (
     <>
       <form className="flex flex-col items-center">

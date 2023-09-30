@@ -29,7 +29,8 @@ export default function EquipRogue({
       inventory: [pack],
       weapons: [weaponA, weaponB],
     });
-    console.log("ranger", equipment);
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);
   };
 
   return (

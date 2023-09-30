@@ -39,6 +39,7 @@ export default function NewCharDescription({
       level,
       imgUrl: imgUrl,
     });
+    window.location.href = "#item5";
     // console.log("DESCRIPTION", description);
   };
   return (

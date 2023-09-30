@@ -62,6 +62,7 @@ export default function EquipBard({
       inventory: [pack, instrument1, instrument2, instrument3],
       weapons: [weapon, "Dagger"],
     });
+    window.location.href = "#submit";
     console.log("equipment", equipment);
   };
   return (

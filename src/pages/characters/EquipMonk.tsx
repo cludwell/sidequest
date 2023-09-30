@@ -25,9 +25,10 @@ export default function EquipMonk({
     setEquipment({
       inventory: [pack, "10 Darts"],
       weapons: [weapon],
+      armor: []
     });
-    console.log('equipment', equipment)
-  };
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);  };
 
   return (
     <>

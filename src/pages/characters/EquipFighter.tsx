@@ -45,7 +45,8 @@ export default function EquipFighter({
       ],
       weapons: [weaponA, weaponB, weaponC, weaponD],
     });
-    console.log('')
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);
   };
 
   return (

@@ -35,7 +35,8 @@ export default function EquipRanger({
       inventory: [pack, extraEquip],
       weapons: [weaponA, weaponB],
     });
-    console.log("ranger", equipment);
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);
   };
 
   return (
@@ -185,7 +186,6 @@ export default function EquipRanger({
           <div className="flex flex-row items-center justify-between">
             <label className="label text-xl almendra">
               Longbow and 20 Arrows
-
             </label>
             <input
               type="radio"

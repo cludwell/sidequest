@@ -55,12 +55,13 @@ export default function EquipMagicCaster({
     setEquipment({
       weapons: [
         weaponA,
-        dndClass.role === "Wizard" ? null : "Dagger",
-        dndClass.role === "Wizard" ? null : "Dagger",
+        dndClass.role === "Wizard" ? '' : "Dagger",
+        dndClass.role === "Wizard" ? '' : "Dagger",
       ],
-      armor: [dndClass.role === "Warlock" ? "Leather Armor" : null],
-      inventory: [pack, arcaneFocus, dndClass.role === 'Wizard' ? 'Spellbook' : null],
+      armor: [dndClass.role === "Warlock" ? "Leather Armor" : ''],
+      inventory: [pack, arcaneFocus, dndClass.role === 'Wizard' ? 'Spellbook' : ''],
     });
+    window.location.href = "#submit";
     console.log("equipment", equipment);
   };
 

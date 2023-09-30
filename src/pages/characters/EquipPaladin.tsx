@@ -48,6 +48,8 @@ export default function EquipPaladin({
       inventory: [pack, holySymbol],
       weapons: [weaponA, weaponB, weaponC, "Shield"],
     });
+    window.location.href = "#submit";
+    console.log("EQUIPMENT", equipment);
   };
 
   return (
