@@ -16,13 +16,16 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
     const myModalFighter = document.getElementById("my_modal_fighter");
     if (myModalFighter) window.my_modal_fighter = myModalFighter;
   }, []);
-  const becomeFighter = async () =>
+  const becomeFighter = async () => {
     setDndClass({
       role: `Fighter`,
       specialty: [`Fighting Style - ${style}`],
       spells: [],
       languages: [],
     });
+    window.my_modal_fighter.close();
+    window.location.href = "#item3";
+  };
   const fightingStyles = {
     Archery:
       "You gain a +2 bonus to attack rolls you make with ranged weapons.",

@@ -15,8 +15,11 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
     const myModalWizard = document.getElementById("my_modal_wizard");
     if (myModalWizard) window.my_modal_wizard = myModalWizard;
   }, []);
-  const becomeWizard = async () =>
+  const becomeWizard = async () => {
     setDndClass({ role: "Wizard", specialty: [], spells: [], languages: [] });
+    window.my_modal_wizard.close();
+    window.location.href = "#item3";
+  };
   return (
     <>
       <button

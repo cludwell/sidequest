@@ -15,8 +15,11 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
     const myModalMonk = document.getElementById("my_modal_monk");
     if (myModalMonk) window.my_modal_monk = myModalMonk;
   }, []);
-  const becomeMonk = async () =>
+  const becomeMonk = async () => {
     setDndClass({ role: "Monk", specialty: [], spells: [], languages: [] });
+    window.my_modal_monk.close();
+    window.location.href = "#item3";
+  };
   return (
     <>
       <button

@@ -52,6 +52,8 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
       spells: [],
       languages: [],
     });
+    window.my_modal_ranger.close();
+    window.location.href = "#item3";
   };
   return (
     <>

@@ -11,17 +11,17 @@ declare global {
 }
 export default function Rogue({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
-  const [errors, setErrors] = useState<string[]>([])
+  const [errors, setErrors] = useState<string[]>([]);
   useEffect(() => {
     const myModalRogue = document.getElementById("my_modal_rogue");
     if (myModalRogue) window.my_modal_rogue = myModalRogue;
   }, []);
 
-
   const becomeRogue = async () => {
-
-    setDndClass({ role: "Rogue", specialty: [], spells: [], languages: []  })
-};
+    setDndClass({ role: "Rogue", specialty: [], spells: [], languages: [] });
+    window.my_modal_rogue.close();
+    window.location.href = "#item3";
+  };
   return (
     <>
       <button
