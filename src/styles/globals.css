@@ -21,9 +21,10 @@
   font-family: "Astloch", cursive;
 }
 
-.drawer-toggle:checked ~ .drawer-side {
-  z-index: 100;
+.modal-box::-webkit-scrollbar-track {
+  margin: 1rem;
 }
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

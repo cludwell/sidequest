@@ -60,7 +60,7 @@ export default function NewCharacter() {
         dndClass.role && (
           <div className="flex flex-row max-w-screen-xl w-full justify-center" id="submit">
             <button
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
               onClick={submitCharacter}
             >
               Submit Character
@@ -150,7 +150,7 @@ export default function NewCharacter() {
         dndClass.role && (
           <div className="flex flex-row max-w-screen-xl w-full justify-center">
             <button
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
               //  onClick={equip}
             >
               Submit Character
