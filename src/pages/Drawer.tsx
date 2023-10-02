@@ -6,11 +6,12 @@ import { User } from "../../lib/user";
 import IconCharacters from "./IconCharacters";
 import IconMap from "./IconMap";
 import IconTrophy from "./IconTrophy";
+import IconGear from "./IconGear";
 
 export default function Drawer() {
   const user = useSelector<User | null>(userProfile);
   return (
-    <div className="drawer m-2 opacity-100">
+    <div className="drawer m-2">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
@@ -41,25 +42,43 @@ export default function Drawer() {
           </svg>
         </label>
       </div>
-      <div className="drawer-side opacity-1 z-50" >
+      <div className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content isolate" >
-          {/* Sidebar content here */}
+        <div className="menu p-4 w-80 h-full bg-base-200 text-base-content flex flex-col justify-between">
           <div>
             <h1 className="astloch text-6xl">sideQuest</h1>
+            <ul>
+              <li>
+                <Link href={`/characters`} className="text-xl">
+                  <IconCharacters /> Create Character
+                </Link>
+              </li>
+              <li>
+                <a className="text-xl">
+                  <IconMap />
+                  Campaigns
+                </a>
+              </li>
+              <li>
+                <a className="text-xl">
+                  <IconTrophy /> Accomplishments
+                </a>
+              </li>
+            </ul>
           </div>
-          <li>
-            <Link href={`/characters`} className="text-xl">
-              <IconCharacters /> Create Character
-            </Link>
-          </li>
-          <li>
-            <a className="text-xl"><IconMap />Campaigns</a>
-          </li>
-          <li>
-            <a className="text-xl"><IconTrophy/> Accomplishments</a>
-          </li>
-        </ul>
+          {/* Sidebar content here */}
+          {user && !!Object.values(user).length && (
+
+          <div className={`flex justify-between items-center w-full p-4`}>
+            <div className={`leading-4 w-full`}>
+              <h4 className={`font-semibold text-xl`}>{user.username}</h4>
+              <span className="text-gray-600">{user.email}</span>
+            </div>
+
+            <IconGear />
+          </div>
+          )}
+        </div>
       </div>
     </div>
   );

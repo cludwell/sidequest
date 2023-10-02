@@ -29,7 +29,7 @@ export default function CreateCharacter() {
   if (!hasLoaded || !characters) return <Loading />;
 
   return (
-    <main className={`flex min-h-screen flex-col items-center p-16`}>
+    <main className={`flex min-h-screen flex-col items-center p-16 `}>
       {/* title */}
       <h1 className="text-3xl federant font-bold">Character Creation Method</h1>
       <h2>Choose how you would like to create your character</h2>
@@ -41,7 +41,7 @@ export default function CreateCharacter() {
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
         {/* removing card from class name allows drawer to behave correctly */}
-        <div className=" card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl">
+        <div className=" card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl  ">
           <figure>
             {characters[6].imgUrl && (
               <Image

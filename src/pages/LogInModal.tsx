@@ -35,7 +35,7 @@ export default function LogInModal() {
     }
   };
 
-  const demoSignIn: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
+  const demoSignIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     await signIn("credentials", {
       email: "jerry@seinmail.com",
@@ -44,7 +44,9 @@ export default function LogInModal() {
     await dispatch(
       logInRequest({ email: "jerry@seinmail.com", password: "password" })
     );
-  };
+    window.my_modal_2.close()
+};
+
 
   useEffect(() => {
     const myModal2 = document.getElementById("my_modal_2");

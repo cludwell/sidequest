@@ -24,6 +24,11 @@
 .modal-box::-webkit-scrollbar-track {
   margin: 1rem;
 }
+/* .lg\:drawer-open > .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
+  transform: translateX(0%);
+  position: relative;
+  z-index: 50;
+} */
 
 :root {
   --foreground-rgb: 0, 0, 0;

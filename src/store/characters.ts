@@ -3,7 +3,7 @@ import { HYDRATE } from "next-redux-wrapper";
 import { AppState } from ".";
 import { HydrateAction } from "../../lib/hydrateAction";
 import { CharactersState } from "../../lib/charactersState";
-
+import { stat } from "fs";
 
 type CharactersSliceState = {
   userCharacters: CharactersState | null;
@@ -25,6 +25,25 @@ export const userCharactersRequest = createAsyncThunk(
   `characters/userCharacters`,
   async (userId: number) => {
     const res = await fetch(`/api/characters/${userId}`);
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    }
+  }
+);
+
+export const newCharacterRequest = createAsyncThunk(
+  "characters/new",
+  async ({ charData }) => {
+    const res = await fetch("/api/characters/new", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        charData,
+      }),
+    });
     if (res.ok) {
       const data = await res.json();
       return data;
@@ -64,6 +83,15 @@ export const charactersSlice = createSlice({
     builder.addCase(userCharactersRequest.rejected, (state) => {
       state.userCharacters = null;
     });
+    builder.addCase(newCharacterRequest.fulfilled, (state, action) => {
+      state.userCharacters = {
+        ...state.userCharacters,
+        [action.payload.id]: action.payload,
+      };
+    });
+    builder.addCase(newCharacterRequest.rejected, (state) => {
+      state.userCharacters = {...state.userCharacters}
+    })
   },
 });
 

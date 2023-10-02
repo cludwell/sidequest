@@ -51,7 +51,7 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
   ];
 
   return (
-    <div className="flex flex-col max-w-screen-xl w-full">
+    <div className="flex flex-col max-w-screen-xl w-full ">
       <h1 className="text-4xl almendra mb-8 text-center">Races</h1>
 
       <ModalAarakocra race={race} setRace={setRace} />

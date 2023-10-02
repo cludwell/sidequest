@@ -3,8 +3,8 @@ const prisma = new PrismaClient();
 import NextAuth, { Account } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { hashPassword, verifyPassword } from "../../../../lib/auth";
-import { redirect } from "next/dist/server/api-utils";
-import Email from "next-auth/providers/email";
+import { CustomSession } from "../../../../lib/customUser";
+
 
 export default NextAuth({
   session: {
@@ -27,8 +27,10 @@ export default NextAuth({
           throw new Error("Invalid Credentials");
         const user = await prisma.users.findUnique({
           where: { email: credentials.email },
+
         });
         if (!user) throw new Error("No user found!");
+        console.log('USER', user)
         const isValid = await verifyPassword(
           credentials.password,
           user.hashedPassword
@@ -38,59 +40,24 @@ export default NextAuth({
         return user;
       },
     }),
-
-    // CredentialsProvider({
-    //   name: "Signup",
-    //   credentials: {
-    //     email: { label: "Email", type: "text" },
-    //     password: { label: "Password", type: "password" },
-    //     username: { label: "Username", type: "text" },
-    //     profilePic: { label: "ProfilePic", type: "text" },
-    //   },
-    //   authorize: async (credentials, req): Promise<any> => {
-    //     if (
-    //       !credentials ||
-    //       !credentials.email ||
-    //       !credentials.email.includes("@") ||
-    //       !credentials.password ||
-    //       credentials.password.trim().length < 6
-    //     ) {
-    //       throw new Error("Invalid data");
-    //     }
-
-    //     const existingEmail = await prisma.users.findUnique({
-    //       where: { email: credentials.email },
-    //     });
-    //     const existingUsername = await prisma.users.findUnique({
-    //       where: { username: credentials.username },
-    //     });
-
-    //     if (existingEmail) throw new Error("User with email already exists.");
-    //     if (existingUsername)
-    //       throw new Error("User with username already exists.");
-    //     const hashedPassword: string = await hashPassword(credentials.password);
-    //     const createUser = await prisma.users.create({
-    //       data: {
-    //         username: credentials.username,
-    //         hashedPassword: hashedPassword,
-    //         email: credentials.email,
-    //         profilePic: credentials.profilePic,
-    //       },
-    //     });
-    //     return createUser
-    //   },
-    // }),
-
-    // Add other providers (e.g., Google, GitHub) as needed
-    // Providers.Google({
-    //   clientId: process.env.GOOGLE_CLIENT_ID,
-    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    // }),
    ],
-  callbacks: {
+   callbacks: {
     jwt: async ({ token, user }) => {
-      return Promise.resolve(token);
+      if (user) {
+        token.id = user.id;
+        token.picture = user.profilePic;
+        token.username = user.username;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      if (session && session.user) {
+        // session.user.id = token.id;
+        session.user.image = token.picture;
+      }
+      return session;
     },
   },
+
   // Add other configurations as needed
 });

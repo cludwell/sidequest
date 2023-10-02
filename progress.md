@@ -5,6 +5,14 @@
 -each part of form directs to next and previous
 -confirming equipment redirects to submit button
 -made sure character object has all required keys
+9/30
+-wrote backend route for create char
+-made dummy char data to test
+-have not tested backend route
+
+10/2
+-am able to add a user card to the drawer now
+-experimented with drawer work around, could not find one
 
 TO DO
 
