@@ -10,9 +10,13 @@ import { Race } from "../../../lib/Race";
 import {Equipment} from '../../../lib/Equipment'
 import { useSelector } from "react-redux";
 import { userProfile } from "@/store/session";
+import { newCharacterRequest } from "@/store/characters";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/store";
 
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
+  const dispatch = useDispatch<AppDispatch>();
   const user = useSelector(userProfile)
   console.log('user', user)
   const [race, setRace] = useState<Race>({
@@ -39,7 +43,7 @@ export default function NewCharacter() {
   });
 
   const testChar = {
-    userId: user.id,
+    userId: user?.id,
     "level": 9,
     "name": "Brom Ironfist",
     "role": "Barbarian",
@@ -100,18 +104,20 @@ export default function NewCharacter() {
       tools: [...(race?.tools || [])],
       userId: user.id
     };
-    console.log("CHARACTER", session);
+    dispatch(newCharacterRequest(testChar))
+    console.log("CHARACTER", user.id);
     return character;
   };
   console.log("SESSION", session);
   return (
     <main className="flex min-h-screen flex-col items-center  px-4 md:px-16 ">
-      {race.race &&
-        !!Object.values(description).length &&
-        !!Object.values(abilities).length &&
-        !!equipment.inventory.length &&
-        dndClass.role &&
-        user.id ? (
+      {
+      // race.race &&
+      //   !!Object.values(description).length &&
+      //   !!Object.values(abilities).length &&
+      //   !!equipment.inventory.length &&
+      //   dndClass.role &&
+        user && user.id ? (
           <div className="flex flex-row max-w-screen-xl w-full justify-center" id="submit">
             <button
               className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"

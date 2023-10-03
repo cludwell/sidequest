@@ -13,8 +13,18 @@
 10/2
 -am able to add a user card to the drawer now
 -experimented with drawer work around, could not find one
+-backend create character route is working
+-created page to display the user's characters and added link to drawer
+-delete char thunk
+-working on delete char backend route
+
+10/3
+-delete works and dynamically removes deleted character from display after button is pressed
 
 TO DO
+-clean up form
+-test that user input data works in addition to dummy data
+-look up how to connect Chatgpt api
 
 -CRUD for created characters
 -hopefully set up AWS for uploading CHARACTER images at a future date

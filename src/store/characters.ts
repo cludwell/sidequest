@@ -4,6 +4,8 @@ import { AppState } from ".";
 import { HydrateAction } from "../../lib/hydrateAction";
 import { CharactersState } from "../../lib/charactersState";
 import { stat } from "fs";
+import { CharacterData } from "../../lib/characterData";
+import { Characters } from "@prisma/client";
 
 type CharactersSliceState = {
   userCharacters: CharactersState | null;
@@ -24,7 +26,7 @@ export const allCharactersRequest = createAsyncThunk(
 export const userCharactersRequest = createAsyncThunk(
   `characters/userCharacters`,
   async (userId: number) => {
-    const res = await fetch(`/api/characters/${userId}`);
+    const res = await fetch(`/api/user/${userId}`);
     if (res.ok) {
       const data = await res.json();
       return data;
@@ -34,15 +36,13 @@ export const userCharactersRequest = createAsyncThunk(
 
 export const newCharacterRequest = createAsyncThunk(
   "characters/new",
-  async ({ charData }) => {
+  async (charData) => {
     const res = await fetch("/api/characters/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        charData,
-      }),
+      body: JSON.stringify(charData),
     });
     if (res.ok) {
       const data = await res.json();
@@ -51,6 +51,27 @@ export const newCharacterRequest = createAsyncThunk(
   }
 );
 
+export const deleteCharacterRequest = createAsyncThunk(
+  "characters/delete",
+  async (charId: number) => {
+    const res = await fetch(`/api/characters/${charId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    } else {
+      const errorData = await res.json();
+      throw new Error(
+        errorData.error ||
+          "ERROR: Something happened while trying to delete this character."
+      );
+    }
+  }
+);
 const initialState: CharactersSliceState = {
   userCharacters: null,
   allCharacters: null,
@@ -86,12 +107,12 @@ export const charactersSlice = createSlice({
     builder.addCase(newCharacterRequest.fulfilled, (state, action) => {
       state.userCharacters = {
         ...state.userCharacters,
-        [action.payload.id]: action.payload,
+        // [action.payload.id]: action.payload,
       };
     });
     builder.addCase(newCharacterRequest.rejected, (state) => {
-      state.userCharacters = {...state.userCharacters}
-    })
+      state.userCharacters = { ...state.userCharacters };
+    });
   },
 });
 

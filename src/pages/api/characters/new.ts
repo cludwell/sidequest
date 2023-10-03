@@ -9,7 +9,7 @@ export default async function handler(
   if (req.method === "POST") {
     try {
       const charData = req.body;
-      const userId = charData.userId;
+      const {userId} = charData;
 
       if (!userId) {
         return res.status(400).json({ error: "User is not authenticated" });
@@ -17,7 +17,11 @@ export default async function handler(
       const character = await prisma.characters.create({
         data: { ...charData },
       });
-      if (character) return res.status(200).json(character);
+      // console.log('WE ARE ENTERING THE ROUTE', character)
+      if (character) {
+        console.log("CHARACTER BACKEND", character);
+        return res.status(200).json(character);
+      }
     } catch (error) {
       console.error("Error adding character to database: ", error);
       return res.status(500).json({

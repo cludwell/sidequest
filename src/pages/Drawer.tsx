@@ -7,6 +7,7 @@ import IconCharacters from "./IconCharacters";
 import IconMap from "./IconMap";
 import IconTrophy from "./IconTrophy";
 import IconGear from "./IconGear";
+import IconID from "./IconID";
 
 export default function Drawer() {
   const user = useSelector<User | null>(userProfile);
@@ -50,7 +51,12 @@ export default function Drawer() {
             <ul>
               <li>
                 <Link href={`/characters`} className="text-xl">
-                  <IconCharacters /> Create Character
+                  <IconCharacters /> Choose Character
+                </Link>
+              </li>
+              <li>
+                <Link href={`/characters/usercharacters`} className="text-xl">
+                  <IconID /> Your Characters
                 </Link>
               </li>
               <li>

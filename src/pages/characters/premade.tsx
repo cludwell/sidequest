@@ -1,7 +1,5 @@
 import { AppDispatch } from "@/store";
 import {
-  allCharactersRequest,
-  allCharactersState,
   userCharactersRequest,
   userCharactersState,
 } from "@/store/characters";
