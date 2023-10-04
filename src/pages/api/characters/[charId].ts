@@ -6,14 +6,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log('WE ARE IN THE ROUTE')
+  console.log("WE ARE IN THE ROUTE");
   if (req.method === "DELETE") {
     try {
       const charId = parseInt(req.query.charId as string, 10);
-      console.log("WE ARE ENTERING THE DELETE ROUTE", charId);
+      // console.log("WE ARE ENTERING THE DELETE ROUTE", charId);
 
       if (!charId || typeof charId !== "number") {
         return res.status(400).json({ error: "Invalid character ID" });
+      } else if (charId <= 8) {
+        return res
+          .status(403)
+          .json({ error: "Deleting this resource is not allowed" });
       }
 
       const character = await prisma.characters.delete({

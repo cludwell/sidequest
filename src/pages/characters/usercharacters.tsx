@@ -14,7 +14,7 @@ export default function UserCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
 
-  const user: User | null = useSelector(userProfile);
+  const user: any = useSelector(userProfile);
   useEffect(() => {
     const loadCharacters = async () => {
       if (user && user.id) {
@@ -27,7 +27,7 @@ export default function UserCharacters() {
   }, [dispatch, user]);
 
   const usercharacters = useSelector(userCharactersState);
-  const deleteButton = async (charId) => {
+  const deleteButton = async (charId: number) => {
     await dispatch(deleteCharacterRequest(charId))
     await dispatch(userCharactersRequest(user.id))
   }
@@ -57,7 +57,7 @@ export default function UserCharacters() {
       <div className="divider" />
       <div className="flex flex-wrap justify-center">
         {Object.values(usercharacters).map((char, i) => (
-          <div className="card bg-base-100 shadow-xl w-96 m-4" key={`char${i}`}>
+          <div className=" bg-base-100 shadow-xl w-96 m-4 rounded-2xl flex flex-col" key={`char${i}`}>
             {char.imgUrl && (
               <figure>
                 <Image
@@ -65,7 +65,7 @@ export default function UserCharacters() {
                   alt="portrait"
                   height={400}
                   width={400}
-                  className="object-cover max-h-fit aspect-square"
+                  className="object-cover max-h-fit aspect-square rounded-t-2xl"
                 />
               </figure>
             )}
@@ -75,6 +75,7 @@ export default function UserCharacters() {
             </div>
             <div className="flex flex-row">
               <button className="btn btn-error rounded-bl-2xl rounded-br-none rounded-t-none "
+              disabled={char.id <= 8 }
               onClick={() => deleteButton(char.id)}>
                 <IconTrash />
                 Delete Character

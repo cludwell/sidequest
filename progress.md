@@ -20,11 +20,23 @@
 
 10/3
 -delete works and dynamically removes deleted character from display after button is pressed
+-began researching how to hook chatgpt up to my app
+-got key and env variables for chatgpt
+
+10/4
+-users are prevented from deleting seeded chars in frontend and backend
+-solved card/drawer problem on user char page
+-
+
 
 TO DO
 -clean up form
--test that user input data works in addition to dummy data
--look up how to connect Chatgpt api
+-pass character object to dungeonmaster page
+-create dice buttons
+-hook up chatgpt to app
+
+-Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
+
 
 -CRUD for created characters
 -hopefully set up AWS for uploading CHARACTER images at a future date

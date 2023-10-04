@@ -17,7 +17,7 @@ import { AppDispatch } from "@/store";
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const dispatch = useDispatch<AppDispatch>();
-  const user = useSelector(userProfile)
+  const user: any = useSelector(userProfile)
   console.log('user', user)
   const [race, setRace] = useState<Race>({
     languages: [],
@@ -91,7 +91,7 @@ export default function NewCharacter() {
     "faith": "Moradin"
   }
   const submitCharacter = () => {
-    const character = {
+    const character: any = {
       ...race,
       ...dndClass,
       ...abilities,
@@ -104,19 +104,18 @@ export default function NewCharacter() {
       tools: [...(race?.tools || [])],
       userId: user.id
     };
-    dispatch(newCharacterRequest(testChar))
+    dispatch(newCharacterRequest(character))
     console.log("CHARACTER", user.id);
     return character;
   };
   console.log("SESSION", session);
   return (
     <main className="flex min-h-screen flex-col items-center  px-4 md:px-16 ">
-      {
-      // race.race &&
-      //   !!Object.values(description).length &&
-      //   !!Object.values(abilities).length &&
-      //   !!equipment.inventory.length &&
-      //   dndClass.role &&
+      {race.race &&
+        !!Object.values(description).length &&
+        !!Object.values(abilities).length &&
+        !!equipment.inventory.length &&
+        dndClass.role &&
         user && user.id ? (
           <div className="flex flex-row max-w-screen-xl w-full justify-center" id="submit">
             <button
@@ -210,15 +209,16 @@ export default function NewCharacter() {
           />{" "}
         </div>
       </div>
-      {race &&
+      {race.race &&
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
-        !!Object.values(equipment).length &&
-        dndClass.role && (
+        !!equipment.inventory.length &&
+        dndClass.role &&
+        user && user.id && (
           <div className="flex flex-row max-w-screen-xl w-full justify-center">
             <button
               className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
-              //  onClick={equip}
+               onClick={submitCharacter}
             >
               Submit Character
             </button>

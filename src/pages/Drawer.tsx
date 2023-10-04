@@ -1,8 +1,6 @@
 import { userProfile } from "@/store/session";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import Image from "next/image";
-import { User } from "../../lib/user";
 import IconCharacters from "./IconCharacters";
 import IconMap from "./IconMap";
 import IconTrophy from "./IconTrophy";
@@ -10,7 +8,7 @@ import IconGear from "./IconGear";
 import IconID from "./IconID";
 
 export default function Drawer() {
-  const user = useSelector<User | null>(userProfile);
+  const user: any = useSelector(userProfile);
   return (
     <div className="drawer m-2">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -72,8 +70,7 @@ export default function Drawer() {
               </li>
             </ul>
           </div>
-          {/* Sidebar content here */}
-          {user && !!Object.values(user).length && (
+          {user && user.id && (
 
           <div className={`flex justify-between items-center w-full p-4`}>
             <div className={`leading-4 w-full`}>
