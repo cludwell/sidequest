@@ -26,14 +26,16 @@
 10/4
 -users are prevented from deleting seeded chars in frontend and backend
 -solved card/drawer problem on user char page
--
+-fetch to chatGPT is at least getting an error
+-state for conversations is set up
+-iterating through chat history and displaying chat bubbles
+-create character page cleaned up from testing and debugging
 
 
 TO DO
--clean up form
 -pass character object to dungeonmaster page
 -create dice buttons
--hook up chatgpt to app
+-manage subscription so that chatGPT sends useful response
 
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
 
