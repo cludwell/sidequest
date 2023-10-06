@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import IconCharacters from "./IconCharacters";
 import IconMap from "./IconMap";
 import IconSend from "./IconSend";
-import { ChatObject } from "../../lib/chatObject";
-import { ChatError } from "../../lib/chatError";
 import d20 from "../../public/images/d20.png";
 import Image from "next/image";
+import Loading from "./Loading";
 export default function DungeonMaster() {
   const [chatHistory, setChatHistory] = useState([
     {
@@ -16,13 +15,21 @@ export default function DungeonMaster() {
     },
   ]);
   const [userText, setUserText] = useState("");
-  
+  const [loading, setLoading] = useState<Boolean>(false);
   const [rolls, setRolls] = useState<number[]>([]);
   const [error, setError] = useState("");
+  const chatContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      const element = chatContainerRef.current;
+      element.scrollTop = element.scrollHeight;
+    }
+  }, [chatHistory]);
 
   const chatRequest = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setLoading(true);
     const newChatEntry = {
       role: "user",
       content: userText,
@@ -75,48 +82,65 @@ export default function DungeonMaster() {
       const errorData = await response.json();
       setError(errorData.message || "An error occurred");
     }
+    setLoading(false);
   };
 
   const resetDice = () => setRolls([]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16   self-center">
-      {chatHistory.map((chat, index) =>
-        chat.role === "assistant" ? (
-          <div className="chat chat-start w-full" key={`chat${chat.timestamp}`}>
-            <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <Image width={50} height={50} src={d20} alt="logo" />
-                <IconMap />
+    <main className="flex min-h-screen flex-col items-center px-4 md:px-16   self-center slide-in">
+      {chatHistory.length > 1 && (
+        <div className="overflow-y-scroll h-96" ref={chatContainerRef}>
+          {chatHistory.map((chat, index) =>
+            chat.role === "assistant" ? (
+              <div
+                className="chat chat-start w-full slide-in"
+                key={`chat${chat.timestamp}`}
+              >
+                <div className="chat-image avatar">
+                  <div className="w-10 rounded-full">
+                    <Image width={50} height={50} src={d20} alt="logo" />
+                    <IconMap />
+                  </div>
+                </div>
+                <div className="chat-header">
+                  Dungeon Master
+                  <time className="text-xs opacity-50">
+                    {chat.timestamp.slice(0, 21)}
+                  </time>
+                </div>
+                <div className="chat-bubble">{chat.content}</div>
+                <div className="chat-footer opacity-50">Delivered</div>
               </div>
-            </div>
-            <div className="chat-header">
-              Dungeon Master
-              <time className="text-xs opacity-50">
-                {chat.timestamp.slice(0, 21)}
-              </time>
-            </div>
-            <div className="chat-bubble">{chat.content}</div>
-            <div className="chat-footer opacity-50">Delivered</div>
-          </div>
-        ) : chat.role === "user" ? (
-          <div className="chat chat-end w-full" key={`user${chat.timestamp}`}>
-            <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <IconCharacters />
+            ) : chat.role === "user" ? (
+              <div
+                className="chat chat-end w-full slide-in"
+                key={`user${chat.timestamp}`}
+              >
+                <div className="chat-image avatar">
+                  <div className="w-10 rounded-full ">
+                    <IconCharacters />
+                  </div>
+                </div>
+                <div className="chat-header">
+                  Player
+                  <time className="text-xs opacity-50">
+                    {chat.timestamp.slice(0, 21)}
+                  </time>
+                </div>
+                <div className="chat-bubble chat-bubble-primary">
+                  {chat.content}
+                </div>
               </div>
-            </div>
-            <div className="chat-header">
-              Player
-              <time className="text-xs opacity-50">
-                {chat.timestamp.slice(0, 21)}
-              </time>
-            </div>
-            <div className="chat-bubble">{chat.content}</div>
-          </div>
-        ) : null
+            ) : null
+          )}
+        </div>
       )}
-
+      {loading && (
+        <div className="flex flex-col items-center w-full">
+          <span className="loading loading-spinner loading-lg text-primary" />
+        </div>
+      )}
       <form
         className="w-full my-8 max-w-screen-xl flex flex-col"
         onSubmit={chatRequest}

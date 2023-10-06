@@ -29,7 +29,7 @@ export default function CreateCharacter() {
   if (!hasLoaded || !characters) return <Loading />;
 
   return (
-    <main className={`flex min-h-screen flex-col items-center p-16 `}>
+    <main className={`flex min-h-screen flex-col items-center px-16 `}>
       {/* title */}
       <h1 className="text-3xl federant font-bold">Character Creation Method</h1>
       <h2>Choose how you would like to create your character</h2>
@@ -78,7 +78,7 @@ export default function CreateCharacter() {
             </svg>
           </button>
         </div>
-        <div className="divider divider-horizontal md:invisible md:absolute">OR</div>
+        {/* <div className="divider divider-horizontal md:invisible md:absolute">OR</div> */}
         <div className="flex flex-col card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl ">
           <figure>
             {characters[7].imgUrl && (

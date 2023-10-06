@@ -64,7 +64,7 @@ export default function Home() {
   console.log(scenarios);
   return (
     <main
-      className={`flex min-h-screen flex-col items-center px-4 md:px-16   self-center ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center px-4 md:px-16 self-center ${inter.className}`}
     >
       <Head>
         <title>Side🎲Quest</title>
@@ -85,22 +85,6 @@ export default function Home() {
             </div>
           ))}
       </div>
-      {/* <div className="carousel carousel-center rounded-box">
-        {scenarios.allScenarios &&
-          Object.values(scenarios.allScenarios).map((scen, i) => (
-            <div className="carousel-item" key={`scenario${i}`}>
-              {scen.imgUrl && (
-                <Image
-                  src={scen.imgUrl}
-                  alt="campaign scene"
-                  width={500}
-                  height={750}
-                  className="object-cover"
-                />
-              )}
-            </div>
-          ))}
-      </div> */}
       <h1 className="almendra text-4xl my-4">Adventure awaits...</h1>
       <DungeonDoor />
     </main>

@@ -42,54 +42,6 @@ export default function NewCharacter() {
     weapons: [],
   });
 
-  const testChar = {
-    userId: user?.id,
-    "level": 9,
-    "name": "Brom Ironfist",
-    "role": "Barbarian",
-    "race": "Dwarf",
-    "maxHp": 78,
-    "currentHp": 65,
-    "strength": 18,
-    "dexterity": 12,
-    "constitution": 16,
-    "intelligence": 8,
-    "wisdom": 10,
-    "charisma": 10,
-    "armor": ["Chain Mail"],
-    "equipped": ["GreatAxe"],
-    "inventory": ["Javelin", "Handaxe", "Explorer's Pack", "Potion of Healing"],
-    "languages": ["Common", "Dwarvish"],
-    "spells": [],
-    "tools": ["Smith's tools"],
-    "weapons": ["GreatAxe", "Javelin", "Handaxe"],
-    "initiative": 1,
-    "armorClass": 16,
-    "vision": "Darkvision",
-    "acrobatics": 1,
-    "animalHandling": 0,
-    "arcana": -1,
-    "athletics": 4,
-    "deception": 0,
-    "history": 1,
-    "insight": 0,
-    "intimidation": 4,
-    "investigation": -1,
-    "medicine": 0,
-    "nature": 0,
-    "perception": 0,
-    "performance": 0,
-    "persuasion": 0,
-    "religion": -1,
-    "sleightOfHand": 1,
-    "stealth": 1,
-    "survival": 2,
-    "alignment": "Neutral Good",
-    "appearance": "Sturdy and powerful, with a braided beard and deeply etched face.",
-    "background": "Brom Ironfist is a seasoned warrior, his body is a patchwork of scars from countless battles. He hails from the city of Ironforge, where he honed his skills as a blacksmith. Despite his gruff exterior, Brom has a heart of gold and is fiercely loyal to his companions. His thirst for battle is driven by a sense of duty and the desire to protect those who cannot protect themselves. He seeks to rid the world of the foul creatures that prey on the weak and defenseless, and he values honor and courage above all else.",
-    "imgUrl": "https://i.imgur.com/8OjzFkI.jpg",
-    "faith": "Moradin"
-  }
   const submitCharacter = () => {
     const character: any = {
       ...race,
@@ -108,9 +60,9 @@ export default function NewCharacter() {
     console.log("CHARACTER", user.id);
     return character;
   };
-  console.log("SESSION", session);
+  // console.log("SESSION", session);
   return (
-    <main className="flex min-h-screen flex-col items-center  px-4 md:px-16 ">
+    <main className="flex min-h-screen flex-col items-center  px-4 md:px-16">
       {race.race &&
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
