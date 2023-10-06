@@ -33,13 +33,25 @@
 
 10/5
 -Paid for 10 bucks worth of credit on Chat api
+-got chat up, responses are being fetched from api and rendered
+-chat history is being recorded in state with every submission
+
+10/6
+-when user selects a character it navigates to dungeonmaster and records selected char in state
+-name and charimg are being rendered
 
 TO DO
--pass character object to dungeonmaster page
+-refactor from drawer to header/drop down layout
 -create dice buttons
--manage subscription so that chatGPT sends useful response
-
+-utilize pregenerated scenarios and display associated images?
+-create user sign up feature
+-HUD on dungeonmaster page? Mini char sheet?
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
+-include text prompts that trigger leveling up or conditionally render exit from dungeon master page ---this could mean automating some sort of leveling up functionality
+-perfect prompt to model so that there are some guardrails (example: char should have spells or skills that are erroneously missing from char sheet)
+
+Nit Picks
+-if first user message to language model is short, the chat bubble is centered and not aligned to the right
 
 
 -CRUD for created characters

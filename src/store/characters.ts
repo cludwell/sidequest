@@ -10,6 +10,7 @@ import { Characters } from "@prisma/client";
 type CharactersSliceState = {
   userCharacters: CharactersState | null;
   allCharacters: CharactersState | null;
+  selectedCharacter: CharacterData | null;
 };
 
 export const allCharactersRequest = createAsyncThunk(
@@ -31,6 +32,13 @@ export const userCharactersRequest = createAsyncThunk(
       const data = await res.json();
       return data;
     }
+  }
+);
+
+export const selectCharacterRequest = createAsyncThunk(
+  `characters/selectedCharacter`,
+  async (charData: CharacterData) => {
+    return charData;
   }
 );
 
@@ -75,6 +83,7 @@ export const deleteCharacterRequest = createAsyncThunk(
 const initialState: CharactersSliceState = {
   userCharacters: null,
   allCharacters: null,
+  selectedCharacter: null,
 };
 
 export const charactersSlice = createSlice({
@@ -113,6 +122,12 @@ export const charactersSlice = createSlice({
     builder.addCase(newCharacterRequest.rejected, (state) => {
       state.userCharacters = { ...state.userCharacters };
     });
+    builder.addCase(selectCharacterRequest.fulfilled, (state, action) => {
+      state.selectedCharacter = action.payload;
+    });
+    builder.addCase(selectCharacterRequest.rejected, (state, action) => {
+      state.selectedCharacter = null
+    })
   },
 });
 
@@ -120,3 +135,5 @@ export const allCharactersState = (state: AppState) =>
   state.characters.allCharacters;
 export const userCharactersState = (state: AppState) =>
   state.characters.userCharacters;
+export const selectedCharacterState = (state: AppState) =>
+  state.characters.selectedCharacter;

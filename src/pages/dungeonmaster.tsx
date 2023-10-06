@@ -4,13 +4,18 @@ import IconMap from "./IconMap";
 import IconSend from "./IconSend";
 import d20 from "../../public/images/d20.png";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { selectedCharacterState } from "@/store/characters";
+import { CharacterData } from "../../lib/characterData";
 
-export default function DungeonMaster({char}) {
+export default function DungeonMaster() {
+  const char: CharacterData | null = useSelector(selectedCharacterState);
   const [chatHistory, setChatHistory] = useState([
     {
       role: "system",
-      content:
-        `You are the dungeon master, providing assistance in a Dungeons and Dragons 5e game session. Please generate and guide user through a short adventure. The user's character data looks like: ${JSON.stringify(char)}`,
+      content: `You are the dungeon master, providing assistance in a Dungeons and Dragons 5e game session. Please generate and guide user through a short adventure. Suggest to the user that they roll dice for relevant skill checks if applicable. The user's character data looks like: ${JSON.stringify(
+        char
+      )}`,
       timestamp: new Date().toString(),
     },
   ]);
@@ -20,7 +25,7 @@ export default function DungeonMaster({char}) {
   const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
-
+  console.log("SELECTED CHARACTER", char);
   useEffect(() => {
     if (chatContainerRef.current) {
       const element: any = chatContainerRef.current;
@@ -86,15 +91,23 @@ export default function DungeonMaster({char}) {
     setLoading(false);
   };
 
-
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16   self-center slide-in">
+    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 self-center ">
+      {char && char.imgUrl && (
+        <Image
+          height={50}
+          width={50}
+          className=" hidden"
+          src={char.imgUrl}
+          alt="profile pic"
+        />
+      )}
       {chatHistory.length > 1 && (
         <div className="overflow-y-scroll h-96" ref={chatContainerRef}>
           {chatHistory.map((chat, index) =>
             chat.role === "assistant" ? (
               <div
-                className="chat chat-start w-full slide-in"
+                className="chat chat-start w-full"
                 key={`chat${chat.timestamp}`}
               >
                 <div className="chat-image avatar">
@@ -109,21 +122,31 @@ export default function DungeonMaster({char}) {
                     {chat.timestamp.slice(0, 21)}
                   </time>
                 </div>
-                <div className="chat-bubble">{chat.content}</div>
+                <div className="chat-bubble w-full">{chat.content}</div>
                 <div className="chat-footer opacity-50">Delivered</div>
               </div>
             ) : chat.role === "user" ? (
               <div
-                className="chat chat-end w-full slide-in"
+                className="chat chat-end w-full"
                 key={`user${chat.timestamp}`}
               >
                 <div className="chat-image avatar">
                   <div className="w-10 rounded-full ">
-                    <IconCharacters />
+                    {char && char.imgUrl ? (
+                      <Image
+                        height={50}
+                        width={50}
+                        className=" object-cover"
+                        src={char.imgUrl}
+                        alt="profile pic"
+                      />
+                    ) : (
+                      <IconCharacters />
+                    )}
                   </div>
                 </div>
                 <div className="chat-header">
-                  Player
+                  {char && char.name ? char.name : "Player"}
                   <time className="text-xs opacity-50">
                     {chat.timestamp.slice(0, 21)}
                   </time>

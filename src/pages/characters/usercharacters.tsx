@@ -1,5 +1,10 @@
 import { AppDispatch } from "@/store";
-import { deleteCharacterRequest, userCharactersRequest, userCharactersState } from "@/store/characters";
+import {
+  deleteCharacterRequest,
+  selectCharacterRequest,
+  userCharactersRequest,
+  userCharactersState,
+} from "@/store/characters";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -9,11 +14,12 @@ import { userProfile } from "@/store/session";
 import IconRightArrow from "../IconRightArrow";
 import IconTrash from "../IconTrash";
 import { User } from "../../../lib/user";
+import { useRouter } from "next/router";
 
 export default function UserCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-
+  const router = useRouter();
   const user: any = useSelector(userProfile);
   useEffect(() => {
     const loadCharacters = async () => {
@@ -28,13 +34,18 @@ export default function UserCharacters() {
 
   const usercharacters = useSelector(userCharactersState);
   const deleteButton = async (charId: number) => {
-    await dispatch(deleteCharacterRequest(charId))
-    await dispatch(userCharactersRequest(user.id))
-  }
-  console.log("USER CHARACTERS", usercharacters);
+    await dispatch(deleteCharacterRequest(charId));
+    await dispatch(userCharactersRequest(user.id));
+  };
+
+  const onClickSelect = async (charData: any) => {
+    await dispatch(selectCharacterRequest(charData));
+    router.push('/dungeonmaster')
+  };
+  // console.log("USER CHARACTERS", usercharacters);
   if (!hasLoaded || !usercharacters) return <Loading />;
 
-  console.log("USER CHARACTERS", usercharacters);
+  // console.log("USER CHARACTERS", usercharacters);
   if (!user.id)
     return (
       <main className="flex min-h-screen flex-col items-center px-16 ">
@@ -51,13 +62,17 @@ export default function UserCharacters() {
   //         </h1>
   //       </main>
   //     );
+
   return (
     <main className="flex min-h-screen flex-col items-center px-16 ">
       <h1 className="text-3xl federant font-bold">Your Characters</h1>
       <div className="divider" />
       <div className="flex flex-wrap justify-center">
         {Object.values(usercharacters).map((char, i) => (
-          <div className=" bg-base-100 shadow-xl w-96 m-4 rounded-2xl flex flex-col" key={`char${i}`}>
+          <div
+            className=" bg-base-100 shadow-xl w-96 m-4 rounded-2xl flex flex-col"
+            key={`char${i}`}
+          >
             {char.imgUrl && (
               <figure>
                 <Image
@@ -74,13 +89,16 @@ export default function UserCharacters() {
               <p className="text-ellipsis text-xs">{char.background}</p>
             </div>
             <div className="flex flex-row">
-              <button className="btn btn-error rounded-bl-2xl rounded-br-none rounded-t-none "
-              disabled={char.id <= 8 }
-              onClick={() => deleteButton(char.id)}>
+              <button
+                className="btn btn-error rounded-bl-2xl rounded-br-none rounded-t-none "
+                disabled={char.id <= 8}
+                onClick={() => deleteButton(char.id)}
+              >
                 <IconTrash />
                 Delete Character
               </button>
-              <button className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none">
+              <button className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none"
+              onClick={() => onClickSelect(char)}>
                 START ADVENTURE
                 <IconRightArrow />
               </button>

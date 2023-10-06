@@ -1,5 +1,6 @@
 import { AppDispatch } from "@/store";
 import {
+  selectCharacterRequest,
   userCharactersRequest,
   userCharactersState,
 } from "@/store/characters";
@@ -8,11 +9,12 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import Loading from "../Loading";
+import { useRouter } from "next/router";
 
 export default function PremadeCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-
+  const router = useRouter();
   useEffect(() => {
     const loadCharacters = async () => {
       dispatch(userCharactersRequest(1));
@@ -23,10 +25,14 @@ export default function PremadeCharacters() {
 
   const usercharacters = useSelector(userCharactersState);
 
-  console.log("USER CHARACTERS", usercharacters);
+  // console.log("USER CHARACTERS", usercharacters);
   if (!hasLoaded || !usercharacters) return <Loading />;
 
-  console.log("USER CHARACTERS", usercharacters);
+  // console.log("USER CHARACTERS", usercharacters);
+  const onClickSelect = async (charData: any) => {
+    await dispatch(selectCharacterRequest(charData));
+    router.push("/dungeonmaster");
+  };
   return (
     <main className="flex min-h-screen flex-col items-center px-16 ">
       <h1 className="text-3xl federant font-bold">Pre-made Characters</h1>
@@ -49,7 +55,10 @@ export default function PremadeCharacters() {
               <h2 className="card-title">{char.name}</h2>
               <p className="text-ellipsis text-xs">{char.background}</p>
             </div>
-            <button className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end">
+            <button
+              className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end"
+              onClick={() => onClickSelect(char)}
+            >
               START ADVENTURE
               <svg
                 xmlns="http://www.w3.org/2000/svg"
