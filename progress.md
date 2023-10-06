@@ -31,6 +31,8 @@
 -iterating through chat history and displaying chat bubbles
 -create character page cleaned up from testing and debugging
 
+10/5
+-Paid for 10 bucks worth of credit on Chat api 
 
 TO DO
 -pass character object to dungeonmaster page
