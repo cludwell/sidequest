@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
-
 import EquipBarbarian from "./EquipBarbarian";
 import EquipBard from "./EquipBard";
 import EquipCleric from "./EquipCleric";
 import EquipDruid from "./EquipDruid";
 import EquipFighter from "./EquipFighter";
-import { martialMeleeWeapons } from "./_weaponsMartial";
 import EquipMonk from "./EquipMonk";
 import EquipPaladin from "./EquipPaladin";
 import EquipRanger from "./EquipRanger";
@@ -23,7 +20,9 @@ export default function NewCharEquipment({
 
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-8 text-center">{dndClass.role} Equipment</h1>
+      <h1 className="text-4xl almendra mb-8 text-center">
+        {dndClass.role} Equipment
+      </h1>
       <div>
         {dndClass.role === "Barbarian" ? (
           <EquipBarbarian

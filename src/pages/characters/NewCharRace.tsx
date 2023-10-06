@@ -162,8 +162,11 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
       <ModalHuman race={race} setRace={setRace} />
       <ModalTiefling race={race} setRace={setRace} />
       <div className="flex flex-row max-w-screen-xl w-full justify-center">
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          <a href="#item2">Next Step</a>
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8"
+          onClick={() => (window.location.hash = "#item2")}
+        >
+          Next Step{" "}
         </button>
       </div>
     </div>

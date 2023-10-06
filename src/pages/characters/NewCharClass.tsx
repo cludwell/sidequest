@@ -65,8 +65,11 @@ export default function NewCharacterClass({
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8">
           <a href="#item1">Previous Step</a>
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          <a href="#item3">Next Step</a>
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8"
+          onClick={() => (window.location.hash = "#item3")}
+        >
+          Next Step
         </button>
       </div>
     </div>

@@ -166,7 +166,7 @@ export default function NewCharAbilities({
         : null,
       initiative: modifiers[dex],
     });
-    window.location.href = "#item4"
+    window.location.href = "#item4";
     // console.log("custom assigned", customArray);
   };
   return (
@@ -1250,8 +1250,11 @@ export default function NewCharAbilities({
         >
           Confirm
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-          <a href="#item4">Next Step</a>
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8"
+          onClick={() => (window.location.hash = "#item4")}
+        >
+          Next Step
         </button>
       </div>
       <div className="toast toast-end">

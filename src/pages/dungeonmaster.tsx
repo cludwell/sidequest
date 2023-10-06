@@ -4,25 +4,26 @@ import IconMap from "./IconMap";
 import IconSend from "./IconSend";
 import d20 from "../../public/images/d20.png";
 import Image from "next/image";
-import Loading from "./Loading";
-export default function DungeonMaster() {
+
+export default function DungeonMaster({char}) {
   const [chatHistory, setChatHistory] = useState([
     {
       role: "system",
       content:
-        "You are the dungeon master, providing assistance in a tabletop role-playing game scenario. Please generate a short adventure for the player's character.",
+        `You are the dungeon master, providing assistance in a Dungeons and Dragons 5e game session. Please generate and guide user through a short adventure. The user's character data looks like: ${JSON.stringify(char)}`,
       timestamp: new Date().toString(),
     },
   ]);
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
   const [rolls, setRolls] = useState<number[]>([]);
+  const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
 
   useEffect(() => {
     if (chatContainerRef.current) {
-      const element = chatContainerRef.current;
+      const element: any = chatContainerRef.current;
       element.scrollTop = element.scrollHeight;
     }
   }, [chatHistory]);
@@ -85,7 +86,6 @@ export default function DungeonMaster() {
     setLoading(false);
   };
 
-  const resetDice = () => setRolls([]);
 
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16   self-center slide-in">

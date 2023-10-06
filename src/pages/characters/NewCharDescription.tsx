@@ -170,8 +170,11 @@ export default function NewCharDescription({
           >
             Confirm Description
           </button>
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
-            <a href="#item5">Next Step</a>
+          <button
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8"
+            onClick={() => (window.location.hash = "#item5")}
+          >
+            Next Step
           </button>
         </div>
       </form>
