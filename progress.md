@@ -32,7 +32,7 @@
 -create character page cleaned up from testing and debugging
 
 10/5
--Paid for 10 bucks worth of credit on Chat api 
+-Paid for 10 bucks worth of credit on Chat api
 
 TO DO
 -pass character object to dungeonmaster page
@@ -47,5 +47,16 @@ TO DO
 -try to see if you can redirect to next portion of character form on selection
 
 
-TO DO TODAY
--send the json to the backend route
+LinkedIn post
+
+Lessons learned
+
+Daisy UI is a great library but some of the components, the Drawer (Sidebar), are incompatible as opacity and z-indices prevent the expected layering behavior. Despite being based on tailwinds, some components lack customizability.
+
+ChatGPT doesnt offer state. A huge drawback to practical uses of an ai API in your app. Imagine an ai customer service rep, having to send all your policies with every request would be expensive. Disappointing as a paid service that this drawback exists.
+
+Redux Toolkit and Next.js
+Getting these technologies to work together was pretty challenging as there isnt much documentation out there about using them together. A lot of trial, error, and luck to happen upon the right resources was required to get these two working together.
+
+TypeScript
+Used it purely to build my skillset and make myself more marketable as a candidate. A good excercise but would not use otherwise. Benefits of horizontal Next.js file structure are mitigated by clutter of files exporting type definitions.

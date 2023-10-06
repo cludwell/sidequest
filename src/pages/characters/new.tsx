@@ -62,7 +62,7 @@ export default function NewCharacter() {
   };
   // console.log("SESSION", session);
   return (
-    <main className="flex min-h-screen flex-col items-center  px-4 md:px-16">
+    <main className="flex min-h-screen flex-col items-center px-4 md:px-16">
       {race.race &&
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
