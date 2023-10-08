@@ -38,14 +38,18 @@
 
 10/6
 -when user selects a character it navigates to dungeonmaster and records selected char in state
--name and charimg are being rendered
+-name and charImg are being rendered
+-refactor from drawer to header/drop down layout
+-custom box shadowing on header
+-have a d20 with spinning animation
+
+10/7
 
 TO DO
--refactor from drawer to header/drop down layout
--create dice buttons
+-create dice buttons, useState, and send to chat
 -utilize pregenerated scenarios and display associated images?
 -create user sign up feature
--HUD on dungeonmaster page? Mini char sheet?
+-mini char sheet modal
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
 -include text prompts that trigger leveling up or conditionally render exit from dungeon master page ---this could mean automating some sort of leveling up functionality
 -perfect prompt to model so that there are some guardrails (example: char should have spells or skills that are erroneously missing from char sheet)

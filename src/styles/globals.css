@@ -21,20 +21,18 @@
   font-family: "Astloch", cursive;
 }
 
-.modal-box::-webkit-scrollbar-track {
-  margin: 1rem;
+.modal-box {
+  scrollbar-gutter: stable;
 }
-/* .lg\:drawer-open > .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
-  transform: translateX(0%);
-  position: relative;
-  z-index: 50;
-} */
+
+
+/* onload/render animations */
 @keyframes slideIn {
   from {
-      transform: translateY(100%);
+    transform: translateY(100%);
   }
   to {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -43,18 +41,48 @@
 }
 @keyframes fadeInSlideIn {
   from {
-      opacity: 0;
-      transform: translateY(100%);
+    opacity: 0;
+    transform: translateY(100%);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .fade-in-slide-in {
   animation: fadeInSlideIn 0.5s forwards;
 }
+
+.header-background {
+  border-radius: 19px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 13px 13px 12px #aaaaaa, -13px -13px 12px #ffffff;
+}
+
+
+/* dice animation on dungeon master page */
+
+#diceResult {
+  font-size: 30px;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.rollAnimation {
+  animation: roll 1s;
+}
+
+@keyframes roll {
+  0% { transform: rotate(0deg); }
+  /* 25% { transform: rotate(90deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(270deg); } */
+  100% { transform: rotate(360deg); }
+}
+
+/* tailwind css setupt */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

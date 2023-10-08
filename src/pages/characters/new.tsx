@@ -62,7 +62,7 @@ export default function NewCharacter() {
   };
   // console.log("SESSION", session);
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16">
+    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
       {race.race &&
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
@@ -85,7 +85,7 @@ export default function NewCharacter() {
         user.id ? (
           <h1 className="text-2xl almendra" id='submit'>Must be signed in to submit character</h1>
         ) : null}
-      <ul className="steps steps-vertical lg:steps-horizontal mb-4 lg:h-fit self-end md:self-center">
+      <ul className="steps steps-vertical md:steps-horizontal mb-4 lg:h-fit ">
         <li
           className={
             race.race ? "step step-primary" : "step"

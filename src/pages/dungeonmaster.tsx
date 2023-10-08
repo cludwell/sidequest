@@ -7,6 +7,9 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectedCharacterState } from "@/store/characters";
 import { CharacterData } from "../../lib/characterData";
+import d20green from "../../public/images/d20green.png";
+import d20pastel from "../../public/images/d20pastel.png";
+import ModalCharacterSheet from "./ModalCharacterSheet";
 
 export default function DungeonMaster() {
   const char: CharacterData | null = useSelector(selectedCharacterState);
@@ -22,6 +25,7 @@ export default function DungeonMaster() {
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
   const [rolls, setRolls] = useState<number[]>([]);
+  const [rolling, setRolling] = useState<Boolean>(false);
   const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
@@ -63,7 +67,7 @@ export default function DungeonMaster() {
     });
     if (response.ok) {
       const responseData = await response.json();
-      console.log("RESPONSE DATA", responseData);
+      // console.log("RESPONSE DATA", responseData);
 
       let message = "Unknown error";
       if (responseData.error) {
@@ -91,8 +95,26 @@ export default function DungeonMaster() {
     setLoading(false);
   };
 
+  const onClickRoll = () => {
+    setRolling(true);
+    const diceResult: any = document.getElementById("diceResult");
+    const randomNumber = Math.floor(Math.random() * 20) + 1;
+
+    // Apply animation
+    diceResult.textContent = "...";
+    diceResult.style.opacity = 1;
+    // diceResult.classList.add("rollAnimation");
+
+    // After the animation, display the result
+    setTimeout(() => {
+      diceResult.textContent = randomNumber;
+      // diceResult.classList.remove("rollAnimation");
+      setRolling(false);
+    }, 1000); // The timeout should match the animation duration in CSS.
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 self-center ">
+    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 self-center fade-in-slide-in">
       {char && char.imgUrl && (
         <Image
           height={50}
@@ -174,9 +196,27 @@ export default function DungeonMaster() {
           value={userText}
           onChange={(e) => setUserText(e.target.value)}
         ></textarea>
-        <button className="btn btn-accent my-4 w-fit ml-auto" type="submit">
+        <div className="flex flex-row justify-end">
+          {char && <ModalCharacterSheet character={char}/>}
+        <button className="btn btn-accent my-4 w-fit" type="submit">
           <IconSend />
         </button>
+        </div>
+
+        <div className="relative cursor-pointer flex" onClick={onClickRoll}>
+          <h3
+            id="diceResult"
+            className="absolute font-2xl federant top-6 left-[65px] font-bold z-10 "
+          >20</h3>
+          <Image
+            height={150}
+            width={150}
+            className={`${rolling ? "rollAnimation" : ""}`}
+            alt="die"
+            src={d20pastel}
+          />
+        </div>
+
       </form>
     </main>
   );

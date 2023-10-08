@@ -37,7 +37,6 @@ export default function Header() {
 
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
-    // Use 'redirect: false' to prevent automatic redirection
     router.push("/"); // Manually redirect to the home page
   };
 
@@ -48,10 +47,10 @@ export default function Header() {
   // console.log("Character Data:", characters);
   return (
     <div
-      className="flex flex-row justify-between drop-shadow-xl"
+      className="flex flex-row justify-between "
       id="header-container"
     >
-      <div className="navbar bg-base-100 m-4 rounded-2xl">
+      <div className="navbar bg-base-100 m-4 rounded-2xl header-background">
         <div className="flex-1">
           <div className="flex flex-row justify-center items-center">
             <Image
@@ -88,7 +87,7 @@ export default function Header() {
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-64"
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-64 "
             >
               <li>
                 <Link href={`/characters`} className="text-lg">
@@ -116,26 +115,6 @@ export default function Header() {
         </div>
       </div>
     </div>
-    // <div className="flex flex-row justify-between drop-shadow-xl" id="header-container">
-    //   <div className="flex flex-row m-3 justify-center items-center">
-    //     <Image src={d20} alt="d20logo" className="w-12 object-cover" width={32} height={32}/>
-    //     <Link href={'/'} className="federant text-3xl hidden md:block font-bold">SideQuest</Link>
 
-    //   </div>
-    // {!session ? (
-    //   <div className="m-4 content-center flex flex-row">
-    //     <LogInModal />
-    //     <SignUp />
-    //     <Drawer />
-    //   </div>
-    // ) : (
-    //   <div className="m-4 content-center flex flex-row">
-    //     <button className="btn m-auto btn-neutral" onClick={handleSignOut}>
-    //       Logout
-    //     </button>
-    //     <Drawer />
-    //   </div>
-    // )}
-    // </div>
   );
 }
