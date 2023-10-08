@@ -47,4 +47,5 @@ export const scenarioSlice = createSlice({
   },
 });
 
-export const scenarioState = (state: AppState) => state.scenarios
+export const allScenarioState = (state: AppState) => state.scenarios.allScenarios
+export const userScenarioState = (state: AppState) => state.scenarios.userScenarios

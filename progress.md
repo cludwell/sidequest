@@ -44,12 +44,14 @@
 -have a d20 with spinning animation
 
 10/7
+-created a mini character sheet modal for use on chat page (can be reused elsewhere)
+-fade in slide in animation added to all pages now that layering isnt an issue with the drawer
+-tried to functionally render modals, doesnt work with the template that daisyui provides. unclear if there is a creative solution/work around. would like a way to present information about different characters that the user has created without navigating to a new page
 
 TO DO
 -create dice buttons, useState, and send to chat
 -utilize pregenerated scenarios and display associated images?
 -create user sign up feature
--mini char sheet modal
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
 -include text prompts that trigger leveling up or conditionally render exit from dungeon master page ---this could mean automating some sort of leveling up functionality
 -perfect prompt to model so that there are some guardrails (example: char should have spells or skills that are erroneously missing from char sheet)

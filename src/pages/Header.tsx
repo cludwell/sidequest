@@ -46,20 +46,19 @@ export default function Header() {
   // console.log("User Data:", user);
   // console.log("Character Data:", characters);
   return (
-    <div
-      className="flex flex-row justify-between "
-      id="header-container"
-    >
+    <div className="flex flex-row justify-between " id="header-container">
       <div className="navbar bg-base-100 m-4 rounded-2xl header-background">
         <div className="flex-1">
           <div className="flex flex-row justify-center items-center">
-            <Image
-              src={d20}
-              alt="d20logo"
-              className="w-12 object-cover mx-2"
-              width={32}
-              height={32}
-            />
+            <Link href={"/"} className="federant">
+              <Image
+                src={d20}
+                alt="d20logo"
+                className="w-12 object-cover mx-2"
+                width={32}
+                height={32}
+              />
+            </Link>
             <Link
               href={"/"}
               className="federant text-3xl hidden md:block font-bold"
@@ -91,7 +90,7 @@ export default function Header() {
             >
               <li>
                 <Link href={`/characters`} className="text-lg">
-                  <IconCharacters /> Choose Character
+                  <IconCharacters /> Create Character
                 </Link>
               </li>
               <li>
@@ -100,10 +99,10 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <a className="text-lg">
+                <Link href={"/scenarios"} className="text-lg">
                   <IconMap />
                   Campaigns
-                </a>
+                </Link>
               </li>
               <li>
                 <a className="text-lg">
@@ -115,6 +114,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-
   );
 }

@@ -90,16 +90,16 @@ export default function UserCharacters() {
             </div>
             <div className="flex flex-row">
               <button
-                className="btn btn-error rounded-bl-2xl rounded-br-none rounded-t-none "
+                className="btn btn-error rounded-bl-2xl rounded-br-none rounded-t-none w-1/2"
                 disabled={char.id <= 8}
                 onClick={() => deleteButton(char.id)}
               >
                 <IconTrash />
-                Delete Character
+                Delete
               </button>
-              <button className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none"
+              <button className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none w-1/2"
               onClick={() => onClickSelect(char)}>
-                START ADVENTURE
+                START 
                 <IconRightArrow />
               </button>
             </div>

@@ -203,7 +203,7 @@ export default function DungeonMaster() {
         </button>
         </div>
 
-        <div className="relative cursor-pointer flex" onClick={onClickRoll}>
+        <div className="relative cursor-pointer flex tooltip w-fit" onClick={onClickRoll} data-tip='Roll Dice'>
           <h3
             id="diceResult"
             className="absolute font-2xl federant top-6 left-[65px] font-bold z-10 "

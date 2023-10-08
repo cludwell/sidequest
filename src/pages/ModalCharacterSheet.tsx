@@ -49,9 +49,11 @@ export default function ModalCharacterSheet({ character }: CharacterData) {
 
   return (
     <>
-      <button className="btn w-fit btn-primary m-4" onClick={openModal}>
-        <IconID />
-      </button>
+      <div className="tooltip tooltip-left m-4" data-tip="Character Sheet">
+        <button className="btn w-fit btn-primary " onClick={openModal}>
+          <IconID />
+        </button>
+      </div>
       <dialog id="my_modal_charsheet" className="modal">
         <div className="modal-box ">
           <h3 className="almendra text-3xl text-center">{character.name}</h3>
@@ -199,7 +201,6 @@ export default function ModalCharacterSheet({ character }: CharacterData) {
               </div>
             </div>
           </div>
-
         </div>
 
         <form method="dialog" className="modal-backdrop">
