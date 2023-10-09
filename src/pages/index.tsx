@@ -27,6 +27,7 @@ import woodedPath from "../../public/scenes/woodedpath.jpeg";
 import woodedPath2 from "../../public/scenes/woodedpath2.jpeg";
 import woodsGodRays from "../../public/scenes/woodsgodrays.jpeg";
 import cityStreets from "../../public/scenes/citystreets.jpg";
+import Link from "next/link";
 
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
@@ -69,7 +70,9 @@ export default function Home() {
       <Head>
         <title>Side🎲Quest</title>
       </Head>
-      <h1 className="almendra text-4xl my-4">Hello, fellow travelers</h1>
+      <Link href={"/splash"} className="flex flex-col items-center">
+        <h1 className="almendra text-4xl my-4">Hello, fellow travelers</h1>
+      </Link>
 
       <div className="carousel carousel-center rounded-box max-w-screen-xl w-full">
         {!!scenes.length &&
@@ -85,8 +88,10 @@ export default function Home() {
             </div>
           ))}
       </div>
-      <h1 className="almendra text-4xl my-4">Adventure awaits...</h1>
-      <DungeonDoor />
+      <Link href={"/splash"} className="flex flex-col items-center">
+        <h1 className="almendra text-4xl my-4">Adventure awaits...</h1>
+        <DungeonDoor />
+      </Link>
     </main>
   );
 }

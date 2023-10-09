@@ -54,12 +54,17 @@
 
 10/9
 -Sign up route is working
+-splash page (100% styled)
+-about page (80% styled)
+-links to splash page
+-pass selected scenario in prompt to chat
+
 
 TO DO MVP
 <!-- -create user sign up feature -->
--pass selected scenario in prompt to chat
 -create modal after scenario selection to select character
 -create modal after character selection to select scenario
+-put socials in about page
 
 TO DO POLISH
 -create dice buttons, useState, and send to chat
