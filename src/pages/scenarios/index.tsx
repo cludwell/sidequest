@@ -28,7 +28,7 @@ export default function Scenarios() {
         {scenarios &&
           Object.values(scenarios).map((scene, i) => (
             <div
-              className=" w-96 glass carousel-item m-1 relative rounded-2xl glass-container"
+              className=" w-96 glass carousel-item relative glass-container"
               key={scene.id}
             >
               <figure>
@@ -38,11 +38,11 @@ export default function Scenarios() {
                     width={1000}
                     alt="scenario-image"
                     src={scene.imgUrl}
-                    className=" object-cover rounded-2xl w-full h-full"
+                    className=" object-cover w-full h-full"
                   />
                 )}
               </figure>
-              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-4">
+              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-4 m-2">
                 <h2 className="card-title almendra text-2xl">
                   {scene.description.split("Adventure Prompt:")[0].slice(7)}
                 </h2>
@@ -52,7 +52,7 @@ export default function Scenarios() {
                     .slice(0, 300)}
                   ...
                 </p>
-                <div className="card-actions justify-end">
+                <div className="card-actions justify-end mt-4">
                   <button className="btn btn-primary">Start Adventure</button>
                 </div>
               </div>
