@@ -1,10 +1,17 @@
 import { AppDispatch } from "@/store";
-import { allScenarioState, loadScenarios } from "@/store/scenarios";
+import {
+  allScenarioState,
+  loadScenarios,
+  selectedScenarioRequest,
+  selectedScenarioState,
+} from "@/store/scenarios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Loading from "../Loading";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import IconRightArrow from "../IconRightArrow";
+import { ScenariosState } from "../../../lib/scenarioState";
 
 export default function Scenarios() {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,7 +24,13 @@ export default function Scenarios() {
     loadData();
   }, [dispatch]);
   const scenarios = useSelector(allScenarioState);
-  console.log("SCENARIOS", scenarios);
+  // console.log("SCENARIOS", scenarios);
+
+  const selectScenario = async (scene: ScenariosState) => {
+    await dispatch(selectedScenarioRequest(scene));
+  };
+  const selected = useSelector(selectedScenarioState);
+  console.log("SELECTED", selected);
   if (!loaded) return <Loading />;
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
@@ -53,7 +66,12 @@ export default function Scenarios() {
                   ...
                 </p>
                 <div className="card-actions justify-end mt-4">
-                  <button className="btn btn-primary">Start Adventure</button>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => selectScenario(scene)}
+                  >
+                    <IconRightArrow />
+                  </button>
                 </div>
               </div>
             </div>

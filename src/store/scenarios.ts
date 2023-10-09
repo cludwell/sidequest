@@ -14,14 +14,23 @@ export const loadScenarios = createAsyncThunk(
   }
 );
 
+export const selectedScenarioRequest = createAsyncThunk(
+  `scenarios/selectedScenario`,
+  async (sceneData: ScenariosState) => {
+    return sceneData;
+  }
+);
+
 type ScenariosSliceState = {
   userScenarios: ScenariosState | null;
   allScenarios: ScenariosState | null;
+  selectedScenario: ScenariosState | null;
 };
 
 const initialState: ScenariosSliceState = {
   userScenarios: null,
-  allScenarios: null
+  allScenarios: null,
+  selectedScenario: null,
 };
 export const scenarioSlice = createSlice({
   name: "scenarios",
@@ -44,8 +53,18 @@ export const scenarioSlice = createSlice({
     builder.addCase(loadScenarios.rejected, (state, action) => {
       state.allScenarios = null;
     });
+    builder.addCase(selectedScenarioRequest.fulfilled, (state, action) => {
+      state.selectedScenario = action.payload
+    });
+    builder.addCase(selectedScenarioRequest.rejected, (state, action) => {
+      state.selectedScenario = null
+    })
   },
 });
 
-export const allScenarioState = (state: AppState) => state.scenarios.allScenarios
-export const userScenarioState = (state: AppState) => state.scenarios.userScenarios
+export const allScenarioState = (state: AppState) =>
+  state.scenarios.allScenarios;
+export const userScenarioState = (state: AppState) =>
+  state.scenarios.userScenarios;
+export const selectedScenarioState = (state: AppState) =>
+  state.scenarios.selectedScenario;

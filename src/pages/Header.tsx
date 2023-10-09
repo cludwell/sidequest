@@ -30,7 +30,7 @@ export default function Header() {
     const loadUser = async () => {
       dispatch(authenticate());
       dispatch(allCharactersRequest());
-      dispatch(loadScenarios());
+      // dispatch(loadScenarios());
     };
     if (session) loadUser();
   }, [session, dispatch]);
