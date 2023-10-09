@@ -8,12 +8,12 @@ export default function About() {
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
             Side Quest is a portfolio project I started because I noticed there
-            was huge potential in AI for this specific task and to
-            best showcase my capabilities as a Full Stack Developer. Language
-            models allow a level of flexibility difficult to match in a video
-            game. Experimenting with Chat GPT I realized that tons of fan
-            content must have been fed into the model as it was frightenly good
-            at what it did.
+            was huge potential in AI for this specific task and to best showcase
+            my capabilities as a Full Stack Developer. Language models allow a
+            level of flexibility difficult to match in a video game.
+            Experimenting with Chat GPT I realized that tons of fan content must
+            have been fed into the model as it was frightenly good at what it
+            did.
           </p>
           <p className="py-6">
             SideQuest was made with Next.js, next-auth, DaisyUI, Prisma, and
@@ -27,26 +27,31 @@ export default function About() {
         </div>
       </div>
       <div className="max-w-screen-xl m-8">
-      <div className="divider" />
+        <div className="divider" />
 
-      <h1 className="federant text-3xl font-bold py-8">Recent Updates 10/9</h1>
-      <ul className="list-disc">
-        <li>If you're reading this, the site is live!</li>
-        <li>User authentication is working</li>
-        <li>Connected to ChatGPT with basic prompt</li>
-        <li>Modals for character and scenario selection</li>
-        <li>Character Creation is looking good for all classes except magic casters who have spells missing.</li>
-      </ul>
-      <div className="divider" />
-      <h1 className="federant text-3xl font-bold py-8">Coming Soon</h1>
-      <ul className="list-disc">
-        <li>AWS hosting of images</li>
-        <li>Leveling up upon completion of scenario</li>
-        <li>Displaying finished quests and accomplishments</li>
-        <li>Edit Characters</li>
-        <li>Might experiment with Dall-E for character pictures</li>
-        <li>Inventory management</li>
-      </ul>
+        <h1 className="federant text-3xl font-bold py-8">
+          Recent Updates 10/9
+        </h1>
+        <ul className="list-disc">
+          <li>If you're reading this, the site is live!</li>
+          <li>User authentication is working</li>
+          <li>Connected to ChatGPT with basic prompt</li>
+          <li>Modals for character and scenario selection</li>
+          <li>
+            Character Creation is looking good for all classes except magic
+            casters who have spells missing.
+          </li>
+        </ul>
+        <div className="divider" />
+        <h1 className="federant text-3xl font-bold py-8">Coming Soon</h1>
+        <ul className="list-disc">
+          <li>AWS hosting of images</li>
+          <li>Leveling up upon completion of scenario</li>
+          <li>Displaying finished quests and accomplishments</li>
+          <li>Edit Characters</li>
+          <li>Might experiment with Dall-E for character pictures</li>
+          <li>Inventory management</li>
+        </ul>
       </div>
 
       <p></p>
