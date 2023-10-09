@@ -1,5 +1,5 @@
-import { signIn as signInNextAuth } from "next-auth/react";
-import { signIn } from "@/store/session";
+import { signIn } from "next-auth/react";
+// import { signIn } from "@/store/session";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/store";
@@ -43,7 +43,13 @@ export default function SignUp() {
     if (errors.length) return;
 
     try {
-      await dispatch(signIn({ email, password, username, profilePic }));
+      await signIn("credentials", {
+        email,
+        password,
+        username,
+        profilePic,
+        action: "signup",
+      });
       // await signInNextAuth("credentials", { email, password });
     } catch (error) {
       // Handle any errors that might occur during sign up or sign in

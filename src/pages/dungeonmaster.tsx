@@ -10,14 +10,20 @@ import { CharacterData } from "../../lib/characterData";
 import d20green from "../../public/images/d20green.png";
 import d20pastel from "../../public/images/d20pastel.png";
 import ModalCharacterSheet from "./ModalCharacterSheet";
+import { ScenariosState } from "../../lib/scenarioState";
+import { selectedScenarioState } from "@/store/scenarios";
 
 export default function DungeonMaster() {
   const char: CharacterData | null = useSelector(selectedCharacterState);
+  const scene: ScenariosState | null = useSelector(selectedScenarioState);
   const [chatHistory, setChatHistory] = useState([
     {
       role: "system",
-      content: `You are the dungeon master, providing assistance in a Dungeons and Dragons 5e game session. Please generate and guide user through a short adventure. Suggest to the user that they roll dice for relevant skill checks if applicable. The user's character data looks like: ${JSON.stringify(
+      content: `You are the dungeon master, providing assistance in a Dungeons and Dragons 5e game session. Please generate and guide user through a short adventure. Suggest to the user that they roll dice for relevant skill checks if applicable. If the user has selected a character it looks like: ${JSON.stringify(
         char
+      )}.
+      If the user has selected a pregenerated scenario, it is: ${JSON.stringify(
+        scene
       )}`,
       timestamp: new Date().toString(),
     },
@@ -29,7 +35,8 @@ export default function DungeonMaster() {
   const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
-  console.log("SELECTED CHARACTER", char);
+
+  // console.log("SELECTED CHARACTER", char);
   useEffect(() => {
     if (chatContainerRef.current) {
       const element: any = chatContainerRef.current;
@@ -197,17 +204,23 @@ export default function DungeonMaster() {
           onChange={(e) => setUserText(e.target.value)}
         ></textarea>
         <div className="flex flex-row justify-end">
-          {char && <ModalCharacterSheet character={char}/>}
-        <button className="btn btn-accent my-4 w-fit" type="submit">
-          <IconSend />
-        </button>
+          {char && <ModalCharacterSheet character={char} />}
+          <button className="btn btn-accent my-4 w-fit" type="submit">
+            <IconSend />
+          </button>
         </div>
 
-        <div className="relative cursor-pointer flex tooltip w-fit" onClick={onClickRoll} data-tip='Roll Dice'>
+        <div
+          className="relative cursor-pointer flex tooltip w-fit"
+          onClick={onClickRoll}
+          data-tip="Roll Dice"
+        >
           <h3
             id="diceResult"
             className="absolute font-2xl federant top-6 left-[65px] font-bold z-10 "
-          >20</h3>
+          >
+            20
+          </h3>
           <Image
             height={150}
             width={150}
@@ -216,7 +229,6 @@ export default function DungeonMaster() {
             src={d20pastel}
           />
         </div>
-
       </form>
     </main>
   );

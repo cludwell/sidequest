@@ -12,14 +12,14 @@ import { useEffect } from "react";
 import { authenticate, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
-import { loadScenarios, scenarioState } from "@/store/scenarios";
-import Drawer from "./Drawer";
+import { loadScenarios } from "@/store/scenarios";
 import Link from "next/link";
 import IconMap from "./IconMap";
 import IconTrophy from "./IconTrophy";
 import IconCharacters from "./IconCharacters";
 import IconID from "./IconID";
 import IconBars from "./IconBars";
+import IconInfo from "./IconInfo";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -43,7 +43,7 @@ export default function Header() {
   const user = useSelector(userProfile);
   // const characters = useSelector(allCharactersState);
   // const scenarios = useSelector(scenarioState);
-  // console.log("User Data:", user);
+  console.log("User Data:", session);
   // console.log("Character Data:", characters);
   return (
     <div className="flex flex-row justify-between " id="header-container">
@@ -93,15 +93,21 @@ export default function Header() {
                   <IconCharacters /> Create Character
                 </Link>
               </li>
-              <li>
+              {session && (<li>
                 <Link href={`/characters/usercharacters`} className="text-lg">
                   <IconID /> Your Characters
                 </Link>
-              </li>
+              </li>)}
               <li>
                 <Link href={"/scenarios"} className="text-lg">
                   <IconMap />
                   Campaigns
+                </Link>
+              </li>
+              <li>
+                <Link href={"/about"} className="text-lg">
+                  <IconInfo />
+                  About
                 </Link>
               </li>
               <li>

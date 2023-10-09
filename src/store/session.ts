@@ -28,11 +28,12 @@ interface SignInCredentials {
   password: string;
   username: string;
   profilePic: string;
+  action: string
 }
 
 export const signIn = createAsyncThunk(
   "session/signIn",
-  async ({ email, username, profilePic, password }: SignInCredentials) => {
+  async ({ email, username, profilePic, password, action }: SignInCredentials) => {
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
@@ -43,6 +44,7 @@ export const signIn = createAsyncThunk(
         password,
         username,
         profilePic,
+        action
       }),
     });
 

@@ -49,12 +49,20 @@
 -tried to functionally render modals, doesnt work with the template that daisyui provides. unclear if there is a creative solution/work around. would like a way to present information about different characters that the user has created without navigating to a new page
 
 10/8
+-created a scenarios page where users can select a scenario (uses glass)
+-created slice in state that saves selected scenario
 
+10/9
+-Sign up route is working
 
-TO DO
+TO DO MVP
+<!-- -create user sign up feature -->
+-pass selected scenario in prompt to chat
+-create modal after scenario selection to select character
+-create modal after character selection to select scenario
+
+TO DO POLISH
 -create dice buttons, useState, and send to chat
--utilize pregenerated scenarios and display associated images?
--create user sign up feature
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
 -include text prompts that trigger leveling up or conditionally render exit from dungeon master page ---this could mean automating some sort of leveling up functionality
 -perfect prompt to model so that there are some guardrails (example: char should have spells or skills that are erroneously missing from char sheet)
