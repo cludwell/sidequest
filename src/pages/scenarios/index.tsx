@@ -15,31 +15,50 @@ export default function Scenarios() {
       setLoaded(true);
     };
     loadData();
-  });
+  }, [dispatch]);
   const scenarios = useSelector(allScenarioState);
-  console.log('SCENARIOS', scenarios)
+  console.log("SCENARIOS", scenarios);
   if (!loaded) return <Loading />;
   return (
-    <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
-      <h1 className="federant text-2xl">Scenarios</h1>
+    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
+      <h1 className="federant text-3xl font-bold">Scenarios</h1>
       <div className="divider" />
-      {!!scenarios.length && (<div className="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <Image
-            height={500}
-            width={200}
-            alt="scenario-image"
-            src={scenarios[0]}
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </div>)}
+
+      <div className="carousel carousel-center rounded-box max-w-screen-xl w-full ">
+        {scenarios &&
+          Object.values(scenarios).map((scene, i) => (
+            <div
+              className=" w-96 glass carousel-item m-1 relative rounded-2xl glass-container"
+              key={scene.id}
+            >
+              <figure>
+                {scene.imgUrl && (
+                  <Image
+                    height={1000}
+                    width={1000}
+                    alt="scenario-image"
+                    src={scene.imgUrl}
+                    className=" object-cover rounded-2xl w-full h-full"
+                  />
+                )}
+              </figure>
+              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-4">
+                <h2 className="card-title almendra text-2xl">
+                  {scene.description.split("Adventure Prompt:")[0].slice(7)}
+                </h2>
+                <p className=" overflow-ellipsis">
+                  {scene.description
+                    .split("Adventure Prompt: ")[1]
+                    .slice(0, 300)}
+                  ...
+                </p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Start Adventure</button>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
     </main>
   );
 }

@@ -82,6 +82,12 @@
   100% { transform: rotate(360deg); }
 }
 
+
+/* making glass cards work correctly */
+.glass-container:hover .glass-content {
+  opacity: 1;
+}
+
 /* tailwind css setupt */
 :root {
   --foreground-rgb: 0, 0, 0;

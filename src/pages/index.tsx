@@ -5,7 +5,7 @@ import Dungeon from "./Dungeon";
 import Loading from "./Loading";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { loadScenarios, scenarioState } from "@/store/scenarios";
+import { allScenarioState, loadScenarios } from "@/store/scenarios";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import DungeonDoor from "./DungeonDoor";
@@ -59,7 +59,7 @@ export default function Home() {
     loadData();
   }, [dispatch]);
 
-  const scenarios = useSelector(scenarioState);
+  const scenarios = useSelector(allScenarioState);
   if (!hasLoaded || !scenarios) return Loading;
   console.log(scenarios);
   return (

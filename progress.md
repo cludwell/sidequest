@@ -48,6 +48,9 @@
 -fade in slide in animation added to all pages now that layering isnt an issue with the drawer
 -tried to functionally render modals, doesnt work with the template that daisyui provides. unclear if there is a creative solution/work around. would like a way to present information about different characters that the user has created without navigating to a new page
 
+10/8
+
+
 TO DO
 -create dice buttons, useState, and send to chat
 -utilize pregenerated scenarios and display associated images?
