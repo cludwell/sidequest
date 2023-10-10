@@ -3,7 +3,6 @@ import { HYDRATE } from "next-redux-wrapper";
 import { AppState } from ".";
 import { HydrateAction } from "../../lib/hydrateAction";
 import { CharactersState } from "../../lib/charactersState";
-import { stat } from "fs";
 import { CharacterData } from "../../lib/characterData";
 import { Characters } from "@prisma/client";
 

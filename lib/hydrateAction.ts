@@ -1,19 +1,26 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 import { User } from "./user";
+import { CharacterData } from "./characterData";
+import { ScenariosState } from "./scenarioState";
 
-export interface HydrateAction extends PayloadAction {
-    payload: {
-      session: {
-        user: null | User; // Adjust this type as needed
-      };
-      characters: {
-        userCharacters: null;
-        allCharacters: null;
-      };
-      scenarios: {
-        scenarios: null
-      }
+interface Payload {
+  payload: {
+    session: {
+      user: null | User;
     };
-    type: typeof HYDRATE;
-  }
+    characters: {
+      userCharacters: null | CharacterData;
+      allCharacters: null | CharacterData;
+      selectedCharacter: null | CharacterData;
+    };
+    scenarios: {
+      userScenarios: null | ScenariosState;
+      allScenarios: null | ScenariosState;
+      selectedScenario: null | ScenariosState;
+    };
+  };
+  type: typeof HYDRATE;
+}
+
+export interface HydrateAction extends PayloadAction<Payload, typeof HYDRATE> {}
