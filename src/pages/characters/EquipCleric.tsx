@@ -2,7 +2,7 @@ import { useState } from "react";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
 import WeaponsTable from "./TableWeapons";
-import { simpleMeleeWeapons } from "./_weaponsSimple";
+import { simpleMeleeWeapons } from "../../../lib/_weaponsSimple";
 
 export default function EquipCleric({
   dndClass,

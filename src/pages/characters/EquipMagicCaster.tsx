@@ -1,8 +1,8 @@
 import { useState } from "react";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
-import { simpleMeleeWeapons } from "./_weaponsSimple";
-import { simpleRangedWeapons } from "./_weaponsSimpleRanged";
+import { simpleMeleeWeapons } from "../../../lib/_weaponsSimple";
+import { simpleRangedWeapons } from "../../../lib/_weaponsSimpleRanged";
 import WeaponsTable from "./TableWeapons";
 export default function EquipMagicCaster({
   dndClass,

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SetAbilitiesProps } from "../../../lib/setAbilitiesProps";
 import ToolTip from "../ToolTip";
-import { dndClassSkillProficiencies as proficiencies } from "./_ClassProficienies";
+import { dndClassSkillProficiencies as proficiencies } from "../../../lib/_ClassProficienies";
 import { Skills } from "../../../lib/skills";
 export default function NewCharAbilities({
   abilities,

@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import highElf from "../../../public/images/elf4.jpeg";
 import ElfInfo from "./ElfInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import { cantrips } from "./_Cantrips";
-import { wizardCantrips } from "./_wizardCantrips";
+import { cantrips } from "../../../lib/_Cantrips";
+import { wizardCantrips } from "../../../lib/_wizardCantrips";
 declare global {
   interface Window {
     my_modal_8: any; // Replace `any` with the type of your modal if possible

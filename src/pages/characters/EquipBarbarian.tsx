@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { martialMeleeWeapons } from "./_weaponsMartial";
-import { simpleMeleeWeapons } from "./_weaponsSimple";
+import { martialMeleeWeapons } from "../../../lib/_weaponsMartial";
+import { simpleMeleeWeapons } from "../../../lib/_weaponsSimple";
 import WeaponsTable from "./TableWeapons";
 import ToolTip from "../ToolTip";
 import { SetEquipmentProps } from "../../../lib/setEquipmentProps";
