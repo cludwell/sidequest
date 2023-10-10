@@ -3,7 +3,6 @@ import {
   allScenarioState,
   loadScenarios,
   selectedScenarioRequest,
-  selectedScenarioState,
 } from "@/store/scenarios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -15,6 +14,7 @@ import { ScenariosState } from "../../../lib/scenarioState";
 import { selectedCharacterState } from "@/store/characters";
 import { useRouter } from "next/router";
 import ConfirmModal from "../ConfirmModal";
+import { Scenarios } from "@prisma/client";
 
 export default function Scenarios() {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,7 +30,7 @@ export default function Scenarios() {
   }, [dispatch]);
   const scenarios = useSelector(allScenarioState);
 
-  const selectScenario = async (scene: ScenariosState) => {
+  const selectScenario = async (scene: Scenarios) => {
     await dispatch(selectedScenarioRequest(scene));
     if (!char) window.my_modal_confirm.showModal()
     else router.push('/dungeonmaster')

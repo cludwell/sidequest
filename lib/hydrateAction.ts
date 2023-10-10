@@ -3,6 +3,7 @@ import { HYDRATE } from "next-redux-wrapper";
 import { User } from "./user";
 import { CharacterData } from "./characterData";
 import { ScenariosState } from "./scenarioState";
+import { Scenarios } from "@prisma/client";
 
 interface Payload {
   payload: {
@@ -17,7 +18,7 @@ interface Payload {
     scenarios: {
       userScenarios: null | ScenariosState;
       allScenarios: null | ScenariosState;
-      selectedScenario: null | ScenariosState;
+      selectedScenario: null | Scenarios;
     };
   };
   type: typeof HYDRATE;

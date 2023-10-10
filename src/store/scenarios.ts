@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 import { AppState } from ".";
 import { ScenariosState } from "../../lib/scenarioState";
+import { Scenarios } from "@prisma/client";
 
 export const loadScenarios = createAsyncThunk(
   "scenarios/loadScenarios",
@@ -16,7 +17,7 @@ export const loadScenarios = createAsyncThunk(
 
 export const selectedScenarioRequest = createAsyncThunk(
   `scenarios/selectedScenario`,
-  async (sceneData: ScenariosState) => {
+  async (sceneData: Scenarios) => {
     return sceneData;
   }
 );
@@ -24,7 +25,7 @@ export const selectedScenarioRequest = createAsyncThunk(
 type ScenariosSliceState = {
   userScenarios: ScenariosState | null;
   allScenarios: ScenariosState | null;
-  selectedScenario: ScenariosState | null;
+  selectedScenario: Scenarios | null;
 };
 
 const initialState: ScenariosSliceState = {

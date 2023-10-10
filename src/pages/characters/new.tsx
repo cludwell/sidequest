@@ -42,7 +42,7 @@ export default function NewCharacter() {
     weapons: [],
   });
 
-  const submitCharacter = () => {
+  const submitCharacter = async () => {
     const character: any = {
       ...race,
       ...dndClass,
@@ -56,8 +56,8 @@ export default function NewCharacter() {
       tools: [...(race?.tools || [])],
       userId: user.id
     };
-    dispatch(newCharacterRequest(character))
-    console.log("CHARACTER", user.id);
+    await dispatch(newCharacterRequest(character))
+    // console.log("CHARACTER", user.id);
     return character;
   };
   // console.log("SESSION", session);

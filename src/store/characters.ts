@@ -43,7 +43,7 @@ export const selectCharacterRequest = createAsyncThunk(
 
 export const newCharacterRequest = createAsyncThunk(
   "characters/new",
-  async (charData) => {
+  async (charData: CharacterData) => {
     const res = await fetch("/api/characters/new", {
       method: "POST",
       headers: {
