@@ -94,12 +94,12 @@ export const charactersSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(HYDRATE, (state, action: HydrateAction) => {
-      return {
-        ...state,
-        allCharacters: action.payload.characters.allCharacters,
-      };
-    });
+    // builder.addCase(HYDRATE, (state, action: HydrateAction) => {
+    //   return {
+    //     ...state,
+    //     allCharacters: action.payload.characters.allCharacters,
+    //   };
+    // });
     builder.addCase(allCharactersRequest.fulfilled, (state, action) => {
       state.allCharacters = action.payload;
     });

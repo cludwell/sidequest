@@ -42,12 +42,12 @@ export const scenarioSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(HYDRATE, (state, action) => {
-      return {
-        ...state,
-        scenarios: action.payload.scenarios.loadScenariosRequest,
-      };
-    });
+    // builder.addCase(HYDRATE, (state, action) => {
+    //   return {
+    //     ...state,
+    //     scenarios: action.payload.scenarios.loadScenariosRequest,
+    //   };
+    // });
     builder.addCase(loadScenarios.fulfilled, (state, action) => {
       state.allScenarios = action.payload;
     });
