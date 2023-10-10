@@ -9,7 +9,7 @@ import { Characters } from "@prisma/client";
 type CharactersSliceState = {
   userCharacters: CharactersState | null;
   allCharacters: CharactersState | null;
-  selectedCharacter: CharacterData | null;
+  selectedCharacter: Characters | null;
 };
 
 export const allCharactersRequest = createAsyncThunk(
@@ -36,7 +36,7 @@ export const userCharactersRequest = createAsyncThunk(
 
 export const selectCharacterRequest = createAsyncThunk(
   `characters/selectedCharacter`,
-  async (charData: CharacterData) => {
+  async (charData: Characters) => {
     return charData;
   }
 );

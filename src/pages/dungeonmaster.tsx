@@ -7,15 +7,14 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectedCharacterState } from "@/store/characters";
 import { CharacterData } from "../../lib/characterData";
-import d20green from "../../public/images/d20green.png";
 import d20pastel from "../../public/images/d20pastel.png";
 import ModalCharacterSheet from "./ModalCharacterSheet";
-import { ScenariosState } from "../../lib/scenarioState";
 import { selectedScenarioState } from "@/store/scenarios";
+import { Characters, Scenarios } from "@prisma/client";
 
 export default function DungeonMaster() {
-  const char: CharacterData | null = useSelector(selectedCharacterState);
-  const scene: ScenariosState | null = useSelector(selectedScenarioState);
+  const char: Characters | null = useSelector(selectedCharacterState);
+  const scene: Scenarios | null = useSelector(selectedScenarioState);
   const [chatHistory, setChatHistory] = useState([
     {
       role: "system",
