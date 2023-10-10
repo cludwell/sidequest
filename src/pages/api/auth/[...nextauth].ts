@@ -5,6 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { hashPassword, verifyPassword } from "../../../../lib/auth";
 import { CustomSession } from "../../../../lib/customUser";
 
+
 export default NextAuth({
   session: {
     strategy: "jwt",
@@ -72,8 +73,8 @@ export default NextAuth({
     jwt: async ({ token, user }) => {
       if (user) {
         token.id = user.id;
-        token.picture = user.profilePic;
-        token.username = user.username;
+        // token.picture = user.profilePic;
+        // token.username = user.username;
       }
       return token;
     },

@@ -22,26 +22,6 @@ export default function ModalCharacterSheet({
     e.preventDefault();
     window.my_modal_charsheet.showModal();
   };
-  const skills = [
-    ["acrobatics", "Acrobatics"],
-    ["animalHandling", "Animal Handling"],
-    ["arcana", "Arcana"],
-    ["athletics", "Athletics"],
-    ["deception", "Deception"],
-    ["history", "History"],
-    ["insight", "Insight"],
-    ["intimidation", "Intimidation"],
-    ["investigation", "Investigation"],
-    ["medicine", "Medicine"],
-    ["nature", "Nature"],
-    ["perception", "Perception"],
-    ["performance", "Performance"],
-    ["persuasion", "Persuasion"],
-    ["religion", "Religion"],
-    ["sleightOfHand", "Sleight Of Hand"],
-    ["stealth", "Stealth"],
-    ["survival", "Survival"],
-  ];
 
   return (
     <>
