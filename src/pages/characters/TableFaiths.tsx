@@ -1,5 +1,3 @@
-import { col } from "sequelize";
-import { deities } from "./_DeitiesInfo";
 export default function FaithTable({ deities }: Deities) {
   return (
     <div className="collapse collapse-plus border border-base-300 bg-base-200 max-w-screen-xl w-full my-1">
