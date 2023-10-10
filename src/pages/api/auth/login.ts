@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
-import { compare } from "bcryptjs";
+import { compare } from "bcrypt";
 const prisma = new PrismaClient();
 
 export default async function loginHandler(
