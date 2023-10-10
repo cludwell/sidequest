@@ -8,7 +8,7 @@ export default function About() {
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
             Side Quest is a portfolio project I started because I noticed there
-            was huge potential in AI for this specific task and to best showcase
+            was huge potential for AI in this specific task and to best showcase
             my capabilities as a Full Stack Developer. Language models allow a
             level of flexibility difficult to match in a video game.
             Experimenting with Chat GPT I realized that tons of fan content must
@@ -22,7 +22,7 @@ export default function About() {
           </p>
           <p className="py-6">
             If there is a junior position open at your organization, please
-            consider me for the role.
+            consider me for the role 🙏.
           </p>
         </div>
       </div>

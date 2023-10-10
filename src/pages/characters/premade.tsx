@@ -10,11 +10,14 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import Loading from "../Loading";
 import { useRouter } from "next/router";
+import { selectedScenarioState } from "@/store/scenarios";
+import ConfirmModal from "../ConfirmModal";
 
 export default function PremadeCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const scene = useSelector(selectedScenarioState)
   useEffect(() => {
     const loadCharacters = async () => {
       dispatch(userCharactersRequest(1));
@@ -31,8 +34,10 @@ export default function PremadeCharacters() {
   // console.log("USER CHARACTERS", usercharacters);
   const onClickSelect = async (charData: any) => {
     await dispatch(selectCharacterRequest(charData));
-    router.push("/dungeonmaster");
+    if (!scene) window.my_modal_confirm.showModal()
+    else router.push("/dungeonmaster");
   };
+  
   return (
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
       <h1 className="text-3xl federant font-bold">Pre-made Characters</h1>
@@ -78,6 +83,7 @@ export default function PremadeCharacters() {
           </div>
         ))}
       </div>
+      <ConfirmModal />
     </main>
   );
 }

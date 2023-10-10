@@ -68,6 +68,7 @@ TO DO MVP
 -create dice buttons, useState, and send to chat
 
 TO DO POLISH
+-reuse char sheet modal and make a scene modal to put in header when selected
 -will want to make sure that selected character and scenes clear on log out
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
 -include text prompts that trigger leveling up or conditionally render exit from dungeon master page ---this could mean automating some sort of leveling up functionality
