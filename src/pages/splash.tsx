@@ -2,11 +2,11 @@ import Link from "next/link";
 import dm from "../../public/images/dm.jpg";
 export default function Splash() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
+    <main className="flex flex-col items-center px-4 md:px-16 fade-in-slide-in">
       {/* <h1 className="federant text-3xl font-bold">What</h1>
       <div className="divider" /> */}
       <div
-        className="hero h-100 m-8 rounded-2xl"
+        className="hero h-100 m-8 rounded-2xl min-h-screen"
         style={{
           backgroundImage: `url(/images/dm.jpg)`,
         }}

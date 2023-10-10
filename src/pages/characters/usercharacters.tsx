@@ -2,6 +2,7 @@ import { AppDispatch } from "@/store";
 import {
   deleteCharacterRequest,
   selectCharacterRequest,
+  selectedCharacterState,
   userCharactersRequest,
   userCharactersState,
 } from "@/store/characters";
@@ -15,12 +16,15 @@ import IconRightArrow from "../IconRightArrow";
 import IconTrash from "../IconTrash";
 import { User } from "../../../lib/user";
 import { useRouter } from "next/router";
+import ConfirmModal from "../ConfirmModal";
+import { selectedScenarioState } from "@/store/scenarios";
 
 export default function UserCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
   const user: any = useSelector(userProfile);
+  const scene = useSelector(selectedScenarioState)
   useEffect(() => {
     const loadCharacters = async () => {
       if (user && user.id) {
@@ -40,12 +44,10 @@ export default function UserCharacters() {
 
   const onClickSelect = async (charData: any) => {
     await dispatch(selectCharacterRequest(charData));
-    router.push('/dungeonmaster')
+    if (!scene) window.my_modal_confirm.showModal()
+    else router.push('/dungeonmaster')
   };
-  // console.log("USER CHARACTERS", usercharacters);
   if (!hasLoaded || !usercharacters) return <Loading />;
-
-  // console.log("USER CHARACTERS", usercharacters);
   if (!user.id)
     return (
       <main className="flex min-h-screen flex-col items-center px-16 ">
@@ -54,14 +56,6 @@ export default function UserCharacters() {
         </h1>
       </main>
     );
-  //   if (!!Object.values(usercharacters).length)
-  //     return (
-  //       <main className="flex min-h-screen flex-col items-center px-16 ">
-  //         <h1 className="almendra text-2xl">
-  //           You need to create some characters first.
-  //         </h1>
-  //       </main>
-  //     );
 
   return (
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
@@ -99,13 +93,14 @@ export default function UserCharacters() {
               </button>
               <button className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none w-1/2"
               onClick={() => onClickSelect(char)}>
-                START 
+                START
                 <IconRightArrow />
               </button>
             </div>
           </div>
         ))}
       </div>
+      <ConfirmModal />
     </main>
   );
 }

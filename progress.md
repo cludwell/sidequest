@@ -58,16 +58,17 @@
 -about page (80% styled)
 -links to splash page
 -pass selected scenario in prompt to chat
+-create modal after scenario selection to select character
+-create modal after character selection to select scenario
 
 
 TO DO MVP
 <!-- -create user sign up feature -->
--create modal after scenario selection to select character
--create modal after character selection to select scenario
 -put socials in about page
+-create dice buttons, useState, and send to chat
 
 TO DO POLISH
--create dice buttons, useState, and send to chat
+-will want to make sure that selected character and scenes clear on log out
 -Creating update route for characters will have to empty objects on form selections so that spells, languages, etc do not persist
 -include text prompts that trigger leveling up or conditionally render exit from dungeon master page ---this could mean automating some sort of leveling up functionality
 -perfect prompt to model so that there are some guardrails (example: char should have spells or skills that are erroneously missing from char sheet)
