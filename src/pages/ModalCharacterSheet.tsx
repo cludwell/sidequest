@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import IconID from "./IconID";
 import { CharacterData } from "../../lib/characterData";
 import Image from "next/image";
+import { Characters } from "@prisma/client";
+import { ModalCharacterSheetProps } from "../../lib/modalCharacterSheetProps";
 
 declare global {
   interface Window {
     my_modal_charsheet: any; // Replace `any` with the type of your modal if possible
   }
 }
-export default function ModalCharacterSheet({ character }: CharacterData) {
+export default function ModalCharacterSheet({
+  character,
+}: ModalCharacterSheetProps) {
   const [expand, setExpanded] = useState<string | null>(null);
   useEffect(() => {
     const myModalCharSheet = document.getElementById("my_modal_charsheet");
@@ -37,14 +41,6 @@ export default function ModalCharacterSheet({ character }: CharacterData) {
     ["sleightOfHand", "Sleight Of Hand"],
     ["stealth", "Stealth"],
     ["survival", "Survival"],
-  ];
-  const abilities = [
-    "strength",
-    "dexterity",
-    "constitution",
-    "intelligence",
-    "wisdom",
-    "charisma",
   ];
 
   return (
@@ -151,14 +147,42 @@ export default function ModalCharacterSheet({ character }: CharacterData) {
                     </tr>
                   </thead>
                   <tbody>
-                    {abilities.map((ability, i) => (
-                      <tr key={ability[0]}>
+                      <tr >
                         <td className="font-bold">
-                          {ability[0].toUpperCase() + ability.slice(1)}
+                          Strength
                         </td>
-                        <td>{character[ability]}</td>
+                        <td>{character['strength']}</td>
                       </tr>
-                    ))}
+                      <tr >
+                        <td className="font-bold">
+                          Dexterity
+                        </td>
+                        <td>{character['dexterity']}</td>
+                      </tr>
+                      <tr >
+                        <td className="font-bold">
+                          Constitution
+                        </td>
+                        <td>{character['constitution']}</td>
+                      </tr>
+                      <tr >
+                        <td className="font-bold">
+                          Intelligence
+                        </td>
+                        <td>{character['intelligence']}</td>
+                      </tr>
+                      <tr >
+                        <td className="font-bold">
+                          Wisdom
+                        </td>
+                        <td>{character['wisdom']}</td>
+                      </tr>
+                      <tr >
+                        <td className="font-bold">
+                          Charisma
+                        </td>
+                        <td>{character['charisma']}</td>
+                      </tr>
                   </tbody>
                 </table>
               </div>
@@ -190,12 +214,78 @@ export default function ModalCharacterSheet({ character }: CharacterData) {
                     </tr>
                   </thead>
                   <tbody>
-                    {skills.map((skill, i) => (
-                      <tr key={skill[0]}>
-                        <td className="font-bold">{skill[1]}</td>
-                        <td>{character[skill[0]]}</td>
+                      <tr>
+                        <td className="font-bold">Acrobatics</td>
+                        <td>{character['acrobatics']}</td>
                       </tr>
-                    ))}
+                      <tr>
+                        <td className="font-bold">Animal Handling</td>
+                        <td>{character['animalHandling']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Arcana</td>
+                        <td>{character['arcana']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Athletics</td>
+                        <td>{character['athletics']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Deception</td>
+                        <td>{character['deception']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">History</td>
+                        <td>{character['history']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Insight</td>
+                        <td>{character['insight']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Intimidation</td>
+                        <td>{character['intimidation']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Investigation</td>
+                        <td>{character['investigation']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Medicine</td>
+                        <td>{character['medicine']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Nature</td>
+                        <td>{character['nature']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Perception</td>
+                        <td>{character['perception']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Performance</td>
+                        <td>{character['performance']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Persuasion</td>
+                        <td>{character['persuasion']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Religion</td>
+                        <td>{character['religion']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Sleight Of Hand</td>
+                        <td>{character['sleightOfHand']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Stealth</td>
+                        <td>{character['stealth']}</td>
+                      </tr>
+                      <tr>
+                        <td className="font-bold">Survival</td>
+                        <td>{character['survival']}</td>
+                      </tr>
                   </tbody>
                 </table>
               </div>
