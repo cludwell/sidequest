@@ -111,7 +111,6 @@ export default function NewCharAbilities({
     });
     setCustom(customRoll);
     setErrors([]);
-    // console.log(custom);
     return custom;
   };
   // const makeSelection = async (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -128,7 +127,7 @@ export default function NewCharAbilities({
     if (int == "--") err.push("Int must have a value");
     if (wis == "--") err.push("Wis must have a value");
     if (cha == "--") err.push("Cha must have a value");
-    if (!Object.values(dndClass)) err.push("Please select a class to continue");
+    if (!Object.values(dndClass).length) err.push("Please select a class to continue");
     if (err.length) {
       setErrors(err);
       return;
@@ -213,7 +212,7 @@ export default function NewCharAbilities({
               </thead>
               <tbody>
                 {/* row 1 */}
-                {!!Object.values(custom).length &&
+                {custom && !!Object.values(custom).length &&
                   Object.values(custom).map((e, i) => (
                     <>
                       <tr>
@@ -1226,7 +1225,7 @@ export default function NewCharAbilities({
             </table>
           </div>
         </div>
-      ) : !Object.values(dndClass).length ? (
+      ) : dndClass && !dndClass.role ? (
         <h1 className="almendra text-lg text-center">
           Please select a class to assign skill proficiencies.
         </h1>
