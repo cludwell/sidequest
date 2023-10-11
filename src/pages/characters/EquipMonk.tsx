@@ -28,7 +28,9 @@ export default function EquipMonk({
       armor: []
     });
     window.location.href = "#submit";
-    console.log("EQUIPMENT", equipment);  };
+    // console.log("EQUIPMENT", equipment);
+  };
+  if (!dndClass.role) return null
 
   return (
     <>

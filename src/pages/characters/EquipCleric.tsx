@@ -48,7 +48,9 @@ export default function EquipCleric({
       weapons: [weapon1, weapon2, "Shield"],
     });
     window.location.href = "#submit";
-    console.log("EQUIPMENT", equipment);  };
+    // console.log("EQUIPMENT", equipment);
+  };
+  if (!dndClass.role) return null
 
   return (
     <>

@@ -62,9 +62,9 @@ export default function EquipMagicCaster({
       inventory: [pack, arcaneFocus, dndClass.role === 'Wizard' ? 'Spellbook' : ''],
     });
     window.location.href = "#submit";
-    console.log("equipment", equipment);
+    // console.log("equipment", equipment);
   };
-
+if (!dndClass.role) return null
   return (
     <>
       <form className="flex flex-col items-center">

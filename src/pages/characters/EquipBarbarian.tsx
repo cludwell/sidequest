@@ -30,7 +30,8 @@ export default function EquipBarbarian({
       weapons: ["4 Javelins", weapon1, weapon2],
     });
     window.location.href = "#submit";
-    console.log("EQUIPMENT", equipment);  };
+    // console.log("EQUIPMENT", equipment);
+  };
   return (
     <>
       <form className="flex flex-col items-center">

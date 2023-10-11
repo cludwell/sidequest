@@ -36,8 +36,9 @@ export default function EquipRanger({
       weapons: [weaponA, weaponB],
     });
     window.location.href = "#submit";
-    console.log("EQUIPMENT", equipment);
+    // console.log("EQUIPMENT", equipment);
   };
+  if (!dndClass.role) return null
 
   return (
     <>

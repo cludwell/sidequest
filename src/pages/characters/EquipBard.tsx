@@ -63,8 +63,10 @@ export default function EquipBard({
       weapons: [weapon, "Dagger"],
     });
     window.location.href = "#submit";
-    console.log("equipment", equipment);
+    // console.log("equipment", equipment);
   };
+  if (!dndClass.role) return null
+
   return (
     <>
       <form className="flex flex-col items-center">

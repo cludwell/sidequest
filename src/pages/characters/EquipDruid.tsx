@@ -49,8 +49,9 @@ export default function EquipDruid({
       weapons: [weaponA, weaponB === "Wooden Shield" ? "" : weaponB],
     });
     window.location.href = "#submit";
-    console.log("equipment", equipment);
+    // console.log("equipment", equipment);
   };
+  if (!dndClass.role) return null
 
   return (
     <>
