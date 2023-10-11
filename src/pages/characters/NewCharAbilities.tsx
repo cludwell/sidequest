@@ -167,12 +167,10 @@ export default function NewCharAbilities({
       initiative: modifiers[dex],
     });
     window.location.href = "#item4";
-    // console.log("custom assigned", customArray);
   };
 
   return (
     <div className="flex flex-col max-w-screen-xl w-full content-center">
-      {/* <div className="divider"></div> */}
       <h1 className="text-4xl almendra mb-8 text-center">Ability Scores</h1>
 
       <div className="flex flex-col items-center">
@@ -203,7 +201,6 @@ export default function NewCharAbilities({
               Roll Random Array
             </button>
           </div>
-          {/* max width changed spread of columns */}
           <div className="overflow-x-auto max-w-md rounded-b-2xl">
             <table className="table table-zebra bg-base-100">
               {/* head */}
@@ -260,7 +257,6 @@ export default function NewCharAbilities({
                   <option
                     key={`optstr${i}`}
                     value={ele}
-                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
@@ -295,7 +291,7 @@ export default function NewCharAbilities({
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optdex${i}`}
                     value={ele}
                     // hidden={assignedArray.includes(String(ele))}
                   >
@@ -304,7 +300,7 @@ export default function NewCharAbilities({
                 ))
               : standardArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optdex${i}`}
                     value={ele}
                     hidden={assignedArray.includes(ele)}
                   >
@@ -332,16 +328,15 @@ export default function NewCharAbilities({
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optcon${i}`}
                     value={ele}
-                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optcon${i}`}
                     value={ele}
                     hidden={assignedArray.includes(ele)}
                   >
@@ -363,22 +358,21 @@ export default function NewCharAbilities({
             value={int}
             onChange={(e) => setInt(e.target.value)}
           >
-            <option disabled selected>
+            <option disabled>
               --
             </option>
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optint${i}`}
                     value={ele}
-                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optint${i}`}
                     value={ele}
                     hidden={assignedArray.includes(ele)}
                   >
@@ -400,22 +394,21 @@ export default function NewCharAbilities({
             value={wis}
             onChange={(e) => setWis(e.target.value)}
           >
-            <option disabled selected>
+            <option disabled>
               --
             </option>
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optwis${i}`}
                     value={ele}
-                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optwis${i}`}
                     value={ele}
                     hidden={assignedArray.includes(ele)}
                   >
@@ -443,16 +436,15 @@ export default function NewCharAbilities({
             {customArray.length
               ? customArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optcha${i}`}
                     value={ele}
-                    // hidden={assignedArray.includes(String(ele))}
                   >
                     {ele}
                   </option>
                 ))
               : standardArray.map((ele, i) => (
                   <option
-                    key={`optstr${i}`}
+                    key={`optcha${i}`}
                     value={ele}
                     hidden={assignedArray.includes(ele)}
                   >
