@@ -22,7 +22,7 @@ export default function FaithTable({ deities }: Deities) {
             {/* Body */}
             <tbody>
               {deities.map((deity, index) => (
-                <tr key={deity[0]}>
+                <tr key={deity[index]}>
                   {/* <th>{index + 1}</th> */}
                   {deity.map((column, colIndex) => (
 
