@@ -11,7 +11,7 @@ export default function EquipMagicCaster({
   setEquipment,
 }: SetEquipmentProps) {
   const [weaponA, setWeaponA] = useState<string>(
-    dndClass.role === "Wizard" ? "Quarterstaff" : "Light Crossbow & 20 bolts"
+   dndClass && dndClass?.role === "Wizard" ? "Quarterstaff" : "Light Crossbow & 20 bolts"
   );
   const [weaponB, setWeaponB] = useState<string>("");
   const [selectionA, setSelectionA] = useState<Boolean>(false);
@@ -55,14 +55,13 @@ export default function EquipMagicCaster({
     setEquipment({
       weapons: [
         weaponA,
-        dndClass.role === "Wizard" ? '' : "Dagger",
-        dndClass.role === "Wizard" ? '' : "Dagger",
+        dndClass && dndClass?.role === "Wizard" ? '' : "Dagger",
+        dndClass && dndClass?.role === "Wizard" ? '' : "Dagger",
       ],
-      armor: [dndClass.role === "Warlock" ? "Leather Armor" : ''],
-      inventory: [pack, arcaneFocus, dndClass.role === 'Wizard' ? 'Spellbook' : ''],
+      armor: [dndClass && dndClass?.role === "Warlock" ? "Leather Armor" : ''],
+      inventory: [pack, arcaneFocus, dndClass && dndClass?.role === 'Wizard' ? 'Spellbook' : ''],
     });
     window.location.href = "#submit";
-    // console.log("equipment", equipment);
   };
   if (!dndClass || !dndClass?.role) return null
   return (
@@ -73,7 +72,7 @@ export default function EquipMagicCaster({
           <label className="label text-xl almendra">
             Primary Weapon Selection
           </label>
-          {dndClass.role === "Wizard" ? (
+          {dndClass && dndClass?.role === "Wizard" ? (
             <>
               <div className="flex flex-row items-center justify-between">
                 <label className="label text-xl almendra">Quarterstaff</label>
@@ -215,7 +214,7 @@ export default function EquipMagicCaster({
               onChange={(e) => setPack(e.target.value)}
             />
           </div>
-          {dndClass.role === "Sorcerer" ? (
+          {dndClass && dndClass?.role === "Sorcerer" ? (
             <div className="flex flex-row items-center justify-between">
               <label className="label text-xl almendra">
                 Explorer's Pack
@@ -251,7 +250,7 @@ export default function EquipMagicCaster({
             </div>
           )}
         </div>
-        {dndClass.role === "Sorcerer" ? (
+        {dndClass && dndClass?.role === "Sorcerer" ? (
           <div className="flex flex-col w-80 my-4">
             {/* <label className="label text-xl almendra">Pack Selection</label> */}
             <div className="flex flex-row items-center justify-between">
@@ -264,7 +263,7 @@ export default function EquipMagicCaster({
               />
             </div>
           </div>
-        ) : dndClass.role === "Warlock" ? (
+        ) : dndClass && dndClass?.role === "Warlock" ? (
           <div className="flex flex-col w-80 my-4">
             <label className="label text-xl almendra">
               Leather Armor, Simple Weapon, & 2 Daggers
@@ -305,7 +304,7 @@ export default function EquipMagicCaster({
             </div>
           </div>
         )}
-        {selectionA || dndClass.role === "Warlock" ? (
+        {selectionA || dndClass && dndClass?.role === "Warlock" ? (
           <WeaponsTable
             weaponsData={{ ...simpleMeleeWeapons, ...simpleRangedWeapons }}
             title="Simple Weapons"
