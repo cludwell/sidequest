@@ -1,6 +1,7 @@
 import { WeaponsProps } from "../../../lib/weapons";
 
 export default function WeaponsTable({ title, weaponsData }: WeaponsProps) {
+  if (!title || !weaponsData) return null
   return (
     <>
       <div className="collapse collapse-plus border border-base-300 bg-base-200 max-w-screen-xl w-full my-1">

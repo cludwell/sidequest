@@ -23,6 +23,7 @@ export default function ModalCharacterSheet({
     window.my_modal_charsheet.showModal();
   };
 
+  if (!character) return null
   return (
     <>
       <div className="tooltip tooltip-left m-4" data-tip="Character Sheet">

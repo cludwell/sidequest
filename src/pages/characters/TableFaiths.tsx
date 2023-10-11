@@ -1,4 +1,5 @@
 export default function FaithTable({ deities }: Deities) {
+  if (!deities) return null
   return (
     <div className="collapse collapse-plus border border-base-300 bg-base-200 max-w-screen-xl w-full my-1">
       <input type="checkbox" />

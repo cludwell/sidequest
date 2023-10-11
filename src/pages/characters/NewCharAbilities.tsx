@@ -64,7 +64,7 @@ export default function NewCharAbilities({
   const [custom, setCustom] = useState<Record<string, number[]>>({});
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
   const assignedArray = [str, dex, con, int, wis, cha, "--"];
-  let role = dndClass.role;
+  let role = dndClass?.role;
   const customArray = Object.values(custom).map((arr, i) =>
     arr.slice(1).reduce((acc, next) => (acc += next), 0)
   );
@@ -158,10 +158,10 @@ export default function NewCharAbilities({
       sleightOfHand: modifiers[dex] + skills["SleightOfHand"] * 2,
       stealth: modifiers[dex] + skills["Stealth"] * 2,
       survival: modifiers[wis] + skills["Survival"] * 2,
-      maxHp: dndClass.role
+      maxHp: dndClass?.role
         ? calculateHealth(dndClass?.role, modifiers[con], level)
         : null,
-      currentHp: dndClass.role
+      currentHp: dndClass?.role
         ? calculateHealth(dndClass?.role, modifiers[con], level)
         : null,
       initiative: modifiers[dex],
@@ -169,6 +169,7 @@ export default function NewCharAbilities({
     window.location.href = "#item4";
     // console.log("custom assigned", customArray);
   };
+
   return (
     <div className="flex flex-col max-w-screen-xl w-full content-center">
       {/* <div className="divider"></div> */}
@@ -468,7 +469,7 @@ export default function NewCharAbilities({
       wis !== "--" &&
       cha !== "--" &&
       dndClass &&
-      dndClass.role ? (
+      dndClass?.role ? (
         <div className="flex flex-col items-center  ">
           <div className="rounded-b-2xl ">
             <h2 className="text-3xl almendra">
@@ -508,14 +509,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Athletics") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -549,14 +550,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Acrobatics") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -590,14 +591,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Sleight of Hand") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -631,14 +632,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Stealth") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -672,14 +673,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Arcana") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -713,14 +714,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("History") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -754,14 +755,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Investigation") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -795,14 +796,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Nature") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -836,14 +837,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Religion") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -878,14 +879,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Animal Handling") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -919,14 +920,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Insight") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -960,14 +961,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Medicine") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -1001,14 +1002,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Perception") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -1042,14 +1043,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Survival") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -1083,14 +1084,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Deception") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -1124,14 +1125,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Intimidation") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -1165,14 +1166,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Performance") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
@@ -1206,14 +1207,14 @@ export default function NewCharAbilities({
                   </td>
                   <td>
                     {proficiencies[
-                      dndClass.role as keyof typeof proficiencies
+                      dndClass?.role as keyof typeof proficiencies
                     ].skills.includes("Persuasion") && (
                       <input
                         type="number"
                         min={0}
                         max={
                           proficiencies[
-                            dndClass.role as keyof typeof proficiencies
+                            dndClass?.role as keyof typeof proficiencies
                           ].choices - assignedSkills
                         }
                         placeholder="0"
