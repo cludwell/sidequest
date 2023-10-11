@@ -43,7 +43,7 @@ export default function Header() {
   const user = useSelector(userProfile);
   // const characters = useSelector(allCharactersState);
   // const scenarios = useSelector(scenarioState);
-  console.log("User Data:", session);
+  // console.log("User Data:", session);
   // console.log("Character Data:", characters);
   return (
     <div className="flex flex-row justify-between " id="header-container">
