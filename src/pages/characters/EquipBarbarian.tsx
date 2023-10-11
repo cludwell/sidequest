@@ -32,6 +32,8 @@ export default function EquipBarbarian({
     window.location.href = "#submit";
     // console.log("EQUIPMENT", equipment);
   };
+  if (!dndClass || !dndClass?.role) return null
+
   return (
     <>
       <form className="flex flex-col items-center">

@@ -6,6 +6,7 @@ export default function DwarfInfo({
   setExpanded,
   type,
 }: RacialInfoProps) {
+  if (!type) return null
   return (
     <>
       <div className="collapse collapse-plus bg-base-200 my-1">

@@ -10,6 +10,7 @@ export default function ElfInfo({
   setExpanded,
   type,
 }: RacialInfoProps) {
+  if (!type) return null
   return (
     <>
       <Image

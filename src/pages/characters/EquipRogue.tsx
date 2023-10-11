@@ -32,7 +32,7 @@ export default function EquipRogue({
     window.location.href = "#submit";
     // console.log("EQUIPMENT", equipment);
   };
-  if (!dndClass.role) return null
+  if (!dndClass || !dndClass?.role) return null
 
   return (
     <>

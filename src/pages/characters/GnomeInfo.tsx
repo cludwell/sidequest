@@ -7,6 +7,7 @@ export default function GnomeInfo({
   setExpanded,
   type,
 }: RacialInfoProps) {
+  if (!type) return null
   return (
     <>
       <Image

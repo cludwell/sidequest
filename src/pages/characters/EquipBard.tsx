@@ -65,7 +65,7 @@ export default function EquipBard({
     window.location.href = "#submit";
     // console.log("equipment", equipment);
   };
-  if (!dndClass.role) return null
+  if (!dndClass || !dndClass?.role) return null
 
   return (
     <>
