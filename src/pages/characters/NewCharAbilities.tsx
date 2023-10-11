@@ -64,7 +64,7 @@ export default function NewCharAbilities({
   const [custom, setCustom] = useState<Record<string, number[]>>({});
   const standardArray: string[] = ["8", "10", "12", "13", "14", "15", "--"];
   const assignedArray = [str, dex, con, int, wis, cha, "--"];
-  let role = dndClass?.role;
+  let role = dndClass && dndClass?.role ? dndClass.role : null;
   const customArray = Object.values(custom).map((arr, i) =>
     arr.slice(1).reduce((acc, next) => (acc += next), 0)
   );
@@ -111,7 +111,7 @@ export default function NewCharAbilities({
     });
     setCustom(customRoll);
     setErrors([]);
-    console.log(custom);
+    // console.log(custom);
     return custom;
   };
   // const makeSelection = async (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -158,10 +158,10 @@ export default function NewCharAbilities({
       sleightOfHand: modifiers[dex] + skills["SleightOfHand"] * 2,
       stealth: modifiers[dex] + skills["Stealth"] * 2,
       survival: modifiers[wis] + skills["Survival"] * 2,
-      maxHp: dndClass?.role
+      maxHp: dndClass && dndClass?.role
         ? calculateHealth(dndClass?.role, modifiers[con], level)
         : null,
-      currentHp: dndClass?.role
+      currentHp: dndClass && dndClass?.role
         ? calculateHealth(dndClass?.role, modifiers[con], level)
         : null,
       initiative: modifiers[dex],
