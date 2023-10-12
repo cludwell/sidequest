@@ -110,11 +110,11 @@ export default function Header() {
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a className="text-lg">
                   <IconTrophy /> Accomplishments
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

@@ -28,12 +28,18 @@ interface SignInCredentials {
   password: string;
   username: string;
   profilePic: string;
-  action: string
+  action: string;
 }
 
 export const signIn = createAsyncThunk(
   "session/signIn",
-  async ({ email, username, profilePic, password, action }: SignInCredentials) => {
+  async ({
+    email,
+    username,
+    profilePic,
+    password,
+    action,
+  }: SignInCredentials) => {
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
@@ -44,7 +50,7 @@ export const signIn = createAsyncThunk(
         password,
         username,
         profilePic,
-        action
+        action,
       }),
     });
 
@@ -77,6 +83,10 @@ export const authenticate = createAsyncThunk(
   }
 );
 
+export const signOutRequest = createAsyncThunk("session/logout", async () => {
+  return null;
+});
+
 export const logInRequest = createAsyncThunk(
   "session/login",
   async ({ email, password }: LogInCredentials) => {
@@ -94,15 +104,14 @@ export const logInRequest = createAsyncThunk(
 
       if (res.ok) {
         const data = await res.json();
-        return data; // This data will be automatically dispatched as fulfilled action
+        return data;
       } else if (res.status < 500) {
         const data = await res.json();
-        throw new Error(data.errors); // This will trigger the rejected action
+        throw new Error(data.errors);
       } else {
         throw new Error("Server error");
       }
     } catch (error) {
-      // Handle errors here if needed
       throw error;
     }
   }
@@ -134,6 +143,12 @@ export const sessionSlice = createSlice({
       state.user = action.payload;
     });
     builder.addCase(signIn.rejected, (state, action) => {
+      state.user = null;
+    });
+    builder.addCase(signOutRequest.fulfilled, (state, action) => {
+      state.user = null;
+    });
+    builder.addCase(signOutRequest.rejected, (state, action) => {
       state.user = null;
     });
   },

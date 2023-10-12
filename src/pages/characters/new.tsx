@@ -7,7 +7,7 @@ import NewCharDescription from "./NewCharDescription";
 import NewCharEquipment from "./NewCharEquipment";
 import { DndClassObject } from "../../../lib/DndClassObject";
 import { Race } from "../../../lib/Race";
-import {Equipment} from '../../../lib/Equipment'
+import { Equipment } from "../../../lib/Equipment";
 import { useSelector } from "react-redux";
 import { userProfile } from "@/store/session";
 import { newCharacterRequest } from "@/store/characters";
@@ -17,22 +17,22 @@ import { AppDispatch } from "@/store";
 export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const dispatch = useDispatch<AppDispatch>();
-  const user: any = useSelector(userProfile)
-  console.log('user', user)
+  const user: any = useSelector(userProfile);
+  console.log("user", user);
   const [race, setRace] = useState<Race>({
     languages: [],
     spells: [],
     specialty: [],
     inventory: [],
     tools: [],
-    vision: '',
-    race: ''
+    vision: "",
+    race: "",
   });
   const [dndClass, setDndClass] = useState<DndClassObject>({
     role: null,
     specialty: [],
     spells: [],
-    languages: []
+    languages: [],
   });
   const [abilities, setAbilities] = useState<Object>({});
   const [description, setDescription] = useState<Object>({});
@@ -54,43 +54,51 @@ export default function NewCharacter() {
       specialty: [...(race?.specialty || []), ...(dndClass?.specialty || [])],
       inventory: [...(race?.inventory || []), ...(equipment?.inventory || [])],
       tools: [...(race?.tools || [])],
-      userId: user.id
+      userId: user.id,
     };
-    await dispatch(newCharacterRequest(character))
+    await dispatch(newCharacterRequest(character));
     // console.log("CHARACTER", user.id);
     return character;
   };
-  // console.log("SESSION", session);
+
+  if (!user)
+    return (
+      <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
+        <h1 className="almendra text-2xl m-8">Please sign in or use the demo-user to create a character.</h1>
+      </main>
+    );
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
       {race.race &&
-        !!Object.values(description).length &&
-        !!Object.values(abilities).length &&
-        !!equipment.inventory.length &&
-        dndClass.role &&
-        user && user.id ? (
-          <div className="flex flex-row max-w-screen-xl w-full justify-center" id="submit">
-            <button
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
-              onClick={submitCharacter}
-            >
-              Submit Character
-            </button>
-          </div>
-        ) : race.race &&
+      !!Object.values(description).length &&
+      !!Object.values(abilities).length &&
+      !!equipment.inventory.length &&
+      dndClass.role &&
+      user &&
+      user.id ? (
+        <div
+          className="flex flex-row max-w-screen-xl w-full justify-center"
+          id="submit"
+        >
+          <button
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
+            onClick={submitCharacter}
+          >
+            Submit Character
+          </button>
+        </div>
+      ) : race.race &&
         !!Object.values(description).length &&
         !!Object.values(abilities).length &&
         !!equipment.inventory.length &&
         dndClass.role &&
         user.id ? (
-          <h1 className="text-2xl almendra" id='submit'>Must be signed in to submit character</h1>
-        ) : null}
+        <h1 className="text-2xl almendra" id="submit">
+          Must be signed in to submit character
+        </h1>
+      ) : null}
       <ul className="steps steps-vertical md:steps-horizontal mb-4 lg:h-fit ">
-        <li
-          className={
-            race.race ? "step step-primary" : "step"
-          }
-        >
+        <li className={race.race ? "step step-primary" : "step"}>
           {" "}
           <a href="#item1" className="btn btn-xs">
             Race
@@ -121,9 +129,7 @@ export default function NewCharacter() {
           </a>
         </li>
         <li
-          className={
-            equipment.inventory.length ? "step step-primary" : "step"
-          }
+          className={equipment.inventory.length ? "step step-primary" : "step"}
         >
           {" "}
           <a href="#item5" className="btn btn-xs">
@@ -162,20 +168,21 @@ export default function NewCharacter() {
         </div>
       </div>
       {race.race &&
-        !!Object.values(description).length &&
-        !!Object.values(abilities).length &&
-        !!equipment.inventory.length &&
-        dndClass.role &&
-        user && user.id && (
-          <div className="flex flex-row max-w-screen-xl w-full justify-center">
-            <button
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
-               onClick={submitCharacter}
-            >
-              Submit Character
-            </button>
-          </div>
-        )}
+      !!Object.values(description).length &&
+      !!Object.values(abilities).length &&
+      !!equipment.inventory.length &&
+      dndClass.role &&
+      user &&
+      user.id && (
+        <div className="flex flex-row max-w-screen-xl w-full justify-center">
+          <button
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
+            onClick={submitCharacter}
+          >
+            Submit Character
+          </button>
+        </div>
+      ) }
       <div className="flex justify-center w-full py-2 gap-2">
         <a href="#item1" className="btn btn-xs">
           Race

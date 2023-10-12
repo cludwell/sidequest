@@ -61,6 +61,14 @@
 -create modal after scenario selection to select character
 -create modal after character selection to select scenario
 
+10./10
+-solved a lot of null case errors
+
+10/11
+-got app hosted on vercel and render
+
+10/12
+
 
 TO DO MVP
 <!-- -create user sign up feature -->

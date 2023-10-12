@@ -8,12 +8,11 @@ export default function About() {
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
             Side Quest is a portfolio project I started because I noticed there
-            was huge potential for AI in this specific task and to best showcase
-            my capabilities as a Full Stack Developer. Language models allow a
-            level of flexibility difficult to match in a video game.
-            Experimenting with Chat GPT I realized that tons of fan content must
-            have been fed into the model as it was frightenly good at what it
-            did.
+            to best showcase my capabilities as a Full Stack Developer. Language
+            models allow a level of flexibility difficult to match and table top
+            gaming seems like a perfect use case. Experimenting with Chat GPT I
+            realized that tons of fan content must have been fed into the model
+            as it was frightenly good at what it did.
           </p>
           <p className="py-6">
             SideQuest was made with Next.js, next-auth, DaisyUI, Prisma, and
