@@ -14,7 +14,7 @@
     "deploy": "npm run setup && npm run start"
   },
   "dependencies": {
-    "@prisma/client": "^5.1.0",
+    "@prisma/client": "^5.4.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/bcryptjs": "^2.4.2",
     "@types/node": "20.4.2",
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
-    "prisma": "^5.1.0",
+    "prisma": "^5.4.2",
     "redux-logger": "^3.0.6"
   }
 }
