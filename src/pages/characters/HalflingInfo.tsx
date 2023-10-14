@@ -48,7 +48,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse=plus bg-base-200 my-1">
+      <div className="collapse collapse-plus bg-base-200 my-1">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -91,7 +91,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse=plus bg-base-200 my-1">
+      <div className="collapse collapse-plus bg-base-200 my-1">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -124,7 +124,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse=plus bg-base-200 my-1">
+      <div className="collapse collapse-plus bg-base-200 my-1">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -155,7 +155,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse=plus bg-base-200 my-1">
+      <div className="collapse collapse-plus bg-base-200 my-1">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -189,7 +189,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse=plus bg-base-200 my-1">
+      <div className="collapse collapse-plus bg-base-200 my-1">
         <input
           type="checkbox"
           name="my-accordion-2"

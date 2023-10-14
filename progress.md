@@ -69,11 +69,18 @@
 
 10/12
 
+10/13
+
+
 
 TO DO MVP
 <!-- -create user sign up feature -->
 -put socials in about page
 -create dice buttons, useState, and send to chat
+-d20 and other side dice
+-perfect prompt
+-make sure that dungeonmaster loads with prompt
+-magic casters have spells on creation
 
 TO DO POLISH
 -reuse char sheet modal and make a scene modal to put in header when selected

@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import IconCharacters from "./IconCharacters";
 import IconMap from "./IconMap";
 import IconSend from "./IconSend";
-import d20 from "../../public/images/d20.png";
+import d20Icon from "../../public/images/d20.png";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectedCharacterState } from "@/store/characters";
-import { CharacterData } from "../../lib/characterData";
 import d20pastel from "../../public/images/d20pastel.png";
 import ModalCharacterSheet from "./ModalCharacterSheet";
 import { selectedScenarioState } from "@/store/scenarios";
@@ -30,7 +29,9 @@ export default function DungeonMaster() {
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
   const [rolls, setRolls] = useState<number[]>([]);
-  const [rolling, setRolling] = useState<Boolean>(false);
+  const [d20, setD20] =useState<number>(0)
+  const [rollingA, setRollingA] = useState<Boolean>(false);
+  const [rollingB, setRollingB] = useState<Boolean>(false)
   const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
@@ -102,7 +103,7 @@ export default function DungeonMaster() {
   };
 
   const onClickRoll = () => {
-    setRolling(true);
+    setRollingA(true);
     const diceResult: any = document.getElementById("diceResult");
     const randomNumber = Math.floor(Math.random() * 20) + 1;
 
@@ -115,8 +116,26 @@ export default function DungeonMaster() {
     setTimeout(() => {
       diceResult.textContent = randomNumber;
       // diceResult.classList.remove("rollAnimation");
-      setRolling(false);
+      setRollingA(false);
     }, 1000); // The timeout should match the animation duration in CSS.
+  };
+
+  const resp = " roll: 3d6 .";
+
+  const onCustomRoll = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    setRolls([]);
+    const afterRollPrompt = resp.split("roll:");
+    const diceNumber = parseInt(afterRollPrompt[1].trim().split("d")[0]);
+    const diceSides = afterRollPrompt[1].trim().split("d")[1].split(" ")[0];
+    for (let i = 0; i < diceNumber; i++) {
+      setRollingA(true);
+      const num = Math.floor(Math.random() * parseInt(diceSides)) + 1;
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setRolls((prev) => [...prev, num]);
+      setRollingA(false)
+    }
+    console.log(rolls);
   };
 
   return (
@@ -140,7 +159,7 @@ export default function DungeonMaster() {
               >
                 <div className="chat-image avatar">
                   <div className="w-10 rounded-full">
-                    <Image width={50} height={50} src={d20} alt="logo" />
+                    <Image width={50} height={50} src={d20Icon} alt="logo" />
                     <IconMap />
                   </div>
                 </div>
@@ -203,6 +222,24 @@ export default function DungeonMaster() {
           onChange={(e) => setUserText(e.target.value)}
         ></textarea>
         <div className="flex flex-row justify-end">
+          {resp.includes("roll:") && (
+            <>
+              {}
+              <div
+                className="tooltip my-4 tooltip-left"
+                data-tip="Click to roll dice!"
+              >
+                <button
+                  className={`btn btn-neutral text-2xl tooltip ${
+                    rollingA ? "rollAnimation" : ""
+                  }`}
+                  onClick={onCustomRoll}
+                >
+                  🎲
+                </button>
+              </div>
+            </>
+          )}
           {char && <ModalCharacterSheet character={char} />}
           <button className="btn btn-accent my-4 w-fit" type="submit">
             <IconSend />
@@ -223,11 +260,17 @@ export default function DungeonMaster() {
           <Image
             height={150}
             width={150}
-            className={`${rolling ? "rollAnimation" : ""}`}
+            className={`${rollingA ? "rollAnimation" : ""}`}
             alt="die"
             src={d20pastel}
           />
         </div>
+        {!!rolls.length &&
+          rolls.map((r, i) => (
+            <kbd key={`roll${i}`} className="kbd w-fit m-1 fade-in-slide-in">
+              {r}
+            </kbd>
+          ))}
       </form>
     </main>
   );

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in ">
@@ -21,7 +23,7 @@ export default function About() {
           </p>
           <p className="py-6">
             If there is a junior position open at your organization, please
-            consider me for the role 🙏.
+            consider me for the role 🙏. Please check out my <Link href='https://cludwell.github.io/#' className="hover:underline">portfolio here</Link>.
           </p>
         </div>
       </div>

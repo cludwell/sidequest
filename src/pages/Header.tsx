@@ -9,7 +9,7 @@ import { Session } from "next-auth";
 // type definitions for useSelector and state
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { authenticate, userProfile } from "@/store/session";
+import { authenticate, signOutRequest, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
 import { loadScenarios } from "@/store/scenarios";
@@ -37,6 +37,7 @@ export default function Header() {
 
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
+    await dispatch(signOutRequest()  )
     router.push("/"); // Manually redirect to the home page
   };
 
