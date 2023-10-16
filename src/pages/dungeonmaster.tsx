@@ -6,7 +6,6 @@ import d20Icon from "../../public/images/d20.png";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectedCharacterState } from "@/store/characters";
-import d20pastel from "../../public/images/d20pastel.png";
 import ModalCharacterSheet from "./ModalCharacterSheet";
 import { selectedScenarioState } from "@/store/scenarios";
 import { Characters, Scenarios } from "@prisma/client";
@@ -22,9 +21,14 @@ export default function DungeonMaster() {
       )}.
       If the user has selected a pregenerated scenario, it is: ${JSON.stringify(
         scene
-      )}`,
+      )}. If the user needs to roll dice other than d20, please prompt them in this format "roll: 3d6 " `,
       timestamp: new Date().toString(),
     },
+    // {
+    //   role: 'user',
+    //   content: "The user has entered the chat. Please respond with setting up the scenario and ask them to describe their character if they have not already chosen one",
+    //   timestamp: new Date().toString(),
+    // }
   ]);
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
@@ -32,11 +36,9 @@ export default function DungeonMaster() {
   const [d20, setD20] = useState<number>(0);
   const [rollingA, setRollingA] = useState<Boolean>(false);
   const [rollingB, setRollingB] = useState<Boolean>(false);
-  const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
 
-  // console.log("SELECTED CHARACTER", char);
   useEffect(() => {
     if (chatContainerRef.current) {
       const element: any = chatContainerRef.current;
@@ -50,6 +52,7 @@ export default function DungeonMaster() {
     const newChatEntry = {
       role: "user",
       content: `${userText}, if user rolled a d20: ${d20}, if user was prompted for other dice rolls: ${rolls}`,
+      // timestamp: new Date().toString(),
     };
 
     setChatHistory([
@@ -74,8 +77,6 @@ export default function DungeonMaster() {
     });
     if (response.ok) {
       const responseData = await response.json();
-      // console.log("RESPONSE DATA", responseData);
-
       let message = "Unknown error";
       if (responseData.error) {
         message = responseData.error.message;
@@ -101,6 +102,7 @@ export default function DungeonMaster() {
     }
     setLoading(false);
   };
+
 
   const d20Roll = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -246,7 +248,7 @@ export default function DungeonMaster() {
             </button>
           </div>
           {char && <ModalCharacterSheet character={char} />}
-          <button className="btn btn-accent my-4 w-fit" type="submit">
+          <button className="btn btn-accent my-4 w-fit" type="submit" >
             <IconSend />
           </button>
         </div>
@@ -274,25 +276,6 @@ export default function DungeonMaster() {
               ))}
           </div>
         </div>
-        {/* <div
-          className="relative cursor-pointer flex tooltip w-fit"
-          onClick={d20Roll}
-          data-tip="Roll Dice"
-        >
-          <h3
-            id="diceResult"
-            className="absolute font-2xl federant top-6 left-[65px] font-bold z-10 "
-          >
-            20
-          </h3>
-          <Image
-            height={150}
-            width={150}
-            className={`${rollingA ? "rollAnimation" : ""}`}
-            alt="die"
-            src={d20pastel}
-          />
-        </div> */}
       </form>
     </main>
   );

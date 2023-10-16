@@ -4,21 +4,38 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/bardicon.png";
 import bard from "../../../public/images/dee-holmberg-bg-bard.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
+import { bardCantrips } from "../../../lib/_bardCantrips";
+import { bardLevel1Spells } from "../../../lib/_bardLevel1Spells";
+
 declare global {
   interface Window {
-    my_modal_bard: any; // Replace `any` with the type of your modal if possible
+    my_modal_bard: any;
   }
 }
 export default function Bard({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [cant1, setCant1] = useState<string>("Select Cantrip 1");
+  const [cant2, setCant2] = useState<string>("Select Cantrip 2");
+  const [spell1, setSpell1] = useState<string>("Select Spell 1");
+  const [spell2, setSpell2] = useState<string>("Select Spell 2");
+  const [spell3, setSpell3] = useState<string>("Select Spell 3");
+  const [spell4, setSpell4] = useState<string>("Select Spell 4");
+
   useEffect(() => {
     const myModalBard = document.getElementById("my_modal_bard");
     if (myModalBard) window.my_modal_bard = myModalBard;
   }, []);
+
   const becomeBard = async () => {
-    setDndClass({ role: "Bard", specialty: [], spells: [], languages: [] });
+    setDndClass({
+      role: "Bard",
+      specialty: [],
+      spells: [cant1, cant2, spell1, spell2, spell3, spell4],
+      languages: [],
+    });
     window.my_modal_bard.close();
     window.location.href = "#item3";
+    console.log('character bard', dndClass)
   };
   return (
     <>
@@ -590,9 +607,87 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center my-4">
+            <select
+              className="select select-primary w-full max-w-xs my-2"
+              onChange={(e) => setCant1(e.target.value)}
+              value={cant1}
+            >
+              <option disabled>Select Cantrip 1</option>
+              {bardCantrips.map((cant, i) => (
+                <option key={`cant1${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-secondary w-full max-w-xs my-2"
+              onChange={(e) => setCant2(e.target.value)}
+              value={cant2}
+            >
+              <option disabled>Select Cantrip 2</option>
+              {bardCantrips.map((cant, i) => (
+                <option key={`cant2${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-success w-full max-w-xs my-2"
+              onChange={(e) => setSpell1(e.target.value)}
+              value={spell1}
+            >
+              <option disabled>Select Spell 1</option>
+              {bardLevel1Spells.map((spell, i) => (
+                <option key={`spell1${i}`}>
+                  {spell.name} - {spell.castingTime} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-info w-full max-w-xs my-2"
+              onChange={(e) => setSpell2(e.target.value)}
+              value={spell2}
+            >
+              <option disabled>Select Spell 2</option>
+              {bardLevel1Spells.map((spell, i) => (
+                <option key={`spell2${i}`}>
+                  {spell.name} - {spell.castingTime} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-warning w-full max-w-xs my-2"
+              onChange={(e) => setSpell3(e.target.value)}
+              value={spell3}
+            >
+              <option disabled>Select Spell 3</option>
+              {bardLevel1Spells.map((spell, i) => (
+                <option key={`spell3${i}`}>
+                  {spell.name} - {spell.castingTime} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell4(e.target.value)}
+              value={spell4}
+            >
+              <option disabled>Select Spell 4</option>
+              {bardLevel1Spells.map((spell, i) => (
+                <option key={`spell4${i}`}>
+                  {spell.name} - {spell.castingTime} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
             <button
-              className="btn btn-success btn-wide my-8"
+              className="btn btn-success btn-wide my-2"
               onClick={becomeBard}
             >
               Bard

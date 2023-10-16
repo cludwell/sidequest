@@ -78,11 +78,11 @@
 
 10/16
 -put socials in about page
+-perfect prompt
 
 
 TO DO MVP
 <!-- -create user sign up feature -->
--perfect prompt
 -make sure that dungeonmaster loads with prompt
 -magic casters have spells on creation
 
