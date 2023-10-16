@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import IconResume from "./IconResume";
 
 export default function About() {
   return (
@@ -23,8 +25,60 @@ export default function About() {
           </p>
           <p className="py-6">
             If there is a junior position open at your organization, please
-            consider me for the role 🙏. Please check out my <Link href='https://cludwell.github.io/#' className="hover:underline">portfolio here</Link>.
+            consider me for the role 🙏. Please check out my{" "}
+            <a
+              href="https://cludwell.github.io/#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              portfolio
+            </a>{" "}
+            and my
+            <a
+              href="https://www.linkedin.com/in/christian-ludwell-047b18247/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}social media.
+            </a>
           </p>
+          <div className="flex flex-row justify-evenly">
+            <a
+              href="https://github.com/cludwell"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <Image
+                src="https://i.imgur.com/KTjeA0w.png"
+                alt="githubicon"
+                className="github-icon w-6"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/christian-ludwell-047b18247/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="https://i.imgur.com/iiYBy1G.png"
+                alt="githubicon"
+                className=" w-7"
+                width={28}
+                height={28}
+              />
+            </a>
+            <a
+              href="https://cludwell.github.io/#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconResume type="" />
+            </a>
+          </div>
         </div>
       </div>
       <div className="max-w-screen-xl m-8">

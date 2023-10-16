@@ -71,13 +71,17 @@
 
 10/13
 
+10/15
+-
+-create dice buttons, useState, and send to chat
+-d20 and other side dice
+
+10/16
+-put socials in about page
 
 
 TO DO MVP
 <!-- -create user sign up feature -->
--put socials in about page
--create dice buttons, useState, and send to chat
--d20 and other side dice
 -perfect prompt
 -make sure that dungeonmaster loads with prompt
 -magic casters have spells on creation
