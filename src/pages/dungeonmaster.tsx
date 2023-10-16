@@ -29,9 +29,9 @@ export default function DungeonMaster() {
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
   const [rolls, setRolls] = useState<number[]>([]);
-  const [d20, setD20] =useState<number>(0)
+  const [d20, setD20] = useState<number>(0);
   const [rollingA, setRollingA] = useState<Boolean>(false);
-  const [rollingB, setRollingB] = useState<Boolean>(false)
+  const [rollingB, setRollingB] = useState<Boolean>(false);
   const resetDice = () => setRolls([]);
   const [error, setError] = useState("");
   const chatContainerRef = useRef(null);
@@ -49,7 +49,7 @@ export default function DungeonMaster() {
     setLoading(true);
     const newChatEntry = {
       role: "user",
-      content: userText,
+      content: `${userText}, if user rolled a d20: ${d20}, if user was prompted for other dice rolls: ${rolls}`,
     };
 
     setChatHistory([
@@ -102,22 +102,16 @@ export default function DungeonMaster() {
     setLoading(false);
   };
 
-  const onClickRoll = () => {
+  const d20Roll = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    setD20(0);
     setRollingA(true);
-    const diceResult: any = document.getElementById("diceResult");
+    // const diceResult: any = document.getElementById("diceResult");
     const randomNumber = Math.floor(Math.random() * 20) + 1;
-
-    // Apply animation
-    diceResult.textContent = "...";
-    diceResult.style.opacity = 1;
-    // diceResult.classList.add("rollAnimation");
-
-    // After the animation, display the result
     setTimeout(() => {
-      diceResult.textContent = randomNumber;
-      // diceResult.classList.remove("rollAnimation");
+      setD20(randomNumber);
       setRollingA(false);
-    }, 1000); // The timeout should match the animation duration in CSS.
+    }, 1000);
   };
 
   const resp = " roll: 3d6 .";
@@ -129,13 +123,12 @@ export default function DungeonMaster() {
     const diceNumber = parseInt(afterRollPrompt[1].trim().split("d")[0]);
     const diceSides = afterRollPrompt[1].trim().split("d")[1].split(" ")[0];
     for (let i = 0; i < diceNumber; i++) {
-      setRollingA(true);
+      setRollingB(true);
       const num = Math.floor(Math.random() * parseInt(diceSides)) + 1;
       await new Promise((resolve) => setTimeout(resolve, 500));
       setRolls((prev) => [...prev, num]);
-      setRollingA(false)
+      setRollingB(false);
     }
-    console.log(rolls);
   };
 
   return (
@@ -224,14 +217,13 @@ export default function DungeonMaster() {
         <div className="flex flex-row justify-end">
           {resp.includes("roll:") && (
             <>
-              {}
               <div
-                className="tooltip my-4 tooltip-left"
-                data-tip="Click to roll dice!"
+                className="tooltip m-4 tooltip-bottom"
+                data-tip="Click to roll dice for specific situations, weapon damage, etc."
               >
                 <button
                   className={`btn btn-neutral text-2xl tooltip ${
-                    rollingA ? "rollAnimation" : ""
+                    rollingB ? "rollAnimation" : ""
                   }`}
                   onClick={onCustomRoll}
                 >
@@ -240,15 +232,51 @@ export default function DungeonMaster() {
               </div>
             </>
           )}
+          <div
+            className="tooltip tooltip-left my-4 "
+            data-tip="Roll a d20 for all skill checks. Can your character make that jump? Roll athletics. Is someone lying to you? Roll Perception. Will be sent to Dungeon Master"
+          >
+            <button
+              className={`btn btn-neutral text-2xl tooltip ${
+                rollingA ? "rollAnimation" : ""
+              }`}
+              onClick={d20Roll}
+            >
+              d20🎲
+            </button>
+          </div>
           {char && <ModalCharacterSheet character={char} />}
           <button className="btn btn-accent my-4 w-fit" type="submit">
             <IconSend />
           </button>
         </div>
-
-        <div
+        <div className="flex flex-row flex-wrap h-14">
+          <div
+            className="w-14 tooltip tooltip-right"
+            data-tip="Results of d20 roll."
+          >
+            {d20 !== 0 && (
+              <kbd className="kbd kbd-lg fade-in-slide-in ">{d20}</kbd>
+            )}
+          </div>
+          <div
+            className="tooltip tooltip-right"
+            data-tip="Results of whatever other rolls dungeon masters has prompted (ex Weapon Damage). Will be sent to Dungeon Master."
+          >
+            {!!rolls.length &&
+              rolls.map((r, i) => (
+                <kbd
+                  key={`roll${i}`}
+                  className="kbd w-fit m-1 h-fit fade-in-slide-in"
+                >
+                  {r}
+                </kbd>
+              ))}
+          </div>
+        </div>
+        {/* <div
           className="relative cursor-pointer flex tooltip w-fit"
-          onClick={onClickRoll}
+          onClick={d20Roll}
           data-tip="Roll Dice"
         >
           <h3
@@ -264,13 +292,7 @@ export default function DungeonMaster() {
             alt="die"
             src={d20pastel}
           />
-        </div>
-        {!!rolls.length &&
-          rolls.map((r, i) => (
-            <kbd key={`roll${i}`} className="kbd w-fit m-1 fade-in-slide-in">
-              {r}
-            </kbd>
-          ))}
+        </div> */}
       </form>
     </main>
   );
