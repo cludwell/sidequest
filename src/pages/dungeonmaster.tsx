@@ -51,7 +51,7 @@ export default function DungeonMaster() {
     setLoading(true);
     const newChatEntry = {
       role: "user",
-      content: `${userText}, if user rolled a d20: ${d20}, if user was prompted for other dice rolls: ${rolls}`,
+      content: `${userText}`,
       // timestamp: new Date().toString(),
     };
 
@@ -172,7 +172,7 @@ export default function DungeonMaster() {
                 className="chat chat-end w-full"
                 key={`user${chat.timestamp}`}
               >
-                <div className="chat-image avatar">
+                <div className="chat-image avatar mr-4">
                   <div className="w-10 rounded-full ">
                     {char && char.imgUrl ? (
                       <Image

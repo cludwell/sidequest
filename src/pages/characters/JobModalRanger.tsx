@@ -6,6 +6,8 @@ import ranger from "../../../public/images/dee-holmberg-bg-ranger.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "../IconDoubleChevron";
 import { naturalExplorerOptions } from "../../../lib/_naturalExplorer";
+
+
 declare global {
   interface Window {
     my_modal_ranger: any; // Replace `any` with the type of your modal if possible

@@ -83,12 +83,13 @@
 10/17
 -added cantrips that were missing from complete cantrip spell list
 -finished spell selections for magic casting classes
+-natural explorer select is added
 
 
 TO DO MVP
-<!-- -create user sign up feature -->
+-take screenshots
+
 -make sure that dungeonmaster loads with prompt
--natural explorer for rangers
 -make cantrip and spell components for drop down tables
 -will eventually want to do some error handling
 
