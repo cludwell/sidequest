@@ -89,6 +89,8 @@ TO DO MVP
 <!-- -create user sign up feature -->
 -make sure that dungeonmaster loads with prompt
 -natural explorer for rangers
+-make cantrip and spell components for drop down tables
+-will eventually want to do some error handling
 
 TO DO POLISH
 -reuse char sheet modal and make a scene modal to put in header when selected

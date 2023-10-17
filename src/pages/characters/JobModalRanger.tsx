@@ -5,6 +5,7 @@ import icon from "../../../public/icons/rangericon.png";
 import ranger from "../../../public/images/dee-holmberg-bg-ranger.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "../IconDoubleChevron";
+import { naturalExplorerOptions } from "../../../lib/_naturalExplorer";
 declare global {
   interface Window {
     my_modal_ranger: any; // Replace `any` with the type of your modal if possible
@@ -12,7 +13,8 @@ declare global {
 }
 export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
-  const [favored, setFavored] = useState<string>("Aberrations");
+  const [favored, setFavored] = useState<string>("Select Favored");
+  const [terrain, setTerrain] = useState<string>("Select Terrain");
   const [errors, setErrors] = useState<string[]>([]);
   useEffect(() => {
     const myModalRanger = document.getElementById("my_modal_ranger");
@@ -49,7 +51,10 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
     } else setErrors([]);
     setDndClass({
       role: "Ranger",
-      specialty: [`Favored Enemy - ${favored}`],
+      specialty: [
+        `Favored Enemy - ${favored}`,
+        `Natural Explorer - ${terrain}`,
+      ],
       spells: [],
       languages: [],
     });
@@ -72,7 +77,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           />
           Ranger
         </span>
-<IconDoubleChevron />
+        <IconDoubleChevron />
       </button>
       <dialog id="my_modal_ranger" className="modal">
         <form method="dialog" className="modal-box">
@@ -234,6 +239,20 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 You choose additional favored terrain types at 6th and 10th
                 level.
               </p>
+              <table className="table table-zebra w-full bg-base-100 my-4">
+                {/* <th>
+                  <td>Terrain</td>
+                  <td>Description</td>
+                </th> */}
+                <tbody>
+                  {naturalExplorerOptions.map((terr, i) => (
+                    <tr key={`terrain${terr.archetype}`}>
+                      <td className="font-bold">{terr.archetype}</td>
+                      <td>{terr.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
 
@@ -820,12 +839,22 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             <select
               className="select select-primary w-full max-w-xs my-4"
               onChange={(e) => setFavored(e.target.value)}
-              defaultValue="default"
+              value={favored}
             >
               {favoredEnemies.map((enem, i) => (
                 <option key={`${enem}`} value={enem}>
                   {enem}
                 </option>
+              ))}
+            </select>
+            <select
+              className="select select-secondary w-full max-w-xs my-2"
+              onChange={(e) => setTerrain(e.target.value)}
+              value={terrain}
+            >
+              <option disabled>Select Terrain</option>
+              {naturalExplorerOptions.map((terr, i) => (
+                <option key={`terr${i}`}>{terr.archetype}</option>
               ))}
             </select>
             <button
@@ -835,6 +864,11 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               Ranger
             </button>
           </div>
+        </form>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
           <div className="toast toast-end">
             {!!errors.length &&
               errors.map((e, i) => (
@@ -843,11 +877,6 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 </div>
               ))}
           </div>
-        </form>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
     </>
   );
 }
