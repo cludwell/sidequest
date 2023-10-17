@@ -79,12 +79,13 @@
 10/16
 -put socials in about page
 -perfect prompt
-
+-
 
 TO DO MVP
 <!-- -create user sign up feature -->
 -make sure that dungeonmaster loads with prompt
 -magic casters have spells on creation
+-natural explorer for rangers
 
 TO DO POLISH
 -reuse char sheet modal and make a scene modal to put in header when selected

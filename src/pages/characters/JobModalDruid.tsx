@@ -4,19 +4,35 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/druidicon.png";
 import druid from "../../../public/images/dee-holmberg-bg-druid.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
+import { druidCantrips } from "../../../lib/_druidCantrips";
+import { druidLevel1Spells } from "../../../lib/_druidLevel1Spells";
+import IconDoubleChevron from "../IconDoubleChevron";
+
 declare global {
   interface Window {
-    my_modal_druid: any; // Replace `any` with the type of your modal if possible
+    my_modal_druid: any;
   }
 }
 export default function Druid({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [cant1, setCant1] = useState<string>("Select Cantrip 1");
+  const [cant2, setCant2] = useState<string>("Select Cantrip 2");
+  const [spell1, setSpell1] = useState<string>("Select Spell 1");
+  const [spell2, setSpell2] = useState<string>("Select Spell 2");
+  const [spell3, setSpell3] = useState<string>("Select Spell 3");
+  const [spell4, setSpell4] = useState<string>("Select Spell 4");
+
   useEffect(() => {
     const myModalDruid = document.getElementById("my_modal_druid");
     if (myModalDruid) window.my_modal_druid = myModalDruid;
   }, []);
   const becomeDruid = async () => {
-    setDndClass({ role: "Druid", specialty: [], spells: [], languages: [] });
+    setDndClass({
+      role: "Druid",
+      specialty: [],
+      spells: [cant1, cant2, spell1, spell2, spell3, spell4],
+      languages: [],
+    });
     window.my_modal_druid.close();
     window.location.href = "#item3";
   };
@@ -36,24 +52,10 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
           />
           Druid
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="#05C3DD"
-          className="w-6 h-6 "
-        >
-          <path
-            fillRule="evenodd"
-            d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <IconDoubleChevron />
       </button>
       <dialog id="my_modal_druid" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
-            Barbarian
-          </h3> */}
           <Image
             src={druid}
             alt="detail image"
@@ -524,7 +526,85 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center">
+            <select
+              className="select select-primary w-full max-w-xs my-2"
+              onChange={(e) => setCant1(e.target.value)}
+              value={cant1}
+            >
+              <option disabled>Select Cantrip 1</option>
+              {druidCantrips.map((cant, i) => (
+                <option key={`cant1${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-secondary w-full max-w-xs my-2"
+              onChange={(e) => setCant2(e.target.value)}
+              value={cant2}
+            >
+              <option disabled>Select Cantrip 2</option>
+              {druidCantrips.map((cant, i) => (
+                <option key={`cant2${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-success w-full max-w-xs my-2"
+              onChange={(e) => setSpell1(e.target.value)}
+              value={spell1}
+            >
+              <option disabled>Select Spell 1</option>
+              {druidLevel1Spells.map((spell, i) => (
+                <option key={`spell1${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-info w-full max-w-xs my-2"
+              onChange={(e) => setSpell2(e.target.value)}
+              value={spell2}
+            >
+              <option disabled>Select Spell 2</option>
+              {druidLevel1Spells.map((spell, i) => (
+                <option key={`spell2${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-warning w-full max-w-xs my-2"
+              onChange={(e) => setSpell3(e.target.value)}
+              value={spell3}
+            >
+              <option disabled>Select Spell 3</option>
+              {druidLevel1Spells.map((spell, i) => (
+                <option key={`spell3${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell4(e.target.value)}
+              value={spell4}
+            >
+              <option disabled>Select Spell 4</option>
+              {druidLevel1Spells.map((spell, i) => (
+                <option key={`spell4${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeDruid}
