@@ -55,9 +55,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_sorcerer" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
-            Barbarian
-          </h3> */}
+
           <Image
             src={cleric}
             alt="detail image"
@@ -549,7 +547,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
               onChange={(e) => setSpell2(e.target.value)}
               value={spell2}
             >
-              <option disabled>Select Spell 1</option>
+              <option disabled>Select Spell 2</option>
               {sorcererLevel1Spells.map((spell, i) => (
                 <option key={`spell2${i}`}>
                   {spell.name} - {spell.range} - {spell.duration}

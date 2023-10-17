@@ -5,6 +5,8 @@ import icon from "../../../public/icons/wizardicon.png";
 import wizard from "../../../public/images/dee-holmberg-bg-wizard.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "../IconDoubleChevron";
+import { wizardCantrips } from "../../../lib/_wizardCantrips";
+import { wizardLevel1Spells } from "../../../lib/_wizardLevel1Spells";
 declare global {
   interface Window {
     my_modal_wizard: any; // Replace `any` with the type of your modal if possible
@@ -12,12 +14,36 @@ declare global {
 }
 export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [cant1, setCant1] = useState<string>("Select Cantrip 1");
+  const [cant2, setCant2] = useState<string>("Select Cantrip 2");
+  const [cant3, setCant3] = useState<string>("Select Cantrip 3");
+  const [spell1, setSpell1] = useState<string>("Select Spell 1");
+  const [spell2, setSpell2] = useState<string>("Select Spell 2");
+  const [spell3, setSpell3] = useState<string>("Select Spell 3");
+  const [spell4, setSpell4] = useState<string>("Select Spell 4");
+  const [spell5, setSpell5] = useState<string>("Select Spell 5");
+  const [spell6, setSpell6] = useState<string>("Select Spell 6");
   useEffect(() => {
     const myModalWizard = document.getElementById("my_modal_wizard");
     if (myModalWizard) window.my_modal_wizard = myModalWizard;
   }, []);
   const becomeWizard = async () => {
-    setDndClass({ role: "Wizard", specialty: [], spells: [], languages: [] });
+    setDndClass({
+      role: "Wizard",
+      specialty: [],
+      spells: [
+        cant1,
+        cant2,
+        cant3,
+        spell1,
+        spell2,
+        spell3,
+        spell4,
+        spell5,
+        spell6,
+      ],
+      languages: [],
+    });
     window.my_modal_wizard.close();
     window.location.href = "#item3";
   };
@@ -37,7 +63,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
           />
           Wizard
         </span>
-<IconDoubleChevron />
+        <IconDoubleChevron />
       </button>
       <dialog id="my_modal_wizard" className="modal">
         <form method="dialog" className="modal-box">
@@ -448,7 +474,118 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center">
+          <select
+              className="select select-primary w-full max-w-xs my-2"
+              onChange={(e) => setCant1(e.target.value)}
+              value={cant1}
+            >
+              <option disabled>Select Cantrip 1</option>
+              {wizardCantrips.map((cant, i) => (
+                <option key={`cant1${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-secondary w-full max-w-xs my-2"
+              onChange={(e) => setCant2(e.target.value)}
+              value={cant2}
+            >
+              <option disabled>Select Cantrip 2</option>
+              {wizardCantrips.map((cant, i) => (
+                <option key={`cant2${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-success w-full max-w-xs my-2"
+              onChange={(e) => setCant3(e.target.value)}
+              value={cant3}
+            >
+              <option disabled>Select Cantrip 3</option>
+              {wizardCantrips.map((cant, i) => (
+                <option key={`cant3${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-warning w-full max-w-xs my-2"
+              onChange={(e) => setSpell1(e.target.value)}
+              value={spell1}
+            >
+              <option disabled>Select Spell 1</option>
+              {wizardLevel1Spells.map((spell, i) => (
+                <option key={`spell1${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell2(e.target.value)}
+              value={spell2}
+            >
+              <option disabled>Select Spell 2</option>
+              {wizardLevel1Spells.map((spell, i) => (
+                <option key={`spell2${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell3(e.target.value)}
+              value={spell3}
+            >
+              <option disabled>Select Spell 3</option>
+              {wizardLevel1Spells.map((spell, i) => (
+                <option key={`spell3${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell4(e.target.value)}
+              value={spell4}
+            >
+              <option disabled>Select Spell 4</option>
+              {wizardLevel1Spells.map((spell, i) => (
+                <option key={`spell4${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell5(e.target.value)}
+              value={spell5}
+            >
+              <option disabled>Select Spell 5</option>
+              {wizardLevel1Spells.map((spell, i) => (
+                <option key={`spell5${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell6(e.target.value)}
+              value={spell6}
+            >
+              <option disabled>Select Spell 6</option>
+              {wizardLevel1Spells.map((spell, i) => (
+                <option key={`spell6${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeWizard}

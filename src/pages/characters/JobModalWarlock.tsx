@@ -5,6 +5,8 @@ import icon from "../../../public/icons/warlockicon.png";
 import warlock from "../../../public/images/dee-holmberg-warlock2.png";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "../IconDoubleChevron";
+import { warlockCantrips } from "../../../lib/_warlockCantrips";
+import { warlockLevel1Spells } from "../../../lib/_warlockLevel1Spells";
 declare global {
   interface Window {
     my_modal_warlock: any; // Replace `any` with the type of your modal if possible
@@ -12,12 +14,22 @@ declare global {
 }
 export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [cant1, setCant1] = useState<string>("Select Cantrip 1");
+  const [cant2, setCant2] = useState<string>("Select Cantrip 2");
+  const [spell1, setSpell1] = useState<string>("Select Spell 1");
+  const [spell2, setSpell2] = useState<string>("Select Spell 2");
+
   useEffect(() => {
     const myModalWarlock = document.getElementById("my_modal_warlock");
     if (myModalWarlock) window.my_modal_warlock = myModalWarlock;
   }, []);
   const becomeWarlock = async () => {
-    setDndClass({ role: "Warlock", specialty: [], spells: [], languages: [] });
+    setDndClass({
+      role: "Warlock",
+      specialty: [],
+      spells: [cant1, cant2, spell1, spell2],
+      languages: [],
+    });
     window.my_modal_warlock.close();
     window.location.href = "#item3";
   };
@@ -37,7 +49,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
           />
           Warlock
         </span>
-<IconDoubleChevron />
+        <IconDoubleChevron />
       </button>
       <dialog id="my_modal_warlock" className="modal">
         <form method="dialog" className="modal-box">
@@ -519,7 +531,57 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center">
+            <select
+              className="select select-primary w-full max-w-xs my-2"
+              onChange={(e) => setCant1(e.target.value)}
+              value={cant1}
+            >
+              <option disabled>Select Cantrip 1</option>
+              {warlockCantrips.map((cant, i) => (
+                <option key={`cant1${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-secondary w-full max-w-xs my-2"
+              onChange={(e) => setCant2(e.target.value)}
+              value={cant2}
+            >
+              <option disabled>Select Cantrip 2</option>
+              {warlockCantrips.map((cant, i) => (
+                <option key={`cant2${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-warning w-full max-w-xs my-2"
+              onChange={(e) => setSpell1(e.target.value)}
+              value={spell1}
+            >
+              <option disabled>Select Spell 1</option>
+              {warlockLevel1Spells.map((spell, i) => (
+                <option key={`spell1${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell2(e.target.value)}
+              value={spell2}
+            >
+              <option disabled>Select Spell 2</option>
+              {warlockLevel1Spells.map((spell, i) => (
+                <option key={`spell2${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeWarlock}
