@@ -81,20 +81,18 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl m-8">
+      <div className="max-w-screen-xl my-12">
         <div className="divider" />
 
         <h1 className="federant text-3xl font-bold py-8">
-          Recent Updates 10/9
+          Recent Updates 10/17
         </h1>
         <ul className="list-disc">
           <li>If you're reading this, the site is live!</li>
-          <li>User authentication is working</li>
-          <li>Connected to ChatGPT with basic prompt</li>
+          <li>Spells for magic casters on class selection</li>
           <li>Modals for character and scenario selection</li>
           <li>
-            Character Creation is looking good for all classes except magic
-            casters who have spells missing.
+            Dice buttons for d20 and other dice rolls
           </li>
         </ul>
         <div className="divider" />
@@ -105,7 +103,7 @@ export default function About() {
           <li>Displaying finished quests and accomplishments</li>
           <li>Edit Characters</li>
           <li>Might experiment with Dall-E for character pictures</li>
-          <li>Inventory management</li>
+          {/* <li>Inventory management</li> */}
         </ul>
       </div>
 

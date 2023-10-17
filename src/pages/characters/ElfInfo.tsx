@@ -131,13 +131,13 @@ export default function ElfInfo({
                   <tbody>
                     {/* row 1 */}
                     {wizardCantrips.map((cant, i) => {
-                      const cantInfo = cantrips[cant as keyof typeof cantrips];
+                      const cantInfo = cantrips[cant.name as keyof typeof cantrips];
                       if (!cantInfo) {
                         return null;
                       }
                       return (
                         <tr key={`cantinfo${i}`}>
-                          <td className="font-bold">{cant}</td>
+                          <td className="font-bold">{cant.name}</td>
                           <td>
                             <strong>
                               Range - {cantInfo.range}, {cantInfo.duration}.

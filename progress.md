@@ -79,12 +79,15 @@
 10/16
 -put socials in about page
 -perfect prompt
--
+
+10/17
+-added cantrips that were missing from complete cantrip spell list
+-finished spell selections for magic casting classes
+
 
 TO DO MVP
 <!-- -create user sign up feature -->
 -make sure that dungeonmaster loads with prompt
--magic casters have spells on creation
 -natural explorer for rangers
 
 TO DO POLISH

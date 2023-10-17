@@ -92,7 +92,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
               </option>
               {wizardCantrips.map((cant, i) => (
                 <option key={i} value={`${cant}`}>
-                  {cant}
+                  {cant.name}, {cant.range}, {cant.duration}
                 </option>
               ))}
             </select>
