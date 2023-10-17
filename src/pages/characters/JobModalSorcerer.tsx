@@ -5,6 +5,9 @@ import icon from "../../../public/icons/sorcerericon.png";
 import cleric from "../../../public/images/dee-holmberg-bg-sorcerer.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "../IconDoubleChevron";
+import { sorcererCantrips } from "../../../lib/_sorcererCantrips";
+import { sorcererLevel1Spells } from "../../../lib/_sorcererLevel1Spells";
+
 declare global {
   interface Window {
     my_modal_sorcerer: any; // Replace `any` with the type of your modal if possible
@@ -12,12 +15,23 @@ declare global {
 }
 export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
   const [expand, setExpanded] = useState<string | null>(null);
+  const [cant1, setCant1] = useState<string>("Select Cantrip 1");
+  const [cant2, setCant2] = useState<string>("Select Cantrip 2");
+  const [cant3, setCant3] = useState<string>("Select Cantrip 3");
+  const [cant4, setCant4] = useState<string>("Select Cantrip 4");
+  const [spell1, setSpell1] = useState<string>("Select Spell 1");
+  const [spell2, setSpell2] = useState<string>("Select Spell 2");
   useEffect(() => {
     const myModalSorcerer = document.getElementById("my_modal_sorcerer");
     if (myModalSorcerer) window.my_modal_sorcerer = myModalSorcerer;
   }, []);
   const becomeSorcerer = async () => {
-    setDndClass({ role: "Sorcerer", specialty: [], spells: [], languages: [] });
+    setDndClass({
+      role: "Sorcerer",
+      specialty: [],
+      spells: [cant1, cant2, cant3, cant4, spell1, spell2],
+      languages: [],
+    });
     window.my_modal_sorcerer.close();
     window.location.href = "#item3";
   };
@@ -37,7 +51,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           />
           Sorcerer
         </span>
-<IconDoubleChevron />
+        <IconDoubleChevron />
       </button>
       <dialog id="my_modal_sorcerer" className="modal">
         <form method="dialog" className="modal-box">
@@ -465,7 +479,83 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center my-4">
+            <select
+              className="select select-primary w-full max-w-xs my-2"
+              onChange={(e) => setCant1(e.target.value)}
+              value={cant1}
+            >
+              <option disabled>Select Cantrip 1</option>
+              {sorcererCantrips.map((cant, i) => (
+                <option key={`cant1${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-secondary w-full max-w-xs my-2"
+              onChange={(e) => setCant2(e.target.value)}
+              value={cant2}
+            >
+              <option disabled>Select Cantrip 2</option>
+              {sorcererCantrips.map((cant, i) => (
+                <option key={`cant2${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-success w-full max-w-xs my-2"
+              onChange={(e) => setCant3(e.target.value)}
+              value={cant3}
+            >
+              <option disabled>Select Cantrip 3</option>
+              {sorcererCantrips.map((cant, i) => (
+                <option key={`cant3${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-info w-full max-w-xs my-2"
+              onChange={(e) => setCant4(e.target.value)}
+              value={cant4}
+            >
+              <option disabled>Select Cantrip 4</option>
+              {sorcererCantrips.map((cant, i) => (
+                <option key={`cant4${i}`}>
+                  {cant.name} - {cant.range} - {cant.duration}
+                </option>
+              ))}
+            </select>
+
+            <select
+              className="select select-warning w-full max-w-xs my-2"
+              onChange={(e) => setSpell1(e.target.value)}
+              value={spell1}
+            >
+              <option disabled>Select Spell 1</option>
+              {sorcererLevel1Spells.map((spell, i) => (
+                <option key={`spell1${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
+            <select
+              className="select select-error w-full max-w-xs my-2"
+              onChange={(e) => setSpell2(e.target.value)}
+              value={spell2}
+            >
+              <option disabled>Select Spell 1</option>
+              {sorcererLevel1Spells.map((spell, i) => (
+                <option key={`spell2${i}`}>
+                  {spell.name} - {spell.range} - {spell.duration}
+                </option>
+              ))}
+            </select>
             <button
               className="btn btn-success btn-wide my-8"
               onClick={becomeSorcerer}
