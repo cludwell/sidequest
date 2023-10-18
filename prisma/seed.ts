@@ -886,7 +886,7 @@ async function seedUserScenarios() {
 
 async function seedDatabase() {
   try {
-    await clearDatabase();
+    // await clearDatabase();
     await seedUsers();
     await seedCharacters();
     await seedScenarios();
