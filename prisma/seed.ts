@@ -5,13 +5,13 @@ async function clearDatabase() {
   // Delete all records from the tables in the desired order
   try {
     await prisma.userScenarios.deleteMany({});
-    const userScenes = await prisma.userScenarios.findMany();
-    console.log('USER SCENES' , userScenes)
+    // const userScenes = await prisma.userScenarios.findMany();
+    // console.log('USER SCENES' , userScenes)
     await prisma.characters.deleteMany({});
     await prisma.scenarios.deleteMany({});
     await prisma.users.deleteMany({});
-    const users = await prisma.users.findMany();
-    console.log('USERS', users)
+    // const users = await prisma.users.findMany();
+    // console.log('USERS', users)
     console.log("Database cleared successfully.");
   } catch (error) {
     console.error("Error clearing Database", error);

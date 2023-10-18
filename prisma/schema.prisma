@@ -23,7 +23,7 @@ model Users {
 
 model Characters {
   id             Int             @id @default(autoincrement())
-  userId         Int
+  userId         Int             @map("userId")
   level          Int?
   name           String          @db.VarChar(255)
   role           String          @db.VarChar(255)
