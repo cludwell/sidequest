@@ -9,8 +9,8 @@ async function clearDatabase() {
     await prisma.scenarios.deleteMany({});
     await prisma.users.deleteMany({});
     console.log("Database cleared successfully.");
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.error("Error clearing Database", error);
   }
   await prisma.$disconnect();
 }
@@ -884,8 +884,8 @@ async function seedDatabase() {
   try {
     await clearDatabase();
     await seedUsers();
-    await seedScenarios();
     await seedCharacters();
+    await seedScenarios();
     await seedUserScenarios();
 
     console.log("Database seeding completed successfully");
