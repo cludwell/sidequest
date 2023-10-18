@@ -8,13 +8,12 @@ async function clearDatabase() {
     await prisma.characters.deleteMany({});
     await prisma.scenarios.deleteMany({});
     await prisma.users.deleteMany({});
-    console.log('Database cleared successfully.')
+    console.log("Database cleared successfully.");
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
   await prisma.$disconnect();
 }
-
 
 async function seedUsers() {
   try {
@@ -314,6 +313,17 @@ async function seedCharacters() {
           ],
           languages: ["Common", "Elvish", "Thieves' Cant"],
           spells: [],
+          specialty: [
+            "Thieves Cant",
+            "Expertise",
+            "Sneak Attack",
+            "Cunning Action",
+            "Roguish Archetype - Swashbuckler",
+            "Finesse Combat",
+            "Panache",
+            "Fancy Footwork",
+            "Evasion and Uncanny Dodge",
+          ],
           tools: [],
           weapons: ["Rapier", "Shortbow", "Dagger", "Crossbow"],
           initiative: 6,
@@ -375,7 +385,11 @@ async function seedCharacters() {
             "Protection from Evil and Good",
             "Shield of Faith",
             "Bless",
+            "Divine Sense",
+            "Divine Health",
+            "Channel Divinity - Champion Challenge",
           ],
+          specialty: ["Fighting Style - Protection", "Oath of the Crown"],
           tools: ["Smith's Tools"],
           weapons: ["Warhammer", "Handaxe"],
           initiative: 0,
@@ -403,7 +417,7 @@ async function seedCharacters() {
           appearance:
             "Stout and rugged, with a braided beard and steely gray eyes. A set of intricate tattoos run along her arms.",
           background: `Born deep within the Iron Mountains, Thalia Ironfist has always felt a deep connection to the ancient spirits of the land. Trained as a paladin from a young age, she took up arms in defense of her homeland against the giants of the north. As a devout follower of Moradin, the god of dwarves, she wields her warhammer with fierce determination and righteous fury. Known for her unyielding spirit and unwavering sense of duty, Thalia stands as a beacon of hope for her people. While her demeanor may come off as stern, she has a soft spot for the downtrodden and the oppressed, often going out of her way to aid those in need. With a heart of gold and a will of steel, Thalia Ironfist embarks on quests that champion justice, honor, and the dwarven way.`,
-          imgUrl: "https://i.imgur.com/2W9RzPc.jpg", // You should replace this with an appropriate image URL for Thalia
+          imgUrl: "https://i.imgur.com/2W9RzPc.jpg",
           faith: "Moradin",
         },
         {
@@ -436,7 +450,15 @@ async function seedCharacters() {
             "Counterspell",
             "Detect Magic",
             "Feather Fall",
+            "Chill Touch",
+            "Mage Hand",
+            "Message",
+            "Minor Illusion",
+            "Mirror Image",
+            "Dimension Door",
+            "Fly",
           ],
+          specialty: ["Arcane Tradition - Evocation"],
           tools: ["Arcane Focus"],
           weapons: ["Dagger"],
           initiative: 2,
@@ -486,6 +508,15 @@ async function seedCharacters() {
           inventory: ["Javelin", "Potion of Healing", "Rage Elixir"],
           languages: ["Common", "Orcish"],
           spells: [],
+          specialty: [
+            "Rage",
+            "Unarmored Defense",
+            "Reckless Attack",
+            "Danger Sense",
+            "Path of the Berserker",
+            "Extra Attack",
+            "Fast Movement",
+          ],
           tools: [],
           weapons: ["Greataxe", "Javelin"],
           initiative: 2,
@@ -546,6 +577,17 @@ async function seedCharacters() {
             "Invisibility",
             "Feather Fall",
             "Detect Magic",
+            "Haste",
+            "Counterspell",
+            "Fly",
+            "Blink",
+            "Mage Hand",
+          ],
+          specialty: [
+            "Fey Ancestry",
+            "Trance",
+            "Herbalists Insight",
+            "Arcane Tradition - Evocation",
           ],
           tools: ["Herbalism Kit"],
           weapons: [],
@@ -600,7 +642,8 @@ async function seedCharacters() {
             "Scroll of Protection from Evil and Good",
           ],
           languages: ["Common", "Infernal"],
-          spells: ["Bless", "Cure Wounds", "Searing Smite"],
+          spells: ["Bless", "Cure Wounds", "Searing Smite", "Thaumaturgy"],
+          specialty: ["Hellish Rebuke", "Fighting Style - Protection"],
           tools: [],
           weapons: ["Longsword", "Handaxe"],
           initiative: 0,
@@ -632,7 +675,6 @@ async function seedCharacters() {
         },
         {
           // CHARACTER 7
-
           userId: 4,
           level: 6,
           name: "Aurelius Flameheart",
@@ -651,6 +693,12 @@ async function seedCharacters() {
           inventory: ["Javelin", "Potion of Healing"],
           languages: ["Common", "Draconic"],
           spells: [],
+          specialty: [
+            "Extra Attack",
+            "Second Wind",
+            "Great Weapon Fighting",
+            "Great Weapon Mastery",
+          ],
           tools: ["Smith's Tools"],
           weapons: ["Greataxe", "Javelin"],
           initiative: 2,
@@ -702,7 +750,20 @@ async function seedCharacters() {
           equipped: ["Mace", "Shield"],
           inventory: ["Healing Potion", "Holy Symbol", "Spider Silk"],
           languages: ["Common", "Elvish", "Undercommon"],
-          spells: ["Cure Wounds", "Bane", "Inflict Wounds"],
+          spells: [
+            "Cure Wounds",
+            "Bane",
+            "Inflict Wounds",
+            "Darkness",
+            "Faerie Fire",
+            "Dancing Lights",
+          ],
+          specialty: [
+            "Poison resistance",
+            "Drow magic items",
+            "Drow social knowledge",
+            "Fey Ancestry",
+          ],
           tools: [],
           weapons: ["Mace"],
           initiative: 4,
