@@ -1,6 +1,27 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
+async function clearDatabase() {
+  // Delete all records from the tables in the desired order
+  await prisma.userScenarios.deleteMany({});
+  await prisma.characters.deleteMany({});
+  await prisma.scenarios.deleteMany({});
+  await prisma.users.deleteMany({});
+
+  // Your seeding logic goes here
+
+  // Close Prisma client connection
+  await prisma.$disconnect();
+}
+
+clearDatabase()
+  .catch((e) => {
+    throw e;
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
+
 async function seedUsers() {
   try {
     await prisma.users.createMany({
