@@ -85,6 +85,8 @@
 -finished spell selections for magic casting classes
 -natural explorer select is added
 
+10/18
+fixing seeding
 
 TO DO MVP
 -take screenshots
