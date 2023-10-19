@@ -66,8 +66,8 @@ model Characters {
   stealth        Int?
   survival       Int?
   alignment      String          @db.VarChar(255)
-  appearance     String?
-  background     String?
+  appearance     String?         @db.Text
+  background     String?         @db.Text
   imgUrl         String?         @db.VarChar(255)
   faith          String?         @db.VarChar(255)
   createdAt      DateTime?       @default(now()) @db.Timestamptz(6)

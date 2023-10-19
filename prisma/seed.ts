@@ -398,7 +398,7 @@ async function seedCharacters() {
           tools: ["Smith's Tools"],
           weapons: ["Warhammer", "Handaxe"],
           initiative: 0,
-          armorClass: 19, // plate mail + shield
+          armorClass: 19, 
           vision: "darkvision",
           acrobatics: -1,
           animalHandling: 2,
