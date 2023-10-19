@@ -28,24 +28,28 @@ async function seedUsers() {
     await prisma.users.createMany({
       data: [
         {
+          // user 1
           username: "DemoUser",
           email: "demo@aa.io",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // user 2
           username: "marnie",
           email: "marnie@aa.io",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // user3
           username: "bobbie",
           email: "bobbie@aa.io",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // user4
           username: "JerryS",
           email: "jerry@seinmail.com",
           hashedPassword:
@@ -53,54 +57,63 @@ async function seedUsers() {
           profilePic: "https://i.imgur.com/cR6kAVj.jpg",
         },
         {
+          // user5
           username: "Elaine",
           email: "elaine@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // user6
           username: "George",
           email: "george@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // 7
           username: "Kramer",
           email: "kramer@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // user8
           username: "Newman",
           email: "newman@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // 9
           username: "Estelle",
           email: "estelle@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // 10
           username: "Frankie",
           email: "frank@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // 11
           username: "SusanS",
           email: "susan@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // 12
           username: "Mortimer",
           email: "morty@seinmail.com",
           hashedPassword:
             "$2a$12$nBC5YiXYXnGIqcrjAMq5WuwzBvg6lRg.FYZPI1ANuCgZiG3zqnO/C",
         },
         {
+          // 13
           username: "HelenS",
           email: "helen@seinmail.com",
           hashedPassword:
@@ -398,7 +411,7 @@ async function seedCharacters() {
           tools: ["Smith's Tools"],
           weapons: ["Warhammer", "Handaxe"],
           initiative: 0,
-          armorClass: 19, 
+          armorClass: 19,
           vision: "darkvision",
           acrobatics: -1,
           animalHandling: 2,
