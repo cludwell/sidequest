@@ -850,12 +850,7 @@ async function seedScenarios() {
 
 async function seedUserScenarios() {
   try {
-    const user4 = await prisma.users.findOne({
-      where: {
-        id: 4
-      }
-    })
-    console.log('USER 4', user4)
+
     const usersAll = await prisma.users.findMany();
     console.log('ALL USERS', usersAll)
     await prisma.userScenarios.create({
