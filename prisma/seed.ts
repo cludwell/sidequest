@@ -255,6 +255,12 @@ async function seedUsers() {
         },
       ],
     });
+    const user4 = await prisma.users.findOne({
+      where: {
+        id: 4
+      }
+    })
+    console.log('USER 4', user4)
     await prisma.users.create({
       data: {
         // user4
