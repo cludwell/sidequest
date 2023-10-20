@@ -24,6 +24,7 @@ export default function CreateCharacter() {
 
   const characters = useSelector(allCharactersState);
 
+  console.log('characters', characters)
   const handlePremade = () => router.push("/characters/premade");
   const handleCreate = () => router.push("/characters/new");
 
@@ -44,15 +45,15 @@ export default function CreateCharacter() {
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
         {/* removing card from class name allows drawer to behave correctly */}
-        <div className=" card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl  ">
+        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl  ">
           <figure>
-            {characters[6].imgUrl && (
+            {characters[5].imgUrl && (
               <Image
                 height={800}
                 width={800}
-                src={characters[6].imgUrl}
+                src={characters[5].imgUrl}
                 alt="character preview"
-                className="rounded-t-2xl"
+                className="rounded-t-2xl aspect-square object-cover"
               />
             )}
           </figure>
@@ -70,15 +71,15 @@ export default function CreateCharacter() {
           </button>
         </div>
 
-        <div className="flex flex-col card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl ">
+        <div className="flex flex-col card card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl ">
           <figure>
-            {characters[7].imgUrl && (
+            {characters[4].imgUrl && (
               <Image
                 height={800}
                 width={800}
-                src={characters[7].imgUrl}
+                src={characters[4].imgUrl}
                 alt="character preview"
-                className="rounded-t-2xl"
+                className="rounded-t-2xl aspect-square object-cover"
               />
             )}
           </figure>
