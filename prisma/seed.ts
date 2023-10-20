@@ -255,12 +255,7 @@ async function seedUsers() {
         },
       ],
     });
-    const user4 = await prisma.users.findOne({
-      where: {
-        id: 4
-      }
-    })
-    console.log('USER 4', user4)
+
     await prisma.users.create({
       data: {
         // user4
@@ -855,31 +850,37 @@ async function seedScenarios() {
 
 async function seedUserScenarios() {
   try {
-    // await prisma.userScenarios.create({
-    //   data: {
-    //     users: {
-    //       connect: {
-    //         id: 4,
-    //       },
-    //     },
-    //     scenarios: {
-    //       connect: {
-    //         id: 1,
-    //       },
-    //     },
-    //     characters: {
-    //       connect: {
-    //         id: 4,
-    //       },
-    //     },
-    //     completed: true,
-    //   },
-    //   include: {
-    //     users: true,
-    //     scenarios: true,
-    //     characters: true,
-    //   },
-    // });
+    const user4 = await prisma.users.findOne({
+      where: {
+        id: 4
+      }
+    })
+    console.log('USER 4', user4)
+    await prisma.userScenarios.create({
+      data: {
+        users: {
+          connect: {
+            id: 4,
+          },
+        },
+        scenarios: {
+          connect: {
+            id: 1,
+          },
+        },
+        characters: {
+          connect: {
+            id: 4,
+          },
+        },
+        completed: true,
+      },
+      include: {
+        users: true,
+        scenarios: true,
+        characters: true,
+      },
+    });
     await prisma.userScenarios.create({
       data: {
         users: {
