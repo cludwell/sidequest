@@ -36,7 +36,7 @@ async function seedUsers() {
           create: [
             {
               // CHARACTER 1
-              userId: 1,
+              // userId: 1,
               level: 7,
               name: "Lyra Dawnflower",
               role: "Rogue",
@@ -101,7 +101,7 @@ async function seedUsers() {
             },
             {
               // CHARACTER 4
-              userId: 1,
+              // userId: 1,
               level: 6,
               name: "Astrid Stormblade",
               role: "Barbarian",
@@ -160,7 +160,7 @@ async function seedUsers() {
             },
             {
               // CHARACTER 5
-              userId: 1,
+              // userId: 1,
               level: 5,
               name: "Elara Nightshade",
               role: "Wizard",
