@@ -9,7 +9,7 @@
     "lint": "next lint",
     "seed": "ts-node prisma/seed.ts",
     "push": "npx prisma db push",
-    "setup": "npx prisma migrate reset && npx prisma generate && npx prisma db push && npm run seed",
+    "setup": "npx prisma migrate reset --force && npx prisma generate && npx prisma db push && npm run seed",
     "deploy": "npm run setup && npm run start"
   },
   "dependencies": {
