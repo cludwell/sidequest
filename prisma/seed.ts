@@ -849,31 +849,31 @@ async function seedScenarios() {
 
 async function seedUserScenarios() {
   try {
-    await prisma.userScenarios.create({
-      data: {
-        users: {
-          connect: {
-            id: 4,
-          },
-        },
-        scenarios: {
-          connect: {
-            id: 1,
-          },
-        },
-        characters: {
-          connect: {
-            id: 4,
-          },
-        },
-        completed: true,
-      },
-      include: {
-        users: true,
-        scenarios: true,
-        characters: true,
-      },
-    });
+    // await prisma.userScenarios.create({
+    //   data: {
+    //     users: {
+    //       connect: {
+    //         id: 4,
+    //       },
+    //     },
+    //     scenarios: {
+    //       connect: {
+    //         id: 1,
+    //       },
+    //     },
+    //     characters: {
+    //       connect: {
+    //         id: 4,
+    //       },
+    //     },
+    //     completed: true,
+    //   },
+    //   include: {
+    //     users: true,
+    //     scenarios: true,
+    //     characters: true,
+    //   },
+    // });
     await prisma.userScenarios.create({
       data: {
         users: {
