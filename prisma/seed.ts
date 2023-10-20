@@ -856,6 +856,8 @@ async function seedUserScenarios() {
       }
     })
     console.log('USER 4', user4)
+    const usersAll = await prisma.users.findMany();
+    console.log('ALL USERS', usersAll)
     await prisma.userScenarios.create({
       data: {
         users: {
