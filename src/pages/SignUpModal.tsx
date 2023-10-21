@@ -40,9 +40,19 @@ export default function SignUp() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     validate();
-    if (errors.length) return;
-
-    try {
+    // try {
+    if (errors.length) {
+      window.my_modal_signup.showModal();
+      return;
+    }
+    if (
+      !errors.length &&
+      email &&
+      password &&
+      username &&
+      password === confirmPassword
+    ) {
+      console.log("ERRORS", errors);
       await signIn("credentials", {
         email,
         password,
@@ -50,11 +60,12 @@ export default function SignUp() {
         profilePic,
         action: "signup",
       });
-      // await signInNextAuth("credentials", { email, password });
-    } catch (error) {
-      // Handle any errors that might occur during sign up or sign in
-      console.error("Error during sign up or sign in:", error);
+      // window.my_modal_signup.close();
     }
+    // } catch (error) {
+    //   // Handle any errors that might occur during sign up or sign in
+    //   console.error("Error during sign up or sign in:", error);
+    // }
   };
   return (
     <>
@@ -71,41 +82,41 @@ export default function SignUp() {
           className="modal-box flex flex-col"
           onSubmit={handleSubmit}
         >
-          <h3 className="font-bold text-3xl almendra">Sign Up</h3>
+          <h3 className="text-center text-4xl almendra py-4">Sign Up</h3>
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
-            className="my-4 border-2 rounded border-slate-300"
+            className="my-4 border-2 rounded border-slate-300 p-1"
           />
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="mb-4 border-2 rounded border-slate-300"
+            className="mb-4 border-2 rounded border-slate-300 p-1"
           />
           <input
             type="text"
             value={profilePic}
             onChange={(e) => setProfilePic(e.target.value)}
             placeholder="Profile Pic URL"
-            className="mb-4 border-2 rounded border-slate-300"
+            className="mb-4 border-2 rounded border-slate-300 p-1"
           />
           <input
             type="text"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="mb-4 border-2 rounded border-slate-300"
+            className="mb-4 border-2 rounded border-slate-300 p-1"
           />
           <input
             type="text"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirm Password"
-            className="mb-4 border-2 rounded border-slate-300"
+            className="mb-4 border-2 rounded border-slate-300 p-1"
           />
           {errors.length
             ? errors.map((error, idx) => (
