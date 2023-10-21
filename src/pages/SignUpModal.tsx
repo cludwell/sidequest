@@ -120,7 +120,7 @@ export default function SignUp() {
           />
           {errors.length
             ? errors.map((error, idx) => (
-                <div className="alert alert-error mb-4" key={`error${idx}`}>
+                <div className="alert alert-error mb-4 fade-in-slide-in" key={`error${idx}`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="stroke-current shrink-0 h-6 w-6"
