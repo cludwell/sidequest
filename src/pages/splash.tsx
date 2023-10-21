@@ -6,7 +6,7 @@ export default function Splash() {
       {/* <h1 className="federant text-3xl font-bold">What</h1>
       <div className="divider" /> */}
       <div
-        className="hero h-100 m-8 rounded-2xl min-h-screen"
+        className="hero h-100 m-8 rounded-2xl min-h-screen max-w-screen-xl "
         style={{
           backgroundImage: `url(/images/dm.jpg)`,
         }}
@@ -28,7 +28,7 @@ export default function Splash() {
             <Link className="btn btn-primary m-2" href={"/characters"}>
               Get Started
             </Link>
-            <button className="btn btn-secondary m-2">Learn More</button>
+            <Link className="btn btn-secondary m-2" href={"/about"}>Learn More</Link>
           </div>
         </div>
       </div>

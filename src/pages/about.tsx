@@ -11,12 +11,12 @@ export default function About() {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
-            Side Quest is a portfolio project I started because I noticed there
-            to best showcase my capabilities as a Full Stack Developer. Language
-            models allow a level of flexibility difficult to match and table top
-            gaming seems like a perfect use case. Experimenting with Chat GPT I
-            realized that tons of fan content must have been fed into the model
-            as it was frightenly good at what it did.
+            SideQuest is a portfolio project I started to best showcase my
+            capabilities as a Full Stack Developer. Language models allow a
+            level of flexibility difficult to match and table top gaming seems
+            like a perfect use case. Experimenting with Chat GPT I realized that
+            tons of fan content must have been fed into the model as it was
+            frightenly good at what it did.
           </p>
           <p className="py-6">
             SideQuest was made with Next.js, next-auth, DaisyUI, Prisma, and
@@ -34,13 +34,14 @@ export default function About() {
             >
               portfolio
             </a>{" "}
-            and my
+            and my{" "}
             <a
               href="https://www.linkedin.com/in/christian-ludwell-047b18247/"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:underline"
             >
-              {" "}social media.
+              social media.
             </a>
           </p>
           <div className="flex flex-row justify-evenly">
@@ -91,9 +92,7 @@ export default function About() {
           <li>If you're reading this, the site is live!</li>
           <li>Spells for magic casters on class selection</li>
           <li>Modals for character and scenario selection</li>
-          <li>
-            Dice buttons for d20 and other dice rolls
-          </li>
+          <li>Dice buttons for d20 and other dice rolls</li>
         </ul>
         <div className="divider" />
         <h1 className="federant text-3xl font-bold py-8">Coming Soon</h1>
@@ -103,7 +102,6 @@ export default function About() {
           <li>Displaying finished quests and accomplishments</li>
           <li>Edit Characters</li>
           <li>Might experiment with Dall-E for character pictures</li>
-          {/* <li>Inventory management</li> */}
         </ul>
       </div>
 

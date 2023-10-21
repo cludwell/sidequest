@@ -88,12 +88,16 @@
 10/18
 fixing seeding
 
-TO DO MVP
--take screenshots
+10/19
+-lots of debugging and setting up render environment
+-had to rewrite seeding scripts
 
+10/20
+-fixed splash sizing
+
+TO DO MVP
 -make sure that dungeonmaster loads with prompt
--make cantrip and spell components for drop down tables
--will eventually want to do some error handling
+-will eventually want to do some form error handling on race and class selection
 
 TO DO POLISH
 -reuse char sheet modal and make a scene modal to put in header when selected
