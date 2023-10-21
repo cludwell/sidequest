@@ -59,6 +59,12 @@
   background: linear-gradient(145deg, #cacaca, #f0f0f0);
   box-shadow: 13px 13px 12px #aaaaaa, -13px -13px 12px #ffffff;
 }
+.header-background-inverse {
+  border-radius: 19px;
+  background: linear-gradient(145deg, #0a0a0a, #303030);
+  box-shadow: 13px 13px 12px #000000, -13px -13px 12px #202020;
+}
+
 
 
 /* dice animation on dungeon master page */

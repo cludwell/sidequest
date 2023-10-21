@@ -38,7 +38,7 @@ export default function Header() {
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
     await dispatch(signOutRequest()  )
-    router.push("/"); // Manually redirect to the home page
+    router.push("/");
   };
 
   const user = useSelector(userProfile);
