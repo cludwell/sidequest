@@ -47,7 +47,6 @@ export default function LogInModal() {
     window.my_modal_2.close()
 };
 
-
   useEffect(() => {
     const myModal2 = document.getElementById("my_modal_2");
     if (myModal2) window.my_modal_2 = myModal2;
@@ -67,23 +66,23 @@ export default function LogInModal() {
           className="modal-box flex flex-col"
           onSubmit={handleSubmit}
         >
-          <h3 className="font-bold text-3xl almendra">Log In</h3>
+          <h3 className="text-center text-4xl almendra py-4">Log In</h3>
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="my-4 border-2 rounded border-slate-300"
+            className="my-4 border-2 rounded border-slate-300 p-1"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="mb-4 border-2 rounded border-slate-300"
+            className="mb-4 border-2 rounded border-slate-300 p-1"
           />
           {errors?.map((error, idx) => (
-            <div className="alert alert-error mb-4" key={`error${idx}`}>
+            <div className="alert alert-error mb-4 fade-in-slide-in" key={`error${idx}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="stroke-current shrink-0 h-6 w-6"
