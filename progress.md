@@ -94,8 +94,11 @@ fixing seeding
 
 10/20
 -fixed splash sizing
+-error messages fade in
+-fixed error handling on sign in page
 
 TO DO MVP
+-polish the character sheet modal
 -make sure that dungeonmaster loads with prompt
 -will eventually want to do some form error handling on race and class selection
 
