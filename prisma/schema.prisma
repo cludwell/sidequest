@@ -101,5 +101,5 @@ model UserScenarios {
   scenarios   Scenarios  @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
   characters  Characters @relation(fields: [characterId], references: [id], onDelete: Cascade)
 
-  @@map("userScenarios")
+  @@map("userscenarios")
 }

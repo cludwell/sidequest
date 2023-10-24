@@ -19,6 +19,7 @@ export default async function handler(
       for (const character of characters) {
         payload[character.id] = character;
       }
+      // console.log('PAYLOAD', payload)
       return res.status(200).json({ ...payload });
     } catch (error) {
       console.error("Error fetching characters:", error);

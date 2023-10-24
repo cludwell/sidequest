@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import { authenticate, signOutRequest, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
-import { loadScenarios } from "@/store/scenarios";
 import Link from "next/link";
 import IconMap from "./IconMap";
 import IconTrophy from "./IconTrophy";
@@ -37,7 +36,7 @@ export default function Header() {
 
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false });
-    await dispatch(signOutRequest()  )
+    await dispatch(signOutRequest());
     router.push("/");
   };
 
@@ -94,28 +93,32 @@ export default function Header() {
                   <IconCharacters /> Create Character
                 </Link>
               </li>
-              {session && (<li>
-                <Link href={`/characters/usercharacters`} className="text-lg">
-                  <IconID /> Your Characters
-                </Link>
-              </li>)}
+              {session && (
+                <li>
+                  <Link href={`/characters/usercharacters`} className="text-lg">
+                    <IconID /> Your Characters
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link href={"/scenarios"} className="text-lg">
                   <IconMap />
                   Campaigns
                 </Link>
               </li>
+              {session && (
+                <li>
+                  <Link className="text-lg" href={'/accomplishments'}>
+                    <IconTrophy /> Accomplishments
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link href={"/about"} className="text-lg">
                   <IconInfo />
                   About
                 </Link>
               </li>
-              {/* <li>
-                <a className="text-lg">
-                  <IconTrophy /> Accomplishments
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>

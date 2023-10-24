@@ -21,7 +21,16 @@ export const selectedScenarioRequest = createAsyncThunk(
     return sceneData;
   }
 );
-
+export const userScenariosRequest = createAsyncThunk(
+  `scenarios/userScenarios`,
+  async (userId: number) => {
+    const res = await fetch(`/api/userscenarios/${userId}`)
+    if (res.ok) {
+      const data = await res.json()
+      return data
+    }
+  }
+)
 type ScenariosSliceState = {
   userScenarios: ScenariosState | null;
   allScenarios: ScenariosState | null;
@@ -59,6 +68,12 @@ export const scenarioSlice = createSlice({
     });
     builder.addCase(selectedScenarioRequest.rejected, (state, action) => {
       state.selectedScenario = null
+    })
+    builder.addCase(userScenariosRequest.fulfilled, (state, action) => {
+      state.userScenarios = action.payload
+    })
+    builder.addCase(userScenariosRequest.rejected, (state, action) => {
+      state.userScenarios = null
     })
   },
 });

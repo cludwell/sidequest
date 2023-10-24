@@ -97,6 +97,13 @@ fixing seeding
 -error messages fade in
 -fixed error handling on sign in page
 
+10/23
+-Got rid of unused python/flask backend
+-began user accomplishments page to make use of userScenarios model
+-userScenarios route is written but not returning anything
+-data is seeded in postgresql
+-
+
 TO DO MVP
 -polish the character sheet modal
 -make sure that dungeonmaster loads with prompt
