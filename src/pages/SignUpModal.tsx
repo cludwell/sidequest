@@ -71,7 +71,7 @@ export default function SignUp() {
     <>
       {/* Open the modal using ID.showModal() method */}
       <button
-        className="btn btn-primary m-2"
+        className="btn btn-primary m-2 sm:btn-sm md:btn-md lg:btn-lg"
         onClick={() => window.my_modal_signup.showModal()}
       >
         Sign up

@@ -65,13 +65,18 @@ export default function Home() {
   console.log(scenarios);
   return (
     <main
-      className={`flex min-h-screen flex-col items-center px-4 md:px-16 self-center ${inter.className} fade-in-slide-in`}
+      className={`flex min-h-screen flex-col items-center  px-4 md:px-16 self-center ${inter.className} fade-in-slide-in`}
     >
       <Head>
         <title>Side🎲Quest</title>
       </Head>
-      <Link href={"/splash"} className="flex flex-col items-center">
-        <h1 className="almendra text-4xl my-4">Hello, fellow travelers</h1>
+      <Link
+        href={"/splash"}
+        className="flex flex-col items-center mt-[20%] md:mt-[10%]"
+      >
+        <h1 className="almendra text-2xl md:text-4xl my-4 ">
+          Hello, fellow travelers
+        </h1>
       </Link>
 
       <div className="carousel carousel-center rounded-box max-w-screen-xl w-full">
@@ -81,7 +86,7 @@ export default function Home() {
               <Image
                 width={400}
                 height={400}
-                className="object-cover"
+                className="object-cover w-40 md:w-96"
                 src={scen}
                 alt={`scene${i}`}
               />
@@ -89,7 +94,9 @@ export default function Home() {
           ))}
       </div>
       <Link href={"/splash"} className="flex flex-col items-center">
-        <h1 className="almendra text-4xl my-4">Adventure awaits...</h1>
+        <h1 className="almendra text-2xl md:text-4xl my-4 ">
+          Adventure awaits...
+        </h1>
         <DungeonDoor />
       </Link>
     </main>
