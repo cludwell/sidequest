@@ -106,13 +106,13 @@ export default function Header() {
                   Campaigns
                 </Link>
               </li>
-              {session && (
+              {/* {session && (
                 <li>
                   <Link className="text-lg" href={'/accomplishments'}>
                     <IconTrophy /> Accomplishments
                   </Link>
                 </li>
-              )}
+              )} */}
               <li>
                 <Link href={"/about"} className="text-lg">
                   <IconInfo />
