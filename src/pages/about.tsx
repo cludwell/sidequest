@@ -7,10 +7,10 @@ export default function About() {
     <main className="flex min-h-screen flex-col items-center md:px-16 fade-in-slide-in ">
       {/* <h1 className="federant text-3xl font-bold">About Side Quest</h1>
       <div className="divider" /> */}
-      <div className="hero-content text-center m-8">
+      <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>
-          <p className="py-6">
+          <p className="py-2 md:py-6 text-xs md:text-lg">
             SideQuest is a portfolio project I started to best showcase my
             capabilities as a Full Stack Developer. Language models allow a
             level of flexibility difficult to match and table top gaming seems
@@ -18,12 +18,12 @@ export default function About() {
             tons of fan content must have been fed into the model as it was
             frightenly good at what it did.
           </p>
-          <p className="py-6">
+          <p className="py-2 md:py-6 text-xs md:text-lg">
             SideQuest was made with Next.js, next-auth, DaisyUI, Prisma, and
             TypeScript. I will be continually updating and working on this
             project as character creation in DnD is no small task.
           </p>
-          <p className="py-6">
+          <p className="py-2 md:py-6 text-xs md:text-lg">
             If there is a junior position open at your organization, please
             consider me for the role 🙏. Please check out my{" "}
             <a
@@ -82,7 +82,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl my-12 p-8">
+      <div className="max-w-screen-xl p-8">
         <div className="divider" />
 
         <h1 className="federant text-3xl font-bold py-8">
