@@ -4,7 +4,7 @@ import IconResume from "./IconResume";
 
 export default function About() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in ">
+    <main className="flex min-h-screen flex-col items-center md:px-16 fade-in-slide-in ">
       {/* <h1 className="federant text-3xl font-bold">About Side Quest</h1>
       <div className="divider" /> */}
       <div className="hero-content text-center m-8">
@@ -82,7 +82,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl my-12">
+      <div className="max-w-screen-xl my-12 p-8">
         <div className="divider" />
 
         <h1 className="federant text-3xl font-bold py-8">
