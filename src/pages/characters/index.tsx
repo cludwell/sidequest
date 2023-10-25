@@ -32,20 +32,20 @@ export default function CreateCharacter() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center px-16 fade-in-slide-in`}
+      className={`flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in`}
     >
       {/* title */}
       <h1 className="text-3xl federant font-bold">Character Creation Method</h1>
       <h2>Choose how you would like to create your character</h2>
       {/* divider */}
       <div className="flex flex-col w-full">
-        <div className="divider"></div>
+        <div className="divider"/>
       </div>
       {/* card container */}
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
         {/* removing card from class name allows drawer to behave correctly */}
-        <div className="card card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl  ">
+        <div className="card card-compact bg-base-100 shadow-xl m-4 ">
           <figure>
             {characters[5].imgUrl && (
               <Image
@@ -71,7 +71,7 @@ export default function CreateCharacter() {
           </button>
         </div>
 
-        <div className="flex flex-col card card-compact w-96 bg-base-100 shadow-xl m-4 rounded-2xl ">
+        <div className="card card-compact bg-base-100 shadow-xl m-4 ">
           <figure>
             {characters[4].imgUrl && (
               <Image
