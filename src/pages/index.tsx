@@ -72,7 +72,7 @@ export default function Home() {
       </Head>
       <Link
         href={"/splash"}
-        className="flex flex-col items-center mt-[20%] md:mt-[10%]"
+        className="flex flex-col items-center mt-[20%] md:mt-[10%] lg:mt-0"
       >
         <h1 className="almendra text-2xl md:text-4xl my-4 ">
           Hello, fellow travelers
@@ -86,7 +86,7 @@ export default function Home() {
               <Image
                 width={400}
                 height={400}
-                className="object-cover w-40 md:w-96"
+                className="object-cover w-60 md:w-96"
                 src={scen}
                 alt={`scene${i}`}
               />

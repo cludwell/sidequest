@@ -18,7 +18,7 @@ export default function NewCharacter() {
   const { data: session, status: loading } = useSession();
   const dispatch = useDispatch<AppDispatch>();
   const user: any = useSelector(userProfile);
-  console.log("user", user);
+  // console.log("user", user);
   const [race, setRace] = useState<Race>({
     languages: [],
     spells: [],

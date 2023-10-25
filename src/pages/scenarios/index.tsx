@@ -19,7 +19,7 @@ import { Scenarios } from "@prisma/client";
 export default function Scenarios() {
   const dispatch = useDispatch<AppDispatch>();
   const [loaded, setLoaded] = useState<Boolean>(false);
-  const char = useSelector(selectedCharacterState)
+  const char = useSelector(selectedCharacterState);
   const router = useRouter();
   useEffect(() => {
     const loadData = async () => {
@@ -32,10 +32,18 @@ export default function Scenarios() {
 
   const selectScenario = async (scene: Scenarios) => {
     await dispatch(selectedScenarioRequest(scene));
-    if (!char) window.my_modal_confirm.showModal()
-    else router.push('/dungeonmaster')
+    if (!char) window.my_modal_confirm.showModal();
+    else router.push("/dungeonmaster");
   };
   if (!loaded) return <Loading />;
+  const focusOnclick = async (idString: string | null) => {
+    if (idString) {
+      const element = document.getElementById(idString);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
       <h1 className="federant text-3xl font-bold">Scenarios</h1>
@@ -45,10 +53,19 @@ export default function Scenarios() {
         {scenarios &&
           Object.values(scenarios).map((scene, i) => (
             <div
-              className=" w-96 glass carousel-item relative glass-container"
+              className=" w-60 md:w-96 glass carousel-item relative glass-container"
               key={scene.id}
+              id={`${scene.description.slice(0, 50)}`}
             >
-              <figure>
+              <figure
+                onClick={() =>
+                  focusOnclick(
+                    scene.description.slice(0, 50)
+                      ? scene.description.slice(0, 50)
+                      : null
+                  )
+                }
+              >
                 {scene.imgUrl && (
                   <Image
                     height={1000}
@@ -59,19 +76,20 @@ export default function Scenarios() {
                   />
                 )}
               </figure>
-              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-4 m-2">
-                <h2 className="card-title almendra text-2xl">
+              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-2 md:p-4 m-1 md:m-2">
+                <h2 className="card-title almendra md:text-2xl">
                   {scene.description.split("Adventure Prompt:")[0].slice(7)}
                 </h2>
-                <p className=" overflow-ellipsis">
+                <p className="text-xs md:text-lg overflow-ellipsis">
                   {scene.description
                     .split("Adventure Prompt: ")[1]
-                    .slice(0, 300)}
+                    .slice(0, 300)
+                    }
                   ...
                 </p>
                 <div className="card-actions justify-end mt-4">
                   <button
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-xs md:btn-md"
                     onClick={() => selectScenario(scene)}
                   >
                     <IconRightArrow />
