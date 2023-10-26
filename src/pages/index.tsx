@@ -72,7 +72,7 @@ export default function Home() {
       </Head>
       <Link
         href={"/splash"}
-        className="flex flex-col items-center mt-[20%] md:mt-[10%] lg:mt-0"
+        className="flex flex-col items-center "
       >
         <h1 className="almendra text-2xl md:text-4xl my-4 ">
           Hello, fellow travelers

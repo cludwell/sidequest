@@ -33,7 +33,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn w- h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1 "
         onClick={() => window.my_modal_4.showModal()}
       >
         <span className="flex flex-row items-center">

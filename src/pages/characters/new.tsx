@@ -183,20 +183,20 @@ export default function NewCharacter() {
           </button>
         </div>
       ) }
-      <div className="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" className="btn btn-xs">
+      <div className="flex flex-row flex-wrap justify-center w-full py-2 gap-2">
+        <a href="#item1" className="btn btn-xs btn-outline">
           Race
         </a>
-        <a href="#item2" className="btn btn-xs">
+        <a href="#item2" className="btn btn-xs btn-outline">
           Class
         </a>
-        <a href="#item3" className="btn btn-xs">
+        <a href="#item3" className="btn btn-xs btn-outline">
           Abilities
         </a>
-        <a href="#item4" className="btn btn-xs">
+        <a href="#item4" className="btn btn-xs btn-outline">
           Description
         </a>
-        <a href="#item5" className="btn btn-xs">
+        <a href="#item5" className="btn btn-xs btn-outline">
           Equipment
         </a>
       </div>

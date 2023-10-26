@@ -163,15 +163,15 @@ export default function NewCharDescription({
         </div>
 
         <FaithTable deities={deities as Deity[]} />
-        <div className="flex flex-row max-w-screen-xl w-full justify-center">
+        <div className="flex flex-col md:flex-row max-w-screen-xl w-full justify-center">
           <button
-            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+            className="btn btn-primary m-4"
             onClick={confirmDescription}
           >
             Confirm Description
           </button>
           <button
-            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8"
+            className="btn  btn-secondary m-4"
             onClick={() => (window.location.hash = "#item5")}
           >
             Next Step

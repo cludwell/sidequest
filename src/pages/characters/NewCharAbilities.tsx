@@ -1217,13 +1217,13 @@ export default function NewCharAbilities({
       )}
       <div className="flex flex-row max-w-screen-xl w-full justify-center">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="btn btn-primary m-8"
           onClick={confirmAssignment}
         >
           Confirm
         </button>
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8"
+          className="btn btn-secondary m-8"
           onClick={() => (window.location.hash = "#item4")}
         >
           Next Step

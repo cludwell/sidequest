@@ -45,7 +45,7 @@ export default function CreateCharacter() {
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
         {/* removing card from class name allows drawer to behave correctly */}
-        <div className="card card-compact bg-base-100 shadow-xl m-4 ">
+        <div className="card card-compact bg-base-100 shadow-xl m-4 max-w-96">
           <figure>
             {characters[5].imgUrl && (
               <Image
@@ -71,7 +71,7 @@ export default function CreateCharacter() {
           </button>
         </div>
 
-        <div className="card card-compact bg-base-100 shadow-xl m-4 ">
+        <div className="card card-compact bg-base-100 shadow-xl m-4 max-w-96">
           <figure>
             {characters[4].imgUrl && (
               <Image
