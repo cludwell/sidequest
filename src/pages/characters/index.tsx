@@ -59,7 +59,7 @@ export default function CreateCharacter() {
           </figure>
           <div className="card-body">
             <h2 className="card-title">STANDARD</h2>
-            <p>Create a character using a step-by-step approach</p>
+            <p className="text-sm md:text-lg">Create a character using a step-by-step approach</p>
             <div className="card-actions justify-end"></div>
           </div>
           <button

@@ -61,26 +61,26 @@ export default function UserCharacters() {
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
       <h1 className="text-3xl federant font-bold">Your Characters</h1>
       <div className="divider" />
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-evenly">
         {Object.values(usercharacters).map((char, i) => (
           <div
-            className=" bg-base-100 shadow-xl w-96 m-4 rounded-2xl flex flex-col"
+            className="card card-compact bg-base-100 shadow-xl max-w-96 m-4 "
             key={`char${i}`}
           >
             {char.imgUrl && (
               <figure>
                 <Image
                   src={char.imgUrl}
-                  alt="portrait"
-                  height={400}
-                  width={400}
-                  className="object-cover max-h-fit aspect-square rounded-t-2xl"
+                  alt="character-portrait"
+                  height={800}
+                  width={800}
+                  className="object-cover aspect-square rounded-t-2xl"
                 />
               </figure>
             )}
-            <div className="card-body p-4">
+            <div className="card-body">
               <h2 className="card-title">{char.name}</h2>
-              <p className="text-ellipsis text-xs">{char.background}</p>
+              <p className="text-ellipsis text-xs md:text-lg">{char.background}</p>
             </div>
             <div className="flex flex-row">
               <button
