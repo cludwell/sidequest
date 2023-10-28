@@ -115,7 +115,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_3" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center scroll-my-4">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center scroll-my-4">
             Dragonborn
           </h3>
           <Image
@@ -138,7 +138,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Born of dragons, as their name proclaims, the dragonborn walk
                 proudly through a world that greets them with fearful
                 incomprehension. Shaped by draconic gods or the dragons
@@ -164,7 +164,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               Proud Dragon Kin
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Dragonborn look very much like dragons standing erect in
                 humanoid form, though they lack wings or a tail. The first
                 dragonborn had scales of vibrant hues matching the colors of
@@ -177,7 +177,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 fingers and a thumb on each hand.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The blood of a particular type of dragon runs very strong
                 through some dragonborn clans. These dragonborn often boast
                 scales that more closely match those of their dragon
@@ -199,7 +199,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               Self-Sufficient Clans
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 To any dragonborn, the clan is more important than life itself.
                 Dragonborn owe their devotion and respect to their clan above
                 all else, even the gods. Each dragonborn's conduct reflects on
@@ -209,7 +209,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 maintaining the bounds of that position.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 A continual drive for self-improvement reflects the
                 self-sufficiency of the race as a whole. Dragonborn value skill
                 and excellence in all endeavors. They hate to fail, and they
@@ -219,7 +219,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 commitment find it easy to earn the respect of a dragonborn.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Though all dragonborn strive to be self-sufficient, they
                 recognize that help is sometimes needed in difficult situations.
                 But the best source for such help is the clan, and when a clan
@@ -241,7 +241,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               Dragonborn Names{" "}
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Dragonborn have personal names given at birth, but they put
                 their clan names first as a mark of honor. A childhood name or
                 nickname is often used among clutchmates as a descriptive term
@@ -249,24 +249,24 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 center on a habit.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Male Names: Arjhan, Balasar, Bharash, Donaar, Ghesh, Heskan,
                 Kriv, Medrash, Mehen, Nadarr, Pandjed, Patrin, Rhogar, Shamash,
                 Shedinn, Tarhun, Torinn
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Female Names: Akra, Biri, Daar, Farideh, Harann, Havilar, Jheri,
                 Kava, Korinn, Mishann, Nala, Perra, Raiann, Sora, Surina, Thava,
                 Uadjit
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Childhood Names: Climber, Earbender, Leaper, Pious, Shieldbiter,
                 Zealous
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Clan Names: Clethtinthiallor, Daardendrian, Delmirev,
                 Drachedandion, Fenkenkabradon, Kepeshkmolik, Kerrhylon,
                 Kimbatuul, Linxakasendalor, Myastan, Nemmonis, Norixius,
@@ -295,8 +295,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                   {/* head */}
                   <thead>
                     <tr>
-                      <th></th>
-                      <th>Dragon</th>
+                      <th className="font-bold">Dragon</th>
                       <th>Damage Type</th>
                       <th>Breath Weapon</th>
                     </tr>
@@ -304,71 +303,61 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                   <tbody>
                     {/* row 1 */}
                     <tr>
-                      <th>1</th>
-                      <td>Black</td>
+                      <td className="font-bold">Black</td>
                       <td>Acid</td>
                       <td>5 by 30 ft. line (Dex. save)</td>
                     </tr>
                     {/* row 2 */}
                     <tr>
-                      <th>2</th>
-                      <td>Blue</td>
+                      <td className="font-bold">Blue</td>
                       <td>Lightning</td>
                       <td>5 by 30 ft. line (Dex. save)</td>
                     </tr>
                     {/* row 3 */}
                     <tr>
-                      <th>3</th>
-                      <td>Brass</td>
+                      <td className="font-bold">Brass</td>
                       <td>Fire</td>
                       <td>5 by 30 ft. line (Dex. save)</td>
                     </tr>
                     {/* row 4 */}
                     <tr>
-                      <th>4</th>
-                      <td>Bronze</td>
+                      <td className="font-bold">Bronze</td>
                       <td>Lightning</td>
                       <td>5 by 30 ft. line (Dex. save)</td>
                     </tr>
                     {/* row 5 */}
                     <tr>
-                      <th>5</th>
-                      <td>Copper</td>
+                      <td className="font-bold">Copper</td>
                       <td>Acid</td>
                       <td>5 by 30 ft. line (Dex. save)</td>
                     </tr>
                     {/* row 6 */}
                     <tr>
-                      <th>6</th>
-                      <td>Gold</td>
+                      <td className="font-bold">Gold</td>
                       <td>Fire</td>
                       <td>15 ft. cone (Dex. save)</td>
                     </tr>
                     {/* row 7 */}
                     <tr>
-                      <th>7</th>
-                      <td>Green</td>
+                      <td className="font-bold">Green</td>
                       <td>Poison</td>
                       <td>15 ft. cone (Con. save)</td>
                     </tr>
                     {/* row 8 */}
                     <tr>
-                      <th>8</th>
-                      <td>Red</td>
+                      <td className="font-bold">Red</td>
                       <td>Fire</td>
                       <td>15 ft. cone (Dex. save)</td>
                     </tr>
                     {/* row 9 */}
                     <tr>
-                      <th>9</th>
-                      <td>Silver</td>
+                      <td className="font-bold">Silver</td>
                       <td>Cold</td>
                       <td>15 ft. cone (Con. save)</td>
                     </tr>
                     {/* row 10 */}
                     <tr>
-                      <th>10</th>
-                      <td>White</td>
+                      <td className="font-bold">White</td>
                       <td>Cold</td>
                       <td>15 ft. cone (Con. save)</td>
                     </tr>
@@ -391,7 +380,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <td>Ability Score Increase</td>
+                  <td className="font-bold">Ability Score Increase</td>
                   <td>
                     Your Strength score increases by 2, and your Charisma score
                     increases by 1.
@@ -399,7 +388,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <td>Age</td>
+                  <td className="font-bold">Age</td>
                   <td>
                     Young dragonborn grow quickly. They walk hours after
                     hatching, attain the size and development of a 10-year-old
@@ -409,7 +398,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 3 */}
                 <tr>
-                  <td>Alignment</td>
+                  <td className="font-bold">Alignment</td>
                   <td>
                     Understandably good leaning, though if you play a fallen
                     Aasimar you should shift to evil or neutral.
@@ -417,7 +406,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 4 */}
                 <tr>
-                  <td>Size</td>
+                  <td className="font-bold">Size</td>
                   <td>
                     Dragonborn are taller and heavier than humans, standing well
                     over 6 feet tall and averaging almost 250 pounds. Your size
@@ -426,12 +415,12 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 5 */}
                 <tr>
-                  <td>Speed</td>
+                  <td className="font-bold">Speed</td>
                   <td>Your base walking speed is 30 feet.</td>
                 </tr>
                 {/* row 6 */}
                 <tr>
-                  <td>Draconic Ancestry</td>
+                  <td className="font-bold">Draconic Ancestry</td>
                   <td>
                     You have draconic ancestry. Choose one type of dragon from
                     the Draconic Ancestry table. Your breath weapon and damage
@@ -442,7 +431,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
 
                 {/* row 8 */}
                 <tr>
-                  <td>Breath Weapon</td>
+                  <td className="font-bold">Breath Weapon</td>
                   <td>
                     You can use your action to exhale destructive energy. Your
                     draconic ancestry determines the size, shape, and damage
@@ -460,7 +449,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 9 */}
                 <tr>
-                  <td>Damage Resistance</td>
+                  <td className="font-bold">Damage Resistance</td>
                   <td>
                     You have resistance to the damage type associated with your
                     draconic ancestry.
@@ -468,7 +457,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 10 */}
                 <tr>
-                  <td>Languages</td>
+                  <td className="font-bold">Languages</td>
                   <td>
                     You can speak, read, and write Common and Draconic. Draconic
                     is thought to be one of the oldest languages and is often

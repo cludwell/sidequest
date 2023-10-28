@@ -64,7 +64,7 @@ export default function UserCharacters() {
       <div className="flex flex-wrap justify-evenly">
         {Object.values(usercharacters).map((char, i) => (
           <div
-            className="card card-compact bg-base-100 shadow-xl max-w-96 m-4 "
+            className="card card-compact bg-base-100 shadow-xl w-64 sm:w-96 m-4 "
             key={`char${i}`}
           >
             {char.imgUrl && (
@@ -80,7 +80,7 @@ export default function UserCharacters() {
             )}
             <div className="card-body">
               <h2 className="card-title">{char.name}</h2>
-              <p className="text-ellipsis text-xs md:text-lg">{char.background}</p>
+              <p className="text-ellipsis text-xs ">{char.background}</p>
             </div>
             <div className="flex flex-row">
               <button

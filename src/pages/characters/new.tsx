@@ -97,7 +97,7 @@ export default function NewCharacter() {
           Must be signed in to submit character
         </h1>
       ) : null}
-      <ul className="steps steps-vertical md:steps-horizontal mb-4 lg:h-fit ">
+      <ul className="steps steps-vertical sm:steps-horizontal mb-4">
         <li className={race.race ? "step step-primary" : "step"}>
           {" "}
           <a href="#item1" className="btn btn-xs">

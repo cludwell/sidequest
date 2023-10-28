@@ -33,7 +33,7 @@ export default function GnomeInfo({
           Vibrant Expression
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             A gnome's energy and enthusiasm for living shines through every inch
             of his or her tiny body. Gnomes average slightly over 3 feet tall
             and weigh 40 to 45 pounds. Their tan or brown faces are usually
@@ -43,7 +43,7 @@ export default function GnomeInfo({
             gnome's insatiable interest in everything around.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             A gnome's personality is writ large in his or her appearance. A male
             gnome's beard, in contrast to his wild hair, is kept carefully
             trimmed but often styled into curious forks or neat points. A
@@ -69,7 +69,7 @@ export default function GnomeInfo({
           Delighted Dedication
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             As far as gnomes are concerned, being alive is a wonderful thing,
             and they squeeze every ounce of enjoyment out of their three to five
             centuries of life. Humans might wonder about getting bored over the
@@ -79,7 +79,7 @@ export default function GnomeInfo({
             things they want to do and see.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Gnomes speak as if they can't get the thoughts out of their heads
             fast enough. Even as they offer ideas and opinions on a range of
             subjects, they still manage to listen carefully to others, adding
@@ -87,7 +87,7 @@ export default function GnomeInfo({
             way.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Though gnomes love jokes of all kinds, particularly puns and pranks,
             they're just as dedicated to the more serious tasks they undertake.
             Many gnomes are skilled engineers, alchemists, tinkers, and
@@ -112,7 +112,7 @@ export default function GnomeInfo({
         />
         <div className="collapse-title text-xl font-medium">Bright Burrows</div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Gnomes make their homes in hilly, wooded lands. They live
             underground but get more fresh air than dwarves do, enjoying the
             natural, living world on the surface whenever they can. Their homes
@@ -122,7 +122,7 @@ export default function GnomeInfo({
             first place.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Gnomes who settle in human lands are commonly gemcutters, engineers,
             sages, or tinkers. Some human families retain gnome tutors, ensuring
             that their pupils enjoy a mix of serious learning and delighted
@@ -147,7 +147,7 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Tinker</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 You have proficiency with artisan's tools (tinker's tools).
                 Using those tools, you can spend 1 hour and 10 gp worth of
                 materials to construct a Tiny clockwork device (AC 5, 1 hp). The
@@ -158,12 +158,12 @@ export default function GnomeInfo({
                 devices active at a time.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 When you create a device, choose one of the following options:
               </p>
               <br />
-              <ul>
-                <li>
+              <ul className="text-sm sm:text-base">
+                <li className="m-4 list-disc">
                   <strong>Clockwork Toy.</strong> This toy is a clockwork
                   animal, monster, or person, such as a frog, mouse, bird,
                   dragon, or soldier. When placed on the ground, the toy moves 5
@@ -171,12 +171,12 @@ export default function GnomeInfo({
                   direction. It makes noises as appropriate to the creature it
                   represents.
                 </li>
-                <li>
+                <li className="m-4 list-disc">
                   <strong>Fire Starter.</strong> The device produces a miniature
                   flame, which you can use to light a candle, torch, or
                   campfire. Using the device requires your action.
                 </li>
-                <li>
+                <li className="m-4 list-disc">
                   <strong>Music Box.</strong> When opened, this music box plays
                   a single song at a moderate volume. The box stops playing when
                   it reaches the song's end or when it is closed.
@@ -199,7 +199,7 @@ export default function GnomeInfo({
               Personality
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Rock gnomes possessed many of the traits of other races,
                 particularly humans, attributed to children. Most rock gnomes
                 enjoyed life to their very fullest; asking questions endlessly,
@@ -210,7 +210,7 @@ export default function GnomeInfo({
                 unless the task at hand was of notable interest.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 While their joyful, child-like viewpoint of life gave the
                 impression that a rock gnome would be incapable of achieving
                 something as mundane as physical labor, rock gnomes managed to
@@ -232,7 +232,7 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Society</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Rock gnomes gathered in small towns, rarely reaching 500 adults.
                 They considered large cities to be uncomfortable, partially
                 because of the great amount of demand the Big Folk had for their
@@ -244,7 +244,7 @@ export default function GnomeInfo({
                 known as "guns."
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Rock gnome homes were burrows, small but clean cave-like
                 carvings into stone and hillsides. Married gnome couples had
                 rooms for each to use, though rock gnome children generally
@@ -253,7 +253,7 @@ export default function GnomeInfo({
                 another for defense and other purposes.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Although rock gnomes could theoretically be of any alignment,
                 the majority of rock gnomes, as a culture, leaned towards
                 neutral good. Rock gnomes would aid someone in need and oppose
@@ -273,7 +273,7 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Rock gnomes typically possessed a nonchalant reverence of their
                 chosen deity, bringing up the name of their god in any form of
                 conversation as if they were referring to a friend. Rock gnomes
@@ -284,7 +284,7 @@ export default function GnomeInfo({
                 their own admittedly mundane agendas.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Most rock gnomes worshiped the head of the gnomish pantheon,
                 Garl Glittergold, considering him to be the idealized gnome,
                 personifying mischief and merry-making.
@@ -307,7 +307,7 @@ export default function GnomeInfo({
               Relations with other races
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Rock gnomes were especially easy going with dwarves and
                 halflings, especially those who appreciated a good joke. They
                 were typically more cautious and subdued around the Big Folk
@@ -333,7 +333,7 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Homelands</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Rock gnomes roamed the lands of Faerûn far and wide, using their
                 impressive natural intelligence as inventors, mages, and other
                 positions which required mechanical aptitude or just sheer
@@ -345,7 +345,7 @@ export default function GnomeInfo({
                 Dalelands, and the woodlands between the Great Dale and Thesk.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Though unknown to most-every civilization of Toril, rock gnomes
                 additionally inhabited and ruled a secret realm below the
                 Sunrise Mountains known as Songfarla the Hidden Kingdom.
@@ -368,7 +368,7 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Psychology</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnomes were a surly and cynical people who fatalistically
                 expected little more from life than what they had. While they
                 treated their own kind with respect and even goodwill, trust was
@@ -378,7 +378,7 @@ export default function GnomeInfo({
                 with suspicion.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Sullen and hard-working, deep gnomes were wholly dedicated to
                 any task to which they set themselves, typically mining for
                 males and housekeeping for females. Although outsiders found
@@ -395,7 +395,7 @@ export default function GnomeInfo({
               </p>
               <br />
 
-              <p>
+              <p className="text-sm sm:text-base">
                 Although far more serious than most gnomes, deep gnomes
                 nonetheless exhibited the same insatiable curiosity and
                 craftiness when put in the right circumstances. It was this
@@ -424,7 +424,7 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Abilities</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnome were better adapted for underground living than
                 either rock gnomes or forest gnomes, with darkvision to help
                 them see in total darkness and a dwarf-like affinity for stone,
@@ -450,20 +450,20 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Society</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 The harsh conditions of life in the Underdark shaped gnome
                 society in a number of unusual ways. Children were an extremely
                 important part of deep gnome society, in part due to a low
                 birthrate relative to the mortality rate.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnome couples usually had fewer than four children and
                 rarely more than six. Deep gnome mothers doted on their children
                 obsessively, but not in such a way that inhibited their growth.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 When they reach adolescence, children were quickly apprenticed
                 to masters in whatever trade they were expected to take on.
                 Adulthood was less defined among deep gnomes than among their
@@ -471,13 +471,13 @@ export default function GnomeInfo({
                 a deep gnome started working full-time in a trade.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Most males were miners or lapidaries, while females were the
                 masters of the home, raising children, keeping the house tidy,
                 gathering food, and preparing meals.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnomes considered male and female gender roles equally
                 important. Males were masters outside of the home and females
                 were masters within. This concept of equal labor for either sex
@@ -485,7 +485,7 @@ export default function GnomeInfo({
                 city governed by a king and queen who ruled as equals.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The king was often the head of the community's mining operations
                 and defenses, while the queen was tasked with ensuring that the
                 community had enough food and water to survive, while also
@@ -510,14 +510,14 @@ export default function GnomeInfo({
             />
             <div className="collapse-title text-xl font-medium">Culture</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnome culture was largely defined by the environment in
                 which they lived. Deep gnome settlements were usually centered
                 in a single large cavern, surrounded by an interlocking set of
                 tunnels and other caverns into which the city spread.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 These settlements were often large villages or small towns, with
                 a population of around a thousand gnomes. Typically cut off from
                 all outside contact, even from other deep gnome settlements,
@@ -528,7 +528,7 @@ export default function GnomeInfo({
                 until they themselves married and had children.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Svirfneblin lived in harmony with the rocks they carved and
                 their natural environment. They were skillful artisans who
                 created functional homes without destroying the natural beauty
@@ -537,7 +537,7 @@ export default function GnomeInfo({
                 merchants throughout the whole Underdark.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 They were also excellent guides, scouts and foragers because
                 they knew of underground portals, tunnels, and passages long
                 forgotten by the other races. Having to rely on stealth and
@@ -546,7 +546,7 @@ export default function GnomeInfo({
                 gnome rangers.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnomes rarely wandered far beyond their hidden cities, but
                 when they did, it was usually as bold prospectors, youthful
                 illusionists, or exploring warriors. These bold souls shared a
@@ -557,7 +557,7 @@ export default function GnomeInfo({
                 departure.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnomes who became adventurers most frequently were
                 fighters, rangers, rogues, or wizards (particularly
                 illusionists). Although well-suited to the arcane arts like
@@ -586,7 +586,7 @@ export default function GnomeInfo({
               Art & Leisure
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 As a whole, deep gnomes were a hard-working and joyless people,
                 but even the crustiest deep gnome required time to relax and let
                 off steam. Deep gnomes' intense dedication and ability to
@@ -594,7 +594,7 @@ export default function GnomeInfo({
                 activities.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnome architecture, for instance, was shaped largely by the
                 conditions they lived in, with the oldest homes often carved
                 directly out of the surrounding rock. The highest-ranking
@@ -603,7 +603,7 @@ export default function GnomeInfo({
                 walls.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnome cuisine was also a reflection of their livelihood,
                 with the common staples made up of a variety of exotic fungi
                 found only in the Underdark. Other common foods included blind
@@ -613,7 +613,7 @@ export default function GnomeInfo({
                 made most svirfneblin food practically inedible to outsiders.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 For drink, most deep gnomes drank a salty spirit, fermented
                 fish, which, like svirfneblin food, was an acquired taste. On
                 occasion, deep gnomes might drink a more potent beverage called
@@ -621,14 +621,14 @@ export default function GnomeInfo({
                 visions to those who drank it.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Artistically, deep gnomes preferred to use lots of gemstones,
                 which were relatively common in svirfneblin communities, mined
                 out of the veins along which their cities were built. Deep
                 gnomes were some of the best jewelers in the Underdark.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Deep gnomes also turned their cultivation of mushrooms for food
                 into a wider industry, developing fungi not only for food but
                 for textiles and wood as well. For their defense, deep gnomes
@@ -646,20 +646,20 @@ export default function GnomeInfo({
           {/* head */}
           <thead>
             <tr>
-              <th>Trait</th>
+              <th className="font-bold">Trait</th>
               <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Gnome Cunning</td>
+              <td className="font-bold">Gnome Cunning</td>
               <td>
                 You have advantage on all Intelligence, Wisdom, and Charisma
                 saving throws against magic.
               </td>
             </tr>
             <tr>
-              <td>Size</td>
+              <td className="font-bold">Size</td>
               <td>
                 Gnomes are between 3 and 4 feet tall and average about 40
                 pounds. Your size is Small.
@@ -667,17 +667,17 @@ export default function GnomeInfo({
             </tr>
             {/* row 4 */}
             <tr>
-              <td>Speed</td>
+              <td className="font-bold">Speed</td>
               <td>Your base walking speed is 25 feet.</td>
             </tr>
             {type === "deep" ? (
               <>
                 <tr>
-                  <td>Ability Score Increase</td>
+                  <td className="font-bold">Ability Score Increase</td>
                   <td>Dex +1; Int+2</td>
                 </tr>
                 <tr>
-                  <td>Age</td>
+                  <td className="font-bold">Age</td>
                   <td>
                     Deep gnomes are short-lived for gnomes. They mature at the
                     same rate humans do and are considered full-grown adults by
@@ -686,7 +686,7 @@ export default function GnomeInfo({
                   </td>
                 </tr>
                 <tr>
-                  <td>Alignment</td>
+                  <td className="font-bold">Alignment</td>
                   <td>
                     Svirfneblin believe that survival depends on avoiding
                     entanglements with other creatures and not making enemies,
@@ -696,25 +696,25 @@ export default function GnomeInfo({
                   </td>
                 </tr>
                 <tr>
-                  <td>Size</td>
+                  <td className="font-bold">Size</td>
                   <td>
                     A typical svirfneblin stands about 3 to 3½ feet tall and
                     weighs 80 to 120 pounds. Your size is Small.
                   </td>
                 </tr>
                 <tr>
-                  <td>Superior Darkvision</td>
+                  <td className="font-bold">Superior Darkvision</td>
                   <td>Your darkvision has a radius of 120 feet.</td>
                 </tr>
                 <tr>
-                  <td>Stone Camouflage</td>
+                  <td className="font-bold">Stone Camouflage</td>
                   <td>
                     You have advantage on Dexterity (Stealth) checks to hide in
                     rocky terrain.
                   </td>
                 </tr>
                 <tr>
-                  <td>Languages</td>
+                  <td className="font-bold">Languages</td>
                   <td>
                     You can speak, read, and write Common, Gnomish, and
                     Undercommon. The svirfneblin dialect is more guttural than
@@ -728,11 +728,11 @@ export default function GnomeInfo({
             ) : (
               <>
                 <tr>
-                  <td>Ability Score Increase</td>
+                  <td className="font-bold">Ability Score Increase</td>
                   <td>Int +2; Con+1</td>
                 </tr>
                 <tr>
-                  <td>Age</td>
+                  <td className="font-bold">Age</td>
                   <td>
                     Gnomes mature at the same rate humans do, and most are
                     expected to settle down into an adult life by around age 40.
@@ -740,7 +740,7 @@ export default function GnomeInfo({
                   </td>
                 </tr>
                 <tr>
-                  <td>Darkvision</td>
+                  <td className="font-bold">Darkvision</td>
                   <td>
                     Accustomed to life underground, you have superior vision in
                     dark and dim conditions. You can see in dim light within 60
@@ -750,7 +750,7 @@ export default function GnomeInfo({
                   </td>
                 </tr>
                 <tr>
-                  <td>Artificer's Lore</td>
+                  <td className="font-bold">Artificer's Lore</td>
                   <td>
                     Whenever you make an Intelligence (History) check related to
                     magic items, alchemical objects, or technological devices,
@@ -759,7 +759,7 @@ export default function GnomeInfo({
                   </td>
                 </tr>
                 <tr>
-                  <td>Languages</td>
+                  <td className="font-bold">Languages</td>
                   <td>
                     You can speak, read, and write Common and Gnomish. The
                     Gnomish language, which uses the Dwarvish script, is

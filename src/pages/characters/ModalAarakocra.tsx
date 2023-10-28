@@ -50,7 +50,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_4" className="modal">
         <form method="dialog" className="modal-box ">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Aarakocra
           </h3>
           <Image
@@ -74,7 +74,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Sequestered in high mountains atop tall trees, the aarakocra,
                 sometimes called birdfolk, evoke fear and wonder. Many aarakocra
                 aren't even native to the Material Plane. They hail from a world
@@ -82,7 +82,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 Air.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 They are immigrants, refugees, scouts, and explorers, their
                 outposts functioning as footholds in a world both strange and
                 alien.
@@ -102,7 +102,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               Beak and Feather
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 From below, aarakocra look much like large birds. Only when they
                 descend to roost on a branch or walk across the ground does
                 their humanoid appearance reveal itself. Standing upright,
@@ -110,7 +110,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 legs that taper to sharp talons.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Feathers cover their bodies. Their plumage typically denotes
                 membership in a tribe. Males are brightly colored, with feathers
                 of red, orange, or yellow. Females have more subdued colors,
@@ -133,7 +133,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               Sky Wardens
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Nowhere are the aarakocra more comfortable than in the sky. They
                 can spend hours in the air, and some go as long as days, locking
                 their wings in place and letting the thermals hold them aloft.
@@ -142,7 +142,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 weapons or talons before turning and flying away.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Once airborne, an aarakocra leaves the sky with reluctance. On
                 their native plane, they can fly for days or months, landing
                 only to lay their eggs and feed their young before launching
@@ -169,7 +169,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               Avian Mannerisms{" "}
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 The resemblance of aarakocra to birds isn't limited to physical
                 features. Aarakocra display many of the same mannerisms as
                 ordinary birds. They are fastidious about their plumage,
@@ -179,7 +179,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 can catch fish and bathe themselves.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Many aarakocra punctuate their speech with chirps, sounds they
                 use to convey emphasis and to shade meaning, much as a human
                 might through facial expressions and gestures. An aarakocra
@@ -188,7 +188,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 versa.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The idea of ownership baffles most aarakocra. After all, who
                 owns the sky? Even when explained to them, they initially find
                 the notion of ownership mystifying. As a result, aarakocra who
@@ -198,13 +198,13 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 eyes.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 They find it hard not to pluck the treasure and bring it back to
                 their settlement to beautify it. An aarakocra who spends years
                 among other races can learn to inhibit these impulses.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Confinement terrifies the aarakocra. To be grounded, trapped
                 underground, or imprisoned by the cold, unyielding earth is a
                 torment few aarakocra can withstand. Even when perched on a high
@@ -224,7 +224,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Homelands </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Most aarakocra live on the Elemental Plane of Air. Aarakocra can
                 be drawn into the Material Plane, sometimes to pursue enemies or
                 thwart their foes' designs there. Accident might also send a
@@ -234,11 +234,13 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 of old forests.
               </p>
               <br />
-              Once tribes of aarakocra settle in an area, they share a hunting
-              territory that extends across an area up to 100 miles on a side,
-              with each tribe hunting in the lands nearest to their colony,
-              ranging farther should game become scarce.
-              <p>
+              <p className="text-sm sm:text-base">
+                Once tribes of aarakocra settle in an area, they share a hunting
+                territory that extends across an area up to 100 miles on a side,
+                with each tribe hunting in the lands nearest to their colony,
+                ranging farther should game become scarce.
+              </p>
+              <p className="text-sm sm:text-base">
                 A typical colony consists of one large, open-roofed nest made of
                 woven vines. The eldest acts as leader with the support of a
                 shaman.
@@ -258,7 +260,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               Great Purpose{" "}
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Aarakocra enjoy peace and solitude. Most of them have little
                 interest in dealing with other peoples and less interest in
                 spending time on the ground. For this reason, it takes an
@@ -269,13 +271,16 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 lies at the heart of the aarakocra adventurer's chosen path.
               </p>
               <br />
-              Two other circumstances might call an aarakocra to adventure.
-              First, aarakocra have historical ties to the Wind Dukes of Aaqa.
-              Exceptional individuals honor that connection and might seek out
-              the missing pieces of the Rod of Seven Parts, the remains of an
-              artifact fashioned by the Wind Dukes long ago to defeat the Queen
-              of Chaos's monstrous champion, Miska the Wolf-Spider.
-              <p>
+              <p className="text-sm sm:text-base">
+                Two other circumstances might call an aarakocra to adventure.
+                First, aarakocra have historical ties to the Wind Dukes of Aaqa.
+                Exceptional individuals honor that connection and might seek out
+                the missing pieces of the Rod of Seven Parts, the remains of an
+                artifact fashioned by the Wind Dukes long ago to defeat the
+                Queen of Chaos's monstrous champion, Miska the Wolf-Spider.
+              </p>
+              <br />
+              <p className="text-sm sm:text-base">
                 When plunged into Miska's body, the chaos in his blood sundered
                 the rod and scattered its pieces across the multiverse.
                 Recovering the pieces means gaining honor and esteem in the eyes
@@ -283,15 +288,16 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 weapon for defense against the agents of elemental evil.
               </p>
               <br />
-              Second, aarakocra are sworn foes of elemental earth, in particular
-              the gargoyles that serve Ogrémoch, the Prince of Earth. The
-              Aarakocra word for gargoyle is loosely translated as “flying
-              rock,” and battles between aarakocra and gargoyles have raged
-              across the Elemental Planes of Earth and Air, occasionally
-              spilling into a world on the Material Plane. Aarakocra on that
-              plane might leave their colonies to lend aid to other humanoids
-              committed to fighting earth cults and thwarting their efforts.
-              <p></p>
+              <p className="text-sm sm:text-base">
+                Second, aarakocra are sworn foes of elemental earth, in
+                particular the gargoyles that serve Ogrémoch, the Prince of
+                Earth. The Aarakocra word for gargoyle is loosely translated as
+                “flying rock,” and battles between aarakocra and gargoyles have
+                raged across the Elemental Planes of Earth and Air, occasionally
+                spilling into a world on the Material Plane. Aarakocra on that
+                plane might leave their colonies to lend aid to other humanoids
+                committed to fighting earth cults and thwarting their efforts.
+              </p>
             </div>
           </div>
           <div className="collapse collapse-plus bg-base-200 my-1">
@@ -307,7 +313,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               Aarakocra Names
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 As with much of their speech, aarakocra names include clicks,
                 trills, and whistles to the point that other peoples have a
                 difficult time pronouncing them. Typically, a name has two to
@@ -316,7 +322,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 from people they meet or shortened forms of their full names.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 An aarakocra of either gender may have one of these short names:
                 Aera, Aial, Aur, Deekek, Errk, Heehk, Ikki, Kleeck, Oorr, Ouss,
                 Quaf, Quierk, Salleek, Urreek, or Zeed.

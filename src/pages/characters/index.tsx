@@ -45,7 +45,7 @@ export default function CreateCharacter() {
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
         {/* removing card from class name allows drawer to behave correctly */}
-        <div className="card card-compact bg-base-100 shadow-xl m-4 max-w-96">
+        <div className="card card-compact bg-base-100 shadow-xl m-4 w-64 sm:w-96">
           <figure>
             {characters[5].imgUrl && (
               <Image
@@ -71,7 +71,7 @@ export default function CreateCharacter() {
           </button>
         </div>
 
-        <div className="card card-compact bg-base-100 shadow-xl m-4 max-w-96">
+        <div className="card card-compact bg-base-100 shadow-xl m-4 w-64 sm:w-96">
           <figure>
             {characters[4].imgUrl && (
               <Image
@@ -85,7 +85,7 @@ export default function CreateCharacter() {
           </figure>
           <div className="card-body">
             <h2 className="card-title">PREMADE</h2>
-            <p>
+            <p className="text-sm md:text-lg">
               Browse a selection of ready-to-play, premade characters and claim
               one to your account.
             </p>

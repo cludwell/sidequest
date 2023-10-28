@@ -52,7 +52,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_20" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Aasimar
           </h3>
           <Image
@@ -75,7 +75,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Aasimar bore the mark of their celestial touch through many
                 different physical features that often varied from individual to
                 individual. Most commonly, aasimar were very similar to humans,
@@ -84,7 +84,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 significantly taller than humans as well.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 While several aasimar were immediately identifiable as such,
                 others were even less distinguishable than tieflings from their
                 human ancestors, commonly standing out with only one unusual
@@ -118,7 +118,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               Personality{" "}
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Most Aasimar grew up cautious around others and, like tieflings,
                 were sometimes misunderstood, though never to the hateful extent
                 many of the fiendish bloodlines were. Even those raised by
@@ -129,7 +129,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 an inherent bent towards empathy for others.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Though many Aasimar were good in nature, thanks in a large part
                 to their celestial ancestors, not all were, just as not all
                 tieflings or fey'ri were evil. Some Aasimar fell into the trap
@@ -155,7 +155,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Abilities </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 As a general rule, Aasimar were a wise and charismatic race,
                 possessed of strong insights and a powerful allure with which
                 most races could not compare. Aasimar were also quite
@@ -181,7 +181,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Society </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Aasimar were rare throughout Toril and, as such, had no true
                 cities or societies of their own, much like other planetouched.
                 Aasimar could live for the whole of their life without ever
@@ -189,7 +189,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 living amongst other races.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Very few Aasimar had siblings who were also Aasimar, in large
                 part due to the rarity of a celestial or god mating with a human
                 but also due to the fact that Aasimar who sprang from ancient
@@ -204,7 +204,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 stripes.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Because of their ties to the goodly gods and celestial beings,
                 many Aasimar were drawn to a religious path and most Aasimar
                 spellcasters called on divine magic as opposed to arcane magic.
@@ -215,7 +215,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 paladins.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Like other half-breeds, Aasimar did not feel, as a whole,
                 beholden to any one god or pantheon, but many Aasimar worshiped
                 the Mulhorandi pantheon and a large proportion of the race was
@@ -226,7 +226,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 gods appropriate for the nation in which they lived.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 On the Outer Planes, Aasimar were the servants of many of the
                 dwarven and elven gods, including Aerdrie Faenya, Berronar
                 Truesilver, Corellon Larethian, Dugmaren Brightmantle,
@@ -236,7 +236,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 and Milil also had Aasimar as servants.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Aasimar, despite their human ancestry, did not typically feel a
                 strong draw to their kin but instead felt a stronger bond with
                 other half-breeds. Many Aasimar enjoyed the company of races as
@@ -262,7 +262,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">History </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Though mortal Aasimar were the result of breeding between humans
                 and celestials, devas were unheard of in the local multiverse
                 prior to the arrival of the Mulani from a forgotten plane. Drawn
@@ -288,7 +288,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Homelands </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Aasimar were most commonly found in the eastern lands of Unther
                 and Mulhorand, where they were the descendants of the good
                 deities who once walked among the mortals. Since the
@@ -315,14 +315,14 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             <div className="collapse-title text-xl font-medium">Subraces </div>
             <div className="collapse-content">
               <h1 className="text-lg my-4 underline">Fallen Aasimar</h1>
-              <p>
+              <p className="text-sm sm:text-base">
                 Some Aasimar were marked by some form of darkness in their
                 lives, that tarnished their inner light. In most instances these
                 fallen Aasimar were either influenced by some evil power in
                 their youth, or they themselves had turned to the ways of evil.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Fallen Aasimar typically possessed greater strength than their
                 other celestial-blooded kin. Once per day, they could release
                 the divine energy stored deep within them to form an aura of
@@ -330,14 +330,14 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 horrific that it often caused others to run away in terror.
               </p>
               <h1 className="text-lg my-4 underline">Protector Aasimar</h1>
-              <p>
+              <p className="text-sm sm:text-base">
                 Yet other Aasimar were tasked by the greater powers of good to
                 protect the weak and innocent of the Realms. From their youth
                 they were given a divine missive, along with guidance, to smite
                 evil in the defense of those unable to fight on their own.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Protector Aasimar were often more learned and judicious than
                 others. Around once per day, they could channel their inner
                 light to conjure to angelic, incorporeal wings from their back
@@ -345,7 +345,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 m) per minute and unleash radiant energy when they attack.
               </p>
               <h1 className="text-lg my-4 underline">Scourge Aasimar</h1>
-              <p>
+              <p className="text-sm sm:text-base">
                 These individuals of divine heritage that possessed an intense
                 drive to purge evil from the Realms. They imbued with powerful
                 radiant energy to help them carry out their natural drive to
@@ -354,13 +354,13 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 hearty and robust individuals.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 About once per day, scourge Aasimar could release the radiant
                 energy held within them in a blast that extended outwards for 10
                 ft (3 m). This power could last upwards of one minute.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Scourge Aasimar often wore masks to hide away their otherworldly
                 appearance, except when engaged in combat.
               </p>
@@ -380,7 +380,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <td>Ability Score Increase</td>
+                  <td className="font-bold">Ability Score Increase</td>
                   <td>
                     +2 to Charisma, which is useful for characters who want to
                     be "the face of the party" and it's the primary casting
@@ -389,12 +389,12 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <td>Age</td>
+                  <td className="font-bold">Age</td>
                   <td>Aasimar live up to 160 years.</td>
                 </tr>
                 {/* row 3 */}
                 <tr>
-                  <td>Alignment</td>
+                  <td className="font-bold">Alignment</td>
                   <td>
                     Understandably good leaning, though if you play a fallen
                     Aasimar you should shift to evil or neutral.
@@ -402,26 +402,26 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 4 */}
                 <tr>
-                  <td>Size</td>
+                  <td className="font-bold">Size</td>
                   <td>
                     Aasimar have the same range of height and weight as humans.{" "}
                   </td>
                 </tr>
                 {/* row 5 */}
                 <tr>
-                  <td>Speed</td>
+                  <td className="font-bold">Speed</td>
                   <td>Your base walking speed is 30 feet.</td>
                 </tr>
                 {/* row 6 */}
                 <tr>
-                  <td>Celestial Resistance</td>
+                  <td className="font-bold">Celestial Resistance</td>
                   <td>
                     You have resistance to necrotic damage and radiant damage.
                   </td>
                 </tr>
                 {/* row 7 */}
                 <tr>
-                  <td>Healing Hands</td>
+                  <td className="font-bold">Healing Hands</td>
                   <td>
                     As an action, you can touch a creature and cause it to
                     regain a number of hit points equal to your level. Once you
@@ -433,7 +433,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
 
                 {/* row 8 */}
                 <tr>
-                  <td>Darkvision</td>
+                  <td className="font-bold">Darkvision</td>
                   <td>
                     Blessed with a radiant soul, your vision can easily cut
                     through darkness. You can see in dim light within 60 feet of
@@ -444,7 +444,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 9 */}
                 <tr>
-                  <td>Languages</td>
+                  <td className="font-bold">Languages</td>
                   <td>You can speak, read, and write Common and Celestial.</td>
                 </tr>
               </tbody>

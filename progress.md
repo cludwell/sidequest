@@ -102,7 +102,15 @@ fixing seeding
 -began user accomplishments page to make use of userScenarios model
 -userScenario slice of state, thunk, backend route
 
+10/17
+-refactoring code to be responsive
+    characters.index
+    user characters
+    gnome, aarakocra, aasimar, dragonborn modals
+
+
 TO DO MVP
+-doesn't look like deep gnome modal is working correctly
 -polish the character sheet modal
 -make sure that dungeonmaster loads with prompt
 -will eventually want to do some form error handling on race and class selection
