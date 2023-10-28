@@ -86,12 +86,11 @@ export default function About() {
         <div className="divider" />
 
         <h1 className="federant text-3xl font-bold py-8">
-          Recent Updates 10/25
+          Recent Updates 10/27
         </h1>
         <ul className="list-disc">
-          <li>If you're reading this, the site is live!</li>
-          <li>Refactoring site to be responsive, in progress</li>
-          <li>Modals for character and scenario selection</li>
+          <li>Refactored race selection modals are responsive</li>
+          <li>Modals for character and scenario selection are responsive</li>
           <li>Dice buttons for d20 and other dice rolls</li>
         </ul>
         <div className="divider" />
