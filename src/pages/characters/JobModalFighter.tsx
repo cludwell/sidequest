@@ -84,7 +84,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             armor
           </p>
           <div className="overflow-x-auto m-1">
-            <table className="table table-zebra">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               {/* head */}
               <thead>
                 <tr>
@@ -138,7 +138,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
               <div className="overflow-x-auto">
-                <table className="table table-zebra bg-base-100">
+              <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
                   <thead>
                     <tr>
                       <th>Fighting Style</th>
@@ -255,7 +255,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </div>
             <div className="collapse-content">
               <div className="overflow-x-auto">
-                <table className="table table-zebra bg-base-100">
+              <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
                   <thead>
                     <tr>
                       <th>Level</th>
@@ -313,7 +313,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>

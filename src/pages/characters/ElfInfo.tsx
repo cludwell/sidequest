@@ -120,7 +120,7 @@ export default function ElfInfo({
               </p>
               <br />
               <div className="overflow-x-auto">
-                <table className="table table-zebra bg-base-100">
+              <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
                   {/* head */}
                   <thead>
                     <tr>

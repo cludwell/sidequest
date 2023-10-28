@@ -153,7 +153,7 @@ export default function NewCharAbilities({
       <h1 className="text-4xl almendra mb-8 text-center">Ability Scores</h1>
 
       <div className="flex flex-col items-center">
-        <label className="text-2xl  almendra w-80">
+        <label className="text-2xl almendra w-80">
           Distribution{" "}
           <ToolTip
             tip="Standard Distribution is a commonly accepted array of values for character abilities allowing a fair and challenging game. Or you can roll dice for a custom distribution of points. For custom each stat is 3d6 with advantage (an extra die is rolled, and lowest number discounted)"
@@ -220,7 +220,7 @@ export default function NewCharAbilities({
             Strength{" "}
             <ToolTip
               tip="Strength measures a characters ability to exert physical force. A character with high Strength can lift heavier objects, carry more gear without being overloaded, break things with brute strength, shove and grapple creatures more effectively, and is more accurate and more effective with melee weapons."
-              position="tooltip-right"
+              position="tooltip-bottom font-normal sm:tooltip-right"
             />
           </h3>
           <select
@@ -256,7 +256,7 @@ export default function NewCharAbilities({
             Dexterity{" "}
             <ToolTip
               tip="Dexterity measures a character's nimbleness, their agility, and their fine motor skills. A character with high Dexterity is able to avoid attacks in combat, evade area effects like dragon's breath and explosions, move stealthily, perform feats of acrobatics, pick locks, and use both light, nimble melee weapons like daggers and rapiers and ranged weapons like bows and crossbows more effectively."
-              position=""
+              position="tooltip-bottom font-normal"
             />
           </h3>
           <select
@@ -293,7 +293,7 @@ export default function NewCharAbilities({
             Constitution
             <ToolTip
               tip="Constitution describes a character's physical fortitude; their ability to endure pain, to take damage without falling unconscious, to resist the effects of poison, disease, and other physical maladies, to hold your breath, to travel long distances without rest, and to go without sleep for extended periods."
-              position=""
+              position="tooltip-left font-normal sm:tooltip-bottom"
             />
           </h3>
           <select
@@ -329,7 +329,7 @@ export default function NewCharAbilities({
             Intelligence{" "}
             <ToolTip
               tip="Intelligence measures a character's analytical ability, their memory, and their ability to reason logically. A character with high Intelligence knows many facts and pieces of trivia, can estimate the value of items, can communicate nonverbally, and they are often good at puzzles, games of skill, researching, investigation, forgery, and investigation."
-              position=""
+              position="tooltip font-normal sm:tooltip-left"
             />
           </h3>
           <select
@@ -365,7 +365,7 @@ export default function NewCharAbilities({
             Wisdom
             <ToolTip
               tip="Wisdom measures a character's practical intelligence, their cleverness, their perceptiveness, and how in tune they are with the world around them. Characters with high Wisdom are perceptive, observant, and sensible. They are able to handle animals, notice subtle details about creature's motives and about the world around them, and to make decisions when the right choice isn't clear."
-              position=""
+              position="font-normal sm:tooltip-left"
             />
           </h3>
           <select
@@ -401,7 +401,7 @@ export default function NewCharAbilities({
             Charisma
             <ToolTip
               tip="Charisma measures a character's charm and eloquence, their force of personality, their self-confidence, and their ability to interact with other creatures. Characters with high Charisma are charming, well-liked, and are often natural leaders. These characters are able to make friends, talk their way out of trouble, negotiate, and otherwise get by on talk."
-              position="tooltip-left"
+              position="tooltip-left font-normal sm:tooltip-left"
             />
           </h3>
           <select

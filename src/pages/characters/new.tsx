@@ -97,7 +97,7 @@ export default function NewCharacter() {
           Must be signed in to submit character
         </h1>
       ) : null}
-      <ul className="steps steps-vertical sm:steps-horizontal mb-4">
+      <ul className="steps steps-horizontal mb-4 overflow-clip">
         <li className={race.race ? "step step-primary" : "step"}>
           {" "}
           <a href="#item1" className="btn btn-xs">
@@ -124,16 +124,17 @@ export default function NewCharacter() {
             !!Object.values(description).length ? "step step-primary" : "step"
           }
         >
-          <a href="#item4" className="btn btn-xs">
-            Description
+          <a href="#item4" className="btn btn-xs before:content-['Desc'] sm:before:content-['Description']">
+
           </a>
         </li>
         <li
           className={equipment.inventory.length ? "step step-primary" : "step"}
         >
           {" "}
-          <a href="#item5" className="btn btn-xs">
-            Equipment
+          <a href="#item5" className="btn btn-xs con before:content-['Equip'] sm:before:content-['Equipment']"
+  >
+
           </a>
         </li>
       </ul>

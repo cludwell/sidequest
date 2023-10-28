@@ -62,7 +62,7 @@ export default function NewCharDescription({
             Level
             <ToolTip
               tip="All players start at level 1. Option to choose higher level coming soon."
-              position="tooltip-bottom font-sans"
+              position="tooltip-left font-sans"
             />
           </label>
           <select
@@ -78,7 +78,7 @@ export default function NewCharDescription({
             Alignment
             <ToolTip
               tip="D&D alignments serve as a general description of a creature's moral beliefs and attitudes. They're a set of basic rules which loosely determine how a character will interact with their environment, and with other people."
-              position="tooltip-bottom font-sans"
+              position="tooltip-left font-sans"
             />
           </label>
           <select
@@ -111,7 +111,7 @@ export default function NewCharDescription({
             Portrait
             <ToolTip
               tip="AWS image uploads coming soon, please use a hosting site like imgur in the meantime"
-              position=""
+              position="tooltip-left font-normal font-sans"
             />
           </label>
           <input
@@ -142,7 +142,7 @@ export default function NewCharDescription({
             Faith{" "}
             <ToolTip
               tip="Choose a faith that matches your alignment in one capacity for best experience. See 'Faiths' drop down for more information about gods, their domains, and holy symbols."
-              position="tooltip font-sans"
+              position="tooltip-left font-sans"
             />
           </label>
           <select
