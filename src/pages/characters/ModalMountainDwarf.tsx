@@ -78,12 +78,12 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
               Mountain Dwarf
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Bold and hardy, dwarves are known as skilled warriors, miners,
                 and workers of stone and metal.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 As a mountain dwarf, you're strong and hardy, accustomed to a
                 difficult life in rugged terrain. You're probably on the tall
                 side (for a dwarf), and tend toward lighter coloration. The

@@ -27,7 +27,7 @@ export default function JobAbilityInfo({
         </div>
         <div className="collapse-content">
           <div className="overflow-x-auto ">
-            <table className="table table-zebra bg-base-100">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               <thead>
                 <tr>
                   <th>Level</th>
@@ -75,8 +75,7 @@ export default function JobAbilityInfo({
             </table>
           </div>
           <br />
-          <p>
-            Using the optional feats rule, you can forgo taking this feature to
+          <p className="text-sm sm:text-base">            Using the optional feats rule, you can forgo taking this feature to
             take a feat of your choice instead.
           </p>
         </div>

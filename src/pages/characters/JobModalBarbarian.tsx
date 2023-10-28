@@ -107,44 +107,43 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 In battle, you fight with primal ferocity. On your turn, you can
                 enter a rage as a bonus action.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 While raging, you gain the following benefits if you aren't
                 wearing heavy armor:
               </p>
-              <ul className="list-disc pl-5">
-                <li className="my-1">
+              <ul className="list-disc m-4">
+                <li className="my-2 text-sm sm:text-base">
                   You have advantage on Strength checks and Strength saving
                   throws.
                 </li>
-                <li className="my-1">
+                <li className="my-2 text-sm sm:text-base">
                   When you make a melee weapon attack using Strength, you gain a
                   bonus to the damage roll that increases as you gain levels as
                   a barbarian, as shown in the Rage Damage column of the
                   Barbarian table.
                 </li>
-                <li className="my-1">
+                <li className="my-2 text-sm sm:text-base">
                   You have resistance to bludgeoning, piercing, and slashing
                   damage.
                 </li>
-                <li className="my-1">
+                <li className="my-2 text-sm sm:text-base">
                   If you are able to cast spells, you can't cast them or
                   concentrate on them while raging.
                 </li>
               </ul>
-              <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Your rage lasts for 1 minute. It ends early if you are knocked
                 unconscious or if your turn ends and you haven't attacked a
                 hostile creature since your last turn or taken damage since
                 then. You can also end your rage on your turn as a bonus action.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Once you have raged the number of times shown for your barbarian
                 level in the Rages column of the Barbarian table, you must
                 finish a long rest before you can rage again.
@@ -169,7 +168,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 While you are not wearing any armor, your Armor Class equals 10
                 + your Dexterity modifier + your Constitution modifier. You can
                 use a shield and still gain this benefit.
@@ -195,7 +194,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Starting at 2nd level, you can throw aside all concern for
                 defense to attack with fierce desperation. When you make your
                 first attack on your turn, you can decide to attack recklessly.
@@ -224,13 +223,13 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 At 2nd level, you gain an uncanny sense of when things nearby
                 aren't as they should be, giving you an edge when you dodge away
                 from danger.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 You have advantage on Dexterity saving throws against effects
                 that you can see, such as traps and spells. To gain this
                 benefit, you can't be blinded, deafened, or incapacitated.
@@ -255,7 +254,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 At 3rd level, you choose a path that shapes the nature of your
                 rage. Your choice grants you features at 3rd level and again at
                 6th, 10th, and 14th levels.
@@ -283,7 +282,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Beginning at 5th level, you can attack twice, instead of once,
                 whenever you take the Attack action on your turn.
               </p>
@@ -308,7 +307,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Starting at 5th level, your speed increases by 10 feet while you
                 aren't wearing heavy armor.
               </p>
@@ -333,12 +332,12 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 By 7th level, your instincts are so honed that you have
                 advantage on initiative rolls.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Additionally, if you are surprised at the beginning of combat
                 and aren't incapacitated, you can act normally on your first
                 turn, but only if you enter your rage before doing anything else
@@ -421,14 +420,14 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Starting at 11th level, your rage can keep you fighting despite
                 grievous wounds. If you drop to 0 hit points while you're raging
                 and don't die outright, you can make a DC 10 Constitution saving
                 throw. If you succeed, you drop to 1 hit point instead.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Each time you use this feature after the first, the DC increases
                 by 5. When you finish a short or long rest, the DC resets to 10.
               </p>
@@ -452,7 +451,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Beginning at 15th level, your rage is so fierce that it ends
                 early only if you fall unconscious or if you choose to end it.
               </p>
@@ -478,7 +477,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Beginning at 18th level, if your total for a Strength check is
                 less than your Strength score, you can use that score in place
                 of the total.
@@ -504,7 +503,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </span>
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 At 20th level, you embody the power of the wilds. Your Strength
                 and Constitution scores increase by 4. Your maximum for those
                 scores is now 24.
