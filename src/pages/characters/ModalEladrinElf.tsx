@@ -51,12 +51,12 @@ export default function ModalEladrinElf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_10" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Eladrin Elf
           </h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={"eladrin"} />
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide" onClick={raceEladrin}>
+            <button className="btn btn-success btn-wide m-4" onClick={raceEladrin}>
               Select Eladrin Elf
             </button>
           </div>

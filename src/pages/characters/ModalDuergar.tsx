@@ -73,7 +73,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Like other dwarves, duergar were typically thick, stocky
                 figures, though beyond this there were many differences. Both
                 male and female duergar were typically bald, with females also
@@ -84,7 +84,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 as an insult.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Because many duergar found on the surface world were criminal
                 exiles, a surface dweller who encountered one of the gray
                 dwarves was likely to notice facial and arm tattoos that marked
@@ -107,7 +107,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               Personality{" "}
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Tyrannical, grim, industrious and pessimistic, the lives of the
                 gray dwarves were bleak and brutal. Rather than a flaw, however,
                 they viewed their lack of happiness as their greatest strength,
@@ -117,7 +117,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 dark reflection of those found in normal dwarves.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 While they did display the redeeming virtues of determination
                 and bravery, duergar took dwarven flaws to their logical
                 extremes. They were violent and hateful, sullen and insular,
@@ -129,7 +129,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 of emotion.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Most dwarves were accustomed to the inevitability of struggle to
                 be found in existence, but such knowledge was colored by their
                 essential love of industry. Dwarves enjoyed their work, from the
@@ -143,7 +143,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 nothing to them.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Duergar creations weren't flawed or subpar, and in fact were
                 rather enduring, but were completely utilitarian, considered
                 valuable only for their function and bereft of warmth and
@@ -158,7 +158,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 satisfying their unending need for more.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The higher a duergar rose and the more items they possessed, the
                 stronger they would need to be to hold on to what they already
                 had. They were not above stealing to get their beloved gold, and
@@ -173,7 +173,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 off.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The suffering of others was one of the rare times that the
                 duergar could feel some semblance of happiness. They enjoyed
                 tormenting those vulnerable to their predations, but this was
@@ -186,7 +186,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 especially when raiding dwarven strongholds to do it.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 To show weakness was a mortal sin to the duergar, whether on an
                 individual or societal level. To their minds, weakness included
                 such emotions as happiness or kindness, and they had no
@@ -200,7 +200,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 of their kin.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The gray dwarves were consumed by feelings of bitterness,
                 convinced not only that their race had been denied their due,
                 but that the world, other dwarves, and even their own kin and
@@ -215,7 +215,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 determined role as best they could.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In the eyes of the duergar, life was nothing but harsh endless,
                 toil, working from the cradle to the grave in ceaseless labor
                 and drudgery. They were taught that this was their lot in life
@@ -232,7 +232,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 creation.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 On the positive side of duergar behavior, they shared the
                 dwarven virtue of minding one's own business (at least as long
                 as others didn't have something they wanted). Though most were
@@ -255,7 +255,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Abilities </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Duergar were in some ways even better adapted to underground
                 living than other dwarves. While other dwarves lacked the
                 capacity to see completely in the deepest darkness, this was not
@@ -265,7 +265,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 of illusion.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Duergar were also a sneaky, crafty people, unlike their
                 honor-bound cousins, and often excelled at setting up ambushes
                 or moving out of sight. Conversely, many were also good at
@@ -287,12 +287,12 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Combat </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Duergar adventurers were most commonly concerned with personal
                 gratification, and were frequently fighters or rogues, leaning
                 on their training against the threats of the Underdark. Because
                 of their cruel nature, experienced duergar adventurers often
-                became assassins or blackguards.[11]
+                became assassins or blackguards.
               </p>
             </div>
           </div>
@@ -307,18 +307,18 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Society </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Duergar were, as a whole, generally cruel and malevolent
                 creatures, but as in most evil races this was as much a cultural
                 affectation as a psychological trait.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Duergar would often ferment fire lichen into their alcoholic
                 beverages, to create a hot and spicy drink.
               </p>
-              <h1 className="text-xl underline my-4">Language</h1>
-              <p>
+              <h1 className="text-xl  font-bold my-4">Language</h1>
+              <p className="text-sm sm:text-base">
                 Duergar primarily spoke Duergan, a dialect of Dwarven descended
                 from the dialect of the shield dwarves and heavily influenced by
                 mind flayer and drow words found in Undercommon. Duergar
@@ -329,8 +329,8 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 conduct trade with earth elementals, while others learned Common
                 to trade with the surface world.
               </p>
-              <h1 className=" text-xl underline my-4">Art</h1>
-              <p>
+              <h1 className=" text-xl  font-bold my-4">Art</h1>
+              <p className="text-sm sm:text-base">
                 As worshipers of Laduguer, the duergar had a long tradition of
                 crafting that went back to their days as the rulers of Barakuir.
                 Like other dwarves, duergar were fine craftsmen with an eye for
@@ -343,7 +343,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 art.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Most of all, duergar were concerned with practicality, peddling
                 military saddles, thunderstones, poisons, and an extraordinarily
                 effective form of armor lubricant. Like Gold and Shield Dwarves,
@@ -351,15 +351,15 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 such as hammers or picks.
               </p>
 
-              <h1 className=" text-xl underline my-4">Animals</h1>
-              <p>
+              <h1 className=" text-xl  font-bold my-4">Animals</h1>
+              <p className="text-sm sm:text-base">
                 For pets and familiars, duergar often enjoyed the company of
                 Underdark creatures, such as bats, spiders, osquips, or spitting
                 crawlers. For beasts of burden, duergar used large lizards or
                 steeders.
               </p>
-              <h1 className=" text-xl underline my-4">Magic</h1>
-              <p>
+              <h1 className=" text-xl  font-bold my-4">Magic</h1>
+              <p className="text-sm sm:text-base">
                 Unlike other dwarves, duergar had a strong tradition of magic,
                 both in the divine and arcane varieties, and duergar clerics,
                 runecasters, runesmiths, and wizards were highly respected for
@@ -367,15 +367,15 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 gods in order to gain power and influence within society.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In particular, the duergar had a fondness for magically crafted
                 items that they could use to aid them in combat, protect their
                 minds against tampering, or to hide from enemy senses. Duergar
                 crafted many magic items unique to them, such as absorbing
                 shields, bolts of battering, and stonereaver axes.
               </p>
-              <h1 className=" text-xl underline my-4">Religion</h1>
-              <p>
+              <h1 className=" text-xl  font-bold my-4">Religion</h1>
+              <p className="text-sm sm:text-base">
                 The chief god of the duergar was Laduguer, the dwarven god of
                 crafting, a tradition going back to the days of Clan Duergar,
                 when the god served as the clan's divine patron. Early on, the
@@ -383,11 +383,11 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 kingdoms of Shanatar, who chose to venerate Dumathoin as the
                 patron of the entire shield dwarven race. When Clan Duergar was
                 enslaved by the mind flayers, the duergar carried on their
-                worship in captivity,[11] although some secretly formed pacts
+                worship in captivity,  although some secretly formed pacts
                 with the devils of the Nine Hells as well.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Although the duergar formally venerated all the Morndinsamman,
                 the duergar in their captivity became only more devout in their
                 exclusive worship of Laduguer and, later on, his adopted
@@ -401,13 +401,13 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 Duerra and found salvation through the Morndinsamman.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 During the Spellplague, during which Laduguer and Duerra had
                 perished, the duergar, in their desperation, turned to Asmodeus.
               </p>
 
-              <h1 className=" text-xl underline my-4">Relations</h1>
-              <p>
+              <h1 className=" text-xl  font-bold my-4">Relations</h1>
+              <p className="text-sm sm:text-base">
                 Duergar were a coarse and distrustful race who felt that other
                 races were out to get them, whether they were from the Underdark
                 or the surface world. In spite of this, duergar were usually
@@ -417,7 +417,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 and deep gnomes were especially complicated.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 However, the duergar had absolutely no love in their heart for
                 their closest of kin, the shield dwarves, who the duergar felt
                 abandoned them to the onslaught of the mind flayers. Since then,
@@ -425,7 +425,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 dwarves, demonstrating a deep-seated loathing.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Because of their pessimism, duergar rarely adventured of their
                 own free will and were instead most commonly exiles cast out of
                 their society. Some found escape from their society through
@@ -447,7 +447,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">History </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Initially, the duergar were a clan of shield dwarves in the
                 dwarven kingdom of Barakuir, located within the ancient realm of
                 Shanatar. Clan Duergar, which venerated Laduguer as their
@@ -458,10 +458,10 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 Shanatar's rulers. This proved a mistake when the mind flayers
                 of Oryndoll, seeing the isolation of Barakuir, attacked the
                 realm in -8100 DR, enslaving or killing most of the
-                population.[11]
+                population.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 During their captivity, which lasted for generations, the mind
                 flayers performed many cruel and unusual experiments on the
                 dwarves. It was during this harsh period of their history that
@@ -470,7 +470,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 flayers.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Now free, the duergar carved out a new home for themselves
                 beneath the Great Glacier, founding the city of Gracklstugh in
                 -3717 DR. The Deepkingdom spread rapidly through the northern
@@ -480,7 +480,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 on by drow for centuries thereafter.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Further to the south, beneath central Faerûn, the duergar
                 established Dunspeirrin underneath the Orsraun Mountains, which
                 grew to encompass the caverns beneath Turmish and the Dragon
@@ -497,7 +497,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
           {/* accordion end */}
           {/* table start */}
           <div className="overflow-x-auto">
-            <table className="table table-zebra my-4">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               {/* head */}
               <thead>
                 <tr>
@@ -508,17 +508,17 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <td>Ability Score Increase</td>
+                  <td className="font-bold">Ability Score Increase</td>
                   <td>Constitution +2; Strength +1</td>
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <td>Age</td>
+                  <td className="font-bold">Age</td>
                   <td>Duergar live up to 350 years.</td>
                 </tr>
                 {/* row 3 */}
                 <tr>
-                  <td>Alignment</td>
+                  <td className="font-bold">Alignment</td>
                   <td>
                     Most dwarves are lawful, believing firmly in the benefits of
                     a well-ordered society. They tend toward good as well, with
@@ -528,7 +528,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 4 */}
                 <tr>
-                  <td>Size</td>
+                  <td className="font-bold">Size</td>
                   <td>
                     Dwarves stand between 4 and 5 feet tall and average about
                     150 pounds. Your size is Medium.
@@ -536,7 +536,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 5 */}
                 <tr>
-                  <td>Speed</td>
+                  <td className="font-bold">Speed</td>
                   <td>
                     Your base walking speed is 30 feet. Your speed is not
                     reduced by wearing heavy armor.
@@ -544,7 +544,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 6 */}
                 <tr>
-                  <td>Duergar Magic</td>
+                  <td className="font-bold">Duergar Magic</td>
                   <td>
                     When you reach 3rd level, you can cast the Enlarge/Reduce
                     spell on yourself once with this trait, using only the
@@ -561,7 +561,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
 
                 {/* row 8 */}
                 <tr>
-                  <td>Superior Darkvision</td>
+                  <td className="font-bold">Superior Darkvision</td>
                   <td>
                     Accustomed to life underground, you have superior vision in
                     dark and dim conditions. You can see in dim light within 120
@@ -573,7 +573,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
 
                 {/* row 9 */}
                 <tr>
-                  <td>Sunlight Sensitivity </td>
+                  <td className="font-bold">Sunlight Sensitivity </td>
                   <td>
                     You have disadvantage on attack rolls and Wisdom
                     (Perception) checks that rely on sight when you, the target
@@ -584,7 +584,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
 
                 {/* row 10 */}
                 <tr>
-                  <td>Duergar Resilience</td>
+                  <td className="font-bold">Duergar Resilience</td>
                   <td>
                     You have advantage on saving throws against poison, and you
                     have resistance against poison damage.
@@ -592,7 +592,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 11 */}
                 <tr>
-                  <td>Dwarven Combat Training</td>
+                  <td className="font-bold">Dwarven Combat Training</td>
                   <td>
                     You have proficiency with the battleaxe, handaxe, light
                     hammer, and warhammer.
@@ -600,7 +600,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 12 */}
                 <tr>
-                  <td>Tool Proficiency</td>
+                  <td className="font-bold">Tool Proficiency</td>
                   <td>
                     You gain proficiency with the artisan's tools of your
                     choice: Smith's tools, brewer's supplies, or mason's tools.
@@ -608,7 +608,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 13 */}
                 <tr>
-                  <td>Stonecunning</td>
+                  <td className="font-bold">Stonecunning</td>
                   <td>
                     Whenever you make an Intelligence (History) check related to
                     the origin of stonework, you are considered proficient in
@@ -618,7 +618,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 14 */}
                 <tr>
-                  <td>Psionic Fortitude</td>
+                  <td className="font-bold">Psionic Fortitude</td>
                   <td>
                     You have advantage on saving throws you make to avoid or end
                     the charmed or stunned condition on yourself.
@@ -626,7 +626,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 15 */}
                 <tr>
-                  <td>Languages</td>
+                  <td className="font-bold">Languages</td>
                   <td>
                     You can speak, read, and write Common, Dwarvish, and
                     Undercommon.{" "}
@@ -637,7 +637,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
           </div>
           {/* table end */}
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide" onClick={raceDuergar}>
+            <button className="btn btn-success btn-wide m-4" onClick={raceDuergar}>
               Select Duergar
             </button>
           </div>{" "}

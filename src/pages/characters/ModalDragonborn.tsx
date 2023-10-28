@@ -291,7 +291,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
             </div>
             <div className="collapse-content">
               <div className="overflow-x-auto">
-                <table className="table bg-base-100 table-zebra ">
+              <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
                   {/* head */}
                   <thead>
                     <tr>
@@ -369,7 +369,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
           {/* accordion end */}
           {/* table start */}
           <div className="overflow-x-auto">
-            <table className="table table-zebra my-4">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               {/* head */}
               <thead>
                 <tr>

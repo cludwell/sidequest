@@ -75,7 +75,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_8" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             High Elf
           </h3>
 
@@ -110,7 +110,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
                 </option>
               ))}
             </select>
-            <button className="btn btn-success btn-wide" onClick={raceHighElf}>
+            <button className="btn btn-success btn-wide m-4" onClick={raceHighElf}>
               Select High-Elf
             </button>
           </div>

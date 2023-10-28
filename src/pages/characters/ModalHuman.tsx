@@ -51,7 +51,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_17" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Human
           </h3>
           <Image
@@ -75,7 +75,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Details</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 In the reckonings of most worlds, humans are the youngest of the
                 common races, late to arrive on the world scene and short-lived
                 in comparison to dwarves, elves, and dragons. Perhaps it is
@@ -102,7 +102,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
               A Broad Spectrum
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 With their penchant for migration and conquest, humans are more
                 physically diverse than other common races. There is no typical
                 human. An individual can stand from 5 feet to a little over 6
@@ -130,7 +130,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
               Variety in All Things
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Humans are the most adaptable and ambitious people among the
                 common races. They have widely varying tastes, morals, and
                 customs in the many different lands where they have settled.
@@ -163,7 +163,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
               Everyone's Second Best Friend
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Just as readily as they mix with each other, humans mingle with
                 members of other races. They get along with almost everyone,
                 though they might not be close to many. Humans serve as
@@ -171,13 +171,13 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 functionaries of all kinds.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 <strong>Dwarves:</strong> “They're stout folk, stalwart friends,
                 and true to their word. Their greed for gold is their downfall,
                 though.”
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 <strong>Elves:</strong> “It's best not to wander into elven
                 woods. They don't like intruders, and you'll as likely be
                 bewitched as peppered with arrows. Still, if an elf can get past
@@ -185,7 +185,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 you can learn a lot from them.”
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 <strong>Halflings:</strong> “It's hard to beat a meal in a
                 halfling home, as long as you don't crack your head on the
                 ceiling—good food and good stories in front of a nice, warm
@@ -210,7 +210,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
               Lasting Institutions
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Where a single elf or dwarf might take on the responsibility of
                 guarding a special location or a powerful secret, humans found
                 sacred orders and institutions for such purposes. While dwarf
@@ -222,7 +222,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 by ensuring that they will be remembered when they are gone.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Although some humans can be xenophobic, in general their
                 societies are inclusive. Human lands welcome large numbers of
                 nonhumans compared to the proportion of humans who live in
@@ -244,7 +244,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
               Exemplars of Ambition
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Humans who seek adventure are the most daring and ambitious
                 members of a daring and ambitious race. They seek to earn glory
                 in the eyes of their fellows by amassing power, wealth, and
@@ -271,7 +271,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
               Human Names and Ethnicities
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Having so much more variety than other cultures, humans as a
                 whole have no typical names. Some human parents give their
                 children names from other languages, such as Dwarvish or Elvish
@@ -280,7 +280,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 traditions of their ancestors.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The material culture and physical characteristics of humans can
                 change wildly from region to region. In the Forgotten Realms,
                 for example, the clothing, architecture, cuisine, music, and
@@ -293,20 +293,20 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 features.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In the Forgotten Realms, nine human ethnic groups are widely
                 recognized, though over a dozen others are found in more
                 localized areas of Faerûn. These groups, and the typical names
                 of their members, can be used as inspiration no matter which
                 world your human is in.
               </p>
-              <div className="overflow-x-auto">
-                <table className="table my-2 table-zebra bg-base-100 ">
+              <div className="my-6">
+                <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
                   <thead>
                     <tr>
                       <th>Ethnicity</th>
-                      <th>Male Names</th>
-                      <th>Female Names</th>
+                      <th>Male </th>
+                      <th>Female </th>
                       <th>Surnames</th>
                     </tr>
                   </thead>
@@ -433,7 +433,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="table my-2 table-zebra bg-base-100">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               <thead>
                 <tr>
                   <th>Attribute</th>

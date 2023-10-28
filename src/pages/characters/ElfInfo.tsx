@@ -38,17 +38,17 @@ export default function ElfInfo({
             Eladrin (Variant)
           </div>
           <div className="collapse-content">
-            <p>
+            <p className="text-sm sm:text-base">
               Elves are a magical people of otherworldly grace, living in the
               world but not entirely part of it.
             </p>
             <br />
-            <p>
+            <p className="text-sm sm:text-base">
               This version of the eladrin originally appeared in the Dungeon
               Master's Guide as an example for creating your own subraces.
             </p>
             <br />
-            <p>
+            <p className="text-sm sm:text-base">
               Creatures of magic with strong ties to nature, eladrin live in the
               twilight realm of the Feywild. Their cities sometimes cross over
               to the Material Plane, appearing briefly in mountain valleys or
@@ -69,12 +69,12 @@ export default function ElfInfo({
             />
             <div className="collapse-title text-xl font-medium">High Elf</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Elves are a magical people of otherworldly grace, living in the
                 world but not entirely part of it.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 As a high elf, you have a keen mind and a mastery of at least
                 the basics of magic. In many of the worlds of D&D, there are two
                 kinds of high elves. One type (which includes the gray elves and
@@ -87,7 +87,7 @@ export default function ElfInfo({
                 among humans and other races.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The sun elves of Faerûn (also called gold elves or sunrise
                 elves) have bronze skin and hair of copper, black, or golden
                 blond. Their eyes are golden, silver, or black. Moon elves (also
@@ -114,7 +114,7 @@ export default function ElfInfo({
               Extra Cantrip
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 As a High Elf you may choose a cantrip from the Wizard's cantrip
                 list.
               </p>
@@ -165,12 +165,12 @@ export default function ElfInfo({
           />
           <div className="collapse-title text-xl font-medium">Wood Elf</div>
           <div className="collapse-content">
-            <p>
+            <p className="text-sm sm:text-base">
               Elves are a magical people of otherworldly grace, living in the
               world but not entirely part of it.
             </p>
             <br />
-            <p>
+            <p className="text-sm sm:text-base">
               As a wood elf, you have keen senses and intuition, and your fleet
               feet carry you quickly and stealthily through your native forests.
               This category includes the wild elves (grugach) of Greyhawk and
@@ -180,7 +180,7 @@ export default function ElfInfo({
               reclusive and distrusting of non-elves.
             </p>
             <br />
-            <p>
+            <p className="text-sm sm:text-base">
               Wood elves' skin tends to be copperish in hue, sometimes with
               traces of green. Their hair tends toward browns and blacks, but it
               is occasionally blond or copper-colored. Their eyes are green,
@@ -205,7 +205,7 @@ export default function ElfInfo({
           Slender and Graceful
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             With their unearthly grace and fine features, elves appear
             hauntingly beautiful to humans and members of many other races. They
             are slightly shorter than humans on average, ranging from well under
@@ -214,7 +214,7 @@ export default function ElfInfo({
             same height, and males are only marginally heavier than females.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Elves' coloration encompasses the normal human range and also
             includes skin in shades of copper, bronze, and almost bluish-white,
             hair of green or blue, and eyes like pools of liquid gold or silver.
@@ -241,7 +241,7 @@ export default function ElfInfo({
           A Timeless Perspective
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Elves can live well over 700 years, giving them a broad perspective
             on events that might trouble the shorter-lived races more deeply.
             They are more often amused than excited, and more likely to be
@@ -253,7 +253,7 @@ export default function ElfInfo({
             to serious insults with vengeance.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Like the branches of a young tree, elves are flexible in the face of
             danger. They trust in diplomacy and compromise to resolve
             differences before they escalate to violence. They have been known
@@ -282,7 +282,7 @@ export default function ElfInfo({
           Hidden Woodland Realms
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Most elves dwell in small forest villages hidden among the trees.
             Elves hunt game, gather food, and grow vegetables, and their skill
             and magic allow them to support themselves without the need for
@@ -292,7 +292,7 @@ export default function ElfInfo({
             crafted items for metals (which they have no interest in mining).
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Elves encountered outside their own lands are commonly traveling
             minstrels, artists, or sages. Human nobles compete for the services
             of elf instructors to teach swordplay or magic to their children.
@@ -317,7 +317,7 @@ export default function ElfInfo({
           Exploration and Adventure
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Elves take up adventuring out of wanderlust. Since they are so
             long-lived, they can enjoy centuries of exploration and discovery.
             They dislike the pace of human society, which is regimented from day
@@ -341,7 +341,7 @@ export default function ElfInfo({
         <tbody>
           {/* row 1 */}
           <tr>
-            <td>Ability Scores</td>
+            <td className="font-bold">Ability Scores</td>
             {type === "high" || type === "eladrin" ? (
               <td>Int +1</td>
             ) : (
@@ -350,7 +350,7 @@ export default function ElfInfo({
           </tr>
           {/* row 2 */}
           <tr>
-            <td>Size</td>
+            <td className="font-bold">Size</td>
             <td>
               Elves range from under 5 to over 6 feet tall and have slender
               builds. Your size is Medium.
@@ -359,7 +359,7 @@ export default function ElfInfo({
           {/* row 3 */}
           {type !== "wood" ? (
             <tr>
-              <td>Speed</td>
+              <td className="font-bold">Speed</td>
               <td>30 feet</td>
             </tr>
           ) : (
@@ -370,7 +370,7 @@ export default function ElfInfo({
           )}
           {/* row 4 */}
           <tr>
-            <td>Age</td>
+            <td className="font-bold">Age</td>
             <td>
               Although elves reach physical maturity at about the same age as
               humans, the elven understanding of adulthood goes beyond physical
@@ -381,7 +381,7 @@ export default function ElfInfo({
           </tr>
           {/* row 5 */}
           <tr>
-            <td>Alignment</td>
+            <td className="font-bold">Alignment</td>
             <td>
               Elves love freedom, variety, and self-expression, so they lean
               strongly toward the gentler aspects of chaos. They value and
@@ -391,7 +391,7 @@ export default function ElfInfo({
           </tr>
           {/* row 6 */}
           <tr>
-            <td>Darkvision</td>
+            <td className="font-bold">Darkvision</td>
             <td>
               Accustomed to twilit forests and the night sky, you have superior
               vision in dark and dim conditions. You can see in dim light within
@@ -402,12 +402,12 @@ export default function ElfInfo({
           </tr>
           {/* row 7 */}
           <tr>
-            <td>Keen Senses</td>
+            <td className="font-bold">Keen Senses</td>
             <td>You have proficiency in the Perception skill.</td>
           </tr>
           {/* row 8 */}
           <tr>
-            <td>Fey Ancestry</td>
+            <td className="font-bold">Fey Ancestry</td>
             <td>
               You have advantage on saving throws against being charmed, and
               magic can't put you to sleep.
@@ -415,7 +415,7 @@ export default function ElfInfo({
           </tr>
           {/* row 9 */}
           <tr>
-            <td>Trance</td>
+            <td className="font-bold">Trance</td>
             <td>
               Elves don't need to sleep. Instead, they meditate deeply,
               remaining semiconscious, for 4 hours a day. While meditating, you
@@ -427,7 +427,7 @@ export default function ElfInfo({
           </tr>
           {type === "eladrin" ? (
             <tr>
-              <td>Fey Step</td>
+              <td className="font-bold">Fey Step</td>
               <td>
                 You can cast the misty step spell once using this trait. You
                 regain the ability to do so when you finish a short or long
@@ -437,14 +437,14 @@ export default function ElfInfo({
           ) : type === "high" ? (
             <>
               <tr>
-                <td>Cantrip</td>
+                <td className="font-bold">Cantrip</td>
                 <td>
                   You know one cantrip of your choice from the wizard spell
                   list. Intelligence is your spellcasting ability for it
                 </td>
               </tr>
               <tr>
-                <td>Extra Language</td>
+                <td className="font-bold">Extra Language</td>
                 <td>
                   You can speak, read, and write one extra language of your
                   choice.
@@ -453,7 +453,7 @@ export default function ElfInfo({
             </>
           ) : (
             <tr>
-              <td>Mask of the Wild</td>
+              <td className="font-bold">Mask of the Wild</td>
               <td>
                 You can attempt to hide even when you are only lightly obscured
                 by foliage, heavy rain, falling snow, mist, and other natural
@@ -463,7 +463,7 @@ export default function ElfInfo({
           )}
           {/* row 10 */}
           <tr>
-            <td>Languages</td>
+            <td className="font-bold">Languages</td>
             <td>
               You can speak, read, and write Common and Elvish. Elvish is fluid,
               with subtle intonations and intricate grammar. Elven literature is

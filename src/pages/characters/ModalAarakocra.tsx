@@ -333,7 +333,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
           {/* accordion end */}
           {/* table start */}
           <div className="overflow-x-auto">
-            <table className="table table-zebra my-4">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               {/* head */}
               <thead>
                 <tr>
@@ -344,7 +344,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <td>Ability Score Increase</td>
+                  <td className="font-bold">Ability Score Increase</td>
                   <td>
                     Your Dexterity score increases by 2, and your Wisdom score
                     increases by 1.
@@ -352,7 +352,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <td>Age</td>
+                  <td className="font-bold">Age</td>
                   <td>
                     Aarakocra reach maturity by age 3. Compared to humans,
                     aarakocra don't usually live longer than 30 years.
@@ -360,7 +360,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 3 */}
                 <tr>
-                  <td>Alignment</td>
+                  <td className="font-bold">Alignment</td>
                   <td>
                     Most aarakocra are good and rarely choose sides when it
                     comes to law and chaos. Tribal leaders and warriors might be
@@ -370,7 +370,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 4 */}
                 <tr>
-                  <td>Size</td>
+                  <td className="font-bold">Size</td>
                   <td>
                     Aarakocra are about 5 feet tall. They have thin, lightweight
                     bodies that weigh between 80 and 100 pounds. Your size is
@@ -379,12 +379,12 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 5 */}
                 <tr>
-                  <td>Speed</td>
+                  <td className="font-bold">Speed</td>
                   <td>Your base walking speed is 25 feet.</td>
                 </tr>
                 {/* row 6 */}
                 <tr>
-                  <td>Flight</td>
+                  <td className="font-bold">Flight</td>
                   <td>
                     You have a flying speed of 50 feet. To use this speed, you
                     can't be wearing medium or heavy armor.
@@ -392,7 +392,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 7 */}
                 <tr>
-                  <td>Talons</td>
+                  <td className="font-bold">Talons</td>
                   <td>
                     Your talons are natural weapons, which you can use to make
                     unarmed strikes. If you hit with them, you deal slashing
@@ -402,7 +402,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 </tr>
                 {/* row 8 */}
                 <tr>
-                  <td>Languages</td>
+                  <td className="font-bold">Languages</td>
                   <td>
                     You can speak, read, and write Common, Aarakocra, and Auran.
                   </td>

@@ -50,7 +50,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_21" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">Drow</h3>
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">Drow</h3>
           <Image
             src={drowDetail}
             alt="detail image"
@@ -74,7 +74,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               Description
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 In many ways, the drow resembled other elves or eladrin. Their
                 bodies were wiry and athletic, while their faces were chiseled
                 and attractive. They were shorter and thinner than other elven
@@ -88,7 +88,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 greater leniency and acceptance.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Reports varied on the physical differences between the drow
                 sexes. Some purported that females were generally bigger and
                 stronger than males, while others claimed the males had superior
@@ -97,8 +97,8 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 while females were a bit lighter, averaging 104.5 pounds.
               </p>
 
-              <h2 className="text-xl underline my-4">Coloration</h2>
-              <p>
+              <h2 className="text-xl font-bold my-4">Coloration</h2>
+              <p className="text-sm sm:text-base">
                 Drow skin tones ranged from dark grey, jet-black, and obsidian,
                 the albino drow known as the Szarkai being an exception. Drow
                 had white, black, or purple teeth. Drow eyes could be of any
@@ -110,8 +110,8 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 state.
               </p>
 
-              <h2 className="text-xl underline my-4">Hair</h2>
-              <p>
+              <h2 className="text-xl font-bold my-4">Hair</h2>
+              <p className="text-sm sm:text-base">
                 Drow hair could be stark white, pale yellow and, more rarely,
                 silver or copper in color. It thinned and changed color with
                 age. Drow generally kept their hair long, and decorated it with
@@ -120,8 +120,8 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 sideburns or tufts of wispy hair on the cheek or chin.
               </p>
 
-              <h2 className="text-xl underline my-4">Clothing</h2>
-              <p>
+              <h2 className="text-xl font-bold my-4">Clothing</h2>
+              <p className="text-sm sm:text-base">
                 The majority of drow wore a piwafwi, a fire-resistant,
                 protective cloak, footwear that functioned as boots of
                 elvenkind, and a drow house insignia. The latter showed the
@@ -149,7 +149,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               Personality
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Compared to other sentient beings, drow were notably
                 intelligent, as having an analytical mindset and being observant
                 at all times was needed to survive in their society. Intellect,
@@ -162,7 +162,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 close-minded, and left them with little worldly experience.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The drow, fittingly for the dark perversions of the elves they
                 were, were decadent and hedonistic beings with a love for what
                 they considered beautiful and a desire to surround themselves
@@ -188,7 +188,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Morality</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 The moral code of the average drow was informed by the teachings
                 of Lolth. From birth, the drow were taught that they were
                 superior to other races, and as such they believed themselves to
@@ -202,7 +202,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 though never equals.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 As one might expect, this atmosphere of utter condescension
                 meant that most drow generally felt entitled to do whatever they
                 wanted, whenever they wanted to do it. If a drow was not where
@@ -219,7 +219,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 exploitation, abuse, or even death.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Most drow sought to rise in rank, desiring the power over others
                 that a higher station would provide. Ironically for a race that
                 put such a focus on individual merit, personal achievement and
@@ -234,7 +234,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 over others.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Given the scarcity of resources in the Underdark and the limited
                 chances for advancement within their society, most drow had to
                 be aggressively competitive. They had a propensity for violence,
@@ -257,7 +257,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Mistrust</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 As a general rule, drow living within a Lolthite society
                 couldn't afford to show emotions like compassion or love, for
                 they were easy to exploit and drow often preferred emotional
@@ -269,7 +269,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 superiors' hands.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The end result of being raised in this environment was that the
                 drow were untrusting sadists with a constant readiness to stab
                 others in the back, both in the figurative and literal sense.
@@ -286,7 +286,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 such attacks did come.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 While the drow understood the advantage of forging bonds with
                 others, they did not see the value in honesty. Forming relations
                 with others was therefore a dangerous endeavor, and mostly
@@ -315,7 +315,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Alignment</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 For a race so chaotic in a society focused on individual
                 advancement at the expense of others, the majority of drow
                 strangely leant towards being neutral evil in alignment. The
@@ -328,7 +328,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 traditionalism.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 To achieve their individual desires required their society to
                 retain at least some level of stability, and they were held
                 tightly to tradition even if that code wasn't actually codified
@@ -356,7 +356,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Good Drow</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Unlike creatures such as orcs, drow had no innate inclination
                 towards evil, with their morality having been colored by their
                 society. "Good drow" made up about 15% of the entire race,
@@ -370,7 +370,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 such drow.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Only truly exceptional "good drow", such as Drizzt Do'Urden,
                 were capable of freeing themselves from a Lolthite society. The
                 majority were found out and sacrificed to Lolth, and those who
@@ -395,8 +395,8 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
             <div className="collapse-title text-xl font-medium">Combat</div>
             <div className="collapse-content">
               <section>
-                <h2 className="text-xl underline my-4">Drow Combat Tactics</h2>
-                <p>
+                <h2 className="text-xl font-bold my-4">Drow Combat Tactics</h2>
+                <p className="text-sm sm:text-base">
                   Drow were as frail as any other elves, and had a fascination
                   with stealth and subtlety. They had a tendency to ambush their
                   enemies with ranged weaponry, choosing hand crossbows when
@@ -407,10 +407,10 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl underline my-4">
+                <h2 className="text-xl font-bold my-4">
                   Stealth and Subterfuge
                 </h2>
-                <p>
+                <p className="text-sm sm:text-base">
                   Specific training was available for their rogues, which
                   included lessons on how to blend in with the heat hues and
                   patterns of their surroundings, similarly to how other races
@@ -421,8 +421,8 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl underline my-4">Magic in Combat</h2>
-                <p>
+                <h2 className="text-xl font-bold my-4">Magic in Combat</h2>
+                <p className="text-sm sm:text-base">
                   Apart from its obvious use as a light source, drow used their
                   ability to create dancing lights to surprise the enemy with
                   the sudden appearance of a glowing figure or will-o'-wisp-like
@@ -447,8 +447,8 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl underline my-4">Lolthtouched Combat</h2>
-                <p>
+                <h2 className="text-xl font-bold my-4">Lolth-touched Combat</h2>
+                <p className="text-sm sm:text-base">
                   Lolthtouched drow sometimes trained to slip into the cover of
                   their created darkness, or learnt to hit the targets of
                   darkfire not just more accurately, but also harder, similarly
@@ -466,14 +466,14 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
             </thead>
             <tbody>
               <tr>
-                <td>Ability Score Increase</td>
+                <td className="font-bold">Ability Score Increase</td>
                 <td>
                   Your Dexterity score increases by 2 and your Charisma score
                   increases by 1.
                 </td>
               </tr>
               <tr>
-                <td>Age</td>
+                <td className="font-bold">Age</td>
                 <td>
                   Although elves reach physical maturity at about the same age
                   as humans, the elven understanding of adulthood goes beyond
@@ -483,7 +483,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </td>
               </tr>
               <tr>
-                <td>Alignment</td>
+                <td className="font-bold">Alignment</td>
                 <td>
                   Elves love freedom, variety, and self-expression, so they lean
                   strongly toward the gentler aspects of chaos. They value and
@@ -494,18 +494,18 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </td>
               </tr>
               <tr>
-                <td>Size</td>
+                <td className="font-bold">Size</td>
                 <td>
                   Elves range from under 5 to over 6 feet tall and have slender
                   builds. Your size is Medium.
                 </td>
               </tr>
               <tr>
-                <td>Speed</td>
+                <td className="font-bold">Speed</td>
                 <td>Your base walking speed is 30 feet.</td>
               </tr>
               <tr>
-                <td>Superior Darkvision</td>
+                <td className="font-bold">Superior Darkvision</td>
                 <td>
                   Accustomed to twilit forests and the night sky, you have
                   superior vision in dark and dim conditions. You can see in dim
@@ -515,18 +515,18 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </td>
               </tr>
               <tr>
-                <td>Keen Senses</td>
+                <td className="font-bold">Keen Senses</td>
                 <td>You have proficiency in the Perception skill.</td>
               </tr>
               <tr>
-                <td>Fey Ancestry</td>
+                <td className="font-bold">Fey Ancestry</td>
                 <td>
                   You have advantage on saving throws against being charmed, and
                   magic can't put you to sleep.
                 </td>
               </tr>
               <tr>
-                <td>Trance</td>
+                <td className="font-bold">Trance</td>
                 <td>
                   Elves don't need to sleep. Instead, they meditate deeply,
                   remaining semiconscious, for 4 hours a day. (The Common word
@@ -538,7 +538,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </td>
               </tr>
               <tr>
-                <td>Sunlight Sensitivity</td>
+                <td className="font-bold">Sunlight Sensitivity</td>
                 <td>
                   You have disadvantage on attack rolls and on Wisdom
                   (Perception) checks that rely on sight when you, the target of
@@ -547,7 +547,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </td>
               </tr>
               <tr>
-                <td>Drow Magic</td>
+                <td className="font-bold">Drow Magic</td>
                 <td>
                   You know the dancing lights cantrip. When you reach 3rd level,
                   you can cast the faerie fire spell once with this trait and
@@ -559,14 +559,14 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </td>
               </tr>
               <tr>
-                <td>Drow Weapon Training</td>
+                <td className="font-bold">Drow Weapon Training</td>
                 <td>
                   You have proficiency with rapiers, shortswords, and hand
                   crossbows.
                 </td>
               </tr>
               <tr>
-                <td>Languages</td>
+                <td className="font-bold">Languages</td>
                 <td>
                   You can speak, read, and write Common and Elvish. Elvish is
                   fluid, with subtle intonations and intricate grammar. Elven

@@ -51,7 +51,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_14" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Half Elf
           </h3>
           <Image
@@ -82,7 +82,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               Description
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves (also called Cha'Tel'Quessir in Elven) were humanoids
                 born through the union of an elf and a human. Whether a half-elf
                 was raised by their human parent or their elven parent, they
@@ -92,12 +92,12 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 an outsider in either place.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Most half-elves were descended from moon elves. Pairings of
                 elves and other races also existed, though they were rare.
               </p>{" "}
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves stood roughly around 5 feet and 5 inches to 6 feet
                 and 2 inches (1.7 to 1.9 meters), making them only slightly
                 shorter overall than humans, and weighed in at 130 to 190 pounds
@@ -110,7 +110,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 of gold.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Unlike true Tel'Quessir, however, male half-elves were capable
                 of growing facial hair and often did so to distinguish
                 themselves, in part, from their elven parents. Half-elven ears
@@ -142,7 +142,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               EyesAndEars
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Comparison of features. Half-elves usually adopted the dress and
                 hairstyles of the culture among which they were raised. However,
                 it was also fairly common for half-elves raised among humans to
@@ -175,7 +175,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               Abilities
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves gained an unusual blend of abilities from their two
                 heritages. More durable and more innately charming than either
                 humans or elves, half-elves lacked the grace or wisdom of their
@@ -188,7 +188,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               </p>
               <br />
 
-              <p>
+              <p className="text-sm sm:text-base">
                 Like their elven parents, half-elves were typically immune to
                 the effects of the enchantment school of magic. Likewise,
                 half-elves also inherited the ability to see keenly in low-light
@@ -218,7 +218,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               Personality
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves, as a result of their unique heritage, exhibited a
                 confidence and strength of personality uncommon amongst both
                 humans and elves, a result of the blending between elven
@@ -231,7 +231,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 manner.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Like elves, half-elves were curious and inventive creatures,
                 though this was coupled with the powerful ambition of their
                 human parents. Half-elves also shared a love of the natural
@@ -245,7 +245,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 unreliable and unpredictable allies at times.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves generally liked to be around others, the more diverse
                 the better. Perhaps due to the circumstances of their birth, or
                 to a simple drive towards diversity, half-elves were often found
@@ -261,7 +261,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 down old friends and renewed relations.
               </p>{" "}
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves typically got along well with elves and humans who
                 were understanding of their heritage. Half-elves also enjoyed
                 the company of dwarves, gnomes, and halflings. Half-elves
@@ -273,7 +273,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 historically opposed to the fey heritage of a half-elf.
               </p>{" "}
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-elves often make excellent intermediaries between their two
                 parent races, though often both sides suspected the half-elf of
                 favoring one or the other. Where humans and elves were not on
@@ -288,7 +288,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 outsider.
               </p>{" "}
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Though many half-elves were beloved by members of other races,
                 not all half-elves were born to a loving human-elf couple. Such
                 a troubling past could affect half-elves in many ways, sometimes
@@ -298,7 +298,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
                 undue pressure on troubled members of the race.
               </p>{" "}
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Ultimately, half-elves endured, both physically and socially.
                 Admired and respected by others of all races, half-elves
                 naturally inspired loyalty and returned the fealty with deep
@@ -378,7 +378,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide" onClick={raceHalfElf}>
+            <button className="btn btn-success btn-wide m-4" onClick={raceHalfElf}>
               Select Half-Elf
             </button>
           </div>

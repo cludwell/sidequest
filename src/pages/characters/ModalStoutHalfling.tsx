@@ -51,7 +51,7 @@ export default function ModalStoutHalfing({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_16" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Stout Halfling
           </h3>
           <HalflingInfo
@@ -61,7 +61,7 @@ export default function ModalStoutHalfing({ race, setRace }: SetRaceProps) {
           />
           <div className="flex flex-row justify-center">
             <button
-              className="btn btn-success btn-wide"
+              className="btn btn-success btn-wide m-4"
               onClick={raceStoutHalfing}
             >
               Select Stout Halfling

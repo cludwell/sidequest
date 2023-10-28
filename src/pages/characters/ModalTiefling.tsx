@@ -51,7 +51,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_18" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Tiefling
           </h3>
           <Image
@@ -82,7 +82,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               Description
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Tieflings were human-based planetouched, native outsiders that
                 were infused with the touch of the fiendish planes, most often
                 through descent from fiends—demons, Yugoloths, devils, evil
@@ -92,7 +92,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 were laid aside.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Although their evil ancestors could be many generations removed,
                 the taint lingered. Unlike half-fiends, tieflings were not
                 predisposed to evil alignments and varied in alignment nearly as
@@ -100,7 +100,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 The celestial counterparts of tieflings were called aasimar.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Tieflings tended to have an unsettling air about them, and most
                 people were uncomfortable around them, whether they were aware
                 of the tiefling's unsavory ancestry or not. While some looked
@@ -114,7 +114,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 discomfort they left on others.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In many other ways, tieflings were similar to humans physically.
                 Tieflings were, on average, just as tall as humans, from 5 feet
                 and 6 inches to 6 feet and 2 inches and weighed just a little
@@ -129,7 +129,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 duplicity.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Tieflings who had strikingly inhuman features were often killed
                 at birth by their horrified parents or others. Only those
                 tieflings with subtle features or born to someone indifferent to
@@ -160,7 +160,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               Tiefling Bloodlines
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 The physical appearance of a tiefling often depended on the
                 exact ancestry that spawned it, a bloodline that might have
                 remained dormant for generations. Diabolic or demonic tieflings
@@ -173,7 +173,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 had only one or two of these features.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Some tieflings were not descended from mere fiends at all, but
                 from powerful gods. These tieflings often had their own physical
                 characteristics that set them apart. Tieflings sired by Beshaba,
@@ -182,7 +182,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 their tendency to cast no reflection.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In Mulhorand, the most common tieflings were often those spawned
                 from a union with Set or Sebek. Most tieflings were, however,
                 the grandchildren or even great-grandchildren of fiends and in
@@ -191,7 +191,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 for power.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In 1358 DR, a warlock coven known as the Toril thirteen
                 performed a ritual that cursed most tiefling lineages—those of
                 demons, devils, hags, and rakshasas, among others—with the
@@ -204,14 +204,14 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 the Asmodean lineage, all having a similar devilish appearance.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Prior to Asmodeus's ascension to godhood, the infernal blood
                 could be diluted through intermarriage, but afterward, the union
                 of a tiefling with another race always produced a tiefling
                 child.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In the late years of the 15th century, tieflings of other
                 bloodlines began to be born again, but the Asmodean lineage was
                 still the most numerous by a wide margin at the time.
@@ -233,7 +233,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               Personality
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Tieflings had a number of abilities gifted to them by their
                 fiendish heritage. They were often alluring and intelligent,
                 exuding a seductive aura despite their dark ancestry. Their
@@ -241,7 +241,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 their defining traits.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Early awareness of their distinction from others shaped many
                 Tieflings into wary individuals, often expecting rejection. Some
                 chose the path of evil, but a notable few sought to make
@@ -264,14 +264,14 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Combat</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 In combat, Tieflings showcased their finesse as agile and quick
                 warriors. They held a preference for weapons blending sharpness
                 with speed, such as daggers, scimitars, and stilettos. Their
                 ambidexterity led many to opt for a two-hand fighting style.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Preferring light armor, Tieflings rarely utilized shields,
                 focusing more on their mobility and offensive capabilities.
               </p>
@@ -291,14 +291,14 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Abilities</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Tieflings who sought arcane might typically gravitated towards
                 becoming warlocks. However, their link to the fiendish realms
                 meant many of their spellcasters had inclinations towards
                 divination or conjuration magic.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Their heritage granted them an innate resistance to heat, a hint
                 of bloodlust in combat, and the potent infernal wrath ability. A
                 subset even manifested fiendish wings or the power to cast
@@ -319,7 +319,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Society</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Like other races that were the result of the breeding of two or
                 more others, tieflings had no true culture they could call their
                 own. However, there were many archetypal features of tieflings
@@ -329,7 +329,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 stereotypes of tieflings.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The former tieflings, who were proud of their fiendish past,
                 were often fascinated by the dark and sinister events that
                 touched the world, but were not necessarily evil or inclined to
@@ -339,7 +339,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 emulate these evil deeds.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Other tieflings were ashamed or even frightened of their
                 heritage and wished only to escape the shadow that lurked over
                 them as a result. Some did this through constantly doing good,
@@ -349,7 +349,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 made a target because of their past.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Regardless of their motivations, tieflings often distrusted one
                 another, sometimes even casting the same preconceptions on one
                 another that others did on them. In spite of this, many secretly
@@ -376,7 +376,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               Relations with other races
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Tieflings, in general, didn't get along well with the other
                 races of the world and were slow to trust others of any race,
                 even their own. This animosity that tieflings had for others was
@@ -403,7 +403,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Those tieflings who were religious were a varied lot, since no
                 god held more sway over tieflings than any other, though
                 Asmodeus, as the lord over the fiendish race of devils, may come
@@ -421,7 +421,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="table my-2 table-zebra bg-base-100">
+          <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               <thead>
                 <tr>
                   <th>Attribute</th>
@@ -488,7 +488,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide" onClick={raceTiefling}>
+            <button className="btn btn-success btn-wide m-4" onClick={raceTiefling}>
               Select Tiefling
             </button>
           </div>

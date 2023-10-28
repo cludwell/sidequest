@@ -50,7 +50,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_13" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Goliath
           </h3>
           <Image
@@ -76,7 +76,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
               Description
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliaths were massive. They averaged between 7 to 8 feet (2.1 to
                 2.4 meters) tall, making them even taller than dragonborn and
                 half-orcs. Goliaths had noticeably bony or prominent
@@ -99,7 +99,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Skin</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliath skin was often gray or brown and was extremely tough
                 (often compared to stone). One of the most distinctive features
                 of the goliath was the darker (often vertically symmetrical)
@@ -109,7 +109,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 themselves as this could affect their future.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliath skin was littered with bony growths called "lithoderms".
                 These growths were roughly the size of a coin and appeared like
                 studded pebbles on their arms, shoulders, torso or head.
@@ -132,7 +132,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
               Personality
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliaths' most notable characteristic was their competitiveness.
                 They kept track of their accomplishments and saw everything as a
                 challenge. Those not familiar with goliath psychology would
@@ -143,7 +143,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 to belittle or demean anyone.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 But a goliath's most fierce competitor was themselves. Beating
                 their own records was the most satisfying victory for a goliath.
                 They were also competitive with their companions and other
@@ -166,7 +166,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Combat</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliath tribes only went to war as a final option, preferring to
                 move away from unsafe lands. They did not do this out of fear or
                 cowardice, instead they were aware that loss of life in their
@@ -176,7 +176,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 or having members of their tribe kidnapped.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Once weapons were distributed and war-captains were chosen, a
                 goliath tribe could quickly become a very capable war-band.
                 Goliaths were always at the peak of their physical condition and
@@ -186,7 +186,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 fight.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Hide and leather armor were favored by goliaths as they already
                 had naturally durable bodies and did not like to restrict their
                 movement. Goliaths often used large two-handed weapons to make
@@ -195,7 +195,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 hunters.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Fair-play was also integral to goliath fights. As long as they
                 were fairly sure they could still win, goliaths would even
                 handicap themselves to give their opponents a fair chance. For
@@ -207,7 +207,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 and unfair.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Sometimes slavers were known to kidnap goliath infants and raise
                 them as brutal gladiators.
               </p>
@@ -224,7 +224,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Tribes</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliaths lived in small tribes that numbered between forty and
                 sixty goliaths. This was usually made up of three to five
                 extended families. Most goliaths lived in the same tribe their
@@ -233,7 +233,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 together.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliath tribes had a number of key roles that were filled by the
                 most capable members. These roles included Chieftain, Captain,
                 Skywatcher, Dawncaller, Adjudicator, Tent-mother, and Lamentor.
@@ -247,7 +247,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 contribute to the tribe.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Tribe chieftains only maintained power as long as they could
                 prove they were suitable for that role. As a result, leadership
                 constantly changed. New leaders were chosen by contests. Any
@@ -260,7 +260,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 years of experience.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The competitive nature of goliaths meant that the attitude and
                 achievements of one would quickly inspire the whole tribe.
                 Individuals within tribes would constantly be trying to outdo
@@ -334,7 +334,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
               Goliath Names
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Every goliath has three names: a birth name assigned by the
                 newborn’s mother and father, a nickname assigned by the tribal
                 chief, and a family or clan name. A birth name is up to three
@@ -342,7 +342,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 a vowel.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Birth names are rarely linked to gender. Goliaths see females
                 and males as equal in all things, and they find societies with
                 roles divided by gender to be puzzling or worthy of mockery. To
@@ -350,7 +350,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 tasked with doing it.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 A goliath’s nickname is a description that can change on the
                 whim of a chieftain or tribal elder. It refers to a notable
                 deed, either a success or failure, committed by the goliath.
@@ -359,24 +359,29 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 deeds.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Goliaths present all three names when identifying themselves, in
                 the order of birth name, nickname, and clan name. In casual
                 conversation, they use their nickname.
               </p>
-              <br />
-              <strong>Birth Names:</strong> Aukan, Eglath, Gae-Al, Gauthak,
-              Ilikan, Keothi, Kuori, Lo-Kag, Manneo, Maveith, Nalla, Orilo,
-              Paavu, Pethani, Thalai, Thotham, Uthal, Vaunea, Vimak
-              <br />
-              <strong>Nicknames:</strong> Bearkiller, Dawncaller, Fearless,
-              Flintfinder, Horncarver, Keeneye, Lonehunter, Longleaper,
-              Rootsmasher, Skywatcher, Steadyhand, Threadtwister,
-              Twice-Orphaned, Twistedlimb, Wordpainter
-              <br />
-              <strong>Clan Names:</strong> Anakalathai, Elanithino,
-              Gathakanathi, Kalagiano, Katho-Olavi, Kolae-Gileana, Ogolakanu,
-              Thuliaga, Thunukalathi, Vaimei-Laga
+              <ul className="text-sm sm:text-base list-disc m-4">
+                <li className="my-2">
+                  <strong>Birth Names:</strong> Aukan, Eglath, Gae-Al, Gauthak,
+                  Ilikan, Keothi, Kuori, Lo-Kag, Manneo, Maveith, Nalla, Orilo,
+                  Paavu, Pethani, Thalai, Thotham, Uthal, Vaunea, Vimak
+                </li>
+                <li className="my-2">
+                  <strong>Nicknames:</strong> Bearkiller, Dawncaller, Fearless,
+                  Flintfinder, Horncarver, Keeneye, Lonehunter, Longleaper,
+                  Rootsmasher, Skywatcher, Steadyhand, Threadtwister,
+                  Twice-Orphaned, Twistedlimb, Wordpainter
+                </li>
+                <li className="my-2">
+                  <strong>Clan Names:</strong> Anakalathai, Elanithino,
+                  Gathakanathi, Kalagiano, Katho-Olavi, Kolae-Gileana,
+                  Ogolakanu, Thuliaga, Thunukalathi, Vaimei-Laga
+                </li>
+              </ul>
             </div>
           </div>
           <div className="overflow-x-auto">
@@ -451,7 +456,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide" onClick={raceGoliath}>
+            <button className="btn btn-success btn-wide m-4" onClick={raceGoliath}>
               Select Goliath
             </button>
           </div>

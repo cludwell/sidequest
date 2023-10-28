@@ -51,7 +51,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_19" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Half Orc
           </h3>
           <Image
@@ -82,7 +82,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               Description
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs, colloquially known as half-tusks in Purskul and
                 Zehoarastria of Amn, were humanoids born of both human and orc
                 ancestry by a multitude of means. Having the combined physical
@@ -94,7 +94,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 interesting back story that most would not like to dwell on.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs were typically between 5 feet 9 inches to 6 feet 4
                 inches in height and weighed around 155 to 225 pounds. This made
                 them slightly taller and stronger than the average human. Their
@@ -107,7 +107,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 Lifespan-wise, they matured by sixteen and usually did not live
                 past sixty years.
               </p>
-              <p>
+              <p className="text-sm sm:text-base">
                 Those raised among orcs might adopt the orcish tradition of
                 ritual scarring. These scars weren't seen as blemishes or marks
                 of shame but as symbols of pride, courage, and battle prowess.
@@ -139,7 +139,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               Personality
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs, being a mix of human and orc lineage, displayed a
                 combination of both races' traits. They were action-driven,
                 persistent, and adaptable like humans. Their ability to thrive
@@ -150,7 +150,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 and straightforward approach sometimes made them seem brash, but
                 in many situations, such a demeanor was invaluable.
               </p>
-              <p>
+              <p className="text-sm sm:text-base">
                 Generally, half-orcs were seen as moody and sullen, but they
                 were often more cunning than full orcs. They cherished simple
                 joys like feasting, singing, and dancing over refined
@@ -183,7 +183,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               Abilities
             </label>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs were known for their remarkable strength, comparable
                 to orcs but with the added agility uncommon in many humanoids.
                 They might not be as resilient as full orcs, but they were
@@ -194,7 +194,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 limits, and as battles dragged on, they could tire and become
                 vulnerable like any other being.
               </p>
-              <p>
+              <p className="text-sm sm:text-base">
                 Their agility was evident when they were enraged, allowing them
                 to move swiftly. Some half-orcs had an inherent conflict between
                 their dual heritages, turning this inner turmoil into sheer
@@ -214,7 +214,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Culture</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs had no home to truly call their own in most places,
                 excepting Palischuk in Vaasa, where a half-orc community
                 thrived. There was also the possible exception of Many-Arrows,
@@ -225,7 +225,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 culture.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 In most cultures, half-orcs suffered prejudice. Within the lands
                 of their human ancestors, they were commonly seen as savage
                 thugs. In orc society, however, they were often looked down upon
@@ -245,7 +245,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Religion</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs who lived among orcs commonly worshiped the orc
                 pantheon. Those raised among humans typically worshiped other
                 deities including Garagos, Hoar, and others. Tyr was also a
@@ -267,7 +267,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Homelands</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs had no true homeland, with exceptions like Palischuk
                 in Vaasa and Phsant in Thesk. They were also common in Northwest
                 Faerûn, particularly in Many-Arrows and regions like Amn, the
@@ -291,7 +291,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               Relations with other races
             </div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Half-orcs often had strained relations with other races,
                 especially Tel-quessir or dwarves. Even among humans, they were
                 often distrusted or feared. Some half-orcs became introverted,
@@ -299,7 +299,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 demanded acceptance.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 The challenges of their heritage taught most half-orcs to be
                 wary and suspicious, making and losing friends with relative
                 ease.

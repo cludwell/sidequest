@@ -52,7 +52,7 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_7" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Mountain Dwarf
           </h3>
           <Image

@@ -24,7 +24,7 @@ export default function DwarfInfo({
           Short and Stout
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Bold and hardy, dwarves are known as skilled warriors, miners, and
             workers of stone and metal. Though they stand well under 5 feet
             tall, dwarves are so broad and compact that they can weigh as much
@@ -32,7 +32,7 @@ export default function DwarfInfo({
             endurance are also easily a match for any of the larger folk.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarven skin ranges from deep brown to a paler hue tinged with red,
             but the most common shades are light brown or deep tan, like certain
             tones of earth. Their hair, worn long but in simple styles, is
@@ -61,7 +61,7 @@ export default function DwarfInfo({
           Long Memory, Long Grudges
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarves can live to be more than 400 years old, so the oldest living
             dwarves often remember a very different world. For example, some of
             the oldest dwarves living in Citadel Felbarr (in the world of the
@@ -72,7 +72,7 @@ export default function DwarfInfo({
             lack.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarves are solid and enduring like the mountains they love,
             weathering the passage of centuries with stoic endurance and little
             change. They respect the traditions of their clans, tracing their
@@ -83,7 +83,7 @@ export default function DwarfInfo({
             devotion to the forge.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Individual dwarves are determined and loyal, true to their word and
             decisive in action, sometimes to the point of stubbornness. Many
             dwarves have a strong sense of justice, and they are slow to forget
@@ -110,7 +110,7 @@ export default function DwarfInfo({
           Clans and Kingdoms
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarven kingdoms stretch deep beneath the mountains where the
             dwarves mine gems and precious metals and forge items of wonder.
             They love the beauty and artistry of precious metals and fine
@@ -122,7 +122,7 @@ export default function DwarfInfo({
             settlements, though some areas are off limits even to them.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             The chief unit of dwarven society is the clan, and dwarves highly
             value social standing. Even dwarves who live far from their own
             kingdoms cherish their clan identities and affiliations, recognize
@@ -130,7 +130,7 @@ export default function DwarfInfo({
             curses. To be clanless is the worst fate that can befall a dwarf.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarves in other lands are typically artisans, especially
             weaponsmiths, armorers, and jewelers. Some become mercenaries or
             bodyguards, highly sought after for their courage and loyalty.
@@ -154,7 +154,7 @@ export default function DwarfInfo({
           Gods, Gold, and Clan
         </div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarves who take up the adventuring life might be motivated by a
             desire for treasure—for its own sake, for a specific purpose, or
             even out of an altruistic desire to help others. Other dwarves are
@@ -182,7 +182,7 @@ export default function DwarfInfo({
         />
         <div className="collapse-title text-xl font-medium">Slow To Trust</div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             Dwarves get along passably well with most other races. “The
             difference between an acquaintance and a friend is about a hundred
             years,” is a dwarf saying that might be hyperbole, but certainly
@@ -190,7 +190,7 @@ export default function DwarfInfo({
             like humans to earn a dwarf's trust.
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             <strong>Elves.</strong> “It's not wise to depend on the elves. No
             telling what an elf will do next; when the hammer meets the orc's
             head, they're as apt to start singing as to pull out a sword.
@@ -201,14 +201,14 @@ export default function DwarfInfo({
             dwarf, maybe, but no doubt they hate the orcs as much as we do.”
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             <strong>Halflings.</strong> “Sure, they're pleasant folk. But show
             me a halfling hero. An empire, a triumphant army. Even a treasure
             for the ages made by halfling hands. Nothing. How can you take them
             seriously?”
           </p>
           <br />
-          <p>
+          <p className="text-sm sm:text-base">
             <strong>Humans.</strong> “You take the time to get to know a human,
             and by then the human's on her deathbed. If you're lucky, she's got
             kin—a daughter or granddaughter, maybe—who's got hands and heart as
@@ -234,7 +234,7 @@ export default function DwarfInfo({
         />
         <div className="collapse-title text-xl font-medium">Dwarf Names</div>
         <div className="collapse-content">
-          <p>
+          <p className="text-sm sm:text-base">
             A dwarf's name is granted by a clan elder, in accordance with
             tradition. Every proper dwarven name has been used and reused down
             through the generations. A dwarf's name belongs to the clan, not to
@@ -244,7 +244,7 @@ export default function DwarfInfo({
           </p>
           <br />
           <strong>Male Names:</strong>
-          <p>
+          <p className="text-sm sm:text-base">
             Adrik, Alberich, Baern, Barendd, Brottor, Bruenor, Dain, Darrak,
             Delg, Eberk, Einkil, Fargrim, Flint, Gardain, Harbek, Kildrak,
             Morgran, Orsik, Oskar, Rangrim, Rurik, Taklinn, Thoradin, Thorin,
@@ -252,14 +252,14 @@ export default function DwarfInfo({
           </p>
           <br />
           <strong>Female Names:</strong>
-          <p>
+          <p className="text-sm sm:text-base">
             Amber, Artin, Audhild, Bardryn, Dagnal, Diesa, Eldeth, Falkrunn,
             Finellen, Gunnloda, Gurdis, Helja, Hlin, Kathra, Kristryd, Ilde,
             Liftrasa, Mardred, Riswynn, Sannl, Torbera, Torgga, Vistra
           </p>
           <br />
           <strong>Clan Names:</strong>
-          <p>
+          <p className="text-sm sm:text-base">
             Balderk, Battlehammer, Brawnanvil, Dankil, Fireforge, Frostbeard,
             Gorunn, Holderhek, Ironfist, Loderr, Lutgehr, Rumnaheim, Strakeln,
             Torunn, Ungart
@@ -267,7 +267,7 @@ export default function DwarfInfo({
         </div>
       </div>
 
-      <table className="table table-zebra my-4">
+      <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
         {/* head */}
         <thead>
           <tr>
@@ -278,7 +278,7 @@ export default function DwarfInfo({
         <tbody>
           {/* row 1 */}
           <tr>
-            <td>Ability Scores</td>
+            <td className="font-bold">Ability Scores</td>
             {type === "hill" ? (
               <td>Con +2; Wis +1</td>
             ) : (
@@ -287,7 +287,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 2 */}
           <tr>
-            <td>Age</td>
+            <td className="font-bold">Age</td>
             <td>
               Dwarves mature at the same rate as humans, but they're considered
               young until they reach the age of 50. On average, they live about
@@ -296,7 +296,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 3 */}
           <tr>
-            <td>Alignment</td>
+            <td className="font-bold">Alignment</td>
             <td>
               Most dwarves are lawful, believing firmly in the benefits of a
               well-ordered society. They tend toward good as well, with a strong
@@ -306,7 +306,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 4 */}
           <tr>
-            <td>Size</td>
+            <td className="font-bold">Size</td>
             <td>
               Dwarves stand between 4 and 5 feet tall and average about 150
               pounds. Your size is Medium.
@@ -314,12 +314,12 @@ export default function DwarfInfo({
           </tr>
           {/* row 5 */}
           <tr>
-            <td>Speed</td>
+            <td className="font-bold">Speed</td>
             <td>Your speed is not reduced by wearing heavy armor.</td>
           </tr>
           {/* row 6 */}
           <tr>
-            <td>Darkvision</td>
+            <td className="font-bold">Darkvision</td>
             <td>
               Accustomed to life underground, you have superior vision in dark
               and dim conditions. You can see in dim light within 60 feet of you
@@ -329,7 +329,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 7 */}
           <tr>
-            <td>Dwarven Resilience</td>
+            <td className="font-bold">Dwarven Resilience</td>
             <td>
               You have advantage on saving throws against poison, and you have
               resistance against poison damage.
@@ -337,7 +337,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 8 */}
           <tr>
-            <td>Dwarven Combat Training</td>
+            <td className="font-bold">Dwarven Combat Training</td>
             <td>
               You have proficiency with the battleaxe, handaxe, light hammer,
               and warhammer.
@@ -345,7 +345,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 9 */}
           <tr>
-            <td>Tool Proficiency</td>
+            <td className="font-bold">Tool Proficiency</td>
             <td>
               You gain proficiency with the artisan's tools of your choice:
               Smith's tools, brewer's supplies, or mason's tools.
@@ -353,7 +353,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 10 */}
           <tr>
-            <td>Stonecunning</td>
+            <td className="font-bold">Stonecunning</td>
             <td>
               Whenever you make an Intelligence (History) check related to the
               origin of stonework, you are considered proficient in the History
@@ -363,7 +363,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 11 */}
           <tr>
-            <td>Languages</td>
+            <td className="font-bold">Languages</td>
             <td>
               You can speak, read, and write Common and Dwarvish. Dwarvish is
               full of hard consonants and guttural sounds, and those
@@ -373,7 +373,7 @@ export default function DwarfInfo({
           </tr>
           {/* row 12 */}
           <tr>
-            <td>Dwarven Toughness</td>
+            <td className="font-bold">Dwarven Toughness</td>
             <td>
               Your hit point maximum increases by 1, and it increases by 1 every
               time you gain a level.

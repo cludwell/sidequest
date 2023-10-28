@@ -53,7 +53,7 @@ export default function ModalHillDwarf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_6" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
             Hill Dwarf
           </h3>
           <Image
@@ -77,12 +77,12 @@ export default function ModalHillDwarf({ race, setRace }: SetRaceProps) {
             />
             <div className="collapse-title text-xl font-medium">Hill Dwarf</div>
             <div className="collapse-content">
-              <p>
+              <p className="text-sm sm:text-base">
                 Bold and hardy, dwarves are known as skilled warriors, miners,
                 and workers of stone and metal.
               </p>
               <br />
-              <p>
+              <p className="text-sm sm:text-base">
                 As a hill dwarf, you have keen senses, deep intuition, and
                 remarkable resilience. The gold dwarves of Faerûn in their
                 mighty southern kingdom are hill dwarves, as are the exiled
