@@ -17,7 +17,7 @@ export default function PremadeCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
-  const scene = useSelector(selectedScenarioState)
+  const scene = useSelector(selectedScenarioState);
   useEffect(() => {
     const loadCharacters = async () => {
       dispatch(userCharactersRequest(1));
@@ -34,17 +34,20 @@ export default function PremadeCharacters() {
   // console.log("USER CHARACTERS", usercharacters);
   const onClickSelect = async (charData: any) => {
     await dispatch(selectCharacterRequest(charData));
-    if (!scene) window.my_modal_confirm.showModal()
+    if (!scene) window.my_modal_confirm.showModal();
     else router.push("/dungeonmaster");
   };
-  
+
   return (
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
       <h1 className="text-3xl federant font-bold">Pre-made Characters</h1>
       <div className="divider" />
       <div className="flex flex-wrap justify-center">
         {Object.values(usercharacters).map((char, i) => (
-          <div className="card bg-base-100 shadow-xl w-96 m-4" key={`char${i}`}>
+          <div
+            className="card card-compact bg-base-100 shadow-xl m-4 w-72 sm:w-96"
+            key={`char${i}`}
+          >
             {char.imgUrl && (
               <figure>
                 <Image

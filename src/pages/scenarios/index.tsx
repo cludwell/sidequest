@@ -10,7 +10,6 @@ import Loading from "../Loading";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import IconRightArrow from "../IconRightArrow";
-import { ScenariosState } from "../../../lib/scenarioState";
 import { selectedCharacterState } from "@/store/characters";
 import { useRouter } from "next/router";
 import ConfirmModal from "../ConfirmModal";
@@ -53,7 +52,7 @@ export default function Scenarios() {
         {scenarios &&
           Object.values(scenarios).map((scene, i) => (
             <div
-              className=" w-60 md:w-96 glass carousel-item relative glass-container"
+              className=" w-60 sm:w-80 md:w-96 glass carousel-item relative glass-container"
               key={scene.id}
               id={`${scene.description.slice(0, 50)}`}
             >
@@ -76,20 +75,19 @@ export default function Scenarios() {
                   />
                 )}
               </figure>
-              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-2 md:p-4 m-1 md:m-2">
-                <h2 className="card-title almendra md:text-2xl">
+              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-2 sm:p-4 m-1 sm:m-2">
+                <h2 className="card-title almendra sm:text-2xl">
                   {scene.description.split("Adventure Prompt:")[0].slice(7)}
                 </h2>
-                <p className="text-xs md:text-lg overflow-ellipsis">
+                <p className="text-xs sm:text-base overflow-ellipsis">
                   {scene.description
                     .split("Adventure Prompt: ")[1]
-                    .slice(0, 300)
-                    }
+                    .slice(0, 300)}
                   ...
                 </p>
                 <div className="card-actions justify-end mt-4">
                   <button
-                    className="btn btn-primary btn-xs md:btn-md"
+                    className="btn btn-primary btn-xs sm:btn-sm md:btn-md"
                     onClick={() => selectScenario(scene)}
                   >
                     <IconRightArrow />

@@ -57,6 +57,7 @@ export default function UserCharacters() {
       </main>
     );
 
+    
   return (
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
       <h1 className="text-3xl federant font-bold">Your Characters</h1>

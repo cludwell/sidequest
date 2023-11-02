@@ -24,11 +24,7 @@ export default function DungeonMaster() {
       )}. If the user needs to roll dice other than d20, please prompt them in this format "roll: 3d6 " `,
       timestamp: new Date().toString(),
     },
-    // {
-    //   role: 'user',
-    //   content: "The user has entered the chat. Please respond with setting up the scenario and ask them to describe their character if they have not already chosen one",
-    //   timestamp: new Date().toString(),
-    // }
+
   ]);
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
@@ -103,7 +99,6 @@ export default function DungeonMaster() {
     setLoading(false);
   };
 
-
   const d20Roll = async (e: React.MouseEvent) => {
     e.preventDefault();
     setD20(0);
@@ -135,6 +130,8 @@ export default function DungeonMaster() {
 
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16 self-center fade-in-slide-in">
+      <div className="max-w-screen-lg">
+
       {char && char.imgUrl && (
         <Image
           height={50}
@@ -146,7 +143,7 @@ export default function DungeonMaster() {
       )}
       {chatHistory.length > 1 && (
         <div className="overflow-y-scroll h-96" ref={chatContainerRef}>
-          {chatHistory.map((chat, index) =>
+          {chatHistory.map((chat) =>
             chat.role === "assistant" ? (
               <div
                 className="chat chat-start w-full"
@@ -164,7 +161,9 @@ export default function DungeonMaster() {
                     {chat.timestamp.slice(0, 21)}
                   </time>
                 </div>
-                <div className="chat-bubble w-full">{chat.content}</div>
+                <div className="chat-bubble w-full text-xs sm:text-sm md:text-base">
+                  {chat.content}
+                </div>
                 <div className="chat-footer opacity-50">Delivered</div>
               </div>
             ) : chat.role === "user" ? (
@@ -193,26 +192,28 @@ export default function DungeonMaster() {
                     {chat.timestamp.slice(0, 21)}
                   </time>
                 </div>
-                <div className="chat-bubble chat-bubble-primary">
+                <div className="chat-bubble chat-bubble-primary text-xs sm:text-sm md:text-base">
                   {chat.content}
                 </div>
               </div>
             ) : null
           )}
         </div>
+
       )}
+      </div>
       {loading && (
         <div className="flex flex-col items-center w-full">
           <span className="loading loading-spinner loading-lg text-primary" />
         </div>
       )}
       <form
-        className="w-full my-8 max-w-screen-xl flex flex-col"
+        className="w-full my-8 max-w-screen-lg flex flex-col"
         onSubmit={chatRequest}
       >
         <textarea
           placeholder="What will you do?"
-          className="textarea textarea-primary textarea-lg w-full"
+          className="textarea textarea-primary textarea-lg w-full text-base sm:text-lg"
           value={userText}
           onChange={(e) => setUserText(e.target.value)}
         ></textarea>
@@ -248,7 +249,7 @@ export default function DungeonMaster() {
             </button>
           </div>
           {char && <ModalCharacterSheet character={char} />}
-          <button className="btn btn-accent my-4 w-fit" type="submit" >
+          <button className="btn btn-accent my-4 w-fit" type="submit">
             <IconSend />
           </button>
         </div>
