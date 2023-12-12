@@ -150,7 +150,7 @@ export default function LandingPhaseE() {
   }, [scope, animate, isInView]);
   return (
     <div
-      className="relative flex flex-row flex-wrap justify-around w-full max-w-screen-lg gap-4 my-12 overflow-hidden rounded-xl"
+      className="relative flex flex-row flex-wrap justify-around w-full max-w-screen-lg gap-4 my-24 overflow-hidden rounded-xl"
       ref={scope}
     >
       <div className="relative h-96 w-96 translate-x-[-500]" id="koboldScene">

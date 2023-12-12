@@ -45,7 +45,7 @@ export default function Header() {
 
   return (
     <div className="flex flex-row justify-between " id="header-container">
-      <div className="m-4 navbar bg-base-100 rounded-2xl header-background">
+      <div className="m-4 border-2 border-base-200 navbar bg-base-100 rounded-2xl">
         <div className="flex-1">
           <div className="flex flex-row items-center justify-center">
             <Link href={"/"} className="federant">

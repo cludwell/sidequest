@@ -5,6 +5,7 @@ import owlbear from "/public/images/owlbear.png";
 import d20 from "/public/images/d20.png";
 import bard from "/public/images/bard.png";
 import { useEffect } from "react";
+
 export default function LandingPhaseC() {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope)
@@ -74,8 +75,8 @@ export default function LandingPhaseC() {
         await animate(bubble5Selector, { y: -50, opacity: 0 }, { duration: 1 });
       }
     };
-    scene()
-    // setTimeout(() => scene(), 50);
+    // scene()
+    setTimeout(() => scene(), 300);
   }, [animate, scope, isInView]);
   return (
     <div
