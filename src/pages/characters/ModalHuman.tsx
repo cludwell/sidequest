@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import human from "../../../public/images/humanportrait.jpg";
 import humanDetail from "../../../public/images/human6.jpg";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

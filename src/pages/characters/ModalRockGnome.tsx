@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import deepGnome from "../../../public/images/gnome.jpg";
 import GnomeInfo from "./GnomeInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

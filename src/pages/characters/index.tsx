@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Loading from "../Loading";
-import IconRightArrow from "../IconRightArrow";
+import IconRightArrow from "../../components/icons/IconRightArrow";
 
 export default function CreateCharacter() {
   const { data: session, status: loading } = useSession();

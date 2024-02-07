@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import halfOrc from "../../../public/images/halforc7.jpeg";
 import halfOrcDetail from "../../../public/images/Half-orc-Paladin.png";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

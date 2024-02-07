@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import IconResume from "./IconResume";
+import IconResume from "../components/icons/IconResume";
 
 export default function About() {
   return (

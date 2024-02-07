@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import woodElf from "../../../public/images/woodelf3.jpeg";
 import ElfInfo from "./ElfInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

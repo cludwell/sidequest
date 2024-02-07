@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import IconID from "./IconID";
+import IconID from "../components/icons/IconID";
 import { CharacterData } from "../../lib/characterData";
 import Image from "next/image";
 import { Characters } from "@prisma/client";

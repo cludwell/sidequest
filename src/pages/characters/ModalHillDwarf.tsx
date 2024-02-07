@@ -4,7 +4,7 @@ import hillDwarf from "../../../public/images/dwarf2.jpeg";
 import hillDetail from "../../../public/images/dwarf8.jpg";
 import DwarfInfo from "./DwarfInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 declare global {
   interface Window {
     my_modal_6: any; // Replace `any` with the type of your modal if possible

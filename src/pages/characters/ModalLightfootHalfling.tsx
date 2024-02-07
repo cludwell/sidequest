@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import lightfoot from "../../../public/images/lightfoot9.jpeg";
 import HalflingInfo from "./HalflingInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

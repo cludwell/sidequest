@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import goliath from "../../../public/images/goliath3.jpg";
 import goliathDetail from "../../../public/images/goliath-feat.jpg";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 declare global {
   interface Window {
     my_modal_13: any; // Replace `any` with the type of your modal if possible

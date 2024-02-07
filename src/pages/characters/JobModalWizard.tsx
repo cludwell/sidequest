@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/wizardicon.png";
 import wizard from "../../../public/images/dee-holmberg-bg-wizard.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 import { wizardCantrips } from "../../../lib/_wizardCantrips";
 import { wizardLevel1Spells } from "../../../lib/_wizardLevel1Spells";
 declare global {

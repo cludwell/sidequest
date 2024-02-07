@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/warlockicon.png";
 import warlock from "../../../public/images/dee-holmberg-warlock2.png";
 import JobAbilityInfo from "./JobAbilityInfo";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 import { warlockCantrips } from "../../../lib/_warlockCantrips";
 import { warlockLevel1Spells } from "../../../lib/_warlockLevel1Spells";
 declare global {

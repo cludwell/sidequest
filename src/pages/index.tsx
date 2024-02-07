@@ -61,7 +61,7 @@ export default function Home() {
   }, [dispatch]);
 
   const scenarios = useSelector(allScenarioState);
-  if (!hasLoaded || !scenarios) return Loading;
+  if (!hasLoaded || !scenarios) return <Loading/>;
   console.log(scenarios);
   return (
     <main

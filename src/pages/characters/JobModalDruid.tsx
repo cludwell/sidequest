@@ -6,7 +6,7 @@ import druid from "../../../public/images/dee-holmberg-bg-druid.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import { druidCantrips } from "../../../lib/_druidCantrips";
 import { druidLevel1Spells } from "../../../lib/_druidLevel1Spells";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

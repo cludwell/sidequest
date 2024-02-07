@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import aasimar from "../../../public/images/aasimar.jpeg";
 import aasimarDetail from "../../../public/images/aasimar5.jpg";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

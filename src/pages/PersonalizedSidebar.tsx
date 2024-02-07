@@ -1,4 +1,4 @@
-import IconCharacters from "./IconCharacters";
+import IconCharacters from "../components/icons/IconCharacters";
 import Sidebar, { SidebarItem } from "./Sidebar";
 
 export default function UserSidebar() {

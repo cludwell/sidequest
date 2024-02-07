@@ -12,8 +12,8 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import Loading from "../Loading";
 import { userProfile } from "@/store/session";
-import IconRightArrow from "../IconRightArrow";
-import IconTrash from "../IconTrash";
+import IconRightArrow from "../../components/icons/IconRightArrow";
+import IconTrash from "../../components/icons/IconTrash";
 import { User } from "../../../lib/user";
 import { useRouter } from "next/router";
 import ConfirmModal from "../ConfirmModal";
@@ -57,7 +57,7 @@ export default function UserCharacters() {
       </main>
     );
 
-    
+
   return (
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
       <h1 className="text-3xl federant font-bold">Your Characters</h1>

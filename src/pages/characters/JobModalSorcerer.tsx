@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/sorcerericon.png";
 import cleric from "../../../public/images/dee-holmberg-bg-sorcerer.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 import { sorcererCantrips } from "../../../lib/_sorcererCantrips";
 import { sorcererLevel1Spells } from "../../../lib/_sorcererLevel1Spells";
 

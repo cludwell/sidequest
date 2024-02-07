@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/rangericon.png";
 import ranger from "../../../public/images/dee-holmberg-bg-ranger.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 import { naturalExplorerOptions } from "../../../lib/_naturalExplorer";
 
 

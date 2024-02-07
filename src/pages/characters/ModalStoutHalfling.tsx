@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import stout from "../../../public/images/stout5.png";
 import HalflingInfo from "./HalflingInfo";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

@@ -6,7 +6,7 @@ import bard from "../../../public/images/dee-holmberg-bg-bard.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import { bardCantrips } from "../../../lib/_bardCantrips";
 import { bardLevel1Spells } from "../../../lib/_bardLevel1Spells";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

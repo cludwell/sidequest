@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import IconRightArrow from "./IconRightArrow";
+import IconRightArrow from "../components/icons/IconRightArrow";
 import { useSelector } from "react-redux";
 import { selectedScenarioState } from "@/store/scenarios";
 import { selectedCharacterState } from "@/store/characters";

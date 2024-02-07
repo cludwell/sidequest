@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import IconCharacters from "./IconCharacters";
-import IconMap from "./IconMap";
-import IconSend from "./IconSend";
+import IconCharacters from "../components/icons/IconCharacters";
+import IconMap from "../components/icons/IconMap";
+import IconSend from "../components/icons/IconSend";
 import d20Icon from "../../public/images/d20.png";
 import Image from "next/image";
 import { useSelector } from "react-redux";

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import tiefling from "../../../public/images/tiefling9.jpeg";
 import tieflingDetail from "../../../public/images/tiefling6.jpg";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 
 declare global {
   interface Window {

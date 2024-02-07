@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import icon from "../../../public/icons/paladinicon.png";
 import paladin from "../../../public/images/dee-holmberg-bg-paladin.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 declare global {
   interface Window {
     my_modal_paladin: any; // Replace `any` with the type of your modal if possible

@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import Loading from "../Loading";
 import Image from "next/image";
 import { useSelector } from "react-redux";
-import IconRightArrow from "../IconRightArrow";
+import IconRightArrow from "../../components/icons/IconRightArrow";
 import { selectedCharacterState } from "@/store/characters";
 import { useRouter } from "next/router";
 import ConfirmModal from "../ConfirmModal";

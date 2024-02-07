@@ -13,12 +13,12 @@ import { authenticate, signOutRequest, userProfile } from "@/store/session";
 import { AppDispatch } from "@/store";
 import { allCharactersRequest, allCharactersState } from "@/store/characters";
 import Link from "next/link";
-import IconMap from "./IconMap";
-import IconTrophy from "./IconTrophy";
-import IconCharacters from "./IconCharacters";
-import IconID from "./IconID";
-import IconBars from "./IconBars";
-import IconInfo from "./IconInfo";
+import IconMap from "../components/icons/IconMap";
+import IconTrophy from "../components/icons/IconTrophy";
+import IconCharacters from "../components/icons/IconCharacters";
+import IconID from "../components/icons/IconID";
+import IconBars from "../components/icons/IconBars";
+import IconInfo from "../components/icons/IconInfo";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();

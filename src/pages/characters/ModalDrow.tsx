@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import drow from "../../../public/images/drow.jpg";
 import drowDetail from "../../../public/images/drow6.png";
 import { SetRaceProps } from "../../../lib/setRaceProps";
-import IconDoubleChevron from "../IconDoubleChevron";
+import IconDoubleChevron from "../../components/icons/IconDoubleChevron";
 declare global {
   interface Window {
     my_modal_21: any; // Replace `any` with the type of your modal if possible

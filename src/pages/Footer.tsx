@@ -1,6 +1,6 @@
 import d20 from "../../public/images/d20.png";
 import Image from "next/image";
-import IconResume from "./IconResume";
+import IconResume from "../components/icons/IconResume";
 
 export default function Footer() {
   return (

@@ -1,11 +1,11 @@
 import { userProfile } from "@/store/session";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import IconCharacters from "./IconCharacters";
-import IconMap from "./IconMap";
-import IconTrophy from "./IconTrophy";
-import IconGear from "./IconGear";
-import IconID from "./IconID";
+import IconCharacters from "../components/icons/IconCharacters";
+import IconMap from "../components/icons/IconMap";
+import IconTrophy from "../components/icons/IconTrophy";
+import IconGear from "../components/icons/IconGear";
+import IconID from "../components/icons/IconID";
 
 export default function Drawer() {
   const user: any = useSelector(userProfile);
