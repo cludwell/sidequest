@@ -10,13 +10,13 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import Loading from "../Loading";
+import Loading from "../../components/Loading";
 import { userProfile } from "@/store/session";
 import IconRightArrow from "../../components/icons/IconRightArrow";
 import IconTrash from "../../components/icons/IconTrash";
 import { User } from "../../../lib/user";
 import { useRouter } from "next/router";
-import ConfirmModal from "../ConfirmModal";
+import ConfirmModal from "../../components/ConfirmModal";
 import { selectedScenarioState } from "@/store/scenarios";
 
 export default function UserCharacters() {

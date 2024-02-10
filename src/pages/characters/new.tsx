@@ -1,10 +1,10 @@
 import { useSession } from "next-auth/react";
 import { useState } from "react";
-import NewCharacterRace from "./NewCharRace";
-import NewCharacterClass from "./NewCharClass";
-import NewCharAbilities from "./NewCharAbilities";
-import NewCharDescription from "./NewCharDescription";
-import NewCharEquipment from "./NewCharEquipment";
+import NewCharacterRace from "../../components/NewCharRace";
+import NewCharacterClass from "../../components/NewCharClass";
+import NewCharAbilities from "../../components/NewCharAbilities";
+import NewCharDescription from "../../components/NewCharDescription";
+import NewCharEquipment from "../../components/NewCharEquipment";
 import { DndClassObject } from "../../../lib/DndClassObject";
 import { Race } from "../../../lib/Race";
 import { Equipment } from "../../../lib/Equipment";

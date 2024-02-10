@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Loading from "../Loading";
+import Loading from "../../components/Loading";
 import IconRightArrow from "../../components/icons/IconRightArrow";
 
 export default function CreateCharacter() {

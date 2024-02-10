@@ -6,13 +6,13 @@ import {
 } from "@/store/scenarios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import Loading from "../Loading";
+import Loading from "../../components/Loading";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import IconRightArrow from "../../components/icons/IconRightArrow";
 import { selectedCharacterState } from "@/store/characters";
 import { useRouter } from "next/router";
-import ConfirmModal from "../ConfirmModal";
+import ConfirmModal from "../../components/ConfirmModal";
 import { Scenarios } from "@prisma/client";
 
 export default function Scenarios() {

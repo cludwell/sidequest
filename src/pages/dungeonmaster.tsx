@@ -6,7 +6,7 @@ import d20Icon from "../../public/images/d20.png";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { selectedCharacterState } from "@/store/characters";
-import ModalCharacterSheet from "./ModalCharacterSheet";
+import ModalCharacterSheet from "../components/ModalCharacterSheet";
 import { selectedScenarioState } from "@/store/scenarios";
 import { Characters, Scenarios } from "@prisma/client";
 

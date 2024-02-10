@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import Loading from "../Loading";
+import Loading from "../../components/Loading";
 import { useRouter } from "next/router";
 import { selectedScenarioState } from "@/store/scenarios";
-import ConfirmModal from "../ConfirmModal";
+import ConfirmModal from "../../components/ConfirmModal";
 
 export default function PremadeCharacters() {
   const [hasLoaded, setHasLoaded] = useState(false);
