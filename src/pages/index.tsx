@@ -1,7 +1,6 @@
 import { AppDispatch, wrapper } from "@/store";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import Dungeon from "./Dungeon";
 import Loading from "../components/Loading";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
@@ -75,7 +74,7 @@ export default function Home() {
         className="flex flex-col items-center "
       >
         <h1 className="almendra text-2xl md:text-4xl my-4 ">
-          Hello, fellow travelers
+          SideQuest
         </h1>
       </Link>
 
@@ -95,7 +94,7 @@ export default function Home() {
       </div>
       <Link href={"/splash"} className="flex flex-col items-center">
         <h1 className="almendra text-2xl md:text-4xl my-4 ">
-          Adventure awaits...
+          AI Assisted Dungeons and Dragons
         </h1>
         <DungeonDoor />
       </Link>
