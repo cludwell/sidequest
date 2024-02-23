@@ -3,6 +3,7 @@ import { SetDescriptionProps } from "../../lib/setDescriptionProps";
 import FaithTable from "./TableFaiths";
 import { deities } from "../../lib/_DeitiesInfo";
 import ToolTip from "./ToolTip";
+import Image from "next/image";
 export default function NewCharDescription({
   description,
   setDescription,
@@ -15,7 +16,8 @@ export default function NewCharDescription({
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([]);
-  const [imgUrl, setImgUrl] = useState<string>("https://imgur.com/2W9RzPc");
+  const [imgUrl, setImgUrl] = useState<string>("https://i.imgur.com/2W9RzPc.jpg");
+  const [imgSource, setImgSource] = useState<string>("Generate");
   const confirmDescription = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const err = [];
@@ -41,6 +43,21 @@ export default function NewCharDescription({
     });
     window.location.href = "#item5";
     // console.log("DESCRIPTION", description);
+  };
+  const alignments: Array<string> = [
+    "Lawful Good",
+    "Lawful Neutral",
+    "Lawful Evil",
+    "Neutral Good",
+    "True Neutral",
+    "Neutral Good",
+    "Chaotic Good",
+    "Chaotic Neutral",
+    "Chaotic Evil",
+  ];
+
+  const onClickGenerate = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
   };
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
@@ -86,15 +103,11 @@ export default function NewCharDescription({
             value={alignment}
             onChange={(e) => setAlignment(e.target.value)}
           >
-            <option value={"Lawful Good"}>Lawful Good</option>
-            <option value={"Lawful Neutral"}>Lawful Neutral</option>
-            <option value={"Lawful Evil"}>Lawful Evil</option>
-            <option value={"Neutral Good"}>Neutral Good</option>
-            <option value={"True Neutral"}>True Neutral</option>
-            <option value={"Neutral Good"}>Neutral Good</option>
-            <option value={"Chaotic Good"}>Chaotic Good</option>
-            <option value={"Chaotic Neutral"}>Chaotic Neutral</option>
-            <option value={"Chaotic Evil"}>Chaotic Evil</option>
+            {alignments.map((alignment, i) => (
+              <option value={alignment} key={alignment}>
+                {alignment}
+              </option>
+            ))}
           </select>
         </div>
         <div>
@@ -106,22 +119,7 @@ export default function NewCharDescription({
             onChange={(e) => setAppearance(e.target.value)}
           />
         </div>
-        <div>
-          <label className="label text-xl almendra">
-            Portrait
-            <ToolTip
-              tip="AWS image uploads coming soon, please use a hosting site like imgur in the meantime"
-              position="tooltip-left font-normal font-sans"
-            />
-          </label>
-          <input
-            type="text"
-            defaultValue={"https://imgur.com/2W9RzPc"}
-            className="input input-bordered input-info w-80"
-            value={imgUrl}
-            onChange={(e) => setImgUrl(e.target.value)}
-          />
-        </div>
+
         <div className="form-control">
           <label className="label">
             <span className="label-text text-xl almendra">Your bio</span>
@@ -132,10 +130,6 @@ export default function NewCharDescription({
             value={descript}
             onChange={(e) => setDescript(e.target.value)}
           />
-          {/* <label className="label">
-            <span className="label-text-alt"></span>
-            <span className="label-text-alt"></span>
-          </label> */}
         </div>
         <div className="my-4">
           <label className="label text-xl almendra ">
@@ -161,13 +155,50 @@ export default function NewCharDescription({
               ))}
           </select>
         </div>
+        <div className="w-80 my-4">
+          <label className="label text-xl almendra">
+            Portrait
+            <ToolTip
+              tip="AWS image uploads coming soon, please use a hosting site like imgur in the meantime"
+              position="tooltip-left font-normal font-sans"
+            />
+          </label>
 
+          <select
+            className="select select-error w-full my-4 max-w-xs"
+            value={imgSource}
+            onChange={(e) => setImgSource(e.target.value)}
+          >
+            <option selected value={"Generate"}>
+              Generate
+            </option>
+            <option value={"Use URL"}>Use URL</option>
+          </select>
+          {imgSource == "Generate" ? (
+            <button className="btn btn-accent w-full">Generate Portrait</button>
+          ) : (
+            <input
+              type="text"
+              defaultValue={"https://imgur.com/2W9RzPc.jpg"}
+              className="input input-bordered input-info w-80"
+              value={imgUrl}
+              onChange={(e) => setImgUrl(e.target.value)}
+            />
+          )}
+          {imgUrl && (
+            <Image
+            height={800}
+            width={800}
+            src={imgUrl}
+            alt="character preview"
+            className="rounded-2xl aspect-square object-cover my-4"
+          />
+
+          )}
+        </div>
         <FaithTable deities={deities as Deity[]} />
         <div className="flex flex-col md:flex-row max-w-screen-xl w-full justify-center">
-          <button
-            className="btn btn-primary m-4"
-            onClick={confirmDescription}
-          >
+          <button className="btn btn-primary m-4" onClick={confirmDescription}>
             Confirm Description
           </button>
           <button

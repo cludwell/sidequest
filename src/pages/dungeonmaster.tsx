@@ -89,7 +89,6 @@ export default function DungeonMaster() {
           timestamp: new Date().toString(),
         },
       ]);
-
       setUserText("");
     } else {
       const errorData = await response.json();
