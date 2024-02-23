@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import deepGnome from "../../../public/images/deepgnome6.jpg";
+import deepGnome from "../../public/images/deepgnome6.jpg";
 import GnomeInfo from "./GnomeInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
