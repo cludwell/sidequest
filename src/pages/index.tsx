@@ -89,7 +89,7 @@ export default function Home() {
       </div>
       <Link href={"/splash"} className="flex flex-col items-center">
         <h1 className="almendra text-2xl md:text-4xl my-4 ">
-          AI Assisted Dungeons and Dragons
+          ChatGPT Assisted DnD
         </h1>
         <DungeonDoor />
       </Link>
