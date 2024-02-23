@@ -58,7 +58,6 @@ export default NextAuth({
           where: { email: credentials.email },
         });
         if (!user) throw new Error("No user found");
-        // console.log("USER", user);
         const isValid = await verifyPassword(
           credentials.password,
           user.hashedPassword
@@ -87,5 +86,4 @@ export default NextAuth({
     },
   },
 
-  // Add other configurations as needed
 });

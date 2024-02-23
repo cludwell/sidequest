@@ -5,8 +5,6 @@ import IconResume from "../components/icons/IconResume";
 export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center md:px-16 fade-in-slide-in ">
-      {/* <h1 className="federant text-3xl font-bold">About Side Quest</h1>
-      <div className="divider" /> */}
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>

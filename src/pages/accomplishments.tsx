@@ -20,7 +20,7 @@ export default function Accomplishments() {
   }, [user, dispatch]);
 
   const userScenarios = useSelector(userScenarioState);
-  console.log('userScenarios', userScenarios);
+  console.log("userScenarios", userScenarios);
   return (
     <main className="flex flex-col items-center px-4 md:px-16 fade-in-slide-in">
       <h1 className="federant text-3xl font-bold">User Accomplishments </h1>

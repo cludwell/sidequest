@@ -24,7 +24,6 @@ export default function DungeonMaster() {
       )}. If the user needs to roll dice other than d20, please prompt them in this format "roll: 3d6 " `,
       timestamp: new Date().toString(),
     },
-
   ]);
   const [userText, setUserText] = useState("");
   const [loading, setLoading] = useState<Boolean>(false);
@@ -131,76 +130,74 @@ export default function DungeonMaster() {
   return (
     <main className="flex min-h-screen flex-col items-center px-4 md:px-16 self-center fade-in-slide-in">
       <div className="max-w-screen-lg">
-
-      {char && char.imgUrl && (
-        <Image
-          height={50}
-          width={50}
-          className=" hidden"
-          src={char.imgUrl}
-          alt="profile pic"
-        />
-      )}
-      {chatHistory.length > 1 && (
-        <div className="overflow-y-scroll h-96" ref={chatContainerRef}>
-          {chatHistory.map((chat) =>
-            chat.role === "assistant" ? (
-              <div
-                className="chat chat-start w-full"
-                key={`chat${chat.timestamp}`}
-              >
-                <div className="chat-image avatar">
-                  <div className="w-10 rounded-full">
-                    <Image width={50} height={50} src={d20Icon} alt="logo" />
-                    <IconMap />
+        {char && char.imgUrl && (
+          <Image
+            height={50}
+            width={50}
+            className=" hidden"
+            src={char.imgUrl}
+            alt="profile pic"
+          />
+        )}
+        {chatHistory.length > 1 && (
+          <div className="overflow-y-scroll h-96" ref={chatContainerRef}>
+            {chatHistory.map((chat) =>
+              chat.role === "assistant" ? (
+                <div
+                  className="chat chat-start w-full"
+                  key={`chat${chat.timestamp}`}
+                >
+                  <div className="chat-image avatar">
+                    <div className="w-10 rounded-full">
+                      <Image width={50} height={50} src={d20Icon} alt="logo" />
+                      <IconMap />
+                    </div>
+                  </div>
+                  <div className="chat-header">
+                    Dungeon Master
+                    <time className="text-xs opacity-50">
+                      {chat.timestamp.slice(0, 21)}
+                    </time>
+                  </div>
+                  <div className="chat-bubble w-full text-xs sm:text-sm md:text-base">
+                    {chat.content}
+                  </div>
+                  <div className="chat-footer opacity-50">Delivered</div>
+                </div>
+              ) : chat.role === "user" ? (
+                <div
+                  className="chat chat-end w-full"
+                  key={`user${chat.timestamp}`}
+                >
+                  <div className="chat-image avatar mr-4">
+                    <div className="w-10 rounded-full ">
+                      {char && char.imgUrl ? (
+                        <Image
+                          height={50}
+                          width={50}
+                          className=" object-cover"
+                          src={char.imgUrl}
+                          alt="profile pic"
+                        />
+                      ) : (
+                        <IconCharacters />
+                      )}
+                    </div>
+                  </div>
+                  <div className="chat-header">
+                    {char && char.name ? char.name : "Player"}
+                    <time className="text-xs opacity-50">
+                      {chat.timestamp.slice(0, 21)}
+                    </time>
+                  </div>
+                  <div className="chat-bubble chat-bubble-primary text-xs sm:text-sm md:text-base">
+                    {chat.content}
                   </div>
                 </div>
-                <div className="chat-header">
-                  Dungeon Master
-                  <time className="text-xs opacity-50">
-                    {chat.timestamp.slice(0, 21)}
-                  </time>
-                </div>
-                <div className="chat-bubble w-full text-xs sm:text-sm md:text-base">
-                  {chat.content}
-                </div>
-                <div className="chat-footer opacity-50">Delivered</div>
-              </div>
-            ) : chat.role === "user" ? (
-              <div
-                className="chat chat-end w-full"
-                key={`user${chat.timestamp}`}
-              >
-                <div className="chat-image avatar mr-4">
-                  <div className="w-10 rounded-full ">
-                    {char && char.imgUrl ? (
-                      <Image
-                        height={50}
-                        width={50}
-                        className=" object-cover"
-                        src={char.imgUrl}
-                        alt="profile pic"
-                      />
-                    ) : (
-                      <IconCharacters />
-                    )}
-                  </div>
-                </div>
-                <div className="chat-header">
-                  {char && char.name ? char.name : "Player"}
-                  <time className="text-xs opacity-50">
-                    {chat.timestamp.slice(0, 21)}
-                  </time>
-                </div>
-                <div className="chat-bubble chat-bubble-primary text-xs sm:text-sm md:text-base">
-                  {chat.content}
-                </div>
-              </div>
-            ) : null
-          )}
-        </div>
-
-      )}
+              ) : null
+            )}
+          </div>
+        )}
       </div>
       {loading && (
         <div className="flex flex-col items-center w-full">

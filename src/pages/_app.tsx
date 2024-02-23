@@ -13,7 +13,6 @@ export default function App({ Component, pageProps, ...rest }: AppProps) {
     <SessionProvider session={pageProps.session}>
       <Provider store={store}>
         <Header />
-        {/* <UserSidebar /> */}
         <Component {...pageProps} />
         <Footer />
       </Provider>

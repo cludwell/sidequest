@@ -10,7 +10,6 @@ export default async function handler(
   if (req.method === "DELETE") {
     try {
       const charId = parseInt(req.query.charId as string, 10);
-      // console.log("WE ARE ENTERING THE DELETE ROUTE", charId);
 
       if (!charId || typeof charId !== "number") {
         return res.status(400).json({ error: "Invalid character ID" });

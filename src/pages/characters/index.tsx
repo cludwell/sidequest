@@ -24,7 +24,7 @@ export default function CreateCharacter() {
 
   const characters = useSelector(allCharactersState);
 
-  console.log('characters', characters)
+  console.log("characters", characters);
   const handlePremade = () => router.push("/characters/premade");
   const handleCreate = () => router.push("/characters/new");
 
@@ -39,7 +39,7 @@ export default function CreateCharacter() {
       <h2>Choose how you would like to create your character</h2>
       {/* divider */}
       <div className="flex flex-col w-full">
-        <div className="divider"/>
+        <div className="divider" />
       </div>
       {/* card container */}
       <div className="flex flex-row flex-wrap justify-evenly">
@@ -59,7 +59,9 @@ export default function CreateCharacter() {
           </figure>
           <div className="card-body">
             <h2 className="card-title">STANDARD</h2>
-            <p className="text-sm md:text-lg">Create a character using a step-by-step approach</p>
+            <p className="text-sm md:text-lg">
+              Create a character using a step-by-step approach
+            </p>
             <div className="card-actions justify-end"></div>
           </div>
           <button

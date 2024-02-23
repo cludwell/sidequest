@@ -2,7 +2,6 @@ import { AppDispatch } from "@/store";
 import {
   deleteCharacterRequest,
   selectCharacterRequest,
-  selectedCharacterState,
   userCharactersRequest,
   userCharactersState,
 } from "@/store/characters";
@@ -14,7 +13,6 @@ import Loading from "../../components/Loading";
 import { userProfile } from "@/store/session";
 import IconRightArrow from "../../components/icons/IconRightArrow";
 import IconTrash from "../../components/icons/IconTrash";
-import { User } from "../../../lib/user";
 import { useRouter } from "next/router";
 import ConfirmModal from "../../components/ConfirmModal";
 import { selectedScenarioState } from "@/store/scenarios";
@@ -24,7 +22,7 @@ export default function UserCharacters() {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
   const user: any = useSelector(userProfile);
-  const scene = useSelector(selectedScenarioState)
+  const scene = useSelector(selectedScenarioState);
   useEffect(() => {
     const loadCharacters = async () => {
       if (user && user.id) {
@@ -44,8 +42,8 @@ export default function UserCharacters() {
 
   const onClickSelect = async (charData: any) => {
     await dispatch(selectCharacterRequest(charData));
-    if (!scene) window.my_modal_confirm.showModal()
-    else router.push('/dungeonmaster')
+    if (!scene) window.my_modal_confirm.showModal();
+    else router.push("/dungeonmaster");
   };
   if (!hasLoaded || !usercharacters) return <Loading />;
   if (!user.id)
@@ -56,7 +54,6 @@ export default function UserCharacters() {
         </h1>
       </main>
     );
-
 
   return (
     <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
@@ -92,8 +89,10 @@ export default function UserCharacters() {
                 <IconTrash />
                 Delete
               </button>
-              <button className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none w-1/2"
-              onClick={() => onClickSelect(char)}>
+              <button
+                className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none w-1/2"
+                onClick={() => onClickSelect(char)}
+              >
                 START
                 <IconRightArrow />
               </button>

@@ -64,7 +64,9 @@ export default function NewCharacter() {
   if (!user)
     return (
       <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
-        <h1 className="almendra text-2xl m-8">Please sign in or use the demo-user to create a character.</h1>
+        <h1 className="almendra text-2xl m-8">
+          Please sign in or use the demo-user to create a character.
+        </h1>
       </main>
     );
   return (
@@ -124,18 +126,19 @@ export default function NewCharacter() {
             !!Object.values(description).length ? "step step-primary" : "step"
           }
         >
-          <a href="#item4" className="btn btn-xs before:content-['Desc'] sm:before:content-['Description']">
-
-          </a>
+          <a
+            href="#item4"
+            className="btn btn-xs before:content-['Desc'] sm:before:content-['Description']"
+          ></a>
         </li>
         <li
           className={equipment.inventory.length ? "step step-primary" : "step"}
         >
           {" "}
-          <a href="#item5" className="btn btn-xs con before:content-['Equip'] sm:before:content-['Equipment']"
-  >
-
-          </a>
+          <a
+            href="#item5"
+            className="btn btn-xs con before:content-['Equip'] sm:before:content-['Equipment']"
+          ></a>
         </li>
       </ul>
 
@@ -169,21 +172,21 @@ export default function NewCharacter() {
         </div>
       </div>
       {race.race &&
-      !!Object.values(description).length &&
-      !!Object.values(abilities).length &&
-      !!equipment.inventory.length &&
-      dndClass.role &&
-      user &&
-      user.id && (
-        <div className="flex flex-row max-w-screen-xl w-full justify-center">
-          <button
-            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
-            onClick={submitCharacter}
-          >
-            Submit Character
-          </button>
-        </div>
-      ) }
+        !!Object.values(description).length &&
+        !!Object.values(abilities).length &&
+        !!equipment.inventory.length &&
+        dndClass.role &&
+        user &&
+        user.id && (
+          <div className="flex flex-row max-w-screen-xl w-full justify-center">
+            <button
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
+              onClick={submitCharacter}
+            >
+              Submit Character
+            </button>
+          </div>
+        )}
       <div className="flex flex-row flex-wrap justify-center w-full py-2 gap-2">
         <a href="#item1" className="btn btn-xs btn-outline">
           Race

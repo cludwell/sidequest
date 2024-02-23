@@ -26,7 +26,9 @@ export default function Splash() {
             <Link className="btn btn-primary m-2" href={"/characters"}>
               Get Started
             </Link>
-            <Link className="btn btn-secondary m-2" href={"/about"}>Learn More</Link>
+            <Link className="btn btn-secondary m-2" href={"/about"}>
+              Learn More
+            </Link>
           </div>
         </div>
       </div>

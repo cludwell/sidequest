@@ -28,10 +28,8 @@ export default function PremadeCharacters() {
 
   const usercharacters = useSelector(userCharactersState);
 
-  // console.log("USER CHARACTERS", usercharacters);
   if (!hasLoaded || !usercharacters) return <Loading />;
 
-  // console.log("USER CHARACTERS", usercharacters);
   const onClickSelect = async (charData: any) => {
     await dispatch(selectCharacterRequest(charData));
     if (!scene) window.my_modal_confirm.showModal();

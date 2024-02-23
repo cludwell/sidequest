@@ -12,14 +12,12 @@ export default async function handler(
         include: {
           userScenarios: true,
           users: true,
-          // scenarios: true,
         },
       });
       const payload: any = {};
       for (const character of characters) {
         payload[character.id] = character;
       }
-      // console.log('PAYLOAD', payload)
       return res.status(200).json({ ...payload });
     } catch (error) {
       console.error("Error fetching characters:", error);

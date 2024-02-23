@@ -60,7 +60,7 @@ export default function Home() {
   }, [dispatch]);
 
   const scenarios = useSelector(allScenarioState);
-  if (!hasLoaded || !scenarios) return <Loading/>;
+  if (!hasLoaded || !scenarios) return <Loading />;
   console.log(scenarios);
   return (
     <main
@@ -69,13 +69,8 @@ export default function Home() {
       <Head>
         <title>Side🎲Quest</title>
       </Head>
-      <Link
-        href={"/splash"}
-        className="flex flex-col items-center "
-      >
-        <h1 className="almendra text-2xl md:text-4xl my-4 ">
-          SideQuest
-        </h1>
+      <Link href={"/splash"} className="flex flex-col items-center ">
+        <h1 className="almendra text-2xl md:text-4xl my-4 ">SideQuest</h1>
       </Link>
 
       <div className="carousel carousel-center rounded-box max-w-screen-xl w-full">

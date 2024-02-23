@@ -125,8 +125,8 @@ export const charactersSlice = createSlice({
       state.selectedCharacter = action.payload;
     });
     builder.addCase(selectCharacterRequest.rejected, (state, action) => {
-      state.selectedCharacter = null
-    })
+      state.selectedCharacter = null;
+    });
   },
 });
 
