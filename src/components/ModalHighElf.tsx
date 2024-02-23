@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import highElf from "../../../public/images/elf4.jpeg";
+import highElf from "../../public/images/elf4.jpeg";
 import ElfInfo from "./ElfInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import { cantrips } from "../../lib/_Cantrips";

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { SetClassProps } from "../../lib/setClassProps";
 import { useEffect, useState } from "react";
-import icon from "../../../public/icons/druidicon.png";
-import druid from "../../../public/images/dee-holmberg-bg-druid.jpg";
+import icon from "../../public/icons/druidicon.png";
+import druid from "../../public/images/dee-holmberg-bg-druid.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import { druidCantrips } from "../../lib/_druidCantrips";
 import { druidLevel1Spells } from "../../lib/_druidLevel1Spells";

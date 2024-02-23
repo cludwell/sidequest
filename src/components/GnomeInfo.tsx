@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { RacialInfoProps } from "../../lib/racialInfoProps";
-import rock from "../../../public/images/rock.png";
-import deep from "../../../public/images/deepgnome2.jpg";
+import rock from "../../public/images/rock.png";
+import deep from "../../public/images/deepgnome2.jpg";
+
 export default function GnomeInfo({
   expand,
   setExpanded,

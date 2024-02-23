@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import drow from "../../../public/images/drow.jpg";
-import drowDetail from "../../../public/images/drow6.png";
+import drow from "../../public/images/drow.jpg";
+import drowDetail from "../../public/images/drow6.png";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 declare global {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import lightfoot from "../../../public/images/lightfoot9.jpeg";
+import lightfoot from "../../public/images/lightfoot9.jpeg";
 import HalflingInfo from "./HalflingInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";

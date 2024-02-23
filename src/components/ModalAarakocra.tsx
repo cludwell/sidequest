@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import aarakocra from "../../../public/images/aarakocra.jpeg";
+import aarakocra from "../../public/images/aarakocra.jpeg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import mountainDwarf from "../../../public/images/dwarf3.jpeg";
-import mountainDwarfDetail from "../../../public/images/dwarf7.jpg";
+import mountainDwarf from "../../public/images/dwarf3.jpeg";
+import mountainDwarfDetail from "../../public/images/dwarf7.jpg";
 import DwarfInfo from "./DwarfInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { SetClassProps } from "../../lib/setClassProps";
 import { useEffect, useState } from "react";
-import icon from "../../../public/icons/paladinicon.png";
-import paladin from "../../../public/images/dee-holmberg-bg-paladin.jpg";
+import icon from "../../public/icons/paladinicon.png";
+import paladin from "../../public/images/dee-holmberg-bg-paladin.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 declare global {

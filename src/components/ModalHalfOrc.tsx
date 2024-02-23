@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import halfOrc from "../../../public/images/halforc7.jpeg";
-import halfOrcDetail from "../../../public/images/Half-orc-Paladin.png";
+import halfOrc from "../../public/images/halforc7.jpeg";
+import halfOrcDetail from "../../public/images/Half-orc-Paladin.png";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 

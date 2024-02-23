@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { SetClassProps } from "../../lib/setClassProps";
 import { useEffect, useState } from "react";
-import icon from "../../../public/icons/wizardicon.png";
-import wizard from "../../../public/images/dee-holmberg-bg-wizard.jpg";
+import icon from "../../public/icons/wizardicon.png";
+import wizard from "../../public/images/dee-holmberg-bg-wizard.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 import { wizardCantrips } from "../../lib/_wizardCantrips";

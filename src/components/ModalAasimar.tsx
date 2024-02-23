@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import aasimar from "../../../public/images/aasimar.jpeg";
-import aasimarDetail from "../../../public/images/aasimar5.jpg";
+import aasimar from "../../public/images/aasimar.jpeg";
+import aasimarDetail from "../../public/images/aasimar5.jpg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 

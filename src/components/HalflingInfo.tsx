@@ -1,5 +1,5 @@
-import stoutDetail from "../../../public/images/stout2.jpg";
-import lightfootDetail from "../../../public/images/lightfoot8.jpg";
+import stoutDetail from "../../public/images/stout2.jpg";
+import lightfootDetail from "../../public/images/lightfoot8.jpg";
 import { RacialInfoProps } from "../../lib/racialInfoProps";
 import Image from "next/image";
 

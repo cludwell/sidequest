@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { SetClassProps } from "../../lib/setClassProps";
 import { useEffect, useState } from "react";
-import icon from "../../../public/icons/warlockicon.png";
-import warlock from "../../../public/images/dee-holmberg-warlock2.png";
+import icon from "../../public/icons/warlockicon.png";
+import warlock from "../../public/images/dee-holmberg-warlock2.png";
 import JobAbilityInfo from "./JobAbilityInfo";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 import { warlockCantrips } from "../../lib/_warlockCantrips";

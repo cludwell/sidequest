@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import woodElf from "../../../public/images/woodelf3.jpeg";
+import woodElf from "../../public/images/woodelf3.jpeg";
 import ElfInfo from "./ElfInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";

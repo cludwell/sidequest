@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import goliath from "../../../public/images/goliath3.jpg";
-import goliathDetail from "../../../public/images/goliath-feat.jpg";
+import goliath from "../../public/images/goliath3.jpg";
+import goliathDetail from "../../public/images/goliath-feat.jpg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 declare global {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import dragonborn from "../../../public/images/dragonborn.jpeg";
-import dragonbornDetail from "../../../public/images/dragonborn5.jpeg";
+import dragonborn from "../../public/images/dragonborn.jpeg";
+import dragonbornDetail from "../../public/images/dragonborn5.jpeg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 declare global {

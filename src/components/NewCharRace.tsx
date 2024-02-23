@@ -3,10 +3,10 @@ import { useState } from "react";
 
 import ModalAarakocra from "./ModalAarakocra";
 import ModalDragonBorn from "./ModalDragonborn";
-import dwarf from "../../../public/images/dwarf.jpeg";
-import elf from "../../../public/images/elf3.jpeg";
-import gnome from "../../../public/images/gnome4.png";
-import halfling from "../../../public/images/halfing.jpeg";
+import dwarf from "../../public/images/dwarf.jpeg";
+import elf from "../../public/images/elf3.jpeg";
+import gnome from "../../public/images/gnome4.png";
+import halfling from "../../public/images/halfing.jpeg";
 import Image from "next/image";
 import ModalHillDwarf from "./ModalHillDwarf";
 import ModalMountainDwarf from "./ModalMountainDwarf";

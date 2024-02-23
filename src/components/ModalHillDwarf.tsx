@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import hillDwarf from "../../../public/images/dwarf2.jpeg";
-import hillDetail from "../../../public/images/dwarf8.jpg";
+import hillDwarf from "../../public/images/dwarf2.jpeg";
+import hillDetail from "../../public/images/dwarf8.jpg";
 import DwarfInfo from "./DwarfInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";

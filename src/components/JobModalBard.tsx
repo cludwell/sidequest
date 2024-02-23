@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { SetClassProps } from "../../lib/setClassProps";
 import { useEffect, useState } from "react";
-import icon from "../../../public/icons/bardicon.png";
-import bard from "../../../public/images/dee-holmberg-bg-bard.jpg";
+import icon from "../../public/icons/bardicon.png";
+import bard from "../../public/images/dee-holmberg-bg-bard.jpg";
 import JobAbilityInfo from "./JobAbilityInfo";
 import { bardCantrips } from "../../lib/_bardCantrips";
 import { bardLevel1Spells } from "../../lib/_bardLevel1Spells";

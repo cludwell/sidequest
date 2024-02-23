@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Duergar from "../../../public/images/duergar.png";
-import duergarDetail from "../../../public/images/duergar2.jpg";
+import Duergar from "../../public/images/duergar.png";
+import duergarDetail from "../../public/images/duergar2.jpg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 declare global {

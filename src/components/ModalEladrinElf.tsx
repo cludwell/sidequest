@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import eladrin from "../../../public/images/eladrin.jpg";
+import eladrin from "../../public/images/eladrin.jpg";
 import ElfInfo from "./ElfInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";

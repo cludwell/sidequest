@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import stout from "../../../public/images/stout5.png";
+import stout from "../../public/images/stout5.png";
 import HalflingInfo from "./HalflingInfo";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";

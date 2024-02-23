@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import human from "../../../public/images/humanportrait.jpg";
-import humanDetail from "../../../public/images/human6.jpg";
+import human from "../../public/images/humanportrait.jpg";
+import humanDetail from "../../public/images/human6.jpg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 

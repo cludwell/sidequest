@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import tiefling from "../../../public/images/tiefling9.jpeg";
-import tieflingDetail from "../../../public/images/tiefling6.jpg";
+import tiefling from "../../public/images/tiefling9.jpeg";
+import tieflingDetail from "../../public/images/tiefling6.jpg";
 import { SetRaceProps } from "../../lib/setRaceProps";
 import IconDoubleChevron from "./icons/IconDoubleChevron";
 
