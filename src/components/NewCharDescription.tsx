@@ -7,6 +7,8 @@ import Image from "next/image";
 export default function NewCharDescription({
   description,
   setDescription,
+  race,
+  dndClass,
 }: SetDescriptionProps) {
   const [appearance, setAppearance] = useState<string>("");
   // this useState will be used for error handling purposes before being sent to description
@@ -16,10 +18,11 @@ export default function NewCharDescription({
   const [faith, setFaith] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [errors, setErrors] = useState<string[]>([]);
-  const [imgUrl, setImgUrl] = useState<string>("https://i.imgur.com/2W9RzPc.jpg");
+  const [imgUrl, setImgUrl] = useState<string>(
+    "https://i.imgur.com/2W9RzPc.jpg"
+  );
   const [imgSource, setImgSource] = useState<string>("Generate");
-  const confirmDescription = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const settingDescriptionStates = () => {
     const err = [];
     if (descript.length < 100)
       err.push("Please provide description of 100 characters or more.");
@@ -41,6 +44,10 @@ export default function NewCharDescription({
       level,
       imgUrl: imgUrl,
     });
+  };
+  const confirmDescription = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    settingDescriptionStates();
     window.location.href = "#item5";
     // console.log("DESCRIPTION", description);
   };
@@ -58,6 +65,13 @@ export default function NewCharDescription({
 
   const onClickGenerate = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    settingDescriptionStates();
+    const characterDraft = {
+      ...race,
+      ...dndClass,
+      ...description,
+    };
+    
   };
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
@@ -187,13 +201,12 @@ export default function NewCharDescription({
           )}
           {imgUrl && (
             <Image
-            height={800}
-            width={800}
-            src={imgUrl}
-            alt="character preview"
-            className="rounded-2xl aspect-square object-cover my-4"
-          />
-
+              height={800}
+              width={800}
+              src={imgUrl}
+              alt="character preview"
+              className="rounded-2xl aspect-square object-cover my-4"
+            />
           )}
         </div>
         <FaithTable deities={deities as Deity[]} />

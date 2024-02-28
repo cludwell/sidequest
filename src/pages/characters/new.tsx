@@ -158,6 +158,8 @@ export default function NewCharacter() {
         </div>
         <div id="item4" className="carousel-item w-full mx-8">
           <NewCharDescription
+            race={race}
+            dndClass={dndClass}
             description={description}
             setDescription={setDescription}
           />{" "}
