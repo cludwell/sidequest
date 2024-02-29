@@ -4,6 +4,7 @@ import FaithTable from "./TableFaiths";
 import { deities } from "../../lib/_DeitiesInfo";
 import ToolTip from "./ToolTip";
 import Image from "next/image";
+import Loading from "./Loading";
 export default function NewCharDescription({
   description,
   setDescription,
@@ -22,6 +23,9 @@ export default function NewCharDescription({
     "https://i.imgur.com/2W9RzPc.jpg"
   );
   const [imgSource, setImgSource] = useState<string>("Generate");
+  const [isLoading, setIsLoading] = useState<Boolean>(false);
+  const [chatHistory, setChatHistory] = useState<Object[]>([]);
+  const [error, setError] = useState<Boolean>();
   const settingDescriptionStates = () => {
     const err = [];
     if (descript.length < 100)
@@ -51,6 +55,55 @@ export default function NewCharDescription({
     window.location.href = "#item5";
     // console.log("DESCRIPTION", description);
   };
+
+  const onClickGenerate = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    settingDescriptionStates();
+    const characterDraft = {
+      ...race,
+      ...dndClass,
+      ...description,
+    };
+    setChatHistory([
+      ...chatHistory,
+      {
+        role: "system",
+        content: `Please generate an image for a Dungeon and Dragons character in the style approximating that of the Dungeon and Dragons player hand books. I understand that you don't have access to copyrighted material. Remember that the character is level 1. The character has the following characteristics: ${JSON.stringify(
+          description
+        )}`,
+      },
+    ]);
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: chatHistory }),
+    });
+    if (response.ok) {
+      const responseData = await response.json();
+      let message = "Unknown error";
+      if (responseData.error) {
+        message = responseData.error.message;
+      } else if (
+        Array.isArray(responseData.choices) &&
+        responseData.choices.length > 0
+      ) {
+        message = responseData.choices[0].message.content.trim();
+      }
+      setChatHistory((prevHistory) => [
+        ...prevHistory,
+        {
+          role: "assistant",
+          content: message,
+          timestamp: new Date().toString(),
+        },
+      ]);
+    } else {
+      const errorData = await response.json();
+      setError(errorData.message || "An error occurred");
+    }
+    setIsLoading(false);
+  };
   const alignments: Array<string> = [
     "Lawful Good",
     "Lawful Neutral",
@@ -62,17 +115,6 @@ export default function NewCharDescription({
     "Chaotic Neutral",
     "Chaotic Evil",
   ];
-
-  const onClickGenerate = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    settingDescriptionStates();
-    const characterDraft = {
-      ...race,
-      ...dndClass,
-      ...description,
-    };
-    
-  };
   return (
     <div className="flex flex-col max-w-screen-xl w-full">
       <h1 className="text-4xl almendra mb-4 text-center">Description</h1>
@@ -199,7 +241,7 @@ export default function NewCharDescription({
               onChange={(e) => setImgUrl(e.target.value)}
             />
           )}
-          {imgUrl && (
+          {imgUrl && !isLoading ? (
             <Image
               height={800}
               width={800}
@@ -207,6 +249,8 @@ export default function NewCharDescription({
               alt="character preview"
               className="rounded-2xl aspect-square object-cover my-4"
             />
+          ) : (
+            <Loading />
           )}
         </div>
         <FaithTable deities={deities as Deity[]} />
