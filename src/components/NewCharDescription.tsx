@@ -57,6 +57,8 @@ export default function NewCharDescription({
   };
 
   const chatGPTImage = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    // have to create new api route that uses dalle 2
+    // amend this function so that it receives shape of json response from dalle
     e.preventDefault();
     setIsLoading(true);
     settingDescriptionStates();
@@ -85,11 +87,11 @@ export default function NewCharDescription({
       if (responseData.error) {
         setError(responseData.error.message);
       } else {
+        console.log(responseData);
         // Assuming the response includes the image URL directly or the data needed to construct it
         const imageUrl = responseData.data[0].url;
         // Adjust this line based on the actual structure of your response
         setImgUrl(imageUrl); // Update the state with the new image URL
-        console.log(responseData);
       }
     } else {
       const errorData = await response.json();
@@ -103,7 +105,7 @@ export default function NewCharDescription({
     "Lawful Evil",
     "Neutral Good",
     "True Neutral",
-    "Neutral Good",
+    "Neutral Evil",
     "Chaotic Good",
     "Chaotic Neutral",
     "Chaotic Evil",
