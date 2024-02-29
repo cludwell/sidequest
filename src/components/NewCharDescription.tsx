@@ -56,7 +56,7 @@ export default function NewCharDescription({
     // console.log("DESCRIPTION", description);
   };
 
-  const onClickGenerate = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const chatGPTImage = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsLoading(true);
     settingDescriptionStates();
@@ -79,25 +79,18 @@ export default function NewCharDescription({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: chatHistory }),
     });
+
     if (response.ok) {
       const responseData = await response.json();
-      let message = "Unknown error";
       if (responseData.error) {
-        message = responseData.error.message;
-      } else if (
-        Array.isArray(responseData.choices) &&
-        responseData.choices.length > 0
-      ) {
-        message = responseData.choices[0].message.content.trim();
+        setError(responseData.error.message);
+      } else {
+        // Assuming the response includes the image URL directly or the data needed to construct it
+        const imageUrl = responseData.data[0].url;
+        // Adjust this line based on the actual structure of your response
+        setImgUrl(imageUrl); // Update the state with the new image URL
+        console.log(responseData);
       }
-      setChatHistory((prevHistory) => [
-        ...prevHistory,
-        {
-          role: "assistant",
-          content: message,
-          timestamp: new Date().toString(),
-        },
-      ]);
     } else {
       const errorData = await response.json();
       setError(errorData.message || "An error occurred");
@@ -231,7 +224,9 @@ export default function NewCharDescription({
             <option value={"Use URL"}>Use URL</option>
           </select>
           {imgSource == "Generate" ? (
-            <button className="btn btn-accent w-full">Generate Portrait</button>
+            <button className="btn btn-accent w-full" onClick={chatGPTImage}>
+              Generate Portrait
+            </button>
           ) : (
             <input
               type="text"
