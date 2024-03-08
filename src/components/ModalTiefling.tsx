@@ -34,13 +34,13 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_18.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={tiefling}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -51,7 +51,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_18" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Tiefling
           </h3>
           <Image
@@ -59,11 +59,11 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover object-top"
+            className="object-cover object-top rounded-xl aspect-square"
           />
           <p className="py-4"></p>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -76,7 +76,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="description-tieflings"
             >
               Description
@@ -141,7 +141,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -154,7 +154,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="tiefling-bloodlines"
             >
               Tiefling Bloodlines
@@ -218,7 +218,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -229,7 +229,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Personality
             </div>
             <div className="collapse-content">
@@ -251,7 +251,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -262,7 +262,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Combat</div>
+            <div className="text-xl font-medium collapse-title">Combat</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 In combat, Tieflings showcased their finesse as agile and quick
@@ -278,7 +278,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -289,7 +289,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Abilities</div>
+            <div className="text-xl font-medium collapse-title">Abilities</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Tieflings who sought arcane might typically gravitated towards
@@ -306,7 +306,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -317,7 +317,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Society</div>
+            <div className="text-xl font-medium collapse-title">Society</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Like other races that were the result of the breeding of two or
@@ -361,7 +361,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -372,7 +372,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Relations with other races
             </div>
             <div className="collapse-content">
@@ -390,7 +390,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -401,7 +401,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Religion</div>
+            <div className="text-xl font-medium collapse-title">Religion</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Those tieflings who were religious were a varied lot, since no
@@ -488,7 +488,7 @@ export default function ModalTiefling({ race, setRace }: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide m-4" onClick={raceTiefling}>
+            <button className="m-4 btn btn-success btn-wide" onClick={raceTiefling}>
               Select Tiefling
             </button>
           </div>

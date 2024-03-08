@@ -24,13 +24,13 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_cleric.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -41,7 +41,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_cleric" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -49,13 +49,13 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A priestly champion who wields divine magic in service of a higher
             power
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -84,7 +84,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-divine-domain"
@@ -95,9 +95,9 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Divine Domain
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -125,7 +125,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-channel-divinity"
@@ -136,9 +136,9 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Channel Divinity
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 regain your expended uses.
               </p>
               <br />
-              <h2 className="text-medium font-semibold mt-4">
+              <h2 className="mt-4 font-semibold text-medium">
                 Channel Divinity: Turn Undead
               </h2>
               <p>
@@ -194,7 +194,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-destroy-undead"
@@ -205,9 +205,9 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Destroy Undead
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th, 8th, 11th, 15th, 17th Level
               </span>
             </div>
@@ -218,8 +218,8 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 destroyed if its challenge rating is at or below a certain
                 threshold, as shown in the Destroy Undead table.
               </p>
-              <div className="overflow-x-auto mt-2">
-                <table className="table table-zebra w-full bg-base-100">
+              <div className="mt-2 overflow-x-auto">
+                <table className="table w-full table-zebra bg-base-100">
                   <thead>
                     <tr>
                       <th>Cleric Level</th>
@@ -252,7 +252,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
               </div>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-divine-intervention"
@@ -263,9 +263,9 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Divine Intervention
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 10th Level
               </span>
             </div>
@@ -294,7 +294,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
           {/* Proficiencies Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -305,14 +305,14 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>
@@ -343,7 +343,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points"
@@ -354,14 +354,14 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
@@ -385,7 +385,7 @@ export default function Cleric({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-row justify-center">
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeCleric}
             >
               Cleric

@@ -38,13 +38,13 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_sorcerer.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -61,12 +61,12 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A spellcaster who draws on inherent magic from a gift or bloodline
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -96,7 +96,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Spellcasting Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spellcasting"
@@ -107,9 +107,9 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spellcasting
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -122,7 +122,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 Spells Listing for the sorcerer spell list.
               </p>
               <br />
-              <h3 className="font-xl underline my-2">Cantrips</h3>
+              <h3 className="my-2 underline font-xl">Cantrips</h3>
               <p>
                 At 1st level, you know four cantrips of your choice from the
                 sorcerer spell list. You learn additional sorcerer cantrips of
@@ -130,7 +130,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 column of the Sorcerer table.
               </p>
               <br />
-              <h3 className="font-xl underline my-2">Spell Slots</h3>
+              <h3 className="my-2 underline font-xl">Spell Slots</h3>
               <p>
                 The Sorcerer table shows how many spell slots you have to cast
                 your sorcerer spells of 1st level and higher. To cast one of
@@ -145,7 +145,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 cast burning hands using either slot.
               </p>
               <br />
-              <h3 className="font-xl underline my-2">
+              <h3 className="my-2 underline font-xl">
                 Spells Known of 1st Level and Higher
               </h3>
               <p>
@@ -161,7 +161,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 have spell slots.
               </p>
               <br />
-              <h3 className="font-xl underline my-2">Spellcasting Ability</h3>
+              <h3 className="my-2 underline font-xl">Spellcasting Ability</h3>
               <p>
                 Charisma is your spellcasting ability for your sorcerer spells,
                 since the power of your magic relies on your ability to project
@@ -182,7 +182,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 modifier
               </p>
               <br />
-              <h3 className="font-xl underline my-2">Spellcasting Focus</h3>
+              <h3 className="my-2 underline font-xl">Spellcasting Focus</h3>
               <p>
                 You can use an arcane focus (see the Adventuring Gear section)
                 as a spellcasting focus for your sorcerer spells.
@@ -191,7 +191,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Sorcerous Origin Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-sorcerous-origin"
@@ -202,9 +202,9 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Sorcerous Origin
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -222,7 +222,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Font of Magic Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-font-of-magic"
@@ -233,9 +233,9 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Font of Magic
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -245,7 +245,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 yourself. This wellspring is represented by sorcery points,
                 which allow you to create a variety of magical effects.
               </p>
-              <h3 className="font-xl my-4 underline">Sorcery Points</h3>
+              <h3 className="my-4 underline font-xl">Sorcery Points</h3>
               <p>
                 You have 2 sorcery points, and you gain more as you reach higher
                 levels, as shown in the Sorcery Points column of the Sorcerer
@@ -253,14 +253,14 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 table for your level. You regain all spent sorcery points when
                 you finish a long rest.
               </p>
-              <h3 className="font-xl my-4 underline">Flexible Casting</h3>
+              <h3 className="my-4 underline font-xl">Flexible Casting</h3>
               <p>
                 You can use your sorcery points to gain additional spell slots,
                 or sacrifice spell slots to gain additional sorcery points. You
                 learn other ways to use your sorcery points as you reach higher
                 levels.
               </p>
-              <h3 className="font-xl my-4 underline">Creating Spell Slots</h3>
+              <h3 className="my-4 underline font-xl">Creating Spell Slots</h3>
               <p>
                 You can transform unexpended sorcery points into one spell slot
                 as a bonus action on your turn. The table below shows the cost
@@ -270,7 +270,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
               <div className="overflow-x-auto">
-                <table className="table table-zebra w-full bg-base-100">
+                <table className="table w-full table-zebra bg-base-100">
                   <thead>
                     <tr>
                       <th>Spell Slot Level</th>
@@ -301,7 +301,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                   </tbody>
                 </table>
               </div>
-              <h3 className="font-xl my-4 underline">
+              <h3 className="my-4 underline font-xl">
                 Converting a Spell Slot to Sorcery Points
               </h3>
               <p>
@@ -312,7 +312,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Metamagic Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-metamagic"
@@ -323,9 +323,9 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Metamagic
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -344,7 +344,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
 
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
           {/* Sorcerous Restoration Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-sorcerous-restoration"
@@ -357,9 +357,9 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Sorcerous Restoration
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -372,7 +372,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Proficiencies Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies-sorcerer"
@@ -385,14 +385,14 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
-            <div className="collapse-content overflow-x-auto">
-              <table className="table table-zebra w-full bg-base-100">
+            <div className="overflow-x-auto collapse-content">
+              <table className="table w-full table-zebra bg-base-100">
                 <thead>
                   <tr>
                     <th>Proficiency</th>
@@ -431,7 +431,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points-sorcerer"
@@ -442,14 +442,14 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
-            <div className="collapse-content overflow-x-auto">
-              <table className="table table-zebra w-full bg-base-100">
+            <div className="overflow-x-auto collapse-content">
+              <table className="table w-full table-zebra bg-base-100">
                 <thead>
                   <tr>
                     <th>Level</th>
@@ -479,7 +479,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center my-4">
             <select
-              className="select select-primary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-primary"
               onChange={(e) => setCant1(e.target.value)}
               value={cant1}
             >
@@ -492,7 +492,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setCant2(e.target.value)}
               value={cant2}
             >
@@ -505,7 +505,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-success w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-success"
               onChange={(e) => setCant3(e.target.value)}
               value={cant3}
             >
@@ -518,7 +518,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-info w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-info"
               onChange={(e) => setCant4(e.target.value)}
               value={cant4}
             >
@@ -531,7 +531,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-warning w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-warning"
               onChange={(e) => setSpell1(e.target.value)}
               value={spell1}
             >
@@ -543,7 +543,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell2(e.target.value)}
               value={spell2}
             >
@@ -555,7 +555,7 @@ export default function Sorcerer({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeSorcerer}
             >
               Sorcerer

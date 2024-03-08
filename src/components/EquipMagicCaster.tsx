@@ -68,14 +68,14 @@ export default function EquipMagicCaster({
     <>
       <form className="flex flex-col items-center">
         {/* Primary Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">
             Primary Weapon Selection
           </label>
           {dndClass && dndClass?.role === "Wizard" ? (
             <>
               <div className="flex flex-row items-center justify-between">
-                <label className="label text-xl almendra">Quarterstaff</label>
+                <label className="text-xl label almendra">Quarterstaff</label>
                 <input
                   type="radio"
                   name="weapon-choice1"
@@ -86,7 +86,7 @@ export default function EquipMagicCaster({
                 />
               </div>
               <div className="flex flex-row items-center justify-between">
-                <label className="label text-xl almendra">Dagger</label>
+                <label className="text-xl label almendra">Dagger</label>
                 <input
                   type="radio"
                   name="weapon-choice1"
@@ -100,7 +100,7 @@ export default function EquipMagicCaster({
           ) : (
             <>
               <div className="flex flex-row items-center justify-between">
-                <label className="label text-xl almendra">
+                <label className="text-xl label almendra">
                   Light Crossbow & 20 bolts
                 </label>
                 <input
@@ -116,7 +116,7 @@ export default function EquipMagicCaster({
                 />
               </div>
               <div className="flex flex-row items-center justify-between">
-                <label className="label text-xl almendra">
+                <label className="text-xl label almendra">
                   Any simple weapon
                 </label>
                 <input
@@ -131,7 +131,7 @@ export default function EquipMagicCaster({
           )}
           {selectionA && (
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setWeaponA(e.target.value)}
             >
               <option disabled selected>
@@ -152,10 +152,10 @@ export default function EquipMagicCaster({
           )}
         </div>
         {/* Arcane Focus Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Arcane Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Arcane Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Component Pouch</label>
+            <label className="text-xl label almendra">Component Pouch</label>
             <input
               type="radio"
               name="arcane-choice"
@@ -169,7 +169,7 @@ export default function EquipMagicCaster({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Arcane Focus</label>
+            <label className="text-xl label almendra">Arcane Focus</label>
             <input
               type="radio"
               name="arcane-choice"
@@ -180,7 +180,7 @@ export default function EquipMagicCaster({
           </div>
           {selectionB && (
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setArcaneFocus(e.target.value)}
             >
               <option disabled selected>
@@ -195,10 +195,10 @@ export default function EquipMagicCaster({
           )}
         </div>
         {/* Pack Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Dungeoneer's Pack
               <ToolTip
                 tip="Includes a backpack, a crowbar, a hammer, 10 pitons, 10 torches, a tinderbox, 10 days of rations, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it."
@@ -216,7 +216,7 @@ export default function EquipMagicCaster({
           </div>
           {dndClass && dndClass?.role === "Sorcerer" ? (
             <div className="flex flex-row items-center justify-between">
-              <label className="label text-xl almendra">
+              <label className="text-xl label almendra">
                 Explorer's Pack
                 <ToolTip
                   tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -233,7 +233,7 @@ export default function EquipMagicCaster({
             </div>
           ) : (
             <div className="flex flex-row items-center justify-between">
-              <label className="label text-xl almendra">
+              <label className="text-xl label almendra">
                 Scholar's Pack
                 <ToolTip
                   tip="Includes a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of parchment, a little bag of sand, and a small knife."
@@ -251,10 +251,10 @@ export default function EquipMagicCaster({
           )}
         </div>
         {dndClass && dndClass?.role === "Sorcerer" ? (
-          <div className="flex flex-col w-80 my-4">
-            {/* <label className="label text-xl almendra">Pack Selection</label> */}
+          <div className="flex flex-col my-4 w-80">
+            {/* <label className="text-xl label almendra">Pack Selection</label> */}
             <div className="flex flex-row items-center justify-between">
-              <label className="label text-xl almendra">Two Daggers</label>
+              <label className="text-xl label almendra">Two Daggers</label>
               <input
                 type="radio"
                 name="dagger-choice"
@@ -264,13 +264,13 @@ export default function EquipMagicCaster({
             </div>
           </div>
         ) : dndClass && dndClass?.role === "Warlock" ? (
-          <div className="flex flex-col w-80 my-4">
-            <label className="label text-xl almendra">
+          <div className="flex flex-col my-4 w-80">
+            <label className="text-xl label almendra">
               Leather Armor, Simple Weapon, & 2 Daggers
             </label>
             <div className="flex flex-row items-center justify-between">
               <select
-                className="select select-warning w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-warning"
                 onChange={(e) => setWeaponB(e.target.value)}
               >
                 <option disabled selected>
@@ -291,10 +291,10 @@ export default function EquipMagicCaster({
             </div>
           </div>
         ) : (
-          <div className="flex flex-col w-80 my-4">
-            {/* <label className="label text-xl almendra">Pack Selection</label> */}
+          <div className="flex flex-col my-4 w-80">
+            {/* <label className="text-xl label almendra">Pack Selection</label> */}
             <div className="flex flex-row items-center justify-between">
-              <label className="label text-xl almendra">A Spellbook</label>
+              <label className="text-xl label almendra">A Spellbook</label>
               <input
                 type="radio"
                 name="dagger-choice"
@@ -311,9 +311,9 @@ export default function EquipMagicCaster({
           />
         ) : null}
       </form>
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment

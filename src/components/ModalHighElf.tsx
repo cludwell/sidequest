@@ -58,13 +58,13 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_8.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={highElf}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -75,7 +75,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_8" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             High Elf
           </h3>
 
@@ -83,7 +83,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
 
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs  my-4"
+              className="w-full max-w-xs my-4 select select-primary"
               value={cantrip}
               onChange={(e) => setCantrip(e.target.value)}
             >
@@ -97,7 +97,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
               ))}
             </select>
             <select
-              className="select select-secondary w-full max-w-xs my-4"
+              className="w-full max-w-xs my-4 select select-secondary"
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >
@@ -110,7 +110,7 @@ export default function ModalHighElf({ race, setRace }: SetRaceProps) {
                 </option>
               ))}
             </select>
-            <button className="btn btn-success btn-wide m-4" onClick={raceHighElf}>
+            <button className="m-4 btn btn-success btn-wide" onClick={raceHighElf}>
               Select High-Elf
             </button>
           </div>

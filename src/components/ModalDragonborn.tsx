@@ -98,13 +98,13 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_3.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={dragonborn}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -115,7 +115,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_3" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center scroll-my-4">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra scroll-my-4">
             Dragonborn
           </h3>
           <Image
@@ -123,11 +123,11 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
           {/* accordion start */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -136,7 +136,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Details</div>
+            <div className="text-xl font-medium collapse-title">Details</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Born of dragons, as their name proclaims, the dragonborn walk
@@ -151,7 +151,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -160,7 +160,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "PROUD" ? "PROUD" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proud Dragon Kin
             </div>
             <div className="collapse-content">
@@ -186,7 +186,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -195,7 +195,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "CLANS" ? "CLANS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Self-Sufficient Clans
             </div>
             <div className="collapse-content">
@@ -228,7 +228,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -237,7 +237,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "NAMES" ? "NAMES" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Dragonborn Names{" "}
             </div>
             <div className="collapse-content">
@@ -275,7 +275,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -286,7 +286,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Dragon Breath
             </div>
             <div className="collapse-content">
@@ -472,7 +472,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
           {/* table end */}
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs  my-4"
+              className="w-full max-w-xs my-4 select select-primary"
               value={dragonType}
               onChange={(e) => setDragonType(e.target.value)}
             >
@@ -490,7 +490,7 @@ export default function ModalDragonBorn({ race, setRace }: SetRaceProps) {
             </select>
 
             <button
-              className="btn btn-success btn-wide my-4"
+              className="my-4 btn btn-success btn-wide"
               onClick={raceDragonBorn}
             >
               Select Dragonborn

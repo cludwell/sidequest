@@ -56,10 +56,10 @@ export default function EquipCleric({
     <>
       <form className="flex flex-col items-center">
         {/* Armor Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Armor Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Armor Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Chain Mail</label>
+            <label className="text-xl label almendra">Chain Mail</label>
             <input
               type="radio"
               name="armor-choice"
@@ -69,7 +69,7 @@ export default function EquipCleric({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Scale Mail</label>
+            <label className="text-xl label almendra">Scale Mail</label>
             <input
               type="radio"
               name="armor-choice"
@@ -80,10 +80,10 @@ export default function EquipCleric({
           </div>
         </div>
         {/* Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 1</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 1</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Mace (1d6 bludgeoning)
             </label>
             <input
@@ -95,7 +95,7 @@ export default function EquipCleric({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Warhammer (1d8 versatile)
             </label>
             <input
@@ -108,10 +108,10 @@ export default function EquipCleric({
           </div>
         </div>
         {/* Crossbow & Bolts Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 2</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 2</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Light Crossbow & 20 Bolts
               <ToolTip
                 tip="A two-handed ranged weapon that uses bolts as ammunition."
@@ -130,7 +130,7 @@ export default function EquipCleric({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Any Simple Weapon
               <ToolTip
                 tip="Choose any simple weapon from the equipment list."
@@ -150,7 +150,7 @@ export default function EquipCleric({
           {selection && (
             <>
               <select
-                className="select select-success w-full max-w-xs"
+                className="w-full max-w-xs select select-success"
                 onChange={(e) => setWeapon2(e.target.value)}
               >
                 <option disabled selected>
@@ -169,10 +169,10 @@ export default function EquipCleric({
           )}
         </div>
 
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Priest's Pack
               <ToolTip
                 tip="Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin."
@@ -188,7 +188,7 @@ export default function EquipCleric({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -205,9 +205,9 @@ export default function EquipCleric({
           </div>
         </div>
         {/* Always Selected: Shield */}
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Shield</label>
+            <label className="text-xl label almendra">Shield</label>
             <input
               type="radio"
               name="shield"
@@ -217,11 +217,11 @@ export default function EquipCleric({
             />
           </div>
         </div>
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-col items-center justify-between">
-            <label className="label text-xl almendra w-80">Holy Symbol</label>
+            <label className="text-xl label almendra w-80">Holy Symbol</label>
             <select
-              className="select select-success w-full max-w-xs"
+              className="w-full max-w-xs select select-success"
               onChange={(e) => setSymbol(e.target.value)}
             >
               <option disabled selected>
@@ -243,14 +243,14 @@ export default function EquipCleric({
         )}
       </form>
 
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

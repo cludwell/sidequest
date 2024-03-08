@@ -38,10 +38,10 @@ export default function EquipRogue({
     <>
       <form className="flex flex-col items-center">
         {/* Primary Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 1</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 1</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Shortsword (1d6)</label>
+            <label className="text-xl label almendra">Shortsword (1d6)</label>
             <input
               type="radio"
               name="weapon-choice1"
@@ -52,7 +52,7 @@ export default function EquipRogue({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Shortbow & 20 Arrows (1d6)
             </label>
             <input
@@ -65,10 +65,10 @@ export default function EquipRogue({
           </div>
         </div>
         {/* Secondary Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 2</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 2</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Shortsword (1d6)</label>
+            <label className="text-xl label almendra">Shortsword (1d6)</label>
             <input
               type="radio"
               name="weapon-choice2"
@@ -79,7 +79,7 @@ export default function EquipRogue({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Rapier (1d8 finesse)
             </label>
             <input
@@ -92,10 +92,10 @@ export default function EquipRogue({
           </div>
         </div>
         {/* Pack Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Dungeoneer's Pack
               <ToolTip
                 tip="Includes a backpack, a crowbar, a hammer, 10 pitons, 10 torches, a tinderbox, 10 days of rations, and a waterskin."
@@ -112,7 +112,7 @@ export default function EquipRogue({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -128,7 +128,7 @@ export default function EquipRogue({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Burglar's Pack
               <ToolTip
                 tip="Includes a backpack, a bag of 1,000 ball bearings, 10 feet of string, a bell, 5 candles, a crowbar, a hammer, 10 pitons, a hooded lantern, 2 flasks of oil, 5 days rations, a tinderbox, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it."
@@ -144,9 +144,9 @@ export default function EquipRogue({
             />
           </div>
         </div>
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Leather Armor</label>
+            <label className="text-xl label almendra">Leather Armor</label>
             <input
               type="radio"
               name="armor-choice"
@@ -158,14 +158,14 @@ export default function EquipRogue({
         </div>
       </form>
 
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

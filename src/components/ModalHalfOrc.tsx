@@ -34,13 +34,13 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_19.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={halfOrc}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -51,7 +51,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_19" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Half Orc
           </h3>
           <Image
@@ -59,11 +59,11 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
           {/* Description Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -76,7 +76,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="halfOrcDescription"
             >
               Description
@@ -120,7 +120,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
           </div>
 
           {/* Personality Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -133,7 +133,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="halfOrcPersonality"
             >
               Personality
@@ -164,7 +164,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
           </div>
 
           {/* Abilities Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -177,7 +177,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="halfOrcAbilities"
             >
               Abilities
@@ -203,7 +203,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -212,7 +212,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "CULTURE" ? "CULTURE" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Culture</div>
+            <div className="text-xl font-medium collapse-title">Culture</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Half-orcs had no home to truly call their own in most places,
@@ -234,7 +234,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -243,7 +243,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Religion</div>
+            <div className="text-xl font-medium collapse-title">Religion</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Half-orcs who lived among orcs commonly worshiped the orc
@@ -254,7 +254,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -265,7 +265,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Homelands</div>
+            <div className="text-xl font-medium collapse-title">Homelands</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Half-orcs had no true homeland, with exceptions like Palischuk
@@ -276,7 +276,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -287,7 +287,7 @@ export default function ModalHalfOrc({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Relations with other races
             </div>
             <div className="collapse-content">

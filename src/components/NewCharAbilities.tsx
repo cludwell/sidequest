@@ -149,8 +149,8 @@ export default function NewCharAbilities({
   };
 
   return (
-    <div className="flex flex-col max-w-screen-xl w-full content-center">
-      <h1 className="text-4xl almendra mb-8 text-center">Ability Scores</h1>
+    <div className="flex flex-col content-center w-full max-w-screen-xl">
+      <h1 className="mb-8 text-4xl text-center almendra">Ability Scores</h1>
 
       <div className="flex flex-col items-center">
         <label className="text-2xl almendra w-80">
@@ -162,7 +162,7 @@ export default function NewCharAbilities({
         </label>
 
         <select
-          className="select select-primary w-full max-w-xs"
+          className="w-full max-w-xs select select-primary"
           value={array}
           onChange={(e) => setArray(e.target.value)}
         >
@@ -174,13 +174,13 @@ export default function NewCharAbilities({
         <div className="flex flex-col items-center">
           <div>
             <button
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+              className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
               onClick={rollDice}
             >
               Roll Random Array
             </button>
           </div>
-          <div className="overflow-x-auto max-w-md rounded-b-2xl">
+          <div className="max-w-md overflow-x-auto rounded-b-2xl">
             <table className="table table-zebra bg-base-100">
               {/* head */}
               <thead>
@@ -198,10 +198,10 @@ export default function NewCharAbilities({
                       <tr>
                         <th>{i + 1}</th>
                         <td key={`row${i}`} className="flex flex-row">
-                          <kbd className="kbd mx-1  bg-slate-300">{e[0]}</kbd>
-                          <kbd className="kbd mx-1 ">{e[1]}</kbd>
-                          <kbd className="kbd mx-1 ">{e[2]}</kbd>
-                          <kbd className="kbd mx-1">{e[3]}</kbd>
+                          <kbd className="mx-1 kbd bg-slate-300">{e[0]}</kbd>
+                          <kbd className="mx-1 kbd ">{e[1]}</kbd>
+                          <kbd className="mx-1 kbd ">{e[2]}</kbd>
+                          <kbd className="mx-1 kbd">{e[3]}</kbd>
                         </td>
                         <td>
                           {e.slice(1).reduce((acc, next) => (acc += next), 0)}
@@ -216,7 +216,7 @@ export default function NewCharAbilities({
       )}
       <div className="flex flex-row flex-wrap justify-center">
         <div id="str-select" className="m-4 w-30">
-          <h3 className="font-bold text-md flex flex-row">
+          <h3 className="flex flex-row font-bold text-md">
             Strength{" "}
             <ToolTip
               tip="Strength measures a characters ability to exert physical force. A character with high Strength can lift heavier objects, carry more gear without being overloaded, break things with brute strength, shove and grapple creatures more effectively, and is more accurate and more effective with melee weapons."
@@ -224,7 +224,7 @@ export default function NewCharAbilities({
             />
           </h3>
           <select
-            className="select select-primary w-full max-w-xs"
+            className="w-full max-w-xs select select-primary"
             value={str}
             onChange={(e) => setStr(e.target.value)}
           >
@@ -252,7 +252,7 @@ export default function NewCharAbilities({
           </select>
         </div>
         <div id="dex-select" className="m-4 w-30">
-          <h3 className="font-bold text-md flex flex-row">
+          <h3 className="flex flex-row font-bold text-md">
             Dexterity{" "}
             <ToolTip
               tip="Dexterity measures a character's nimbleness, their agility, and their fine motor skills. A character with high Dexterity is able to avoid attacks in combat, evade area effects like dragon's breath and explosions, move stealthily, perform feats of acrobatics, pick locks, and use both light, nimble melee weapons like daggers and rapiers and ranged weapons like bows and crossbows more effectively."
@@ -260,7 +260,7 @@ export default function NewCharAbilities({
             />
           </h3>
           <select
-            className="select select-accent w-full max-w-xs"
+            className="w-full max-w-xs select select-accent"
             value={dex}
             onChange={(e) => setDex(e.target.value)}
           >
@@ -289,7 +289,7 @@ export default function NewCharAbilities({
           </select>
         </div>
         <div id="con-select" className="m-4 w-30">
-          <h3 className="font-bold text-md flex flex-row">
+          <h3 className="flex flex-row font-bold text-md">
             Constitution
             <ToolTip
               tip="Constitution describes a character's physical fortitude; their ability to endure pain, to take damage without falling unconscious, to resist the effects of poison, disease, and other physical maladies, to hold your breath, to travel long distances without rest, and to go without sleep for extended periods."
@@ -297,7 +297,7 @@ export default function NewCharAbilities({
             />
           </h3>
           <select
-            className="select select-info w-full max-w-xs"
+            className="w-full max-w-xs select select-info"
             value={con}
             onChange={(e) => setCon(e.target.value)}
           >
@@ -325,7 +325,7 @@ export default function NewCharAbilities({
           </select>
         </div>
         <div id="int-select" className="m-4 w-30">
-          <h3 className="font-bold text-md flex flex-row">
+          <h3 className="flex flex-row font-bold text-md">
             Intelligence{" "}
             <ToolTip
               tip="Intelligence measures a character's analytical ability, their memory, and their ability to reason logically. A character with high Intelligence knows many facts and pieces of trivia, can estimate the value of items, can communicate nonverbally, and they are often good at puzzles, games of skill, researching, investigation, forgery, and investigation."
@@ -333,7 +333,7 @@ export default function NewCharAbilities({
             />
           </h3>
           <select
-            className="select select-success w-full max-w-xs"
+            className="w-full max-w-xs select select-success"
             value={int}
             onChange={(e) => setInt(e.target.value)}
           >
@@ -361,7 +361,7 @@ export default function NewCharAbilities({
           </select>
         </div>
         <div id="wis-select" className="m-4 w-30">
-          <h3 className="font-bold text-md flex flex-row">
+          <h3 className="flex flex-row font-bold text-md">
             Wisdom
             <ToolTip
               tip="Wisdom measures a character's practical intelligence, their cleverness, their perceptiveness, and how in tune they are with the world around them. Characters with high Wisdom are perceptive, observant, and sensible. They are able to handle animals, notice subtle details about creature's motives and about the world around them, and to make decisions when the right choice isn't clear."
@@ -369,7 +369,7 @@ export default function NewCharAbilities({
             />
           </h3>
           <select
-            className="select select-success w-full max-w-xs"
+            className="w-full max-w-xs select select-success"
             value={wis}
             onChange={(e) => setWis(e.target.value)}
           >
@@ -397,7 +397,7 @@ export default function NewCharAbilities({
           </select>
         </div>
         <div id="cha-select" className="m-4 w-30">
-          <h3 className="font-bold text-md flex flex-row">
+          <h3 className="flex flex-row font-bold text-md">
             Charisma
             <ToolTip
               tip="Charisma measures a character's charm and eloquence, their force of personality, their self-confidence, and their ability to interact with other creatures. Characters with high Charisma are charming, well-liked, and are often natural leaders. These characters are able to make friends, talk their way out of trouble, negotiate, and otherwise get by on talk."
@@ -405,7 +405,7 @@ export default function NewCharAbilities({
             />
           </h3>
           <select
-            className="select select-warning w-full max-w-xs"
+            className="w-full max-w-xs select select-warning"
             value={cha}
             onChange={(e) => setCha(e.target.value)}
           >
@@ -441,7 +441,7 @@ export default function NewCharAbilities({
       cha !== "--" &&
       dndClass &&
       dndClass?.role ? (
-        <div className="flex flex-col items-center  ">
+        <div className="flex flex-col items-center ">
           <div className="rounded-b-2xl ">
             <h2 className="text-3xl almendra">
               Skills
@@ -472,7 +472,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[str] > 0
                         ? "+" + modifiers[str]
                         : modifiers[str]}
@@ -498,7 +498,7 @@ export default function NewCharAbilities({
                             Athletics: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-primary w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-primary"
                       />
                     )}
                   </td>
@@ -513,7 +513,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[dex] > 0
                         ? "+" + modifiers[dex]
                         : modifiers[dex]}
@@ -539,7 +539,7 @@ export default function NewCharAbilities({
                             Acrobatics: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-secondary w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-secondary"
                       />
                     )}
                   </td>
@@ -554,7 +554,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[dex] > 0
                         ? "+" + modifiers[dex]
                         : modifiers[dex]}
@@ -580,7 +580,7 @@ export default function NewCharAbilities({
                             SleightOfHand: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-success w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-success"
                       />
                     )}
                   </td>
@@ -595,7 +595,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[dex] > 0
                         ? "+" + modifiers[dex]
                         : modifiers[dex]}
@@ -621,7 +621,7 @@ export default function NewCharAbilities({
                             Stealth: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-success w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-success"
                       />
                     )}
                   </td>
@@ -636,7 +636,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[int] > 0
                         ? "+" + modifiers[int]
                         : modifiers[int]}
@@ -662,7 +662,7 @@ export default function NewCharAbilities({
                             Arcana: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-warning w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-warning"
                       />
                     )}
                   </td>
@@ -677,7 +677,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[int] > 0
                         ? "+" + modifiers[int]
                         : modifiers[int]}
@@ -703,7 +703,7 @@ export default function NewCharAbilities({
                             History: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-info w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-info"
                       />
                     )}
                   </td>
@@ -718,7 +718,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[int] > 0
                         ? "+" + modifiers[int]
                         : modifiers[int]}
@@ -744,7 +744,7 @@ export default function NewCharAbilities({
                             Investigation: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-error w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-error"
                       />
                     )}
                   </td>
@@ -759,7 +759,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[int] > 0
                         ? "+" + modifiers[int]
                         : modifiers[int]}
@@ -785,7 +785,7 @@ export default function NewCharAbilities({
                             Nature: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-primary w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-primary"
                       />
                     )}
                   </td>
@@ -800,7 +800,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[int] > 0
                         ? "+" + modifiers[int]
                         : modifiers[int]}
@@ -826,7 +826,7 @@ export default function NewCharAbilities({
                             Religion: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-secondary w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-secondary"
                       />
                     )}
                   </td>
@@ -842,7 +842,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[wis] > 0
                         ? "+" + modifiers[wis]
                         : modifiers[wis]}
@@ -868,7 +868,7 @@ export default function NewCharAbilities({
                             AnimalHandling: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-accent w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-accent"
                       />
                     )}
                   </td>
@@ -883,7 +883,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[wis] > 0
                         ? "+" + modifiers[wis]
                         : modifiers[wis]}
@@ -909,7 +909,7 @@ export default function NewCharAbilities({
                             Insight: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-success w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-success"
                       />
                     )}
                   </td>
@@ -924,7 +924,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[wis] > 0
                         ? "+" + modifiers[wis]
                         : modifiers[wis]}
@@ -950,7 +950,7 @@ export default function NewCharAbilities({
                             Medicine: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-warning w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-warning"
                       />
                     )}
                   </td>
@@ -965,7 +965,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[wis] > 0
                         ? "+" + modifiers[wis]
                         : modifiers[wis]}
@@ -991,7 +991,7 @@ export default function NewCharAbilities({
                             Perception: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-info w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-info"
                       />
                     )}
                   </td>
@@ -1006,7 +1006,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[wis] > 0
                         ? "+" + modifiers[wis]
                         : modifiers[wis]}
@@ -1032,7 +1032,7 @@ export default function NewCharAbilities({
                             Survival: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-error w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-error"
                       />
                     )}
                   </td>
@@ -1047,7 +1047,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[cha] > 0
                         ? "+" + modifiers[cha]
                         : modifiers[cha]}
@@ -1073,7 +1073,7 @@ export default function NewCharAbilities({
                             Deception: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-primary w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-primary"
                       />
                     )}
                   </td>
@@ -1088,7 +1088,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[cha] > 0
                         ? "+" + modifiers[cha]
                         : modifiers[cha]}
@@ -1114,7 +1114,7 @@ export default function NewCharAbilities({
                             Intimidation: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-secondary w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-secondary"
                       />
                     )}
                   </td>
@@ -1129,7 +1129,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[cha] > 0
                         ? "+" + modifiers[cha]
                         : modifiers[cha]}
@@ -1155,7 +1155,7 @@ export default function NewCharAbilities({
                             Performance: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-accent w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-accent"
                       />
                     )}
                   </td>
@@ -1170,7 +1170,7 @@ export default function NewCharAbilities({
                     />
                   </td>
                   <td>
-                    <kbd className="kbd mx-1 ">
+                    <kbd className="mx-1 kbd ">
                       {modifiers[cha] > 0
                         ? "+" + modifiers[cha]
                         : modifiers[cha]}
@@ -1196,7 +1196,7 @@ export default function NewCharAbilities({
                             Persuasion: Number(e.target.value),
                           }))
                         }
-                        className="input input-bordered input-success w-full max-w-xs"
+                        className="w-full max-w-xs input input-bordered input-success"
                       />
                     )}
                   </td>
@@ -1206,24 +1206,24 @@ export default function NewCharAbilities({
           </div>
         </div>
       ) : dndClass && !dndClass.role ? (
-        <h1 className="almendra text-lg text-center">
+        <h1 className="text-lg text-center almendra">
           Please select a class to assign skill proficiencies.
         </h1>
       ) : (
-        <h1 className="almendra text-lg text-center">
+        <h1 className="text-lg text-center almendra">
           Please assign ability scores and select a class to assign skill
           proficiencies.
         </h1>
       )}
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-primary m-8"
+          className="m-8 btn btn-primary"
           onClick={confirmAssignment}
         >
           Confirm
         </button>
         <button
-          className="btn btn-secondary m-8"
+          className="m-8 btn btn-secondary"
           onClick={() => (window.location.hash = "#item4")}
         >
           Next Step

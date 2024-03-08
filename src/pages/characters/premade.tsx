@@ -37,13 +37,13 @@ export default function PremadeCharacters() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
-      <h1 className="text-3xl federant font-bold">Pre-made Characters</h1>
+    <main className="flex flex-col items-center min-h-screen px-16 fade-in-slide-in">
+      <h1 className="text-3xl font-bold federant">Pre-made Characters</h1>
       <div className="divider" />
       <div className="flex flex-wrap justify-center">
         {Object.values(usercharacters).map((char, i) => (
           <div
-            className="card card-compact bg-base-100 shadow-xl m-4 w-72 sm:w-96"
+            className="m-4 shadow-xl card card-compact bg-base-100 w-72 sm:w-96"
             key={`char${i}`}
           >
             {char.imgUrl && (
@@ -57,12 +57,12 @@ export default function PremadeCharacters() {
                 />
               </figure>
             )}
-            <div className="card-body p-4">
+            <div className="p-4 card-body">
               <h2 className="card-title">{char.name}</h2>
-              <p className="text-ellipsis text-xs">{char.background}</p>
+              <p className="text-xs text-ellipsis">{char.background}</p>
             </div>
             <button
-              className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end"
+              className="flex justify-end rounded-t-none btn btn-primary rounded-b-2xl"
               onClick={() => onClickSelect(char)}
             >
               START ADVENTURE

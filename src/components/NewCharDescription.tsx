@@ -111,12 +111,12 @@ export default function NewCharDescription({
     "Chaotic Evil",
   ];
   return (
-    <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-4 text-center">Description</h1>
+    <div className="flex flex-col w-full max-w-screen-xl">
+      <h1 className="mb-4 text-4xl text-center almendra">Description</h1>
 
       <form className="flex flex-col items-center">
         <div>
-          <label className="label text-xl almendra items-start">Name</label>
+          <label className="items-start text-xl label almendra">Name</label>
           <input
             type="text"
             placeholder="Formal, religious, or street name"
@@ -126,7 +126,7 @@ export default function NewCharDescription({
           />
         </div>
         <div>
-          <label className="label text-xl almendra">
+          <label className="text-xl label almendra">
             Level
             <ToolTip
               tip="All players start at level 1. Option to choose higher level coming soon."
@@ -142,7 +142,7 @@ export default function NewCharDescription({
           </select>
         </div>
         <div>
-          <label className="label text-xl almendra">
+          <label className="text-xl label almendra">
             Alignment
             <ToolTip
               tip="D&D alignments serve as a general description of a creature's moral beliefs and attitudes. They're a set of basic rules which loosely determine how a character will interact with their environment, and with other people."
@@ -162,10 +162,10 @@ export default function NewCharDescription({
           </select>
         </div>
         <div>
-          <label className="label text-xl almendra">Appearance (text)</label>
+          <label className="text-xl label almendra">Appearance (text)</label>
           <textarea
             placeholder="What a passerby notice?"
-            className="textarea textarea-bordered textarea-accent w-80 h-40"
+            className="h-40 textarea textarea-bordered textarea-accent w-80"
             value={appearance}
             onChange={(e) => setAppearance(e.target.value)}
           />
@@ -173,7 +173,7 @@ export default function NewCharDescription({
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text text-xl almendra">Your bio</span>
+            <span className="text-xl label-text almendra">Your bio</span>
           </label>
           <textarea
             className="textarea textarea-bordered textarea-warning w-80 h-80"
@@ -183,7 +183,7 @@ export default function NewCharDescription({
           />
         </div>
         <div className="my-4">
-          <label className="label text-xl almendra ">
+          <label className="text-xl label almendra ">
             Faith{" "}
             <ToolTip
               tip="Choose a faith that matches your alignment in one capacity for best experience. See 'Faiths' drop down for more information about gods, their domains, and holy symbols."
@@ -191,7 +191,7 @@ export default function NewCharDescription({
             />
           </label>
           <select
-            className="select select-error w-full max-w-xs"
+            className="w-full max-w-xs select select-error"
             value={faith}
             onChange={(e) => setFaith(e.target.value)}
           >
@@ -206,8 +206,8 @@ export default function NewCharDescription({
               ))}
           </select>
         </div>
-        <div className="w-80 my-4">
-          <label className="label text-xl almendra">
+        <div className="my-4 w-80">
+          <label className="text-xl label almendra">
             Portrait
             <ToolTip
               tip="AWS image uploads coming soon, please use a hosting site like imgur in the meantime"
@@ -216,7 +216,7 @@ export default function NewCharDescription({
           </label>
 
           <select
-            className="select select-error w-full my-4 max-w-xs"
+            className="w-full max-w-xs my-4 select select-error"
             value={imgSource}
             onChange={(e) => setImgSource(e.target.value)}
           >
@@ -226,7 +226,7 @@ export default function NewCharDescription({
             <option value={"Use URL"}>Use URL</option>
           </select>
           {imgSource == "Generate" ? (
-            <button className="btn btn-accent w-full" onClick={chatGPTImage}>
+            <button className="w-full btn btn-accent" onClick={chatGPTImage}>
               Generate Portrait
             </button>
           ) : (
@@ -244,19 +244,19 @@ export default function NewCharDescription({
               width={800}
               src={imgUrl}
               alt="character preview"
-              className="rounded-2xl aspect-square object-cover my-4"
+              className="object-cover my-4 rounded-2xl aspect-square"
             />
           ) : (
             <Loading />
           )}
         </div>
         <FaithTable deities={deities as Deity[]} />
-        <div className="flex flex-col md:flex-row max-w-screen-xl w-full justify-center">
-          <button className="btn btn-primary m-4" onClick={confirmDescription}>
+        <div className="flex flex-col justify-center w-full max-w-screen-xl md:flex-row">
+          <button className="m-4 btn btn-primary" onClick={confirmDescription}>
             Confirm Description
           </button>
           <button
-            className="btn  btn-secondary m-4"
+            className="m-4 btn btn-secondary"
             onClick={() => (window.location.hash = "#item5")}
           >
             Next Step

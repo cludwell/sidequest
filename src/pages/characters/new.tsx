@@ -63,14 +63,14 @@ export default function NewCharacter() {
 
   if (!user)
     return (
-      <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
-        <h1 className="almendra text-2xl m-8">
+      <main className="flex flex-col items-center min-h-screen px-4 md:px-16 fade-in-slide-in">
+        <h1 className="m-8 text-2xl almendra">
           Please sign in or use the demo-user to create a character.
         </h1>
       </main>
     );
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
+    <main className="flex flex-col items-center min-h-screen px-4 md:px-16 fade-in-slide-in">
       {race.race &&
       !!Object.values(description).length &&
       !!Object.values(abilities).length &&
@@ -79,11 +79,11 @@ export default function NewCharacter() {
       user &&
       user.id ? (
         <div
-          className="flex flex-row max-w-screen-xl w-full justify-center"
+          className="flex flex-row justify-center w-full max-w-screen-xl"
           id="submit"
         >
           <button
-            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
+            className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success btn-wide"
             onClick={submitCharacter}
           >
             Submit Character
@@ -99,7 +99,7 @@ export default function NewCharacter() {
           Must be signed in to submit character
         </h1>
       ) : null}
-      <ul className="steps steps-horizontal mb-4 overflow-clip">
+      <ul className="mb-4 steps steps-horizontal overflow-clip">
         <li className={race.race ? "step step-primary" : "step"}>
           {" "}
           <a href="#item1" className="btn btn-xs">
@@ -142,21 +142,21 @@ export default function NewCharacter() {
         </li>
       </ul>
 
-      <div className="carousel max-w-screen-xl w-full">
-        <div id="item1" className="carousel-item w-full mx-8">
+      <div className="w-full max-w-screen-xl carousel">
+        <div id="item1" className="w-full mx-8 carousel-item">
           <NewCharacterRace race={race} setRace={setRace} />
         </div>
-        <div id="item2" className="carousel-item w-full mx-8 ">
+        <div id="item2" className="w-full mx-8 carousel-item ">
           <NewCharacterClass dndClass={dndClass} setDndClass={setDndClass} />
         </div>
-        <div id="item3" className="carousel-item w-full mx-8">
+        <div id="item3" className="w-full mx-8 carousel-item">
           <NewCharAbilities
             abilities={abilities}
             setAbilities={setAbilities}
             dndClass={dndClass}
           />
         </div>
-        <div id="item4" className="carousel-item w-full mx-8">
+        <div id="item4" className="w-full mx-8 carousel-item">
           <NewCharDescription
             race={race}
             dndClass={dndClass}
@@ -164,7 +164,7 @@ export default function NewCharacter() {
             setDescription={setDescription}
           />{" "}
         </div>
-        <div id="item5" className="carousel-item w-full mx-8">
+        <div id="item5" className="w-full mx-8 carousel-item">
           <NewCharEquipment
             race={race}
             dndClass={dndClass}
@@ -180,16 +180,16 @@ export default function NewCharacter() {
         dndClass.role &&
         user &&
         user.id && (
-          <div className="flex flex-row max-w-screen-xl w-full justify-center">
+          <div className="flex flex-row justify-center w-full max-w-screen-xl">
             <button
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success m-8 btn-wide"
+              className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success btn-wide"
               onClick={submitCharacter}
             >
               Submit Character
             </button>
           </div>
         )}
-      <div className="flex flex-row flex-wrap justify-center w-full py-2 gap-2">
+      <div className="flex flex-row flex-wrap justify-center w-full gap-2 py-2">
         <a href="#item1" className="btn btn-xs btn-outline">
           Race
         </a>

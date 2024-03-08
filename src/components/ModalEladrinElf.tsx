@@ -34,13 +34,13 @@ export default function ModalEladrinElf({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_10.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={eladrin}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -51,12 +51,12 @@ export default function ModalEladrinElf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_10" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Eladrin Elf
           </h3>
           <ElfInfo expand={expand} setExpanded={setExpanded} type={"eladrin"} />
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide m-4" onClick={raceEladrin}>
+            <button className="m-4 btn btn-success btn-wide" onClick={raceEladrin}>
               Select Eladrin Elf
             </button>
           </div>

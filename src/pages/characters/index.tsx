@@ -35,7 +35,7 @@ export default function CreateCharacter() {
       className={`flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in`}
     >
       {/* title */}
-      <h1 className="text-3xl federant font-bold">Character Creation Method</h1>
+      <h1 className="text-3xl font-bold federant">Character Creation Method</h1>
       <h2>Choose how you would like to create your character</h2>
       {/* divider */}
       <div className="flex flex-col w-full">
@@ -45,7 +45,7 @@ export default function CreateCharacter() {
       <div className="flex flex-row flex-wrap justify-evenly">
         {/* card to display character selections */}
         {/* removing card from class name allows drawer to behave correctly */}
-        <div className="card card-compact bg-base-100 shadow-xl m-4 w-64 sm:w-96">
+        <div className="w-64 m-4 shadow-xl card card-compact bg-base-100 sm:w-96">
           <figure>
             {characters[5].imgUrl && (
               <Image
@@ -53,7 +53,7 @@ export default function CreateCharacter() {
                 width={800}
                 src={characters[5].imgUrl}
                 alt="character preview"
-                className="rounded-t-2xl aspect-square object-cover"
+                className="object-cover rounded-t-2xl aspect-square"
               />
             )}
           </figure>
@@ -62,10 +62,10 @@ export default function CreateCharacter() {
             <p className="text-sm md:text-lg">
               Create a character using a step-by-step approach
             </p>
-            <div className="card-actions justify-end"></div>
+            <div className="justify-end card-actions"></div>
           </div>
           <button
-            className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end w-full"
+            className="flex justify-end w-full rounded-t-none btn btn-primary rounded-b-2xl"
             onClick={handleCreate}
           >
             START BUILDING
@@ -73,7 +73,7 @@ export default function CreateCharacter() {
           </button>
         </div>
 
-        <div className="card card-compact bg-base-100 shadow-xl m-4 w-64 sm:w-96">
+        <div className="w-64 m-4 shadow-xl card card-compact bg-base-100 sm:w-96">
           <figure>
             {characters[4].imgUrl && (
               <Image
@@ -81,7 +81,7 @@ export default function CreateCharacter() {
                 width={800}
                 src={characters[4].imgUrl}
                 alt="character preview"
-                className="rounded-t-2xl aspect-square object-cover"
+                className="object-cover rounded-t-2xl aspect-square"
               />
             )}
           </figure>
@@ -91,10 +91,10 @@ export default function CreateCharacter() {
               Browse a selection of ready-to-play, premade characters and claim
               one to your account.
             </p>
-            <div className="card-actions justify-end"></div>
+            <div className="justify-end card-actions"></div>
           </div>
           <button
-            className="btn btn-primary rounded-b-2xl rounded-t-none flex justify-end w-full"
+            className="flex justify-end w-full rounded-t-none btn btn-primary rounded-b-2xl"
             onClick={handlePremade}
           >
             START BROWSING

@@ -34,13 +34,13 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_17.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={human}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -51,7 +51,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_17" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Human
           </h3>
           <Image
@@ -59,10 +59,10 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -73,7 +73,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Details</div>
+            <div className="text-xl font-medium collapse-title">Details</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 In the reckonings of most worlds, humans are the youngest of the
@@ -89,7 +89,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -98,7 +98,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "SPECTRUM" ? "SPECTRUM" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               A Broad Spectrum
             </div>
             <div className="collapse-content">
@@ -117,7 +117,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -126,7 +126,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "VARIETY" ? "VARIETY" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Variety in All Things
             </div>
             <div className="collapse-content">
@@ -148,7 +148,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -159,7 +159,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Everyone's Second Best Friend
             </div>
             <div className="collapse-content">
@@ -195,7 +195,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -206,7 +206,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Lasting Institutions
             </div>
             <div className="collapse-content">
@@ -231,7 +231,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -240,7 +240,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "AMBITION" ? "AMBITION" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Exemplars of Ambition
             </div>
             <div className="collapse-content">
@@ -254,7 +254,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -267,7 +267,7 @@ export default function ModalHuman({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Human Names and Ethnicities
             </div>
             <div className="collapse-content">

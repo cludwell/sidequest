@@ -36,13 +36,13 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_warlock.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -53,7 +53,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_warlock" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -61,13 +61,13 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A wielder of magic that is derived from a bargain with an
             extraplanar entity
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -96,7 +96,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
           {/* Otherworldly Patron Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-otherworldly-patron"
@@ -107,9 +107,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Otherworldly Patron
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -124,7 +124,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-pact-magic"
@@ -135,9 +135,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Pact Magic
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -149,7 +149,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 warlock spell list.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Cantrips</h3>
+              <h3 className="my-2 text-xl underline">Cantrips</h3>
               <p>
                 You know two cantrips of your choice from the warlock spell
                 list. You learn additional warlock cantrips of your choice at
@@ -157,7 +157,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 Warlock table.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Spell Slots</h3>
+              <h3 className="my-2 text-xl underline">Spell Slots</h3>
               <p>
                 The Warlock table shows how many spell slots you have to cast
                 your warlock spells of 1st through 5th level. The table also
@@ -168,7 +168,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 rest.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">
+              <h3 className="my-2 text-xl underline">
                 Spells Known of 1st Level and Higher
               </h3>
               <p>
@@ -181,7 +181,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 new warlock spell, which can be 1st, 2nd, or 3rd level.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Spellcasting Ability</h3>
+              <h3 className="my-2 text-xl underline">Spellcasting Ability</h3>
               <p>
                 Charisma is your spellcasting ability for your warlock spells,
                 so you use your Charisma whenever a spell refers to your
@@ -190,7 +190,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 you cast and when making an attack roll with one.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Spellcasting Focus</h3>
+              <h3 className="my-2 text-xl underline">Spellcasting Focus</h3>
               <p>
                 You can use an arcane focus (see the Adventuring Gear section)
                 as a spellcasting focus for your warlock spells.
@@ -198,7 +198,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-eldritch-invocations"
@@ -211,9 +211,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Eldritch Invocations
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -224,7 +224,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 with an abiding magical ability.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">
+              <h3 className="my-2 text-xl underline">
                 Eldritch Invocations Knowledge
               </h3>
               <p>
@@ -235,14 +235,14 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 Invocations Known column of the Warlock table.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Invocation Replacement</h3>
+              <h3 className="my-2 text-xl underline">Invocation Replacement</h3>
               <p>
                 Additionally, when you gain a level in this class, you can
                 choose one of the invocations you know and replace it with
                 another invocation that you could learn at that level.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">
+              <h3 className="my-2 text-xl underline">
                 Prerequisites for Invocations
               </h3>
               <p>
@@ -254,7 +254,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-pact-boon"
@@ -265,9 +265,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Pact Boon
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -280,7 +280,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-mystic-arcanum"
@@ -291,9 +291,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Mystic Arcanum (6th level)
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 11th Level
               </span>
             </div>
@@ -319,7 +319,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-eldritch-master"
@@ -330,9 +330,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Eldritch Master
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -348,7 +348,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -359,9 +359,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Mystic Arcanum
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 11th, 13th, 15th, 17th Level
               </span>
             </div>
@@ -430,7 +430,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
 
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
           {/* Proficiencies Section */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -441,9 +441,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -485,7 +485,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Section */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hitpoints"
@@ -496,9 +496,9 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -533,7 +533,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-primary"
               onChange={(e) => setCant1(e.target.value)}
               value={cant1}
             >
@@ -546,7 +546,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setCant2(e.target.value)}
               value={cant2}
             >
@@ -559,7 +559,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-warning w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-warning"
               onChange={(e) => setSpell1(e.target.value)}
               value={spell1}
             >
@@ -571,7 +571,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell2(e.target.value)}
               value={spell2}
             >
@@ -583,7 +583,7 @@ export default function Warlock({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeWarlock}
             >
               Warlock

@@ -16,10 +16,10 @@ export default function GnomeInfo({
         alt="detail image"
         width={800}
         height={800}
-        className="rounded-xl aspect-square object-cover"
+        className="object-cover rounded-xl aspect-square"
       />
       <p className="py-4"></p>
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="gnome-details-accordion"
@@ -30,7 +30,7 @@ export default function GnomeInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Vibrant Expression
         </div>
         <div className="collapse-content">
@@ -55,7 +55,7 @@ export default function GnomeInfo({
         </div>
       </div>
       {/* Delighted Dedication */}
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="gnome-details-accordion"
@@ -66,7 +66,7 @@ export default function GnomeInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Delighted Dedication
         </div>
         <div className="collapse-content">
@@ -100,7 +100,7 @@ export default function GnomeInfo({
       </div>
 
       {/* Bright Burrows */}
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="gnome-details-accordion"
@@ -111,7 +111,7 @@ export default function GnomeInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">Bright Burrows</div>
+        <div className="text-xl font-medium collapse-title">Bright Burrows</div>
         <div className="collapse-content">
           <p className="text-sm sm:text-base">
             Gnomes make their homes in hilly, wooded lands. They live
@@ -137,7 +137,7 @@ export default function GnomeInfo({
 
       {type === "rock" ? (
         <>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="gnome-details-accordion"
@@ -146,7 +146,7 @@ export default function GnomeInfo({
                 setExpanded((prev) => (prev !== "TINKER" ? "TINKER" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Tinker</div>
+            <div className="text-xl font-medium collapse-title">Tinker</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 You have proficiency with artisan's tools (tinker's tools).
@@ -185,7 +185,7 @@ export default function GnomeInfo({
               </ul>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -196,7 +196,7 @@ export default function GnomeInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Personality
             </div>
             <div className="collapse-content">
@@ -222,7 +222,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -231,7 +231,7 @@ export default function GnomeInfo({
                 setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Society</div>
+            <div className="text-xl font-medium collapse-title">Society</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Rock gnomes gathered in small towns, rarely reaching 500 adults.
@@ -263,7 +263,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -272,7 +272,7 @@ export default function GnomeInfo({
                 setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Religion</div>
+            <div className="text-xl font-medium collapse-title">Religion</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Rock gnomes typically possessed a nonchalant reverence of their
@@ -293,7 +293,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -304,7 +304,7 @@ export default function GnomeInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Relations with other races
             </div>
             <div className="collapse-content">
@@ -321,7 +321,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -332,7 +332,7 @@ export default function GnomeInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Homelands</div>
+            <div className="text-xl font-medium collapse-title">Homelands</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Rock gnomes roamed the lands of Faerûn far and wide, using their
@@ -356,7 +356,7 @@ export default function GnomeInfo({
         </>
       ) : (
         <>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -367,7 +367,7 @@ export default function GnomeInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Psychology</div>
+            <div className="text-xl font-medium collapse-title">Psychology</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Deep gnomes were a surly and cynical people who fatalistically
@@ -412,7 +412,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -423,7 +423,7 @@ export default function GnomeInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Abilities</div>
+            <div className="text-xl font-medium collapse-title">Abilities</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Deep gnome were better adapted for underground living than
@@ -440,7 +440,7 @@ export default function GnomeInfo({
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -449,7 +449,7 @@ export default function GnomeInfo({
                 setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Society</div>
+            <div className="text-xl font-medium collapse-title">Society</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 The harsh conditions of life in the Underdark shaped gnome
@@ -500,7 +500,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -509,7 +509,7 @@ export default function GnomeInfo({
                 setExpanded((prev) => (prev !== "CULTURE" ? "CULTURE" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Culture</div>
+            <div className="text-xl font-medium collapse-title">Culture</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Deep gnome culture was largely defined by the environment in
@@ -572,7 +572,7 @@ export default function GnomeInfo({
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -583,7 +583,7 @@ export default function GnomeInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Art & Leisure
             </div>
             <div className="collapse-content">
@@ -643,7 +643,7 @@ export default function GnomeInfo({
         </>
       )}
       <div className="overflow-x-auto">
-        <table className="table table-zebra my-4">
+        <table className="table my-4 table-zebra">
           {/* head */}
           <thead>
             <tr>

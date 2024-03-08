@@ -20,12 +20,12 @@ export default function ElfInfo({
         alt="detail image"
         width={800}
         height={800}
-        className="rounded-xl aspect-square object-cover"
+        className="object-cover rounded-xl aspect-square"
       />
       <p className="py-4"></p>
 
       {type === "eladrin" ? (
-        <div className="collapse collapse-plus bg-base-200 my-1">
+        <div className="my-1 collapse collapse-plus bg-base-200">
           <input
             type="checkbox"
             name="my-accordion-3"
@@ -36,7 +36,7 @@ export default function ElfInfo({
               )
             }
           />
-          <div className="collapse-title text-xl font-medium">
+          <div className="text-xl font-medium collapse-title">
             Eladrin (Variant)
           </div>
           <div className="collapse-content">
@@ -60,7 +60,7 @@ export default function ElfInfo({
         </div>
       ) : type === "high" ? (
         <>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-4"
@@ -69,7 +69,7 @@ export default function ElfInfo({
                 setExpanded((prev) => (prev !== "HIGH_ELF" ? "HIGH_ELF" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">High Elf</div>
+            <div className="text-xl font-medium collapse-title">High Elf</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Elves are a magical people of otherworldly grace, living in the
@@ -101,7 +101,7 @@ export default function ElfInfo({
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-4"
@@ -112,7 +112,7 @@ export default function ElfInfo({
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Extra Cantrip
             </div>
             <div className="collapse-content">
@@ -156,7 +156,7 @@ export default function ElfInfo({
           </div>
         </>
       ) : (
-        <div className="collapse collapse-plus bg-base-200 my-1">
+        <div className="my-1 collapse collapse-plus bg-base-200">
           <input
             type="checkbox"
             name="my-accordion-5"
@@ -165,7 +165,7 @@ export default function ElfInfo({
               setExpanded((prev) => (prev !== "WOOD_ELF" ? "WOOD_ELF" : null))
             }
           />
-          <div className="collapse-title text-xl font-medium">Wood Elf</div>
+          <div className="text-xl font-medium collapse-title">Wood Elf</div>
           <div className="collapse-content">
             <p className="text-sm sm:text-base">
               Elves are a magical people of otherworldly grace, living in the
@@ -192,7 +192,7 @@ export default function ElfInfo({
         </div>
       )}
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -203,7 +203,7 @@ export default function ElfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Slender and Graceful
         </div>
         <div className="collapse-content">
@@ -226,7 +226,7 @@ export default function ElfInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -239,7 +239,7 @@ export default function ElfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           A Timeless Perspective
         </div>
         <div className="collapse-content">
@@ -267,7 +267,7 @@ export default function ElfInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -280,7 +280,7 @@ export default function ElfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Hidden Woodland Realms
         </div>
         <div className="collapse-content">
@@ -302,7 +302,7 @@ export default function ElfInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -315,7 +315,7 @@ export default function ElfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Exploration and Adventure
         </div>
         <div className="collapse-content">
@@ -332,7 +332,7 @@ export default function ElfInfo({
           </p>
         </div>
       </div>
-      <table className="table table-zebra my-4">
+      <table className="table my-4 table-zebra">
         {/* head */}
         <thead>
           <tr>

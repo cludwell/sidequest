@@ -23,7 +23,7 @@ export default function Accomplishments() {
   console.log("userScenarios", userScenarios);
   return (
     <main className="flex flex-col items-center px-4 md:px-16 fade-in-slide-in">
-      <h1 className="federant text-3xl font-bold">User Accomplishments </h1>
+      <h1 className="text-3xl font-bold federant">User Accomplishments </h1>
       <div className="divider" />
     </main>
   );

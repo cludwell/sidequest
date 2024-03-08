@@ -48,21 +48,21 @@ export default function UserCharacters() {
   if (!hasLoaded || !usercharacters) return <Loading />;
   if (!user.id)
     return (
-      <main className="flex min-h-screen flex-col items-center px-16 ">
-        <h1 className="almendra text-2xl">
+      <main className="flex flex-col items-center min-h-screen px-16 ">
+        <h1 className="text-2xl almendra">
           You must be signed in to view your characters
         </h1>
       </main>
     );
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-16 fade-in-slide-in">
-      <h1 className="text-3xl federant font-bold">Your Characters</h1>
+    <main className="flex flex-col items-center min-h-screen px-16 fade-in-slide-in">
+      <h1 className="text-3xl font-bold federant">Your Characters</h1>
       <div className="divider" />
       <div className="flex flex-wrap justify-evenly">
         {Object.values(usercharacters).map((char, i) => (
           <div
-            className="card card-compact bg-base-100 shadow-xl w-64 sm:w-96 m-4 "
+            className="w-64 m-4 shadow-xl card card-compact bg-base-100 sm:w-96 "
             key={`char${i}`}
           >
             {char.imgUrl && (
@@ -78,11 +78,11 @@ export default function UserCharacters() {
             )}
             <div className="card-body">
               <h2 className="card-title">{char.name}</h2>
-              <p className="text-ellipsis text-xs ">{char.background}</p>
+              <p className="text-xs text-ellipsis ">{char.background}</p>
             </div>
             <div className="flex flex-row">
               <button
-                className="btn btn-error rounded-bl-2xl rounded-br-none rounded-t-none w-1/2"
+                className="w-1/2 rounded-t-none rounded-br-none btn btn-error rounded-bl-2xl"
                 disabled={char.id <= 8}
                 onClick={() => deleteButton(char.id)}
               >
@@ -90,7 +90,7 @@ export default function UserCharacters() {
                 Delete
               </button>
               <button
-                className="btn btn-primary rounded-br-2xl rounded-bl-none rounded-t-none w-1/2"
+                className="w-1/2 rounded-t-none rounded-bl-none btn btn-primary rounded-br-2xl"
                 onClick={() => onClickSelect(char)}
               >
                 START

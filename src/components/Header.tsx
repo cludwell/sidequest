@@ -47,21 +47,21 @@ export default function Header() {
   // console.log("Character Data:", characters);
   return (
     <div className="flex flex-row justify-between " id="header-container">
-      <div className="navbar bg-base-100 m-4 rounded-2xl header-background">
+      <div className="m-4 navbar bg-base-100 rounded-2xl header-background">
         <div className="flex-1">
-          <div className="flex flex-row justify-center items-center">
+          <div className="flex flex-row items-center justify-center">
             <Link href={"/"} className="federant">
               <Image
                 src={d20}
                 alt="d20logo"
-                className="w-12 object-cover mx-2"
+                className="object-cover w-12 mx-2"
                 width={32}
                 height={32}
               />
             </Link>
             <Link
               href={"/"}
-              className="federant text-3xl hidden md:block font-bold"
+              className="hidden text-3xl font-bold federant md:block"
             >
               SideQuest
             </Link>
@@ -74,14 +74,14 @@ export default function Header() {
               <SignUp />
             </>
           ) : (
-            <div className=" content-center flex flex-row">
+            <div className="flex flex-row content-center ">
               <button className="btn btn-neutral" onClick={handleSignOut}>
                 Logout
               </button>
             </div>
           )}
           <div className="dropdown dropdown-bottom dropdown-end dropdown-hover">
-            <label tabIndex={0} className="btn btn-ghost mx-2">
+            <label tabIndex={0} className="mx-2 btn btn-ghost">
               <IconBars />
             </label>
             <ul

@@ -6,7 +6,7 @@ export default function JobAbilityInfo({
 }: SetExpandedProps) {
   return (
     <>
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-6"
@@ -19,9 +19,9 @@ export default function JobAbilityInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Ability Score Improvement
-          <span className="block text-gray-500 text-sm mt-1">
+          <span className="block mt-1 text-sm text-gray-500">
             4th, 8th, 12th, 16th, 19th Level
           </span>
         </div>

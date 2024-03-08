@@ -55,7 +55,7 @@ export default function LogInModal() {
   return (
     <>
       <button
-        className="btn btn-accent m-2"
+        className="m-2 btn btn-accent"
         onClick={() => window.my_modal_2.showModal()}
       >
         log in
@@ -63,29 +63,29 @@ export default function LogInModal() {
       <dialog id="my_modal_2" className="modal">
         <form
           method="dialog"
-          className="modal-box flex flex-col"
+          className="flex flex-col modal-box"
           onSubmit={handleSubmit}
         >
-          <h3 className="text-center text-4xl almendra py-4">Log In</h3>
+          <h3 className="py-4 text-4xl text-center almendra">Log In</h3>
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="my-4 border-2 rounded border-slate-300 p-1"
+            className="p-1 my-4 border-2 rounded border-slate-300"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="mb-4 border-2 rounded border-slate-300 p-1"
+            className="p-1 mb-4 border-2 rounded border-slate-300"
           />
           {errors?.map((error, idx) => (
-            <div className="alert alert-error mb-4 fade-in-slide-in" key={`error${idx}`}>
+            <div className="mb-4 alert alert-error fade-in-slide-in" key={`error${idx}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current shrink-0 h-6 w-6"
+                className="w-6 h-6 stroke-current shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
               >
@@ -99,7 +99,7 @@ export default function LogInModal() {
               <span>{error}</span>
             </div>
           ))}
-          <button className="btn btn-accent mb-4" type="submit">
+          <button className="mb-4 btn btn-accent" type="submit">
             submit
           </button>
           <button className="btn btn-secondary" onClick={(e) => demoSignIn(e)}>

@@ -16,10 +16,10 @@ export default function HalflingInfo({
         alt="detail image"
         width={800}
         height={800}
-        className="rounded-xl aspect-square object-cover"
+        className="object-cover rounded-xl aspect-square"
       />
       <p className="py-4"></p>
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -28,7 +28,7 @@ export default function HalflingInfo({
             setExpanded((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
           }
         />
-        <div className="collapse-title text-xl font-medium">Details</div>
+        <div className="text-xl font-medium collapse-title">Details</div>
         <div className="collapse-content">
           <p>
             The comforts of home are the goals of most halflings' lives: a place
@@ -48,7 +48,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -59,7 +59,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Small and Practical
         </div>
         <div className="collapse-content">
@@ -91,7 +91,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -102,7 +102,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Kind and Curious
         </div>
         <div className="collapse-content">
@@ -124,7 +124,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -135,7 +135,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Blend into the Crowd
         </div>
         <div className="collapse-content">
@@ -155,7 +155,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -166,7 +166,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Pastoral Pleasantries
         </div>
         <div className="collapse-content">
@@ -189,7 +189,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -200,7 +200,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Affable And Positive
         </div>
         <div className="collapse-content">
@@ -231,7 +231,7 @@ export default function HalflingInfo({
           </p>
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-8"
@@ -244,7 +244,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Exploring Opportunities
         </div>
         <div className="collapse-content">
@@ -257,7 +257,7 @@ export default function HalflingInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-9"
@@ -268,7 +268,7 @@ export default function HalflingInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">Halfling Names</div>
+        <div className="text-xl font-medium collapse-title">Halfling Names</div>
         <div className="collapse-content">
           <p>
             A halfling has a given name, a family name, and possibly a nickname.
@@ -315,7 +315,7 @@ export default function HalflingInfo({
       </div>
 
       <div className="overflow-x-auto">
-        <table className="table table-zebra my-4">
+        <table className="table my-4 table-zebra">
           {/* head */}
           <thead>
             <tr>

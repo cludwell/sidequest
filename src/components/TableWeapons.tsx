@@ -4,9 +4,9 @@ export default function WeaponsTable({ title, weaponsData }: WeaponsProps) {
   if (!title || !weaponsData) return null
   return (
     <>
-      <div className="collapse collapse-plus border border-base-300 bg-base-200 max-w-screen-xl w-full my-1">
+      <div className="w-full max-w-screen-xl my-1 border collapse collapse-plus border-base-300 bg-base-200">
         <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">{title}</div>
+        <div className="text-xl font-medium collapse-title">{title}</div>
         <div className="collapse-content collapse-arrow">
           <div className="overflow-x-auto">
           <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">

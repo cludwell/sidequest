@@ -24,13 +24,13 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_paladin.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -41,7 +41,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_paladin" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -49,12 +49,12 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A holy warrior bound to a sacred oath
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -83,7 +83,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-divine-sense"
@@ -94,9 +94,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Divine Sense
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -123,7 +123,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-lay-on-hands"
@@ -134,9 +134,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Lay on Hands
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -165,7 +165,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
               <p>This feature has no effect on undead and constructs.</p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-fighting-style"
@@ -176,9 +176,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Fighting Style
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -191,7 +191,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
               <div className="overflow-x-auto">
-                <table className="table table-zebra w-full bg-base-100">
+                <table className="table w-full table-zebra bg-base-100">
                   <thead>
                     <tr>
                       <th>Fighting Style</th>
@@ -324,7 +324,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spellcasting"
@@ -335,14 +335,14 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spellcasting
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
             <div className="collapse-content">
-              <h3 className="text-xl my-4 underline">Spellcasting</h3>
+              <h3 className="my-4 text-xl underline">Spellcasting</h3>
               <p>
                 By 2nd level, you have learned to draw on divine magic through
                 meditation and prayer to cast spells as a cleric does. See
@@ -351,7 +351,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
 
-              <h3 className="text-xl my-4 underline">
+              <h3 className="my-4 text-xl underline">
                 Preparing and Casting Spells
               </h3>
               <p>
@@ -376,7 +376,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
 
-              <h3 className="text-xl my-4 underline">Spellcasting Ability</h3>
+              <h3 className="my-4 text-xl underline">Spellcasting Ability</h3>
               <p>
                 Charisma is your spellcasting ability for your paladin spells,
                 since their power derives from the strength of your convictions.
@@ -393,7 +393,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
 
-              <h3 className="text-xl my-4 underline">Spellcasting Focus</h3>
+              <h3 className="my-4 text-xl underline">Spellcasting Focus</h3>
               <p>
                 You can use a holy symbol (see the Adventuring Gear section) as
                 a spellcasting focus for your paladin spells.
@@ -401,7 +401,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-divine-smite"
@@ -412,9 +412,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Divine Smite
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -431,7 +431,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-divine-health"
@@ -442,9 +442,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Divine Health
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -456,7 +456,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-sacred-oath"
@@ -467,9 +467,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Sacred Oath
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -488,7 +488,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 Channel Divinity feature.
               </p>
               <br />
-              <h3 className="text-xl my-4 underline">Oath Spells</h3>
+              <h3 className="my-4 text-xl underline">Oath Spells</h3>
               <p>
                 Each oath has a list of associated spells. You gain access to
                 these spells at the levels specified in the oath description.
@@ -502,7 +502,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 spell list, the spell is nonetheless a paladin spell for you.
               </p>
               <br />
-              <h3 className="text-xl my-4 underline">Channel Divinity</h3>
+              <h3 className="my-4 text-xl underline">Channel Divinity</h3>
               <p>
                 Your oath allows you to channel divine energy to fuel magical
                 effects. Each Channel Divinity option provided by your oath
@@ -525,7 +525,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
 
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-extra-attack"
@@ -536,9 +536,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Extra Attack
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th Level
               </span>
             </div>
@@ -550,7 +550,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-aura-protection"
@@ -561,9 +561,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Aura of Protection
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 6th Level
               </span>
             </div>
@@ -579,7 +579,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-aura-courage"
@@ -590,9 +590,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Aura of Courage
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 10th Level
               </span>
             </div>
@@ -605,7 +605,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-improved-divine-smite"
@@ -618,9 +618,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Improved Divine Smite
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 11th Level
               </span>
             </div>
@@ -634,7 +634,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-cleansing-touch"
@@ -645,9 +645,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Cleansing Touch
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 14th Level
               </span>
             </div>
@@ -665,7 +665,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-aura-improvements"
@@ -676,9 +676,9 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Aura Improvements
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 18th Level
               </span>
             </div>
@@ -688,7 +688,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Proficiencies Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -699,14 +699,14 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>
@@ -737,7 +737,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points"
@@ -748,14 +748,14 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
@@ -779,7 +779,7 @@ export default function Paladin({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-row justify-center">
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomePaladin}
             >
               Paladin

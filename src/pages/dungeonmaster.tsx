@@ -127,13 +127,13 @@ export default function DungeonMaster() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 self-center fade-in-slide-in">
+    <main className="flex flex-col items-center self-center min-h-screen px-4 md:px-16 fade-in-slide-in">
       <div className="max-w-screen-lg">
         {char && char.imgUrl && (
           <Image
             height={50}
             width={50}
-            className=" hidden"
+            className="hidden "
             src={char.imgUrl}
             alt="profile pic"
           />
@@ -143,7 +143,7 @@ export default function DungeonMaster() {
             {chatHistory.map((chat) =>
               chat.role === "assistant" ? (
                 <div
-                  className="chat chat-start w-full"
+                  className="w-full chat chat-start"
                   key={`chat${chat.timestamp}`}
                 >
                   <div className="chat-image avatar">
@@ -158,23 +158,23 @@ export default function DungeonMaster() {
                       {chat.timestamp.slice(0, 21)}
                     </time>
                   </div>
-                  <div className="chat-bubble w-full text-xs sm:text-sm md:text-base">
+                  <div className="w-full text-xs chat-bubble sm:text-sm md:text-base">
                     {chat.content}
                   </div>
-                  <div className="chat-footer opacity-50">Delivered</div>
+                  <div className="opacity-50 chat-footer">Delivered</div>
                 </div>
               ) : chat.role === "user" ? (
                 <div
-                  className="chat chat-end w-full"
+                  className="w-full chat chat-end"
                   key={`user${chat.timestamp}`}
                 >
-                  <div className="chat-image avatar mr-4">
+                  <div className="mr-4 chat-image avatar">
                     <div className="w-10 rounded-full ">
                       {char && char.imgUrl ? (
                         <Image
                           height={50}
                           width={50}
-                          className=" object-cover"
+                          className="object-cover "
                           src={char.imgUrl}
                           alt="profile pic"
                         />
@@ -189,7 +189,7 @@ export default function DungeonMaster() {
                       {chat.timestamp.slice(0, 21)}
                     </time>
                   </div>
-                  <div className="chat-bubble chat-bubble-primary text-xs sm:text-sm md:text-base">
+                  <div className="text-xs chat-bubble chat-bubble-primary sm:text-sm md:text-base">
                     {chat.content}
                   </div>
                 </div>
@@ -204,12 +204,12 @@ export default function DungeonMaster() {
         </div>
       )}
       <form
-        className="w-full my-8 max-w-screen-lg flex flex-col"
+        className="flex flex-col w-full max-w-screen-lg my-8"
         onSubmit={chatRequest}
       >
         <textarea
           placeholder="What will you do?"
-          className="textarea textarea-primary textarea-lg w-full text-base sm:text-lg"
+          className="w-full text-base textarea textarea-primary textarea-lg sm:text-lg"
           value={userText}
           onChange={(e) => setUserText(e.target.value)}
         ></textarea>
@@ -217,7 +217,7 @@ export default function DungeonMaster() {
           {resp.includes("roll:") && (
             <>
               <div
-                className="tooltip m-4 tooltip-bottom"
+                className="m-4 tooltip tooltip-bottom"
                 data-tip="Click to roll dice for specific situations, weapon damage, etc."
               >
                 <button
@@ -232,7 +232,7 @@ export default function DungeonMaster() {
             </>
           )}
           <div
-            className="tooltip tooltip-left my-4 "
+            className="my-4 tooltip tooltip-left "
             data-tip="Roll a d20 for all skill checks. Can your character make that jump? Roll athletics. Is someone lying to you? Roll Perception. Will be sent to Dungeon Master"
           >
             <button
@@ -245,7 +245,7 @@ export default function DungeonMaster() {
             </button>
           </div>
           {char && <ModalCharacterSheet character={char} />}
-          <button className="btn btn-accent my-4 w-fit" type="submit">
+          <button className="my-4 btn btn-accent w-fit" type="submit">
             <IconSend />
           </button>
         </div>
@@ -266,7 +266,7 @@ export default function DungeonMaster() {
               rolls.map((r, i) => (
                 <kbd
                   key={`roll${i}`}
-                  className="kbd w-fit m-1 h-fit fade-in-slide-in"
+                  className="m-1 kbd w-fit h-fit fade-in-slide-in"
                 >
                   {r}
                 </kbd>

@@ -26,41 +26,41 @@ export default function ModalCharacterSheet({
   if (!character) return null;
   return (
     <>
-      <div className="tooltip tooltip-left m-4" data-tip="Character Sheet">
+      <div className="m-4 tooltip tooltip-left" data-tip="Character Sheet">
         <button className="btn w-fit btn-primary " onClick={openModal}>
           <IconID />
         </button>
       </div>
       <dialog id="my_modal_charsheet" className="modal">
         <div className="modal-box ">
-          <h3 className="almendra text-3xl text-center">{character.name}</h3>
+          <h3 className="text-3xl text-center almendra">{character.name}</h3>
           <div className="flex flex-row justify-center">
-            <div className="indicator m-6">
-              {/* <span className="indicator-item indicator-top indicator-start badge badge-success font-bold text-lg p-3 federant ">
+            <div className="m-6 indicator">
+              {/* <span className="p-3 text-lg font-bold indicator-item indicator-top indicator-start badge badge-success federant ">
                 as
               </span> */}
-              <span className="indicator-item indicator-top indicator-center badge badge-success font-bold md:text-lg p-3 federant">
+              <span className="p-3 font-bold indicator-item indicator-top indicator-center badge badge-success md:text-lg federant">
                 HP: {character?.currentHp} / {character?.maxHp}
               </span>
-              {/* <span className="indicator-item indicator-top indicator-end badge badge-success font-bold text-lg p-3 federant">
+              {/* <span className="p-3 text-lg font-bold indicator-item indicator-top indicator-end badge badge-success federant">
             top+end
           </span> */}
-              <span className="indicator-item indicator-middle indicator-start badge badge-success font-bold md:text-lg p-3 federant">
+              <span className="p-3 font-bold indicator-item indicator-middle indicator-start badge badge-success md:text-lg federant">
                 {character.race}
               </span>
-              {/* <span className="indicator-item indicator-middle indicator-center badge badge-success font-bold text-lg p-3 federant">
+              {/* <span className="p-3 text-lg font-bold indicator-item indicator-middle indicator-center badge badge-success federant">
             middle+center
         </span> */}
-              <span className="indicator-item indicator-middle indicator-end badge badge-success font-bold md:text-lg p-3 federant">
+              <span className="p-3 font-bold indicator-item indicator-middle indicator-end badge badge-success md:text-lg federant">
                 {character.role}
               </span>
               {/* <span className="indicator-item indicator-bottom indicator-start badge badge-secondary">
             bottom+start
           </span> */}
-              <span className="indicator-item indicator-bottom indicator-center badge badge-success font-bold md:text-lg p-3 federant">
+              <span className="p-3 font-bold indicator-item indicator-bottom indicator-center badge badge-success md:text-lg federant">
                 Level: {character.level}
               </span>
-              {/* <span className="indicator-item indicator-bottom indicator-end badge badge-success font-bold text-lg p-3 federant">
+              {/* <span className="p-3 text-lg font-bold indicator-item indicator-bottom indicator-end badge badge-success federant">
             bottom+end
           </span> */}
               <Image
@@ -68,15 +68,15 @@ export default function ModalCharacterSheet({
                 width={1000}
                 alt="minihud"
                 src={character && character.imgUrl ? character.imgUrl : ""}
-                className="mask mask-hexagon w-64 sm:w-72 "
+                className="w-64 mask mask-hexagon sm:w-72 "
               />
 
-              {/* <div className="grid w-60 h-32 bg-base-300 place-items-center">
+              {/* <div className="grid h-32 w-60 bg-base-300 place-items-center">
             content
           </div> */}
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1 mt-4">
+          <div className="my-1 mt-4 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-description"
@@ -89,7 +89,7 @@ export default function ModalCharacterSheet({
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="character-description"
             >
               Description
@@ -104,7 +104,7 @@ export default function ModalCharacterSheet({
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-abilities"
@@ -117,7 +117,7 @@ export default function ModalCharacterSheet({
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="character-skills"
             >
               Ability Scores
@@ -161,7 +161,7 @@ export default function ModalCharacterSheet({
               </div>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-skills"
@@ -172,7 +172,7 @@ export default function ModalCharacterSheet({
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="character-skills"
             >
               Skills

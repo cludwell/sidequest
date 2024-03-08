@@ -57,10 +57,10 @@ export default function EquipPaladin({
     <>
       <form className="flex flex-col items-center">
         {/* Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 1</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 1</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Martial Weapon & Shield
             </label>
             <input
@@ -77,7 +77,7 @@ export default function EquipPaladin({
           </div>
           {!selectionA && (
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setWeaponA(e.target.value)}
             >
               <option disabled selected>
@@ -94,7 +94,7 @@ export default function EquipPaladin({
             </select>
           )}
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Two Martial Weapons
             </label>
             <input
@@ -108,7 +108,7 @@ export default function EquipPaladin({
           {selectionA && (
             <>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponA(e.target.value)}
               >
                 <option disabled selected>
@@ -124,7 +124,7 @@ export default function EquipPaladin({
                 ))}
               </select>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponB(e.target.value)}
               >
                 <option disabled selected>
@@ -143,10 +143,10 @@ export default function EquipPaladin({
           )}
         </div>
         {/* Secondary Weapon or Shield Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 2</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 2</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Five Javelins (1d6)
             </label>
             <input
@@ -162,7 +162,7 @@ export default function EquipPaladin({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Simple Melee Weapon
             </label>
             <input
@@ -175,7 +175,7 @@ export default function EquipPaladin({
           </div>
           {selectionB && (
             <select
-              className="select select-success w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-success"
               onChange={(e) => setWeaponC(e.target.value)}
             >
               <option disabled selected>
@@ -193,10 +193,10 @@ export default function EquipPaladin({
           )}
         </div>
         {/* Pack Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Priest's Pack
               <ToolTip
                 tip="Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin."
@@ -213,7 +213,7 @@ export default function EquipPaladin({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -230,13 +230,13 @@ export default function EquipPaladin({
           </div>
         </div>
         {/* Holy Symbol Selection */}
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-col items-center justify-between">
-            <label className="label text-xl almendra w-80">
+            <label className="text-xl label almendra w-80">
               Chain Mail & A Holy Symbol
             </label>
             <select
-              className="select select-error w-full max-w-xs"
+              className="w-full max-w-xs select select-error"
               onChange={(e) => setHolySymbol(e.target.value)}
             >
               <option disabled selected>
@@ -258,14 +258,14 @@ export default function EquipPaladin({
           title="Simple Melee Weapons"
         />
       )}
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

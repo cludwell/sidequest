@@ -19,8 +19,8 @@ export default function NewCharEquipment({
   // this useState will be a draft for of equipment
 
   return (
-    <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-8 text-center">
+    <div className="flex flex-col w-full max-w-screen-xl">
+      <h1 className="mb-8 text-4xl text-center almendra">
         {dndClass && dndClass?.role ? dndClass.role : null} Equipment
       </h1>
       <div>
@@ -97,7 +97,7 @@ export default function NewCharEquipment({
             setEquipment={setEquipment}
           />
         ) : (
-          <h1 className="almendra text-2xl text-center">
+          <h1 className="text-2xl text-center almendra">
             Please select a class to start this step
           </h1>
         )}

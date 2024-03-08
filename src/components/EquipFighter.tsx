@@ -54,10 +54,10 @@ export default function EquipFighter({
     <>
       <form className="flex flex-col items-center">
         {/* Armor Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Armor Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Armor Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Chain Mail</label>
+            <label className="text-xl label almendra">Chain Mail</label>
             <input
               type="radio"
               name="armor-choice"
@@ -68,7 +68,7 @@ export default function EquipFighter({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Leather Armor, Longbow, and 20 Arrows
             </label>
             <input
@@ -83,12 +83,12 @@ export default function EquipFighter({
         </div>
 
         {/* Primary Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">
             Primary Weapon Selection
           </label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               One Martial Weapon And Shield
             </label>
             <input
@@ -105,7 +105,7 @@ export default function EquipFighter({
           {!selection && (
             <>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponA(e.target.value)}
               >
                 <option disabled selected>
@@ -123,7 +123,7 @@ export default function EquipFighter({
             </>
           )}
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Two Martial Weapons
             </label>
             <input
@@ -139,7 +139,7 @@ export default function EquipFighter({
           {selection && (
             <>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponB(e.target.value)}
               >
                 <option disabled selected>
@@ -155,7 +155,7 @@ export default function EquipFighter({
                 ))}
               </select>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponC(e.target.value)}
               >
                 <option disabled selected>
@@ -175,12 +175,12 @@ export default function EquipFighter({
         </div>
 
         {/* Secondary Weapon or Shield Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">
             Secondary Weapon Selection
           </label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               A light crossbow and 20 bolts
             </label>
             <input
@@ -193,7 +193,7 @@ export default function EquipFighter({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Two handaxes</label>
+            <label className="text-xl label almendra">Two handaxes</label>
             <input
               type="radio"
               name="third-weapon-choice"
@@ -205,10 +205,10 @@ export default function EquipFighter({
         </div>
 
         {/* Pack Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Dungeoneer's Pack
               <ToolTip
                 tip="Includes an assortment of utility items for dungeon exploration."
@@ -225,7 +225,7 @@ export default function EquipFighter({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes an assortment of utility items for dungeon exploration."
@@ -245,14 +245,14 @@ export default function EquipFighter({
         </div>
       </form>
 
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

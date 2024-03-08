@@ -34,13 +34,13 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_14.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={halfElf}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -51,7 +51,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_14" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Half Elf
           </h3>
           <Image
@@ -59,11 +59,11 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover object-top"
+            className="object-cover object-top rounded-xl aspect-square"
           />
           <p className="py-4"></p>
           {/* Description Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -76,7 +76,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="description"
             >
               Description
@@ -123,7 +123,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
           </div>
 
           {/* EyesAndEars Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -136,7 +136,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="eyesAndEars"
             >
               EyesAndEars
@@ -156,7 +156,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
           </div>
 
           {/* Abilities Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -169,7 +169,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="abilities"
             >
               Abilities
@@ -199,7 +199,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
           </div>
 
           {/* Personality Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion"
@@ -212,7 +212,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
               }
             />
             <label
-              className="collapse-title text-xl font-medium"
+              className="text-xl font-medium collapse-title"
               htmlFor="personality"
             >
               Personality
@@ -378,7 +378,7 @@ export default function ModalHalfElf({ race, setRace }: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide m-4" onClick={raceHalfElf}>
+            <button className="m-4 btn btn-success btn-wide" onClick={raceHalfElf}>
               Select Half-Elf
             </button>
           </div>

@@ -4,9 +4,9 @@ import IconResume from "./icons/IconResume";
 
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-neutral text-neutral-content">
+    <footer className="p-10 footer bg-neutral text-neutral-content">
       <div>
-        <Image src={d20} alt="d20logo" className="w-16 object-cover" />
+        <Image src={d20} alt="d20logo" className="object-cover w-16" />
 
         <p>
           Side🎲Quest Industries Ltd.
@@ -25,7 +25,7 @@ export default function Footer() {
             <Image
               src="https://i.imgur.com/KTjeA0w.png"
               alt="githubicon"
-              className="github-icon invert w-6"
+              className="w-6 github-icon invert"
               width={24}
               height={24}
             />

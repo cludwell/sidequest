@@ -39,13 +39,13 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_druid.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -61,14 +61,14 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
 
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A priest of the Old Faith, wielding the powers of nature and
             adopting animal forms.
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               <thead>
                 <tr>
@@ -93,7 +93,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-divine-domain"
@@ -104,9 +104,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Divine Domain
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -134,7 +134,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-druidic"
@@ -143,9 +143,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 setExpanded((prev) => (prev !== "DRUIDIC" ? "DRUIDIC" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Druidic
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -160,7 +160,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spellcasting"
@@ -171,9 +171,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spellcasting
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -221,7 +221,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-wild-shape"
@@ -232,9 +232,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Wild Shape
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -252,8 +252,8 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 you can transform into any beast that has a challenge rating of
                 1/4 or lower that doesn't have a flying or swimming speed.
               </p>
-              <h3 className="text-lg my-4">Beast Shape</h3>
-              <div className="overflow-x-auto m-1">
+              <h3 className="my-4 text-lg">Beast Shape</h3>
+              <div className="m-1 overflow-x-auto">
                 <table className="table table-zebra bg-base-100">
                   <thead>
                     <tr>
@@ -295,7 +295,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 drop to 0 hit points, or die.
               </p>
 
-              <h3 className="text-lg my-4">While Transformed</h3>
+              <h3 className="my-4 text-lg">While Transformed</h3>
               <p>
                 Your game statistics are replaced by the statistics of the
                 beast, but you retain your alignment, personality, and
@@ -343,7 +343,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-druid-circle"
@@ -354,9 +354,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Druid Circle
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -371,7 +371,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-beast-spells"
@@ -382,9 +382,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Beast Spells
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 18th Level
               </span>
             </div>
@@ -398,7 +398,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-archdruid"
@@ -409,9 +409,9 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Archdruid
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -432,7 +432,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
           </div>
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -443,14 +443,14 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>
@@ -486,7 +486,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hitpoints"
@@ -497,14 +497,14 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
@@ -528,7 +528,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-primary"
               onChange={(e) => setCant1(e.target.value)}
               value={cant1}
             >
@@ -541,7 +541,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setCant2(e.target.value)}
               value={cant2}
             >
@@ -554,7 +554,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-success w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-success"
               onChange={(e) => setSpell1(e.target.value)}
               value={spell1}
             >
@@ -567,7 +567,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-info w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-info"
               onChange={(e) => setSpell2(e.target.value)}
               value={spell2}
             >
@@ -580,7 +580,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-warning w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-warning"
               onChange={(e) => setSpell3(e.target.value)}
               value={spell3}
             >
@@ -593,7 +593,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell4(e.target.value)}
               value={spell4}
             >
@@ -606,7 +606,7 @@ export default function Druid({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeDruid}
             >
               Druid

@@ -11,13 +11,13 @@ const SidebarContext = createContext<SidebarContextProps | undefined>(
 const Sidebar: FC<SidebarProps> = ({ children }) => {
   const [expanded, setExpanded] = useState<Boolean>(true);
   return (
-    <aside className=" h-screen fixed top-0">
+    <aside className="fixed top-0 h-screen ">
       <nav
         className={`h-full flex flex-col  ${
           expanded ? "bg-base-300 shadow-xl z-20" : "bg-base-400"
         }`}
       >
-        <div className="p-4 pb-2 flex justify-between items-center">
+        <div className="flex items-center justify-between p-4 pb-2">
           {/* <Image src={d20} alt="d20logo" className={`w-12 object-cover ${
             expanded ? 'w-12' : 'invisible w-0'
           }`} /> */}
@@ -39,7 +39,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
 
               {/* hamburger icon */}
               <svg
-                className="swap-on fill-current"
+                className="fill-current swap-on"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -50,7 +50,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
 
               {/* close icon */}
               <svg
-                className="swap-off fill-current"
+                className="fill-current swap-off"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -63,7 +63,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
-        <div className="border-t flex p-3">
+        <div className="flex p-3 border-t">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

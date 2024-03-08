@@ -29,13 +29,13 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_barbarian.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -46,7 +46,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_barbarian" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -54,12 +54,12 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A fierce warrior who can enter a battle rage
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -88,7 +88,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -100,9 +100,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               }
             />
 
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Rage
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -116,7 +116,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 While raging, you gain the following benefits if you aren't
                 wearing heavy armor:
               </p>
-              <ul className="list-disc m-4">
+              <ul className="m-4 list-disc">
                 <li className="my-2 text-sm sm:text-base">
                   You have advantage on Strength checks and Strength saving
                   throws.
@@ -150,7 +150,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-4"
@@ -161,9 +161,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Unarmored Defense
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -176,7 +176,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-5"
@@ -187,9 +187,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Reckless Attack
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -205,7 +205,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-6"
@@ -216,9 +216,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Danger Sense
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -236,7 +236,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-primal-path"
@@ -247,9 +247,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Primal Path
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -264,7 +264,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
 
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-1"
@@ -275,9 +275,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Extra Attack
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th Level
               </span>
             </div>
@@ -289,7 +289,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -300,9 +300,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Fast Movement
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th Level
               </span>
             </div>
@@ -314,7 +314,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-3"
@@ -325,9 +325,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Feral Instinct
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 7th Level
               </span>
             </div>
@@ -346,7 +346,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-4"
@@ -357,9 +357,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Brutal Critical
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 9th, 13th, 17th Level
               </span>
             </div>
@@ -402,7 +402,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </div>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-18"
@@ -413,9 +413,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Relentless Rage
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 11th Level
               </span>
             </div>
@@ -433,7 +433,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-19"
@@ -444,9 +444,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Persistent Rage
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 15th Level
               </span>
             </div>
@@ -457,7 +457,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-20"
@@ -470,9 +470,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Indomitable Might
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 18th Level
               </span>
             </div>
@@ -485,7 +485,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-21"
@@ -496,9 +496,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Primal Champion
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -510,7 +510,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-22"
@@ -521,9 +521,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -566,7 +566,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-23"
@@ -577,9 +577,9 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -616,7 +616,7 @@ export default function Barbarian({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-row justify-center">
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeBarbarian}
             >
               Barbarian

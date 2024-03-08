@@ -24,13 +24,13 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_monk.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -41,7 +41,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_monk" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -49,13 +49,13 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A master of martial arts, harnessing the power of the body in
             pursuit of physical and spiritual perfection
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -85,7 +85,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Unarmored Defense Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-unarmored-defense"
@@ -96,9 +96,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Unarmored Defense
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -112,7 +112,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Martial Arts Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-martial-arts"
@@ -123,9 +123,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Martial Arts
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -143,7 +143,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 wielding a shield:
               </p>
               <br />
-              <ul className="list-disc ml-8">
+              <ul className="ml-8 list-disc">
                 <li className="my-2">
                   You can use Dexterity instead of Strength for the attack and
                   damage rolls of your unarmed strikes and monk weapons.
@@ -174,7 +174,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
           {/* Ki Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-ki"
@@ -183,9 +183,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 setExpanded((prev) => (prev !== "KI" ? "KI" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Ki
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -244,7 +244,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Unarmored Movement Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-unarmored-movement"
@@ -255,9 +255,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Unarmored Movement
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -277,7 +277,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Monastic Tradition Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-monastic-tradition"
@@ -288,9 +288,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Monastic Tradition
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -306,7 +306,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Deflect Missiles Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-deflect-missiles"
@@ -317,9 +317,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Deflect Missiles
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -348,7 +348,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
           {/* Slow Fall Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-slow-fall"
@@ -359,9 +359,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Slow Fall
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 4th Level
               </span>
             </div>
@@ -376,7 +376,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
 
           {/* Extra Attack Collapsible */}
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-extra-attack"
@@ -387,9 +387,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Extra Attack
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th Level
               </span>
             </div>
@@ -401,7 +401,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-stunning-strike"
@@ -412,9 +412,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Stunning Strike
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th Level
               </span>
             </div>
@@ -429,7 +429,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-ki-empowered-strikes"
@@ -442,9 +442,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Ki-Empowered Strikes
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 6th Level
               </span>
             </div>
@@ -456,7 +456,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-evasion"
@@ -465,9 +465,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 setExpanded((prev) => (prev !== "EVASION" ? "EVASION" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Evasion
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 7th Level
               </span>
             </div>
@@ -483,7 +483,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-stillness-of-mind"
@@ -494,9 +494,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Stillness of Mind
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 7th Level
               </span>
             </div>
@@ -508,7 +508,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-purity-of-body"
@@ -519,9 +519,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Purity of Body
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 10th Level
               </span>
             </div>
@@ -533,7 +533,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-tongue-of-the-sun-and-moon"
@@ -546,9 +546,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Tongue of the Sun and Moon
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 13th Level
               </span>
             </div>
@@ -561,7 +561,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-diamond-soul"
@@ -572,9 +572,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Diamond Soul
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 14th Level
               </span>
             </div>
@@ -591,7 +591,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-timeless-body"
@@ -602,9 +602,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Timeless Body
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 15th Level
               </span>
             </div>
@@ -618,7 +618,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-empty-body"
@@ -629,9 +629,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Empty Body
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 18th Level
               </span>
             </div>
@@ -650,7 +650,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-perfect-self"
@@ -661,9 +661,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Perfect Self
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -674,7 +674,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-unarmored-movement"
@@ -685,9 +685,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Unarmored Movement
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 6th, 9th, 10th, 14th, 18th Level
               </span>
             </div>
@@ -752,7 +752,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -763,9 +763,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -805,7 +805,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points"
@@ -816,9 +816,9 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -849,7 +849,7 @@ export default function Monk({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-row justify-center">
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeMonk}
             >
               Monk

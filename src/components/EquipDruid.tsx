@@ -57,10 +57,10 @@ export default function EquipDruid({
     <>
       <form className="flex flex-col items-center">
         {/* Armor Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Armor Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Armor Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Leather Armor</label>
+            <label className="text-xl label almendra">Leather Armor</label>
             <input
               type="radio"
               name="armor-choice"
@@ -71,10 +71,10 @@ export default function EquipDruid({
           </div>
         </div>
         {/* Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 1</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 1</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Scimitar (1d6 slashing)
             </label>
             <input
@@ -90,7 +90,7 @@ export default function EquipDruid({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Any Simple Melee Weapon
               <ToolTip
                 tip="Choose any simple weapon from the equipment list."
@@ -110,7 +110,7 @@ export default function EquipDruid({
           {selectionA && (
             <>
               <select
-                className="select select-secondary w-full max-w-xs"
+                className="w-full max-w-xs select select-secondary"
                 onChange={(e) => setWeaponA(e.target.value)}
               >
                 <option disabled selected>
@@ -128,10 +128,10 @@ export default function EquipDruid({
             </>
           )}
         </div>
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection 2</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection 2</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">A Wooden Shield</label>
+            <label className="text-xl label almendra">A Wooden Shield</label>
             <input
               type="radio"
               name="second-weapon-choice"
@@ -145,7 +145,7 @@ export default function EquipDruid({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Any Simple Weapon
               <ToolTip
                 tip="Choose any simple weapon from the equipment list."
@@ -165,7 +165,7 @@ export default function EquipDruid({
           {selectionB && (
             <>
               <select
-                className="select select-success w-full max-w-xs"
+                className="w-full max-w-xs select select-success"
                 onChange={(e) => setWeaponB(e.target.value)}
               >
                 <option disabled selected>
@@ -187,11 +187,11 @@ export default function EquipDruid({
           )}
         </div>
         {/* Pack Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
 
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -209,11 +209,11 @@ export default function EquipDruid({
           </div>
         </div>
         {/* Druidic Focus */}
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-col items-center justify-between">
-            <label className="label text-xl almendra w-80">Druidic Focus</label>
+            <label className="text-xl label almendra w-80">Druidic Focus</label>
             <select
-              className="select select-error w-full max-w-xs"
+              className="w-full max-w-xs select select-error"
               onChange={(e) => setFocus(e.target.value)}
             >
               <option disabled selected>
@@ -230,14 +230,14 @@ export default function EquipDruid({
         {/* TODO: Add any additional equipment options if necessary */}
       </form>
 
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

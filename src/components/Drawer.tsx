@@ -10,7 +10,7 @@ import IconID from "./icons/IconID";
 export default function Drawer() {
   const user: any = useSelector(userProfile);
   return (
-    <div className="drawer m-2">
+    <div className="m-2 drawer">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
@@ -20,7 +20,7 @@ export default function Drawer() {
 
           {/* hamburger icon */}
           <svg
-            className="swap-off fill-current opacity-100"
+            className="opacity-100 fill-current swap-off"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -31,7 +31,7 @@ export default function Drawer() {
 
           {/* close icon */}
           <svg
-            className="swap-on fill-current"
+            className="fill-current swap-on"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -43,9 +43,9 @@ export default function Drawer() {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <div className="menu p-4 w-80 h-full bg-base-200 text-base-content flex flex-col justify-between">
+        <div className="flex flex-col justify-between h-full p-4 menu w-80 bg-base-200 text-base-content">
           <div>
-            <h1 className="astloch text-6xl">sideQuest</h1>
+            <h1 className="text-6xl astloch">sideQuest</h1>
             <ul>
               <li>
                 <Link href={`/characters`} className="text-xl">

@@ -33,13 +33,13 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1 "
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit "
         onClick={() => window.my_modal_4.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={aarakocra}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -50,7 +50,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_4" className="modal">
         <form method="dialog" className="modal-box ">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Aarakocra
           </h3>
           <Image
@@ -58,12 +58,12 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
 
           {/* accordion start */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -72,7 +72,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Details</div>
+            <div className="text-xl font-medium collapse-title">Details</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Sequestered in high mountains atop tall trees, the aarakocra,
@@ -89,7 +89,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -98,7 +98,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "BEAK" ? "BEAK" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Beak and Feather
             </div>
             <div className="collapse-content">
@@ -120,7 +120,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -129,7 +129,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "WARDENS" ? "WARDENS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Sky Wardens
             </div>
             <div className="collapse-content">
@@ -154,7 +154,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -165,7 +165,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Avian Mannerisms{" "}
             </div>
             <div className="collapse-content">
@@ -213,7 +213,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -222,7 +222,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "HOMELANDS" ? "HOMELANDS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Homelands </div>
+            <div className="text-xl font-medium collapse-title">Homelands </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Most aarakocra live on the Elemental Plane of Air. Aarakocra can
@@ -247,7 +247,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -256,7 +256,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "PURPOSE" ? "PURPOSE" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Great Purpose{" "}
             </div>
             <div className="collapse-content">
@@ -300,7 +300,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -309,7 +309,7 @@ export default function ModalAarakocra({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "NAMES" ? "NAMES" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Aarakocra Names
             </div>
             <div className="collapse-content">

@@ -35,13 +35,13 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_7.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={mountainDwarf}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -52,7 +52,7 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_7" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Mountain Dwarf
           </h3>
           <Image
@@ -60,10 +60,10 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-5"
@@ -74,7 +74,7 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Mountain Dwarf
             </div>
             <div className="collapse-content">
@@ -101,7 +101,7 @@ export default function ModalMountainDwarf({ race, setRace }: SetRaceProps) {
           />
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs  my-4"
+              className="w-full max-w-xs my-4 select select-primary"
               value={tools}
               onChange={(e) => setTools(e.target.value)}
             >

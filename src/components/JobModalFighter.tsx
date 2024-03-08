@@ -55,13 +55,13 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_fighter.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -77,13 +77,13 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A master of martial combat, skilled with a variety of weapons and
             armor
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
           <table className="table my-2 table-zebra bg-base-100 table-xs sm:table-sm md:table-md">
               {/* head */}
               <thead>
@@ -112,7 +112,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-fighting-style"
@@ -123,9 +123,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Fighting Style
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -158,7 +158,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-second-wind"
@@ -169,9 +169,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Second Wind
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -184,7 +184,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-action-surge"
@@ -195,9 +195,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Action Surge
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -210,7 +210,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-martial-archetype"
@@ -221,9 +221,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Martial Archetype
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -236,7 +236,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-extra-attack"
@@ -247,9 +247,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Extra Attack
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th, 11th, 20th Level
               </span>
             </div>
@@ -295,7 +295,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
           {/* Proficiencies Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -306,9 +306,9 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -345,7 +345,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points"
@@ -356,14 +356,14 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
@@ -387,7 +387,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs my-4"
+              className="w-full max-w-xs my-4 select select-primary"
               value={style}
               onChange={styleSelected}
             >
@@ -401,7 +401,7 @@ export default function Fighter({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <button
-              className="btn btn-success btn-wide my-4"
+              className="my-4 btn btn-success btn-wide"
               onClick={becomeFighter}
             >
               Fighter

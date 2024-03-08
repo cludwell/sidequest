@@ -50,13 +50,13 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_wizard.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -67,7 +67,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_wizard" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -75,13 +75,13 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A scholarly magic-user capable of manipulating the structures of
             reality
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -110,7 +110,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spellcasting"
@@ -121,9 +121,9 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spellcasting
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -135,7 +135,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 Spells Listing for the wizard spell list.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Cantrips</h3>
+              <h3 className="my-2 text-xl underline">Cantrips</h3>
               <p>
                 At 1st level, you know three cantrips of your choice from the
                 wizard spell list. You learn additional wizard cantrips of your
@@ -143,7 +143,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 of the Wizard table.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Spellbook</h3>
+              <h3 className="my-2 text-xl underline">Spellbook</h3>
               <p>
                 At 1st level, you have a spellbook containing six 1st-level
                 wizard spells of your choice. Your spellbook is the repository
@@ -151,7 +151,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 fixed in your mind.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">
+              <h3 className="my-2 text-xl underline">
                 Preparing and Casting Spells
               </h3>
               <p>
@@ -162,27 +162,27 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 Further details are provided in the text.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Spellcasting Ability</h3>
+              <h3 className="my-2 text-xl underline">Spellcasting Ability</h3>
               <p>
                 Intelligence is your spellcasting ability for your wizard
                 spells. Detailed calculations are provided for Spell save DC and
                 Spell attack modifier.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Ritual Casting</h3>
+              <h3 className="my-2 text-xl underline">Ritual Casting</h3>
               <p>
                 You can cast a wizard spell as a ritual if that spell has the
                 ritual tag and you have the spell in your spellbook. You don't
                 need to have the spell prepared.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Spellcasting Focus</h3>
+              <h3 className="my-2 text-xl underline">Spellcasting Focus</h3>
               <p>
                 You can use an arcane focus (see the Adventuring Gear section)
                 as a spellcasting focus for your wizard spells.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Learning Spells</h3>
+              <h3 className="my-2 text-xl underline">Learning Spells</h3>
               <p>
                 Each time you gain a wizard level, you can add two wizard spells
                 of your choice to your spellbook for free. Further details are
@@ -190,7 +190,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-your-spellbook"
@@ -201,9 +201,9 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Your Spellbook
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -216,7 +216,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 possible.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">
+              <h3 className="my-2 text-xl underline">
                 Copying a Spell into the Book
               </h3>
               <p>
@@ -232,7 +232,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 for recording.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">Replacing the Book</h3>
+              <h3 className="my-2 text-xl underline">Replacing the Book</h3>
               <p>
                 If you wish to make a backup of your spellbook or if you lose
                 your original, you can copy spells from your primary spellbook
@@ -242,7 +242,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 any gaps in your backup.
               </p>
               <br />
-              <h3 className="text-xl underline my-2">The Book's Appearance</h3>
+              <h3 className="my-2 text-xl underline">The Book's Appearance</h3>
               <p>
                 Your spellbook stands out as a distinct compilation of spells,
                 adorned with its special artistic touches and annotations. It
@@ -252,7 +252,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-arcane-recovery"
@@ -263,9 +263,9 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Arcane Recovery
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -285,7 +285,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-arcane-tradition"
@@ -296,9 +296,9 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Arcane Tradition
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -316,7 +316,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spell-mastery"
@@ -327,9 +327,9 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spell Mastery
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 18th Level
               </span>
             </div>
@@ -344,7 +344,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-signature-spells"
@@ -355,9 +355,9 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Signature Spells
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -383,7 +383,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
           {/* Proficiencies Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies"
@@ -394,14 +394,14 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>
@@ -434,7 +434,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points"
@@ -445,14 +445,14 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
@@ -476,7 +476,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center">
           <select
-              className="select select-primary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-primary"
               onChange={(e) => setCant1(e.target.value)}
               value={cant1}
             >
@@ -489,7 +489,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setCant2(e.target.value)}
               value={cant2}
             >
@@ -502,7 +502,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-success w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-success"
               onChange={(e) => setCant3(e.target.value)}
               value={cant3}
             >
@@ -515,7 +515,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-warning w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-warning"
               onChange={(e) => setSpell1(e.target.value)}
               value={spell1}
             >
@@ -527,7 +527,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell2(e.target.value)}
               value={spell2}
             >
@@ -539,7 +539,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell3(e.target.value)}
               value={spell3}
             >
@@ -551,7 +551,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell4(e.target.value)}
               value={spell4}
             >
@@ -563,7 +563,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell5(e.target.value)}
               value={spell5}
             >
@@ -575,7 +575,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell6(e.target.value)}
               value={spell6}
             >
@@ -587,7 +587,7 @@ export default function Wizard({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeWizard}
             >
               Wizard

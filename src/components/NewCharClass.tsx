@@ -46,8 +46,8 @@ export default function NewCharacterClass({
     });
 
   return (
-    <div className="flex flex-col max-w-screen-xl w-full">
-      <h1 className="text-4xl almendra mb-8 text-center">Classes</h1>
+    <div className="flex flex-col w-full max-w-screen-xl">
+      <h1 className="mb-8 text-4xl text-center almendra">Classes</h1>
 
       <Barbarian dndClass={dndClass} setDndClass={setDndClass} />
       <Bard dndClass={dndClass} setDndClass={setDndClass} />
@@ -61,12 +61,12 @@ export default function NewCharacterClass({
       <Sorcerer dndClass={dndClass} setDndClass={setDndClass} />
       <Warlock dndClass={dndClass} setDndClass={setDndClass} />
       <Wizard dndClass={dndClass} setDndClass={setDndClass} />
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
-        <button className="btn  btn-primary m-8">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
+        <button className="m-8 btn btn-primary">
           <a href="#item1">Previous Step</a>
         </button>
         <button
-          className="btn btn-secondary m-8"
+          className="m-8 btn btn-secondary"
           onClick={() => (window.location.hash = "#item3")}
         >
           Next Step

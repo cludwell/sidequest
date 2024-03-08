@@ -33,13 +33,13 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_13.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={goliath}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -50,7 +50,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_13" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Goliath
           </h3>
           <Image
@@ -58,10 +58,10 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -72,7 +72,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Description
             </div>
             <div className="collapse-content">
@@ -86,7 +86,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -97,7 +97,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Skin</div>
+            <div className="text-xl font-medium collapse-title">Skin</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Goliath skin was often gray or brown and was extremely tough
@@ -117,7 +117,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -128,7 +128,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Personality
             </div>
             <div className="collapse-content">
@@ -155,7 +155,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
               {/* Add more personality content as required */}
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -164,7 +164,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Combat</div>
+            <div className="text-xl font-medium collapse-title">Combat</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Goliath tribes only went to war as a final option, preferring to
@@ -213,7 +213,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -222,7 +222,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "TRIBES" ? "TRIBES" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Tribes</div>
+            <div className="text-xl font-medium collapse-title">Tribes</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Goliaths lived in small tribes that numbered between forty and
@@ -269,7 +269,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -278,8 +278,8 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "RELIGION" ? "RELIGION" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Religion</div>
-            <div className="collapse-content overflow-x-auto">
+            <div className="text-xl font-medium collapse-title">Religion</div>
+            <div className="overflow-x-auto collapse-content">
               <table className="table my-2 table-zebra bg-base-100">
                 <thead>
                   <tr>
@@ -289,11 +289,11 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className=" font-bold">Kavaki, the Ram-Lord</td>
+                    <td className="font-bold ">Kavaki, the Ram-Lord</td>
                     <td>The guardian and creator deity of the goliaths.</td>
                   </tr>
                   <tr>
-                    <td className=" font-bold">Kuliak, the Dead Goddess</td>
+                    <td className="font-bold ">Kuliak, the Dead Goddess</td>
                     <td>
                       Once a goddess of mountain springs, she was spurned by the
                       other gods after she overslept and failed to lead the
@@ -302,35 +302,35 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                     </td>
                   </tr>
                   <tr>
-                    <td className=" font-bold">Manethak, the Wise Hunter</td>
+                    <td className="font-bold ">Manethak, the Wise Hunter</td>
                     <td>The god of both hunting and knowledge.</td>
                   </tr>
                   <tr>
-                    <td className=" font-bold">
+                    <td className="font-bold ">
                       Naki-Uthai, the Brave Climber
                     </td>
                     <td>The god of mountains, climbing, and bravery.</td>
                   </tr>
                   <tr>
-                    <td className=" font-bold">Theleya, the Fertile One</td>
+                    <td className="font-bold ">Theleya, the Fertile One</td>
                     <td>The goddess of fertility and growth.</td>
                   </tr>
                   <tr>
-                    <td className=" font-bold">Vanua, the Harbinger of Woe</td>
+                    <td className="font-bold ">Vanua, the Harbinger of Woe</td>
                     <td>The god of natural disasters and misfortune.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-8"
               checked={expand === "GOLIATH_NAMES"}
               onChange={() => setExpanded("GOLIATH_NAMES")}
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Goliath Names
             </div>
             <div className="collapse-content">
@@ -364,7 +364,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
                 the order of birth name, nickname, and clan name. In casual
                 conversation, they use their nickname.
               </p>
-              <ul className="text-sm sm:text-base list-disc m-4">
+              <ul className="m-4 text-sm list-disc sm:text-base">
                 <li className="my-2">
                   <strong>Birth Names:</strong> Aukan, Eglath, Gae-Al, Gauthak,
                   Ilikan, Keothi, Kuori, Lo-Kag, Manneo, Maveith, Nalla, Orilo,
@@ -456,7 +456,7 @@ export default function ModalGoliath({ race, setRace }: SetRaceProps) {
             </table>
           </div>
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide m-4" onClick={raceGoliath}>
+            <button className="m-4 btn btn-success btn-wide" onClick={raceGoliath}>
               Select Goliath
             </button>
           </div>

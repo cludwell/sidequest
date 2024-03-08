@@ -33,13 +33,13 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_22.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={Duergar}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -50,7 +50,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_22" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Duergar
           </h3>
           <Image
@@ -58,11 +58,11 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
           {/* accordion start */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -71,7 +71,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Details</div>
+            <div className="text-xl font-medium collapse-title">Details</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Like other dwarves, duergar were typically thick, stocky
@@ -92,7 +92,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -103,7 +103,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Personality{" "}
             </div>
             <div className="collapse-content">
@@ -242,7 +242,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -253,7 +253,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Abilities </div>
+            <div className="text-xl font-medium collapse-title">Abilities </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Duergar were in some ways even better adapted to underground
@@ -276,7 +276,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -285,7 +285,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Combat </div>
+            <div className="text-xl font-medium collapse-title">Combat </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Duergar adventurers were most commonly concerned with personal
@@ -296,7 +296,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -305,7 +305,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "SOCIETY" ? "SOCIETY" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Society </div>
+            <div className="text-xl font-medium collapse-title">Society </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Duergar were, as a whole, generally cruel and malevolent
@@ -317,7 +317,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 Duergar would often ferment fire lichen into their alcoholic
                 beverages, to create a hot and spicy drink.
               </p>
-              <h1 className="text-xl  font-bold my-4">Language</h1>
+              <h1 className="my-4 text-xl font-bold">Language</h1>
               <p className="text-sm sm:text-base">
                 Duergar primarily spoke Duergan, a dialect of Dwarven descended
                 from the dialect of the shield dwarves and heavily influenced by
@@ -329,7 +329,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 conduct trade with earth elementals, while others learned Common
                 to trade with the surface world.
               </p>
-              <h1 className=" text-xl  font-bold my-4">Art</h1>
+              <h1 className="my-4 text-xl font-bold ">Art</h1>
               <p className="text-sm sm:text-base">
                 As worshipers of Laduguer, the duergar had a long tradition of
                 crafting that went back to their days as the rulers of Barakuir.
@@ -351,14 +351,14 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 such as hammers or picks.
               </p>
 
-              <h1 className=" text-xl  font-bold my-4">Animals</h1>
+              <h1 className="my-4 text-xl font-bold ">Animals</h1>
               <p className="text-sm sm:text-base">
                 For pets and familiars, duergar often enjoyed the company of
                 Underdark creatures, such as bats, spiders, osquips, or spitting
                 crawlers. For beasts of burden, duergar used large lizards or
                 steeders.
               </p>
-              <h1 className=" text-xl  font-bold my-4">Magic</h1>
+              <h1 className="my-4 text-xl font-bold ">Magic</h1>
               <p className="text-sm sm:text-base">
                 Unlike other dwarves, duergar had a strong tradition of magic,
                 both in the divine and arcane varieties, and duergar clerics,
@@ -374,7 +374,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 crafted many magic items unique to them, such as absorbing
                 shields, bolts of battering, and stonereaver axes.
               </p>
-              <h1 className=" text-xl  font-bold my-4">Religion</h1>
+              <h1 className="my-4 text-xl font-bold ">Religion</h1>
               <p className="text-sm sm:text-base">
                 The chief god of the duergar was Laduguer, the dwarven god of
                 crafting, a tradition going back to the days of Clan Duergar,
@@ -406,7 +406,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 perished, the duergar, in their desperation, turned to Asmodeus.
               </p>
 
-              <h1 className=" text-xl  font-bold my-4">Relations</h1>
+              <h1 className="my-4 text-xl font-bold ">Relations</h1>
               <p className="text-sm sm:text-base">
                 Duergar were a coarse and distrustful race who felt that other
                 races were out to get them, whether they were from the Underdark
@@ -436,7 +436,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -445,7 +445,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "HISTORY" ? "HISTORY" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">History </div>
+            <div className="text-xl font-medium collapse-title">History </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Initially, the duergar were a clan of shield dwarves in the
@@ -637,7 +637,7 @@ export default function ModalDuergar({ race, setRace }: SetRaceProps) {
           </div>
           {/* table end */}
           <div className="flex flex-row justify-center">
-            <button className="btn btn-success btn-wide m-4" onClick={raceDuergar}>
+            <button className="m-4 btn btn-success btn-wide" onClick={raceDuergar}>
               Select Duergar
             </button>
           </div>{" "}

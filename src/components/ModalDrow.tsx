@@ -33,13 +33,13 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_21.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={drow}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -50,16 +50,16 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_21" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">Drow</h3>
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">Drow</h3>
           <Image
             src={drowDetail}
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-6"
@@ -70,7 +70,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Description
             </div>
             <div className="collapse-content">
@@ -97,7 +97,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 while females were a bit lighter, averaging 104.5 pounds.
               </p>
 
-              <h2 className="text-xl font-bold my-4">Coloration</h2>
+              <h2 className="my-4 text-xl font-bold">Coloration</h2>
               <p className="text-sm sm:text-base">
                 Drow skin tones ranged from dark grey, jet-black, and obsidian,
                 the albino drow known as the Szarkai being an exception. Drow
@@ -110,7 +110,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 state.
               </p>
 
-              <h2 className="text-xl font-bold my-4">Hair</h2>
+              <h2 className="my-4 text-xl font-bold">Hair</h2>
               <p className="text-sm sm:text-base">
                 Drow hair could be stark white, pale yellow and, more rarely,
                 silver or copper in color. It thinned and changed color with
@@ -120,7 +120,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 sideburns or tufts of wispy hair on the cheek or chin.
               </p>
 
-              <h2 className="text-xl font-bold my-4">Clothing</h2>
+              <h2 className="my-4 text-xl font-bold">Clothing</h2>
               <p className="text-sm sm:text-base">
                 The majority of drow wore a piwafwi, a fire-resistant,
                 protective cloak, footwear that functioned as boots of
@@ -134,7 +134,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -145,7 +145,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Personality
             </div>
             <div className="collapse-content">
@@ -175,7 +175,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-8"
@@ -186,7 +186,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Morality</div>
+            <div className="text-xl font-medium collapse-title">Morality</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 The moral code of the average drow was informed by the teachings
@@ -244,7 +244,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-9"
@@ -255,7 +255,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Mistrust</div>
+            <div className="text-xl font-medium collapse-title">Mistrust</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 As a general rule, drow living within a Lolthite society
@@ -302,7 +302,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-10"
@@ -313,7 +313,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Alignment</div>
+            <div className="text-xl font-medium collapse-title">Alignment</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 For a race so chaotic in a society focused on individual
@@ -343,7 +343,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-11"
@@ -354,7 +354,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Good Drow</div>
+            <div className="text-xl font-medium collapse-title">Good Drow</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Unlike creatures such as orcs, drow had no innate inclination
@@ -383,7 +383,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-13"
@@ -392,10 +392,10 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 setExpanded((prev) => (prev !== "COMBAT" ? "COMBAT" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Combat</div>
+            <div className="text-xl font-medium collapse-title">Combat</div>
             <div className="collapse-content">
               <section>
-                <h2 className="text-xl font-bold my-4">Drow Combat Tactics</h2>
+                <h2 className="my-4 text-xl font-bold">Drow Combat Tactics</h2>
                 <p className="text-sm sm:text-base">
                   Drow were as frail as any other elves, and had a fascination
                   with stealth and subtlety. They had a tendency to ambush their
@@ -407,7 +407,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-bold my-4">
+                <h2 className="my-4 text-xl font-bold">
                   Stealth and Subterfuge
                 </h2>
                 <p className="text-sm sm:text-base">
@@ -421,7 +421,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-bold my-4">Magic in Combat</h2>
+                <h2 className="my-4 text-xl font-bold">Magic in Combat</h2>
                 <p className="text-sm sm:text-base">
                   Apart from its obvious use as a light source, drow used their
                   ability to create dancing lights to surprise the enemy with
@@ -447,7 +447,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-bold my-4">Lolth-touched Combat</h2>
+                <h2 className="my-4 text-xl font-bold">Lolth-touched Combat</h2>
                 <p className="text-sm sm:text-base">
                   Lolthtouched drow sometimes trained to slip into the cover of
                   their created darkness, or learnt to hit the targets of
@@ -457,7 +457,7 @@ export default function ModalDrow({ race, setRace }: SetRaceProps) {
               </section>
             </div>
           </div>
-          <table className="table table-zebra my-4">
+          <table className="table my-4 table-zebra">
             <thead>
               <tr>
                 <th>Trait</th>

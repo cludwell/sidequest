@@ -44,10 +44,10 @@ export default function EquipRanger({
     <>
       <form className="flex flex-col items-center">
         {/* Primary Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Armor Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Armor Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Leather Armor
               <ToolTip tip="AC: 11, Weight: 10" position="font-sans" />
             </label>
@@ -61,7 +61,7 @@ export default function EquipRanger({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Scale Mail{" "}
               <ToolTip
                 tip="AC: 14, Stealth: Disadvantage, Weight: 45"
@@ -79,10 +79,10 @@ export default function EquipRanger({
           </div>
         </div>
         {/* Secondary Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Two Shortswords (1d6)
             </label>
             <input
@@ -98,7 +98,7 @@ export default function EquipRanger({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Two Simple Melee Weapons
             </label>
             <input
@@ -112,7 +112,7 @@ export default function EquipRanger({
           {selection && (
             <>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponA(e.target.value)}
               >
                 <option disabled selected>
@@ -128,7 +128,7 @@ export default function EquipRanger({
                 ))}
               </select>
               <select
-                className="select select-secondary w-full max-w-xs my-2"
+                className="w-full max-w-xs my-2 select select-secondary"
                 onChange={(e) => setWeaponB(e.target.value)}
               >
                 <option disabled selected>
@@ -147,10 +147,10 @@ export default function EquipRanger({
           )}
         </div>
         {/* Pack Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Dungeoneer's Pack
               <ToolTip
                 tip="Includes a backpack, a crowbar, a hammer, 10 pitons, 10 torches, a tinderbox, 10 days of rations, and a waterskin."
@@ -167,7 +167,7 @@ export default function EquipRanger({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -183,9 +183,9 @@ export default function EquipRanger({
             />
           </div>
         </div>
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Longbow and 20 Arrows
             </label>
             <input
@@ -205,14 +205,14 @@ export default function EquipRanger({
           title="Simple Melee Weapons"
         />
       )}
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

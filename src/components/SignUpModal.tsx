@@ -52,7 +52,7 @@ export default function SignUp() {
       username &&
       password === confirmPassword
     ) {
-      console.log("ERRORS", errors);
+      // console.log("ERRORS", errors);
       await signIn("credentials", {
         email,
         password,

@@ -35,13 +35,13 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_20.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={aasimar}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -52,7 +52,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
       </button>
       <dialog id="my_modal_20" className="modal">
         <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-4xl sm:text-5xl mb-4 almendra text-center">
+          <h3 className="mb-4 text-4xl font-bold text-center sm:text-5xl almendra">
             Aasimar
           </h3>
           <Image
@@ -60,11 +60,11 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
           <p className="py-4"></p>
           {/* accordion start */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -73,7 +73,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "DETAILS" ? "DETAILS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Details</div>
+            <div className="text-xl font-medium collapse-title">Details</div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Aasimar bore the mark of their celestial touch through many
@@ -103,7 +103,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -114,7 +114,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Personality{" "}
             </div>
             <div className="collapse-content">
@@ -144,7 +144,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -153,7 +153,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "ABILITIES" ? "ABILITIES" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Abilities </div>
+            <div className="text-xl font-medium collapse-title">Abilities </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 As a general rule, Aasimar were a wise and charismatic race,
@@ -168,7 +168,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -179,7 +179,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">Society </div>
+            <div className="text-xl font-medium collapse-title">Society </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Aasimar were rare throughout Toril and, as such, had no true
@@ -251,7 +251,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -260,7 +260,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "HISTORY" ? "HISTORY" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">History </div>
+            <div className="text-xl font-medium collapse-title">History </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Though mortal Aasimar were the result of breeding between humans
@@ -277,7 +277,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -286,7 +286,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "HOMELANDS" ? "HOMELANDS" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Homelands </div>
+            <div className="text-xl font-medium collapse-title">Homelands </div>
             <div className="collapse-content">
               <p className="text-sm sm:text-base">
                 Aasimar were most commonly found in the eastern lands of Unther
@@ -303,7 +303,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-2"
@@ -312,9 +312,9 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 setDetail((prev) => (prev !== "SUBRACES" ? "SUBRACES" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">Subraces </div>
+            <div className="text-xl font-medium collapse-title">Subraces </div>
             <div className="collapse-content">
-              <h1 className="text-lg my-4 underline">Fallen Aasimar</h1>
+              <h1 className="my-4 text-lg underline">Fallen Aasimar</h1>
               <p className="text-sm sm:text-base">
                 Some Aasimar were marked by some form of darkness in their
                 lives, that tarnished their inner light. In most instances these
@@ -329,7 +329,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 necrosis around them for a single minute. This effect was so
                 horrific that it often caused others to run away in terror.
               </p>
-              <h1 className="text-lg my-4 underline">Protector Aasimar</h1>
+              <h1 className="my-4 text-lg underline">Protector Aasimar</h1>
               <p className="text-sm sm:text-base">
                 Yet other Aasimar were tasked by the greater powers of good to
                 protect the weak and innocent of the Realms. From their youth
@@ -344,7 +344,7 @@ export default function ModalAasimar({ race, setRace }: SetRaceProps) {
                 for one minute. They could fly at the speed of about 300 ft (91
                 m) per minute and unleash radiant energy when they attack.
               </p>
-              <h1 className="text-lg my-4 underline">Scourge Aasimar</h1>
+              <h1 className="my-4 text-lg underline">Scourge Aasimar</h1>
               <p className="text-sm sm:text-base">
                 These individuals of divine heritage that possessed an intense
                 drive to purge evil from the Realms. They imbued with powerful

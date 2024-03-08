@@ -41,13 +41,13 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_bard.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -58,7 +58,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_bard" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -66,12 +66,12 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             An inspiring magician whose power echoes the music of creation
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -99,7 +99,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
               </tbody>
             </table>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spellcasting"
@@ -110,9 +110,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spellcasting
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -125,14 +125,14 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 spellcasting and the Spells Listing for the bard spell list.
               </p>
 
-              <h3 className="text-lg font-medium mt-4">Cantrips</h3>
+              <h3 className="mt-4 text-lg font-medium">Cantrips</h3>
               <p className="text-sm sm:text-base">
                 You know two cantrips of your choice from the bard spell list.
                 You learn additional bard cantrips of your choice at higher
                 levels, as shown in the Cantrips Known column of the Bard table.
               </p>
 
-              <h3 className="text-lg font-medium mt-4">Spell Slots</h3>
+              <h3 className="mt-4 text-lg font-medium">Spell Slots</h3>
               <p className="text-sm sm:text-base">
                 The Bard table shows how many spell slots you have to cast your
                 bard spells of 1st level and higher. To cast one of these
@@ -140,7 +140,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 You regain all expended spell slots when you finish a long rest.
               </p>
 
-              <h3 className="text-lg font-medium mt-4">
+              <h3 className="mt-4 text-lg font-medium">
                 Spells Known of 1st Level and Higher
               </h3>
               <p className="text-sm sm:text-base">
@@ -154,7 +154,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 of a level for which you have spell slots.
               </p>
 
-              <h3 className="text-lg font-medium mt-4">Spellcasting Ability</h3>
+              <h3 className="mt-4 text-lg font-medium">Spellcasting Ability</h3>
               <p className="text-sm sm:text-base">
                 Charisma is your spellcasting ability for your bard spells. Your
                 magic comes from the heart and soul you pour into the
@@ -165,20 +165,20 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 roll with one.
               </p>
 
-              <h3 className="text-lg font-medium mt-4">Ritual Casting</h3>
+              <h3 className="mt-4 text-lg font-medium">Ritual Casting</h3>
               <p className="text-sm sm:text-base">
                 You can cast any bard spell you know as a ritual if that spell
                 has the ritual tag.
               </p>
 
-              <h3 className="text-lg font-medium mt-4">Spellcasting Focus</h3>
+              <h3 className="mt-4 text-lg font-medium">Spellcasting Focus</h3>
               <p className="text-sm sm:text-base">
                 You can use a musical instrument (see the Tools section) as a
                 spellcasting focus for your bard spells.
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-bardic-inspiration"
@@ -189,9 +189,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Bardic Inspiration
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -227,7 +227,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-jack-of-all-trades"
@@ -238,9 +238,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Jack of All Trades
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -253,7 +253,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-song-of-rest"
@@ -264,9 +264,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Song of Rest
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -280,7 +280,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-bard-college"
@@ -291,9 +291,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Bard College
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -306,7 +306,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-expertise-3rd"
@@ -317,9 +317,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Expertise
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd Level
               </span>
             </div>
@@ -331,7 +331,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-expertise-10th"
@@ -342,9 +342,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Expertise
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 10th Level
               </span>
             </div>
@@ -356,7 +356,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -367,9 +367,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Font of Inspiration
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th Level
               </span>
             </div>
@@ -382,7 +382,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-8"
@@ -393,9 +393,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Countercharm
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 6th Level
               </span>
             </div>
@@ -414,7 +414,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-9"
@@ -427,9 +427,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Superior Inspiration
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th Level
               </span>
             </div>
@@ -440,7 +440,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-23"
@@ -451,9 +451,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -495,7 +495,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
               </div>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-24"
@@ -506,9 +506,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -542,7 +542,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
               </div>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-7"
@@ -553,9 +553,9 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Magical Secrets
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 10th, 14th, 18th Level
               </span>
             </div>
@@ -606,7 +606,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center my-4">
             <select
-              className="select select-primary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-primary"
               onChange={(e) => setCant1(e.target.value)}
               value={cant1}
             >
@@ -619,7 +619,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setCant2(e.target.value)}
               value={cant2}
             >
@@ -632,7 +632,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-success w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-success"
               onChange={(e) => setSpell1(e.target.value)}
               value={spell1}
             >
@@ -645,7 +645,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-info w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-info"
               onChange={(e) => setSpell2(e.target.value)}
               value={spell2}
             >
@@ -658,7 +658,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-warning w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-warning"
               onChange={(e) => setSpell3(e.target.value)}
               value={spell3}
             >
@@ -671,7 +671,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <select
-              className="select select-error w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-error"
               onChange={(e) => setSpell4(e.target.value)}
               value={spell4}
             >
@@ -684,7 +684,7 @@ export default function Bard({ dndClass, setDndClass }: SetClassProps) {
             </select>
 
             <button
-              className="btn btn-success btn-wide my-2"
+              className="my-2 btn btn-success btn-wide"
               onClick={becomeBard}
             >
               Bard

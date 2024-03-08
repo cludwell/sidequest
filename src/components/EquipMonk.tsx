@@ -36,10 +36,10 @@ export default function EquipMonk({
     <>
       <form className="flex flex-col items-center">
         {/* Weapon Selection */}
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Weapon Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Weapon Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Shortsword</label>
+            <label className="text-xl label almendra">Shortsword</label>
             <input
               type="radio"
               name="weapon-choice"
@@ -50,7 +50,7 @@ export default function EquipMonk({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">Any Simple Weapon</label>
+            <label className="text-xl label almendra">Any Simple Weapon</label>
             <input
               type="radio"
               name="weapon-choice"
@@ -64,7 +64,7 @@ export default function EquipMonk({
           {selection && (
             <>
               <select
-                className="select select-secondary w-full max-w-xs"
+                className="w-full max-w-xs select select-secondary"
                 onChange={(e) => setWeapon(e.target.value)}
               >
                 <option disabled selected>
@@ -83,10 +83,10 @@ export default function EquipMonk({
           )}
         </div>
 
-        <div className="flex flex-col w-80 my-4">
-          <label className="label text-xl almendra">Pack Selection</label>
+        <div className="flex flex-col my-4 w-80">
+          <label className="text-xl label almendra">Pack Selection</label>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Dungeoneer's Pack{" "}
               <ToolTip
                 tip="Includes Backpack, Crowbar, Hammer, 10 pitons, 10 torches, Tinderbox, 10 days of rations, Waterskin, 50 feet of hempen rope"
@@ -103,7 +103,7 @@ export default function EquipMonk({
             />
           </div>
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">
+            <label className="text-xl label almendra">
               Explorer's Pack
               <ToolTip
                 tip="Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
@@ -121,9 +121,9 @@ export default function EquipMonk({
         </div>
 
         {/* Always Selected: 10 Darts */}
-        <div className="flex flex-col w-80 my-4">
+        <div className="flex flex-col my-4 w-80">
           <div className="flex flex-row items-center justify-between">
-            <label className="label text-xl almendra">10 Darts</label>
+            <label className="text-xl label almendra">10 Darts</label>
             <input
               type="radio"
               name="darts"
@@ -135,14 +135,14 @@ export default function EquipMonk({
         </div>
       </form>
 
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary m-8"
+          className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary"
           onClick={equip}
         >
           Confirm Equipment
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary m-8">
+        <button className="m-8 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-secondary">
           Finished
         </button>
       </div>

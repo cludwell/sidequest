@@ -66,13 +66,13 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
   return (
     <>
       <button
-        className="btn h-fit justify-between font-bold text-lg max-w-screen-xl w-full my-1"
+        className="justify-between w-full max-w-screen-xl my-1 text-lg font-bold btn h-fit"
         onClick={() => window.my_modal_ranger.showModal()}
       >
         <span className="flex flex-row items-center">
           <Image
             src={icon}
-            className="object-contain rounded-md m-2 max-h-14"
+            className="object-contain m-2 rounded-md max-h-14"
             alt="portrait preview"
             width={50}
             height={50}
@@ -83,7 +83,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
       </button>
       <dialog id="my_modal_ranger" className="modal">
         <form method="dialog" className="modal-box">
-          {/* <h3 className="font-bold text-5xl mb-4 almendra text-center">
+          {/* <h3 className="mb-4 text-5xl font-bold text-center almendra">
             Barbarian
           </h3> */}
           <Image
@@ -91,13 +91,13 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             alt="detail image"
             width={800}
             height={800}
-            className="rounded-xl aspect-square object-cover"
+            className="object-cover rounded-xl aspect-square"
           />
-          <p className="text-lg my-4 mx-16 italic">
+          <p className="mx-16 my-4 text-lg italic">
             A priestly champion who wields divine magic in service of a higher
             power
           </p>
-          <div className="overflow-x-auto m-1">
+          <div className="m-1 overflow-x-auto">
             <table className="table table-zebra">
               {/* head */}
               <thead>
@@ -126,7 +126,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             </table>
           </div>
           {/* Favored Enemy Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-favored-enemy"
@@ -137,9 +137,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Favored Enemy
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -179,7 +179,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
           {/* Natural Explorer Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-natural-explorer"
@@ -190,9 +190,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Natural Explorer
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
@@ -211,7 +211,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 While traveling for an hour or more in your favored terrain, you
                 gain the following benefits:
               </p>
-              <ul className="list-disc my-4 ml-8">
+              <ul className="my-4 ml-8 list-disc">
                 <li className="my-2">
                   Difficult terrain doesn't slow your group's travel.
                 </li>
@@ -241,7 +241,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 You choose additional favored terrain types at 6th and 10th
                 level.
               </p>
-              <table className="table table-zebra w-full bg-base-100 my-4">
+              <table className="table w-full my-4 table-zebra bg-base-100">
                 {/* <th>
                   <td>Terrain</td>
                   <td>Description</td>
@@ -258,7 +258,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-natural-explorer"
@@ -269,9 +269,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Fighting Style
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd Level
               </span>
             </div>
@@ -284,7 +284,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
               <div className="overflow-x-auto">
-                <table className="table table-zebra w-full bg-base-100">
+                <table className="table w-full table-zebra bg-base-100">
                   <thead>
                     <tr>
                       <th>Fighting Style</th>
@@ -411,7 +411,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
             </div>
           </div>
 
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-spellcasting"
@@ -422,9 +422,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Spellcasting
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 2nd level
               </span>
             </div>
@@ -437,7 +437,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
 
-              <h3 className="font-xl my-4 underline">Spell Slots</h3>
+              <h3 className="my-4 underline font-xl">Spell Slots</h3>
               <p>
                 The Ranger table shows how many spell slots you have to cast
                 your ranger spells of 1st level and higher. To cast one of these
@@ -452,7 +452,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
 
-              <h3 className="font-xl my-4 underline">
+              <h3 className="my-4 underline font-xl">
                 Spells Known of 1st Level and Higher
               </h3>
               <p>
@@ -476,7 +476,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               </p>
               <br />
 
-              <h3 className="font-xl my-4 underline">Spellcasting Ability</h3>
+              <h3 className="my-4 underline font-xl">Spellcasting Ability</h3>
               <p>
                 Wisdom is your spellcasting ability for your ranger spells,
                 since your magic draws on your attunement to nature. You use
@@ -499,7 +499,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Ranger Archetype */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-ranger-archetype"
@@ -510,9 +510,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Ranger Archetype
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd level
               </span>
             </div>
@@ -527,7 +527,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Primeval Awareness */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-primeval-awareness"
@@ -538,9 +538,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Primeval Awareness
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 3rd level
               </span>
             </div>
@@ -559,7 +559,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Extra Attack */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-extra-attack"
@@ -570,9 +570,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Extra Attack
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 5th level
               </span>
             </div>
@@ -587,7 +587,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           <JobAbilityInfo expand={expand} setExpanded={setExpanded} />
 
           {/* Land's Stride */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-lands-stride"
@@ -598,9 +598,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Land's Stride
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 8th level
               </span>
             </div>
@@ -621,7 +621,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hide in Plain Sight */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hide-in-plain-sight"
@@ -632,9 +632,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hide in Plain Sight
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 10th level
               </span>
             </div>
@@ -658,7 +658,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Vanish */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-vanish"
@@ -667,9 +667,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 setExpanded((prev) => (prev !== "VANISH" ? "VANISH" : null))
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Vanish
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 14th level
               </span>
             </div>
@@ -683,7 +683,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Feral Senses */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-feral-senses"
@@ -694,9 +694,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Feral Senses
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 18th level
               </span>
             </div>
@@ -716,7 +716,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Foe Slayer */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-foe-slayer"
@@ -727,9 +727,9 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Foe Slayer
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 20th level
               </span>
             </div>
@@ -746,7 +746,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Proficiencies Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-proficiencies-ranger"
@@ -759,14 +759,14 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Proficiencies
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Armor</td>
@@ -797,7 +797,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
           </div>
 
           {/* Hit Points Collapsible */}
-          <div className="collapse collapse-plus bg-base-200 my-1">
+          <div className="my-1 collapse collapse-plus bg-base-200">
             <input
               type="checkbox"
               name="my-accordion-hit-points-ranger"
@@ -808,14 +808,14 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
                 )
               }
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="text-xl font-medium collapse-title">
               Hit Points
-              <span className="block text-gray-500 text-sm mt-1">
+              <span className="block mt-1 text-sm text-gray-500">
                 1st Level
               </span>
             </div>
             <div className="collapse-content">
-              <table className="table table-zebra w-full bg-base-100">
+              <table className="table w-full table-zebra bg-base-100">
                 <tbody>
                   <tr>
                     <td className="font-bold">Hit Dice</td>
@@ -839,7 +839,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
 
           <div className="flex flex-col items-center">
             <select
-              className="select select-primary w-full max-w-xs my-4"
+              className="w-full max-w-xs my-4 select select-primary"
               onChange={(e) => setFavored(e.target.value)}
               value={favored}
             >
@@ -850,7 +850,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <select
-              className="select select-secondary w-full max-w-xs my-2"
+              className="w-full max-w-xs my-2 select select-secondary"
               onChange={(e) => setTerrain(e.target.value)}
               value={terrain}
             >
@@ -860,7 +860,7 @@ export default function Ranger({ dndClass, setDndClass }: SetClassProps) {
               ))}
             </select>
             <button
-              className="btn btn-success btn-wide my-8"
+              className="my-8 btn btn-success btn-wide"
               onClick={becomeRanger}
             >
               Ranger

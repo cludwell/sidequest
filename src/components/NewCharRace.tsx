@@ -51,13 +51,13 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
   ];
 
   return (
-    <div className="flex flex-col max-w-screen-xl w-full ">
-      <h1 className="text-4xl almendra mb-8 text-center">Races</h1>
+    <div className="flex flex-col w-full max-w-screen-xl ">
+      <h1 className="mb-8 text-4xl text-center almendra">Races</h1>
 
       <ModalAarakocra race={race} setRace={setRace} />
       <ModalAasimar race={race} setRace={setRace} />
       <ModalDragonBorn race={race} setRace={setRace} />
-      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full ">
+      <div className="w-full max-w-screen-xl m-1 collapse collapse-plus bg-base-200 ">
         <input
           type="checkbox"
           name="my-accordion-3"
@@ -66,10 +66,10 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
             setSelected((prev) => (prev !== "DWARF" ? "DWARF" : null))
           }
         />
-        <div className="collapse-title text-xl font-bold flex items-center">
+        <div className="flex items-center text-xl font-bold collapse-title">
           <Image
             src={dwarf}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -82,7 +82,7 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
           <ModalMountainDwarf race={race} setRace={setRace} />
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
+      <div className="w-full max-w-screen-xl m-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-3"
@@ -91,10 +91,10 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
             setSelected((prev) => (prev !== "ELF" ? "ELF" : null))
           }
         />
-        <div className="collapse-title text-xl font-bold flex items-center">
+        <div className="flex items-center text-xl font-bold collapse-title">
           <Image
             src={elf}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -108,7 +108,7 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
           <ModalWoodElf race={race} setRace={setRace} />
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
+      <div className="w-full max-w-screen-xl m-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-3"
@@ -117,10 +117,10 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
             setSelected((prev) => (prev !== "GNOME" ? "GNOME" : null))
           }
         />
-        <div className="collapse-title text-xl font-bold flex items-center">
+        <div className="flex items-center text-xl font-bold collapse-title">
           <Image
             src={gnome}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -135,7 +135,7 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
       <ModalGoliath race={race} setRace={setRace} />
       <ModalHalfElf race={race} setRace={setRace} />
       <ModalHalfOrc race={race} setRace={setRace} />
-      <div className="collapse collapse-plus bg-base-200 m-1 max-w-screen-xl w-full">
+      <div className="w-full max-w-screen-xl m-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-3"
@@ -144,10 +144,10 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
             setSelected((prev) => (prev !== "HALFLING" ? "HALFLING" : null))
           }
         />
-        <div className="collapse-title text-xl font-bold flex items-center">
+        <div className="flex items-center text-xl font-bold collapse-title">
           <Image
             src={halfling}
-            className="object-cover aspect-square rounded-md m-2"
+            className="object-cover m-2 rounded-md aspect-square"
             alt="portrait preview"
             width={50}
             height={50}
@@ -161,9 +161,9 @@ export default function NewCharacterRace({ race, setRace }: SetRaceProps) {
       </div>
       <ModalHuman race={race} setRace={setRace} />
       <ModalTiefling race={race} setRace={setRace} />
-      <div className="flex flex-row max-w-screen-xl w-full justify-center">
+      <div className="flex flex-row justify-center w-full max-w-screen-xl">
         <button
-          className="btn btn-secondary m-8"
+          className="m-8 btn btn-secondary"
           onClick={() => (window.location.hash = "#item2")}
         >
           Next Step{" "}

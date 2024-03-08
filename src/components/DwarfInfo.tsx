@@ -9,7 +9,7 @@ export default function DwarfInfo({
   if (!type) return null
   return (
     <>
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -20,7 +20,7 @@ export default function DwarfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Short and Stout
         </div>
         <div className="collapse-content">
@@ -44,7 +44,7 @@ export default function DwarfInfo({
       </div>
 
       {/* Component for "Long Memory, Long Grudges" */}
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -57,7 +57,7 @@ export default function DwarfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Long Memory, Long Grudges
         </div>
         <div className="collapse-content">
@@ -95,7 +95,7 @@ export default function DwarfInfo({
       </div>
 
       {/* Component for "Clans and Kingdoms" */}
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -106,7 +106,7 @@ export default function DwarfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Clans and Kingdoms
         </div>
         <div className="collapse-content">
@@ -139,7 +139,7 @@ export default function DwarfInfo({
       </div>
 
       {/* Component for "Gods, Gold, and Clan" */}
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -150,7 +150,7 @@ export default function DwarfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">
+        <div className="text-xl font-medium collapse-title">
           Gods, Gold, and Clan
         </div>
         <div className="collapse-content">
@@ -169,7 +169,7 @@ export default function DwarfInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-2"
@@ -180,7 +180,7 @@ export default function DwarfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">Slow To Trust</div>
+        <div className="text-xl font-medium collapse-title">Slow To Trust</div>
         <div className="collapse-content">
           <p className="text-sm sm:text-base">
             Dwarves get along passably well with most other races. “The
@@ -221,7 +221,7 @@ export default function DwarfInfo({
         </div>
       </div>
 
-      <div className="collapse collapse-plus bg-base-200 my-1">
+      <div className="my-1 collapse collapse-plus bg-base-200">
         <input
           type="checkbox"
           name="my-accordion-3"
@@ -232,7 +232,7 @@ export default function DwarfInfo({
             )
           }
         />
-        <div className="collapse-title text-xl font-medium">Dwarf Names</div>
+        <div className="text-xl font-medium collapse-title">Dwarf Names</div>
         <div className="collapse-content">
           <p className="text-sm sm:text-base">
             A dwarf's name is granted by a clan elder, in accordance with
