@@ -86,7 +86,7 @@ export default function Header() {
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-64 "
+              className="z-30 w-64 p-2 shadow dropdown-content menu bg-base-100 rounded-box "
             >
               <li>
                 <Link href={`/characters`} className="text-lg">

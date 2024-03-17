@@ -106,7 +106,7 @@ export default function DungeonMaster() {
     setTimeout(() => {
       setD20(randomNumber);
       setRollingA(false);
-    }, 1000);
+    }, 200);
   };
 
   const resp = " roll: 3d6 .";
@@ -120,7 +120,7 @@ export default function DungeonMaster() {
     for (let i = 0; i < diceNumber; i++) {
       setRollingB(true);
       const num = Math.floor(Math.random() * parseInt(diceSides)) + 1;
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 200));
       setRolls((prev) => [...prev, num]);
       setRollingB(false);
     }
@@ -221,9 +221,7 @@ export default function DungeonMaster() {
                 data-tip="Click to roll dice for specific situations, weapon damage, etc."
               >
                 <button
-                  className={`btn btn-neutral text-2xl tooltip ${
-                    rollingB ? "rollAnimation" : ""
-                  }`}
+                  className={`btn btn-neutral text-2xl tooltip `}
                   onClick={onCustomRoll}
                 >
                   🎲
@@ -236,16 +234,14 @@ export default function DungeonMaster() {
             data-tip="Roll a d20 for all skill checks. Can your character make that jump? Roll athletics. Is someone lying to you? Roll Perception. Will be sent to Dungeon Master"
           >
             <button
-              className={`btn btn-neutral text-2xl tooltip ${
-                rollingA ? "rollAnimation" : ""
-              }`}
+              className={`btn btn-neutral text-2xl tooltip `}
               onClick={d20Roll}
             >
               d20🎲
             </button>
           </div>
           {char && <ModalCharacterSheet character={char} />}
-          <button className="my-4 btn btn-accent w-fit" type="submit">
+          <button className="mx-4 my-4 btn btn-accent w-fit" type="submit">
             <IconSend />
           </button>
         </div>
