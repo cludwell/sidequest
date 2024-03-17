@@ -25,6 +25,7 @@
     "daisyui": "^3.8.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.11",
+    "framer-motion": "^11.0.14",
     "next": "13.4.11",
     "next-auth": "^4.22.3",
     "next-redux-wrapper": "^8.1.0",
