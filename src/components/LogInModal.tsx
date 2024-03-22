@@ -60,7 +60,7 @@ export default function LogInModal() {
       >
         log in
       </button>
-      <dialog id="my_modal_2" className="modal">
+      <dialog id="my_modal_2" className=" modal">
         <form
           method="dialog"
           className="flex flex-col modal-box"

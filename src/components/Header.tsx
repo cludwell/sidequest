@@ -19,6 +19,7 @@ import IconCharacters from "./icons/IconCharacters";
 import IconID from "./icons/IconID";
 import IconBars from "./icons/IconBars";
 import IconInfo from "./icons/IconInfo";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const { data: session, status: loading } = useSession();
@@ -77,7 +78,7 @@ export default function Header() {
               </button>
             </div>
           )}
-          <div className="dropdown dropdown-bottom dropdown-end dropdown-hover">
+          <div className="relative dropdown dropdown-bottom dropdown-end dropdown-hover">
             <label tabIndex={0} className="mx-2 btn btn-ghost">
               <IconBars />
             </label>
@@ -103,13 +104,6 @@ export default function Header() {
                   Campaigns
                 </Link>
               </li>
-              {/* {session && (
-                <li>
-                  <Link className="text-lg" href={'/accomplishments'}>
-                    <IconTrophy /> Accomplishments
-                  </Link>
-                </li>
-              )} */}
               <li>
                 <Link href={"/about"} className="text-lg">
                   <IconInfo />
@@ -123,3 +117,39 @@ export default function Header() {
     </div>
   );
 }
+
+const wrapperVariants = {
+  open: {
+    scaleY: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+      duration: 0.3,
+    },
+  },
+  closed: {
+    scaleY: 0,
+    transition: {
+      when: false,
+      staggerChildren: 0.1,
+      delay: 0.7,
+    },
+  },
+};
+
+const itemVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+  closed: {
+    opacity: 0,
+    y: -15,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};

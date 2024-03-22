@@ -66,6 +66,11 @@
 }
 
 
+/* 3d shadow */
+.shadowed {
+  text-shadow: 3px 3px 2px black;
+  transform: skew(-10deg, -10deg);
+}
 
 /* dice animation on dungeon master page */
 
