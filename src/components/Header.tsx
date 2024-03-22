@@ -41,10 +41,7 @@ export default function Header() {
   };
 
   const user = useSelector(userProfile);
-  // const characters = useSelector(allCharactersState);
-  // const scenarios = useSelector(scenarioState);
-  // console.log("User Data:", session);
-  // console.log("Character Data:", characters);
+
   return (
     <div className="flex flex-row justify-between " id="header-container">
       <div className="m-4 navbar bg-base-100 rounded-2xl header-background">

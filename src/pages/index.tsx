@@ -80,17 +80,17 @@ export default function Home() {
       if (scope?.current && checkSelectors()) {
         await animate(
           dieSelector,
-          { y: 200, rotate: 720, x: -140, opacity: 1 },
+          { rotate: 720,y: 200,  x: -140, opacity: 1 },
           { duration: 0.6 }
         );
         await animate(
           dieSelector,
-          { y: -150, rotate: 1080, x: -40, opacity: 1 },
+          { rotate: 1080,y: -150,  x: -40, opacity: 1 },
           { duration: 0.4 }
         );
         await animate(
           dieSelector,
-          { y: 150, rotate: 2160, x: 0, opacity: 1 },
+          { rotate: 2160,y: 150,  x: 20, opacity: 1 },
           { duration: 0.3 }
         );
         await animate(
@@ -113,12 +113,7 @@ export default function Home() {
           { y: 120, x: 20, opacity: 1, rotate: 0 },
           { duration: 0.5 }
         );
-        // await animate(
-        //   swordSelector,
-        //   { rotate: 300, y: -500, x: 120, opacity:0 },
-        //   { duration: 0.5 }
-        // );
-        // await animate(swordSelector, { y: 90, x: 20, opacity:1, rotate:300 }, { duration: 0.5 });
+
       }
     };
     setTimeout(() => rollDie(), 300);
