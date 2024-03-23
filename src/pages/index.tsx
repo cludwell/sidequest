@@ -79,11 +79,11 @@ export default function Home() {
       <Head>
         <title>Side🎲Quest</title>
       </Head>
+      <LandingPhaseE />
       <LandingPhaseA />
       <LandingPhaseB />
       <LandingPhaseC />
       <LandingPhaseD />
-      {/* <LandingPhaseE /> */}
     </main>
   );
 }
