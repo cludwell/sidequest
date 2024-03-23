@@ -4,6 +4,7 @@ import orc from "/public/landing/orc.png";
 import creature from "/public/landing/creature.png";
 import beholder from "/public/landing/beholder.png";
 import dragonborn from "/public/landing/dragonborn.png";
+import elf from "/public/landing/elf.png";
 import kobold from "/public/landing/kobold.png";
 import turt from "/public/landing/turt.png";
 import dangerousCave from "/public/scenes/dangerouscave.jpeg";
@@ -18,11 +19,23 @@ export default function LandingPhaseE() {
 
   const beholderSelector = "#beholder";
   const turtleSelector = "#turtle";
-  const koboldSelector = "#kobold"
+  const koboldSelector = "#kobold";
+  const elfSelector = "#elf";
+  const creatureSelector = "#creature";
+  const koboldSceneSelector = "#koboldScene";
+  const turtleSceneSelector = "#turtleScene";
+  const beholderSceneSelector = "#beholderSceneSelector";
+  const villageSceneSelector = "#villageScene";
   const checkSelectors = () => {
     return (
       document.querySelector(beholderSelector) &&
       document.querySelector(turtleSelector) &&
+      document.querySelector(elfSelector) &&
+      document.querySelector(creatureSelector) &&
+      document.querySelector(koboldSceneSelector) &&
+      document.querySelector(turtleSceneSelector) &&
+      document.querySelector(beholderSceneSelector) &&
+      document.querySelector(villageSceneSelector) &&
       document.querySelector(koboldSelector)
     );
   };
@@ -30,12 +43,21 @@ export default function LandingPhaseE() {
   useEffect(() => {
     const startScenes = async () => {
       if (scope?.current && checkSelectors()) {
-
         animate(
-            koboldSelector,
-            { scaleX: [1, 1.02, 1, 1.02], scaleY: [0.98, 1, 1.02, 1] },
-            { duration: 3, repeat: Infinity, repeatType: "reverse" }
-          );
+          elfSelector,
+          { scaleX: [1, 1.02, 1, 1.02], scaleY: [0.98, 1, 1.02, 1] },
+          { duration: 3, repeat: Infinity, repeatType: "reverse" }
+        );
+        animate(
+          creatureSelector,
+          { scaleX: [-1.02, -1, -1.02, -1], scaleY: [1, 1.02, 1, 0.98] },
+          { duration: 3, repeat: Infinity, repeatType: "reverse" }
+        );
+        animate(
+          koboldSelector,
+          { scaleX: [1, 1.02, 1, 1.02], scaleY: [0.98, 1, 1.02, 1] },
+          { duration: 3, repeat: Infinity, repeatType: "reverse" }
+        );
         // turtle
         animate(
           turtleSelector,
@@ -51,7 +73,11 @@ export default function LandingPhaseE() {
         // beholder scene
         animate(
           beholderSelector,
-          { x: [0, 5, 10, 5, 0, -5, -10, -5, 0], y: [0, 5, 10, 5, 0, -5, -10], rotate: [-24,24] },
+          {
+            x: [0, 5, 10, 5, 0, -5, -10, -5, 0],
+            y: [0, 5, 10, 5, 0, -5, -10],
+            rotate: [-24, 24],
+          },
           { duration: 3, repeat: Infinity, repeatType: "reverse" }
         );
         await animate(
@@ -73,21 +99,7 @@ export default function LandingPhaseE() {
       className="relative flex flex-row flex-wrap justify-between w-full max-w-screen-lg min-h-screen bg-red-400"
       ref={scope}
     >
-      {/* <div className="relative bg-cyan-400 h-96" id="dungeon-container">
-
-      <Image
-        src={orc}
-        alt="orc stands stupidly in the scene"
-        className="absolute z-10 w-48 left-1/4 bottom-5"
-      />
-      <Image
-        src={oldchest}
-        alt="a very old chest guarded by an orc"
-        className="absolute bottom-0 z-10 w-40 right-1/4"
-      />
-        </div> */}
-
-      <div className="relative h-96 w-96">
+      <div className="relative h-96 w-96" id="koboldScene">
         <Image
           src={dangerousCave}
           alt="a dimly light dungeon during the day"
@@ -99,7 +111,6 @@ export default function LandingPhaseE() {
           className="absolute z-10 w-40 bottom-1/4 left-1/3"
           id="kobold"
         />
-
       </div>
       <div className="relative overflow-hidden w-96 h-96 " id="turtleScene">
         <Image
@@ -116,7 +127,7 @@ export default function LandingPhaseE() {
       </div>
 
       {/* beholder scene */}
-      <div className="relative w-96 ">
+      <div className="relative w-96 " id="beholderScene">
         <Image
           src={darkdungeon}
           alt="a dimly light dungeon"
@@ -129,11 +140,25 @@ export default function LandingPhaseE() {
           id="beholder"
         />
       </div>
-      <Image
-        src={village2}
-        alt="a medieval looking village on a sunny day"
-        className="object-cover h-96 w-96 aspect-square rounded-xl"
-      />
+      <div className="relative overflow-hidden w-96 h-96" id="villageScene">
+        <Image
+          src={village2}
+          alt="a medieval looking village on a sunny day"
+          className="object-cover h-96 w-96 aspect-square rounded-xl"
+        />
+        <Image
+          src={elf}
+          alt="an elf wearing robes"
+          className="absolute z-10 left-10 w-36 top-10"
+          id="elf"
+        />
+        <Image
+          src={creature}
+          alt="a humanoid creature drinking coffee"
+          className="absolute right-[-5rem] w-64 z-10 top-10"
+          id="creature"
+        />
+      </div>
     </div>
   );
 }
