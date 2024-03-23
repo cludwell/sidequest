@@ -35,6 +35,7 @@ import LandingPhaseA from '../components/LandingPhaseA'
 import Logo from "@/components/Logo";
 import LandingPhaseB from "@/components/LandingPhaseB";
 import LandingPhaseC from "@/components/LandingPhaseC";
+import LandingPhaseD from "@/components/LandingPhaseD";
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -80,6 +81,7 @@ export default function Home() {
       <LandingPhaseA />
       <LandingPhaseB />
       <LandingPhaseC />
+      <LandingPhaseD />
     </main>
   );
 }

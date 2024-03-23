@@ -1,4 +1,4 @@
-import { useAnimate } from "framer-motion";
+import { useAnimate, useInView } from "framer-motion";
 import Image from "next/image";
 import woodedpath2 from "/public/scenes/woodedpath2.jpeg";
 import owlbear from "/public/images/owlbear.png";
@@ -7,7 +7,7 @@ import bard from "/public/images/bard.png";
 import { useEffect } from "react";
 export default function LandingPhaseC() {
   const [scope, animate] = useAnimate();
-
+  const isInView = useInView(scope)
   const owlbearSelector = "#owlbear";
   const bubble1Selector = "#bubble1";
   const bubble2Selector = "#bubble2";
@@ -27,7 +27,7 @@ export default function LandingPhaseC() {
 
   useEffect(() => {
     const scene = async () => {
-      if (scope?.current && checkSelectors()) {
+      if (scope?.current && isInView &&checkSelectors()) {
         await animate(
           owlbearSelector,
           {
@@ -75,7 +75,7 @@ export default function LandingPhaseC() {
       }
     };
     setTimeout(() => scene(), 300);
-  }, [animate, scope]);
+  }, [animate, scope, isInView]);
   return (
     <div
       ref={scope}
@@ -95,7 +95,7 @@ export default function LandingPhaseC() {
           id="owlbear"
         />
       </div>
-      <div className="relative w-1/2 bg-cyan-400 h-96">
+      <div className="relative w-1/2 overflow-hidden rounded-xl">
         {/* first bubble */}
         <div className="absolute opacity-0 chat chat-start" id="bubble1">
           <div className="chat-image avatar">
@@ -169,7 +169,7 @@ export default function LandingPhaseC() {
         <Image
           src={bard}
           alt="a representation of the character"
-          className="absolute transform scale-50 translate-x-1/2 translate-y-1/2 bottom-5 right-4"
+          className="absolute transform scale-50 translate-x-1/2 translate-y-1/2 bottom-5 right-10"
         />
       </div>
     </div>
