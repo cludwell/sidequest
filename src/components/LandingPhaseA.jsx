@@ -39,7 +39,12 @@ export default function LandingPhaseA() {
         );
         animate(
           mimicSelector,
-          { scale: 1.05, x: [20, 0, -20, 0, 10, 0], y: [5, 0, -5, 0, 10, 0], scaleX: [1,1.1,1,.9] },
+          {
+            scale: 1.05,
+            x: [20, 0, -20, 0, 10, 0],
+            y: [5, 0, -5, 0, 10, 0],
+            scaleX: [1, 1.1, 1, 0.9],
+          },
           { duration: 1.5, repeat: Infinity, repeatType: "reverse" }
         );
         await animate(
@@ -59,10 +64,12 @@ export default function LandingPhaseA() {
         <Image
           src={dungeon2}
           alt="rpg scene of traversing a dungeon"
-          className="absolute object-cover object-right w-full h-full opacity-0 rounded-xl"
+          className="absolute object-cover object-right w-full h-full opacity-0 rounded-xl "
           id="dungeon"
         />
+        <div id="aperture" className="overflow-hidden rounded-full">
 
+        </div>
         <Image
           src={mimic}
           alt="stereotypical mimic from dungeons and dragons"
@@ -77,6 +84,7 @@ export default function LandingPhaseA() {
           id="dialogue"
         />
       </div>
+      
     </>
   );
 }

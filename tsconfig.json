@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/LandingPhaseA.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/LandingPhaseA.jsx", "src/components/LandingPhaseB.jsx"],
   "exclude": ["node_modules"]
 }
