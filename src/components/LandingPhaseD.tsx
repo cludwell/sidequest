@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 export default function LandingPhaseB() {
   const text =
-    `Build your own character using DnD 5e rules, and go on an adventure with ChatGPT as the guide.`.split(
+    `Build your own character using DnD 5e rules, and go on an adventure with ChatGPT as the guide. If you can imagine it, anything's possible.`.split(
       " "
     );
   return (

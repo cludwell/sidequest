@@ -225,11 +225,12 @@ export default function NewCharDescription({
             </option>
             <option value={"Use URL"}>Use URL</option>
           </select>
-          {imgSource == "Generate" ? (
+          {/* {imgSource == "Generate" ? (
             <button className="w-full btn btn-accent" onClick={chatGPTImage}>
               Generate Portrait
             </button>
           ) : (
+            )} */}
             <input
               type="text"
               defaultValue={"https://imgur.com/2W9RzPc.jpg"}
@@ -237,7 +238,6 @@ export default function NewCharDescription({
               value={imgUrl}
               onChange={(e) => setImgUrl(e.target.value)}
             />
-          )}
           {imgUrl && !isLoading ? (
             <Image
               height={800}

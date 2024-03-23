@@ -95,7 +95,7 @@ export default function LandingPhaseC() {
           id="owlbear"
         />
       </div>
-      <div className="relative w-1/2 overflow-hidden rounded-xl">
+      <div className="relative w-1/2 rounded-xl">
         {/* first bubble */}
         <div className="absolute opacity-0 chat chat-start" id="bubble1">
           <div className="chat-image avatar">
