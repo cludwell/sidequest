@@ -74,16 +74,16 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center  px-4 md:px-16 self-center ${inter.className} `}
+      className={`flex min-h-screen flex-col items-center  px-4 md:px-16 self-center overflow-clip ${inter.className} `}
     >
       <Head>
         <title>Side🎲Quest</title>
       </Head>
-      <LandingPhaseE />
       <LandingPhaseA />
       <LandingPhaseB />
       <LandingPhaseC />
       <LandingPhaseD />
+      <LandingPhaseE />
     </main>
   );
 }

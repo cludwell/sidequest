@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useAnimate } from "framer-motion";
+import { useAnimate, useInView } from "framer-motion";
 import orc from "/public/landing/orc.png";
 import creature from "/public/landing/creature.png";
 import beholder from "/public/landing/beholder.png";
@@ -16,16 +16,17 @@ import oldchest from "/public/landing/oldchest.png";
 import { useEffect } from "react";
 export default function LandingPhaseE() {
   const [scope, animate] = useAnimate();
-
+  const isInView = useInView(scope);
   const beholderSelector = "#beholder";
   const turtleSelector = "#turtle";
   const koboldSelector = "#kobold";
   const elfSelector = "#elf";
   const creatureSelector = "#creature";
-  const koboldSceneSelector = '#koboldScene'
-  const turtleSceneSelector = '#turtleScene'
-  const beholderSceneSelector = '#beholderScene'
-  const villageSceneSelector = '#villageScene'
+  const koboldSceneSelector = "#koboldScene";
+  const turtleSceneSelector = "#turtleScene";
+  const beholderSceneSelector = "#beholderScene";
+  const villageSceneSelector = "#villageScene";
+  const bubbleSelector = "#bubble";
   const checkSelectors = () => {
     return (
       document.querySelector(beholderSelector) &&
@@ -36,13 +37,14 @@ export default function LandingPhaseE() {
       document.querySelector(turtleSceneSelector) &&
       document.querySelector(beholderSceneSelector) &&
       document.querySelector(villageSceneSelector) &&
+      document.querySelector(bubbleSelector) &&
       document.querySelector(koboldSelector)
     );
   };
 
   useEffect(() => {
     const startScenes = async () => {
-      if (scope?.current && checkSelectors()) {
+      if (scope?.current && isInView && checkSelectors()) {
         // initial animation states
         animate(
           elfSelector,
@@ -51,7 +53,7 @@ export default function LandingPhaseE() {
         );
         animate(
           creatureSelector,
-          { scaleX: [ -1.02, -1, -1.02, -1,], scaleY: [1, 1.02, 1,0.98, ] },
+          { scaleX: [-1.02, -1, -1.02, -1], scaleY: [1, 1.02, 1, 0.98] },
           { duration: 3, repeat: Infinity, repeatType: "reverse" }
         );
         animate(
@@ -64,23 +66,6 @@ export default function LandingPhaseE() {
           { scaleX: [1, 1.02, 1, 1.02], scaleY: [0.98, 1, 1.02, 1] },
           { duration: 3, repeat: Infinity, repeatType: "reverse" }
         );
-
-        // kobold scene animation
-        await animate(koboldSceneSelector, {opacity: 1, x:-100}, {duration: .5})
-        await animate(koboldSceneSelector, {opacity: 1, x:[-80,0,80]}, {duration: 10})
-        await animate(koboldSceneSelector, {opacity: 1, x:100}, {duration: .5})
-        // turtle scene animation
-        await animate(turtleSceneSelector, {opacity: 1, y:-100}, {duration: .5})
-        await animate(turtleSceneSelector, {opacity: 1, y:[-80,0,80]}, {duration: 10})
-        await animate(turtleSceneSelector, {opacity: 1, y:100}, {duration: .5})
-        await animate(
-          turtleSelector,
-          { scale: 0.7, x: 40, y: -300 },
-          { duration: 5 }
-        );
-
-
-        // beholder scene
         animate(
           beholderSelector,
           {
@@ -90,6 +75,53 @@ export default function LandingPhaseE() {
           },
           { duration: 3, repeat: Infinity, repeatType: "reverse" }
         );
+        animate(
+          beholderSceneSelector,
+          { x: [-400], opacity: 0 },
+          { duration: 0 }
+        );
+        animate(
+          turtleSceneSelector,
+          { opacity: 0, y: [-500] },
+          { duration: 0 }
+        );
+        animate(villageSceneSelector, { x: 400, opacity: 0 }, { duration: 0 });
+        animate(elfSelector, { x: [-200] }, { duration: 0 });
+        animate(creatureSelector, { x: [200] }, { duration: 0 });
+
+        // kobold scene animation
+        await animate(
+          koboldSceneSelector,
+          { opacity: 0, x: [-500] },
+          { duration: 0 }
+        );
+        await animate(
+          koboldSceneSelector,
+          { opacity: 1, x: [-500, 0] },
+          { duration: 5 }
+        );
+
+        // turtle scene animation
+
+        await animate(
+          turtleSceneSelector,
+          { opacity: 1, y: [-500, 0] },
+          { duration: 5 }
+        );
+
+        await animate(
+          turtleSelector,
+          { scale: 0.7, x: 40, y: -300 },
+          { duration: 5 }
+        );
+
+        // beholder scene
+
+        await animate(
+          beholderSceneSelector,
+          { x: [-400, 0], opacity: 1 },
+          { duration: 5 }
+        );
         await animate(
           beholderSelector,
           { scale: 0.01, opacity: 0 },
@@ -97,21 +129,29 @@ export default function LandingPhaseE() {
         );
         await animate(
           beholderSelector,
-          { scale: 0.4, opacity: 1 },
-          { duration: 1 }
+          { scale: 0.6, opacity: 1 },
+          { duration: 4 }
         );
+
+        // village scene
+        await animate(
+          villageSceneSelector,
+          { x: [400, 0], opacity: 1 },
+          { duration: 5 }
+        );
+        animate(elfSelector, { x: [-200, 0] }, { duration: 3 });
+        animate(creatureSelector, { x: [200, 0] }, { duration: 3 });
+        await animate(bubbleSelector, { y: 50, opacity: 1 }, { duration: 2 });
       }
     };
     setTimeout(() => startScenes(), 300);
   }, [scope, animate]);
   return (
     <div
-      className="relative flex flex-row flex-wrap justify-between w-full max-w-screen-lg min-h-screen bg-red-400"
+      className="relative flex flex-row flex-wrap justify-around w-full max-w-screen-lg gap-4 my-12 overflow-hidden rounded-xl"
       ref={scope}
     >
-
-      <div className="relative h-96 w-96"
-      id="koboldScene">
+      <div className="relative h-96 w-96 translate-x-[-500]" id="koboldScene">
         <Image
           src={dangerousCave}
           alt="a dimly light dungeon during the day"
@@ -124,7 +164,7 @@ export default function LandingPhaseE() {
           id="kobold"
         />
       </div>
-      <div className="relative overflow-hidden w-96 h-96 " id="turtleScene">
+      <div className="relative overflow-hidden w-96 h-96" id="turtleScene">
         <Image
           src={ancientruins3}
           alt="a dimly light dungeon"
@@ -139,16 +179,16 @@ export default function LandingPhaseE() {
       </div>
 
       {/* beholder scene */}
-      <div className="relative w-96 " id="beholderScene">
+      <div className="relative w-96 h-96" id="beholderScene">
         <Image
           src={darkdungeon}
           alt="a dimly light dungeon"
-          className="object-cover rounded-xl"
+          className="object-cover h-full rounded-xl"
         />
         <Image
           src={beholder}
           alt="a zombie beholder"
-          className="absolute left-0 z-10 object-cover opacity-0 top-14"
+          className="absolute top-0 left-0 z-10 object-cover opacity-0"
           id="beholder"
         />
       </div>
@@ -170,6 +210,19 @@ export default function LandingPhaseE() {
           className="absolute right-[-5rem] w-64 z-10 top-10"
           id="creature"
         />
+      </div>
+      <div
+        className="absolute z-30 opacity-0 chat chat-start top-1/4 drop-shadow-xl"
+        id="bubble"
+      >
+        <div className="chat-image avatar">
+          <div className="w-10 rounded-full">
+            {/* <Image src={d20} alt="a twenty sided die" className="" /> */}
+          </div>
+        </div>
+        <div className="text-xl eagle chat-bubble chat-bubble-accent">
+          Are you ready to begin your adventure?
+        </div>
       </div>
     </div>
   );
