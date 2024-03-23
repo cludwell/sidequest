@@ -81,7 +81,7 @@ export default function LandingPhaseC() {
       ref={scope}
       className="relative flex flex-row justify-between w-full max-w-screen-lg my-24 "
     >
-      <div className="overflow-hidden h-96 aspect-square rounded-xl">
+      <div className="overflow-hidden h-96 aspect-square rounded-xl drop-shadow-xl">
         <Image
           src={woodedpath2}
           alt="a scene in which there is an orc"
@@ -95,7 +95,7 @@ export default function LandingPhaseC() {
           id="owlbear"
         />
       </div>
-      <div className="relative w-1/2 rounded-xl">
+      <div className="relative w-1/2 rounded-xl bg-base-300 drop-shadow-xl">
         {/* first bubble */}
         <div className="absolute opacity-0 chat chat-start" id="bubble1">
           <div className="chat-image avatar">

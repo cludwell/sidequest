@@ -59,7 +59,7 @@ export default function LandingPhaseA() {
 
   return (
     <>
-      <div ref={scope} className="relative w-full max-w-screen-lg h-96">
+      <div ref={scope} className="relative w-full max-w-screen-lg h-96 drop-shadow-xl">
         <Logo />
         <Image
           src={dungeon2}
