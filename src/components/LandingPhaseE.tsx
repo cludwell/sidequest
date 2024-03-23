@@ -13,10 +13,12 @@ import darkdungeon from "/public/scenes/darkdungeon.jpeg";
 import ancientruins3 from "/public/scenes/ancientruins3.jpeg";
 import bridgecrossing from "/public/scenes/bridgecrossing.jpeg";
 import oldchest from "/public/landing/oldchest.png";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 export default function LandingPhaseE() {
   const [scope, animate] = useAnimate();
+
   const isInView = useInView(scope);
+  const ref = useRef(null)
   const beholderSelector = "#beholder";
   const turtleSelector = "#turtle";
   const koboldSelector = "#kobold";
@@ -145,7 +147,7 @@ export default function LandingPhaseE() {
       }
     };
     setTimeout(() => startScenes(), 300);
-  }, [scope, animate]);
+  }, [scope, animate, isInView]);
   return (
     <div
       className="relative flex flex-row flex-wrap justify-around w-full max-w-screen-lg gap-4 my-12 overflow-hidden rounded-xl"

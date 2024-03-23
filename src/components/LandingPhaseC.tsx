@@ -74,7 +74,8 @@ export default function LandingPhaseC() {
         await animate(bubble5Selector, { y: -50, opacity: 0 }, { duration: 1 });
       }
     };
-    setTimeout(() => scene(), 300);
+    scene()
+    // setTimeout(() => scene(), 50);
   }, [animate, scope, isInView]);
   return (
     <div
