@@ -13,8 +13,8 @@ export default function Logo() {
           transition={{
             delay: 2 + i * 0.2,
             type: "spring",
-            stiffness: 100,
-            damping: 5,
+            stiffness: 170,
+            damping: 10,
           }}
           key={char + i}
         >

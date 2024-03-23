@@ -49,7 +49,7 @@ export default function LandingPhaseA() {
         );
         await animate(
           dialogueSelector,
-          { opacity: 1, scale: 0.5, opacity: 1 },
+          { opacity: 1, scale: .5, opacity: 1 },
           { duration: 1 }
         );
       }
@@ -67,9 +67,7 @@ export default function LandingPhaseA() {
           className="absolute object-cover object-right w-full h-full opacity-0 rounded-xl "
           id="dungeon"
         />
-        <div id="aperture" className="overflow-hidden rounded-full">
-
-        </div>
+        <div id="aperture" className="overflow-hidden rounded-full"></div>
         <Image
           src={mimic}
           alt="stereotypical mimic from dungeons and dragons"
@@ -80,11 +78,10 @@ export default function LandingPhaseA() {
         <Image
           src={dialoguev2}
           alt="earthbound dialogue window"
-          className="absolute bottom-[-7rem] right-0 opacity-0 z-20"
+          className="absolute bottom-[-7rem] right-[-7rem] opacity-0 z-20"
           id="dialogue"
         />
       </div>
-      
     </>
   );
 }
