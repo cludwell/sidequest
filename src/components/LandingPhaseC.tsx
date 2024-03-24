@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 export default function LandingPhaseC() {
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope)
+  const isInView = useInView(scope);
   const owlbearSelector = "#owlbear";
   const bubble1Selector = "#bubble1";
   const bubble2Selector = "#bubble2";
@@ -28,7 +28,7 @@ export default function LandingPhaseC() {
 
   useEffect(() => {
     const scene = async () => {
-      if (scope?.current && isInView &&checkSelectors()) {
+      if (scope?.current && isInView && checkSelectors()) {
         await animate(
           owlbearSelector,
           {
@@ -81,9 +81,9 @@ export default function LandingPhaseC() {
   return (
     <div
       ref={scope}
-      className="relative flex flex-row justify-between w-full max-w-screen-lg my-24 "
+      className="relative flex flex-row justify-center w-full max-w-screen-lg gap-4 my-24 "
     >
-      <div className="overflow-hidden h-96 aspect-square rounded-xl drop-shadow-xl">
+      <div className="flex w-1/2 overflow-hidden h-96 aspect-square rounded-xl drop-shadow-xl">
         <Image
           src={woodedpath2}
           alt="a scene in which there is an orc"
@@ -93,19 +93,26 @@ export default function LandingPhaseC() {
         <Image
           src={owlbear}
           alt="a monster appears before the player"
-          className="z-10 "
+          className="absolute w-96 top-[30rem] sm:top-96 md:left-10"
           id="owlbear"
         />
       </div>
-      <div className="relative w-1/2 rounded-xl bg-base-300 drop-shadow-xl">
+      <div className="relative w-1/2 text-xs md:text-sm rounded-xl bg-base-300 drop-shadow-xl">
         {/* first bubble */}
-        <div className="absolute opacity-0 chat chat-start" id="bubble1">
+        <div
+          className="absolute opacity-0 chat chat-start ml-[-3rem] mr-[-1rem] md:mx-0"
+          id="bubble1"
+        >
           <div className="chat-image avatar">
             <div className="w-10 rounded-full">
-              <Image src={d20} alt="a twenty sided die" className="" />
+              <Image
+                src={d20}
+                alt="a twenty sided die "
+                className="hidden md:block"
+              />
             </div>
           </div>
-          <div className="text-sm chat-bubble">
+          <div className=" chat-bubble">
             Suddenly, you come to a clearing, and there, in the middle of the
             road, stands an owlbear. It's a massive creature, with the body of a
             bear, covered in thick fur, and the head of an owl, complete with
@@ -120,19 +127,26 @@ export default function LandingPhaseC() {
           <div className="chat-image avatar">
             <div className="w-10 rounded-full"></div>
           </div>
-          <div className="text-sm chat-bubble chat-bubble-primary">
+          <div className=" chat-bubble chat-bubble-primary">
             Can I roll for perception? Does the owlbear look aggressive, or has
             he noticed me?
           </div>
         </div>
         {/* third bubble */}
-        <div className="absolute opacity-0 chat chat-start " id="bubble3">
+        <div
+          className="absolute opacity-0 chat chat-start ml-[-3rem] mr-[-1rem] md:mx-0"
+          id="bubble3"
+        >
           <div className="chat-image avatar">
             <div className="w-10 rounded-full">
-              <Image src={d20} alt="a twenty sided die" className="" />
+              <Image
+                src={d20}
+                alt="a twenty sided die"
+                className="hidden md:block"
+              />
             </div>
           </div>
-          <div className="text-sm chat-bubble">
+          <div className=" chat-bubble">
             With a roll of 13 on your perception check, you keenly observe the
             owlbear's behavior. Despite its imposing appearance, you notice a
             subtlety in its stance. While it seems alert and aware of your
@@ -149,19 +163,26 @@ export default function LandingPhaseC() {
           <div className="chat-image avatar">
             <div className="w-10 rounded-full"></div>
           </div>
-          <div className="text-sm chat-bubble chat-bubble-primary">
+          <div className=" chat-bubble chat-bubble-primary">
             I'll roll for performance, my character plays a calming song.
           </div>
         </div>
 
         {/* fifth bubble */}
-        <div className="absolute opacity-0 chat chat-start " id="bubble5">
+        <div
+          className="absolute opacity-0 chat chat-start ml-[-3rem] mr-[-1rem] md:mx-0"
+          id="bubble5"
+        >
           <div className="chat-image avatar">
             <div className="w-10 rounded-full">
-              <Image src={d20} alt="a twenty sided die" className="" />
+              <Image
+                src={d20}
+                alt="a twenty sided die"
+                className="hidden md:block"
+              />
             </div>
           </div>
-          <div className="text-sm chat-bubble">
+          <div className=" chat-bubble">
             Excellent choice! Your halfling bard, recognizing the tension in the
             air, swiftly reaches for their instrument—a finely crafted lute.
             With practiced fingers, you begin to play a soothing melody, filling
@@ -171,7 +192,7 @@ export default function LandingPhaseC() {
         <Image
           src={bard}
           alt="a representation of the character"
-          className="absolute transform scale-50 translate-x-1/2 translate-y-1/2 bottom-5 right-10"
+          className="absolute w-40 transform translate-x-1/2 translate-y-1/2 sm:w-56 bottom-5 right-10"
         />
       </div>
     </div>
