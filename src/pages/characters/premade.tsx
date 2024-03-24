@@ -43,7 +43,7 @@ export default function PremadeCharacters() {
       <div className="flex flex-wrap justify-center">
         {Object.values(usercharacters).map((char, i) => (
           <div
-            className="m-4 shadow-xl card card-compact bg-base-100 w-72 sm:w-96"
+            className="m-4 shadow-xl card card-compact bg-base-100 w-72 sm:w-96 rounded-2xl"
             key={`char${i}`}
           >
             {char.imgUrl && (

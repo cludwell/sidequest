@@ -62,7 +62,7 @@ export default function UserCharacters() {
       <div className="flex flex-wrap justify-evenly">
         {Object.values(usercharacters).map((char, i) => (
           <div
-            className="w-64 m-4 shadow-xl card card-compact bg-base-100 sm:w-96 "
+            className="w-64 m-4 shadow-xl card card-compact bg-base-100 sm:w-96 rounded-2xl"
             key={`char${i}`}
           >
             {char.imgUrl && (
