@@ -30,7 +30,12 @@ export default function LogInModal() {
     validate();
     if (errors.length) return;
     if (email && password) {
-      await signIn("credentials", { email, password, action: 'signin', redirect: false });
+      await signIn("credentials", {
+        email,
+        password,
+        action: "signin",
+        redirect: false,
+      });
       await dispatch(logInRequest({ email, password }));
     }
   };
@@ -40,12 +45,14 @@ export default function LogInModal() {
     await signIn("credentials", {
       email: "jerry@seinmail.com",
       password: "password",
+      action: "signin",
+      redirect: false
     });
     await dispatch(
       logInRequest({ email: "jerry@seinmail.com", password: "password" })
     );
-    window.my_modal_2.close()
-};
+    window.my_modal_2.close();
+  };
 
   useEffect(() => {
     const myModal2 = document.getElementById("my_modal_2");
@@ -82,7 +89,10 @@ export default function LogInModal() {
             className="p-1 mb-4 border-2 rounded border-slate-300"
           />
           {errors?.map((error, idx) => (
-            <div className="mb-4 alert alert-error fade-in-slide-in" key={`error${idx}`}>
+            <div
+              className="mb-4 alert alert-error fade-in-slide-in"
+              key={`error${idx}`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6 stroke-current shrink-0"
