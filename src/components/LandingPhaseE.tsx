@@ -129,8 +129,8 @@ export default function LandingPhaseE() {
         );
         await animate(
           beholderSelector,
-          { scale: 0.01, opacity: 1 },
-          { duration: 1 }
+          { scale: 0.01, opacity: 0 },
+          { duration: 0 }
         );
         await animate(
           beholderSelector,
@@ -230,7 +230,7 @@ export default function LandingPhaseE() {
             {/* <Image src={d20} alt="a twenty sided die" className="" /> */}
           </div>
         </div>
-        <div className="text-xl eagle chat-bubble chat-bubble-accent">
+        <div className="text-xl text-center eagle chat-bubble chat-bubble-accent text-balance">
           Are you ready to begin your adventure?
         </div>
       </div>
