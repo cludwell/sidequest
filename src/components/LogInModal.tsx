@@ -30,7 +30,7 @@ export default function LogInModal() {
     validate();
     if (errors.length) return;
     if (email && password) {
-      await signIn("credentials", { email, password, action: 'signin' });
+      await signIn("credentials", { email, password, action: 'signin', redirect: false });
       await dispatch(logInRequest({ email, password }));
     }
   };
