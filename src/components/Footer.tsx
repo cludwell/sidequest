@@ -4,7 +4,9 @@ import IconResume from "./icons/IconResume";
 
 export default function Footer() {
   return (
-    <footer className="p-10 footer bg-neutral text-neutral-content">
+    <footer className="flex flex-row justify-center w-full p-10 footer bg-neutral text-neutral-content">
+      <div className="flex flex-row flex-wrap justify-between w-full max-w-screen-xl">
+
       <div>
         <Image src={d20} alt="d20logo" className="object-cover w-16" />
 
@@ -51,6 +53,7 @@ export default function Footer() {
             <IconResume type="dark"/>
           </a>
         </div>
+      </div>
       </div>
     </footer>
   );

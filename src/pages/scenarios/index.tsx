@@ -44,15 +44,15 @@ export default function Scenarios() {
     }
   };
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 md:px-16 fade-in-slide-in">
-      <h1 className="federant text-3xl font-bold">Scenarios</h1>
+    <main className="flex flex-col items-center w-full max-w-screen-xl min-h-screen px-4 mx-auto md:px-16 fade-in-slide-in">
+      <h1 className="text-3xl font-bold federant">Scenarios</h1>
       <div className="divider" />
 
-      <div className="carousel carousel-center rounded-box max-w-screen-xl w-full ">
+      <div className="w-full max-w-screen-xl carousel carousel-center rounded-box ">
         {scenarios &&
           Object.values(scenarios).map((scene, i) => (
             <div
-              className=" w-60 sm:w-80 md:w-96 glass carousel-item relative glass-container"
+              className="relative w-60 sm:w-80 md:w-96 glass carousel-item glass-container"
               key={scene.id}
               id={`${scene.description.slice(0, 50)}`}
             >
@@ -71,11 +71,11 @@ export default function Scenarios() {
                     width={1000}
                     alt="scenario-image"
                     src={scene.imgUrl}
-                    className=" object-cover w-full h-full"
+                    className="object-cover w-full h-full "
                   />
                 )}
               </figure>
-              <div className=" absolute glass glass-content bottom-0 rounded-2xl opacity-0 transition duration-300 p-2 sm:p-4 m-1 sm:m-2">
+              <div className="absolute bottom-0 p-2 m-1 transition duration-300 opacity-0 glass glass-content rounded-2xl sm:p-4 sm:m-2">
                 <h2 className="card-title almendra sm:text-2xl">
                   {scene.description.split("Adventure Prompt:")[0].slice(7)}
                 </h2>
@@ -85,7 +85,7 @@ export default function Scenarios() {
                     .slice(0, 300)}
                   ...
                 </p>
-                <div className="card-actions justify-end mt-4">
+                <div className="justify-end mt-4 card-actions">
                   <button
                     className="btn btn-primary btn-xs sm:btn-sm md:btn-md"
                     onClick={() => selectScenario(scene)}

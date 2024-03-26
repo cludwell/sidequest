@@ -44,8 +44,8 @@ export default function Header() {
   const user = useSelector(userProfile);
 
   return (
-    <div className="flex flex-row justify-between " id="header-container">
-      <div className="m-4 border-2 border-base-200 navbar bg-base-100 rounded-2xl">
+    <div className="flex flex-row justify-center " id="header-container">
+      <div className="w-full max-w-screen-xl m-4 border-2 border-base-200 navbar bg-base-100 rounded-2xl">
         <div className="flex-1">
           <div className="flex flex-row items-center justify-center">
             <Link href={"/"} className="federant">
